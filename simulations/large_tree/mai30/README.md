@@ -11,12 +11,24 @@ Current state:
 - Mai D1 provenance is authenticated through the article, author repository,
   author project page, and Dryad DOI.
 - The Dryad manifest and published SHA-256 checksums are recorded.
-- Raw D1 extraction is pending because the current environment receives 401/403
-  responses from the public archive download endpoint.
-- `msrc-sim` already supports arbitrary-tree full Newick genealogies and
-  branch-specific effective population sizes, but its linked-block runner does
-  not yet guarantee exactly 500 output trees without an explicit contract check.
-- No MSC or MSRC biological pilot has been accepted yet.
+- The local `D1-true.tar.gz` archive is checksum-verified and the species-tree,
+  command, log, parameter, and selected original-gene-tree files are extracted.
+- SimPhy D1 records one global haploid effective population size per replicate
+  and species-tree times in generations. The explicit mapping to `msrc-sim` is
+  documented in `analysis/results/POPULATION_SIZE_MAPPING.md`.
+- Ordinary MSC controls for four observed-discordance representatives passed
+  the complete-tree output contract. Full forward MSRC histories remain
+  computationally prohibitive at original population sizes; see
+  `analysis/results/RUNTIME_BENCHMARK.md`.
+- No full MSRC parameter grid has been launched.
+
+The scaled-WF pilot is now prepared at `datasets/configs/mai30_msrc_pilot/`.
+It uses `c=0.001`, 20 loci per independent history, 25 histories per 500-locus
+collection, and suppression fractions 1.0, 0.5, and 0.1. The primary
+configuration uses initial frequency 0.5; frequency 0.2 is prepared as a
+sensitivity configuration. The resumable runner, output contract, ASTRAL
+analysis, and preliminary figure scripts are documented in
+`analysis/results/MAI30_SCALED_WF_PILOT_RESULTS.md`.
 
 Read `DATASET_AUDIT.md`, `SIMULATOR_COMPATIBILITY.md`, and
 `analysis/results/MAI30_PILOT_RESULTS.md` for the current gates and results.

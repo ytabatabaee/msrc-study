@@ -61,12 +61,17 @@ The following items are not silently invented:
   `g/(2N_e)` to the logged number. The converter must state the convention used
   by `msrc-sim`; if its input is diploid, the input must be transformed so that
   its coalescent scale matches SimPhy's `1/N_haploid`.
-- Original true gene trees are present in the authenticated archive but have
-  not yet been extracted into the working subset.
+- Original true gene trees are present in the authenticated archive and have
+  been extracted for 300 no-outgroup replicate collections. Four collections
+  selected by observed normalized-RF quantiles are used for MSC validation.
+- SimPhy's manual identifies gene-tree branch lengths as expected substitutions
+  per site, whereas species and locus branches are in generations. The
+  baseline therefore reports gene-tree topology statistics and does not treat
+  original gene-tree branch lengths as coalescent times.
 
-The MSC control and MSRC pilot remain gated until the haploid/diploid mapping
-and root-extension treatment are explicit and the ordinary MSC baseline is
-validated against the original gene trees or an equivalent source summary.
+The population mapping, root treatment, and ordinary MSC baseline are now
+validated. The remaining gate is computational feasibility of original-scale
+forward Wright–Fisher MSRC histories; see `analysis/results/RUNTIME_BENCHMARK.md`.
 
 See `datasets/provenance/SOURCES.md`,
 `datasets/provenance/DRYAD_FILE_MANIFEST.tsv`, and

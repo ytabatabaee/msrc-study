@@ -28,17 +28,19 @@ The primary leave-one-configuration-out fit gives the two training configuration
 
 Physical blocks were used as resampling units to quantify uncertainty in the aggregate held-out predictions while preserving local linkage and spatial heterogeneity. Blocks are nonoverlapping intervals aligned to the first retained 5-kb window at 5 Mb. The primary analysis uses 1-Mb blocks and 10,000 bootstrap replicates; fixed 500-kb and 2-Mb analyses use 5,000 replicates each. Each replicate samples complete blocks with replacement until the original number of blocks is restored, aggregates quartet counts, and gives the two training configurations equal weight.
 
-| block size | held-out | n_bootstrap | Delta train median [95% CI] | max error median [95% CI] | L1 median [95% CI] |
-|---:|---|---:|---|---|---|
-| 500000 | STT | 5000 | 0.550755 [0.473430, 0.624056] | 0.026465 [0.004084, 0.079261] | 0.052929 [0.008167, 0.158522] |
-| 500000 | TST | 5000 | 0.543635 [0.471527, 0.613985] | 0.020660 [0.003356, 0.062906] | 0.041319 [0.006712, 0.125812] |
-| 500000 | TTS | 5000 | 0.533889 [0.469556, 0.600370] | 0.025311 [0.007993, 0.047180] | 0.050622 [0.015986, 0.094360] |
-| 1000000 | STT | 10000 | 0.552144 [0.451225, 0.643882] | 0.032117 [0.005209, 0.093991] | 0.064235 [0.010417, 0.187983] |
-| 1000000 | TST | 10000 | 0.544728 [0.454984, 0.634164] | 0.025189 [0.004236, 0.076304] | 0.050378 [0.008471, 0.152608] |
-| 1000000 | TTS | 10000 | 0.534338 [0.453902, 0.617635] | 0.025864 [0.006849, 0.050329] | 0.051727 [0.013697, 0.100657] |
-| 2000000 | STT | 5000 | 0.552239 [0.420662, 0.661259] | 0.038247 [0.006174, 0.116231] | 0.076494 [0.012348, 0.232461] |
-| 2000000 | TST | 5000 | 0.546815 [0.432921, 0.648316] | 0.032043 [0.005804, 0.100481] | 0.064087 [0.011607, 0.200963] |
-| 2000000 | TTS | 5000 | 0.534712 [0.441681, 0.629061] | 0.026145 [0.005312, 0.054983] | 0.052290 [0.010623, 0.109966] |
+Because absolute prediction error is bounded below by zero and is inflated by bootstrap perturbation when the original prediction is nearly exact, the main figure reports signed arrangement-support error, whose bootstrap intervals directly assess systematic prediction bias.
+
+| block size | held-out | n_bootstrap | Delta train median [95% CI] | signed arrangement-support error median [95% CI] | max error median [95% CI] | L1 median [95% CI] |
+|---:|---|---:|---|---|---|---|
+| 500000 | STT | 5000 | 0.550755 [0.473430, 0.624056] | +0.016388 [-0.051405, +0.076962] | 0.026465 [0.004084, 0.079261] | 0.052929 [0.008167, 0.158522] |
+| 500000 | TST | 5000 | 0.543635 [0.471527, 0.613985] | +0.002181 [-0.053203, +0.056703] | 0.020660 [0.003356, 0.062906] | 0.041319 [0.006712, 0.125812] |
+| 500000 | TTS | 5000 | 0.533889 [0.469556, 0.600370] | -0.017339 [-0.044145, +0.009011] | 0.025311 [0.007993, 0.047180] | 0.050622 [0.015986, 0.094360] |
+| 1000000 | STT | 10000 | 0.552144 [0.451225, 0.643882] | +0.016349 [-0.067321, +0.088061] | 0.032117 [0.005209, 0.093991] | 0.064235 [0.010417, 0.187983] |
+| 1000000 | TST | 10000 | 0.544728 [0.454984, 0.634164] | +0.001871 [-0.062981, +0.069903] | 0.025189 [0.004236, 0.076304] | 0.050378 [0.008471, 0.152608] |
+| 1000000 | TTS | 10000 | 0.534338 [0.453902, 0.617635] | -0.017354 [-0.046630, +0.014225] | 0.025864 [0.006849, 0.050329] | 0.051727 [0.013697, 0.100657] |
+| 2000000 | STT | 5000 | 0.552239 [0.420662, 0.661259] | +0.014290 [-0.093975, +0.107636] | 0.038247 [0.006174, 0.116231] | 0.076494 [0.012348, 0.232461] |
+| 2000000 | TST | 5000 | 0.546815 [0.432921, 0.648316] | +0.004669 [-0.085529, +0.088756] | 0.032043 [0.005804, 0.100481] | 0.064087 [0.011607, 0.200963] |
+| 2000000 | TTS | 5000 | 0.534712 [0.441681, 0.629061] | -0.017314 [-0.047327, +0.017843] | 0.026145 [0.005312, 0.054983] | 0.052290 [0.010623, 0.109966] |
 
 ## Local spatial heterogeneity diagnostic
 
@@ -50,7 +52,7 @@ A constant Delta is not intended to predict every linked physical block. For eac
 | TST | [-0.314583, 1.000000] | 0.576655 | [0.384529, 0.815783] | 0.062 | 0.000 |
 | TTS | [-0.006614, 1.000000] | 0.582563 | [0.398627, 0.756888] | 0.031 | 0.000 |
 
-Spearman correlations of block Delta estimates: STT/TST = 0.2617; STT/TTS = 0.4883.
+Pairwise Spearman correlations of block-specific Delta estimates were 0.262 for STT/TST, 0.488 for STT/TTS, and 0.786 for TST/TTS, indicating that some spatial variation in arrangement-associated genealogy strength is shared across configurations.
 
 No conventional multinomial p-values are reported: induced quartets reuse individuals, windows, and linked genomic segments, so they are not independent replicates. The old leave-one-single-block-out table is retained for provenance, but it is not interpreted as the preferred robustness analysis.
 

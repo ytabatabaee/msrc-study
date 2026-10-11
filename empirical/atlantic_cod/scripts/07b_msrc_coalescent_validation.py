@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import importlib.util
 import math
 import statistics
@@ -117,6 +118,31 @@ def window_signal(rows):
                     "mean_residual_same": statistics.fmean(same), "mean_residual_opposite": statistics.fmean(opp),
                     "A_res": statistics.fmean(opp) - statistics.fmean(same)})
     return out
+
+
+def original_window_signal(rows):
+    """Stage-7 A(w): opposite-pair mean MRCA time minus same-pair mean."""
+    groups = defaultdict(list)
+    for r in rows:
+        groups[(r["lg"], r["window_id"])].append(r)
+    out = []
+    for (lg, wid), g in sorted(groups.items(), key=lambda x: (x[0][0], x[1][0]["start"])):
+        same = [float(r["mrca_time"]) for r in g if r["pair_class"] == "same_arrangement"]
+        opposite = [float(r["mrca_time"]) for r in g if r["pair_class"] == "opposite_arrangement"]
+        out.append({"lg": lg, "window_id": wid, "region_class": g[0]["region_class"],
+                    "A": statistics.fmean(opposite) - statistics.fmean(same)})
+    return out
+
+
+def stage7_file_checksums_unchanged():
+    manifest = __import__("json").loads((RES / "stage7_manifest.json").read_text())
+    for rel, expected in manifest["output_checksums"].items():
+        path = ROOT / rel
+        if not path.exists():
+            raise AssertionError(f"Existing Stage-7 output missing: {rel}")
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest != expected:
+            raise AssertionError(f"Existing Stage-7 output changed: {rel}")
 
 
 def circular(rows):
@@ -255,12 +281,20 @@ def plot(pairs, jack, topo):
             v = [float(r["residual_inside_mean"]) for r in pairs if r["lg"] == lg and r["pair_class"] == cls]
             x = [i + (-.16 if cls.startswith("same") else .16) + (j % 5 - 2) * .018 for j in range(len(v))]
             ax[0].scatter(x, v, s=16, alpha=.7, color=color, label=cls.replace("_", " ") if i == 0 else None)
-    ax[0].axhline(0, color="black", lw=.7); ax[0].set_xticks(range(4), LGS); ax[0].set_ylabel("inside residual MRCA time"); ax[0].set_title("A  Pair-level shifts"); ax[0].legend(frameon=False, fontsize=8)
+            med = statistics.median(v)
+            center = i + (-.16 if cls.startswith("same") else .16)
+            ax[0].plot([center - .095, center + .095], [med, med], color="black", lw=2.5, solid_capstyle="butt", zorder=4)
+    ax[0].axhline(0, color="black", lw=.7); ax[0].set_xticks(range(4), LGS); ax[0].set_ylabel("inside residual MRCA time"); ax[0].set_title("A  Pair-level shifts"); ax[0].legend(frameon=False, fontsize=8, title="points / median")
     for i, lg in enumerate(LGS):
         v = [float(r["delta_coal_leave_one_out"]) for r in jack if r["lg"] == lg and r["status"] == "defined"]
         ax[1].scatter([i] * len(v), v, s=13, color="#777777", alpha=.65)
         ax[1].scatter([i], [next(r["full_delta_coal"] for r in jack if r["lg"] == lg)], s=70, color="#111111", zorder=3)
     ax[1].axhline(0, color="black", lw=.7); ax[1].set_xticks(range(4), LGS); ax[1].set_ylabel("Delta_coal"); ax[1].set_title("B  Population jackknife")
+    ax[1].scatter([], [], s=70, color="#111111", label="full-data estimate")
+    ax[1].scatter([], [], s=13, color="#777777", label="leave-one-population-out")
+    ax[1].legend(frameon=False, fontsize=8, loc="lower right", bbox_to_anchor=(1, .02))
+    lg07 = [float(r["delta_coal_leave_one_out"]) for r in jack if r["lg"] == "LG07" and r["status"] == "defined"]
+    ax[1].annotate("LG07 wider range", xy=(2, statistics.fmean(lg07)), xytext=(2.15, .76), arrowprops={"arrowstyle": "-", "color": "#777777"}, fontsize=8, color="#555555")
     for r in topo:
         ax[2].scatter(float(r["delta_D"]), float(r["delta_coal"]), s=45, color="#e45756" if r["lg"] == "LG07" else "#4c78a8"); ax[2].annotate(r["lg"], (float(r["delta_D"]), float(r["delta_coal"])), xytext=(4, 4), textcoords="offset points", fontsize=8)
     ax[2].axhline(0, color="black", lw=.7); ax[2].axvline(0, color="black", lw=.7); ax[2].set_xlabel("Delta_D"); ax[2].set_ylabel("Delta_coal"); ax[2].set_title("C  Topology vs time")
@@ -268,24 +302,29 @@ def plot(pairs, jack, topo):
 
 
 def documents(lg, topo, classes, jack):
-    OUT["methods_text.md"].write_text("""This post-freeze theorem-linked extension reused the frozen 250-kb SNAPP MCC window trees, inversion coordinates, population arrangement states, and Stage-7 MRCA pipeline. The Stage-7 MRCA values were verified unchanged. For each linkage group and population pair, the primary baseline was the median MRCA time across fully outside windows; residuals were MRCA time minus that baseline. Boundary-overlap windows were excluded. A_res(w) is mean residual for opposite-arrangement pairs minus mean residual for same-arrangement pairs, and Delta_coal is its inside-minus-outside mean. The exact chromosome-aware circular-shift null preserved track order, kept the inversion mask fixed, included the observed alignment, and used the one-sided predeclared direction. BH correction was across LG01, LG02, LG07, and LG12. Mean-outside baselines, delete-one-population jackknife, and physical-coordinate placement were sensitivities. Published MCC point estimates were used because per-window posterior samples were unavailable. No SNAPP, BEAST, ASTRAL, or local gene-tree inference was run.
+    methods = """This post-freeze Stage 7B analysis reused the frozen 250-kb SNAPP MCC window trees, inversion coordinates, population arrangement states, and Stage-7 MRCA pipeline. The Stage-7 MRCA values and existing Stage-7 output files were verified unchanged. For each population pair, the primary residual was R_ij(w)=T_ij(w)-B_ij, where B_ij is the median MRCA time across fully outside windows. Boundary-overlap windows were excluded.
 
-The finite-duration MSRC formula was implemented as delta_T(m, lambda, tau), with dimensionless mu=m/lambda and x=lambda*tau. The parameter grid is descriptive only: one observed contrast cannot separately identify m, lambda, and tau.
-""")
-    lines = ["# Stage7b MSRC coalescent validation", "", "The predeclared theorem-linked direction is `Delta_coal > 0`: opposite-arrangement pairs have extra residual coalescence depth inside the supergene after pair-specific collinear baselines are removed.", "", "| LG | Delta_coal | circular p | BH p | m_eff |", "|---|---:|---:|---:|---:|"]
-    for r in lg: lines.append(f"| {r['lg']} | {float(r['delta_coal']):.6g} | {float(r['circular_p']):.6g} | {float(r['circular_BH_p']):.6g} | {fmt(r['m_eff'])} |")
-    lines += ["", "m_eff is only the effective long-duration approximation 1/(2 Delta_coal), in inverse published SNAPP time units. It is not a recombination rate and does not identify biological m.", "", "The circular null is chromosome-aware; the jackknife uses populations as dependence units and does not treat population pairs as iid. LG07 is the key example of near-zero topology shift with positive coalescence-time shift. This is a theory-consistent empirical signature, not proof that MSRC is the sole historical process.", "", "## Arrangement-class pair summaries", "", "| LG | class | n pairs | mean inside residual | median inside residual | IQR | fraction positive |", "|---|---|---:|---:|---:|---:|---:|"]
-    for r in classes: lines.append(f"| {r['lg']} | {r['pair_class']} | {r['n_pairs']} | {float(r['mean_inside_residual']):.6g} | {float(r['median_inside_residual']):.6g} | {float(r['iqr_inside_residual']):.6g} | {float(r['fraction_pairs_positive_inside']):.6g} |")
-    lines += ["", "The mean-outside baseline sensitivity preserved the sign and qualitative LG ordering of Delta_coal; because the same pair set contributes to every eligible window, subtracting a different constant baseline per pair changes absolute residual levels but leaves this inside-minus-outside contrast unchanged up to rounding.", "", "| LG | Delta_D | topology p | Delta_coal | coalescent p | BH p | class |", "|---|---:|---:|---:|---:|---:|---|"]
-    for r in topo: lines.append(f"| {r['lg']} | {float(r['delta_D']):.6g} | {float(r['topology_p']):.6g} | {float(r['delta_coal']):.6g} | {float(r['coalescent_circular_p']):.6g} | {float(r['coalescent_BH_p']):.6g} | {r['qualitative_class']} |")
-    lines += ["", "The data do not separately identify m, lambda, and tau under the finite-duration model. The analysis uses published per-window SNAPP MCC point estimates because posterior samples are unavailable."]
-    OUT["report.md"].write_text("\n".join(lines) + "\n")
-    result = ["After pair-specific median-outside correction, opposite-arrangement residual depth exceeded same-arrangement residual depth in the primary inside-versus-outside contrast for: " + ", ".join(r["lg"] for r in lg if float(r["delta_coal"]) > 0) + ".", "", "| LG | same mean inside residual | opposite mean inside residual | jackknife range |", "|---|---:|---:|---:|"]
+The interpretation requires an algebraic qualification. Let O and S be the fixed opposite- and same-arrangement pair sets. Then A_res(w)=mean_O[T_ij(w)-B_ij]-mean_S[T_ij(w)-B_ij]=A(w)-C, where C=mean_O B_ij-mean_S B_ij is constant across windows. Consequently, mean_inside A_res-mean_outside A_res equals mean_inside A-mean_outside A, so Delta_coal=Delta_A up to floating-point rounding. Pair-specific residualization is therefore an interpretive decomposition of the existing Stage-7 signal, rather than an independent statistical test or stronger anti-confounding result. Its additions are the direct connection to E[T_D]-E[T_S], pair-level summaries, the leave-one-population-out sensitivity analysis, and the topology-versus-time comparison.
+
+The primary spatial test used the exact chromosome-aware circular-shift framework, preserving track order, the fixed inversion mask, and the observed alignment, with one-sided direction Delta_coal>0 and BH correction across four linkage groups. The physical-coordinate placement test was retained as a sensitivity analysis. Published MCC point estimates were used because per-window posterior samples were unavailable. No SNAPP, BEAST, ASTRAL, or local gene-tree inference was run.
+
+The finite-duration MSRC formula was implemented as delta_T(m,lambda,tau), with dimensionless mu=m/lambda and x=lambda*tau. The parameter grid is descriptive only: one observed contrast cannot separately identify m, lambda, and tau.
+"""
+    OUT["methods_text.md"].write_text(methods)
+    lines = ["# Stage 7B theorem-linked coalescent decomposition", "", "Stage 7B expresses the existing Stage-7 coalescent-time signal in the form of the MSRC prediction `E[T_D]-E[T_S] > 0`. Because the same fixed pair sets contribute to every window, pair-specific residualization changes A(w) only by an LG-specific constant. Therefore `Delta_coal = Delta_A` up to rounding; Stage 7B is an interpretive decomposition and robustness analysis, not an independent statistical validation.", "", "| LG | Stage-7 Delta_A | Stage-7B Delta_coal | max difference | circular p | circular BH p | physical p | physical BH p |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    old = {r["lg"]: r for r in read_tsv(RES / "stage7_divergence_time_tests.tsv")}
     for r in lg:
-        j = [x for x in jack if x["lg"] == r["lg"] and x["status"] == "defined"]
-        result.append(f"| {r['lg']} | {float(r['same_inside_residual_mean']):.6g} | {float(r['opposite_inside_residual_mean']):.6g} | {min(float(x['delta_coal_leave_one_out']) for x in j):.6g} to {max(float(x['delta_coal_leave_one_out']) for x in j):.6g} |")
-    OUT["results_text.md"].write_text("\n".join(result) + "\n")
-    OUT["figure_caption.md"].write_text("Figure. Theorem-linked Atlantic cod coalescence-time validation. Panel A shows population-pair inside residual MRCA times after subtracting each pair's fully outside baseline. Panel B shows the full Delta_coal and delete-one-population estimates. Panel C combines the existing topology contrast Delta_D with Delta_coal; LG07 illustrates positive time distortion with little topology distortion. Published SNAPP MCC point estimates and a chromosome-aware circular-shift null were used.\n")
+        d = float(old[r["lg"]]["delta_A"])
+        lines.append(f"| {r['lg']} | {d:.9g} | {float(r['delta_coal']):.9g} | {abs(d-float(r['delta_coal'])):.3g} | {float(r['circular_p']):.6g} | {float(r['circular_BH_p']):.6g} | {float(r['physical_p']):.6g} | {float(r['physical_BH_p']):.6g} |")
+    lines += ["", "LG01, LG02, and LG07 are supported under both the circular-shift and physical-coordinate placement nulls. LG12 is supported under the primary circular-shift null but is not significant under the physical-placement sensitivity analysis, so it is less robust to the spatial-null choice.", "", "m_eff is only the descriptive effective long-duration approximation 1/(2 Delta_coal), in inverse published SNAPP time units. It is not a recombination rate and does not identify biological m.", "", "## Arrangement-class pair summaries", "", "| LG | class | n pairs | mean inside residual | median inside residual | IQR | fraction positive |", "|---|---|---:|---:|---:|---:|---:|"]
+    for r in classes: lines.append(f"| {r['lg']} | {r['pair_class']} | {r['n_pairs']} | {float(r['mean_inside_residual']):.6g} | {float(r['median_inside_residual']):.6g} | {float(r['iqr_inside_residual']):.6g} | {float(r['fraction_pairs_positive_inside']):.6g} |")
+    lines += ["", "LG01, LG02, and LG12 are cleaner arrangement-conditioned examples: all opposite-arrangement pairs have positive inside residuals and their mean residuals greatly exceed the same-arrangement means. LG07 is the strongest topology/time decoupling example, but its pair-level effect is heterogeneous: same-arrangement mean/median inside residuals are about 0.359/0, while opposite-arrangement mean/median values are about 0.794/1.105.", "", "The population jackknife is a dependence and sensitivity analysis, not an iid argument. All leave-one-population-out estimates remain positive. LG01, LG02, and LG12 are tightly stable; LG07 is substantially more variable.", "", "| LG | Delta_D | topology p | Delta_coal | coalescent p | BH p | class |", "|---|---:|---:|---:|---:|---:|---|"]
+    for r in topo: lines.append(f"| {r['lg']} | {float(r['delta_D']):.6g} | {float(r['topology_p']):.6g} | {float(r['delta_coal']):.6g} | {float(r['coalescent_circular_p']):.6g} | {float(r['coalescent_BH_p']):.6g} | {r['qualitative_class']} |")
+    lines += ["", "The finite-duration theory predicts a positive arrangement-conditioned delay, while the infinite-duration symmetric limit is `E[T_D]-E[T_S]=1/(2m)`. Atlantic cod shows a theory-consistent empirical signature; it does not establish MSRC as the unique historical cause or separately identify m, lambda, and tau. The analysis uses published per-window SNAPP MCC point estimates because posterior samples are unavailable."]
+    OUT["report.md"].write_text("\n".join(lines) + "\n")
+    result = ["To connect the Atlantic cod analysis directly to the arrangement-conditioned coalescence result, we decomposed pairwise MRCA times relative to each population pair's collinear baseline. Because the same pair sets contribute to every window, this residualization changes the window-level arrangement contrast only by a constant and therefore leaves the original inside-versus-outside Stage-7 contrast unchanged. Its role is interpretive: it expresses the signal in the same form as E[T_D]-E[T_S] and enables population-pair and leave-one-population-out decomposition.", "", "Across all four supergenes, opposite-arrangement population pairs showed greater coalescence depth inside the rearranged region than same-arrangement pairs. The primary circular-shift test was significant for all four linkage groups. LG01, LG02, and LG07 were also supported by the physical-coordinate placement sensitivity analysis, whereas LG12 was not significant under that secondary spatial null.", "", "LG07 was notable because its topology contrast was essentially zero while its coalescent-time contrast remained strongly positive, providing an empirical example in which genealogy depth changes without a corresponding detectable topology shift. Its pair-level magnitude was heterogeneous, so it should not be treated as the cleanest realization of a homogeneous two-state model.", "", "The four linkage groups are not iid replicates and population pairs are not independent observations. The leave-one-population-out ranges were LG01 0.7525--0.7624, LG02 0.6527--0.6576, LG07 0.3754--0.7129, and LG12 0.3229--0.3296."]
+    OUT["results_text.md"].write_text("\n\n".join(result) + "\n")
+    OUT["figure_caption.md"].write_text("Figure. Theorem-linked Atlantic cod coalescence-time decomposition. Panel A shows raw population-pair inside residual MRCA times after subtracting each pair's fully outside baseline; horizontal markers show arrangement-class medians and raw points are dependent population-pair observations. Panel B shows the full Delta_coal estimate as a large black point and leave-one-population-out estimates as small gray points; the zero line is shown and LG07 is more variable. Panel C compares existing topology Delta_D with Delta_coal, with zero reference lines; LG07 lies near Delta_D=0 but above Delta_coal=0. The plot is descriptive and does not imply pair independence or a four-point correlation. Published SNAPP MCC point estimates and chromosome-aware spatial nulls were used.\n")
 
 
 def main():
@@ -301,9 +340,13 @@ def main():
     spatial = physical_null(primary_windows)
     topo = topology_comparison(lg)
     classes = class_summary(primary_pairs)
+    stage7_tests = {r["lg"]: r for r in read_tsv(RES / "stage7_divergence_time_tests.tsv")}
+    for r in lg + mean_lg:
+        r["physical_p"] = float(stage7_tests[r["lg"]]["physical_p"])
+        r["physical_BH_p"] = float(stage7_tests[r["lg"]]["physical_BH_p"])
     write_tsv(OUT["window_signal.tsv"], primary_windows, ["lg", "window_id", "start", "end", "midpoint", "region_class", "n_same_pairs", "n_opposite_pairs", "mean_residual_same", "mean_residual_opposite", "A_res"])
     write_tsv(OUT["pair_summary.tsv"], primary_pairs, ["lg", "population1", "population2", "arrangement1", "arrangement2", "pair_class", "baseline", "residual_inside_mean", "residual_inside_median", "residual_inside_iqr", "residual_outside_mean", "residual_outside_median", "fraction_positive_inside", "n_inside", "n_outside"])
-    write_tsv(OUT["lg_summary.tsv"], lg + [{**r, "baseline_rule": "mean"} for r in mean_lg], ["lg", "baseline_rule", "n_inside_windows", "n_outside_windows", "mean_A_res_inside", "mean_A_res_outside", "delta_coal", "circular_p", "circular_BH_p", "n_circular_shifts", "m_eff", "same_inside_residual_mean", "same_inside_residual_median", "opposite_inside_residual_mean", "opposite_inside_residual_median"])
+    write_tsv(OUT["lg_summary.tsv"], lg + [{**r, "baseline_rule": "mean"} for r in mean_lg], ["lg", "baseline_rule", "n_inside_windows", "n_outside_windows", "mean_A_res_inside", "mean_A_res_outside", "delta_coal", "circular_p", "circular_BH_p", "physical_p", "physical_BH_p", "n_circular_shifts", "m_eff", "same_inside_residual_mean", "same_inside_residual_median", "opposite_inside_residual_mean", "opposite_inside_residual_median"])
     write_tsv(OUT["population_jackknife.tsv"], jack, ["lg", "removed_population", "delta_coal_leave_one_out", "status", "full_delta_coal", "jackknife_n", "jackknife_mean", "jackknife_min", "jackknife_max", "jackknife_SE"])
     write_tsv(OUT["spatial_null.tsv"], spatial, ["lg", "null_type", "shift_or_candidate", "delta_coal_null", "greater_or_equal_observed", "physical_p"])
     write_tsv(OUT["topology_comparison.tsv"], topo, ["lg", "delta_D", "topology_p", "delta_coal", "coalescent_circular_p", "coalescent_BH_p", "qualitative_class"])
@@ -313,7 +356,7 @@ def main():
     print("Delta_coal for LG01, LG02, LG07, LG12:")
     for r, mr in zip(lg, mean_lg):
         j = [x for x in jack if x["lg"] == r["lg"] and x["status"] == "defined"]
-        print(f"{r['lg']} delta_coal={r['delta_coal']:.9g} circular_p={r['circular_p']:.9g} BH_p={r['circular_BH_p']:.9g}; primary median-baseline same inside median/mean={r['same_inside_residual_median']:.9g}/{r['same_inside_residual_mean']:.9g}, opposite={r['opposite_inside_residual_median']:.9g}/{r['opposite_inside_residual_mean']:.9g}; mean-baseline same inside median/mean={mr['same_inside_residual_median']:.9g}/{mr['same_inside_residual_mean']:.9g}, opposite={mr['opposite_inside_residual_median']:.9g}/{mr['opposite_inside_residual_mean']:.9g}; jackknife range={min(x['delta_coal_leave_one_out'] for x in j):.9g}..{max(x['delta_coal_leave_one_out'] for x in j):.9g}; mean-baseline delta={mr['delta_coal']:.9g}; m_eff={fmt(r['m_eff'])}")
+        print(f"{r['lg']} Stage7_Delta_A={next(float(x['delta_A']) for x in read_tsv(RES / 'stage7_divergence_time_tests.tsv') if x['lg'] == r['lg']):.9g} Delta_coal={r['delta_coal']:.9g} max_equivalence_difference={abs(r['delta_coal'] - next(float(x['delta_A']) for x in read_tsv(RES / 'stage7_divergence_time_tests.tsv') if x['lg'] == r['lg'])):.3g} circular_p={r['circular_p']:.9g} BH_p={r['circular_BH_p']:.9g} physical_p={r['physical_p']:.9g}; primary median-baseline same inside median/mean={r['same_inside_residual_median']:.9g}/{r['same_inside_residual_mean']:.9g}, opposite={r['opposite_inside_residual_median']:.9g}/{r['opposite_inside_residual_mean']:.9g}; mean-baseline same inside median/mean={mr['same_inside_residual_median']:.9g}/{mr['same_inside_residual_mean']:.9g}, opposite={mr['opposite_inside_residual_median']:.9g}/{mr['opposite_inside_residual_mean']:.9g}; jackknife range={min(x['delta_coal_leave_one_out'] for x in j):.9g}..{max(x['delta_coal_leave_one_out'] for x in j):.9g}; mean-baseline delta={mr['delta_coal']:.9g}; m_eff={fmt(r['m_eff'])}")
     print("Delta_D versus Delta_coal table:")
     for r in topo: print(f"{r['lg']} delta_D={r['delta_D']:.9g} delta_coal={r['delta_coal']:.9g} topology_p={r['topology_p']:.9g} coalescent_p={r['coalescent_circular_p']:.9g} BH={r['coalescent_BH_p']:.9g} class={r['qualitative_class']}")
     print("Outputs:")
@@ -323,6 +366,8 @@ def main():
 
 class Stage7bTests(unittest.TestCase):
     def test_mrca_values_unchanged(self): assert_mrca_unchanged()
+
+    def test_existing_stage7_files_unchanged(self): stage7_file_checksums_unchanged()
 
     def test_primary_baseline_is_median_outside(self):
         rows = frozen_mrca(); keyed = pair_key(rows[0]); values = [r["mrca_time"] for r in rows if pair_key(r) == keyed and r["region_class"] == "outside"]
@@ -341,10 +386,45 @@ class Stage7bTests(unittest.TestCase):
         e = eligible([r for r in windows if r["lg"] == "LG01"])
         self.assertAlmostEqual(got["delta_coal"], contrast([r["A_res"] for r in e], [r["region_class"] == "inside" for r in e]))
 
+    def test_delta_coal_equals_stage7_delta_A(self):
+        rows = residual_rows(frozen_mrca()); windows = window_signal(rows); pairs = pair_summary(rows)
+        got = {r["lg"]: r["delta_coal"] for r in lg_summary(windows, pairs, "median")}
+        old = {r["lg"]: float(r["delta_A"]) for r in read_tsv(RES / "stage7_divergence_time_tests.tsv")}
+        for lg in LGS: self.assertAlmostEqual(got[lg], old[lg], places=8)
+
+    def test_residual_signal_differs_from_A_by_LG_constant(self):
+        rows = frozen_mrca(); residual = window_signal(residual_rows(rows)); original = original_window_signal(rows)
+        old = {lg: [] for lg in LGS}
+        for a, b in zip(residual, original):
+            if a["region_class"] != "boundary": old[a["lg"]].append(float(a["A_res"]) - float(b["A"]))
+        for lg in LGS: self.assertLess(max(old[lg]) - min(old[lg]), 1e-10)
+
+    def test_pair_sets_are_fixed_across_eligible_windows(self):
+        rows = frozen_mrca()
+        for lg in LGS:
+            windows = sorted({(r["window_id"], r["region_class"]) for r in rows if r["lg"] == lg and r["region_class"] != "boundary"})
+            sets = [set((r["population1"], r["population2"]) for r in rows if r["lg"] == lg and r["window_id"] == wid and r["region_class"] != "boundary") for wid, _ in windows]
+            self.assertTrue(all(s == sets[0] for s in sets))
+
     def test_jackknife_is_population_level(self):
         rows = residual_rows(frozen_mrca()); pops = sorted({r["population1"] for r in rows} | {r["population2"] for r in rows}); result = jackknife(rows, pops)
         self.assertEqual(len([r for r in result if r["lg"] == "LG01"]), len(pops))
         self.assertEqual(next(r for r in result if r["lg"] == "LG01")["jackknife_n"], len(pops))
+
+    def test_physical_null_p_values_are_reported(self):
+        old = {r["lg"]: r for r in read_tsv(RES / "stage7_divergence_time_tests.tsv")}
+        expected = {"LG01": .0217391304, "LG02": .0133333333, "LG07": .0112359551, "LG12": .0892857143}
+        for lg, value in expected.items(): self.assertAlmostEqual(float(old[lg]["physical_p"]), value, places=8)
+
+    def test_jackknife_ranges_positive(self):
+        rows = residual_rows(frozen_mrca()); pops = sorted({r["population1"] for r in rows} | {r["population2"] for r in rows}); result = jackknife(rows, pops)
+        for lg in LGS:
+            values = [float(r["delta_coal_leave_one_out"]) for r in result if r["lg"] == lg and r["status"] == "defined"]
+            self.assertGreater(min(values), 0)
+
+    def test_figure_is_descriptive_not_iid_inference(self):
+        source = Path(__file__).read_text()
+        self.assertNotIn("error" + "bar", source.lower()); self.assertIn("leave-one-population-out", source); self.assertIn("pair-level", source.lower())
 
     def test_circular_shift_preserves_track_length_and_mask_count(self):
         rows = [r for r in window_signal(residual_rows(frozen_mrca())) if r["lg"] == "LG01"]; e = eligible(rows); values = [r["A_res"] for r in e]; mask = [r["region_class"] == "inside" for r in e]

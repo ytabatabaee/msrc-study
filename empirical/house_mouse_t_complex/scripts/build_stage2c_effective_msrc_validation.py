@@ -350,6 +350,10 @@ def local_heterogeneity_summary(rows: list[dict[str, object]]) -> dict[str, obje
         other = {int(r["block_id"]): r for r in by_pattern[p]}
         ids = sorted(set(common) & set(other))
         stats[f"spearman_STT_{p}"] = spearman([float(common[i]["delta_block"]) for i in ids], [float(other[i]["delta_block"]) for i in ids])
+    tst = {int(r["block_id"]): r for r in by_pattern["TST"]}
+    tts = {int(r["block_id"]): r for r in by_pattern["TTS"]}
+    ids = sorted(set(tst) & set(tts))
+    stats["spearman_TST_TTS"] = spearman([float(tst[i]["delta_block"]) for i in ids], [float(tts[i]["delta_block"]) for i in ids])
     return stats
 
 
@@ -383,17 +387,21 @@ def build_figure(aggregate: dict[str, dict[str, float | str]], loo_rows: list[di
 
     ax = axes[2]
     y = list(range(len(PATTERNS)))[::-1]
+    signed_values = []
     for ypos, p in zip(y, PATTERNS):
         summary = next(r for r in bootstrap_summary_rows if r["record_type"] == "heldout_configuration" and r["configuration"] == p)
-        median = float(summary["max_abs_error_median"])
-        low = float(summary["max_abs_error_ci025"])
-        high = float(summary["max_abs_error_ci975"])
-        observed = next(float(r["max_abs_error"]) for r in loo_rows if r["analysis"] == "leave_one_configuration_out" and r["configuration"] == p)
+        median = float(summary["arrangement_support_error_median"])
+        low = float(summary["arrangement_support_error_ci025"])
+        high = float(summary["arrangement_support_error_ci975"])
+        observed = next(float(r["arrangement_support_error"]) for r in loo_rows if r["analysis"] == "leave_one_configuration_out" and r["configuration"] == p)
+        signed_values.extend((low, high, median, observed))
         ax.plot([low, high], [ypos, ypos], color=colors[p], lw=3, alpha=0.65, solid_capstyle="round")
         ax.scatter(median, ypos, s=42, color=colors[p], marker="o", edgecolor="white", linewidth=0.5, zorder=3)
         ax.scatter(observed, ypos, s=48, color="black", marker="D", edgecolor="white", linewidth=0.5, zorder=4)
-    ax.set(yticks=y, yticklabels=PATTERNS, xlabel="Maximum absolute prediction error", title="C. Aggregate error under block bootstrap")
-    ax.set_xlim(left=0); ax.grid(axis="x", alpha=0.18, lw=0.45)
+    ax.axvline(0, color="0.35", linestyle="--", linewidth=0.9, zorder=0)
+    bound = max(abs(v) for v in signed_values) * 1.12
+    ax.set(yticks=y, yticklabels=PATTERNS, xlabel="Observed - predicted arrangement support", title="C. Held-out prediction bias under block bootstrap")
+    ax.set_xlim(-bound, bound); ax.grid(axis="x", alpha=0.18, lw=0.45)
     ax.legend([plt.Line2D([], [], color="0.35", lw=3), plt.Line2D([], [], marker="o", color="none", markerfacecolor="0.35", markersize=6), plt.Line2D([], [], marker="D", color="none", markerfacecolor="black", markersize=6)], ["95% block-bootstrap CI", "bootstrap median", "aggregate observed"], frameon=False, fontsize=6.7, loc="lower right")
     for suffix in ("png", "pdf"):
         fig.savefig(FIGURES / f"stage2c_effective_msrc_validation.{suffix}", dpi=300 if suffix == "png" else None, bbox_inches="tight")
@@ -422,15 +430,15 @@ def write_report(aggregate: dict[str, dict[str, float | str]], loo_rows: list[di
     for r in loo_rows:
         if r["analysis"] in {"leave_one_configuration_out", "STT_only_prediction"}:
             lines.append(f"| {r['analysis']} | {r['configuration']} | {r['training_configurations']} | {float(r['delta_eff']):.6f} | {float(r['max_abs_error']):.6f} | {float(r['l1_distance']):.6f} | {float(r['arrangement_support_error']):+.6f} | {float(r['nonarrangement_symmetry_error']):.6f} |")
-    lines += ["", "## Linkage-aware block bootstrap", "", "Physical blocks were used as resampling units to quantify uncertainty in the aggregate held-out predictions while preserving local linkage and spatial heterogeneity. Blocks are nonoverlapping intervals aligned to the first retained 5-kb window at 5 Mb. The primary analysis uses 1-Mb blocks and 10,000 bootstrap replicates; fixed 500-kb and 2-Mb analyses use 5,000 replicates each. Each replicate samples complete blocks with replacement until the original number of blocks is restored, aggregates quartet counts, and gives the two training configurations equal weight.", "", "| block size | held-out | n_bootstrap | Delta train median [95% CI] | max error median [95% CI] | L1 median [95% CI] |", "|---:|---|---:|---|---|---|"]
+    lines += ["", "## Linkage-aware block bootstrap", "", "Physical blocks were used as resampling units to quantify uncertainty in the aggregate held-out predictions while preserving local linkage and spatial heterogeneity. Blocks are nonoverlapping intervals aligned to the first retained 5-kb window at 5 Mb. The primary analysis uses 1-Mb blocks and 10,000 bootstrap replicates; fixed 500-kb and 2-Mb analyses use 5,000 replicates each. Each replicate samples complete blocks with replacement until the original number of blocks is restored, aggregates quartet counts, and gives the two training configurations equal weight.", "", "Because absolute prediction error is bounded below by zero and is inflated by bootstrap perturbation when the original prediction is nearly exact, the main figure reports signed arrangement-support error, whose bootstrap intervals directly assess systematic prediction bias.", "", "| block size | held-out | n_bootstrap | Delta train median [95% CI] | signed arrangement-support error median [95% CI] | max error median [95% CI] | L1 median [95% CI] |", "|---:|---|---:|---|---|---|---|"]
     for r in bootstrap_summary_rows:
         if r["record_type"] == "heldout_configuration":
-            lines.append(f"| {r['block_size_bp']} | {r['configuration']} | {r['n_bootstrap']} | {float(r['delta_train_median']):.6f} [{float(r['delta_train_ci025']):.6f}, {float(r['delta_train_ci975']):.6f}] | {float(r['max_abs_error_median']):.6f} [{float(r['max_abs_error_ci025']):.6f}, {float(r['max_abs_error_ci975']):.6f}] | {float(r['l1_median']):.6f} [{float(r['l1_ci025']):.6f}, {float(r['l1_ci975']):.6f}] |")
+            lines.append(f"| {r['block_size_bp']} | {r['configuration']} | {r['n_bootstrap']} | {float(r['delta_train_median']):.6f} [{float(r['delta_train_ci025']):.6f}, {float(r['delta_train_ci975']):.6f}] | {float(r['arrangement_support_error_median']):+.6f} [{float(r['arrangement_support_error_ci025']):+.6f}, {float(r['arrangement_support_error_ci975']):+.6f}] | {float(r['max_abs_error_median']):.6f} [{float(r['max_abs_error_ci025']):.6f}, {float(r['max_abs_error_ci975']):.6f}] | {float(r['l1_median']):.6f} [{float(r['l1_ci025']):.6f}, {float(r['l1_ci975']):.6f}] |")
     lines += ["", "## Local spatial heterogeneity diagnostic", "", "A constant Delta is not intended to predict every linked physical block. For each 1-Mb block, `Delta_block = (3 q_arr - 1)/2` is retained without truncation; negative values therefore indicate local model departure rather than an invalid estimate. The bootstrap is the aggregate robustness analysis, while these block estimates describe local heterogeneity.", "", "| configuration | Delta range | median | IQR | fraction < 0 | fraction > 1 |", "|---|---|---:|---|---:|---:|"]
     for p in PATTERNS:
         s = local_stats[p]
         lines.append(f"| {p} | [{s['range'][0]:.6f}, {s['range'][1]:.6f}] | {s['median']:.6f} | [{s['iqr'][0]:.6f}, {s['iqr'][1]:.6f}] | {s['fraction_negative']:.3f} | {s['fraction_gt1']:.3f} |")
-    lines += ["", f"Spearman correlations of block Delta estimates: STT/TST = {local_stats['spearman_STT_TST']:.4f}; STT/TTS = {local_stats['spearman_STT_TTS']:.4f}.", "", "No conventional multinomial p-values are reported: induced quartets reuse individuals, windows, and linked genomic segments, so they are not independent replicates. The old leave-one-single-block-out table is retained for provenance, but it is not interpreted as the preferred robustness analysis.", "", "The held-out validation is a low-dimensional effective MSRC demonstration. TTS has a modest non-arrangement asymmetry (~0.031), indicating departure from the simplest symmetric model. The result does not establish that the entire mouse genealogy is generated solely by MSRC, and it does not separate the biological switching time and migration parameters.", "", mouse_tip_check]
+    lines += ["", f"Pairwise Spearman correlations of block-specific Delta estimates were {local_stats['spearman_STT_TST']:.3f} for STT/TST, {local_stats['spearman_STT_TTS']:.3f} for STT/TTS, and {local_stats['spearman_TST_TTS']:.3f} for TST/TTS, indicating that some spatial variation in arrangement-associated genealogy strength is shared across configurations.", "", "No conventional multinomial p-values are reported: induced quartets reuse individuals, windows, and linked genomic segments, so they are not independent replicates. The old leave-one-single-block-out table is retained for provenance, but it is not interpreted as the preferred robustness analysis.", "", "The held-out validation is a low-dimensional effective MSRC demonstration. TTS has a modest non-arrangement asymmetry (~0.031), indicating departure from the simplest symmetric model. The result does not establish that the entire mouse genealogy is generated solely by MSRC, and it does not separate the biological switching time and migration parameters.", "", mouse_tip_check]
     report.write_text("\n".join(lines) + "\n")
     return report
 
@@ -479,7 +487,7 @@ def main() -> None:
         if r["record_type"] == "summary": print(r["block_size_bp"], r["heldout_configuration"], f(float(r["max_abs_error"])), f(float(r["l1_distance"])))
     print("\nLocal heterogeneity summary:")
     for p in PATTERNS: print(p, local_stats[p])
-    print("Spearman STT/TST", f(local_stats["spearman_STT_TST"]), "STT/TTS", f(local_stats["spearman_STT_TTS"]))
+    print("Spearman STT/TST", f(local_stats["spearman_STT_TST"]), "STT/TTS", f(local_stats["spearman_STT_TTS"]), "TST/TTS", f(local_stats["spearman_TST_TTS"]))
     print("\nOutputs:", RESULTS / "stage2c_effective_msrc_validation.tsv", RESULTS / "stage2c_effective_msrc_block_cv.tsv", RESULTS / "stage2c_effective_msrc_block_bootstrap.tsv", RESULTS / "stage2c_effective_msrc_bootstrap_summary.tsv", RESULTS / "stage2c_effective_msrc_local_heterogeneity.tsv", report, png, pdf)
 
 
