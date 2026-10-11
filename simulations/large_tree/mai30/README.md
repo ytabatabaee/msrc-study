@@ -47,5 +47,12 @@ distributions without pairing independent realizations. Complete 500-tree
 comparisons currently cover replicates 042 and 007; 005 and 074 remain marked
 as partial 20-tree smoke collections.
 
+The corrected strict RF analysis is documented in
+`analysis/results/MAI30_RF_CORRECTION_REPORT.md`. It produces explicit
+300-replicate matching and validation manifests, distributional RF metrics,
+within-pool baselines, and corrected CSV/TSV outputs. The 300-replicate MSRC
+analysis remains incomplete because only six complete MSRC collections are
+currently available.
+
 Read `DATASET_AUDIT.md`, `SIMULATOR_COMPATIBILITY.md`, and
 `analysis/results/MAI30_PILOT_RESULTS.md` for the current gates and results.
