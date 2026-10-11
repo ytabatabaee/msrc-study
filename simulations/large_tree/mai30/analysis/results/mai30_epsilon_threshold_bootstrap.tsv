@@ -1,0 +1,7 @@
+replicate	treatment	candidate_quartets	bootstrap_reversal_fraction_median	bootstrap_reversal_fraction_q05	bootstrap_reversal_fraction_q95	threshold_q05	threshold_median	threshold_q95
+007	msrc_moderate_suppression	20	0.875	0.7475	1.0	0.009945544554455456	0.22147147147147128	0.7647058823529415
+007	msrc_no_suppression	20	0.8	0.6975	0.95	0.009708737864077678	0.23333333333333284	0.8124999999999997
+007	msrc_strong_suppression	20	0.8	0.7	0.95	0.004995098039215691	0.20550527903469035	0.8048780487804876
+042	msrc_moderate_suppression	0	0					
+042	msrc_no_suppression	0	0					
+042	msrc_strong_suppression	0	0					

@@ -30,5 +30,14 @@ sensitivity configuration. The resumable runner, output contract, ASTRAL
 analysis, and preliminary figure scripts are documented in
 `analysis/results/MAI30_SCALED_WF_PILOT_RESULTS.md`.
 
+The epsilon-mixture analysis is implemented for the six matched complete
+source pools from replicates 007 and 042. See
+`analysis/results/MAI30_EPSILON_RESULTS.md` and
+`analysis/results/MAI30_EPSILON_THRESHOLD_ANALYSIS.md`. The replicate-042
+CULength saturation audit is in
+`analysis/results/MAI30_BRANCH_LENGTH_AUDIT.md`. Original-scale
+`wf_diffusion` configurations are prepared but not executed under
+`datasets/configs/mai30_diffusion_experimental/`.
+
 Read `DATASET_AUDIT.md`, `SIMULATOR_COMPATIBILITY.md`, and
 `analysis/results/MAI30_PILOT_RESULTS.md` for the current gates and results.
