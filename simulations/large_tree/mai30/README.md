@@ -39,5 +39,13 @@ CULength saturation audit is in
 `wf_diffusion` configurations are prepared but not executed under
 `datasets/configs/mai30_diffusion_experimental/`.
 
+The two primary gene-tree comparisons are summarized in
+`analysis/results/MAI30_MSRC_COMPARISON_RESULTS.md`. The reproducible script
+`analysis/scripts/summarize_msrc_discordance.py` measures MSRC discordance
+from the true species tree and compares MSRC and original Mai gene-tree
+distributions without pairing independent realizations. Complete 500-tree
+comparisons currently cover replicates 042 and 007; 005 and 074 remain marked
+as partial 20-tree smoke collections.
+
 Read `DATASET_AUDIT.md`, `SIMULATOR_COMPATIBILITY.md`, and
 `analysis/results/MAI30_PILOT_RESULTS.md` for the current gates and results.
