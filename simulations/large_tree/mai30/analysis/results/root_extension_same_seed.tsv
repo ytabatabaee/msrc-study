@@ -1,0 +1,5 @@
+condition	replicate	root_extension_coalescent_units	root_extension_generations	seed	n_trees	newick_sha256	multiple_lineages_at_extension_endpoint
+outgroup.0.species.1.5.genes.1.5	042	5	344780	424242	100	422c650ebbf4a8fecb21bc49daf1f24075ea7cc50ae4b2e11a1723ff00f02921	not applicable: ordinary MSC has no finite endpoint
+outgroup.0.species.1.5.genes.1.5	042	10	689560	424242	100	422c650ebbf4a8fecb21bc49daf1f24075ea7cc50ae4b2e11a1723ff00f02921	not applicable: ordinary MSC has no finite endpoint
+outgroup.0.species.1.5.genes.1.5	042	20	1379120	424242	100	422c650ebbf4a8fecb21bc49daf1f24075ea7cc50ae4b2e11a1723ff00f02921	not applicable: ordinary MSC has no finite endpoint
+outgroup.0.species.1.5.genes.1.5	042	40	2758240	424242	100	422c650ebbf4a8fecb21bc49daf1f24075ea7cc50ae4b2e11a1723ff00f02921	not applicable: ordinary MSC has no finite endpoint
