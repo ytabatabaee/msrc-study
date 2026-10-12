@@ -53,6 +53,34 @@ marker-level, pairwise, window-integration, source-manifest, and provenance
 outputs preserve the missing values explicitly. The frozen Stage 4A–6C
 results and manifests are unchanged. Validation: 15 tests passed.
 
+## Fire-ant final targeted recombination recovery
+
+The final recovery attempt followed only the Wang (2013) -> Pracana (2017) ->
+Stolle assembly-correction -> Ross (2018) lineage. The Stolle 2019 primary
+data index yielded `S.inv.AGP.txt`, which orders and orients 31 accessioned
+`GCF_000188075.1`/Si_gnG scaffold components on an optical `chr16`
+pseudomolecule. This is a validated historical scaffold-to-optical-axis
+correspondence and is preserved in
+`data/fire_ants_chr16/processed/final_historical_chr16_scaffold_mapping.tsv`.
+
+It does not resolve the required marker transfer: Wang's 27,934 rows use
+`Si_gnF.scaffold..._nt...` identifiers and contain no marker sequences, while
+the recovered AGP uses `NW_...` GCF accessioned scaffolds. No validated
+Si_gnF-to-Si_gnG/Si_gnGA correspondence or sequence alignment was available.
+Pracana's paper documents ALLMAPS and seven Wang maps but the cited public
+supplement/data record did not expose the ALLMAPS input/order files. Ross and
+Shoemaker's 2018 source supplies a 15-locus pedigree panel and pairwise
+supergene measurements, not a 2,796-marker RAD map; those pairwise values lack
+validated physical intervals on the frozen axis.
+
+The final stage produces zero newly mapped Wang markers, zero cM/Mb intervals,
+zero supported chromosome-16 windows out of 96, no recombination associations,
+and no recombination figures. Stage 4A–6C outputs and checksums remain frozen.
+The classification is
+`QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`. See
+`empirical/fire_ants_chr16/results/final_recombination_recovery_report.md`,
+the source manifest, and `scripts/08_final_recombination_recovery.py`.
+
 ## Fire-ant chromosome 16 Stage 6C SU branch-length sensitivity
 
 Stage 6C complete — mapped individual-level ASTRAL4/CASTLES-II SU branch-length sensitivity. The exact 267-tip mapping was recovered from Stolle et al. 2022 Supplementary Data 1 without guessing. Original RAxML local-tree branch lengths were preserved, fixed-topology background versus all-window CULength and SULength values were estimated from the same individual-level inputs, and CU/SU changes were compared. Stage 6C supersedes Stage 6B for direct CU-vs-SU comparison because CU and SU are estimated from identical individual-level inputs and the identical fixed background topology. Stage 6B remains an independent grouped/modal-topology CU sensitivity. Stage 5 remains frozen. See `results/stage6c_su_summary.txt`, `results/stage6c_su_branch_length_comparison.tsv`, and `results/stage6c_cu_vs_su_comparison.tsv`.

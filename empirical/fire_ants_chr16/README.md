@@ -16,6 +16,17 @@ Stage 4B complete — spatial-null inference. It implements the frozen exact cir
 
 Stage 5 complete — frozen for manuscript use.
 
+Final targeted recombination recovery complete. Run
+`python3 empirical/fire_ants_chr16/scripts/08_final_recombination_recovery.py`
+from the repository root to regenerate the historical scaffold mapping,
+explicit missing-value window integration, provenance manifest, report, and
+regression checks. The Stolle 2019 AGP archive validates 31 historical
+Si_gnG/GCF scaffold components on an optical chr16 axis, but it does not
+validate Wang's Si_gnF marker identifiers against the frozen Si_gnGA axis.
+The final classification remains
+`QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`; see
+`results/final_recombination_recovery_report.md`.
+
 ## Biological system
 
 The focal system is the fire-ant social chromosome described in:

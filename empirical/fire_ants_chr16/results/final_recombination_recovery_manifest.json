@@ -1,0 +1,17 @@
+{
+  "classification": "QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED",
+  "historical_agp_chr16_components": 31,
+  "wang_marker_rows": 27937,
+  "wang_markers_mapped_to_target_chr16": 0,
+  "windows": 213,
+  "chr16_windows": 96,
+  "target_rate_intervals": 0,
+  "stage6c_manifest_sha256": "b0c319ea77539f2cf32fbe2a9f5c074ab2e8c4c8546385de4e55786c2dff993c",
+  "agp_zip_sha256": "56d2686ac7b072d0bf5e35f99a6c58d218230efdd9d8405ddd5ccfdc9e2d87dd",
+  "outputs": [
+    "data/fire_ants_chr16/processed/final_historical_chr16_scaffold_mapping.tsv",
+    "data/fire_ants_chr16/processed/final_recombination_window_integration.tsv",
+    "data/fire_ants_chr16/metadata/final_recombination_source_manifest.tsv",
+    "empirical/fire_ants_chr16/results/final_recombination_recovery_report.md"
+  ]
+}
