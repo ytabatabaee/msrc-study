@@ -22,6 +22,37 @@ Manuscript-ready outputs: `empirical/fire_ants_chr16/results/fire_ants_final_sum
 
 Status: complete / frozen unless manuscript review requires changes.
 
+## Fire-ant chromosome 16 recombination recovery audit
+
+Completed the expanded recombination-source audit in
+`empirical/fire_ants_chr16/scripts/07_recombination_validation.py`. Wang et al.
+(2013) Supplementary Tables 8–14 yielded 27,934 marker rows across seven
+families, with `Si_gnF` scaffold coordinates, `lg1`–`lg16` linkage-group
+labels, and cM positions. The prior zero-marker chr16 result was an assembly/
+correspondence failure: the tables have no marker sequences, the linkage-group
+labels cannot be equated to chromosome numbers, and the upstream
+`linkage_map_supergene.txt` correspondence to the Stolle `Si_gnGA`/`chr16`
+axis is absent from both the local snapshot and public upstream repository.
+
+Ross and Shoemaker (2018) were added as a direct pedigree route. Their article
+and supplementary files document pairwise recombination fractions among
+`C294`, `Gp-9`, and `i_126` from 101 polygyne queen progenies, including rare
+SB/Sb exchange within the largest inversion. These are retained separately as
+pairwise measurements because no validated physical coordinates or machine-
+readable numeric fraction table was recovered for projection to the frozen
+axis; they do not support cM/Mb intervals. The Dryad raw workbook is publicly
+listed but its direct stream returned HTTP 403 in this environment.
+
+Yan et al. (2020) supplementary files and the PRJNA421367 route were audited;
+the published LD/inversion evidence does not provide a numeric LD matrix or
+cM/Mb track. The status remains
+`QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`: zero Wang markers map to
+target chr16, zero existing MSRC windows have a supported quantitative rate,
+and no recombination figures or association tests were generated. New
+marker-level, pairwise, window-integration, source-manifest, and provenance
+outputs preserve the missing values explicitly. The frozen Stage 4A–6C
+results and manifests are unchanged. Validation: 15 tests passed.
+
 ## Fire-ant chromosome 16 Stage 6C SU branch-length sensitivity
 
 Stage 6C complete — mapped individual-level ASTRAL4/CASTLES-II SU branch-length sensitivity. The exact 267-tip mapping was recovered from Stolle et al. 2022 Supplementary Data 1 without guessing. Original RAxML local-tree branch lengths were preserved, fixed-topology background versus all-window CULength and SULength values were estimated from the same individual-level inputs, and CU/SU changes were compared. Stage 6C supersedes Stage 6B for direct CU-vs-SU comparison because CU and SU are estimated from identical individual-level inputs and the identical fixed background topology. Stage 6B remains an independent grouped/modal-topology CU sensitivity. Stage 5 remains frozen. See `results/stage6c_su_summary.txt`, `results/stage6c_su_branch_length_comparison.tsv`, and `results/stage6c_cu_vs_su_comparison.tsv`.

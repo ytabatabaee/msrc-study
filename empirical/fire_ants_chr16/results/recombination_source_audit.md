@@ -18,7 +18,17 @@
 
 A documented Wang `Si_gnF` scaffold to frozen Stolle `Si_gnGA`/`gng20170922wFex.fa` chromosome-16 placement table was not recovered. The upstream Stolle README mentions `linkage_map_supergene.txt` and `2018-05-11-linkage-map/results/linkage_map_supergene.txt`, but that file is not committed in the local frozen snapshot or in the public upstream GitHub tree inspected for this analysis. Therefore Route A did not produce target-coordinate cM/Mb values.
 
-## Route B: Yan et al. 2020 physical-coordinate LD
+## Route B: Ross and Shoemaker 2018 pedigree measurements
+
+- Paper: Ross K.G. & Shoemaker D.D. Unexpected patterns of segregation distortion at a selfish supergene in the fire ant Solenopsis invicta. BMC Genetics 19, 101 (2018).
+- DOI: 10.1186/s12863-018-0685-9; Dryad: https://doi.org/10.5061/dryad.hh6342f
+- Source assembly: `Si_gnH_C3` for the marker-location figure.
+- Study design: 101 polygyne queen progenies, with inferred egg haplotypes and direct pairwise pedigree recombination fractions.
+- Supergene-linked marker loci: `C294`, `Gp-9`, and `i_126`; all three pairwise comparisons are reported as direct recombination-fraction measurements.
+- Retrieved files: publisher article, Additional files 2, 4, and 6. The Dryad workbook is listed as `Ross & Shoemaker- DRYAD raw data.xlsx`; its direct stream returned HTTP 403 in this environment, so raw genotypes were not silently treated as recovered.
+- Interpretation: these are pairwise SB/Sb pedigree fractions and historical evidence of rare exchange. They are not a cM/Mb map because marker coordinates were not validated onto the frozen `Si_gnGA` axis and the accessible source set did not yield machine-readable numeric values for the plotted fractions.
+
+## Route C: Yan et al. 2020 physical-coordinate LD
 
 - Paper: Yan Z., Martin S.H., Gotzek D. et al. Evolution of a supergene that regulates a trans-species social polymorphism. Nature Ecology & Evolution 4, 240-249 (2020).
 - DOI: 10.1038/s41559-019-1081-1
@@ -35,4 +45,4 @@ Yan et al. report physical-coordinate LD across chr16 in Extended Data Fig. 5 an
 
 ## Evidence hierarchy conclusion
 
-`QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`. Wang 2013 remains direct experimental linkage support in original coordinates, and Yan 2020 remains published physical-coordinate inversion/LD evidence, but neither yielded a reproducible quantitative chr16 recombination/LD track aligned to the frozen MSRC coordinate axis.
+`QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`. Wang 2013 remains direct experimental linkage support in original coordinates, Ross and Shoemaker add direct pairwise pedigree fractions among three supergene-linked markers, and Yan 2020 remains published physical-coordinate inversion/LD evidence. None yielded a reproducible quantitative chr16 cM/Mb track aligned to the frozen MSRC coordinate axis.

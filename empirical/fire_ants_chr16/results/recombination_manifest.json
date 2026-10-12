@@ -31,13 +31,17 @@
     "coordinate_start": 11680438
   },
   "output_hashes": {
+    "data/fire_ants_chr16/metadata/recombination_source_manifest.tsv": "c224970aa8ca8f1644b74d24024ef93d577c74bb8706fdf972baba72435c5b87",
     "data/fire_ants_chr16/processed/recombination_map.tsv": "032488b32f8a15fbb15282eca8d04d69f09f1eba7f116cb39dfa670fd4b0d836",
+    "data/fire_ants_chr16/processed/recombination_marker_level_recovery.tsv": "b925598b3a10327d25a763e2f83ed02c8e87761afd86cb4fc496782970e09fb4",
+    "data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv": "d6b9083200be0fafbc840401d978bf8c7948d790244c1fe443b0f8ef6b0b2b90",
+    "data/fire_ants_chr16/processed/recombination_window_integration.tsv": "eb541edeea0d4db7e0f3ad3c943ac80b519b2c41623c01a26aabeb9ba7704926",
     "empirical/fire_ants_chr16/figures/fire_ants_recombination_genealogy_schematic_archived.pdf": "2e6f247b4931f3f6b213aa09f95bee026d573ec720d82501da2fefbf48d421aa",
     "empirical/fire_ants_chr16/figures/fire_ants_recombination_genealogy_schematic_archived.png": "cec5bdd332dc0a9241e979841df00a8e4e269b20155b7fb3a150a134260322a9",
     "empirical/fire_ants_chr16/results/recombination_coordinate_audit.md": "e5aae01f5f94daefbb13202a8038441eac997f540e78f93d5d1e85c46a2fdec0",
     "empirical/fire_ants_chr16/results/recombination_figure_caption.txt": "41d62532702ee5d7fac8c030af4edd4f35c8fd3ae430a670c2788ea2f89e656f",
-    "empirical/fire_ants_chr16/results/recombination_report.md": "91d83762ada7abd55f486639c372416420b9790e52a0d5077a58e0430249e10b",
-    "empirical/fire_ants_chr16/results/recombination_source_audit.md": "e13684eb5fdd9fda163779706800bdf46b2ef0258cd8488b50ac602161c14894",
+    "empirical/fire_ants_chr16/results/recombination_report.md": "1d303248d4749d2501c6229d62c5cae48b55dbee7b9152d2a3ad079a9be4cd6b",
+    "empirical/fire_ants_chr16/results/recombination_source_audit.md": "26ba2d5bdc4c3c1b3830218515cc2fba2267fceb155a8686007bca356fb9f257",
     "empirical/fire_ants_chr16/results/recombination_summary.tsv": "fe6d6e3ade490bc4ea1b584b3a05b7f64c2329f957b120dbf0279487e39e53d6"
   },
   "prohibited_actions": {
@@ -57,6 +61,13 @@
     "start_bp": 12612565
   },
   "quantitative_track_generated": false,
+  "ross_pairwise_numeric_table_machine_readable": false,
+  "ross_pairwise_recombination_measurements_recovered": true,
+  "ross_supergene_marker_pairs": [
+    "C294/Gp-9",
+    "Gp-9/i_126",
+    "C294/i_126"
+  ],
   "route_a_cm_per_mb_calculated": false,
   "route_a_wang_markers_mapped_to_chr16": 0,
   "route_a_wang_markers_parsed": 27934,
@@ -70,9 +81,12 @@
     "supplementary_xls": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41559-019-1081-1/MediaObjects/41559_2019_1081_MOESM2_ESM.xls"
   },
   "script_hash": {
-    "empirical/fire_ants_chr16/scripts/07_recombination_validation.py": "966dd911582998512ac11bda1726eb855c30369fc7aef5cd9b293e15d75c9a4e"
+    "empirical/fire_ants_chr16/scripts/07_recombination_validation.py": "7906cbba5732ffef6b4b73a8c26a7c60930152e61cf81ec1445056c1af2cb322"
   },
   "source_files": {
+    "data/fire_ants_chr16/raw/recombination_sources/ross_shoemaker_2018/additional_file_2_marker_characteristics.pdf": "4f1c00f45bb15dc4947f46527298d5048fe0f73be2c0a4a127dca05ce1ded41e",
+    "data/fire_ants_chr16/raw/recombination_sources/ross_shoemaker_2018/additional_file_4_protocol.pdf": "9cd2738cb9784b428d1a2ce350f9155d4395df3b584d806b50ab4feb34341a74",
+    "data/fire_ants_chr16/raw/recombination_sources/ross_shoemaker_2018/additional_file_6_text_s2.pdf": "9d6a0f90d3fbcfc731a32e98effe4193b7a6c93c657514191cea69e5aacd63dd",
     "data/fire_ants_chr16/raw/recombination_sources/wang_2013_nature/41586_2013_BFnature11832_MOESM97_ESM.pdf": "70b09fed688ece03cd0d84dc45223f5f6bba64fbb8d1805d57cbe2ff758f2e0b",
     "data/fire_ants_chr16/raw/recombination_sources/wang_2013_nature/41586_2013_BFnature11832_MOESM98_ESM.zip": "155f1a9576cf11085c206fcc706ba828683e6a20c18cdfe413ef4a5059ef8613",
     "data/fire_ants_chr16/raw/recombination_sources/yan_2020/41559_2019_1081_MOESM1_ESM.pdf": "18e829cfa04af4597f1b1c0826f449a03508b3aaf7276723f3bc1ef4428bc4de",
@@ -84,6 +98,8 @@
     "content_length_bytes": 1503782377,
     "url": "https://github.com/wurmlab/wurmlab.github.io/raw/master/data/supergene_introgression/gt.vcf.gz/gt.vcf.gz"
   },
+  "window_level_rates_available": false,
+  "window_level_supported_count": 0,
   "yan_inversion_coordinates": [
     {
       "end_bp": 24031576,

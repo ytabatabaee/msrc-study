@@ -46,6 +46,7 @@ METADATA = DATA / "metadata"
 RAW_RECOMB = DATA / "raw" / "recombination_sources"
 RAW_WANG = RAW_RECOMB / "wang_2013_nature"
 RAW_YAN = RAW_RECOMB / "yan_2020"
+RAW_ROSS = RAW_RECOMB / "ross_shoemaker_2018"
 
 REGION_MANIFEST = METADATA / "region_manifest.tsv"
 WINDOW_SUPPORT = PROCESSED / "stage4a_window_quartet_support.tsv"
@@ -62,6 +63,10 @@ RECOMB_INTERVALS_CHR16 = PROCESSED / "recombination_intervals_chr16.tsv"
 RECOMB_BINNED_CHR16 = PROCESSED / "recombination_binned_chr16.tsv"
 YAN_LD = PROCESSED / "yan2020_chr16_ld.tsv"
 YAN_LD_BINNED = PROCESSED / "yan2020_chr16_ld_binned.tsv"
+MARKER_LEVEL_RECOVERY = PROCESSED / "recombination_marker_level_recovery.tsv"
+PAIRWISE_RECOVERY = PROCESSED / "recombination_pairwise_fractions.tsv"
+WINDOW_INTEGRATION = PROCESSED / "recombination_window_integration.tsv"
+SOURCE_MANIFEST = METADATA / "recombination_source_manifest.tsv"
 
 RECOMB_SUMMARY = RESULTS / "recombination_summary.tsv"
 SOURCE_AUDIT = RESULTS / "recombination_source_audit.md"
@@ -104,6 +109,12 @@ YAN_INVERSIONS = [
 ]
 ANALYSIS_DATE = "2026-10-04"
 STATUS = "QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED"
+ROSS_CITATION = "Ross K.G. & Shoemaker D.D. Unexpected patterns of segregation distortion at a selfish supergene in the fire ant Solenopsis invicta. BMC Genetics 19, 101 (2018)."
+ROSS_DOI = "10.1186/s12863-018-0685-9"
+ROSS_ARTICLE_URL = "https://doi.org/10.1186/s12863-018-0685-9"
+ROSS_DRYAD_URL = "https://doi.org/10.5061/dryad.hh6342f"
+ROSS_SOURCE_ASSEMBLY = "Si_gnH_C3"
+ROSS_SUPERGENE_MARKERS = ("C294", "Gp-9", "i_126")
 
 
 @dataclass(frozen=True)
@@ -260,6 +271,117 @@ def write_recombination_map(markers: list[Marker]) -> None:
     write_tsv(RECOMB_MAP, rows, ["marker", "family", "linkage_group", "original_assembly", "scaffold", "original_position_bp", "genetic_position_cm", "source", "source_table", "coordinate_status"])
 
 
+def write_source_manifest() -> None:
+    rows = [
+        {"source_study": "Wang et al. 2013", "source_type": "direct linkage map", "accession_or_identifier": "PRJNA260462; DOI:10.1038/nature11832", "url": WANG_NATURE_URL, "assembly": "Si_gnF scaffold assembly", "data_recovered": "Supplementary Tables 8-14", "status": "retrieved", "usable_for_target_cm_mb": "no", "reason": "27,934 rows have scaffold positions and cM but no marker sequences and no validated Si_gnF-to-Si_gnGA chr16 placement table"},
+        {"source_study": "Ross and Shoemaker 2018", "source_type": "pedigree recombination fractions", "accession_or_identifier": f"DOI:{ROSS_DOI}; Dryad:10.5061/dryad.hh6342f", "url": ROSS_ARTICLE_URL, "assembly": ROSS_SOURCE_ASSEMBLY, "data_recovered": "article; Additional files 2, 4, 6; Dryad workbook listed", "status": "article and supplementary PDFs retrieved; Dryad workbook direct stream 403", "usable_for_target_cm_mb": "no", "reason": "three supergene marker-pair fractions are direct pedigree measurements, but no validated per-marker physical coordinates on frozen chr16"},
+        {"source_study": "Yan et al. 2020", "source_type": "historical LD and inversion evidence", "accession_or_identifier": "PRJNA421367; DOI:10.1038/s41559-019-1081-1", "url": YAN_URL, "assembly": "SB reference coordinates", "data_recovered": "article; Supplementary Tables 1-5; Supplementary Information", "status": "retrieved", "usable_for_target_cm_mb": "no", "reason": "published LD figure and inversion coordinates are not a numeric cM/Mb map; supplementary tables lack the LD matrix"},
+        {"source_study": "Stolle et al. 2022 upstream analysis", "source_type": "target coordinate provenance", "accession_or_identifier": "wurmlab/2021-fire-ant-social-supergene-introgression", "url": "https://github.com/wurmlab/2021-fire-ant-social-supergene-introgression", "assembly": "Si_gnGA / gng20170922wFex.fa workflow axis", "data_recovered": "window_coordinates and README files", "status": "retrieved", "usable_for_target_cm_mb": "no", "reason": "README references linkage_map_supergene.txt but the file is absent from the public repository tree and local snapshot"},
+    ]
+    write_tsv(SOURCE_MANIFEST, rows, ["source_study", "source_type", "accession_or_identifier", "url", "assembly", "data_recovered", "status", "usable_for_target_cm_mb", "reason"])
+
+
+def write_pairwise_recovery() -> None:
+    rows = []
+    for left, right, region, note in [
+        ("C294", "Gp-9", "within largest inversion", "lowest reported pairwise c; direct pedigree estimate in Fig. 1 / Additional file 6"),
+        ("Gp-9", "i_126", "across centromere-proximal supergene span", "direct pedigree estimate; lower than 0.5 but higher than C294/Gp-9"),
+        ("C294", "i_126", "across supergene span", "direct pedigree estimate; lower than 0.5; exact value retained in source figure/text"),
+    ]:
+        rows.append({
+            "source_study": "Ross and Shoemaker 2018",
+            "family_or_cross": "101 polygyne queen progenies; jointly segregating progenies per pair vary",
+            "genotype_class": "SB/Sb queen meioses; egg haplotypes",
+            "marker_a": left,
+            "marker_b": right,
+            "source_assembly": ROSS_SOURCE_ASSEMBLY,
+            "original_coordinate_a": "",
+            "original_coordinate_b": "",
+            "recombination_fraction": "",
+            "recombination_fraction_status": "reported_directly_but_numeric_value_not_machine-readable_in_retrieved_sources",
+            "map_distance_cm": "",
+            "target_chromosome": "",
+            "target_physical_interval": "",
+            "mapping_status": "pairwise_only_unmapped_to_frozen_axis",
+            "exclusion_reason": "No validated physical coordinates or marker sequence-to-Si_gnGA placement recovered",
+            "source_location": "Fig. 1 and Additional file 6 Text S2",
+            "notes": f"{region}; {note}. Do not convert to cM or cM/Mb without the numeric fraction and a validated physical interval.",
+        })
+    write_tsv(PAIRWISE_RECOVERY, rows, ["source_study", "family_or_cross", "genotype_class", "marker_a", "marker_b", "source_assembly", "original_coordinate_a", "original_coordinate_b", "recombination_fraction", "recombination_fraction_status", "map_distance_cm", "target_chromosome", "target_physical_interval", "mapping_status", "exclusion_reason", "source_location", "notes"])
+
+
+def write_marker_level_recovery(markers: list[Marker]) -> None:
+    fields = ["source_study", "family_or_cross", "genotype_class", "original_linkage_group", "original_marker_id", "original_coordinate", "source_assembly", "target_chromosome", "target_physical_coordinate", "genetic_position_cm", "mapping_quality", "mapping_status", "exclusion_reason"]
+    rows = []
+    for m in markers:
+        rows.append({
+            "source_study": "Wang et al. 2013",
+            "family_or_cross": m.family,
+            "genotype_class": "family-specific haploid male map; SB/Sb class not separately encoded in table",
+            "original_linkage_group": m.linkage_group,
+            "original_marker_id": m.marker,
+            "original_coordinate": f"{m.scaffold}_nt{m.original_position}",
+            "source_assembly": "Si_gnF scaffold assembly",
+            "target_chromosome": "",
+            "target_physical_coordinate": "",
+            "genetic_position_cm": str(m.genetic_position_cm),
+            "mapping_quality": "unresolved",
+            "mapping_status": "unmapped_no_validated_scaffold_correspondence",
+            "exclusion_reason": "No marker sequence and no validated Si_gnF-to-Si_gnGA placement table; linkage-group number cannot be equated to chromosome number",
+        })
+    for marker in ROSS_SUPERGENE_MARKERS:
+        rows.append({
+            "source_study": "Ross and Shoemaker 2018",
+            "family_or_cross": "101 polygyne queen progenies",
+            "genotype_class": "SB/Sb queen meioses; egg haplotypes",
+            "original_linkage_group": "",
+            "original_marker_id": marker,
+            "original_coordinate": "",
+            "source_assembly": ROSS_SOURCE_ASSEMBLY,
+            "target_chromosome": "",
+            "target_physical_coordinate": "",
+            "genetic_position_cm": "",
+            "mapping_quality": "pairwise-only",
+            "mapping_status": "marker_identity_recovered_no_validated_coordinate",
+            "exclusion_reason": "Marker is used in direct pairwise pedigree fractions, but the retrieved source set does not provide a coordinate that can be validated on the frozen Si_gnGA axis",
+        })
+    write_tsv(MARKER_LEVEL_RECOVERY, rows, fields)
+
+
+def write_window_integration() -> None:
+    regions = load_regions()
+    support = {r["window_index"]: r for r in read_tsv(WINDOW_SUPPORT)}
+    windows = read_tsv(PROCESSED / "stage1_window_index.tsv")
+    fields = ["window_id", "chromosome", "start", "end", "supergene_classification", "available_recombination_estimate", "recombination_estimate_type", "supporting_marker_count", "supporting_physical_interval", "distance_to_nearest_marker", "coverage_or_reliability_flag", "q_species", "q_haplotype", "q_third", "quartet_discordance_D", "topology_support_statistics", "branch_length_statistics"]
+    rows = []
+    for w in windows:
+        s = support.get(w["window_index"], {})
+        if w["chrom"] == "chr16":
+            cls = w["region"]
+        else:
+            cls = "outside_chr16_scope"
+        rows.append({
+            "window_id": w["window_index"],
+            "chromosome": w["chrom"],
+            "start": w["start"],
+            "end": w["end"],
+            "supergene_classification": cls,
+            "available_recombination_estimate": "",
+            "recombination_estimate_type": "missing_no_target-coordinate_interval",
+            "supporting_marker_count": "0",
+            "supporting_physical_interval": "",
+            "distance_to_nearest_marker": "",
+            "coverage_or_reliability_flag": "uncovered_quantitative_recombination",
+            "q_species": s.get("q_S", ""),
+            "q_haplotype": s.get("q_H", ""),
+            "q_third": s.get("q_3", ""),
+            "quartet_discordance_D": s.get("D", ""),
+            "topology_support_statistics": "q_S,q_H,q_3 from Stage 4A",
+            "branch_length_statistics": "available only in aggregate Stage 6/6C outputs; no window-level branch statistic",
+        })
+    write_tsv(WINDOW_INTEGRATION, rows, fields)
+
+
 def marker_summary(markers: list[Marker]) -> dict[str, object]:
     return {
         "n_markers": len(markers),
@@ -376,7 +498,17 @@ def write_source_audit(markers: list[Marker]) -> None:
 
         A documented Wang `Si_gnF` scaffold to frozen Stolle `Si_gnGA`/`gng20170922wFex.fa` chromosome-16 placement table was not recovered. The upstream Stolle README mentions `linkage_map_supergene.txt` and `2018-05-11-linkage-map/results/linkage_map_supergene.txt`, but that file is not committed in the local frozen snapshot or in the public upstream GitHub tree inspected for this analysis. Therefore Route A did not produce target-coordinate cM/Mb values.
 
-        ## Route B: Yan et al. 2020 physical-coordinate LD
+        ## Route B: Ross and Shoemaker 2018 pedigree measurements
+
+        - Paper: {ROSS_CITATION}
+        - DOI: {ROSS_DOI}; Dryad: {ROSS_DRYAD_URL}
+        - Source assembly: `{ROSS_SOURCE_ASSEMBLY}` for the marker-location figure.
+        - Study design: 101 polygyne queen progenies, with inferred egg haplotypes and direct pairwise pedigree recombination fractions.
+        - Supergene-linked marker loci: `C294`, `Gp-9`, and `i_126`; all three pairwise comparisons are reported as direct recombination-fraction measurements.
+        - Retrieved files: publisher article, Additional files 2, 4, and 6. The Dryad workbook is listed as `Ross & Shoemaker- DRYAD raw data.xlsx`; its direct stream returned HTTP 403 in this environment, so raw genotypes were not silently treated as recovered.
+        - Interpretation: these are pairwise SB/Sb pedigree fractions and historical evidence of rare exchange. They are not a cM/Mb map because marker coordinates were not validated onto the frozen `Si_gnGA` axis and the accessible source set did not yield machine-readable numeric values for the plotted fractions.
+
+        ## Route C: Yan et al. 2020 physical-coordinate LD
 
         - Paper: {YAN_CITATION}
         - DOI: {YAN_DOI}
@@ -393,7 +525,7 @@ def write_source_audit(markers: list[Marker]) -> None:
 
         ## Evidence hierarchy conclusion
 
-        `{STATUS}`. Wang 2013 remains direct experimental linkage support in original coordinates, and Yan 2020 remains published physical-coordinate inversion/LD evidence, but neither yielded a reproducible quantitative chr16 recombination/LD track aligned to the frozen MSRC coordinate axis.
+        `{STATUS}`. Wang 2013 remains direct experimental linkage support in original coordinates, Ross and Shoemaker add direct pairwise pedigree fractions among three supergene-linked markers, and Yan 2020 remains published physical-coordinate inversion/LD evidence. None yielded a reproducible quantitative chr16 cM/Mb track aligned to the frozen MSRC coordinate axis.
     """).lstrip())
 
 
@@ -441,7 +573,11 @@ def write_report(markers: list[Marker]) -> None:
 
         Route A did not produce a chr16 cM/Mb track because no documented `Si_gnF` scaffold-to-Stolle `Si_gnGA`/`gng20170922wFex.fa` chromosome-placement file was recovered. The important candidate file named `linkage_map_supergene.txt` is referenced by the upstream README but was not present in the local frozen inputs or the public upstream repository tree. I did not guess scaffold placements.
 
-        ## Route B: Yan physical-coordinate LD
+        ## Route B: Ross and Shoemaker pedigree data
+
+        Ross and Shoemaker (2018) provide direct pedigree recombination fractions for the three pairwise combinations of `C294`, `Gp-9`, and `i_126`, using 101 polygyne queen progenies and inferred egg haplotypes. These measurements establish rare SB/Sb exchange, including exchange between `C294` and `Gp-9` within the largest inversion. They are retained separately in `data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv` because the retrieved source set does not provide a validated physical-coordinate projection or a machine-readable numeric table for the plotted fractions. They therefore cannot support cM/Mb intervals or a window-level rate.
+
+        ## Route C: Yan physical-coordinate LD
 
         Yan et al. 2020 report LD r² across physical chr16 and exact SB-reference inversion breakpoints. The published inversion union is chr16:{inv_start}-{inv_end}. I downloaded the minimal journal supplementary PDF and Supplementary Tables 1-5 and inspected them. They do not contain the numeric Extended Data Fig. 5 LD matrix or a one-dimensional LD track. Reconstructing LD from raw PRJNA421367 reads would require large-scale read/genotype processing, and no small public chr16 genotype/LD file was recovered. I did not digitize the published heatmap or treat pixels as quantitative data.
 
@@ -449,7 +585,7 @@ def write_report(markers: list[Marker]) -> None:
 
         `{STATUS}`
 
-        No quantitative recombination or LD track was generated. The previous constant schematic bar was copied to archive filenames for provenance, but it should not be used as the final quantitative validation figure requested here.
+        Direct pairwise pedigree recombination measurements were recovered from Ross and Shoemaker, but no quantitative cM/Mb or physical-coordinate LD track was generated. The previous constant schematic bar was copied to archive filenames for provenance, but it should not be used as the final quantitative validation figure requested here.
 
         ## Relation to frozen genealogy and Stage 6C
 
@@ -461,7 +597,7 @@ def write_report(markers: list[Marker]) -> None:
 
         ## Smallest missing objects
 
-        A quantitative figure would require one of the following: (1) a documented Wang `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table such as `linkage_map_supergene.txt`, or (2) the numeric Yan Extended Data Fig. 5 SNP/genotype/LD source data in physical chr16 coordinates, preferably as a chr16 VCF/genotype matrix or precomputed r² table.
+        A quantitative window-aligned figure would require one of the following: (1) a documented Wang `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table such as `linkage_map_supergene.txt`, together with marker sequences or validated marker identities; (2) the numeric Yan Extended Data Fig. 5 SNP/genotype/LD source data in physical chr16 coordinates; or (3) the Ross raw genotype workbook plus validated physical coordinates for `C294`, `Gp-9`, and `i_126` on the frozen axis.
     """).lstrip())
 
 
@@ -472,7 +608,7 @@ def write_caption() -> None:
 
 
 def write_manifest(markers: list[Marker], before: dict[Path, str], after: dict[Path, str]) -> None:
-    existing_outputs = [p for p in [RECOMB_MAP, RECOMB_SUMMARY, SOURCE_AUDIT, COORD_AUDIT, REPORT, CAPTION, ARCHIVE_PDF, ARCHIVE_PNG] if p.exists()]
+    existing_outputs = [p for p in [RECOMB_MAP, MARKER_LEVEL_RECOVERY, PAIRWISE_RECOVERY, WINDOW_INTEGRATION, SOURCE_MANIFEST, RECOMB_SUMMARY, SOURCE_AUDIT, COORD_AUDIT, REPORT, CAPTION, ARCHIVE_PDF, ARCHIVE_PNG] if p.exists()]
     source_files = [p for p in [WANG_SOURCE_ZIP, WANG_SOURCE_PDF, YAN_SUPP_PDF, YAN_SUPP_XLS] if p.exists()]
     manifest = {
         "analysis": "fire_ant_recombination_suppression_validation",
@@ -485,6 +621,11 @@ def write_manifest(markers: list[Marker], before: dict[Path, str], after: dict[P
         "route_a_wang_markers_mapped_to_chr16": 0,
         "route_a_cm_per_mb_calculated": False,
         "route_b_needed": True,
+        "ross_pairwise_recombination_measurements_recovered": True,
+        "ross_supergene_marker_pairs": ["C294/Gp-9", "Gp-9/i_126", "C294/i_126"],
+        "ross_pairwise_numeric_table_machine_readable": False,
+        "window_level_rates_available": False,
+        "window_level_supported_count": 0,
         "route_b_yan_source_used": {
             "article": YAN_URL,
             "supplementary_pdf": YAN_SUPP_PDF_URL,
@@ -504,7 +645,7 @@ def write_manifest(markers: list[Marker], before: dict[Path, str], after: dict[P
         },
         "frozen_supergene_interval": {"chromosome": "chr16", "coordinate_start": SUPERGENE_EXPECTED[0], "coordinate_end": SUPERGENE_EXPECTED[1]},
         "assembly_compatibility_for_quantitative_overlay": False,
-        "source_files": {rel(p): sha256(p) for p in source_files},
+        "source_files": {rel(p): sha256(p) for p in source_files + [p for p in RAW_ROSS.glob("*") if p.is_file()]},
         "frozen_manifest_checksums_before": {rel(k): v for k, v in before.items()},
         "frozen_manifest_checksums_after": {rel(k): v for k, v in after.items()},
         "frozen_manifest_checksums_unchanged": before == after,
@@ -529,11 +670,19 @@ def update_readme() -> None:
     section = textwrap.dedent(f"""
         ## Recombination-suppression validation
 
-        A supplementary audit attempted to replace the earlier schematic recombination bar with a quantitative chromosome-16 recombination or LD track on a real physical coordinate axis. The audit followed two routes: Wang et al. 2013 direct linkage-map markers and Yan et al. 2020 physical-coordinate LD evidence.
+        A supplementary audit attempted to replace the earlier schematic recombination bar with a quantitative chromosome-16 recombination or LD track on a real physical coordinate axis. The audit followed Wang et al. 2013 direct linkage-map markers, Ross and Shoemaker 2018 pedigree recombination fractions, and Yan et al. 2020 physical-coordinate LD evidence.
 
-        Result: `{STATUS}`. Wang et al. marker-level linkage data were recovered and preserved in `../../data/fire_ants_chr16/processed/recombination_map.tsv`, but no documented `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table was recovered. Yan et al. provide exact inversion breakpoints and published chr16 LD figures, but the downloadable supplementary tables do not contain the numeric LD matrix or one-dimensional LD track, and the available raw/genome-wide genotype resources are too large or not source-specific enough to download blindly for this figure.
+        Result: `{STATUS}`. Wang et al. marker-level linkage data were recovered and preserved in `../../data/fire_ants_chr16/processed/recombination_map.tsv` and the required marker-level audit. Ross and Shoemaker provide direct pairwise measurements among `C294`, `Gp-9`, and `i_126`, but no validated physical coordinates on the frozen axis. Yan et al. provide exact inversion breakpoints and published chr16 LD figures, but the downloadable supplementary tables do not contain the numeric LD matrix or one-dimensional LD track. No existing MSRC window receives a quantitative rate; window-level values remain missing.
 
-        The previous schematic figure has been archived as `figures/fire_ants_recombination_genealogy_schematic_archived.pdf` / `.png` for provenance only. It should not be cited as a quantitative recombination-rate or LD track. See `results/recombination_report.md`, `results/recombination_source_audit.md`, `results/recombination_coordinate_audit.md`, and `results/recombination_manifest.json`.
+        Reproduce this audit with:
+
+        ```bash
+        python3 empirical/fire_ants_chr16/scripts/07_recombination_validation.py --run-tests
+        ```
+
+        The stage writes the source manifest, marker-level recovery table, pairwise-fraction table, 213-window integration table, provenance reports, and audit manifest. It deliberately generates no continuous recombination figure when target-coordinate marker coverage is absent.
+
+        The previous schematic figure has been archived as `figures/fire_ants_recombination_genealogy_schematic_archived.pdf` / `.png` for provenance only. It should not be cited as a quantitative recombination-rate or LD track. See `results/recombination_report.md`, `results/recombination_source_audit.md`, `results/recombination_coordinate_audit.md`, and `results/recombination_manifest.json`, plus `../../data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv` and `../../data/fire_ants_chr16/processed/recombination_window_integration.tsv`.
 
         This validation audit did not rerun or alter the frozen topology, TWISST, ASTRAL, CASTLES-II, or branch-length results.
     """).strip()
@@ -560,6 +709,10 @@ def run_analysis(update_readme_flag: bool = True) -> dict[str, object]:
     frozen_supergene_interval()
     markers = parse_marker_tables()
     write_recombination_map(markers)
+    write_source_manifest()
+    write_pairwise_recovery()
+    write_marker_level_recovery(markers)
+    write_window_integration()
     archive_existing_schematic()
     write_recombination_summary(markers)
     write_source_audit(markers)
@@ -636,6 +789,20 @@ class RecombinationValidationTests(unittest.TestCase):
     def test_marker_tables_parsed(self):
         self.assertEqual(len(self.markers), self.manifest["route_a_wang_markers_parsed"])
         self.assertGreater(len(self.markers), 0)
+
+    def test_pairwise_pedigree_measurements_are_separate_from_map_rates(self):
+        rows = read_tsv(PAIRWISE_RECOVERY)
+        self.assertEqual({f"{r['marker_a']}/{r['marker_b']}" for r in rows}, {"C294/Gp-9", "Gp-9/i_126", "C294/i_126"})
+        self.assertTrue(all(r["recombination_fraction"] == "" for r in rows))
+        self.assertTrue(all(r["mapping_status"] == "pairwise_only_unmapped_to_frozen_axis" for r in rows))
+
+    def test_window_integration_preserves_missing_rates(self):
+        rows = read_tsv(WINDOW_INTEGRATION)
+        chr16 = [r for r in rows if r["chromosome"] == "chr16"]
+        self.assertEqual(len(rows), 213)
+        self.assertEqual(len(chr16), 96)
+        self.assertTrue(all(r["available_recombination_estimate"] == "" for r in chr16))
+        self.assertTrue(all(r["coverage_or_reliability_flag"] == "uncovered_quantitative_recombination" for r in chr16))
 
 
 def main(argv: list[str] | None = None) -> int:

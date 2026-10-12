@@ -10,7 +10,11 @@ Wang et al. 2013 provide direct linkage-map marker tables. I parsed 27934 RADtag
 
 Route A did not produce a chr16 cM/Mb track because no documented `Si_gnF` scaffold-to-Stolle `Si_gnGA`/`gng20170922wFex.fa` chromosome-placement file was recovered. The important candidate file named `linkage_map_supergene.txt` is referenced by the upstream README but was not present in the local frozen inputs or the public upstream repository tree. I did not guess scaffold placements.
 
-## Route B: Yan physical-coordinate LD
+## Route B: Ross and Shoemaker pedigree data
+
+Ross and Shoemaker (2018) provide direct pedigree recombination fractions for the three pairwise combinations of `C294`, `Gp-9`, and `i_126`, using 101 polygyne queen progenies and inferred egg haplotypes. These measurements establish rare SB/Sb exchange, including exchange between `C294` and `Gp-9` within the largest inversion. They are retained separately in `data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv` because the retrieved source set does not provide a validated physical-coordinate projection or a machine-readable numeric table for the plotted fractions. They therefore cannot support cM/Mb intervals or a window-level rate.
+
+## Route C: Yan physical-coordinate LD
 
 Yan et al. 2020 report LD r² across physical chr16 and exact SB-reference inversion breakpoints. The published inversion union is chr16:12612565-24031576. I downloaded the minimal journal supplementary PDF and Supplementary Tables 1-5 and inspected them. They do not contain the numeric Extended Data Fig. 5 LD matrix or a one-dimensional LD track. Reconstructing LD from raw PRJNA421367 reads would require large-scale read/genotype processing, and no small public chr16 genotype/LD file was recovered. I did not digitize the published heatmap or treat pixels as quantitative data.
 
@@ -18,7 +22,7 @@ Yan et al. 2020 report LD r² across physical chr16 and exact SB-reference inver
 
 `QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`
 
-No quantitative recombination or LD track was generated. The previous constant schematic bar was copied to archive filenames for provenance, but it should not be used as the final quantitative validation figure requested here.
+Direct pairwise pedigree recombination measurements were recovered from Ross and Shoemaker, but no quantitative cM/Mb or physical-coordinate LD track was generated. The previous constant schematic bar was copied to archive filenames for provenance, but it should not be used as the final quantitative validation figure requested here.
 
 ## Relation to frozen genealogy and Stage 6C
 
@@ -30,4 +34,4 @@ The fire-ant supergene is known to have experienced recurrent adaptive introgres
 
 ## Smallest missing objects
 
-A quantitative figure would require one of the following: (1) a documented Wang `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table such as `linkage_map_supergene.txt`, or (2) the numeric Yan Extended Data Fig. 5 SNP/genotype/LD source data in physical chr16 coordinates, preferably as a chr16 VCF/genotype matrix or precomputed r² table.
+A quantitative window-aligned figure would require one of the following: (1) a documented Wang `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table such as `linkage_map_supergene.txt`, together with marker sequences or validated marker identities; (2) the numeric Yan Extended Data Fig. 5 SNP/genotype/LD source data in physical chr16 coordinates; or (3) the Ross raw genotype workbook plus validated physical coordinates for `C294`, `Gp-9`, and `i_126` on the frozen axis.

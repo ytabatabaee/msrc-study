@@ -267,6 +267,14 @@ Stage 6 CU branch-length extension outputs: `results/stage6_cu_branch_length_com
 
 Stage 6C complete — mapped individual-level ASTRAL4/CASTLES-II SU branch-length sensitivity. The exact 267-tip mapping was recovered from Stolle et al. 2022 Supplementary Data 1 without guessing. Original RAxML local-tree branch lengths were preserved, fixed-topology background versus all-window CULength and SULength values were estimated from the same individual-level inputs, and CU/SU changes were compared. Stage 6C supersedes Stage 6B for direct CU-vs-SU comparison because CU and SU are estimated from identical individual-level inputs and the identical fixed background topology. Stage 6B remains an independent grouped/modal-topology CU sensitivity. Stage 5 remains frozen. See `results/stage6c_su_summary.txt`, `results/stage6c_su_branch_length_comparison.tsv`, and `results/stage6c_cu_vs_su_comparison.tsv`.
 
+Run the recombination recovery audit with:
+
+```bash
+python3 empirical/fire_ants_chr16/scripts/07_recombination_validation.py --run-tests
+```
+
+This regenerates the source manifest, Wang marker-level recovery table, Ross pairwise-fraction table, 213-window integration table, provenance reports, and audit manifest. It deliberately generates no continuous recombination figure when target-coordinate marker coverage is absent.
+
 ## Final fire-ant result hierarchy
 
 Primary empirical result: Stages 4A-5 show a localized chromosome-16 shift from the background species-history quartet outside the supergene to the cross-species SB/Sb haplotype quartet inside the independently defined supergene region.
@@ -279,10 +287,18 @@ Final manuscript-facing outputs: `results/fire_ants_final_summary.tsv`, `results
 
 ## Recombination-suppression validation
 
-A supplementary audit attempted to replace the earlier schematic recombination bar with a quantitative chromosome-16 recombination or LD track on a real physical coordinate axis. The audit followed two routes: Wang et al. 2013 direct linkage-map markers and Yan et al. 2020 physical-coordinate LD evidence.
+A supplementary audit attempted to replace the earlier schematic recombination bar with a quantitative chromosome-16 recombination or LD track on a real physical coordinate axis. The audit followed Wang et al. 2013 direct linkage-map markers, Ross and Shoemaker 2018 pedigree recombination fractions, and Yan et al. 2020 physical-coordinate LD evidence.
 
-Result: `QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`. Wang et al. marker-level linkage data were recovered and preserved in `../../data/fire_ants_chr16/processed/recombination_map.tsv`, but no documented `Si_gnF` scaffold-to-Stolle `Si_gnGA` chr16 placement table was recovered. Yan et al. provide exact inversion breakpoints and published chr16 LD figures, but the downloadable supplementary tables do not contain the numeric LD matrix or one-dimensional LD track, and the available raw/genome-wide genotype resources are too large or not source-specific enough to download blindly for this figure.
+Result: `QUANTITATIVE_RECOMBINATION_TRACK_NOT_RECOVERED`. Wang et al. marker-level linkage data were recovered and preserved in `../../data/fire_ants_chr16/processed/recombination_map.tsv` and the required marker-level audit. Ross and Shoemaker provide direct pairwise measurements among `C294`, `Gp-9`, and `i_126`, but no validated physical coordinates on the frozen axis. Yan et al. provide exact inversion breakpoints and published chr16 LD figures, but the downloadable supplementary tables do not contain the numeric LD matrix or one-dimensional LD track. No existing MSRC window receives a quantitative rate; window-level values remain missing.
 
-The previous schematic figure has been archived as `figures/fire_ants_recombination_genealogy_schematic_archived.pdf` / `.png` for provenance only. It should not be cited as a quantitative recombination-rate or LD track. See `results/recombination_report.md`, `results/recombination_source_audit.md`, `results/recombination_coordinate_audit.md`, and `results/recombination_manifest.json`.
+Reproduce this audit with:
+
+```bash
+python3 empirical/fire_ants_chr16/scripts/07_recombination_validation.py --run-tests
+```
+
+The stage writes the source manifest, marker-level recovery table, pairwise-fraction table, 213-window integration table, provenance reports, and audit manifest. It deliberately generates no continuous recombination figure when target-coordinate marker coverage is absent.
+
+The previous schematic figure has been archived as `figures/fire_ants_recombination_genealogy_schematic_archived.pdf` / `.png` for provenance only. It should not be cited as a quantitative recombination-rate or LD track. See `results/recombination_report.md`, `results/recombination_source_audit.md`, `results/recombination_coordinate_audit.md`, and `results/recombination_manifest.json`, plus `../../data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv` and `../../data/fire_ants_chr16/processed/recombination_window_integration.tsv`.
 
 This validation audit did not rerun or alter the frozen topology, TWISST, ASTRAL, CASTLES-II, or branch-length results.
