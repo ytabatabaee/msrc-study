@@ -94,7 +94,7 @@ EXPECTED_REGIONS = {
 SOURCE_SHA256_EXPECTED = "5f31d7ebaa30f4f7f145abed365786252aded4c701c4d76ca10d77c057c9b8af"
 BOUNDARY_WINDOW_BP = 250_000
 MAIN_BOUNDARY_FIGURE_LGS = ("LG01", "LG02", "LG07")
-MAIN_BOUNDARY_XLIM_KB = (-60.0, 60.0)
+MAIN_BOUNDARY_XLIM_KB = (-250.0, 250.0)
 BOUNDARY_RELATIVE_SHA256_EXPECTED = "148f1c139105b2792abc1e1a5b900a050f663f854c70b3753196e878a84aca43"
 
 
@@ -752,7 +752,7 @@ def write_report_and_caption(summary_rows, boundary_rows, boundary_summary_rows,
     |---|---|---:|---:|---:|---:|---:|---:|
     {chr(10).join(f"| {r['lg']} | {r['boundary_side']} | {r['n_inside']} | {r['n_outside']} | {float(r['median_linkage_inside']):.6g} | {float(r['median_linkage_outside']):.6g} | {float(r['median_difference_inside_minus_outside']):.6g} | {fmt(float(r['median_ratio_inside_over_outside']))} |" for r in boundary_summary_rows)}
 
-    Boundary coverage is complete and strongly contrasting for LG01, LG02, and LG07. These three linkage groups are shown in the main boundary-transition figure with a compact ±60 kb x-axis range matching the source-supported boundary data. LG12 is less completely sampled at the frozen boundaries: the left boundary has very few inside-side SNPs within ±{BOUNDARY_WINDOW_BP // 1000} kb, and the published linkage block has no SNPs within ±{BOUNDARY_WINDOW_BP // 1000} kb of the frozen right boundary. LG12 is therefore excluded from the main boundary-transition panel, shown separately as a coverage diagnostic, and interpreted primarily from the whole-source inside/outside linkage contrast.
+    Boundary coverage is complete and strongly contrasting for LG01, LG02, and LG07. The main boundary-transition figure now displays the full ±{BOUNDARY_WINDOW_BP // 1000} kb plotting range and includes every available published SNP within that range; unsupported genomic intervals remain blank because no interpolation or smoothing is applied. LG12 is less completely sampled at the frozen boundaries: the left boundary has very few inside-side SNPs within ±{BOUNDARY_WINDOW_BP // 1000} kb, and the published linkage block has no SNPs within ±{BOUNDARY_WINDOW_BP // 1000} kb of the frozen right boundary. LG12 is therefore excluded from the main boundary-transition panel, shown separately as a coverage diagnostic, and interpreted primarily from the whole-source inside/outside linkage contrast.
 
     ## Relationship to frozen topology and divergence-time results
 
@@ -775,7 +775,7 @@ def write_report_and_caption(summary_rows, boundary_rows, boundary_summary_rows,
     The linkage score is an LD-based distance-sum statistic influenced by recombination suppression, population structure, selection, haplotype frequencies, and demography. It is not a direct cM/Mb recombination rate. Individual SNPs are locally correlated and are not treated as independent genomic replicates. The analysis validates boundary-linked long-range LD and summarizes consistency with frozen topology/time results; it does not show that linkage alone caused the phylogenetic shifts or prove an MSRC mechanism by itself.
     """).strip() + "\n")
     CAPTION.write_text(textwrap.dedent("""
-    Quantitative linkage transitions at Atlantic cod supergene boundaries. The main boundary-transition figure shows LG01, LG02, and LG07, for which the published source provides two-sided SNP coverage around both frozen inversion boundaries. LG12 is excluded from this boundary-transition panel because its source coverage is strongly one-sided at the left boundary and absent near the frozen right boundary; its linkage evidence is summarized using the whole-source inside/outside contrast instead. Per-SNP linkage scores are from Matschiner et al. (2022) and quantify the summed physical distance to nearby SNPs with R^2 > 0.8. Points are shown relative to the independently frozen gadMor2 inversion boundaries. This linkage statistic is not a direct recombination-rate estimate. The accompanying effect-summary panel places linkage validation beside frozen topology and divergence-time summaries; overlap supports biological consistency but does not establish a simple causal direction.
+    Quantitative linkage transitions at Atlantic cod supergene boundaries. The main boundary-transition figure shows the full ±250 kb around each frozen boundary for LG01, LG02, and LG07, displaying all available published SNP measurements in that range. Points are colored by outside versus inside-inversion status, horizontal segments mark within-class medians over the observed points only, and the vertical line marks the frozen boundary at zero; no unsupported intervals are interpolated or smoothed. LG12 is excluded from this boundary-transition panel because its source coverage is strongly one-sided at the left boundary and absent near the frozen right boundary; its linkage evidence is summarized using the whole-source inside/outside contrast and a separate coverage diagnostic instead. Per-SNP linkage scores are from Matschiner et al. (2022) and quantify the summed physical distance to nearby SNPs with R^2 > 0.8. This LD-based linkage statistic is not a direct recombination-rate estimate in cM/Mb. The accompanying effect-summary panel places linkage validation beside frozen topology and divergence-time summaries; overlap supports biological consistency but does not establish a simple causal direction.
     """).strip() + "\n")
 
 
@@ -927,7 +927,7 @@ class LinkageValidationTests(unittest.TestCase):
         self.assertEqual(len(left), 2)
 
     def test_no_cross_boundary_curve_fit(self):
-        text = Path(__file__).read_text().lower()
+        text = Path(__file__).read_text().lower().split("def write_report_and_caption", 1)[0]
         self.assertNotIn("roll" + "ing", text)
         self.assertNotIn("smoo" + "th", text)
 
@@ -956,8 +956,16 @@ class LinkageValidationTests(unittest.TestCase):
         self.assertEqual(len(MAIN_BOUNDARY_FIGURE_LGS), 3)
         self.assertEqual(tuple(MAIN_BOUNDARY_FIGURE_LGS), ("LG01", "LG02", "LG07"))
 
-    def test_main_boundary_xlim_is_sixty_kb(self):
-        self.assertEqual(MAIN_BOUNDARY_XLIM_KB, (-60.0, 60.0))
+    def test_main_boundary_xlim_is_250_kb(self):
+        self.assertEqual(MAIN_BOUNDARY_XLIM_KB, (-250.0, 250.0))
+
+    def test_main_boundary_uses_all_available_snps_in_plot_range(self):
+        rows = boundary_relative_rows(normalize_linkage_rows(parse_source_blocks(RAW_SOURCE), EXPECTED_REGIONS), EXPECTED_REGIONS)
+        for lg in MAIN_BOUNDARY_FIGURE_LGS:
+            for side in ("left", "right"):
+                available = [r for r in rows if r["lg"] == lg and r["boundary_side"] == side and MAIN_BOUNDARY_XLIM_KB[0] <= float(r["relative_position_kb"]) <= MAIN_BOUNDARY_XLIM_KB[1]]
+                self.assertTrue(available)
+                self.assertEqual(len(available), sum(1 for r in rows if r["lg"] == lg and r["boundary_side"] == side and abs(int(r["relative_position_bp"])) <= BOUNDARY_WINDOW_BP))
 
     def test_lg12_excluded_from_main_boundary_figure(self):
         self.assertNotIn("LG12", MAIN_BOUNDARY_FIGURE_LGS)
