@@ -3,13 +3,13 @@
 ## Result
 
 The four historical t-complex inversions are shown in the updated spatial
-figure as approximate intervals: `In(17)1` (5–12 Mb), `In(17)2` (12–25 Mb),
-`In(17)3` (25–31 Mb), and `In(17)4` (31–40 Mb). These are schematic
-placements rounded to approximately 0.5-Mb display precision, recorded in
+figure using the validated mm10 wild-type coordinates from Swanepoel et al.
+(2026): `In(17)1` (5,747,331–6,957,919), `In(17)2` (7,435,308–13,016,510),
+`In(17)3` (14,068,229–18,051,507), and `In(17)4` (19,401,000–40,049,964).
+These coordinates are recorded in
 `empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv`.
-The rectangles are hatched and labeled approximate in the figure. This is a
-rounding/display convention, not a confidence interval: the actual boundary
-uncertainty is not reported by the schematic and may be larger than 0.5 Mb.
+The boundary evidence is sequence-based synteny with PCR/Sanger validation;
+the supplementary table also reports the PCR junction-region widths.
 
 ## Evidence
 
@@ -25,28 +25,35 @@ reference-assembly coordinate system (Hammer et al. 1989; Herrmann et al.
 
 The newer long-read study by Swanepoel et al. (2026, *Nature Communications*
 17:21, DOI 10.1038/s41467-025-66616-9) compares a haplotype-resolved
-`t^w5` assembly with GRCm38/mm10 and experimentally validates five inversion
-junctions, including a newly recognized overlapping inversion. Its methods
-and article text establish that numerical breakpoint coordinates exist in the
-supplementary table, but that linked table could not be retrieved in this
-environment. The newer study therefore does not supply numerical coordinates
-to this repository, and its five-inversion nomenclature is not silently
-collapsed onto the four historical intervals.
+`t^w5` assembly with GRCm38/mm10 and experimentally validates five inversions.
+Supplementary Table 1 supplies the wild-type mm10 coordinates and Table 2
+supplies the PCR junction regions. Its Inv1, Inv3, Inv4, and Inv5 correspond
+to the four historical inversions used here; its novel overlapping Inv2 is
+recorded below but is not silently added to the historical four-track panel.
+
+The novel fifth inversion is Inv2, with mm10 wild-type coordinates
+6,957,919–7,435,308. It overlaps the rearranged t-haplotype structure in the
+authors' comparison and is therefore treated as a separate structural finding,
+not forced into the four historical labels.
 
 ## Assembly compatibility and analysis gate
 
 The 2017 Kelemen & Vicoso archive stores 5-kb tree filenames as offsets into
 the published chr17 interval; the local audit applies the documented +5-Mb
 offset and recovers non-overlapping windows from chr17:5,000,000–37,054,999.
-The archive does not record an assembly accession in the recovered metadata,
-and the local figure has no independent assembly manifest. The intervals in
-the TSV are therefore labeled `GRCm38/mm10` only as the reference frame of
-the published 2018 schematic, not as a validated lift-over into the archive.
+The upstream Harr et al. genomic resources state that reads and variants were
+mapped to the mm10 reference, and Kelemen & Vicoso explicitly used the
+GRCm38.p4 reference for the corresponding analysis. GRCm38 and mm10 are the
+same major coordinate assembly name. No chain-file conversion is therefore
+needed; the exact mm10 intervals are directly compatible with the archived
+window coordinates. Inversion 4 extends beyond the available tree coverage.
 
-Because a chain-file or sequence-based coordinate conversion was not
-established, `comparison_eligible=false` for every interval. No inside/outside
-quartet-support or recombination-history comparison is reported. The panel is
-descriptive and should not be read as exact breakpoint evidence.
+The supplementary descriptive comparison is in
+`t_complex_inversion_interval_summary.tsv`. It uses only complete 5-kb windows,
+excludes windows intersecting each boundary, and reports recombination-class
+counts/fractions separately for domesticus, musculus, and castaneus. The
+windows remain linked and the table is descriptive rather than an independent-
+replicate test.
 
 ## Sources
 

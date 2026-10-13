@@ -107,9 +107,11 @@ the incompatible third dataset. Full 200-replicate balanced sampling, a full
 phase sweep, and a source-defined block analysis remain outstanding; no causal
 claim or proof of MSRC is made here.
 
-The newer 2025 inversion breakpoints were not overlaid because assembly,
-reference coordinate system, and lift-over compatibility with the 2017 window
-coordinates were not established.
+The newer Swanepoel et al. inversion breakpoints are now overlaid using their
+validated GRCm38/mm10 wild-type coordinates. Harr et al.'s source data and the
+Kelemen & Vicoso analysis use the same mm10/GRCm38 coordinate system, so no
+lift-over was required. The novel fifth overlapping inversion is documented
+but kept separate from the historical four-inversion display.
 
 Stage 2B supersedes the interpretation of this preliminary report. See
 `stage2b_report.md` for corrected split-specific ASTRAL annotations,

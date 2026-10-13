@@ -1,13 +1,14 @@
 # Quartet/recombination-track caption
 
 The narrow panel above panel A shows the four historical t-complex inversion
-placements from the published Kelemen & Vicoso (2018) chromosome 17 schematic,
-with names following the primary structural literature. The intervals are
-approximate, hatched, and labeled as such because the published schematic does
-not provide machine-readable base-pair breakpoints and no assembly conversion
-to the 2017 tree archive was validated. The later long-read study reports five
-validated junctions in a different nomenclature; its numerical supplementary
-coordinates were not available for this analysis.
+boundaries using the GRCm38/mm10 wild-type coordinates in Swanepoel et al.
+(2026) Supplementary Table 1. The four historical intervals correspond to
+Swanepoel Inv1, Inv3, Inv4, and Inv5; the study also reports a novel overlapping
+Inv2, which is documented separately and is not forced into the historical
+four-track display. The coordinates are sequence-based and their junctions
+were PCR/Sanger validated. The archived windows use the same mm10/GRCm38
+coordinate system. Windows intersecting an inversion boundary are excluded
+from the supplementary inside/outside summary.
 
 Direct local quartet support across the published chr17 5-kb windows is shown
 for all available tips, with lightly plotted raw windows and fixed 250-kb

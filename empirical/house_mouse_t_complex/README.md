@@ -53,11 +53,10 @@ an inferred local-tree classification, not a direct cM/Mb rate estimate. The
 Stage 2 scripts use repository-relative output paths and retain source archive
 provenance by basename, SHA256, and byte size.
 
-The q/recombination figure also includes a descriptive published inversion
-placement panel. Its four intervals are approximate schematic placements
+The q/recombination figure also includes a published inversion-boundary panel.
+Its four historical intervals use sequence-validated GRCm38/mm10 coordinates
 recorded in `results/t_complex_inversion_intervals.tsv`, with supporting
-evidence and assembly limitations in
-`results/t_complex_inversion_provenance.md`. The archive’s documented chr17
-offset was recovered, but its assembly accession could not be validated
-against the published inversion coordinates, so no inside/outside interval
-statistics are reported.
+evidence and the fifth overlapping inversion documented in
+`results/t_complex_inversion_provenance.md`. The archive and structural study
+use the same mm10/GRCm38 coordinate system. The descriptive inside/outside
+summary is `results/t_complex_inversion_interval_summary.tsv`.

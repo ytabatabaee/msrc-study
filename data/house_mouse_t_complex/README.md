@@ -31,8 +31,9 @@ python empirical/house_mouse_t_complex/scripts/02e_linkage_sensitivity.py --arch
 python empirical/house_mouse_t_complex/scripts/02c_population_astral.py
 ```
 
-The published inversion interval table and provenance report are kept with
-the empirical analysis under
+The published inversion interval table, provenance report, and descriptive
+interval summary are kept with the empirical analysis under
 `empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv`
-and `t_complex_inversion_provenance.md`; they are not source data from the
+`, `t_complex_inversion_provenance.md`, and
+`t_complex_inversion_interval_summary.tsv`; they are not source data from the
 archive.

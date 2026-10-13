@@ -293,7 +293,7 @@ def load_inversion_intervals() -> list[dict[str, str]]:
         start, end = int(row["start_bp"]), int(row["end_bp"])
         if start >= end:
             raise AssertionError(f"invalid inversion interval: {row}")
-        if row["coordinate_status"] not in {"validated", "approximate_schematic"}:
+        if row["coordinate_status"] not in {"validated", "validated_reference", "approximate_schematic"}:
             raise AssertionError(f"unknown inversion coordinate status: {row}")
     return rows
 
@@ -302,7 +302,7 @@ def plot_inversion_panel(ax, intervals: list[dict[str, str]]) -> None:
     """Show published inversion placement without implying validated breakpoints."""
     for index, row in enumerate(intervals):
         start, end = int(row["start_bp"]) / 1e6, int(row["end_bp"]) / 1e6
-        approximate = row["coordinate_status"] != "validated"
+        approximate = row["coordinate_status"] == "approximate_schematic"
         ax.add_patch(plt.Rectangle(
             (start, index + 0.18), end - start, 0.64,
             facecolor=INVERSION_COLORS[index], edgecolor=INVERSION_COLORS[index],
@@ -318,11 +318,15 @@ def plot_inversion_panel(ax, intervals: list[dict[str, str]]) -> None:
     ax.set_yticks(np.arange(len(intervals)) + 0.5, [row["inversion_name"] for row in intervals])
     ax.invert_yaxis()
     ax.set_ylabel("Published\ninversions", fontsize=8)
-    ax.set_title("Published t-complex inversion placement (approximate schematic intervals)", fontsize=10, loc="left")
+    ax.set_title("Published t-complex inversion boundaries (GRCm38/mm10)", fontsize=10, loc="left")
     ax.grid(axis="x", alpha=0.15)
     ax.tick_params(axis="x", labelbottom=False)
-    ax.legend([Patch(facecolor="#999999", edgecolor="#555555", hatch="///", alpha=0.40)],
-              ["Approximate; assembly conversion not validated"], frameon=False, fontsize=8, loc="upper right")
+    if any(row["coordinate_status"] == "approximate_schematic" for row in intervals):
+        ax.legend([Patch(facecolor="#999999", edgecolor="#555555", hatch="///", alpha=0.40)],
+                  ["Approximate; assembly conversion not validated"], frameon=False, fontsize=8, loc="upper right")
+    else:
+        ax.legend([Patch(facecolor="#999999", edgecolor="#555555", alpha=0.75)],
+                  ["Validated mm10 reference coordinates"], frameon=False, fontsize=8, loc="upper right")
 
 
 def plot_recomb_axes(axes, rows: list[dict[str, str]], title: str | None = None, all_ylabels: bool = True) -> None:
