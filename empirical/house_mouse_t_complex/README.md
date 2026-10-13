@@ -52,3 +52,12 @@ aligned q/recombination figure, controls, and
 an inferred local-tree classification, not a direct cM/Mb rate estimate. The
 Stage 2 scripts use repository-relative output paths and retain source archive
 provenance by basename, SHA256, and byte size.
+
+The q/recombination figure also includes a descriptive published inversion
+placement panel. Its four intervals are approximate schematic placements
+recorded in `results/t_complex_inversion_intervals.tsv`, with supporting
+evidence and assembly limitations in
+`results/t_complex_inversion_provenance.md`. The archive’s documented chr17
+offset was recovered, but its assembly accession could not be validated
+against the published inversion coordinates, so no inside/outside interval
+statistics are reported.

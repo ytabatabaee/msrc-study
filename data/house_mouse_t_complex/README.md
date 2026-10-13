@@ -30,3 +30,9 @@ python empirical/house_mouse_t_complex/scripts/02d_filtering_robustness.py --arc
 python empirical/house_mouse_t_complex/scripts/02e_linkage_sensitivity.py --archive IST-2017-78-v1+1_Data.zip --astral-phases 10
 python empirical/house_mouse_t_complex/scripts/02c_population_astral.py
 ```
+
+The published inversion interval table and provenance report are kept with
+the empirical analysis under
+`empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv`
+and `t_complex_inversion_provenance.md`; they are not source data from the
+archive.

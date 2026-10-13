@@ -38,6 +38,8 @@ RECOMB_COLORS = {
     "fraction_recent_or_older": "#756bb1",
     "fraction_very_recent_or_extensive": "#e34a33",
 }
+INVERSION_COLORS = ["#6a3d9a", "#1b9e77", "#d95f02", "#7570b3"]
+INVERSION_INTERVALS = RESULTS / "t_complex_inversion_intervals.tsv"
 PRETTY = {
     "Mus_musculus_domesticus": "M. m. domesticus",
     "Mus_musculus_musculus": "M. m. musculus",
@@ -282,6 +284,47 @@ def load_recomb() -> list[dict[str, str]]:
     return rows
 
 
+def load_inversion_intervals() -> list[dict[str, str]]:
+    rows = read_tsv(INVERSION_INTERVALS)
+    expected = ["In(17)1", "In(17)2", "In(17)3", "In(17)4"]
+    if [row["inversion_name"] for row in rows] != expected:
+        raise AssertionError("inversion intervals are not in published order")
+    for row in rows:
+        start, end = int(row["start_bp"]), int(row["end_bp"])
+        if start >= end:
+            raise AssertionError(f"invalid inversion interval: {row}")
+        if row["coordinate_status"] not in {"validated", "approximate_schematic"}:
+            raise AssertionError(f"unknown inversion coordinate status: {row}")
+    return rows
+
+
+def plot_inversion_panel(ax, intervals: list[dict[str, str]]) -> None:
+    """Show published inversion placement without implying validated breakpoints."""
+    for index, row in enumerate(intervals):
+        start, end = int(row["start_bp"]) / 1e6, int(row["end_bp"]) / 1e6
+        approximate = row["coordinate_status"] != "validated"
+        ax.add_patch(plt.Rectangle(
+            (start, index + 0.18), end - start, 0.64,
+            facecolor=INVERSION_COLORS[index], edgecolor=INVERSION_COLORS[index],
+            alpha=0.40 if approximate else 0.75,
+            hatch="///" if approximate else None, linewidth=0.8,
+            clip_on=True,
+        ))
+        label = row["inversion_name"] + (" (approx.)" if approximate else "")
+        ax.text(start + (end - start) / 2, index + 0.50, label,
+                ha="center", va="center", fontsize=8, color="#222222",
+                clip_on=True)
+    ax.set_ylim(0, len(intervals))
+    ax.set_yticks(np.arange(len(intervals)) + 0.5, [row["inversion_name"] for row in intervals])
+    ax.invert_yaxis()
+    ax.set_ylabel("Published\ninversions", fontsize=8)
+    ax.set_title("Published t-complex inversion placement (approximate schematic intervals)", fontsize=10, loc="left")
+    ax.grid(axis="x", alpha=0.15)
+    ax.tick_params(axis="x", labelbottom=False)
+    ax.legend([Patch(facecolor="#999999", edgecolor="#555555", hatch="///", alpha=0.40)],
+              ["Approximate; assembly conversion not validated"], frameon=False, fontsize=8, loc="upper right")
+
+
 def plot_recomb_axes(axes, rows: list[dict[str, str]], title: str | None = None, all_ylabels: bool = True) -> None:
     for ax, species in zip(axes, ("domesticus", "musculus", "castaneus")):
         sub = [row for row in rows if row["subspecies"] == species]
@@ -326,21 +369,26 @@ def make_recombination_track() -> None:
 
 def make_q_recombination() -> None:
     qrows, recomb = read_tsv(RESULTS / "stage2_fixed_quartet_scan.tsv"), load_recomb()
+    inversions = load_inversion_intervals()
     fig = plt.figure(figsize=(13, 11))
-    grid = fig.add_gridspec(5, 1, height_ratios=[1.2, 0.55, 0.8, 0.8, 0.8], hspace=0.25)
-    axq = fig.add_subplot(grid[0])
+    grid = fig.add_gridspec(6, 1, height_ratios=[0.55, 1.2, 0.55, 0.8, 0.8, 0.8], hspace=0.25)
+    axq = fig.add_subplot(grid[1])
     plot_q_axis(axq, qrows, "ALL_TIPS", "ALL_TIPS quartet support; 250-kb means")
-    axd = fig.add_subplot(grid[1], sharex=axq)
+    axq.tick_params(axis="x", labelbottom=False)
+    axinv = fig.add_subplot(grid[0], sharex=axq)
+    plot_inversion_panel(axinv, inversions)
+    axd = fig.add_subplot(grid[2], sharex=axq)
     shade_retained_gaps(axd)
     bins = bin_q(qrows, "ALL_TIPS")
     plot_segments(axd, np.array([r["midpoint"] / 1e6 for r in bins]), np.array([r["q_species"] - r["q_t_alt"] for r in bins]), color="#333333", lw=1.5)
     axd.axhline(0, color="black", lw=0.7)
     axd.set_ylabel("delta")
     axd.set_title("q_species - q_t_alt")
-    axes = [fig.add_subplot(grid[i], sharex=axq) for i in (2, 3, 4)]
+    axd.tick_params(axis="x", labelbottom=False)
+    axes = [fig.add_subplot(grid[i], sharex=axq) for i in (3, 4, 5)]
     plot_recomb_axes(axes, recomb)
     axes[-1].set_xlabel("chr17 position (Mb)")
-    fig.suptitle("Quartet support aligned with source-defined phylogeny-based recombination states", fontsize=14)
+    fig.suptitle("Quartet support aligned with published inversion placement and source-defined recombination states", fontsize=14)
     save(fig, "house_mouse_t_complex_q_recombination")
 
 

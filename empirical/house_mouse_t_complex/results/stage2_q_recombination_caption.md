@@ -1,5 +1,14 @@
 # Quartet/recombination-track caption
 
+The narrow panel above panel A shows the four historical t-complex inversion
+placements from the published Kelemen & Vicoso (2018) chromosome 17 schematic,
+with names following the primary structural literature. The intervals are
+approximate, hatched, and labeled as such because the published schematic does
+not provide machine-readable base-pair breakpoints and no assembly conversion
+to the 2017 tree archive was validated. The later long-read study reports five
+validated junctions in a different nomenclature; its numerical supplementary
+coordinates were not available for this analysis.
+
 Direct local quartet support across the published chr17 5-kb windows is shown
 for all available tips, with lightly plotted raw windows and fixed 250-kb
 means. `q_species`, `q_t_alt`, and `q_other` identify biological quartet

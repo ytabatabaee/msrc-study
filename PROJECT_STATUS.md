@@ -226,6 +226,16 @@ with an MSRC-like mechanism, not proof of MSRC or a causal result. See
 `empirical/house_mouse_t_complex/results/stage2b_report.md` and
 `stage2b_manifest.json`.
 
+The house-mouse spatial figure now includes a published inversion-placement
+panel above the quartet-support track. The four historical intervals are
+recorded as approximate schematic placements in
+`empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv`,
+with literature and coordinate provenance in
+`t_complex_inversion_provenance.md`. The 2017 archive’s chr17 offset is
+validated, but its assembly accession and a lift-over to the published
+inversion reference frame were not established. The panel is therefore
+descriptive only, and no inside/outside quartet comparison was performed.
+
 Stage 2B visualization/recombination cleanup is complete. Four-group and
 seven-population ASTRAL cladograms, direct q-support tracks, the aligned
 q/recombination figure, controls figure, and manuscript `main_v4` figure were
