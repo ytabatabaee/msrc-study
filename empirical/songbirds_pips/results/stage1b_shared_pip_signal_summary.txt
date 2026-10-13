@@ -1,0 +1,6 @@
+Stage 1B shared_CM027530.1 signal summary
+Timestamp UTC: 2026-10-02T21:52:46.502212+00:00
+
+No genotype-vs-species distance statistic was calculated in this run.
+The frozen 22-sample design and 231 expected pairs validate, but the raw-read pilot did not proceed because required executables are missing from PATH: prefetch, fasterq-dump, bwa, samtools, angsd, winsfs.
+Therefore there is no complete dXY matrix, no NJ tree, and no support for claiming reproduction of the published AA/BB-across-species signal.

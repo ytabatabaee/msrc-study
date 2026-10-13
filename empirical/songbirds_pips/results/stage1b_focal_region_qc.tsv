@@ -1,0 +1,23 @@
+sample	species	pip_genotype	mapped_reads_region	mean_depth	median_depth	breadth_1x	breadth_3x	notes
+75114	Cardellina canadensis	AA						not_run_preflight_blocked_missing_tools
+Z13.4.27	Cardellina canadensis	BB						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:247242	Leiothlypis peregrina	AA						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:247240	Leiothlypis peregrina	BB						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:248052	Leiothlypis ruficapilla	AA						not_run_preflight_blocked_missing_tools
+4083	Leiothlypis ruficapilla	BB						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:244777	Setophaga castanea	AA						not_run_preflight_blocked_missing_tools
+3160	Setophaga castanea	BB						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:247315	Setophaga coronata	AA						not_run_preflight_blocked_missing_tools
+74875	Setophaga coronata	BB						not_run_preflight_blocked_missing_tools
+Z09.6.12	Setophaga fusca	AA						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:247327	Setophaga fusca	BB						not_run_preflight_blocked_missing_tools
+74934	Setophaga magnolia	AA						not_run_preflight_blocked_missing_tools
+zt-1049	Setophaga magnolia	BB						not_run_preflight_blocked_missing_tools
+Z95.10.22	Setophaga palmarum	AA						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:247331	Setophaga palmarum	BB						not_run_preflight_blocked_missing_tools
+UMMZ:Bird:245889	Setophaga pensylvanica	AA						not_run_preflight_blocked_missing_tools
+75098	Setophaga pensylvanica	BB						not_run_preflight_blocked_missing_tools
+75204	Setophaga tigrina	AA						not_run_preflight_blocked_missing_tools
+76965	Setophaga tigrina	BB						not_run_preflight_blocked_missing_tools
+71807	Setophaga virens	AA						not_run_preflight_blocked_missing_tools
+71867	Setophaga virens	BB						not_run_preflight_blocked_missing_tools

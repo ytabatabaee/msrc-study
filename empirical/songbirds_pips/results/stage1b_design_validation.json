@@ -1,0 +1,46 @@
+{
+  "aa_11_bb_11": true,
+  "accession_namespace": "SAMN/BioSample values in frozen sra_accession column; SRR run accession resolution not yet performed",
+  "all_accessions_present": true,
+  "design_valid": true,
+  "eleven_species": true,
+  "enumerated_pair_count": 231,
+  "exactly_22_samples": true,
+  "expected_pair_count": 231,
+  "focal_interval_matches_stage1a": true,
+  "genotype_counts": {
+    "AA": 11,
+    "BB": 11
+  },
+  "interval": {
+    "chromosome": "CM027530.1",
+    "derivation_rule": "max(PIP.start) and min(PIP.end) across the 11 DatasetS1 species-specific CM027530.1 PIPs; length uses source end-start convention",
+    "end": "874807",
+    "interval_id": "shared_CM027530.1",
+    "interval_type": "derived_common_overlap",
+    "length_bp": "300002",
+    "notes": "all_11_species_mapped_to_same_reference=yes; common_left_COMP_candidate=0-324734; common_right_COMP_candidate=1124967+; exact author shared COMP start/end not present in DatasetS1/S5",
+    "provenance": "DatasetS1 plus article Methods statement that shared PIP is largest region overlapping all identified PIPs",
+    "reference_assembly": "GCA_001746935.2 (Setophaga coronata)",
+    "species": "Cardellina canadensis;Leiothlypis peregrina;Leiothlypis ruficapilla;Setophaga castanea;Setophaga coronata;Setophaga fusca;Setophaga magnolia;Setophaga palmarum;Setophaga pensylvanica;Setophaga tigrina;Setophaga virens",
+    "start": "574805"
+  },
+  "missing_required_tools": [
+    "prefetch",
+    "fasterq-dump",
+    "bwa",
+    "samtools",
+    "angsd",
+    "winsfs"
+  ],
+  "no_background_control_analysis_run": true,
+  "no_candidate_set_changes": true,
+  "no_tree_or_distance_results_fabricated": true,
+  "one_AA_and_one_BB_per_species": true,
+  "pair_count_231": true,
+  "reference_assembly_GCA_001746935_2": true,
+  "required_tools_present": false,
+  "sample_count": 22,
+  "species_count": 11,
+  "stage1b_executable": false
+}

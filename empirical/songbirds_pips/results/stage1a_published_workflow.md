@@ -1,0 +1,14 @@
+# Stage 1A published shared-PIP workflow reconstruction
+
+Focal published object: `shared_CM027530.1`, an author-reported shared PIP on `CM027530.1` among 11 warbler species mapped to `GCA_001746935.2` (*Setophaga coronata*). Stage 1A reconstructed the workflow from public small metadata/code only and did not run ANGSD, winsfs, NJ, or any tree inference.
+
+| step | software | version | input | output | parameters | source |
+|---|---|---|---|---|---|---|
+| 1 | ANGSD / bwa / samtools / GATK / ngsParalog upstream preprocessing | versions in Figshare/OUP methods; exact tool versions vary by script | NCBI SRA raw reads and reference genomes | processed BAMs and genotype-likelihood/BEAGLE-style intermediates | see Figshare scripts 1-4 and OUP README | OUP README; Figshare 27284553 |
+| 2 | manual metadata construction plus R draw_pip_inds.R | R 4.2.0; IRanges 2.36.0; dplyr 1.1.4 | shared_pips_meta, genotype table from B1, all-samples table, BAM list | selected individuals CSV for each shared PIP | select one individual per non-AB genotype per species; if no PIP in species, select one random individual; selection is random in the script | B3a_SAFs_for_genetrees.txt; draw_pip_inds.R; DatasetS5 records fixed published choices |
+| 3 | ANGSD | 0.941-6-g67b6b3b; htslib 1.15-1-gf307dfb | selected individual BAMs, reference genome, shared PIP BED, optional COMP BED | per-sample .saf.idx for PIP and COMP | -doSaf 1 -GL 2 -minMapQ 30 -minQ 30 -anc $REF -r $REG -sites $PSITES/$CSITES | B3a_SAFs_for_genetrees.txt |
+| 4 | winsfs | 0.7.0 | pairwise .saf.idx files | pairwise 2D-SFS files and folded/trimmed SFS files | winsfs SAF1 SAF2; winsfs view -f | B3b_genetic_distance_for_genetrees.txt |
+| 5 | dxy_sfs.py | Python 3.10.4 in author script | trimmed folded 2D-SFS | pairwise dxy/genetic distance values | -m 1 -n 1 -s <sfs> -o <out> | B3b_genetic_distance_for_genetrees.txt; dxy_sfs.py |
+| 6 | R ape::nj plus plotting libraries | R 4.2.0; ape 5.7-1; reshape2 1.4.4; tidyverse 2.0.0; ggtree 3.10.0; phylobase 0.8.10 | concatenated pairwise dxy CSV with samp1,samp2,sp1,sp2,geno1,geno2,gendist | neighbor-joining tree plot object for PIP and COMP | acast distance matrix; missing values set to 1; negative branch lengths reset to 0 for plotting | B3c_plot_genetrees.txt |
+
+The published object is best described as a neighbor-joining genetic-distance dendrogram/tree built from pairwise `dxy` estimates derived from ANGSD SAF and winsfs 2D-SFS calculations. The public supplement does not provide the SAF files, pairwise SFS files, dxy matrices, or Newick trees needed to reproduce the figure directly without reprocessing BAMs or reads.

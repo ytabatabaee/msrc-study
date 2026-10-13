@@ -1,0 +1,4 @@
+metric	value	status	notes
+mean_distance_same_genotype_different_species		not_run_preflight_blocked_missing_tools	requires complete dxy matrix
+mean_distance_different_genotype_same_species		not_run_preflight_blocked_missing_tools	requires complete dxy matrix
+mean_delta_i		not_run_preflight_blocked_missing_tools	requires complete dxy matrix

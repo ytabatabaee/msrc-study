@@ -1,0 +1,12 @@
+data_object	available	public_source_checked	local_path	usable_without_raw_reprocessing	notes
+VCF/BCF for CM027530.1 22 samples	no	OUP supplement; Figshare 27284553; NCBI BioProject metadata; article Methods		no	No VCF/BCF found.
+BEAGLE genotype likelihoods / ANGSD .beagle.gz	no	OUP supplement scripts and Figshare preprocessing metadata		no	Scripts refer to BEAGLE inputs, but files are not packaged.
+ANGSD SAF / .saf.idx	no	OUP B3a/B3b scripts; supplement ZIP		no	B3a documents how to create per-sample SAF from BAMs.
+winsfs pairwise SFS files	no	OUP B3b script; supplement ZIP		no	B3b documents generation; files absent.
+pairwise dxy/genetic-distance matrices	no	OUP B3c script; supplement ZIP		no	B3c expects precomputed .dxy CSV files; they are not public in the downloaded supplement.
+Newick/NJ tree files	no	OUP supplement; article Dataset S3 reference		no	Only plotted shared-PIP/COMP results are referenced; no reusable Newick files found.
+BAM/CRAM	not_publicly_packaged	OUP README and NCBI BioProjects		no_unless_authors_provide_BAMs	Author B3a requires BAM list. Public NCBI objects are raw sequence reads.
+raw sequence reads	yes	NCBI BioProjects PRJNA1043688 and PRJNA1130443; Dataset S4/S5 sample accessions		no	Do not download/process during Stage 1A.
+reference genome	yes	Dataset S1		partly	Reference assembly is GCA_001746935.2; downloading/indexing would be needed for ANGSD.
+representative sample/genotype metadata	yes	Dataset S5	data/songbirds_pips/processed/stage1a_shared_pip_samples.tsv	metadata_only	Exactly 22 representatives reconstructed.
+shared-PIP interval	yes_derived	Dataset S1; article Methods	data/songbirds_pips/processed/stage1a_shared_pip_interval.tsv	metadata_only	Derived common overlap; exact shared COMP interval absent.

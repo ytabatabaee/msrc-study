@@ -1,0 +1,14 @@
+{
+  "can_reproduce_without_raw_read_or_BAM_processing": false,
+  "genotype_counts": {
+    "AA": 11,
+    "BB": 11
+  },
+  "missing_datasetS4_joins": [],
+  "one_AA_and_one_BB_per_species": true,
+  "sample_count": 22,
+  "shared_interval_end": 874807,
+  "shared_interval_length_bp_end_minus_start": 300002,
+  "shared_interval_start": 574805,
+  "species_count": 11
+}

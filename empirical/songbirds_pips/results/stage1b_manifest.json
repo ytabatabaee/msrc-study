@@ -1,0 +1,211 @@
+{
+  "compute_storage": {
+    "all_22_samples_downloaded_successfully": false,
+    "angsd_saf_completed_samples": 0,
+    "dxy_matrix_complete": false,
+    "nj_tree_created": false,
+    "raw_fastq_downloaded": false,
+    "stage1c_justified": false,
+    "winsfs_succeeded_pairs": 0
+  },
+  "created_utc": "2026-10-02T21:52:46.502212+00:00",
+  "design_validation": {
+    "aa_11_bb_11": true,
+    "accession_namespace": "SAMN/BioSample values in frozen sra_accession column; SRR run accession resolution not yet performed",
+    "all_accessions_present": true,
+    "design_valid": true,
+    "eleven_species": true,
+    "enumerated_pair_count": 231,
+    "exactly_22_samples": true,
+    "expected_pair_count": 231,
+    "focal_interval_matches_stage1a": true,
+    "genotype_counts": {
+      "AA": 11,
+      "BB": 11
+    },
+    "interval": {
+      "chromosome": "CM027530.1",
+      "derivation_rule": "max(PIP.start) and min(PIP.end) across the 11 DatasetS1 species-specific CM027530.1 PIPs; length uses source end-start convention",
+      "end": "874807",
+      "interval_id": "shared_CM027530.1",
+      "interval_type": "derived_common_overlap",
+      "length_bp": "300002",
+      "notes": "all_11_species_mapped_to_same_reference=yes; common_left_COMP_candidate=0-324734; common_right_COMP_candidate=1124967+; exact author shared COMP start/end not present in DatasetS1/S5",
+      "provenance": "DatasetS1 plus article Methods statement that shared PIP is largest region overlapping all identified PIPs",
+      "reference_assembly": "GCA_001746935.2 (Setophaga coronata)",
+      "species": "Cardellina canadensis;Leiothlypis peregrina;Leiothlypis ruficapilla;Setophaga castanea;Setophaga coronata;Setophaga fusca;Setophaga magnolia;Setophaga palmarum;Setophaga pensylvanica;Setophaga tigrina;Setophaga virens",
+      "start": "574805"
+    },
+    "missing_required_tools": [
+      "prefetch",
+      "fasterq-dump",
+      "bwa",
+      "samtools",
+      "angsd",
+      "winsfs"
+    ],
+    "no_background_control_analysis_run": true,
+    "no_candidate_set_changes": true,
+    "no_tree_or_distance_results_fabricated": true,
+    "one_AA_and_one_BB_per_species": true,
+    "pair_count_231": true,
+    "reference_assembly_GCA_001746935_2": true,
+    "required_tools_present": false,
+    "sample_count": 22,
+    "species_count": 11,
+    "stage1b_executable": false
+  },
+  "deviations_from_published_pipeline": [
+    "No raw-read processing was launched because required executables were absent.",
+    "Run-level SRR accessions were not resolved from the frozen SAMN BioSample accessions."
+  ],
+  "frozen_inputs": {
+    "interval": "CM027530.1:574805-874807",
+    "interval_tsv": "data/songbirds_pips/processed/stage1a_shared_pip_interval.tsv",
+    "reference_accession": "GCA_001746935.2",
+    "samples_tsv": "data/songbirds_pips/processed/stage1a_shared_pip_samples.tsv",
+    "source_convention_length_bp": 300002
+  },
+  "not_created_because_blocked": [
+    "empirical/songbirds_pips/results/stage1b_shared_pip_nj.nwk",
+    "empirical/songbirds_pips/figures/songbirds_stage1b_shared_pip_nj.pdf",
+    "empirical/songbirds_pips/figures/songbirds_stage1b_shared_pip_nj.png"
+  ],
+  "outputs": {
+    "data/songbirds_pips/intermediate/stage1b_shared_pip/logs/stage1b_planned_commands.sh": {
+      "bytes": 1987,
+      "sha256": "25a1c082c93c7a26fd536a325a60ae2e0c1fd9db2927f5059a748eb79c43765a"
+    },
+    "data/songbirds_pips/intermediate/stage1b_shared_pip/logs/stage1b_preflight_tool_versions.tsv": {
+      "bytes": 805,
+      "sha256": "45031660e914446256f9aa06ee63b12169c3337c88960edadca25ff8511d9772"
+    },
+    "data/songbirds_pips/processed/stage1b_shared_pip_dxy.tsv": {
+      "bytes": 24908,
+      "sha256": "b67a6e6896b53701249e72e349bc46be7fb0ac2ed03c307f7163d286ec57a59a"
+    },
+    "data/songbirds_pips/processed/stage1b_shared_pip_dxy_matrix.tsv": {
+      "bytes": 1897,
+      "sha256": "1c6774875af80d84f2742f7a2a6aae0784ad10b634352a3650b866237436988d"
+    },
+    "empirical/songbirds_pips/results/stage1b_design_validation.json": {
+      "bytes": 1903,
+      "sha256": "29fc1a9d3957d852b9a946b7492515a669080cd883c1d262da320e9ce907d6af"
+    },
+    "empirical/songbirds_pips/results/stage1b_focal_region_qc.tsv": {
+      "bytes": 1822,
+      "sha256": "fc687708e62d6713f000ebf795750b0e97199be65f489993694e6c60c7244407"
+    },
+    "empirical/songbirds_pips/results/stage1b_pairwise_sfs_status.tsv": {
+      "bytes": 41323,
+      "sha256": "a225cec016499394f322586994292fa7f0e5fa5c97c075ebc1e963d8d8c34a03"
+    },
+    "empirical/songbirds_pips/results/stage1b_reproduction_report.md": {
+      "bytes": 1206,
+      "sha256": "fdd35c62c2772be9e186b24f903fd9511caa36b1532cf6591ed417d57f565a5a"
+    },
+    "empirical/songbirds_pips/results/stage1b_shared_pip_signal.tsv": {
+      "bytes": 341,
+      "sha256": "21388690e042862132076a373b3dd4b733c0feb90fc866880aa99a2fdd5b870a"
+    },
+    "empirical/songbirds_pips/results/stage1b_shared_pip_signal_summary.txt": {
+      "bytes": 509,
+      "sha256": "16d4db8b1607a0b4a8473e4959c980123bcc12f773c9c11ee1898619d7f834bb"
+    },
+    "empirical/songbirds_pips/results/stage1b_stage1c_preanalysis_plan.md": {
+      "bytes": 1170,
+      "sha256": "cbfa25585cb1094c2ea4e24dafce0ea262fb91dc79b30cf0038b5a1fa7badf9c"
+    },
+    "empirical/songbirds_pips/scripts/01b_stage1b_preflight.py": {
+      "bytes": 21685,
+      "sha256": "9c88b5233b94f1bc005541710e7ed0656d2fbbc03fe2e5051ba8cedf416725cb"
+    },
+    "empirical/songbirds_pips/scripts/01b_validate_stage1b.py": {
+      "bytes": 3733,
+      "sha256": "7b0ebb7dcbbac75e10e2f8c87d8aaa95ebae8ad28cb17de9a88790b2419b44df"
+    }
+  },
+  "pip_id": "shared_CM027530.1",
+  "stage": "1B",
+  "status": "blocked_preflight_missing_required_tools",
+  "tool_versions": [
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "prefetch",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "fasterq-dump",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "bwa",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "samtools",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "angsd",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "yes",
+      "tool": "winsfs",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "AdapterRemoval",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "fastp",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "bam",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "picard",
+      "version": "not_found"
+    },
+    {
+      "path": "not_found",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "gatk",
+      "version": "not_found"
+    },
+    {
+      "path": "/usr/bin/java",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "java",
+      "version": "java version \"1.8.0_311\" | Java(TM) SE Runtime Environment (build 1.8.0_311-b11) | Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode)"
+    },
+    {
+      "path": "/usr/local/bin/Rscript",
+      "required_for_stage1b": "optional_or_author_pipeline",
+      "tool": "Rscript",
+      "version": "Rscript (R) version 4.2.2 (2022-10-31)"
+    }
+  ]
+}
