@@ -5,9 +5,11 @@
 The four historical t-complex inversions are shown in the updated spatial
 figure as approximate intervals: `In(17)1` (5–12 Mb), `In(17)2` (12–25 Mb),
 `In(17)3` (25–31 Mb), and `In(17)4` (31–40 Mb). These are schematic
-placements at approximately 0.5-Mb precision, recorded in
+placements rounded to approximately 0.5-Mb display precision, recorded in
 `empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv`.
-The rectangles are hatched and labeled approximate in the figure.
+The rectangles are hatched and labeled approximate in the figure. This is a
+rounding/display convention, not a confidence interval: the actual boundary
+uncertainty is not reported by the schematic and may be larger than 0.5 Mb.
 
 ## Evidence
 
