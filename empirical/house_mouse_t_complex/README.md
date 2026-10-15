@@ -60,3 +60,15 @@ evidence and the fifth overlapping inversion documented in
 `results/t_complex_inversion_provenance.md`. The archive and structural study
 use the same mm10/GRCm38 coordinate system. The descriptive inside/outside
 summary is `results/t_complex_inversion_interval_summary.tsv`.
+
+The independent recombination-suppression audit is in
+`results/recombination_suppression_source_audit.tsv` and
+`results/recombination_suppression_report.md`. The direct literature evidence
+is arrangement-specific but only marker-pair or region-wide: it does not
+provide a coordinate-resolved +/+ versus +/t rate track for the frozen 5-kb
+windows. The separate four-panel schematic
+`figures/house_mouse_t_complex_suppression.{png,pdf}` shows the published
+inversion intervals, interval-level cM observations, and the frozen quartet
+support and contrast profiles. The source-defined phylogeny-based
+recombination-history classification remains supplementary and is not treated
+as a quantitative recombination rate.

@@ -27,3 +27,9 @@ third. The House-mouse data therefore do not show a long spatially coherent
 near-fixed alternative-topology block. Light gray intervals labeled “No
 retained local-tree windows” indicate missing retained windows and do not mean
 zero support or no recombination.
+
+The independent suppression figure is separate from this history-classification
+display. Its literature panel uses the reported T–tf marker-pair map distances
+(7–12 cM conventional versus 0.1–0.5 cM in naturally occurring t/+ females)
+and the published region-wide 20-cM / 100–200-fold summary as interval-level
+observations. These are not rates assigned to individual local-tree windows.

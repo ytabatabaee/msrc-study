@@ -10,6 +10,20 @@ local genealogies and are not genome-wide background or an outside-inversion
 control. `STANDARD_ONLY` is a within-region control that excludes the
 reconstructed/pseudo-t haplotype sequences.
 
+## Recombination-suppression audit methods
+
+The quartet analysis and biological sample classifications were frozen before
+the literature audit. Independent suppression evidence was searched in the
+Kelemen & Vicoso paper/archive and primary t-complex linkage, inversion, and
+genetic-exchange studies. Only pedigree or linkage observations reported in
+cM, crossover fractions, or explicit region-wide suppression summaries were
+eligible as direct evidence. The archived very-recent/extensive and
+no-recent-recombination labels were retained as phylogeny-based history
+categories and were not converted into rates. Historical marker intervals
+were anchored to modern mm10 only when marker identities were clear; this did
+not create a coordinate-resolved rate track. The full source, uncertainty, and
+assembly audit is in `recombination_suppression_source_audit.tsv`.
+
 The fixed quartet baseline was specified independently as
 `Q_SPECIES = (musculus, castaneus) | (domesticus, spretus)`, matching the
 commonly supported rooted house-mouse species history with M. spretus as
