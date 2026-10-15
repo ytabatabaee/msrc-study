@@ -1,0 +1,5 @@
+treatment	group	n_tips	t_status_counts	tips
+T_T_ONLY	Mus musculus castaneus	3	pseudo-t_haplotype:3	Mmc_CAST1_H12.variant8_tHaplSubset.fa,Mmc_CAST2_H14.variant8_tHaplSubset.fa,Mmc_CAST6_H27.variant8_tHaplSubset.fa
+T_T_ONLY	Mus musculus domesticus	4	pseudo-t_haplotype:4	Mmd_FRA5_B2C.variant_tHaplSubset.fa,Mmd_FRA6_C1.variant_tHaplSubset.fa,Mmd_FRA8_F1B.variant_tHaplSubset.fa,Mmd_GER6_TP51D.variant2_tHaplSubset.fa
+T_T_ONLY	Mus musculus musculus	8	pseudo-t_haplotype:8	Mmm_AFG1_396.variant7_tHaplSubset.fa,Mmm_AFG3_416.variant7_tHaplSubset.fa,Mmm_AFG6_444.variant7_tHaplSubset.fa,Mmm_CZE1_CR12.variant5_tHaplSubset.fa,Mmm_CZE2_CR13.variant5_tHaplSubset.fa,Mmm_CZE4_CR23.variant5_tHaplSubset.fa,Mmm_KAZ3_AL19.variant6_tHaplSubset.fa,Mmm_KAZ7_AL41.variant6_tHaplSubset.fa
+T_T_ONLY	Mus spretus	8	outgroup_not_t_haplotype:8	Ms_SPRE1_SP36.variant9,Ms_SPRE2_SP39.variant9,Ms_SPRE3_SP41.variant9,Ms_SPRE4_SP51.variant9,Ms_SPRE5_SP62.variant9,Ms_SPRE6_SP68.variant9,Ms_SPRE7_SP69.variant9,Ms_SPRE8_SP70.variant9

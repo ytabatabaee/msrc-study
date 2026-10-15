@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import importlib.util
+import json
 from pathlib import Path
 
 import pytest
@@ -194,6 +195,38 @@ def test_named_astral_q_values_follow_inferred_focal_split() -> None:
     assert annotations["ALL"]["inferred"] == "Q_T_ALT"
     assert annotations["ALL"]["q_t_alt"] > annotations["ALL"]["q_species"]
     assert abs(sum(float(annotations["ALL"][key]) for key in ("q_species", "q_t_alt", "q_other")) - 1) < 1e-8
+
+
+def test_full_data_t_only_astral_is_reproducible_and_biologically_mapped() -> None:
+    root = Path(__file__).resolve().parents[1]
+    provenance = json.loads((root / "results" / "stage2_t_only_astral_provenance.json").read_text())
+    assert provenance["n_gene_trees_input"] == provenance["n_gene_trees_retained"] == 4046
+    assert provenance["n_input_tips"] == 23
+    assert provenance["topology"] == "Q_SPECIES"
+    q = provenance["biological_quartets"]
+    assert abs(sum(float(q[key]) for key in ("q_species", "q_t_alt", "q_other")) - 1) < 1e-8
+    coverage = {row["group"]: row for row in read_tsv(root / "results" / "stage2_t_only_sample_coverage.tsv")}
+    assert set(coverage) == {"Mus musculus domesticus", "Mus musculus musculus", "Mus musculus castaneus", "Mus spretus"}
+    assert all("pseudo-t_haplotype" in row["t_status_counts"] or row["group"] == "Mus spretus" for row in coverage.values())
+
+
+def test_seven_population_t_only_coverage_is_explicitly_incomplete() -> None:
+    root = Path(__file__).resolve().parents[1]
+    mapping = read_tsv(root.parent.parent / "data" / "house_mouse_t_complex" / "metadata" / "tip_mapping.tsv")
+    t_populations = {row["population"] for row in mapping if row["t_status"] == "pseudo-t_haplotype"}
+    assert "SPRE" not in t_populations
+    assert len(t_populations) == 6
+
+
+def test_common_six_population_three_treatment_comparison_uses_shared_taxa() -> None:
+    root = Path(__file__).resolve().parents[1]
+    rows = {row["treatment"]: row for row in read_tsv(root / "results" / "stage2_common6_population_astral.tsv")}
+    assert set(rows) == {"C6_STANDARD", "C6_T_ONLY", "C6_MIXED"}
+    assert all(row["n_gene_trees"] == "4046" and row["n_populations"] == "6" for row in rows.values())
+    assert all(row["rf_distance_vs_C6_STANDARD"] == "0" for row in rows.values())
+    coverage = read_tsv(root / "results" / "stage2_common6_population_coverage.tsv")
+    assert len(coverage) == 18
+    assert {row["population"] for row in coverage} == {"Afghanistan", "CAST", "Czech Republic", "France", "Germany", "Kazakhstan"}
 
 
 def test_arrangement_contributions_match_exact_pattern_summary() -> None:

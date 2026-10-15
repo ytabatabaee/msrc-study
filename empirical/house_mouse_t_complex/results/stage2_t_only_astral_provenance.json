@@ -1,0 +1,71 @@
+{
+  "astral_executable": "/Users/ytabatabaee/Desktop/ASTER/bin/astral4",
+  "astral_result": {
+    "CU_length": "0.202004",
+    "SU_length": "0.000903323",
+    "astral_score": "10285295",
+    "command": "/Users/ytabatabaee/Desktop/ASTER/bin/astral4 -i /Users/ytabatabaee/Desktop/msrc-paper/data/house_mouse_t_complex/processed/stage2/T_T_ONLY.tre -a /Users/ytabatabaee/Desktop/msrc-paper/data/house_mouse_t_complex/processed/stage2/T_T_ONLY_subspecies.map -o /Users/ytabatabaee/Desktop/msrc-paper/empirical/house_mouse_t_complex/results/stage1_aster/T_T_ONLY_subspecies.nwk -u 2 -t 2 --length CULength --seed 20261005",
+    "final_tree_unannotated": "(((Mus_musculus_domesticus,Mus_spretus),Mus_musculus_musculus),Mus_musculus_castaneus);",
+    "localPP": "1",
+    "log": "empirical/house_mouse_t_complex/results/stage1_aster/T_T_ONLY_subspecies.log",
+    "map_file": "data/house_mouse_t_complex/processed/stage2/T_T_ONLY_subspecies.map",
+    "n_gene_trees": 4046,
+    "n_species": 4,
+    "newick": "(((Mus_musculus_domesticus,Mus_spretus)'[CULength=0.202004;SULength=0.000903323;f1=1842.49;f2=1083.01;f3=1120.5;localPP=1;pp1=1;pp2=0;pp3=0;q1=0.455385;q2=0.267675;q3=0.27694]':0.202004,Mus_musculus_musculus)'[SULength=0.00120496]',Mus_musculus_castaneus);",
+    "q1": "0.455385",
+    "q2": "0.267675",
+    "q3": "0.27694",
+    "topology": "Q_SPECIES",
+    "tree_file": "data/house_mouse_t_complex/processed/stage2/T_T_ONLY.tre",
+    "tree_output": "empirical/house_mouse_t_complex/results/stage1_aster/T_T_ONLY_subspecies.nwk"
+  },
+  "biological_quartets": {
+    "q_other": 0.27694,
+    "q_species": 0.455385,
+    "q_t_alt": 0.267675
+  },
+  "coverage_output": "empirical/house_mouse_t_complex/results/stage2_t_only_sample_coverage.tsv",
+  "criteria": "All 4,046 original local trees were pruned to the validated T_ONLY tip set; no tree was removed.",
+  "definition": "pseudo-t_haplotype tips plus the source-derived Mus spretus outgroup",
+  "groups": {
+    "Mus musculus castaneus": [
+      "Mmc_CAST1_H12.variant8_tHaplSubset.fa",
+      "Mmc_CAST2_H14.variant8_tHaplSubset.fa",
+      "Mmc_CAST6_H27.variant8_tHaplSubset.fa"
+    ],
+    "Mus musculus domesticus": [
+      "Mmd_FRA5_B2C.variant_tHaplSubset.fa",
+      "Mmd_FRA6_C1.variant_tHaplSubset.fa",
+      "Mmd_FRA8_F1B.variant_tHaplSubset.fa",
+      "Mmd_GER6_TP51D.variant2_tHaplSubset.fa"
+    ],
+    "Mus musculus musculus": [
+      "Mmm_AFG1_396.variant7_tHaplSubset.fa",
+      "Mmm_AFG3_416.variant7_tHaplSubset.fa",
+      "Mmm_AFG6_444.variant7_tHaplSubset.fa",
+      "Mmm_CZE1_CR12.variant5_tHaplSubset.fa",
+      "Mmm_CZE2_CR13.variant5_tHaplSubset.fa",
+      "Mmm_CZE4_CR23.variant5_tHaplSubset.fa",
+      "Mmm_KAZ3_AL19.variant6_tHaplSubset.fa",
+      "Mmm_KAZ7_AL41.variant6_tHaplSubset.fa"
+    ],
+    "Mus spretus": [
+      "Ms_SPRE1_SP36.variant9",
+      "Ms_SPRE2_SP39.variant9",
+      "Ms_SPRE3_SP41.variant9",
+      "Ms_SPRE4_SP51.variant9",
+      "Ms_SPRE5_SP62.variant9",
+      "Ms_SPRE6_SP68.variant9",
+      "Ms_SPRE7_SP69.variant9",
+      "Ms_SPRE8_SP70.variant9"
+    ]
+  },
+  "map_input": "data/house_mouse_t_complex/processed/stage2/T_T_ONLY_subspecies.map",
+  "n_gene_trees_input": 4046,
+  "n_gene_trees_retained": 4046,
+  "n_input_tips": 23,
+  "topology": "Q_SPECIES",
+  "treatment": "T_T_ONLY",
+  "tree_input": "data/house_mouse_t_complex/processed/stage2/T_T_ONLY.tre",
+  "tree_output": "empirical/house_mouse_t_complex/results/stage1_aster/T_T_ONLY_subspecies.nwk"
+}

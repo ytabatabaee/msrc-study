@@ -150,18 +150,25 @@ no independent genome-wide control and no direct re-estimation of genealogies.
 
 ## Final visualization cleanup
 
-The four-group ASTRAL plot now contains exactly two explicit cladogram panels
+The four-group ASTRAL plot now contains three explicit cladogram panels
 at
 `figures/house_mouse_t_complex_astral_4group.png` and `.pdf`. It shows the
-standard-only `Q_SPECIES` tree beside the all-tip `Q_T_ALT` tree. The
+standard-only and t-haplotype-only `Q_SPECIES` trees beside the mixed `Q_T_ALT`
+tree. The
 ALL-TIPS annotation now correctly reports the biological values
 `q_species = 0.323323`, `q_t_alt = 0.365364`, and `q_other = 0.311313`;
 these names are not fixed aliases for ASTRAL q1/q2/q3. ASTRAL inference is
 unrooted and *M. spretus* is used only to orient the visualization. The
-seven-population plot also contains exactly two explicit tree panels at
+The population figure now shows the original seven-population standard-only and
+mixed tree panels alongside a six-population t-haplotype-only tree at
 `figures/house_mouse_t_complex_astral_7population.png` and `.pdf`; it marks the
-one P0 split lost and one P1 split gained, with RF(P0,P1) = 2, and does not
-collapse the comparison to one branch length.
+one P0 split lost and one P1 split gained, with RF(P0,P1) = 2. The t-only tree
+omits SPRE because no t-haplotype representative is available, so it is not
+assigned an RF distance against the seven-population trees. A matched
+common-six three-treatment analysis is retained in
+`stage2_common6_population_astral.tsv`; its CU values are 0.526728, 0.157957,
+and 0.159093 for standard-only, t-haplotype-only, and mixed, respectively,
+with RF = 0 among the common-six treatments.
 
 Direct q tracks are provided in
 `figures/house_mouse_t_complex_q_tracks.png` and `.pdf`, with raw 5-kb values
@@ -228,3 +235,30 @@ Window heterogeneity and smoothing summaries are in
 window intervals are shaded and labeled in the spatial figures. These gaps
 represent absent retained local-tree windows, not zero quartet support or no
 recombination.
+
+## Three-treatment full-data ASTRAL extension
+
+The missing full-data t-haplotype-only analysis was run from the same frozen
+4,046 local 5-kb ML gene trees used for the existing standard-only and mixed
+analyses. It retained the 15 reconstructed t-haplotype tips and the eight
+source-derived *M. spretus* outgroup tips, for 23 tips total; all four
+four-group taxon classes were represented and no gene tree was removed.
+The t-haplotype-only tree recovered `Q_SPECIES`, with CU = 0.202004,
+localPP = 1.000000, and mapped quartet frequencies
+`q_species/q_t_alt/q_other = 0.455385/0.267675/0.276940`. This agrees with the
+existing matched t-only resampling result, which is a separate resampling
+analysis rather than this full-data ASTRAL tree.
+
+The three-treatment comparison is now shown in
+`figures/house_mouse_t_complex_astral_4group.png`,
+`figures/house_mouse_t_complex_astral_7population.png`, and
+`figures/house_mouse_t_complex_main_v4.png`. The population figure shows the
+seven-population standard-only and mixed results plus the six-population t-only
+tree with SPRE removed. The validated seven-population standard-only versus
+mixed comparison remains unchanged in its original result tables.
+
+The source-derived reconstructed sequences are called t-haplotype sequences in
+manuscript-facing text; original `_tHaplSubset.fa` identifiers remain in the
+inputs and provenance files. The full-data three-treatment comparison is a
+sampling and genealogy comparison. It does not estimate recombination rates,
+directly measure recombination suppression, or establish causation.

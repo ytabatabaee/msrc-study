@@ -1,0 +1,19 @@
+treatment	population	n_tips	t_status_counts	tips
+C6_STANDARD	Afghanistan	3	standard_noncarrier:3	Mmm_AFG2_413.variant7,Mmm_AFG4_424.variant7,Mmm_AFG5_435.variant7
+C6_STANDARD	CAST	7	standard_noncarrier:7	Mmc_CAST10_H36.variant8,Mmc_CAST3_H15.variant8,Mmc_CAST4_H24.variant8,Mmc_CAST5_H26.variant8,Mmc_CAST7_H28.variant8,Mmc_CAST8_H30.variant8,Mmc_CAST9_H34.variant8
+C6_STANDARD	Czech Republic	4	standard_noncarrier:4	Mmm_CZE3_CR16.variant5,Mmm_CZE5_CR25.variant5,Mmm_CZE7_CR46.variant5,Mmm_CZE8_CR59.variant5
+C6_STANDARD	France	5	standard_noncarrier:5	Mmd_FRA1_14.variant,Mmd_FRA2_15B.variant,Mmd_FRA3_16B.variant,Mmd_FRA4_18B.variant,Mmd_FRA7_E1.variant
+C6_STANDARD	Germany	7	standard_noncarrier:7	Mmd_GER1_TP1.variant2,Mmd_GER2_TP121B.variant2,Mmd_GER3_TP17-2.variant2,Mmd_GER4_TP3-92.variant2,Mmd_GER5_TP4a.variant2,Mmd_GER7_TP7-10F1A2.variant2,Mmd_GER8_TP81B.variant2
+C6_STANDARD	Kazakhstan	6	standard_noncarrier:6	Mmm_KAZ1_AL1.variant6,Mmm_KAZ2_AL16.variant6,Mmm_KAZ4_AL33.variant6,Mmm_KAZ5_AL38.variant6,Mmm_KAZ6_AL40.variant6,Mmm_KAZ8_AL42.variant6
+C6_T_ONLY	Afghanistan	3	pseudo-t_haplotype:3	Mmm_AFG1_396.variant7_tHaplSubset.fa,Mmm_AFG3_416.variant7_tHaplSubset.fa,Mmm_AFG6_444.variant7_tHaplSubset.fa
+C6_T_ONLY	CAST	3	pseudo-t_haplotype:3	Mmc_CAST1_H12.variant8_tHaplSubset.fa,Mmc_CAST2_H14.variant8_tHaplSubset.fa,Mmc_CAST6_H27.variant8_tHaplSubset.fa
+C6_T_ONLY	Czech Republic	3	pseudo-t_haplotype:3	Mmm_CZE1_CR12.variant5_tHaplSubset.fa,Mmm_CZE2_CR13.variant5_tHaplSubset.fa,Mmm_CZE4_CR23.variant5_tHaplSubset.fa
+C6_T_ONLY	France	3	pseudo-t_haplotype:3	Mmd_FRA5_B2C.variant_tHaplSubset.fa,Mmd_FRA6_C1.variant_tHaplSubset.fa,Mmd_FRA8_F1B.variant_tHaplSubset.fa
+C6_T_ONLY	Germany	1	pseudo-t_haplotype:1	Mmd_GER6_TP51D.variant2_tHaplSubset.fa
+C6_T_ONLY	Kazakhstan	2	pseudo-t_haplotype:2	Mmm_KAZ3_AL19.variant6_tHaplSubset.fa,Mmm_KAZ7_AL41.variant6_tHaplSubset.fa
+C6_MIXED	Afghanistan	6	pseudo-t_haplotype:3;standard_noncarrier:3	Mmm_AFG1_396.variant7_tHaplSubset.fa,Mmm_AFG2_413.variant7,Mmm_AFG3_416.variant7_tHaplSubset.fa,Mmm_AFG4_424.variant7,Mmm_AFG5_435.variant7,Mmm_AFG6_444.variant7_tHaplSubset.fa
+C6_MIXED	CAST	10	pseudo-t_haplotype:3;standard_noncarrier:7	Mmc_CAST10_H36.variant8,Mmc_CAST1_H12.variant8_tHaplSubset.fa,Mmc_CAST2_H14.variant8_tHaplSubset.fa,Mmc_CAST3_H15.variant8,Mmc_CAST4_H24.variant8,Mmc_CAST5_H26.variant8,Mmc_CAST6_H27.variant8_tHaplSubset.fa,Mmc_CAST7_H28.variant8,Mmc_CAST8_H30.variant8,Mmc_CAST9_H34.variant8
+C6_MIXED	Czech Republic	7	pseudo-t_haplotype:3;standard_noncarrier:4	Mmm_CZE1_CR12.variant5_tHaplSubset.fa,Mmm_CZE2_CR13.variant5_tHaplSubset.fa,Mmm_CZE3_CR16.variant5,Mmm_CZE4_CR23.variant5_tHaplSubset.fa,Mmm_CZE5_CR25.variant5,Mmm_CZE7_CR46.variant5,Mmm_CZE8_CR59.variant5
+C6_MIXED	France	8	pseudo-t_haplotype:3;standard_noncarrier:5	Mmd_FRA1_14.variant,Mmd_FRA2_15B.variant,Mmd_FRA3_16B.variant,Mmd_FRA4_18B.variant,Mmd_FRA5_B2C.variant_tHaplSubset.fa,Mmd_FRA6_C1.variant_tHaplSubset.fa,Mmd_FRA7_E1.variant,Mmd_FRA8_F1B.variant_tHaplSubset.fa
+C6_MIXED	Germany	8	pseudo-t_haplotype:1;standard_noncarrier:7	Mmd_GER1_TP1.variant2,Mmd_GER2_TP121B.variant2,Mmd_GER3_TP17-2.variant2,Mmd_GER4_TP3-92.variant2,Mmd_GER5_TP4a.variant2,Mmd_GER6_TP51D.variant2_tHaplSubset.fa,Mmd_GER7_TP7-10F1A2.variant2,Mmd_GER8_TP81B.variant2
+C6_MIXED	Kazakhstan	8	pseudo-t_haplotype:2;standard_noncarrier:6	Mmm_KAZ1_AL1.variant6,Mmm_KAZ2_AL16.variant6,Mmm_KAZ3_AL19.variant6_tHaplSubset.fa,Mmm_KAZ4_AL33.variant6,Mmm_KAZ5_AL38.variant6,Mmm_KAZ6_AL40.variant6,Mmm_KAZ7_AL41.variant6_tHaplSubset.fa,Mmm_KAZ8_AL42.variant6

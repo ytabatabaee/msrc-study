@@ -51,6 +51,7 @@ PRETTY = {
 }
 FOUR_LABELS = ["Mus_musculus_domesticus", "Mus_musculus_musculus", "Mus_musculus_castaneus", "Mus_spretus"]
 POP_LABELS = ["France", "Germany", "Afghanistan", "Czech_Republic", "Kazakhstan", "CAST", "SPRE"]
+COMMON6_POP_LABELS = ["France", "Germany", "Afghanistan", "Czech_Republic", "Kazakhstan", "CAST"]
 
 
 def save(fig: plt.Figure, stem: str | list[str]) -> None:
@@ -107,7 +108,7 @@ def cladogram_layout(tree, label_order: list[str]):
     return x, y, lines
 
 
-def draw_cladogram(ax, tree, label_order: list[str], title: str, title_color: str = "#333333", focal_split=None, changed_splits=None):
+def draw_cladogram(ax, tree, label_order: list[str], title: str, title_color: str = "#333333", focal_split=None, changed_splits=None, label_fontsize: float = 10):
     x, y, lines = cladogram_layout(tree, label_order)
     all_tips = frozenset(label_order)
     changed_splits = changed_splits or {}
@@ -143,7 +144,7 @@ def draw_cladogram(ax, tree, label_order: list[str], title: str, title_color: st
     draw_verticals(tree.root)
     xmax = max(x.values())
     for label in label_order:
-        ax.text(xmax + 0.12, y[label], label, va="center", ha="left", fontsize=10, clip_on=True)
+        ax.text(xmax + 0.12, y[label], label, va="center", ha="left", fontsize=label_fontsize, clip_on=True)
     ax.set_xlim(-0.15, xmax + 3.4)
     ax.set_ylim(-0.8, len(label_order) - 0.2)
     ax.invert_yaxis()
@@ -166,9 +167,9 @@ def focal_annotations() -> dict[str, dict[str, float | str]]:
     """Map ASTRAL q1/q2/q3 to biological names using the inferred split."""
     out = {}
     for row in read_tsv(RESULTS / "stage2_astral_summary.tsv"):
-        if row["treatment"] not in {"T0_STANDARD", "T1_ALL_WINDOWS"}:
+        if row["treatment"] not in {"T0_STANDARD", "T_T_ONLY", "T1_ALL_WINDOWS"}:
             continue
-        key = "STANDARD" if row["treatment"] == "T0_STANDARD" else "ALL"
+        key = {"T0_STANDARD": "STANDARD", "T_T_ONLY": "T_ONLY", "T1_ALL_WINDOWS": "ALL"}[row["treatment"]]
         inferred = row["topology"]
         if inferred == "Q_SPECIES":
             mapped = {"q_species": float(row["q1"]), "q_t_alt": float(row["q2"]), "q_other": float(row["q3"])}
@@ -178,27 +179,34 @@ def focal_annotations() -> dict[str, dict[str, float | str]]:
             raise AssertionError(f"unexpected focal topology: {inferred}")
         mapped.update({"inferred": inferred, "CU": float(row["CU_length"]), "localPP": float(row["localPP"])})
         out[key] = mapped
-    assert set(out) == {"STANDARD", "ALL"}
+    assert set(out) == {"STANDARD", "T_ONLY", "ALL"}
     return out
 
 
 def make_4group_trees() -> None:
-    paths = {"STANDARD": RESULTS / "stage1_aster" / "T0_STANDARD_subspecies.nwk", "ALL": RESULTS / "stage1_aster" / "T1_ALL_WINDOWS_subspecies.nwk"}
+    paths = {
+        "STANDARD": RESULTS / "stage1_aster" / "T0_STANDARD_subspecies.nwk",
+        "T_ONLY": RESULTS / "stage1_aster" / "T_T_ONLY_subspecies.nwk",
+        "ALL": RESULTS / "stage1_aster" / "T1_ALL_WINDOWS_subspecies.nwk",
+    }
     annotations = focal_annotations()
-    colors = {"STANDARD": Q_COLORS["q_species"], "ALL": Q_COLORS["q_t_alt"]}
+    colors = {"STANDARD": Q_COLORS["q_species"], "T_ONLY": "#59a14f", "ALL": Q_COLORS["q_t_alt"]}
     trees = {key: load_tree(path, "Mus_spretus") for key, path in paths.items()}
     labels = [PRETTY[x] for x in FOUR_LABELS]
-    fig, axes = plt.subplots(1, 2, figsize=(11, 5.8), gridspec_kw={"wspace": 0.55})
-    assert len(axes) == 2
-    for ax, key, inferred in zip(axes, ("STANDARD", "ALL"), ("Q_SPECIES", "Q_T_ALT")):
-        draw_cladogram(ax, trees[key], labels, "STANDARD / noncarrier" if key == "STANDARD" else "ALL standard + pseudo-t", colors[key], focal_split=focal_split(inferred))
+    fig, axes = plt.subplots(1, 3, figsize=(15.5, 5.8), gridspec_kw={"wspace": 0.48})
+    assert len(axes) == 3
+    titles = {"STANDARD": "Standard-only", "T_ONLY": "t-haplotype-only", "ALL": "Mixed (standard + t)"}
+    for ax, key in zip(axes, ("STANDARD", "T_ONLY", "ALL")):
+        inferred = annotations[key]["inferred"]
+        draw_cladogram(ax, trees[key], labels, titles[key], colors[key], focal_split=focal_split(str(inferred)))
         ann = annotations[key]
         text = (f"{ann['inferred']}\nCU = {ann['CU']:.6f}\nlocalPP = {ann['localPP']:.6f}\n"
                 f"q_species = {ann['q_species']:.6f}\nq_t_alt = {ann['q_t_alt']:.6f}\nq_other = {ann['q_other']:.6f}")
-        ax.text(0.02, -0.04, text, transform=ax.transAxes, va="top", ha="left", fontsize=8, bbox={"facecolor": "white", "edgecolor": colors[key], "boxstyle": "round,pad=0.35"})
+        ax.text(0.02, -0.04, text, transform=ax.transAxes, va="top", ha="left", fontsize=7.5, bbox={"facecolor": "white", "edgecolor": colors[key], "boxstyle": "round,pad=0.35"})
         assert all("q1=" not in item.get_text() and "q2=" not in item.get_text() and "q3=" not in item.get_text() for item in ax.texts)
-    fig.suptitle("Four-group ASTRAL cladograms; unrooted inference, SPRE used only for orientation", fontsize=13)
-    fig.subplots_adjust(top=0.84, bottom=0.24, left=0.04, right=0.98)
+    fig.suptitle("Four-group ASTRAL trees; unrooted inference, M. spretus used only for orientation", fontsize=13)
+    fig.text(0.5, 0.02, "Terminal layout is schematic; CU is the estimated internal branch length. localPP is ASTRAL's local support statistic.", ha="center", fontsize=8)
+    fig.subplots_adjust(top=0.84, bottom=0.23, left=0.02, right=0.99)
     save(fig, "house_mouse_t_complex_astral_4group")
 
 
@@ -206,19 +214,26 @@ def make_7population_trees() -> None:
     comparison = read_tsv(RESULTS / "stage2_population_split_comparison.tsv")
     lost = {parse_split_id(row["split_id"]) for row in comparison if row["status"] == "lost"}
     gained = {parse_split_id(row["split_id"]) for row in comparison if row["status"] == "gained"}
-    p0 = load_tree(RESULTS / "stage2_population_astral" / "P0_STANDARD.nwk", "SPRE")
-    p1 = load_tree(RESULTS / "stage2_population_astral" / "P1_ALL.nwk", "SPRE")
-    labels = [PRETTY[x] for x in POP_LABELS]
-    changed_p0 = {split: ("#d62728", 3.0, "-") for split in lost}
-    changed_p1 = {split: ("#1f77b4", 3.0, "-") for split in gained}
-    fig, axes = plt.subplots(1, 2, figsize=(13, 6.2), gridspec_kw={"wspace": 0.62})
-    assert len(axes) == 2
-    draw_cladogram(axes[0], p0, labels, "P0_STANDARD", changed_splits=changed_p0)
-    draw_cladogram(axes[1], p1, labels, "P1_ALL", changed_splits=changed_p1)
-    axes[0].text(0.02, -0.04, "red = split lost in P1", transform=axes[0].transAxes, fontsize=9, color="#d62728")
-    axes[1].text(0.02, -0.04, "blue = split gained in P1", transform=axes[1].transAxes, fontsize=9, color="#1f77b4")
-    fig.suptitle("Seven-population ASTRAL trees; SPRE used only for orientation\nRF(P0,P1) = 2", fontsize=13)
-    fig.subplots_adjust(top=0.82, bottom=0.16, left=0.03, right=0.98)
+    summary = {row["treatment"]: row for row in read_tsv(RESULTS / "stage2_common6_population_astral.tsv")}
+    trees = {
+        "STANDARD": load_tree(RESULTS / "stage2_population_astral" / "P0_STANDARD.nwk", "SPRE"),
+        "T_ONLY": load_tree(RESULTS / "stage2_common6_population_astral" / "C6_T_ONLY.nwk", "CAST"),
+        "MIXED": load_tree(RESULTS / "stage2_population_astral" / "P1_ALL.nwk", "SPRE"),
+    }
+    labels_7 = [PRETTY[x] for x in POP_LABELS]
+    labels_6 = [PRETTY[x] for x in COMMON6_POP_LABELS]
+    colors = {"STANDARD": Q_COLORS["q_species"], "T_ONLY": "#59a14f", "MIXED": Q_COLORS["q_t_alt"]}
+    fig, axes = plt.subplots(1, 3, figsize=(17, 6.2), gridspec_kw={"wspace": 0.5})
+    assert len(axes) == 3
+    draw_cladogram(axes[0], trees["STANDARD"], labels_7, "Standard-only", colors["STANDARD"], changed_splits={split: ("#d62728", 3.0, "-") for split in lost}, label_fontsize=8.5)
+    draw_cladogram(axes[1], trees["T_ONLY"], labels_6, "t-haplotype-only\n(SPRE removed)", colors["T_ONLY"], label_fontsize=8.5)
+    draw_cladogram(axes[2], trees["MIXED"], labels_7, "Mixed (standard + t)", colors["MIXED"], changed_splits={split: ("#1f77b4", 3.0, "-") for split in gained}, label_fontsize=8.5)
+    axes[0].text(0.02, -0.04, "red = split lost in mixed; 7 populations", transform=axes[0].transAxes, fontsize=7.5, color="#d62728")
+    axes[1].text(0.02, -0.04, f"CU = {float(summary['C6_T_ONLY']['CU_length']):.6f}; six populations", transform=axes[1].transAxes, fontsize=7.5, va="top")
+    axes[2].text(0.02, -0.04, "blue = split gained in mixed; 7 populations", transform=axes[2].transAxes, fontsize=7.5, color="#1f77b4")
+    fig.suptitle("Population ASTRAL comparison; seven-population standard versus mixed, six-population t-only", fontsize=13)
+    fig.text(0.5, 0.02, "The t-only tree omits SPRE because no t-haplotype representative is available; RF = 2 refers only to the matched seven-population standard-versus-mixed comparison.", ha="center", fontsize=8)
+    fig.subplots_adjust(top=0.82, bottom=0.13, left=0.02, right=0.99)
     save(fig, "house_mouse_t_complex_astral_7population")
 
 
@@ -445,24 +460,32 @@ def balanced_panel(ax) -> None:
     ax.set_xticks(np.arange(3), labels)
     ax.set_ylim(0, 1.08)
     ax.set_ylabel("Replicate fraction")
-    ax.set_title("D. Mixed-state sampling shifts outcomes toward Q_T_ALT")
-    ax.text(0.5, -0.24, "B2 composition-balanced; total sample size differs from B0/B1", transform=ax.transAxes, ha="center", fontsize=8)
+    sample_rows = read_tsv(RESULTS / "stage2_balanced_quartet_resampling.tsv")
+    sample_sizes = {treatment: len(next(row["selected_tips"].split(",") for row in sample_rows if row["treatment"] == treatment)) for treatment in treatment_order}
+    ax.set_title("D. Balanced resampling (1,000 replicates)")
+    ax.text(0.5, -0.24, "Selected tips per replicate: " + ", ".join(f"{key}={sample_sizes[key]}" for key in treatment_order), transform=ax.transAxes, ha="center", fontsize=7.5)
     ax.legend(frameon=False, fontsize=8, ncol=3)
 
 
 def make_main_v4() -> None:
     qrows = read_tsv(RESULTS / "stage2_fixed_quartet_scan.tsv")
     fig = plt.figure(figsize=(15, 11))
-    outer = fig.add_gridspec(2, 2, width_ratios=[1.25, 1], height_ratios=[1.1, 1], hspace=0.34, wspace=0.22)
-    tree_grid = outer[0, 0].subgridspec(1, 2, wspace=0.14)
-    trees = {"STANDARD": load_tree(RESULTS / "stage1_aster" / "T0_STANDARD_subspecies.nwk", "Mus_spretus"), "ALL": load_tree(RESULTS / "stage1_aster" / "T1_ALL_WINDOWS_subspecies.nwk", "Mus_spretus")}
+    outer = fig.add_gridspec(2, 2, width_ratios=[1.5, 1], height_ratios=[1.1, 1], hspace=0.34, wspace=0.22)
+    tree_grid = outer[0, 0].subgridspec(1, 3, wspace=0.08)
+    trees = {
+        "STANDARD": load_tree(RESULTS / "stage1_aster" / "T0_STANDARD_subspecies.nwk", "Mus_spretus"),
+        "T_ONLY": load_tree(RESULTS / "stage1_aster" / "T_T_ONLY_subspecies.nwk", "Mus_spretus"),
+        "ALL": load_tree(RESULTS / "stage1_aster" / "T1_ALL_WINDOWS_subspecies.nwk", "Mus_spretus"),
+    }
     labels = [PRETTY[x] for x in FOUR_LABELS]
-    tree_axes = [fig.add_subplot(tree_grid[i]) for i in range(2)]
-    draw_cladogram(tree_axes[0], trees["STANDARD"], labels, "A. STANDARD_ONLY\nQ_SPECIES", Q_COLORS["q_species"], focal_split=focal_split("Q_SPECIES"))
-    draw_cladogram(tree_axes[1], trees["ALL"], labels, "ALL_TIPS\nQ_T_ALT", Q_COLORS["q_t_alt"], focal_split=focal_split("Q_T_ALT"))
-    for ax, key in zip(tree_axes, ("STANDARD", "ALL")):
-        ann = focal_annotations()[key]
-        ax.text(0.02, -0.04, f"CU = {ann['CU']:.6f}; localPP = {ann['localPP']:.6f}", transform=ax.transAxes, fontsize=9, va="top")
+    tree_axes = [fig.add_subplot(tree_grid[i]) for i in range(3)]
+    annotations = focal_annotations()
+    tree_titles = {"STANDARD": "A. Standard-only", "T_ONLY": "t-haplotype-only", "ALL": "Mixed (standard + t)"}
+    tree_colors = {"STANDARD": Q_COLORS["q_species"], "T_ONLY": "#59a14f", "ALL": Q_COLORS["q_t_alt"]}
+    for ax, key in zip(tree_axes, ("STANDARD", "T_ONLY", "ALL")):
+        ann = annotations[key]
+        draw_cladogram(ax, trees[key], labels, f"{tree_titles[key]}\n{ann['inferred']}", tree_colors[key], focal_split=focal_split(str(ann["inferred"])), label_fontsize=7.5)
+        ax.text(0.02, -0.04, f"CU = {ann['CU']:.6f}; localPP = {ann['localPP']:.6f}", transform=ax.transAxes, fontsize=7.5, va="top")
     panel_b = fig.add_subplot(outer[0, 1])
     arrangement_panel_full(panel_b)
     panel_c = outer[1, 0].subgridspec(1, 2, wspace=0.38)
@@ -473,7 +496,7 @@ def make_main_v4() -> None:
     delta = np.array([float(row["contribution_delta_species_alt"]) for row in rows])
     axw.barh(patterns, weights, color="#999999")
     axw.set_xlabel("Pattern weight")
-    axw.set_title("Pattern frequency")
+    axw.set_title("C. Pattern frequency")
     axw.invert_yaxis()
     colors = [Q_COLORS["q_species"] if value >= 0 else Q_COLORS["q_t_alt"] for value in delta]
     axd.barh(patterns, delta, color=colors)
@@ -493,7 +516,7 @@ def make_main_v4() -> None:
         axis.grid(axis="x", alpha=0.2)
     panel_d = fig.add_subplot(outer[1, 1])
     balanced_panel(panel_d)
-    fig.suptitle("House-mouse t-complex: arrangement-state-conditioned genealogy and quartet distortion", fontsize=15)
+    fig.suptitle("House-mouse t-complex: three haplotype treatments, local quartet distortion, and resampling", fontsize=15)
     fig.subplots_adjust(top=0.86, bottom=0.13, left=0.05, right=0.98)
     save(fig, "house_mouse_t_complex_main_v4")
 
@@ -567,20 +590,23 @@ def quartet_by_recombination() -> None:
 
 
 def validate_tree_semantics() -> None:
-    four = [("T0_STANDARD_subspecies.nwk", "Q_SPECIES"), ("T1_ALL_WINDOWS_subspecies.nwk", "Q_T_ALT")]
-    expected = set(PRETTY[x] for x in FOUR_LABELS)
     annotations = focal_annotations()
-    for filename, inferred in four:
+    four = [
+        ("T0_STANDARD_subspecies.nwk", "STANDARD"),
+        ("T_T_ONLY_subspecies.nwk", "T_ONLY"),
+        ("T1_ALL_WINDOWS_subspecies.nwk", "ALL"),
+    ]
+    expected = set(PRETTY[x] for x in FOUR_LABELS)
+    for filename, key in four:
         tree = load_tree(RESULTS / "stage1_aster" / filename, "Mus_spretus")
         assert set(t.name for t in tree.get_terminals()) == expected
         topology = four_taxon_topology_from_newick((RESULTS / "stage1_aster" / filename).read_text().strip())
-        assert topology == inferred
-        key = "STANDARD" if "T0_" in filename else "ALL"
+        assert topology == annotations[key]["inferred"]
         assert abs(sum(float(annotations[key][q]) for q in ("q_species", "q_t_alt", "q_other")) - 1) < 1e-6
-        if key == "STANDARD":
-            assert annotations[key]["q_species"] > annotations[key]["q_t_alt"]
-        else:
+        if annotations[key]["inferred"] == "Q_T_ALT":
             assert annotations[key]["q_t_alt"] > annotations[key]["q_species"]
+        elif annotations[key]["inferred"] == "Q_SPECIES":
+            assert annotations[key]["q_species"] > annotations[key]["q_t_alt"]
     p0 = (RESULTS / "stage2_population_astral" / "P0_STANDARD.nwk").read_text().strip()
     p1 = (RESULTS / "stage2_population_astral" / "P1_ALL.nwk").read_text().strip()
     assert len(tree_bipartitions(p0) ^ tree_bipartitions(p1)) == 2
@@ -603,7 +629,7 @@ def validate_figures() -> None:
         with Image.open(png) as image:
             pixels = np.asarray(image.convert("RGB")); nonwhite = int(np.sum(np.any(pixels < 245, axis=2))); distinct = int(np.unique(pixels.reshape(-1, 3), axis=0).shape[0])
             assert pixels.shape[1] >= 800 and pixels.shape[0] >= 500 and nonwhite > 5_000 and distinct > 100
-            intended = 4 if stem.endswith("main_v4") else (2 if "astral" in stem else "NA")
+            intended = 4 if stem.endswith("main_v4") else (3 if "astral" in stem else "NA")
             rows.append({"figure": stem, "png_bytes": png.stat().st_size, "pdf_bytes": pdf.stat().st_size, "width_px": pixels.shape[1], "height_px": pixels.shape[0], "nonwhite_pixels": nonwhite, "distinct_rgb": distinct, "intended_panels": intended})
     write_tsv(RESULTS / "stage2_visualization_validation.tsv", rows, list(rows[0].keys()))
 

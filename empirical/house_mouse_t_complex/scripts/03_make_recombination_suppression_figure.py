@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Create the three-panel literature-plus-quartet suppression figure."""
 from __future__ import annotations
 import sys
 from pathlib import Path
@@ -14,93 +15,115 @@ from house_mouse_stage2_utils import FIGURES, PROCESSED, RESULTS, read_tsv
 OUT_PNG = FIGURES / "house_mouse_t_complex_suppression.png"
 OUT_PDF = FIGURES / "house_mouse_t_complex_suppression.pdf"
 Q_COLORS = {"q_species": "#4c78a8", "q_t_alt": "#f58518", "q_other": "#54a24b"}
-INTERVAL_COLORS = ["#6a3d9a", "#1b9e77", "#d95f02", "#7570b3"]
+INVERSION_COLORS = ["#6a3d9a", "#1b9e77", "#d95f02", "#7570b3"]
+T_BP, TF_BP = 8_438_000, 27_300_000
+COVERAGE_START_BP, COVERAGE_END_BP = 5_000_000, 37_055_000
 
-def bins(rows, width=250_000):
+def quartets(rows: list[dict[str, str]], width: int = 250_000):
     groups = {}
     for row in rows:
         if row["treatment"] != "ALL_TIPS":
             continue
-        start = 5_000_000 + ((int(row["start_bp"]) - 5_000_000) // width) * width
+        start = COVERAGE_START_BP + ((int(float(row["start_bp"])) - COVERAGE_START_BP) // width) * width
         groups.setdefault(start, []).append(row)
     return [(start + width / 2, {key: float(np.mean([float(r[key]) for r in block])) for key in Q_COLORS})
             for start, block in sorted(groups.items())]
 
-def gaps():
-    meta = sorted(read_tsv(PROCESSED / "house_mouse_t_complex_ml_5kb_metadata.tsv"), key=lambda r: int(r["start_bp"]))
-    return [(int(a["end_bp"]) + 1, int(b["start_bp"]) - 1) for a, b in zip(meta, meta[1:])
-            if int(b["start_bp"]) > int(a["end_bp"]) + 1]
+def retained_gaps():
+    metadata = sorted(read_tsv(PROCESSED / "house_mouse_t_complex_ml_5kb_metadata.tsv"), key=lambda row: int(row["start_bp"]))
+    return [(int(left["end_bp"]) + 1, int(right["start_bp"]) - 1) for left, right in zip(metadata, metadata[1:])
+            if int(right["start_bp"]) > int(left["end_bp"]) + 1]
 
 def shade_gaps(ax):
-    for start, end in gaps():
+    for start, end in retained_gaps():
         ax.axvspan(start / 1e6, end / 1e6, color="#eeeeee", zorder=-5)
 
-def axis(ax):
+def chromosome_axis(ax):
     ax.set_xlim(5, 40.5)
-    ax.grid(axis="x", alpha=0.15)
+    ax.set_xticks(np.arange(5, 41, 5))
+    ax.grid(axis="x", alpha=.16)
 
 def panel_a(ax):
-    rows = read_tsv(RESULTS / "t_complex_inversion_intervals.tsv")
-    for i, row in enumerate(rows):
+    intervals = read_tsv(RESULTS / "t_complex_inversion_intervals.tsv")
+    for index, row in enumerate(intervals):
         start, end = int(row["start_bp"]) / 1e6, int(row["end_bp"]) / 1e6
-        ax.add_patch(plt.Rectangle((start, i + .18), end - start, .64, color=INTERVAL_COLORS[i], alpha=.72))
-        ax.text((start + end) / 2, i + .5, row["inversion_name"], ha="center", va="center", fontsize=8)
-    ax.set_ylim(0, 4); ax.set_yticks(np.arange(4) + .5, [r["inversion_name"] for r in rows]); ax.invert_yaxis()
+        ax.plot([start, end], [index, index], color=INVERSION_COLORS[index], lw=10, solid_capstyle="butt", zorder=2)
+        ax.text((start + end) / 2, index, row["inversion_name"], ha="center", va="center", fontsize=8, color="white", weight="bold", zorder=3)
+    ax.axvspan(COVERAGE_START_BP / 1e6, COVERAGE_END_BP / 1e6, color="#bdbdbd", alpha=.12, zorder=0)
+    ax.text((COVERAGE_START_BP + COVERAGE_END_BP) / 2e6, 3.52, "available 5-kb gene-tree windows: chr17:5.00–37.05 Mb", ha="center", va="bottom", fontsize=8, color="#555555")
+    ax.plot([T_BP / 1e6, TF_BP / 1e6], [4.03, 4.03], color="#222222", lw=1.1)
+    for position in (T_BP / 1e6, TF_BP / 1e6):
+        ax.plot([position, position], [3.94, 4.12], color="#222222", lw=1.1)
+    ax.text(T_BP / 1e6, 4.22, "T", ha="center", va="bottom", fontsize=9, weight="bold")
+    ax.text(TF_BP / 1e6, 4.22, "tf", ha="center", va="bottom", fontsize=9, weight="bold")
+    ax.text((T_BP + TF_BP) / 2e6, 4.10, "T–tf marker interval", ha="center", va="bottom", fontsize=8)
+    ax.axvline(T_BP / 1e6, color="#333333", ls=":", lw=.8)
+    ax.axvline(TF_BP / 1e6, color="#333333", ls=":", lw=.8)
+    ax.annotate("In(17)4 extends beyond\ngene-tree coverage", xy=(40.0, 3), xytext=(34.0, 3.65),
+                arrowprops={"arrowstyle": "-", "color": "#555555", "lw": .8}, fontsize=8, color="#555555", ha="center")
+    ax.set_ylim(-.6, 4.55)
+    ax.set_yticks(np.arange(len(intervals)), [row["inversion_name"] for row in intervals])
+    ax.invert_yaxis()
     ax.set_ylabel("Published inversion")
-    ax.set_title("A. Four t-complex inversions (sequence-validated mm10 intervals)", loc="left", fontsize=10)
-    ax.text(40.35, 3.9, "junction-region uncertainty\nreported by source", ha="right", va="bottom", fontsize=7, color="#555555")
-    axis(ax)
+    ax.set_title("A. Chromosome 17 structure", loc="left", fontsize=11, weight="bold")
+    ax.set_xlabel("GRCm38/mm10 chr17 position (Mb)")
+    chromosome_axis(ax)
 
 def panel_b(ax):
-    shade_gaps(ax)
-    t_mid, tf_mid = 8.438, 27.309
-    ax.plot([t_mid, tf_mid], [6.5, 6.5], color="#555555", lw=2)
-    ax.scatter([t_mid, tf_mid], [6.5, 6.5], color="#222222", s=18, zorder=3)
-    ax.text(t_mid, 6.65, "T", ha="center", va="top", fontsize=8)
-    ax.text(tf_mid, 6.65, "tf/Itpr3", ha="center", va="top", fontsize=8)
-    ax.text((t_mid + tf_mid) / 2, 6.82, "historical T–tf pair; approximate modern mm10 anchors", ha="center", va="top", fontsize=7)
-    ax.errorbar([t_mid], [9.5], yerr=[[2.5], [2.5]], fmt="none", ecolor="#b2182b", capsize=4, lw=2)
-    ax.errorbar([t_mid], [0.3], yerr=[[0.2], [0.2]], fmt="none", ecolor="#2166ac", capsize=4, lw=2)
-    ax.scatter([t_mid, t_mid], [9.5, 0.3], color=["#b2182b", "#2166ac"], zorder=3)
-    ax.text(t_mid + .65, 9.5, "+/+ conventional map: 7–12 cM", va="center", fontsize=8, color="#b2182b")
-    ax.text(t_mid + .65, 0.3, "+/t heterozygotes: 0.1–0.5 cM", va="center", fontsize=8, color="#2166ac")
-    ax.text(5.2, 2.0, "Region-wide summary: four inversions ≈20 cM;\nreported suppression ≈100–200-fold (not a coordinate-resolved rate)", fontsize=8, va="top", bbox={"facecolor": "white", "edgecolor": "#999999"})
-    ax.set_ylim(0, 11.5); ax.set_ylabel("Reported map distance (cM)")
-    ax.set_title("B. Direct suppression measurements are marker-pair / region-wide", loc="left", fontsize=10)
-    ax.text(40.35, 10.9, "No CI or window-level map recovered", ha="right", va="top", fontsize=7, color="#555555")
-    axis(ax)
+    ax.plot([7, 12], [1, 1], color="#b2182b", lw=10, solid_capstyle="butt")
+    ax.plot([.1, .5], [0, 0], color="#2166ac", lw=10, solid_capstyle="butt")
+    for value, y, color in [(7, 1, "#b2182b"), (12, 1, "#b2182b"), (.1, 0, "#2166ac"), (.5, 0, "#2166ac")]:
+        ax.plot([value, value], [y - .15, y + .15], color=color, lw=1.2)
+    ax.text(12.25, 1, "7–12 cM", va="center", fontsize=10, color="#b2182b", weight="bold")
+    ax.text(.75, 0, "0.1–0.5 cM", va="center", fontsize=10, color="#2166ac", weight="bold")
+    ax.set_xlim(0, 13.5); ax.set_ylim(-.65, 1.65)
+    ax.set_yticks([1, 0], ["Conventional map", "Naturally occurring t/+ heterozygotes"])
+    ax.set_xlabel("T–tf genetic distance (cM)")
+    ax.set_title("B. Recombination suppression between T and tf", loc="left", fontsize=11, weight="bold")
+    ax.text(.02, .04, "Historical linkage-map comparison (Silver & Artzt, 1981).\nPublished ranges; not point estimates.",
+            transform=ax.transAxes, fontsize=8.5, color="#444444", va="bottom")
+    ax.grid(axis="x", alpha=.16)
+    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
 
-def panel_c(ax, rows):
-    raw = [r for r in rows if r["treatment"] == "ALL_TIPS"]
-    x = np.array([float(r["midpoint_bp"]) / 1e6 for r in raw])
-    shade_gaps(ax)
+def panel_c(ax_q, ax_d, rows):
+    raw = [row for row in rows if row["treatment"] == "ALL_TIPS"]
+    x_raw = np.array([float(row["midpoint_bp"]) / 1e6 for row in raw])
+    shade_gaps(ax_q); shade_gaps(ax_d)
     for key, color in Q_COLORS.items():
-        ax.scatter(x, [float(r[key]) for r in raw], s=2, alpha=.07, color=color)
-    b = bins(rows); xb = np.array([p / 1e6 for p, _ in b])
+        ax_q.scatter(x_raw, [float(row[key]) for row in raw], s=2, alpha=.08, color=color)
+    summary = quartets(rows)
+    x_summary = np.array([midpoint / 1e6 for midpoint, _ in summary])
+    labels = {"q_species": r"$q_{\mathrm{species}}$", "q_t_alt": r"$q_{t\mathrm{-alt}}$", "q_other": r"$q_{\mathrm{other}}$"}
     for key, color in Q_COLORS.items():
-        ax.plot(xb, [d[key] for _, d in b], lw=1.5, color=color, label=key)
-    ax.axhline(1 / 3, color="#777777", ls="--", lw=.7)
-    ax.set_ylim(0, 1); ax.set_ylabel("Quartet fraction")
-    ax.set_title("C. Frozen ALL_TIPS quartet support; raw 5-kb windows and 250-kb means", loc="left", fontsize=10)
-    ax.legend(frameon=False, fontsize=8, ncol=3, loc="upper right")
-    axis(ax)
-
-def panel_d(ax, rows):
-    shade_gaps(ax)
-    b = bins(rows); x = np.array([p / 1e6 for p, _ in b]); delta = np.array([d["q_t_alt"] - d["q_species"] for _, d in b])
-    ax.plot(x, delta, color="#333333", lw=1.5)
-    ax.axhline(0, color="#777777", lw=.8)
-    ax.set_ylim(-.8, .8); ax.set_ylabel("D(w)"); ax.set_xlabel("chr17 position (Mb)")
-    ax.set_title("D. Quartet contrast: D(w) = q_t-alt(w) − q_species(w)", loc="left", fontsize=10)
-    ax.text(40.35, -.72, "Quartet association with the\ncoarse literature estimates is\nnot tested", ha="right", va="bottom", fontsize=7, color="#555555")
-    axis(ax)
+        ax_q.plot(x_summary, [values[key] for _, values in summary], color=color, lw=1.5, label=labels[key])
+    ax_q.axhline(1 / 3, color="#777777", ls="--", lw=.7)
+    ax_q.set_ylim(0, 1); ax_q.set_ylabel("Quartet fraction")
+    ax_q.set_title("C. Local quartet support varies across the rearranged region", loc="left", fontsize=11, weight="bold")
+    ax_q.legend(frameon=False, fontsize=9, ncol=3, loc="upper right")
+    ax_q.text(.01, .04, "points = original 5-kb windows; lines = documented 250-kb means", transform=ax_q.transAxes, fontsize=8, color="#555555")
+    delta = np.array([values["q_t_alt"] - values["q_species"] for _, values in summary])
+    ax_d.plot(x_summary, delta, color="#333333", lw=1.5)
+    ax_d.axhline(0, color="#777777", lw=.8)
+    ax_d.set_ylim(-.8, .8); ax_d.set_ylabel(r"$D(w)$"); ax_d.set_xlabel("GRCm38/mm10 chr17 position (Mb)")
+    ax_d.set_title(r"$D(w)=q_{t\mathrm{-alt}}(w)-q_{\mathrm{species}}(w)$", loc="left", fontsize=10)
+    ax_d.text(.01, .06, r"$D(w)>0$: t-alt support exceeds species support; $D(w)<0$: the reverse", transform=ax_d.transAxes, fontsize=8, color="#555555")
+    chromosome_axis(ax_q); chromosome_axis(ax_d)
 
 def main():
     rows = read_tsv(RESULTS / "stage2_fixed_quartet_scan.tsv")
-    fig, axes = plt.subplots(4, 1, figsize=(13, 12), sharex=True, gridspec_kw={"height_ratios": [1.0, 1.8, 1.5, 1.0], "hspace": .22})
-    panel_a(axes[0]); panel_b(axes[1]); panel_c(axes[2], rows); panel_d(axes[3], rows)
-    fig.suptitle("House-mouse t-complex: independent recombination-suppression evidence and quartet support", fontsize=14)
-    fig.savefig(OUT_PNG, dpi=220, bbox_inches="tight"); fig.savefig(OUT_PDF, bbox_inches="tight"); plt.close(fig)
+    fig = plt.figure(figsize=(12.5, 11.5))
+    grid = fig.add_gridspec(3, 1, height_ratios=[1.25, .9, 2.0], hspace=.34)
+    ax_a = fig.add_subplot(grid[0]); ax_b = fig.add_subplot(grid[1])
+    c_grid = grid[2].subgridspec(2, 1, height_ratios=[1.8, .9], hspace=.16)
+    ax_q = fig.add_subplot(c_grid[0]); ax_d = fig.add_subplot(c_grid[1], sharex=ax_q)
+    panel_a(ax_a); panel_b(ax_b); panel_c(ax_q, ax_d, rows)
+    ax_q.tick_params(axis="x", labelbottom=False)
+    fig.suptitle("House-mouse t-complex: independent recombination suppression and heterogeneous local quartet support", fontsize=14, weight="bold", y=.985)
+    fig.text(.01, .01, "Structural evidence and historical linkage measurements are independent of the local gene-tree quartet profiles.", fontsize=8, color="#555555")
+    fig.subplots_adjust(left=.13, right=.98, top=.93, bottom=.07)
+    fig.savefig(OUT_PNG, dpi=300, bbox_inches="tight")
+    fig.savefig(OUT_PDF, bbox_inches="tight")
+    plt.close(fig)
 
 if __name__ == "__main__":
     main()
