@@ -1,0 +1,44 @@
+fit_label	model	parameter	estimate	log_likelihood	n_observations	fold	bootstrap_low	bootstrap_high
+full_primary_incompatible_excluded	shared_lambda_lg_m	lambda	62.25286699	18299.29585	16113		52.05218085	71.23171385
+full_primary_incompatible_excluded	shared_lambda_lg_m	m_LG01	0.8225603009	18299.29585	16113		0.6531977479	1.121091547
+full_primary_incompatible_excluded	shared_lambda_lg_m	m_LG02	1.608209509	18299.29585	16113		1.002117772	555.6386011
+full_primary_incompatible_excluded	shared_lambda_lg_m	m_LG07	1.094279358	18299.29585	16113		0.7823031721	2.7615624
+full_primary_incompatible_excluded	shared_lambda_lg_m	m_LG12	2.010767906	18299.29585	16113		1.568104304	3.201186626
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	lambda_LG01	36.53929449	18796.95445	16113		NA	NA
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	lambda_LG02	95.41841149	18796.95445	16113		NA	NA
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	lambda_LG07	73.39607765	18796.95445	16113		NA	NA
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	lambda_LG12	69.0201125	18796.95445	16113		NA	NA
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	m_LG01	0.7903931751	18796.95445	16113		0.6531977479	1.121091547
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	m_LG02	1.610013998	18796.95445	16113		1.002117772	555.6386011
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	m_LG07	1.092236143	18796.95445	16113		0.7823031721	2.7615624
+sensitivity_lg_specific_incompatible_excluded	lg_lambda_lg_m	m_LG12	2.012421118	18796.95445	16113		1.568104304	3.201186626
+sensitivity_shared_lambda_clipped_incompatible	shared_lambda_lg_m	lambda	468.7488019	69692.5728	27786		52.05218085	71.23171385
+sensitivity_shared_lambda_clipped_incompatible	shared_lambda_lg_m	m_LG01	1.505123755	69692.5728	27786		0.6531977479	1.121091547
+sensitivity_shared_lambda_clipped_incompatible	shared_lambda_lg_m	m_LG02	3.113072332	69692.5728	27786		1.002117772	555.6386011
+sensitivity_shared_lambda_clipped_incompatible	shared_lambda_lg_m	m_LG07	1.819882489	69692.5728	27786		0.7823031721	2.7615624
+sensitivity_shared_lambda_clipped_incompatible	shared_lambda_lg_m	m_LG12	3.341104348	69692.5728	27786		1.568104304	3.201186626
+cv_fold_0	shared_lambda_lg_m	lambda	67.45327759	18497.49859	14326	0	52.05218085	71.23171385
+cv_fold_0	shared_lambda_lg_m	m_LG01	0.8758281205	18497.49859	14326	0	0.6531977479	1.121091547
+cv_fold_0	shared_lambda_lg_m	m_LG02	2.094377381	18497.49859	14326	0	1.002117772	555.6386011
+cv_fold_0	shared_lambda_lg_m	m_LG07	1.235327455	18497.49859	14326	0	0.7823031721	2.7615624
+cv_fold_0	shared_lambda_lg_m	m_LG12	2.021518986	18497.49859	14326	0	1.568104304	3.201186626
+cv_fold_1	shared_lambda_lg_m	lambda	65.47680793	18039.68889	14427	1	52.05218085	71.23171385
+cv_fold_1	shared_lambda_lg_m	m_LG01	0.8478015957	18039.68889	14427	1	0.6531977479	1.121091547
+cv_fold_1	shared_lambda_lg_m	m_LG02	1.853214714	18039.68889	14427	1	1.002117772	555.6386011
+cv_fold_1	shared_lambda_lg_m	m_LG07	1.195601543	18039.68889	14427	1	0.7823031721	2.7615624
+cv_fold_1	shared_lambda_lg_m	m_LG12	2.332324834	18039.68889	14427	1	1.568104304	3.201186626
+cv_fold_2	shared_lambda_lg_m	lambda	66.59754236	18419.15337	14592	2	52.05218085	71.23171385
+cv_fold_2	shared_lambda_lg_m	m_LG01	0.8797565125	18419.15337	14592	2	0.6531977479	1.121091547
+cv_fold_2	shared_lambda_lg_m	m_LG02	1.781185944	18419.15337	14592	2	1.002117772	555.6386011
+cv_fold_2	shared_lambda_lg_m	m_LG07	1.19330361	18419.15337	14592	2	0.7823031721	2.7615624
+cv_fold_2	shared_lambda_lg_m	m_LG12	2.075688963	18419.15337	14592	2	1.568104304	3.201186626
+cv_fold_3	shared_lambda_lg_m	lambda	65.99572162	18124.63206	14583	3	52.05218085	71.23171385
+cv_fold_3	shared_lambda_lg_m	m_LG01	0.8492547279	18124.63206	14583	3	0.6531977479	1.121091547
+cv_fold_3	shared_lambda_lg_m	m_LG02	1.62612153	18124.63206	14583	3	1.002117772	555.6386011
+cv_fold_3	shared_lambda_lg_m	m_LG07	1.194849051	18124.63206	14583	3	0.7823031721	2.7615624
+cv_fold_3	shared_lambda_lg_m	m_LG12	2.188601026	18124.63206	14583	3	1.568104304	3.201186626
+cv_fold_4	shared_lambda_lg_m	lambda	65.11536275	18373.28564	14641	4	52.05218085	71.23171385
+cv_fold_4	shared_lambda_lg_m	m_LG01	0.9114190602	18373.28564	14641	4	0.6531977479	1.121091547
+cv_fold_4	shared_lambda_lg_m	m_LG02	1.742898354	18373.28564	14641	4	1.002117772	555.6386011
+cv_fold_4	shared_lambda_lg_m	m_LG07	1.222751349	18373.28564	14641	4	0.7823031721	2.7615624
+cv_fold_4	shared_lambda_lg_m	m_LG12	2.09028158	18373.28564	14641	4	1.568104304	3.201186626

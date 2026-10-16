@@ -1,0 +1,88 @@
+population1	population2	n_outside	outside_median_mrca	projected_divergence_time	residual	abs_residual	mrca_node_id
+Gadmor_avc_spc	Gadmor_avo_spc	245	0.0326504734	0.03551178628	-0.002861312876	0.002861312876	n01
+Gadmor_avc_spc	Gadmor_bat_spc	245	0.058549732	0.0590363273	-0.0004865953037	0.0004865953037	root
+Gadmor_avc_spc	Gadmor_bor_spc	245	0.0337648793	0.03551178628	-0.001746906976	0.001746906976	n02
+Gadmor_avc_spc	Gadmor_icc_spc	245	0.0370098591	0.03551178628	0.001498072824	0.001498072824	n02
+Gadmor_avc_spc	Gadmor_ico_spc	245	0.0334893261	0.03551178628	-0.002022460176	0.002022460176	n02
+Gadmor_avc_spc	Gadmor_kie_spc	245	0.0313010946	0.03551178628	-0.004210691676	0.004210691676	n02
+Gadmor_avc_spc	Gadmor_lfc_spc	245	0.0297468338	0.03551178628	-0.005764952476	0.005764952476	n02
+Gadmor_avc_spc	Gadmor_lfo_spc	245	0.031813876	0.031813876	0	0	n03
+Gadmor_avc_spc	Gadmor_low_spc	245	0.0319120063	0.03551178628	-0.003599779976	0.003599779976	n02
+Gadmor_avc_spc	Gadmor_twc_spc	245	0.0589757086	0.0590363273	-6.06187037e-05	6.06187037e-05	root
+Gadmor_avc_spc	Gadmor_two_spc	245	0.0593231686	0.0590363273	0.0002868412963	0.0002868412963	root
+Gadmor_avo_spc	Gadmor_bat_spc	245	0.0582757915	0.0590363273	-0.0007605358037	0.0007605358037	root
+Gadmor_avo_spc	Gadmor_bor_spc	245	0.0364850399	0.03551178628	0.0009732536241	0.0009732536241	n01
+Gadmor_avo_spc	Gadmor_icc_spc	245	0.0392658438	0.03551178628	0.003754057524	0.003754057524	n01
+Gadmor_avo_spc	Gadmor_ico_spc	245	0.0369671533	0.03551178628	0.001455367024	0.001455367024	n01
+Gadmor_avo_spc	Gadmor_kie_spc	245	0.0352109575	0.03551178628	-0.0003008287759	0.0003008287759	n01
+Gadmor_avo_spc	Gadmor_lfc_spc	245	0.0328659838	0.03551178628	-0.002645802476	0.002645802476	n01
+Gadmor_avo_spc	Gadmor_lfo_spc	245	0.0348061239	0.03551178628	-0.0007056623759	0.0007056623759	n01
+Gadmor_avo_spc	Gadmor_low_spc	245	0.0326491678	0.03551178628	-0.002862618476	0.002862618476	n01
+Gadmor_avo_spc	Gadmor_twc_spc	245	0.0587249631	0.0590363273	-0.0003113642037	0.0003113642037	root
+Gadmor_avo_spc	Gadmor_two_spc	245	0.0593231686	0.0590363273	0.0002868412963	0.0002868412963	root
+Gadmor_bat_spc	Gadmor_bor_spc	245	0.0594191195	0.0590363273	0.0003827921963	0.0003827921963	root
+Gadmor_bat_spc	Gadmor_icc_spc	245	0.0591185771	0.0590363273	8.22497963e-05	8.22497963e-05	root
+Gadmor_bat_spc	Gadmor_ico_spc	245	0.0580537843	0.0590363273	-0.0009825430037	0.0009825430037	root
+Gadmor_bat_spc	Gadmor_kie_spc	245	0.0586374841	0.0590363273	-0.0003988432037	0.0003988432037	root
+Gadmor_bat_spc	Gadmor_lfc_spc	245	0.0580537843	0.0590363273	-0.0009825430037	0.0009825430037	root
+Gadmor_bat_spc	Gadmor_lfo_spc	245	0.0587776613	0.0590363273	-0.0002586660037	0.0002586660037	root
+Gadmor_bat_spc	Gadmor_low_spc	245	0.0589757086	0.0590363273	-6.06187037e-05	6.06187037e-05	root
+Gadmor_bat_spc	Gadmor_twc_spc	245	0.0198755227	0.0190068475	0.0008686752	0.0008686752	n09
+Gadmor_bat_spc	Gadmor_two_spc	245	0.0181381723	0.0190068475	-0.0008686752	0.0008686752	n09
+Gadmor_bor_spc	Gadmor_icc_spc	245	0.0401815825	0.03551178628	0.004669796224	0.004669796224	n04
+Gadmor_bor_spc	Gadmor_ico_spc	245	0.038578973	0.03551178628	0.003067186724	0.003067186724	n04
+Gadmor_bor_spc	Gadmor_kie_spc	245	0.0310632407	0.0310632407	0	0	n06
+Gadmor_bor_spc	Gadmor_lfc_spc	245	0.0318592412	0.03345647845	-0.00159723725	0.00159723725	n05
+Gadmor_bor_spc	Gadmor_lfo_spc	245	0.0356089946	0.03551178628	9.720832414e-05	9.720832414e-05	n02
+Gadmor_bor_spc	Gadmor_low_spc	245	0.0354805461	0.03345647845	0.00202406765	0.00202406765	n05
+Gadmor_bor_spc	Gadmor_twc_spc	245	0.0599161484	0.0590363273	0.0008798210963	0.0008798210963	root
+Gadmor_bor_spc	Gadmor_two_spc	245	0.0604221527	0.0590363273	0.001385825396	0.001385825396	root
+Gadmor_icc_spc	Gadmor_ico_spc	245	0.0385244462	0.03551178628	0.003012659924	0.003012659924	n08
+Gadmor_icc_spc	Gadmor_kie_spc	245	0.0398425155	0.03551178628	0.004330729224	0.004330729224	n04
+Gadmor_icc_spc	Gadmor_lfc_spc	245	0.0388112244	0.03551178628	0.003299438124	0.003299438124	n04
+Gadmor_icc_spc	Gadmor_lfo_spc	245	0.0381910849	0.03551178628	0.002679298624	0.002679298624	n02
+Gadmor_icc_spc	Gadmor_low_spc	245	0.0384694717	0.03551178628	0.002957685424	0.002957685424	n04
+Gadmor_icc_spc	Gadmor_twc_spc	245	0.0589757086	0.0590363273	-6.06187037e-05	6.06187037e-05	root
+Gadmor_icc_spc	Gadmor_two_spc	245	0.0594191195	0.0590363273	0.0003827921963	0.0003827921963	root
+Gadmor_ico_spc	Gadmor_kie_spc	245	0.0372256557	0.03551178628	0.001713869424	0.001713869424	n04
+Gadmor_ico_spc	Gadmor_lfc_spc	245	0.034415072	0.03551178628	-0.001096714276	0.001096714276	n04
+Gadmor_ico_spc	Gadmor_lfo_spc	245	0.0350481597	0.03551178628	-0.0004636265759	0.0004636265759	n02
+Gadmor_ico_spc	Gadmor_low_spc	245	0.0341870208	0.03551178628	-0.001324765476	0.001324765476	n04
+Gadmor_ico_spc	Gadmor_twc_spc	245	0.058549732	0.0590363273	-0.0004865953037	0.0004865953037	root
+Gadmor_ico_spc	Gadmor_two_spc	245	0.059104063	0.0590363273	6.77356963e-05	6.77356963e-05	root
+Gadmor_kie_spc	Gadmor_lfc_spc	245	0.0323455916	0.03345647845	-0.00111088685	0.00111088685	n05
+Gadmor_kie_spc	Gadmor_lfo_spc	245	0.036269115	0.03551178628	0.0007573287241	0.0007573287241	n02
+Gadmor_kie_spc	Gadmor_low_spc	245	0.0341405349	0.03345647845	0.00068405645	0.00068405645	n05
+Gadmor_kie_spc	Gadmor_twc_spc	245	0.059104063	0.0590363273	6.77356963e-05	6.77356963e-05	root
+Gadmor_kie_spc	Gadmor_two_spc	245	0.0593231686	0.0590363273	0.0002868412963	0.0002868412963	root
+Gadmor_lfc_spc	Gadmor_lfo_spc	245	0.0329516318	0.03551178628	-0.002560154476	0.002560154476	n02
+Gadmor_lfc_spc	Gadmor_low_spc	245	0.0324048172	0.0324048172	0	0	n07
+Gadmor_lfc_spc	Gadmor_twc_spc	245	0.0587249631	0.0590363273	-0.0003113642037	0.0003113642037	root
+Gadmor_lfc_spc	Gadmor_two_spc	245	0.059104063	0.0590363273	6.77356963e-05	6.77356963e-05	root
+Gadmor_lfo_spc	Gadmor_low_spc	245	0.0334121116	0.03551178628	-0.002099674676	0.002099674676	n02
+Gadmor_lfo_spc	Gadmor_twc_spc	245	0.0590809167	0.0590363273	4.45893963e-05	4.45893963e-05	root
+Gadmor_lfo_spc	Gadmor_two_spc	245	0.0593231686	0.0590363273	0.0002868412963	0.0002868412963	root
+Gadmor_low_spc	Gadmor_twc_spc	245	0.0590809167	0.0590363273	4.45893963e-05	4.45893963e-05	root
+Gadmor_low_spc	Gadmor_two_spc	245	0.0596440017	0.0590363273	0.0006076743963	0.0006076743963	root
+Gadmor_twc_spc	Gadmor_two_spc	245	0.0179424563	0.0179424563	0	0	n10
+ROOT_AUDIT	Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_twc_spc+Gadmor_two_spc|Gadmor_avc_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc				0.003765362468		
+ROOT_AUDIT	Gadmor_avo_spc|Gadmor_avc_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.003765362468		
+ROOT_AUDIT	Gadmor_bat_spc+Gadmor_twc_spc+Gadmor_two_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc				0.0002349362685	selected	
+ROOT_AUDIT	Gadmor_avc_spc+Gadmor_lfo_spc|Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007094440757		
+ROOT_AUDIT	Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_lfo_spc+Gadmor_twc_spc+Gadmor_two_spc|Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_low_spc				0.007094440757		
+ROOT_AUDIT	Gadmor_avc_spc|Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007369915621		
+ROOT_AUDIT	Gadmor_lfo_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007369915621		
+ROOT_AUDIT	Gadmor_bor_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_low_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_lfo_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007902067946		
+ROOT_AUDIT	Gadmor_icc_spc+Gadmor_ico_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007902067946		
+ROOT_AUDIT	Gadmor_bor_spc+Gadmor_kie_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.008586580655		
+ROOT_AUDIT	Gadmor_lfc_spc+Gadmor_low_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfo_spc+Gadmor_twc_spc+Gadmor_two_spc				0.008586580655		
+ROOT_AUDIT	Gadmor_bor_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.008808527656		
+ROOT_AUDIT	Gadmor_kie_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.008808527656		
+ROOT_AUDIT	Gadmor_lfc_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.00877065869		
+ROOT_AUDIT	Gadmor_low_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_twc_spc+Gadmor_two_spc				0.00877065869		
+ROOT_AUDIT	Gadmor_icc_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007972710482		
+ROOT_AUDIT	Gadmor_ico_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.007972710482		
+ROOT_AUDIT	Gadmor_bat_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc+Gadmor_two_spc				0.003218639706		
+ROOT_AUDIT	Gadmor_twc_spc+Gadmor_two_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc				0.003218639706		
+ROOT_AUDIT	Gadmor_twc_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_two_spc				0.004639094064		
+ROOT_AUDIT	Gadmor_two_spc|Gadmor_avc_spc+Gadmor_avo_spc+Gadmor_bat_spc+Gadmor_bor_spc+Gadmor_icc_spc+Gadmor_ico_spc+Gadmor_kie_spc+Gadmor_lfc_spc+Gadmor_lfo_spc+Gadmor_low_spc+Gadmor_twc_spc				0.004639094064		

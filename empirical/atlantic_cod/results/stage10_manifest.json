@@ -1,0 +1,35 @@
+{
+  "analysis": "Atlantic cod simplified two-background MSRC parameter-to-prediction test",
+  "inputs": {
+    "data/atlantic_cod/metadata/region_manifest.tsv": "97e9fdc4cd294deede0eaf8e333c883d9d41b636e265b78f5e7b0858acf6a408",
+    "data/atlantic_cod/processed/baseline_population_tree_12taxa.nwk": "752ae5c0e0da7317ce66650d74ad51d3f29b7dd138f4dd4e5fe9836243c78cc2",
+    "data/atlantic_cod/processed/population_arrangements.tsv": "9fac5545ffce2a7da4845026e5b6ac22dbfbd70e494d695401cd85b702215294",
+    "data/atlantic_cod/processed/stage4a_local_quartets.tsv": "8ae82f803294a47854a8eecf907dc2684dc89cf6407362beaf9a4e7616d306f2",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "data/atlantic_cod/processed/stage7_pairwise_mrca_times.tsv": "65367a8c7d4f63be9d293b8ef124e731fe4d6509f8cca3496eb935e0fa94e7fb"
+  },
+  "n_cv_assignment_windows": 176,
+  "n_cv_predictions": 176,
+  "n_incompatible": 11673,
+  "n_pair_rows_primary": 16113,
+  "n_pair_rows_raw": 28050,
+  "outputs": {
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10_msrc_parameter_prediction.pdf": "74063e82aaddcecc38134048520c3b188520394c2ea80621a8d7538fa2eda7d6",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10_msrc_parameter_prediction.png": "93aeb7d65f34c33ce27f0edbbbbeaf96b1175248f9190a04c324815efb235021",
+    "empirical/atlantic_cod/results/stage10_baseline_time_projection.tsv": "a205313d62dc2ee22022a8757dad6c0c4a09e21dfbe9432f453b627689949542",
+    "empirical/atlantic_cod/results/stage10_baseline_time_tree.nwk": "5060f99f2168cbac41ef8c4119b10a0157ce66e725d0fbdad0266bfb2bb1e58a",
+    "empirical/atlantic_cod/results/stage10_cv_predictions.tsv": "9d8ede3e1e734d9794ea46e792e60a4377739bdc1630dc4137845f0e6cec3dae",
+    "empirical/atlantic_cod/results/stage10_cv_window_assignment.tsv": "7d76e7f54d712e45cb612722c2d521abf40d0c9f70f43e8c6460aecd9467e1f9",
+    "empirical/atlantic_cod/results/stage10_incompatible_mrca_audit.tsv": "22670297ed4116833df936933e5f18f713a7437007bd79f3bc5f51a59e03842c",
+    "empirical/atlantic_cod/results/stage10_methods_text.md": "ee5ca0ba3385f299f4f77e9295b279748ee3053fe9a20d720f8c13cd1ea527a7",
+    "empirical/atlantic_cod/results/stage10_msrc_parameter_estimates.tsv": "3302e15327526f35d09a0376a756800f8d6f24a91740179f2cf569279e81a43f",
+    "empirical/atlantic_cod/results/stage10_msrc_parameter_profiles.tsv": "735556d5cbc21580ce6f3b830438851c6198714edb51194d0c8aa55154c02a87",
+    "empirical/atlantic_cod/results/stage10_prediction_summary.tsv": "dae78b83220e2e4cf38a051ee985864629bbc2342163db76d45bca9102a3a5f6",
+    "empirical/atlantic_cod/results/stage10_report.md": "848b89acf91eeb6beb009e7ba0fc6af73553ec16673c99dfbcabd08a9c3d8be6",
+    "empirical/atlantic_cod/results/stage10_results_text.md": "de4fdfba6a0aa44887c0692854249844626050bea7a21b2217605df95167afa8",
+    "empirical/atlantic_cod/results/stage10_simulation_validation.tsv": "fe7faa958c7a08e34ecf15c081e0a2507fb366ecc491255b4bd8515ea73dcf13"
+  },
+  "quartet_prediction_theory": "symmetric_2x2_A_m_special_case_only",
+  "seed": 20261016,
+  "stage": 10
+}
