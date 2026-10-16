@@ -1,0 +1,2 @@
+root_source	outgroups_pruned	n_cod_tips	root_operation	collapsed_nodes	root_optimization	mrca_data_used_for_root	root_selection_data	stage7_or_stage8_mrca_used_to_choose_root	root_optimization_performed	topology_match_existing_12taxon_tree	original_root_age
+original Matschiner et al. baseline tree	Gadcha_spc,Gadmac_spc,Gadoga_spc	12	promote sole Atlantic child after outgroup pruning	2 redundant unary root nodes after outgroup pruning; external outgroup edges discarded	false	false	none	false	false	true	0.06537923048
