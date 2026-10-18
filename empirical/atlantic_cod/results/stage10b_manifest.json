@@ -1,0 +1,67 @@
+{
+  "analysis": "conditional two-background MSRC quartet outcome prediction",
+  "inputs": {
+    "data/atlantic_cod/processed/population_arrangements.tsv": "9fac5545ffce2a7da4845026e5b6ac22dbfbd70e494d695401cd85b702215294",
+    "data/atlantic_cod/processed/stage4a_local_quartets.tsv": "8ae82f803294a47854a8eecf907dc2684dc89cf6407362beaf9a4e7616d306f2",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/atlantic_cod/results/stage8b_baseline_original_times.nwk": "553a171a0e9275e408c55735e4e7b8dc7a4849222a0c84754136c91174f91a11",
+    "empirical/atlantic_cod/results/stage8b_manifest.json": "97610ca698045f6fa1265da5a059fc760fb6448309091b0532455d0b01f86cad",
+    "simulations/quartet/datasets/processed/conditional_quartet_grid.tsv": "71958472fb3b2bd4682a0bd4b9542ad6132f15f88f1b7bc3e0259b413abe4680"
+  },
+  "kernel_max_abs_error": 4.440892098500626e-16,
+  "legacy_stage10_hashes": {
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10_msrc_parameter_prediction.pdf": "74063e82aaddcecc38134048520c3b188520394c2ea80621a8d7538fa2eda7d6",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10_msrc_parameter_prediction.png": "93aeb7d65f34c33ce27f0edbbbbeaf96b1175248f9190a04c324815efb235021",
+    "empirical/atlantic_cod/results/stage10_baseline_time_projection.tsv": "a205313d62dc2ee22022a8757dad6c0c4a09e21dfbe9432f453b627689949542",
+    "empirical/atlantic_cod/results/stage10_baseline_time_tree.nwk": "5060f99f2168cbac41ef8c4119b10a0157ce66e725d0fbdad0266bfb2bb1e58a",
+    "empirical/atlantic_cod/results/stage10_cv_predictions.tsv": "9d8ede3e1e734d9794ea46e792e60a4377739bdc1630dc4137845f0e6cec3dae",
+    "empirical/atlantic_cod/results/stage10_cv_window_assignment.tsv": "7d76e7f54d712e45cb612722c2d521abf40d0c9f70f43e8c6460aecd9467e1f9",
+    "empirical/atlantic_cod/results/stage10_incompatible_mrca_audit.tsv": "22670297ed4116833df936933e5f18f713a7437007bd79f3bc5f51a59e03842c",
+    "empirical/atlantic_cod/results/stage10_manifest.json": "8f7f314753346aa9bb4671d8e32a2d063bd6bb30832b68f63dd660c2c712eb85",
+    "empirical/atlantic_cod/results/stage10_methods_text.md": "ee5ca0ba3385f299f4f77e9295b279748ee3053fe9a20d720f8c13cd1ea527a7",
+    "empirical/atlantic_cod/results/stage10_msrc_parameter_estimates.tsv": "3302e15327526f35d09a0376a756800f8d6f24a91740179f2cf569279e81a43f",
+    "empirical/atlantic_cod/results/stage10_msrc_parameter_profiles.tsv": "735556d5cbc21580ce6f3b830438851c6198714edb51194d0c8aa55154c02a87",
+    "empirical/atlantic_cod/results/stage10_prediction_summary.tsv": "dae78b83220e2e4cf38a051ee985864629bbc2342163db76d45bca9102a3a5f6",
+    "empirical/atlantic_cod/results/stage10_report.md": "848b89acf91eeb6beb009e7ba0fc6af73553ec16673c99dfbcabd08a9c3d8be6",
+    "empirical/atlantic_cod/results/stage10_results_text.md": "de4fdfba6a0aa44887c0692854249844626050bea7a21b2217605df95167afa8",
+    "empirical/atlantic_cod/results/stage10_simulation_validation.tsv": "fe7faa958c7a08e34ecf15c081e0a2507fb366ecc491255b4bd8515ea73dcf13"
+  },
+  "n_eligible_rows": 6406,
+  "n_local_rows": 70266,
+  "no_stage7_mrca_in_likelihood": true,
+  "outputs": {
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10b_conditional_msrc_prediction.pdf": "153d1fb8308eda7c710754ea6b4e2fdccfa7f4b4150a929192295b4f1d79f5ff",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage10b_conditional_msrc_prediction.png": "3eeb7cb95784a5c184542f9645267e54ad76e136cad019cd617374a7b5928804",
+    "empirical/atlantic_cod/results/stage10_legacy_validity_audit.md": "7a43d613f89f20621a04a6d5e5e4a7ebf9f9043264ff55d3ae635743fae62438",
+    "empirical/atlantic_cod/results/stage10b_cv_assignment.tsv": "3f8f29e999bcdbb1ca2e06a7fa05c551fc1449940747562262f5fa3285d6d89a",
+    "empirical/atlantic_cod/results/stage10b_cv_predictions.tsv": "8b6f9247ed085781e5de0f2e14ff1084ccaa95ee34732f4eabe74bb3b35eb7f1",
+    "empirical/atlantic_cod/results/stage10b_identifiability.tsv": "917853c99484fe79ed3bd77824ce800ed7f885a014df4005eefc8b81097176ea",
+    "empirical/atlantic_cod/results/stage10b_manifest.json": "118d7ab32100f124ce03dfc60583e47d1af0daa872acbe9aa13eb0bc3de67569",
+    "empirical/atlantic_cod/results/stage10b_methods_text.md": "707208691c5d9ccfc45a55f3659132d546d1a588a277b74972e4f0c45f9db5ee",
+    "empirical/atlantic_cod/results/stage10b_model_comparison.tsv": "55b2c0e3396bb5ac3b25c28f3ced4ba4aca4c1c470c907b371eac43c8c72c56b",
+    "empirical/atlantic_cod/results/stage10b_parameter_estimates.tsv": "16694cc75b27dec2cb6d8710a66471d776a9ef875152e64671e239261efe90b9",
+    "empirical/atlantic_cod/results/stage10b_parameter_profiles.tsv": "e4714daad3453a3e2281cf9d4a995f07504806ddcd02a39753c5701adeeacc6a",
+    "empirical/atlantic_cod/results/stage10b_prediction_summary.tsv": "55b2c0e3396bb5ac3b25c28f3ced4ba4aca4c1c470c907b371eac43c8c72c56b",
+    "empirical/atlantic_cod/results/stage10b_quartet_eligibility.tsv": "ef5a9ae0186a7b7dc218aaebf56768e17a55487d121f757880dd4cd3f83bb54e",
+    "empirical/atlantic_cod/results/stage10b_report.md": "aeeb680c0f3338c9c6088a35b8aefdf8fab591c27cb394dad6b8ed8641fa6350",
+    "empirical/atlantic_cod/results/stage10b_results_text.md": "c30a7047a98f0a2f80d5000564005c5a33b204677208a587c2949b09f0611032",
+    "empirical/atlantic_cod/results/stage10b_simulation_validation.tsv": "de2af131d7eed9f6bcfae64c6035b40d72bfa44e415cc7c3593e2c5ce01a5d21",
+    "empirical/atlantic_cod/results/stage10b_window_counts.tsv": "fe8df24fb5a750c6c10a31b4a332e37553f643b3fc1ebd917d936b228a96bb79"
+  },
+  "quartet_observation_unit": "250-kb window; quartet composite/pseudo-likelihood",
+  "scaffold": {
+    "n_tips": 12,
+    "root_age": 0.06537923048399999,
+    "rooted": true,
+    "tree_checksum": "553a171a0e9275e408c55735e4e7b8dc7a4849222a0c84754136c91174f91a11"
+  },
+  "seed": 20261018,
+  "software": {
+    "biopython": "1.88",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "python": "3.12.11"
+  },
+  "stage": "10b",
+  "theory": "validated conditional 1010 exact kernel"
+}

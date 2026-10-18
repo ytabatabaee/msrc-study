@@ -1,0 +1,65 @@
+fit_label	model	parameter	estimate	unit	log_likelihood	n_quartets	rho
+full_primary	lg_m	lambda	1364361.412	inverse_Ma	-309.7856565	3284	
+full_primary	lg_m	m_LG01	3.059393916e-07	inverse_Ma	-309.7856565	3284	2.24236327e-13
+full_primary	lg_m	m_LG02	49915.66444	inverse_Ma	-309.7856565	3284	0.03658536808
+full_primary	lg_m	m_LG07	494711.1929	inverse_Ma	-309.7856565	3284	0.3625954155
+full_primary	lg_m	m_LG12	NA	inverse_Ma	-309.7856565	3284	NA
+full_primary	lg_m	rho_LG01	2.24236327e-13	dimensionless	-309.7856565	3284	2.24236327e-13
+full_primary	lg_m	rho_LG02	0.03658536808	dimensionless	-309.7856565	3284	0.03658536808
+full_primary	lg_m	rho_LG07	0.3625954155	dimensionless	-309.7856565	3284	0.3625954155
+full_primary	lg_m	rho_LG12	NA	dimensionless	-309.7856565	3284	NA
+sensitivity_common_m	common	lambda	87.87147638	inverse_Ma	-441.6722024	3284	
+sensitivity_common_m	common	m	3.059023265e-07	inverse_Ma	-441.6722024	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	lambda_LG01	154889.3892	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	lambda_LG02	1702.94345	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	lambda_LG07	853.2521775	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	lambda_LG12	NA	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	m_LG01	3.059028811e-07	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	m_LG02	62.30278236	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	m_LG07	309.3852925	inverse_Ma	-309.7856566	3284	
+sensitivity_lg_lambda_lg_m_overparameterized	lg_lg	m_LG12	NA	inverse_Ma	-309.7856566	3284	
+cv_fold_0	lg_m	lambda	3187083.627	inverse_Ma	-257.38374	2593	
+cv_fold_0	lg_m	m_LG01	3.06588014e-07	inverse_Ma	-257.38374	2593	9.619704088e-14
+cv_fold_0	lg_m	rho_LG01	9.619704088e-14	dimensionless	-257.38374	2593	9.619704088e-14
+cv_fold_0	lg_m	m_LG02	154213.7306	inverse_Ma	-257.38374	2593	0.04838709889
+cv_fold_0	lg_m	rho_LG02	0.04838709889	dimensionless	-257.38374	2593	0.04838709889
+cv_fold_0	lg_m	m_LG07	1271614.148	inverse_Ma	-257.38374	2593	0.3989898907
+cv_fold_0	lg_m	rho_LG07	0.3989898907	dimensionless	-257.38374	2593	0.3989898907
+cv_fold_0	lg_m	m_LG12	NA	inverse_Ma	-257.38374	2593	NA
+cv_fold_0	lg_m	rho_LG12	NA	dimensionless	-257.38374	2593	NA
+cv_fold_1	lg_m	lambda	209065.2869	inverse_Ma	-253.1515267	2643	
+cv_fold_1	lg_m	m_LG01	3.059263684e-07	inverse_Ma	-253.1515267	2643	1.463305425e-12
+cv_fold_1	lg_m	rho_LG01	1.463305425e-12	dimensionless	-253.1515267	2643	1.463305425e-12
+cv_fold_1	lg_m	m_LG02	9502.966282	inverse_Ma	-253.1515267	2643	0.04545453921
+cv_fold_1	lg_m	rho_LG02	0.04545453921	dimensionless	-253.1515267	2643	0.04545453921
+cv_fold_1	lg_m	m_LG07	77887.07128	inverse_Ma	-253.1515267	2643	0.3725490369
+cv_fold_1	lg_m	rho_LG07	0.3725490369	dimensionless	-253.1515267	2643	0.3725490369
+cv_fold_1	lg_m	m_LG12	NA	inverse_Ma	-253.1515267	2643	NA
+cv_fold_1	lg_m	rho_LG12	NA	dimensionless	-253.1515267	2643	NA
+cv_fold_2	lg_m	lambda	538682.7508	inverse_Ma	-257.2294845	2602	
+cv_fold_2	lg_m	m_LG01	3.059080834e-07	inverse_Ma	-257.2294845	2602	5.678817133e-13
+cv_fold_2	lg_m	rho_LG01	5.678817133e-13	dimensionless	-257.2294845	2602	5.678817133e-13
+cv_fold_2	lg_m	m_LG02	26065.29749	inverse_Ma	-257.2294845	2602	0.04838710252
+cv_fold_2	lg_m	rho_LG02	0.04838710252	dimensionless	-257.2294845	2602	0.04838710252
+cv_fold_2	lg_m	m_LG07	193825.0906	inverse_Ma	-257.2294845	2602	0.3598130632
+cv_fold_2	lg_m	rho_LG07	0.3598130632	dimensionless	-257.2294845	2602	0.3598130632
+cv_fold_2	lg_m	m_LG12	NA	inverse_Ma	-257.2294845	2602	NA
+cv_fold_2	lg_m	rho_LG12	NA	dimensionless	-257.2294845	2602	NA
+cv_fold_3	lg_m	lambda	122621.8592	inverse_Ma	-212.1546189	2643	
+cv_fold_3	lg_m	m_LG01	3.127743766e-07	inverse_Ma	-212.1546189	2643	2.550722837e-12
+cv_fold_3	lg_m	rho_LG01	2.550722837e-12	dimensionless	-212.1546189	2643	2.550722837e-12
+cv_fold_3	lg_m	m_LG02	8.088226478e-07	inverse_Ma	-212.1546189	2643	6.596072292e-12
+cv_fold_3	lg_m	rho_LG02	6.596072292e-12	dimensionless	-212.1546189	2643	6.596072292e-12
+cv_fold_3	lg_m	m_LG07	45682.65092	inverse_Ma	-212.1546189	2643	0.3725489992
+cv_fold_3	lg_m	rho_LG07	0.3725489992	dimensionless	-212.1546189	2643	0.3725489992
+cv_fold_3	lg_m	m_LG12	NA	inverse_Ma	-212.1546189	2643	NA
+cv_fold_3	lg_m	rho_LG12	NA	dimensionless	-212.1546189	2643	NA
+cv_fold_4	lg_m	lambda	3268571.324	inverse_Ma	-250.2188411	2655	
+cv_fold_4	lg_m	m_LG01	1.109249393e-06	inverse_Ma	-250.2188411	2655	3.393682692e-13
+cv_fold_4	lg_m	rho_LG01	3.393682692e-13	dimensionless	-250.2188411	2655	3.393682692e-13
+cv_fold_4	lg_m	m_LG02	148571.4164	inverse_Ma	-250.2188411	2655	0.0454545432
+cv_fold_4	lg_m	rho_LG02	0.0454545432	dimensionless	-250.2188411	2655	0.0454545432
+cv_fold_4	lg_m	m_LG07	1032180.398	inverse_Ma	-250.2188411	2655	0.3157894676
+cv_fold_4	lg_m	rho_LG07	0.3157894676	dimensionless	-250.2188411	2655	0.3157894676
+cv_fold_4	lg_m	m_LG12	NA	inverse_Ma	-250.2188411	2655	NA
+cv_fold_4	lg_m	rho_LG12	NA	dimensionless	-250.2188411	2655	NA

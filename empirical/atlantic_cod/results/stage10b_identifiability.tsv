@@ -1,0 +1,14 @@
+parameter	profile_max	profile_min	profile_range	profile_delta_at_edges	boundary_hit	interpretation
+lambda	-309.7856565	-1e+100	1e+100	-1e+100	true	weakly identified if profile is flat or boundary hit
+m_LG01	-309.7856565	-1e+100	1e+100	-1e+100	true	weakly identified if profile is flat or boundary hit
+m_LG02	-309.7856565	-382.9430023	73.15734576	-73.15734576	false	weakly identified if profile is flat or boundary hit
+m_LG07	-309.7856565	-1e+100	1e+100	-1e+100	true	weakly identified if profile is flat or boundary hit
+m_LG12	-309.7856565	-309.7856565	0	0	false	weakly identified if profile is flat or boundary hit
+rho_LG01	-309.7856565	-1e+100	1e+100	-1e+100	true	weakly identified if profile is flat or boundary hit
+rho_LG02	-309.7856565	-422.824009	113.0383524	-113.0383524	false	weakly identified if profile is flat or boundary hit
+rho_LG07	-309.7856565	-1e+100	1e+100	-1e+100	false	weakly identified if profile is flat or boundary hit
+rho_LG12	-309.7856565	-309.7856565	0	0	true	weakly identified if profile is flat or boundary hit
+model_adequacy_LG01						n_eligible_quartets=2747; distinct_quartet_sets=41; distinct_t=8; predicted_A_range=0; physical_position_enters_model=false
+model_adequacy_LG02						n_eligible_quartets=198; distinct_quartet_sets=9; distinct_t=2; predicted_A_range=0; physical_position_enters_model=false
+model_adequacy_LG07						n_eligible_quartets=339; distinct_quartet_sets=9; distinct_t=2; predicted_A_range=0; physical_position_enters_model=false
+model_adequacy_LG12						n_eligible_quartets=0; distinct_quartet_sets=0; distinct_t=0; predicted_A_range=nan; physical_position_enters_model=false
