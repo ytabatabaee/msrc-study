@@ -1,0 +1,5 @@
+lg	n_windows	n_focal_branches	defaults
+LG01	110	10	upstream defaults; expand-threshold=1.0
+LG02	92	10	upstream defaults; expand-threshold=1.0
+LG07	119	10	upstream defaults; expand-threshold=1.0
+LG12	105	10	upstream defaults; expand-threshold=1.0

@@ -1,0 +1,26 @@
+{
+  "stage": "11",
+  "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
+  "phlag_version": "0.2.0",
+  "lgs": [
+    "LG01",
+    "LG02",
+    "LG07",
+    "LG12"
+  ],
+  "n_windows": 426,
+  "n_eligible_focal_branches": 9,
+  "truth_definition": "window base-pair overlap with frozen inversion interval",
+  "phlag_input_excludes_inversion_coordinates": true,
+  "source_inputs": {
+    "data/atlantic_cod/processed/cod_window_trees.tsv": "26ed195ee26cb860ca0885c76d768d427639a4338b74a787d9421498e10dfb0b",
+    "data/atlantic_cod/processed/baseline_population_tree_12taxa.nwk": "752ae5c0e0da7317ce66650d74ad51d3f29b7dd138f4dd4e5fe9836243c78cc2",
+    "data/atlantic_cod/metadata/region_manifest.tsv": "97e9fdc4cd294deede0eaf8e333c883d9d41b636e265b78f5e7b0858acf6a408",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/atlantic_cod/results/stage7_window_divergence_time_signal.tsv": "5f6849175e53c6720cb8dd018f46fe426d1490ab1bf038bc25d9db3d8b6f8dc5"
+  },
+  "notes": [
+    "SNAPP MCC population trees were used as Phlag gene-tree inputs; interpret state calibration cautiously.",
+    "N009 excluded by upstream collapse_basal_bifurcation preprocessing."
+  ]
+}

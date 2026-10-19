@@ -1,0 +1,6 @@
+{
+  "python": "3.12.11 (main, Jul 15 2025, 01:27:44) [Clang 14.0.0 (clang-1400.0.29.102)]",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "phlag_executable": "/private/tmp/phlag-venv/bin/phlag",
+  "source_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6"
+}

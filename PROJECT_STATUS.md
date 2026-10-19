@@ -257,6 +257,21 @@ manuscript integration, with no new empirical question started.
 
 ## Neoaves chromosome 4 Stage 4E ASTER/ASTRAL4 preparation
 
+## House mouse t-complex recombination-suppression audit
+
+Direct quantitative suppression evidence was recovered from primary literature,
+but only as a T–tf marker-pair comparison (7–12 cM conventional versus
+0.1–0.5 cM in naturally occurring t/+ heterozygotes) and a region-wide
+20-cM / 100–200-fold literature summary. These observations are arrangement-
+specific but not coordinate-resolved on the frozen 5-kb window grid, and no
+spatial association test with quartet contrast was justified.
+The source audit, report, and four-panel schematic are in
+empirical/house_mouse_t_complex/results/recombination_suppression_source_audit.tsv,
+recombination_suppression_report.md, and
+figures/house_mouse_t_complex_suppression.{png,pdf}. The historical
+phylogeny-based recombination classification remains supplementary and is not
+treated as a direct rate track.
+
 Stage 4C is complete. Historical Stage 4D ASTRAL-MP reproduction attempts are
 preserved as provenance but discontinued as a prerequisite for new full-tree
 analysis. Stage 4E prepares ASTER/ASTRAL4 treatment inputs and Bridges-2 SLURM
@@ -406,6 +421,29 @@ deterministic circular shifts, event assignment, and preservation of the Stage
 
 The existing Neoaves chromosome-4 empirical analysis is treated as frozen for
 this Stage-0 Anopheles scaffold. No Neoaves files or conclusions were modified.
+
+## Neoaves chromosome 4 recombination-map audit
+
+The published-source audit is complete in
+`empirical/neoaves_chr4/results/recombination_source_audit.tsv` and
+`recombination_source_audit.md`. Two pedigree-based chicken sources were
+identified: Groenen et al. (2009), with a 9,268-marker map and approximately
+1-Mb rate bins, and Elferink et al. (2010), with a 13,340-SNP map and 1,819
+approximately 500-kb bins carrying sex-average and sex-specific cM/Mb rates.
+Rabie et al. (2004) is retained as a GGA4 radiation-hybrid/BAC correspondence
+source, not as a recombination map. Stapley et al. (2010) is retained as a
+pedigree-based zebra-finch comparison.
+
+The Elferink supplementary XLS files are publicly listed but the publisher
+endpoint returned HTML protection pages during recovery, so no external numeric
+file was accepted as downloaded or preserved. The map is on WASHUC2, and no
+validated WASHUC2-to-GalGal6 marker conversion was available in the local
+snapshot. Therefore no coordinate-resolved cM/Mb table, recombination figure,
+inside/outside rate comparison, or significance test was generated. The PNAS
+Neoaves data provide a GalGal6 focal coordinate reference and inferred
+historical suppression, not direct rates. Existing structural and quartet
+outputs remain frozen, and no ASTRAL analysis was rerun. Validation is in
+`empirical/neoaves_chr4/tests/test_recombination_audit.sh`.
 
 ## Anopheles 2La Stage 0
 
@@ -946,3 +984,107 @@ zeros preserved. The corrected analysis validates all 300 original no-outgroup
 collections but finds only six complete MSRC collections, so the 300-replicate
 MSRC result is **BLOCKED**. See
 `simulations/large_tree/mai30/analysis/results/MAI30_RF_CORRECTION_REPORT.md`.
+
+## House-mouse t-complex three-treatment ASTRAL update
+
+The full-data t-haplotype-only ASTRAL analysis now uses the frozen 4,046 local
+5-kb gene trees and 23 retained tips (15 reconstructed t-haplotype tips plus
+eight *M. spretus* outgroup tips). It recovers `Q_SPECIES` with CU = 0.202004,
+localPP = 1.000000, and biological quartet frequencies
+0.455385/0.267675/0.276940 for q_species/q_t_alt/q_other. This agrees with the
+existing matched t-only resampling result. Standard-only remains `Q_SPECIES`
+and mixed remains `Q_T_ALT`.
+
+The seven-population t-only treatment is not estimable because SPRE has no
+t-haplotype representative. The population figure therefore shows the original
+seven-population standard-only and mixed trees alongside a six-population
+t-haplotype-only tree with SPRE removed. A separate common-six comparison
+allows direct comparison of all three treatments on the same taxon set. The
+original standard-only versus mixed seven-population comparison remains
+unchanged.
+Updated three-treatment figures, input/output provenance, and validation checks are documented under
+`empirical/house_mouse_t_complex/`.
+
+## Atlantic cod Stage 10 validity correction and Stage 10b
+
+The original Atlantic cod Stage 10 parameter-to-prediction analysis is
+classified as exploratory and invalid for empirical MSRC parameter inference.
+It treated SNAPP population-tree internal node ages as realized lineage
+coalescence times, even though SNAPP integrates over gene trees. The resulting
+`T < d` incompatibility affected 11,673/27,786 audited observations (42.010%).
+Its lambda and m estimates should not be used in the paper; the original
+`stage10_*` outputs remain frozen for provenance.
+
+Stage 10b replaces that observation model with the validated conditional 2:2
+quartet model from `simulations/quartet`, using the original rooted Stage-8b
+time tree only to obtain baseline quartet intervals. It fits effective
+reduced-model parameters from training quartet outcomes and predicts held-out
+contiguous windows. The primary objective is a quartet composite/pseudo-
+likelihood, with window-level D(w) summaries and comparators against ordinary
+MSC and an LG-specific training-frequency null.
+
+The exact conditional kernel matches the frozen simulation grid to 4.44e-16.
+The analysis retains 6,406 eligible quartet outcomes overall and 127 held-out
+windows with eligible outcomes; LG12 has no eligible positive baseline
+intervals under the fixed scaffold. Pooled held-out MSRC D(w) MAE is 0.07968
+versus 0.87533 for ordinary MSC and 0.08032 for the smoothed
+training-frequency null. The training-frequency null has better mean
+log-predictive probability (-0.296 versus -0.454 for MSRC), so the mechanistic
+model does not outperform the non-mechanistic LG-specific predictor on the
+primary predictive score.
+
+The effective parameters are weakly identified. The shared lambda profile and
+several m/rho profiles hit effective-rate boundaries; interpretation therefore
+rests on predictive structure and rho diagnostics rather than precise
+biological rates. Stage 10b supports only the limited statement that this
+reduced conditional MSRC model captures arrangement-associated quartet
+structure and outperforms ordinary MSC in this comparison. It does not provide
+an independent second-modality validation, estimate meiotic recombination
+rates, or identify the full biological MSRC process. It should remain
+supplementary rather than serve as a main-paper quantitative MSRC estimate.
+
+## Exact four-taxon species-tree MSRC theory
+
+The symmetric four-taxon species-tree theorem is complete for equal sister
+branches. The scalar reduction factors the exact matrix theorem through the
+closed sister-pair coefficients and the existing `H_m` shared-population
+kernel. The four conditional classes are 4:0, 3:1, concordant 2:2, and
+discordant 2:2; the 16 patterns reduce to these classes under equal branch
+symmetry. `SCALAR_FORMULAS.md` records the formulas, the unconditional forward
+weight average, the `q2-q3` identity, the conditional topology-reversal
+condition, and the MSC limit.
+
+The scalar evaluator agrees with the matrix evaluator below `1e-12` across the
+requested rate and duration grid and agrees with `scipy.linalg.expm` for the
+pair kernel. Six selected 5,000-locus cells at `p=1/2`, including `1010` at
+low and high switching rates, were compared with direct `msrc-sim` output and
+showed Monte Carlo agreement. The earlier p-not-equal-to-one-half validation
+bundle remains separate evidence for the prior general theory.
+
+The remaining limitation is that the scalar theorem assumes equal sister
+branch lengths, zero terminal lengths, symmetric rates, and a fixed terminal
+pattern; arbitrary forward pattern weights are handled only after the
+conditional theorem.
+
+## Atlantic cod Stage 11 Phlag benchmark
+
+The original Phlag implementation was run from upstream commit
+`76597d0e4ebd0e507fdafebf7f5163ef634a36d6` on the frozen Atlantic-cod window
+trees, independently for LG01, LG02, LG07, and LG12. It completed for all four
+linkage groups and nine eligible focal internal branches per group. One basal
+three-taxon branch was excluded because Phlag's own basal-bifurcation collapse
+removes that label before focal-edge validation.
+
+Phlag flagged no windows under its default HMM state call. Its union and every
+branch-specific result therefore had F1=0 and interval IoU=0 in all four
+linkage groups. Using fixed sign-rule comparators, pooled topology-only F1 was
+0.7195 with mean LG IoU 0.4270, time-only F1 was 0.7516 with mean LG IoU
+0.4322, and the joint rule was F1 0.7939 with mean LG IoU 0.4402. LG07 was
+detected by the time-only rule (F1 0.5324, IoU 0.3035) but not by Phlag.
+
+These results are a software benchmark and do not establish detector
+superiority. Phlag assumes gene-tree-like inputs and MSC-calibrated quartet
+signals, while these inputs are SNAPP MCC population-tree summaries. The
+result should remain supplementary until Phlag's calibration on this input
+representation is independently validated. Reproduction files and raw Phlag
+outputs are under `empirical/atlantic_cod/results/phlag_benchmark/`.

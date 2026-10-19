@@ -1,0 +1,11 @@
+label	n_taxa	descendant_taxa	branch_length	phlag_eligible	exclusion_reason
+N001	9	Gadmor_avc_spc,Gadmor_avo_spc,Gadmor_bor_spc,Gadmor_icc_spc,Gadmor_ico_spc,Gadmor_kie_spc,Gadmor_lfc_spc,Gadmor_lfo_spc,Gadmor_low_spc	0.030753694	true	
+N002	8	Gadmor_avc_spc,Gadmor_bor_spc,Gadmor_icc_spc,Gadmor_ico_spc,Gadmor_kie_spc,Gadmor_lfc_spc,Gadmor_lfo_spc,Gadmor_low_spc	0.0053122151	true	
+N003	2	Gadmor_avc_spc,Gadmor_lfo_spc	0.011870019	true	
+N004	6	Gadmor_bor_spc,Gadmor_icc_spc,Gadmor_ico_spc,Gadmor_kie_spc,Gadmor_lfc_spc,Gadmor_low_spc	0.0085104037	true	
+N005	4	Gadmor_bor_spc,Gadmor_kie_spc,Gadmor_lfc_spc,Gadmor_low_spc	0.0060670407	true	
+N006	2	Gadmor_bor_spc,Gadmor_kie_spc	0.010246083	true	
+N007	2	Gadmor_lfc_spc,Gadmor_low_spc	0.0068041987	true	
+N008	2	Gadmor_icc_spc,Gadmor_ico_spc	0.011960946	true	
+N009	3	Gadmor_bat_spc,Gadmor_twc_spc,Gadmor_two_spc	0.044286112	false	collapse_basal_bifurcation
+N010	2	Gadmor_twc_spc,Gadmor_two_spc	0.011128148	true	

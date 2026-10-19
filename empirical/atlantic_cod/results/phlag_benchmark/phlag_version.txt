@@ -1,0 +1,83 @@
+usage: phlag [-h] -s SPECIES_TREE -g GENE_TREES -o OUTPUT_FILE
+             [--n-replicates N_REPLICATES] [-L N_ITERS] [-l INCREMENT_STEPS]
+             [-v {0,1,2,3}] [--dry-run] -e FOCAL_EDGES [FOCAL_EDGES ...]
+             [--expand-threshold EXPAND_THRESHOLD] [--rho RHO] [--beta BETA]
+             [--beta-prime BETA_PRIME] [--emission-lambda EMISSION_LAMBDA]
+             [--initial-probs-concentration INITIAL_PROBS_CONCENTRATION]
+             [--emission-concentration EMISSION_CONCENTRATION] [--eta ETA]
+             [--emission-initialization {random,simulation}]
+             [--emission-parameterization {free,attraction,anchor}]
+             [--ilr-transform] [--write-qqs-path WRITE_QQS_PATH]
+             [--read-qqs-path READ_QQS_PATH]
+
+Phlag: Detecting genomic regions with unexplained phylogenetic heterogeneity
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SPECIES_TREE, --species-tree SPECIES_TREE
+                        Path to species tree in Newick format
+  -g GENE_TREES, --gene-trees GENE_TREES
+                        Path to file for ordered gene trees (one Newick tree
+                        per line)
+  -o OUTPUT_FILE, --output-file OUTPUT_FILE
+                        Path to save the output
+  --n-replicates N_REPLICATES
+                        Number of simulation replicates for prior updates
+                        (default: 2000)
+  -L N_ITERS, --n-iters N_ITERS
+                        Number of (outer) iterations (default: 5)
+  -l INCREMENT_STEPS, --increment-steps INCREMENT_STEPS
+                        Increment for inner EM iterations (default: 50)
+  -v {0,1,2,3}, --verbosity {0,1,2,3}
+                        Verbosity level: 0=quiet, 1=normal, 2=verbose, 3=debug
+                        (default: 1)
+  --dry-run             Read the data and compute/read/write the QQS values,
+                        and do nothing else.
+  -e FOCAL_EDGES [FOCAL_EDGES ...], --focal-edges FOCAL_EDGES [FOCAL_EDGES ...]
+                        Focal edge(s) to focus, specified by inner node
+                        label(s). Rooted: edge connecting the given node and
+                        its parent. Unrooted: edge giving the most balanced
+                        bipartition.
+  --expand-threshold EXPAND_THRESHOLD
+                        Estimated branch length in CU at or above which the
+                        neighbouring branches are added (default: 1.0). Set to
+                        0 to always expand, or to inf to never expand.
+
+HMM parameters:
+  --rho RHO             Hyperparameter to control sensitivity, reduce to
+                        increase sensitivity (default 0.85)
+  --beta BETA           Hyperparameter to control contiguity of flagged
+                        regions, reduce to increase contiguity (overrides
+                        --beta-prime when set)
+  --beta-prime BETA_PRIME
+                        Scale factor for beta; effective beta is this times
+                        the number of gene trees, valid range is (0, 0.5)
+                        (default: 0.001, which is 1 per 1000 gene trees)
+  --emission-lambda EMISSION_LAMBDA, --lambda EMISSION_LAMBDA
+                        Hyperparameter to control deviation of anomalies from
+                        MSC (default: 1.0)
+  --initial-probs-concentration INITIAL_PROBS_CONCENTRATION
+                        Initial probabilities concentration (default: 1.1)
+  --emission-concentration EMISSION_CONCENTRATION
+                        Emission prior concentration (default: 1.1)
+  --eta ETA, --occupancy-bias ETA
+                        A global occupancy penalty on the marginal log-
+                        likelihood. Per gene tree, penalty is
+                        -log((1-eta)/eta) (default: 0.5)
+  --emission-initialization {random,simulation}
+                        The default state is initialized based on MSC-based
+                        simulations. The alternative state is initialized
+                        randomly or based on simulations (default: simulation)
+  --emission-parameterization {free,attraction,anchor}
+                        Parameterization of the emission probabilities of the
+                        default state (default: attraction): free (no prior),
+                        attraction, or anchor (MSC-based simulations).
+
+Discretization and emission parameters:
+  --ilr-transform       Apply isometric log-ratio transformation on QQS values
+
+I/O options:
+  --write-qqs-path WRITE_QQS_PATH
+                        Write QQS values to the given filepath
+  --read-qqs-path READ_QQS_PATH
+                        Read QQS values from the given filepath
