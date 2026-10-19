@@ -1,229 +1,186 @@
-"""Exact four-taxon MSRC quartet probabilities on ((1,2),(3,4)).
+"""Symmetric two-background four-taxon MSRC species-tree theorem.
 
-The implementation follows the event rules in msrc-sim's
-``structured_coalescent.py``.  It conditions on the four sampled background
-states and uses transient states with four surviving sampled lineages.  A
-coalescence is absorbing because its first pair determines the quartet.
+For S=((1,2),(3,4)), the calculation separates the two sister-population
+branches from the final shared structured population.  The latter is exactly
+the H_m kernel used by msrc-sim's analytic.py.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from itertools import product
 
 import numpy as np
 from scipy.linalg import expm
 
 TOPOLOGY_NAMES = ("12|34", "13|24", "14|23")
-TAXA = ("1", "2", "3", "4")
-PATTERNS = tuple("".join(bits) for bits in product("01", repeat=4))
+PATTERNS = tuple("".join(x) for x in product("01", repeat=4))
+PAIR_STATES = ("00", "01", "10", "11")
 PAIR_TO_TOPOLOGY = {
-    frozenset((0, 1)): 0,
-    frozenset((2, 3)): 0,
-    frozenset((0, 2)): 1,
-    frozenset((1, 3)): 1,
-    frozenset((0, 3)): 2,
-    frozenset((1, 2)): 2,
+    frozenset((0, 1)): 0, frozenset((2, 3)): 0,
+    frozenset((0, 2)): 1, frozenset((1, 3)): 1,
+    frozenset((0, 3)): 2, frozenset((1, 2)): 2,
 }
 
 
-@dataclass(frozen=True)
-class Epoch:
-    """A finite epoch with fixed population assignments and rates."""
-
-    duration: float
-    populations: tuple[str, str, str, str]
-    p: float
-    rho: float
-    ne: float
+def U(t: float, m: float) -> np.ndarray:
+    """One-lineage background transition matrix exp([[−m,m],[m,−m]]t)."""
+    if t < 0 or m < 0:
+        raise ValueError("t and m must be non-negative")
+    e = np.exp(-2.0 * m * t)
+    return 0.5 * np.array([[1.0 + e, 1.0 - e], [1.0 - e, 1.0 + e]])
 
 
-def _validate_p(p: float) -> None:
-    if not 0.0 < p < 1.0:
-        raise ValueError("p must lie strictly between 0 and 1")
+def pair_generator(m: float, lam: float) -> np.ndarray:
+    """The four-state transient sister-pair generator K."""
+    if m < 0 or lam < 0:
+        raise ValueError("m and lambda must be non-negative")
+    return np.array([
+        [-(lam + 2 * m), m, m, 0],
+        [m, -2 * m, 0, m],
+        [m, 0, -2 * m, m],
+        [0, m, m, -(lam + 2 * m)],
+    ], dtype=float)
 
 
-def _state_index(bits: tuple[int, int, int, int]) -> int:
-    return sum(int(bit) << (3 - i) for i, bit in enumerate(bits))
+def pair_kernel_closed_form(t: float, m: float, lam: float) -> np.ndarray:
+    """Closed form for exp(Kt), using the symmetric/antisymmetric modes."""
+    if t < 0:
+        raise ValueError("t must be non-negative")
+    delta = np.sqrt(lam * lam + 16.0 * m * m)
+    if delta == 0.0:
+        return np.eye(4)
+    A = np.array([[-(lam + 2 * m), 2 * m], [2 * m, -2 * m]], dtype=float)
+    mu_plus = (-(lam + 4 * m) + delta) / 2.0
+    mu_minus = (-(lam + 4 * m) - delta) / 2.0
+    identity = np.eye(2)
+    # Spectral interpolation is algebraically the same as the cosh/sinh
+    # expression but remains stable when m is large.
+    E = (
+        np.exp(mu_plus * t) * (A - mu_minus * identity)
+        - np.exp(mu_minus * t) * (A - mu_plus * identity)
+    ) / delta
+    D = np.exp(-(lam + 2 * m) * t)
+    mixed_difference = np.exp(-2.0 * m * t)
+    # Row-vector ordering is 00, 01, 10, 11. Recover the four coordinates
+    # from S=x00+x11, M=x01+x10, D=x00-x11, E=x01-x10.
+    T = np.zeros((4, 4), dtype=float)
+    for j in range(4):
+        initial_S = 1.0 if j in (0, 3) else 0.0
+        initial_M = 1.0 if j in (1, 2) else 0.0
+        initial_D = 1.0 if j == 0 else (-1.0 if j == 3 else 0.0)
+        initial_E = 1.0 if j == 1 else (-1.0 if j == 2 else 0.0)
+        S, M = np.array([initial_S, initial_M]) @ E
+        D_j = initial_D * D
+        E_j = initial_E * mixed_difference
+        T[j, :] = [(S + D_j) / 2, (M + E_j) / 2, (M - E_j) / 2, (S - D_j) / 2]
+    return T
 
 
-def _rates(p: float, rho: float, ne: float) -> tuple[float, float, float, float]:
-    _validate_p(p)
-    if ne <= 0 or rho < 0:
-        raise ValueError("ne must be positive and rho must be non-negative")
-    return rho * p, rho * (1.0 - p), 1.0 / (2.0 * ne * (1.0 - p)), 1.0 / (2.0 * ne * p)
+def pair_survivor_distribution(
+    z_pair: tuple[int, int] | str,
+    *,
+    terminal_lengths: tuple[float, float] = (0.0, 0.0),
+    shared_length: float,
+    m: float,
+    lam: float,
+) -> np.ndarray:
+    """Unnormalized four-state distribution after a sister branch."""
+    bits = tuple(int(x) for x in z_pair)
+    if len(bits) != 2 or set(bits) - {0, 1}:
+        raise ValueError("z_pair must contain two binary states")
+    if shared_length < 0 or min(terminal_lengths) < 0:
+        raise ValueError("branch lengths must be non-negative")
+    left = U(terminal_lengths[0], m)[bits[0]]
+    right = U(terminal_lengths[1], m)[bits[1]]
+    entering = np.kron(left, right)
+    return entering @ pair_kernel_closed_form(shared_length, m, lam)
 
 
-def transient_generator(populations: tuple[str, str, str, str], p: float, rho: float, ne: float):
-    """Return (Q, R) for the 16 background states in one epoch.
-
-    Q is the transient generator and R has one column for each quartet
-    topology.  Rows sum to zero after R is appended to Q.
-    """
-    m01, m10, lambda0, lambda1 = _rates(p, rho, ne)
+def _hm_generator(m: float, lam: float):
     Q = np.zeros((16, 16), dtype=float)
     R = np.zeros((16, 3), dtype=float)
-    for bits in product((0, 1), repeat=4):
-        i = _state_index(bits)
+    states = list(product((0, 1), repeat=4))
+    index = {z: i for i, z in enumerate(states)}
+    for row, z in enumerate(states):
         exit_rate = 0.0
-        for k, bit in enumerate(bits):
-            rate = m01 if bit == 0 else m10
-            if rate:
-                switched = list(bits)
-                switched[k] = 1 - bit
-                Q[i, _state_index(tuple(switched))] += rate
-                exit_rate += rate
+        for i, bit in enumerate(z):
+            zz = list(z)
+            zz[i] = 1 - bit
+            Q[row, index[tuple(zz)]] += m
+            exit_rate += m
         for a in range(4):
             for b in range(a + 1, 4):
-                if populations[a] == populations[b] and bits[a] == bits[b]:
-                    coal_rate = lambda0 if bits[a] == 0 else lambda1
-                    topology = PAIR_TO_TOPOLOGY[frozenset((a, b))]
-                    R[i, topology] += coal_rate
-                    exit_rate += coal_rate
-        Q[i, i] -= exit_rate
-    return Q, R
+                if z[a] == z[b]:
+                    R[row, PAIR_TO_TOPOLOGY[frozenset((a, b))]] += lam
+                    exit_rate += lam
+        Q[row, row] -= exit_rate
+    return Q, R, states
 
 
-def _finite_propagation(alpha: np.ndarray, epoch: Epoch):
-    Q, R = transient_generator(epoch.populations, epoch.p, epoch.rho, epoch.ne)
-    augmented = np.zeros((19, 19), dtype=float)
-    augmented[:16, :16] = Q
-    augmented[:16, 16:] = R
-    extended = np.zeros(19, dtype=float)
-    extended[:16] = alpha
-    result = extended @ expm(augmented * epoch.duration)
-    return result[:16], result[16:]
-
-
-def _root_absorption(alpha: np.ndarray, p: float, rho: float, ne: float) -> np.ndarray:
-    Q, R = transient_generator(("root",) * 4, p, rho, ne)
-    # Integral_0^infinity exp(Qt) R dt = (-Q)^(-1) R.
-    return alpha @ np.linalg.solve(-Q, R)
+def hm_kernel(shared_length: float, m: float, lam: float) -> np.ndarray:
+    """Return H_m, including 1/3 resolution of survival mass after T."""
+    if shared_length < 0:
+        raise ValueError("shared_length must be non-negative")
+    Q, R, _ = _hm_generator(m, lam)
+    B = np.zeros((19, 19), dtype=float)
+    B[:16, :16] = Q
+    B[:16, 16:] = R
+    E = expm(B * shared_length)
+    return E[:16, 16:] + E[:16, :16] @ np.ones((16, 1)) @ np.full((1, 3), 1.0 / 3.0)
 
 
 def conditional_quartet_probabilities(
-    z: str | tuple[int, int, int, int],
+    z: str,
     *,
-    sister_length: float,
-    root_length_before_mrca: float,
-    rho: float,
-    p: float,
-    ne: float,
-    terminal_p: float | None = None,
-    sister_p: float | None = None,
-    root_p: float | None = None,
-    terminal_ne: float | None = None,
-    sister_ne: float | None = None,
-    root_ne: float | None = None,
+    terminal_lengths: tuple[float, float, float, float] = (0.0, 0.0, 0.0, 0.0),
+    sister_lengths: tuple[float, float] = (0.0, 0.0),
+    shared_length: float = 0.0,
+    m: float,
+    lam: float,
 ) -> np.ndarray:
-    """Compute P(Q | Z=z,S) for the balanced four-taxon species tree.
-
-    ``sister_length`` is the length of the two terminal branches before the
-    sister populations form. ``root_length_before_mrca`` is the length of the
-    two-population ancestral epoch before both sisters enter the root. Rates
-    are piecewise constant within these three epochs.
-    """
-    if isinstance(z, str):
-        if len(z) != 4 or set(z) - set("01"):
-            raise ValueError("z must be a four-character 0/1 pattern")
-        bits = tuple(int(x) for x in z)
-    else:
-        bits = tuple(int(x) for x in z)
-        if len(bits) != 4 or set(bits) - {0, 1}:
-            raise ValueError("z must contain four binary states")
-    if sister_length < 0 or root_length_before_mrca < 0:
-        raise ValueError("epoch lengths must be non-negative")
-    terminal_p = p if terminal_p is None else terminal_p
-    sister_p = p if sister_p is None else sister_p
-    root_p = p if root_p is None else root_p
-    terminal_ne = ne if terminal_ne is None else terminal_ne
-    sister_ne = ne if sister_ne is None else sister_ne
-    root_ne = ne if root_ne is None else root_ne
-    alpha = np.zeros(16)
-    alpha[_state_index(bits)] = 1.0
-    q = np.zeros(3)
-    alpha, absorbed = _finite_propagation(
-        alpha, Epoch(sister_length, ("1", "2", "3", "4"), terminal_p, rho, terminal_ne)
+    """Return q_Z=(1-s_L s_R)e1 + (ell_Z kron r_Z)H_m."""
+    if len(z) != 4 or set(z) - set("01"):
+        raise ValueError("z must be a four-character 0/1 pattern")
+    if len(terminal_lengths) != 4 or len(sister_lengths) != 2:
+        raise ValueError("terminal_lengths must have four and sister_lengths two entries")
+    ell = pair_survivor_distribution(
+        z[:2], terminal_lengths=terminal_lengths[:2],
+        shared_length=sister_lengths[0], m=m, lam=lam,
     )
-    q += absorbed
-    alpha, absorbed = _finite_propagation(
-        alpha, Epoch(root_length_before_mrca, ("12", "12", "34", "34"), sister_p, rho, sister_ne)
+    right = pair_survivor_distribution(
+        z[2:], terminal_lengths=terminal_lengths[2:],
+        shared_length=sister_lengths[1], m=m, lam=lam,
     )
-    q += absorbed
-    q += _root_absorption(alpha, root_p, rho, root_ne)
-    return q / q.sum()
+    s_left, s_right = ell.sum(), right.sum()
+    beta = np.kron(ell, right)
+    q = (1.0 - s_left * s_right) * np.array([1.0, 0.0, 0.0])
+    q += beta @ hm_kernel(shared_length, m, lam)
+    return q
 
 
 def all_pattern_probabilities(**kwargs) -> dict[str, np.ndarray]:
-    """Return conditional quartet probabilities for all 16 terminal patterns."""
     return {z: conditional_quartet_probabilities(z, **kwargs) for z in PATTERNS}
 
 
-def pattern_probability_mixture(pattern_probabilities: dict[str, float], **kwargs) -> np.ndarray:
-    """Mix the 16 conditional distributions with P(Z=z)."""
-    missing = set(PATTERNS) - set(pattern_probabilities)
+def pattern_classes() -> dict[str, tuple[str, str]]:
+    classes = {}
+    for z in PATTERNS:
+        ones = z.count("1")
+        cls = "4:0" if ones in (0, 4) else ("3:1" if ones in (1, 3) else "2:2")
+        split = "Q1-associated" if z in {"0000", "1111"} else ""
+        if cls == "2:2":
+            split = {"0011": "W1", "1100": "W1", "0101": "W2", "1010": "W2", "0110": "W3", "1001": "W3"}[z]
+        classes[z] = (cls, split)
+    return classes
+
+
+def unconditional_quartet_probabilities(pattern_weights: dict[str, float], **kwargs) -> np.ndarray:
+    missing = set(PATTERNS) - set(pattern_weights)
     if missing:
-        raise ValueError(f"missing pattern probabilities: {sorted(missing)}")
-    q = sum(float(pattern_probabilities[z]) * conditional_quartet_probabilities(z, **kwargs) for z in PATTERNS)
-    return np.asarray(q, dtype=float)
+        raise ValueError(f"missing pattern weights: {sorted(missing)}")
+    return sum(pattern_weights[z] * conditional_quartet_probabilities(z, **kwargs) for z in PATTERNS)
 
 
-def msc_quartet_probabilities(internal_branch_coalescent_length: float) -> np.ndarray:
-    """Ordinary four-taxon MSC probabilities for ((1,2),(3,4))."""
-    if internal_branch_coalescent_length < 0:
-        raise ValueError("internal branch length must be non-negative")
-    no_coal = np.exp(-internal_branch_coalescent_length)
-    return np.array([1.0 - (2.0 / 3.0) * no_coal, no_coal / 3.0, no_coal / 3.0])
-
-
-def shared_population_kernel(
-    z: str | tuple[int, int, int, int],
-    *,
-    duration: float,
-    m01: float,
-    m10: float,
-    lambda0: float,
-    lambda1: float,
-) -> np.ndarray:
-    """Finite shared-population kernel used by the earlier H_m calculation.
-
-    If no coalescence occurs during the finite interval, the remaining
-    panmictic genealogy resolves each quartet with probability 1/3.  This is
-    exactly the convention in ``msrcsim.analytic.compute_Hm``.
-    """
-    if isinstance(z, str):
-        bits = tuple(int(x) for x in z)
-    else:
-        bits = tuple(int(x) for x in z)
-    if len(bits) != 4 or set(bits) - {0, 1}:
-        raise ValueError("z must contain four binary states")
-    if duration < 0 or min(m01, m10, lambda0, lambda1) < 0:
-        raise ValueError("duration and rates must be non-negative")
-    Q, R = transient_generator(("shared",) * 4, 0.5, 0.0, 1.0)
-    # Replace the biological parameterized rates by the requested rates.
-    Q.fill(0.0)
-    R.fill(0.0)
-    for state in product((0, 1), repeat=4):
-        i = _state_index(state)
-        exit_rate = 0.0
-        for k, bit in enumerate(state):
-            rate = m01 if bit == 0 else m10
-            switched = list(state)
-            switched[k] = 1 - bit
-            if rate:
-                Q[i, _state_index(tuple(switched))] += rate
-                exit_rate += rate
-        for a in range(4):
-            for b in range(a + 1, 4):
-                if state[a] == state[b]:
-                    rate = lambda0 if state[a] == 0 else lambda1
-                    R[i, PAIR_TO_TOPOLOGY[frozenset((a, b))]] += rate
-                    exit_rate += rate
-        Q[i, i] -= exit_rate
-    augmented = np.zeros((19, 19), dtype=float)
-    augmented[:16, :16] = Q
-    augmented[:16, 16:] = R
-    result = np.zeros(19)
-    result[_state_index(bits)] = 1.0
-    result = result @ expm(augmented * duration)
-    return result[16:] + result[:16].sum() / 3.0
+def msc_quartet_probabilities(tau: float) -> np.ndarray:
+    e = np.exp(-tau)
+    return np.array([1.0 - 2.0 * e / 3.0, e / 3.0, e / 3.0])

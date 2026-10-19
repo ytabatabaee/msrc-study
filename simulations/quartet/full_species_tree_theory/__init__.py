@@ -5,7 +5,7 @@ from .quartet_theory import (
     all_pattern_probabilities,
     conditional_quartet_probabilities,
     msc_quartet_probabilities,
-    pattern_probability_mixture,
+    unconditional_quartet_probabilities,
 )
 
 __all__ = [
@@ -13,5 +13,5 @@ __all__ = [
     "all_pattern_probabilities",
     "conditional_quartet_probabilities",
     "msc_quartet_probabilities",
-    "pattern_probability_mixture",
+    "unconditional_quartet_probabilities",
 ]

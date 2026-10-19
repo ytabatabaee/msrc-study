@@ -1,201 +1,377 @@
-# Exact four-taxon MSRC species-tree quartet distribution
+# First complete symmetric four-taxon MSRC species-tree theorem
 
-This note derives the quartet distribution for the balanced species tree
-`S=((1,2),(3,4))`. The event rules are those implemented in
-`msrc-sim/msrcsim/structured_coalescent.py`: a lineage switches background
-with rates
-
-\[
-m_{01}=\rho p,\qquad m_{10}=\rho(1-p),
-\]
-
-and two lineages coalesce only when they are in the same population and have
-the same background. Their coalescence rate is
+This derivation conditions on a fixed terminal background pattern
+`Z=(z_1,z_2,z_3,z_4)` for the rooted species tree
+`S=((1,2),(3,4))). It uses the symmetric backward process
 
 \[
-\lambda_0=\{2N(1-p)\}^{-1},\qquad
-\lambda_1=\{2Np\}^{-1}.
+m_{01}=m_{10}=m,\qquad \lambda_0=\lambda_1=\lambda.
 \]
 
-The terminal sampled arrangement is `Z=z=(z_1,z_2,z_3,z_4)`.
+The pattern probabilities `pi_z=P(Z=z)` are introduced only after the
+conditional theorem. They are arbitrary forward-sorting weights.
 
-## State space and exact matrix expression
+The implementation in `quartet_theory.py` is independent of the old
+conditional experiment but reproduces its `H_m` kernel. The simulator files
+used as the model authority are `msrcsim/structured_coalescent.py`,
+`msrcsim/analytic.py`, and `msrcsim/pattern_probabilities.py`.
 
-Before the first coalescence there are four surviving sampled lineages. A
-transient state is
+## Theorem
+
+Let `u_i` be the terminal single-lineage branch length for taxon `i`,
+`T_L,T_R` the shared-population branch lengths for pairs `12` and `34`,
+and `T_A` the duration of the final four-lineage structured ancestral
+population. Define `ell_Z` and `r_Z` as the unnormalized distributions of
+the surviving pairs at the ends of the two sister branches. Then
 
 \[
-x=(b_1,b_2,b_3,b_4; a_1,a_2,a_3,a_4),
+\boxed{
+\mathbf q_Z
+=(1-s_Ls_R)\mathbf e_1+
+(\ell_Z\otimes r_Z)H_m(T_A)
+}
 \]
 
-where `b_i` is the current species-tree population and `a_i` is the current
-background. Within one constant-rate epoch, the 16 background vectors form the
-transient state space because the population assignment is fixed by the
-species-tree epoch. The three absorbing states are
+where
 
 \[
-Q_1=12|34,\qquad Q_2=13|24,\qquad Q_3=14|23.
+s_L=\ell_Z\mathbf 1,\qquad s_R=r_Z\mathbf 1,
+\qquad \mathbf e_1=(1,0,0),
 \]
 
-For a transient row state `a`, the generator has the following entries.
+and `H_m(T_A)` is the exact shared-population kernel with residual mass
+resolved uniformly among the three topologies.
 
-* A switch of lineage `i` from 0 to 1 has rate `m01`; a switch from 1 to 0
-  has rate `m10`.
-* For every pair `(i,j)` in the same population and with `a_i=a_j`, add
-  `lambda_{a_i}` to the absorbing column corresponding to the topology
-  containing that pair.
-* The diagonal is minus the sum of all switch and coalescence rates.
+The first term is the probability that at least one sister pair coalesces on
+its own species-tree branch. Either such event fixes `Q_1=12|34`, including
+the case in which both sister pairs coalesce. The second term is the
+probability-weighted shared ancestral calculation conditional on both pairs
+surviving.
 
-Write this block generator as
+Because each row of `H_m` sums to one,
 
 \[
-G=\begin{pmatrix}Q&R\\0&0\end{pmatrix},
+\sum_j q_{Zj}=1-s_Ls_R+s_Ls_R=1.
 \]
 
-where `Q` is 16 by 16 and `R` is 16 by 3. For an epoch of length `d`,
+## Step 1: one-lineage switching
+
+For one lineage,
 
 \[
-(\alpha',q')=(\alpha,q)\exp(dG).
+M=\begin{pmatrix}-m&m\\m&-m\end{pmatrix}.
 \]
 
-At a species-tree boundary, every lineage in a child population is mapped to
-its parent population, while its background is unchanged. This is a
-deterministic map on transient states. For the balanced tree the epochs are:
-
-1. terminal branches, with populations `(1,2,3,4)`;
-2. the two sister branches, with populations `(12,12,34,34)`;
-3. the shared root, with populations `(r,r,r,r)`.
-
-Thus, for finite epoch lengths `d_1,d_2`,
+Diagonalization gives
 
 \[
-q(z)=\alpha_z K_{\rm terminal}K_{\rm sister}K_{\rm root},
+U(t)=e^{Mt}
+=\frac12\begin{pmatrix}
+1+e^{-2mt}&1-e^{-2mt}\\
+1-e^{-2mt}&1+e^{-2mt}
+\end{pmatrix}.
 \]
 
-where each `K` is the augmented matrix exponential with the appropriate
-deterministic boundary map. The root is infinite in the implementation. If
-`Q_r` and `R_r` are its transient and absorbing blocks, its contribution is
+The entering distribution of pair `12` is
 
 \[
-\alpha_r\int_0^\infty e^{Q_rt}R_r\,dt
-=\alpha_r(-Q_r)^{-1}R_r.
+v_L(Z)=U(u_1)_{z_1,\cdot}\otimes U(u_2)_{z_2,\cdot},
 \]
 
-This is the exact matrix answer. A scalar expression is generally unavailable
-because the boundary maps mix several 16-state background kernels.
-
-## The four-taxon species-tree probabilities
-
-For each of the 16 terminal patterns, the implementation evaluates
+and pair `34` is
 
 \[
-P(Q_j\mid Z=z,S)=q_j(z).
+v_R(Z)=U(u_3)_{z_3,\cdot}\otimes U(u_4)_{z_4,\cdot}.
 \]
 
-If the forward frequency-history calculation supplies `P(Z=z)`, then
+The tensor order is `00,01,10,11`.
+
+## Step 2: one sister population
+
+For a pair occupying one population, the transient states are
+`00,01,10,11`. The row-vector generator is
 
 \[
-P(Q_j\mid S)=\sum_{z\in\{0,1\}^4}P(Z=z)q_j(z).
+K=
+\begin{pmatrix}
+-(\lambda+2m)&m&m&0\\
+m&-2m&0&m\\
+m&0&-2m&m\\
+0&m&m&-(\lambda+2m)
+\end{pmatrix}.
 \]
 
-The Wright–Fisher dynamic program in `msrc-sim/msrcsim/pattern_probabilities.py`
-is the appropriate source for the weights. The biological bridge is therefore
+The loss from states `00` and `11` is coalescence. Thus the unnormalized
+survivor vector is
 
 \[
-(N,s,\rho,\text{origin time},S)\longrightarrow P(Z)
-\longrightarrow P(Q\mid Z,S)\longrightarrow P(Q\mid S).
+ell_Z=v_L(Z)e^{KT_L},\qquad r_Z=v_R(Z)e^{KT_R}.
 \]
 
-The quartet CTMC is conditional on the branchwise piecewise-constant values of
-`p` and `N`; it does not replace the simulator's forward population process.
-
-## All 16 patterns and symmetry classes
-
-The table uses `n_1` for the number of 1 backgrounds and records the pattern's
-species-tree pair relationship. Complementing every bit preserves the model
-after exchanging labels 0 and 1 when `p` is replaced by `1-p`.
-
-| pattern | class | n_1 | sister-pair relation |
-|---|---:|---:|---|
-| 0000 | 4:0 | 0 | both concordant pairs equal |
-| 1111 | 4:0 | 4 | both concordant pairs equal |
-| 0001 | 3:1 | 1 | 1/2 equal, 3/4 mixed |
-| 0010 | 3:1 | 1 | 1/2 mixed, 3/4 equal |
-| 0100 | 3:1 | 1 | 1/2 mixed, 3/4 equal |
-| 1000 | 3:1 | 1 | 1/2 mixed, 3/4 equal |
-| 0111 | 3:1 | 3 | 1/2 mixed, 3/4 equal |
-| 1011 | 3:1 | 3 | 1/2 mixed, 3/4 equal |
-| 1101 | 3:1 | 3 | 1/2 equal, 3/4 mixed |
-| 1110 | 3:1 | 3 | 1/2 mixed, 3/4 equal |
-| 0011 | 2:2 | 2 | both concordant pairs mixed |
-| 1100 | 2:2 | 2 | both concordant pairs mixed |
-| 0101 | 2:2 | 2 | each sister pair mixed |
-| 1010 | 2:2 | 2 | each sister pair mixed |
-| 0110 | 2:2 | 2 | both concordant pairs mixed |
-| 1001 | 2:2 | 2 | both concordant pairs mixed |
-
-The table is a bookkeeping classification, not an assertion that all rows in
-a class have equal quartet probabilities. Equality requires the corresponding
-taxon/background relabeling to preserve both the species tree and the rate
-parameters. In particular, 4:0 and 3:1 patterns can still favor `Q_1` on the
-full species tree because the `(1,2)` and `(3,4)` boundaries create a
-concordant opportunity.
-
-## Required limits
-
-Let `tau` be the unrooted internal species-tree branch length in coalescent
-units. In the rooted ultrametric representation used here, two equal sister
-branches of length `T` correspond to `tau=2T/(2N)=T/N`. As
-`rho` tends to infinity, each lineage rapidly reaches the stationary
-background distribution `(1-p,p)`. For any pair, the averaged same-background
-coalescence hazard is
+The survival probability is the row sum, and the branch coalescence
+probability is
 
 \[
-(1-p)^2\lambda_0+p^2\lambda_1
-=\frac{1-p}{2N}+\frac{p}{2N}=\frac1{2N}.
+P(\text{pair coalesces by }T)=1-v e^{KT}\mathbf1.
 \]
 
-All pairs therefore have the same ordinary coalescent hazard after entering a
-common population. No lineage switches during the limiting boundary layer, so
-the structured model converges to the MSC:
+### Closed form for e^{Kt}
+
+Write
 
 \[
-P(Q_1)=1-\frac23e^{-\tau},\qquad
-P(Q_2)=P(Q_3)=\frac13e^{-\tau}.
+S=x_{00}+x_{11},\quad M=x_{01}+x_{10},\quad
+D=x_{00}-x_{11},\quad E=x_{01}-x_{10}.
 \]
 
-With one background, or with a fixed/lost rearrangement that removes switching
-and background dependence, the same unstructured coalescent argument gives the
-MSC directly. Probability conservation follows from the augmented generator's
-row sums and the root absorption solve.
-
-## Relationship to the previous `H_m` conditional formula
-
-The earlier `compute_Hm` calculation starts after all four lineages have
-already entered one shared structured population. It propagates the same
-16-state background CTMC for a finite time and assigns the residual mass
-uniformly to the three topologies. The helper `shared_population_kernel` in
-`quartet_theory.py` reproduces that calculation exactly. For `z=1010`,
-`m01=m10=m`, and `lambda0=lambda1=lambda`, it gives
+Then
 
 \[
-A_m(t)=\frac{\lambda}{\lambda+2m}
-[1-e^{-2(\lambda+2m)t}],
+\frac{d}{dt}\binom{S}{M}
+=
+A\binom{S}{M},\qquad
+A=\begin{pmatrix}-(\lambda+2m)&2m\\2m&-2m\end{pmatrix},
+\]
+
+while
+
+\[
+D(t)=e^{-(\lambda+2m)t}D(0),\qquad
+E(t)=e^{-2mt}E(0).
+\]
+
+Let
+
+\[
+\Delta=\sqrt{\lambda^2+16m^2},\qquad
+\mu_\pm=\frac{-(\lambda+4m)\pm\Delta}{2}.
+\]
+
+The symmetric block is
+
+\[
+e^{At}
+=
+\frac{e^{\mu_+t}(A-\mu_-I)-e^{\mu_-t}(A-\mu_+I)}{\Delta}.
+\]
+
+For each initial basis state, apply this two-by-two matrix to
+`(S(0),M(0))`, apply the two scalar modes to `D(0),E(0)`, and reconstruct
+
+\[
+x_{00}=\frac{S+D}{2},\quad
+x_{11}=\frac{S-D}{2},\quad
+x_{01}=\frac{M+E}{2},\quad
+x_{10}=\frac{M-E}{2}.
+\]
+
+This is the explicit closed form implemented in
+`pair_kernel_closed_form`. It is algebraically equivalent to the
+cosh/sinh eigendecomposition and is evaluated in spectral form for numerical
+stability at large `m`. The unit tests compare it with
+`scipy.linalg.expm(Kt)` to machine precision.
+
+## Step 3: shared ancestral population and H_m
+
+The exact shared-population kernel is formed from the same 16 background
+states used by `msrcsim.analytic.compute_Hm`. For each background state
+`z`, switching contributes rate `m` for each of its four lineages. Each
+same-background pair contributes rate `lambda` to the absorbing topology
+containing that pair.
+
+If `Q` is the 16 by 16 transient generator and `R` the 16 by 3 absorption
+matrix, then
+
+\[
+H_m(T_A)=
+\left[e^{G T_A}\right]_{\rm transient,absorption}
++
+\left[e^{G T_A}\right]_{\rm transient,transient}
+\mathbf1\,(1/3,1/3,1/3),
+\]
+
+with
+
+\[
+G=\begin{pmatrix}Q&R\\0&0\end{pmatrix}.
+\]
+
+The second term resolves lineages that survive the structured interval in the
+ordinary panmictic ancestral population. Consequently every row of `H_m`
+sums to one.
+
+## Relationship to the existing conditional H_m result.
+
+Set `u_i=T_L=T_R=0`. Then `ell_Z` and `r_Z` are point masses and
+`s_L=s_R=1`, so
+
+\[
+\mathbf q_Z=H_m(T_A)[z].
+\]
+
+For `Z=1010`, the symmetric calculation gives
+
+\[
+A_m(T_A)=
+\frac{\lambda}{\lambda+2m}
+\left[1-e^{-2(\lambda+2m)T_A}\right],
+\]
+
+and therefore
+
+\[
+H_m(1010)=
+\left(
+\frac{1-A_m}{3},
+\frac{1+2A_m}{3},
+\frac{1-A_m}{3}
+\right).
+\]
+
+The new theorem is the species-tree extension: it propagates each lineage
+through terminal branches, allows sister-pair coalescence on the two
+species-tree branches, and only then invokes `H_m`.
+
+## All 16 patterns
+
+Define
+
+\[
+F_L(ab)=
+\left[U(u_1)_{a,\cdot}\otimes U(u_2)_{b,\cdot}\right]e^{KT_L},
 \]
 
 \[
-P(13|24\mid Z=1010)=\frac{1+2A_m(t)}3,
-\qquad
-P(12|34\mid Z=1010)=P(14|23\mid Z=1010)=\frac{1-A_m(t)}3.
+F_R(cd)=
+\left[U(u_3)_{c,\cdot}\otimes U(u_4)_{d,\cdot}\right]e^{KT_R},
 \]
 
-This is a special case of the shared-population kernel. It is not the
-species-tree distribution, because it omits terminal and sister-branch
-propagation and their boundary opportunities for coalescence.
+and
 
-## Time-varying frequencies
+\[
+\Phi(x,y)=(1-(x\mathbf1)(y\mathbf1))\mathbf e_1+
+(x\otimes y)H_m(T_A).
+\]
 
-For a time-varying `p(t)`, replace each constant-rate exponential by the
-time-ordered solution of `dP/dt=P G(t)`. Piecewise-constant approximations
-give products of ordinary exponentials, which is also the natural numerical
-route for frequencies generated by the simulator's forward history.
+Then every row has the exact formula
+`q_Z=Phi(F_L(z_1z_2),F_R(z_3z_4))`.
+
+| Z | class | 2:2 split | exact conditional vector |
+|---|---|---|---|
+| 0000 | 4:0 | — | `Phi(F_L(00),F_R(00))` |
+| 1111 | 4:0 | — | `Phi(F_L(11),F_R(11))` |
+| 0001 | 3:1 | — | `Phi(F_L(00),F_R(01))` |
+| 0010 | 3:1 | — | `Phi(F_L(00),F_R(10))` |
+| 0100 | 3:1 | — | `Phi(F_L(01),F_R(00))` |
+| 1000 | 3:1 | — | `Phi(F_L(10),F_R(00))` |
+| 0111 | 3:1 | — | `Phi(F_L(01),F_R(11))` |
+| 1011 | 3:1 | — | `Phi(F_L(10),F_R(11))` |
+| 1101 | 3:1 | — | `Phi(F_L(11),F_R(01))` |
+| 1110 | 3:1 | — | `Phi(F_L(11),F_R(10))` |
+| 0011 | 2:2 | W1 | `Phi(F_L(00),F_R(11))` |
+| 1100 | 2:2 | W1 | `Phi(F_L(11),F_R(00))` |
+| 0101 | 2:2 | W2 | `Phi(F_L(01),F_R(01))` |
+| 1010 | 2:2 | W2 | `Phi(F_L(10),F_R(10))` |
+| 0110 | 2:2 | W3 | `Phi(F_L(01),F_R(10))` |
+| 1001 | 2:2 | W3 | `Phi(F_L(10),F_R(01))` |
+
+With equal terminal lengths, equal sister-branch lengths, and the same
+symmetric rates everywhere, complementing all bits, swapping taxa within a
+sister pair, and exchanging sister clades produce the expected equivalences.
+The 4:0 rows form one class, all 3:1 rows form one class, and the 2:2 rows
+form the three arrangement-split classes W1, W2, and W3. Without those equal
+branch-length symmetries, the displayed formulas remain exact but rows that
+are related only by a broken branch relabeling need not be numerically equal.
+
+A 3:1 or 4:0 pattern is not generally `(1/3,1/3,1/3)`: the first term in
+`Phi` favors `Q_1` whenever either sister pair has a nonzero chance to
+coalesce before the shared population.
+
+## MSC limit
+
+For fast switching, the stationary background distribution is uniform. A
+given pair is in the same background with probability one half, so its
+effective coalescence rate is
+
+\[
+\frac12\lambda.
+\]
+
+The two sister branches contribute independently, hence
+
+\[
+s_Ls_R\longrightarrow
+\exp\left[-\frac{\lambda}{2}(T_L+T_R)\right].
+\]
+
+The shared-population kernel becomes uniform across topologies, so with
+
+\[
+\tau=\frac{\lambda}{2}(T_L+T_R),
+\]
+
+\[
+\boxed{
+q_1\to1-\frac23e^{-\tau},\qquad
+q_2\to\frac13e^{-\tau},\qquad
+q_3\to\frac13e^{-\tau}.
+}
+\]
+
+Under the simulator parameterization at `p=1/2`,
+`lambda=1/(2Np)=1/N`, giving
+`tau=(T_L+T_R)/(2N)`, the unrooted internal branch length in coalescent
+units. This limit is independent of `Z`.
+
+At `m=0`, the formula reduces to deterministic background persistence:
+only same-background sister pairs can coalesce, and the shared `H_m`
+kernel is evaluated from the unaltered entering pattern. At zero branch
+lengths, the result is the `H_m` conditional formula. As sister branches
+become long, `s_Ls_R\to0` and `q_Z\to e_1`. These cases are covered by
+unit tests and direct numerical evaluation.
+
+## Averaging over arbitrary forward sorting weights
+
+Only after the conditional theorem is established, let
+
+\[
+\pi_z=P(Z=z),\qquad \sum_z\pi_z=1.
+\]
+
+Then
+
+\[
+\boxed{
+\mathbf q_{\rm MSRC}=\sum_z\pi_z\mathbf q_z.
+}
+\]
+
+For equal branch lengths, the conditional vector is constant within the five
+symmetry classes 4:0, 3:1, W1, W2, and W3. Therefore the average depends on
+the weights only through the total 4:0 mass, total 3:1 mass, and
+
+\[
+W_1=\pi_{0011}+\pi_{1100},\quad
+W_2=\pi_{0101}+\pi_{1010},\quad
+W_3=\pi_{0110}+\pi_{1001}.
+\]
+
+This is a proven reduction under the stated equal-branch symmetric model. For
+unequal terminal or sister-branch durations, the reduction generally fails and
+the full 16 weights must be retained. The weights can be obtained from the
+forward Wright–Fisher dynamic program in
+`msrc-sim/msrcsim/pattern_probabilities.py`; they are not assumed to be
+uniform.
+
+## Status of claims
+
+* **Established analytically:** the one-lineage transition, the closed
+  two-lineage kernel, the factorization through sister survival, probability
+  conservation, the H_m special case, the five-class symmetry reduction under
+  equal branch lengths, and the MSC limit.
+* **Numerically validated:** closed kernel versus `scipy.linalg.expm`,
+  all-16 probability conservation, H_m recovery, MSC convergence, and direct
+  msrc-sim comparisons in the validation script.
+* **Unproven simplification:** none is used in the theorem. Any scalar
+  simplification beyond the five equal-branch symmetry classes must be checked
+  against the matrix evaluator.

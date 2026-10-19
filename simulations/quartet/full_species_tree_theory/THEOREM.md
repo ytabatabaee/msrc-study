@@ -1,27 +1,32 @@
-# Manuscript theorem and corollary
+# Manuscript theorem and corollaries
 
-**Theorem (four-taxon MSRC quartet law).** Consider the ultrametric species
-tree `S=((1,2),(3,4))`, one sampled lineage per taxon, and a piecewise-constant
-MSRC history. On each population branch, background switching has rates
-`m01=rho p` and `m10=rho(1-p)`, and same-background coalescence has rates
-`lambda_0={2N(1-p)}^{-1}` and `lambda_1={2Np}^{-1}`. Conditional on the
-terminal background pattern `Z=z`, the quartet probabilities are obtained by
-propagating the 16-state transient background distribution through the
-terminal and sister population epochs with augmented matrix exponentials,
-applying deterministic species-boundary maps, and multiplying by the root
-absorption matrix `(-Q_root)^(-1) R_root`. The resulting three-vector is
-`P(Q | Z=z,S)` and sums to one.
+**Theorem (symmetric four-taxon MSRC quartet law).** For
+`S=((1,2),(3,4))`, one sampled lineage per species, fixed terminal pattern
+`Z=z`, symmetric switching `m01=m10=m`, and symmetric coalescence
+`lambda0=lambda1=lambda`, let `ell_z` and `r_z` be the unnormalized
+four-state survivor distributions of pairs `12` and `34` after their
+species-tree population branches. Then
 
-**Corollary (unconditional quartet law).** If `w_z=P(Z=z)` is obtained from
-the forward population-frequency process, then
+`q_z = (1-s_L s_R)(1,0,0) + (ell_z kron r_z) H_m(T_A)`,
 
-`P(Q_j | S) = sum_z w_z P(Q_j | Z=z,S)`.
+where `s_L=ell_z 1`, `s_R=r_z 1`, and `H_m(T_A)` is the exact shared
+structured-population kernel. The vector sums to one.
 
-This separates forward arrangement prevalence from backward lineage sorting.
-When `rho -> infinity`, or when only one background is available, the
-effective pairwise coalescence rate is `1/(2N)` and the law reduces to the
-ordinary MSC:
+**Corollary (MSC limit).** As `m -> infinity`, the conditional distribution
+becomes independent of `z` and
 
-`P(Q_S)=1-(2/3) exp(-tau)` and `P(Q_D1)=P(Q_D2)=(1/3) exp(-tau)`,
+`q_1=1-(2/3) exp(-tau)`, `q_2=q_3=(1/3) exp(-tau)`,
 
-where `tau` is the unrooted internal branch length in coalescent units.
+with `tau=lambda(T_L+T_R)/2`. Under the simulator's `p=1/2`
+parameterization, `lambda=1/N), so `tau=(T_L+T_R)/(2N)`.
+
+**Corollary (arbitrary forward sorting).** For arbitrary forward pattern
+weights `pi_z=P(Z=z)`,
+
+`q_MSRC = sum_z pi_z q_z`.
+
+With equal terminal and sister branch lengths, the conditional laws reduce to
+the five classes 4:0, 3:1, W1, W2, and W3. The corresponding aggregate
+weights are the total 4:0 mass, total 3:1 mass, and
+`W1=pi_0011+pi_1100`, `W2=pi_0101+pi_1010`, and
+`W3=pi_0110+pi_1001`.
