@@ -1,0 +1,4 @@
+resolution_bp	total_grid_bins	occupied_background_bins	missing_background_fraction	median_loci_per_occupied_bin	mean_taxon_coverage_range	max_taxon_coverage_range	median_B_observed
+100000	902	868	0.037694013303769425	8.0	76.5426267281106	331.0	0.25112869780769526
+250000	361	361	0.0	18	122.7590027700831	342.0	0.2506376969114786
+500000	181	181	0.0	34	165.7292817679558	343.0	0.2510317193317415

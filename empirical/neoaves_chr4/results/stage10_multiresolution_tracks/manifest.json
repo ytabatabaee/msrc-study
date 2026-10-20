@@ -1,0 +1,20 @@
+{
+  "stage": "Neoaves chr4 Stage 10 multiresolution tracks",
+  "script": "empirical/neoaves_chr4/scripts/10_multiresolution_tracks.py",
+  "inputs": {
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_quartet_support.tsv": "4d1413ef2dc1019106b3222a5541a9c6a6b065dc27745c1855230a8833ae9ba4",
+    "empirical/neoaves_chr4/results/stage9_full_taxon_background/background_distance_estimators.tsv": "821bd39ec5b33be0d30d87ae5783c964b1da0040f47e057ab08fd9530116f605",
+    "empirical/neoaves_chr4/results/stage9_full_taxon_background/per_window_taxon_coverage.tsv": "fcd6618ed83a8067a76caa9f3c45ba1bbb4b516d87d9e273f263c559f8be009d",
+    "data/neoaves_chr4/processed/canonical_structural_regions.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2"
+  },
+  "resolutions_bp": [
+    100000,
+    250000,
+    500000
+  ],
+  "primary_resolution_bp": 250000,
+  "primary_background": "B_observed",
+  "n_support_rows": 18109,
+  "n_background_rows": 6140,
+  "random_seed": null
+}

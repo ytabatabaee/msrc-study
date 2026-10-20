@@ -1589,3 +1589,21 @@ observations, and the six-species Stage-8 arrangement-adjusted analysis remains
 separate. The full-taxon audit is suitable as a supplementary/background
 analysis; causal rearrangement interpretation remains limited by
 taxon-composition variation and the absence of full-taxon arrangement labels.
+
+## Neoaves chromosome 4 Stage 10: multi-resolution genomic tracks
+
+Stage 10 adds chromosome-anchored 100-kb, 250-kb, and 500-kb aggregation of
+the frozen Columbea, N61, and N62 quartet-support tracks and the Stage-9
+`B_observed` background distance. Outputs are under
+`empirical/neoaves_chr4/results/stage10_multiresolution_tracks/`, with new
+figures in `empirical/neoaves_chr4/figures/`.
+
+The 250-kb figure is the primary candidate. It has 361 occupied background
+bins; the 100-kb version has 868 occupied of 902 grid bins, and the 500-kb
+version has 181 occupied bins. Binned background tracks correlate 0.869
+(100 vs 250 kb) and 0.897 (250 vs 500 kb). Broad q1/q2/q3 patterns are stable,
+although N61 D3 is less stable at the finest comparison. The observed-taxon
+background track remains descriptive: its 250-kb mean correlation with mean
+taxon count is -0.3770. The topology-only 250-kb figure is retained as a
+conservative alternative, and B_observed should be interpreted as an ML
+substitution-distance summary rather than a divergence or coalescence time.
