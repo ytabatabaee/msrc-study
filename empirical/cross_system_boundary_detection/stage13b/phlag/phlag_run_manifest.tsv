@@ -1,0 +1,4 @@
+dataset	replicate	focal_branch	status	n_windows	n_state1	posterior_finite	posterior_max	output
+anopheles_2la	0	N002	numerically_degenerate	978	0	false	nan	/Users/ytabatabaee/Desktop/msrc-paper/empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/runs/anopheles_2la/replicate_000/N002.txt
+fire_ants_chr16	0	N002	numerically_degenerate	213	0	false	nan	/Users/ytabatabaee/Desktop/msrc-paper/empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/runs/fire_ants_chr16/replicate_000/N002.txt
+house_mouse_t_complex	0	N002	valid_informative	4046	893	true	1.0	/Users/ytabatabaee/Desktop/msrc-paper/empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/runs/house_mouse_t_complex/replicate_000/N002.txt

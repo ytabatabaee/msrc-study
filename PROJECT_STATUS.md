@@ -1315,3 +1315,32 @@ fails on inversion datasets. A future benchmark needs taxon-compatible
 individual-level species trees or an independently validated multi-sample
 mapping layer. The Phlag extension is supplementary and does not support a
 cross-system superiority claim.
+
+## Stage 13b corrected boundary detection and matched-taxon Phlag pilots
+
+Stage 13b preserves the earlier Stage 12, 12b, and 13 outputs and restores the
+validated Atlantic-cod Stage 12b Model B as the primary reference detector.
+The four frozen Stage 12b IoUs were reproduced exactly: LG01 0.9676, LG02
+0.9444, LG07 0.9566, and LG12 0.9147 (mean 0.9458). Stage 13 changed these
+results because it used independent flank means, different scale handling,
+and a different penalty; those objectives are not equivalent. Stage 13b also
+uses merged interval-set IoU, so disconnected predictions are not evaluated
+by their outer hull.
+
+The corrected cross-system outputs are in
+`empirical/cross_system_boundary_detection/stage13b/`. The spatial-null table
+records the prespecified ordered-block design but does not report p-values
+where the full detector refit per null replicate was not completed. This is a
+documented computational limitation rather than evidence for significance.
+
+The matched-taxon Phlag pilot selected one fixed representative per taxon for
+each replicate and used the unmodified Phlag 0.2.0 executable. The Anopheles
+and fire-ant pilots executed with exact matched taxon sets but produced
+nonfinite posterior diagnostics, so they are classified as numerically
+degenerate rather than negative detections. A house-mouse pilot completed with
+finite posteriors and a nonconstant state path; its default state-call pilot
+had IoU 0.1326 and F1 0.2342 for one focal edge and one representative
+replicate. These pilot results are not a cross-system benchmark: the requested
+20-replicate expansion and full edge aggregation remain future work, and the
+valid mouse result is explicitly exploratory. No Phlag accuracy is assigned
+to the degenerate Anopheles/fire-ant runs.

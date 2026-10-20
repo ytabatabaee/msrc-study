@@ -1,0 +1,29 @@
+system	group	method	feature_names	scale_factors	near_zero_scale
+Atlantic cod	LG01	topology	topology	0.8935189028910304	false
+Atlantic cod	LG01	continuous	continuous	0.5818389910248333	false
+Atlantic cod	LG01	joint	topology,continuous	0.8935189028910304,0.5818389910248333	false
+Atlantic cod	LG01	arrangement_blind	blind	0.2954763261860638	false
+Atlantic cod	LG02	topology	topology	0.6883406226834692	false
+Atlantic cod	LG02	continuous	continuous	0.07869667178343948	false
+Atlantic cod	LG02	joint	topology,continuous	0.6883406226834692,0.07869667178343948	false
+Atlantic cod	LG02	arrangement_blind	blind	0.038026578966819956	false
+Atlantic cod	LG07	topology	topology	0.23129355077835434	false
+Atlantic cod	LG07	continuous	continuous	0.2798948766215716	false
+Atlantic cod	LG07	joint	topology,continuous	0.23129355077835434,0.2798948766215716	false
+Atlantic cod	LG07	arrangement_blind	blind	0.38648599119718313	false
+Atlantic cod	LG12	topology	topology	0.7876204595997035	false
+Atlantic cod	LG12	continuous	continuous	0.2437851053372869	false
+Atlantic cod	LG12	joint	topology,continuous	0.7876204595997035,0.2437851053372869	false
+Atlantic cod	LG12	arrangement_blind	blind	0.09659417650111193	false
+Fire ants	chr16	topology	topology	1.4644097693594966	false
+Fire ants	chr16	continuous	continuous	0.0014940465784613682	false
+Fire ants	chr16	joint	topology,continuous	1.4644097693594966,0.0014940465784613682	false
+Fire ants	chr16	arrangement_blind	blind	0.004476181540925133	false
+Anopheles	2L	topology	topology	1.2740919199406968	false
+Anopheles	2L	continuous	continuous	0.032737167666641656	false
+Anopheles	2L	joint	topology,continuous	1.2740919199406968,0.03274641281527816	false
+Anopheles	2L	arrangement_blind	blind	0.008649629552731622	false
+House mouse	chr17	topology	topology	0.8802816901408451	false
+House mouse	chr17	continuous	continuous	0.003547964315871151	false
+House mouse	chr17	joint	topology,continuous	0.8802816901408451,0.003547964315871151	false
+House mouse	chr17	arrangement_blind	blind	0.19256478845809658	false

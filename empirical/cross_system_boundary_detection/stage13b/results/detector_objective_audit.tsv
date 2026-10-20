@@ -1,0 +1,4 @@
+change	outside_mean	scaling	penalty	LG02_status	LG02_interval	LG12_status	LG12_interval	interpretation
+Stage 12b reference	shared	median/MAD/IQR/SD-floor	original Stage 12b	right_censored	18500001-24000000	left_censored	1-18000000	validated Model B baseline
+Stage 13 independent flanks	separate segment means	MAD-only	2log(n) segment penalty	internal	18500001-20750000	internal	13500001-27250000	different statistical objective; not equivalent
+Corrected IoU	unchanged	unchanged	unchanged	unchanged	set-union evaluation	unchanged	set-union evaluation	disconnected intervals are merged before IoU

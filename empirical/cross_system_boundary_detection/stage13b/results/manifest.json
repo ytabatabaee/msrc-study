@@ -1,0 +1,9 @@
+{
+  "stage": "13b",
+  "seed": 20261020,
+  "primary_detector": "Stage12b shared-background Model B",
+  "primary_penalty": 1.0,
+  "minimum_segment": 3,
+  "previous_stages_preserved": true,
+  "note": "Known regions used only after fitting for evaluation."
+}

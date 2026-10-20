@@ -1,0 +1,7 @@
+dataset	replicate	reference_taxon	source_tip
+anopheles_2la	4	arabiensis	SAMN01760612_h1|arab
+anopheles_2la	4	coluzzii	SAMN02899195_h1|colu
+anopheles_2la	4	gambiae	SAMN02899215_h2|gamb
+anopheles_2la	4	melas	SAMN01760618_h2|mela
+anopheles_2la	4	merus	SAMN01760625_h1|meru
+anopheles_2la	4	quadriannulatus	SAMN01760633_h2|quad

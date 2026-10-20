@@ -1,0 +1,5 @@
+lg	method	reproduced_iou	saved_stage12b_iou	absolute_difference	status	exact_within_tolerance
+LG01	Stage12b_ModelB	0.9675946084505083	0.9675946084505083	0.0	internal	true
+LG02	Stage12b_ModelB	0.9443633291307666	0.9443633291307666	0.0	right_censored	true
+LG07	Stage12b_ModelB	0.9565794758645964	0.9565794758645964	0.0	internal	true
+LG12	Stage12b_ModelB	0.9146513370624326	0.9146513370624326	0.0	left_censored	true

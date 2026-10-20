@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/tmp/phlag-venv/bin/phlag", line 6, in <module>
+    sys.exit(main())
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 421, in main
+    phlag = Phlag(args)
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 35, in __init__
+    self.validate_parameters()
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 75, in validate_parameters
+    raise ValueError(f"Focal edge label '{lbl}' not found in species tree")
+ValueError: Focal edge label 'N001' not found in species tree

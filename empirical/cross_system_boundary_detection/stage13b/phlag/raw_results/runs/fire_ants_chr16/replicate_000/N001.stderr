@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "/private/tmp/phlag-venv/bin/phlag", line 6, in <module>
+    sys.exit(main())
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 421, in main
+    phlag = Phlag(args)
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 34, in __init__
+    self.read_trees()
+  File "/private/tmp/phlag-upstream/phlag/main.py", line 48, in read_trees
+    self.taxa = utils.get_canonical_taxon_namespace(self.args.species_tree)
+  File "/private/tmp/phlag-upstream/phlag/utils.py", line 21, in get_canonical_taxon_namespace
+    tree = dendropy.Tree.get(path=path, schema=schema, preserve_underscores=True)
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/datamodel/treemodel/_tree.py", line 240, in get
+    return cls._get_from(**kwargs)
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/datamodel/basemodel.py", line 154, in _get_from
+    return cls.get_from_path(src=src, schema=schema, **kwargs)
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/datamodel/basemodel.py", line 216, in get_from_path
+    return cls._parse_and_create_from_stream(stream=fsrc,
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/datamodel/treemodel/_tree.py", line 141, in _parse_and_create_from_stream
+    tree_lists = reader.read_tree_lists(
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/ioservice.py", line 371, in read_tree_lists
+    product = self._read(stream=stream,
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 320, in _read
+    for tree in self.tree_iter(stream=stream,
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 297, in tree_iter
+    tree = self._parse_tree_statement(
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 377, in _parse_tree_statement
+    self._parse_tree_node_description(
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 560, in _parse_tree_node_description
+    self._parse_tree_node_description(
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 560, in _parse_tree_node_description
+    self._parse_tree_node_description(
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 560, in _parse_tree_node_description
+    self._parse_tree_node_description(
+  [Previous line repeated 2 more times]
+  File "/private/tmp/phlag-venv/lib/python3.9/site-packages/dendropy/dataio/newickreader.py", line 677, in _parse_tree_node_description
+    raise NewickReader.NewickReaderDuplicateTaxonError(
+dendropy.dataio.newickreader.NewickReader.NewickReaderDuplicateTaxonError: Error parsing data source '/Users/ytabatabaee/Desktop/msrc-paper/empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/fire_ants_chr16/replicate_000/species_tree.nwk' on line 1 at column 51: Multiple occurrences of the same taxa on trees are not supported: trees with duplicate node labels can only be processed if the labels are not parsed as operational taxonomic unit concepts but instead as simply node labels by specifying 'suppress_internal_node_taxa=True, suppress_leaf_node_taxa=True'. Duplicate taxon labels: inv_mac_SB

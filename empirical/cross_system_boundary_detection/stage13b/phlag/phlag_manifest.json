@@ -1,0 +1,19 @@
+{
+  "stage": "13b",
+  "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
+  "seed": 20261020,
+  "datasets": [
+    "anopheles_2la",
+    "fire_ants_chr16",
+    "house_mouse_t_complex"
+  ],
+  "prepared_replicates": {
+    "anopheles_2la": 20,
+    "fire_ants_chr16": 20,
+    "house_mouse_t_complex": 6
+  },
+  "executed_replicates": 1,
+  "run": true,
+  "max_focal_edges": 1,
+  "representative_policy": "random eligible tip per reference taxon, fixed across windows; no inversion coordinates used"
+}
