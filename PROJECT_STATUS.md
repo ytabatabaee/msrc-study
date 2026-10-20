@@ -1408,7 +1408,7 @@ The arrangement-blind extension adds `B(w) = mean_pair_distance_no_spretus`,
 the mean patristic distance among non-*M. spretus* samples in each local ML
 tree. It does not use t-versus-standard labels and remains a substitution-unit
 branch-length summary rather than a calibrated time or coalescence estimate.
-New native 5-kb and separate 250-kb four-panel figures place B(w) alongside
+New native 5-kb, 100-kb, and separate 250-kb four-panel figures place B(w) alongside
 ALL_TIPS D(w), A_distance, and A_relative. The 250-kb version is clearer for
 the main paper; the 5-kb version preserves local spikes and genuine gaps for
 supplementary inspection. The frozen Stage 4 values and prior figures were

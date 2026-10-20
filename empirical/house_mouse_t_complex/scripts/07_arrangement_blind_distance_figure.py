@@ -178,10 +178,13 @@ def main():
             raise RuntimeError(f"arrangement-blind distance mismatch at {row['locus_id']}")
     counts = {locus: value(row["n_resolved_quartets"]) + value(row["n_unresolved_quartets"])
               for locus, row in source_q.items()}
-    binned = aggregate(rows, counts)
-    # A separate filename preserves the previously frozen stage5 binned_250kb_tracks.tsv.
+    binned = aggregate(rows, counts, 250_000)
+    binned_100 = aggregate(rows, counts, 100_000)
+    # Separate filenames preserve the previously frozen Stage 5 aggregate table.
     write(OUT / "binned_250kb_tracks_arrangement_blind.tsv", binned, list(binned[0]))
+    write(OUT / "binned_100kb_tracks_arrangement_blind.tsv", binned_100, list(binned_100[0]))
     figure(rows, "native 5-kb", "house_mouse_t_complex_topology_distance_blind_5kb")
+    figure(binned_100, "100-kb aggregation", "house_mouse_t_complex_topology_distance_blind_100kb")
     figure(binned, "250-kb aggregation", "house_mouse_t_complex_topology_distance_blind_250kb")
     summary = []
     for key, label in (("D", "ALL_TIPS topology contrast"), ("A_distance", "A_distance"),
@@ -198,8 +201,8 @@ def main():
 - Coordinate sets and ordering match: {all(rows[i]['locus_id'] == sorted(source_q, key=lambda k: int(metadata[k]['start_bp']))[i] for i in range(len(rows)))}.
 - `A_distance`, `A_relative`, and `B=mean_pair_distance_no_spretus` match the frozen Stage 4 values to the 1e-15 check threshold.
 - The arrangement-blind track uses all non-`M. spretus` pairwise distances and does not use t-versus-standard labels.
-- Native 5-kb and separate 250-kb figures were generated. The prior Stage 5 figures and `binned_250kb_tracks.tsv` were preserved.
-- 250-kb aggregation uses pooled ALL_TIPS quartet counts and arithmetic means of valid distance observations; bin coverage is recorded in the new arrangement-blind table.
+- Native 5-kb, separate 100-kb, and separate 250-kb figures were generated. The prior Stage 5 figures and `binned_250kb_tracks.tsv` were preserved.
+- 100-kb and 250-kb aggregation use pooled ALL_TIPS quartet counts and arithmetic means of valid distance observations; bin coverage is recorded in the new arrangement-blind tables.
 """)
     (OUT / "arrangement_blind_figure_caption.md").write_text("""**Figure. House-mouse t-complex topology and arrangement-blind divergence-distance tracks.** (a) The ALL_TIPS quartet contrast D(w)=q_T-q_S. (b) A_distance is the t-versus-standard patristic-distance contrast. (c) A_relative is its normalized form. (d) B(w) is the mean pairwise patristic distance among non-M. spretus samples and is arrangement-blind because it does not use t-versus-standard labels. All distance values are substitution-unit summaries from local ML trees, not calibrated times or coalescence times. Shading and dashed lines show the four frozen inversion intervals. Gaps in the observed windows are retained.
 """)
@@ -214,6 +217,7 @@ The native figure uses the observed 5-kb windows directly. The separate 250-kb t
                 "inputs": {str(path.relative_to(ROOT)): sha(path) for path in (WINDOW, Q, DIST, META, INT)},
                 "arrangement_blind_feature": "mean_pair_distance_no_spretus",
                 "units": "local ML patristic substitution units",
+                "arrangement_blind_resolutions_bp": [100000, 250000],
                 "existing_outputs_preserved": True}
     (OUT / "arrangement_blind_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps({"n_windows": len(rows), "n_bins_250kb": len(binned)}, indent=2))

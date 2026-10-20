@@ -32,10 +32,13 @@ def test_blind_track_order_and_250kb_coverage():
     binned = read(OUT / "binned_250kb_tracks_arrangement_blind.tsv")
     assert sum(int(row["n_observed_windows"]) for row in binned) == len(unified)
     assert all(0 < float(row["coverage_fraction"]) <= 1 for row in binned)
+    binned_100 = read(OUT / "binned_100kb_tracks_arrangement_blind.tsv")
+    assert sum(int(row["n_observed_windows"]) for row in binned_100) == len(unified)
+    assert all(0 < float(row["coverage_fraction"]) <= 1 for row in binned_100)
 
 
 def test_blind_outputs_exist_and_use_frozen_units():
-    for suffix in ("5kb", "250kb"):
+    for suffix in ("5kb", "100kb", "250kb"):
         assert (ROOT / f"empirical/house_mouse_t_complex/figures/house_mouse_t_complex_topology_distance_blind_{suffix}.pdf").exists()
         assert (ROOT / f"empirical/house_mouse_t_complex/figures/house_mouse_t_complex_topology_distance_blind_{suffix}.png").exists()
     methods = (OUT / "arrangement_blind_methods.md").read_text()

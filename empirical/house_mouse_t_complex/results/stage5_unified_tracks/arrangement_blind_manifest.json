@@ -11,5 +11,9 @@
   },
   "arrangement_blind_feature": "mean_pair_distance_no_spretus",
   "units": "local ML patristic substitution units",
+  "arrangement_blind_resolutions_bp": [
+    100000,
+    250000
+  ],
   "existing_outputs_preserved": true
 }
