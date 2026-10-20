@@ -1,0 +1,3 @@
+input	status	reason
+stage6 QQS	not_directly_substitutable	Phlag QQS are indexed by a labeled species-tree focal edge and its quadripartition; Stage 6 stores three source-defined focal designs, not a universal Phlag edge sequence.
+matched 4-taxon pilot	compatible_as_pilot	Original local Newick trees pruned to fixed representatives and a source-pruned reference tree; sampling differs from Stage 6 multi-taxon QQS.

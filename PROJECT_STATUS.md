@@ -1607,3 +1607,32 @@ background track remains descriptive: its 250-kb mean correlation with mean
 taxon count is -0.3770. The topology-only 250-kb figure is retained as a
 conservative alternative, and B_observed should be interpreted as an ML
 substitution-distance summary rather than a divergence or coalescence time.
+
+## Neoaves chromosome 4 Stage 11: Phlag comparison
+
+Stage 11 adds a local-first Phlag benchmark under
+`empirical/neoaves_chr4/results/stage11_phlag_benchmark/`. The upstream Phlag
+v0.2.0 implementation was preserved at commit
+`76597d0e4ebd0e507fdafebf7f5163ef634a36d6`. The repository's Stage-6 QQS
+vectors are not silently treated as Phlag inputs because they are three
+source-defined focal summaries rather than one universal labeled Phlag edge
+sequence.
+
+An unmodified default Phlag run completed on a matched Columbea pilot made
+from 5,619 original local trees with one fixed representative per role
+(Columba_livia, Phoenicopterus_ruber, Tauraco_erythrolophus, and
+Gallus_gallus). Its posterior values were finite and its state path was
+informative; 1,200 windows were assigned state 1 and runtime was approximately
+48.94 seconds. The pilot is a valid software/input execution, but its reduced
+taxon sampling is not a reproduction of the published all-taxon avian
+analysis. No per-locus published Phlag prediction file was available in the
+local checkout, so published-result reproduction is explicitly unavailable.
+
+The fixed locus-level detector selected 44.13–56.82 Mb for both the Columbea
+topology-only and topology-plus-`B_observed` configurations. Exploratory
+post-fit metrics against the union of 11 canonical regions were IoU 0.565,
+F1 0.722 for the detector and IoU 0.358, F1 0.528 for the matched Phlag pilot.
+These are not independent accuracy claims because the canonical regions are
+an imperfect biological reference and the pilot and detector use different
+taxon summaries. The stage therefore supports a reproducible method-agreement
+and feasibility benchmark, not a superiority claim for either method.

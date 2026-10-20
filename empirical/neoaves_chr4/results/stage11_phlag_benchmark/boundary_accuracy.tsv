@@ -1,0 +1,4 @@
+method	target	evaluation	reference_count	n_predicted_intervals	predicted_bp	reference_bp	intersection_bp	union_bp	iou	precision	recall	f1	false_positive_bp	false_negative_bp
+topology	all_canonical_regions_exploratory	post_fit_only	11	1	12690000	20866114	12118409	21437705	0.5652848101044399	0.9549573680063042	0.5807698069702868	0.7222772577301412	571591	8747705
+topology_plus_B	all_canonical_regions_exploratory	post_fit_only	11	1	12690000	20866114	12118409	21437705	0.5652848101044399	0.9549573680063042	0.5807698069702868	0.7222772577301412	571591	8747705
+Phlag_default_matched4	all_canonical_regions_exploratory	post_fit_only	11	0	0	20866114	0	20866114	0.0	0.0	0.0	0.0	0	20866114

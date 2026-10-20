@@ -1,0 +1,3 @@
+method	mode	runtime_seconds	peak_rss_kb	status
+our_detector	Columbea locus-level	NA	NA	completed
+Phlag	matched four-taxon Columbea default	48.94	not instrumented	valid_informative
