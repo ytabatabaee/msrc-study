@@ -1,0 +1,16 @@
+{
+  "stage": "6_distance_discontinuity",
+  "seed": 20261020,
+  "command": "python empirical/house_mouse_t_complex/scripts/08_distance_discontinuity_diagnostic.py",
+  "inputs": {
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb.tre": "6e5c406887b412668adb45c1b4445dc098dda3611696eaee559bc1ec543da020",
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb_metadata.tsv": "a9e38f113799e8d275478151f702917b607435b9b1dbc036c59a8f283bc84007",
+    "data/house_mouse_t_complex/metadata/tip_mapping.tsv": "0c8f6e040bb410144fe69fe5e658d004ca583da75a1dd6a5ea8369fd0ff04299",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990",
+    "empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv": "0e880cbcae86d66d522ffaf70b1e3e4ca16d63c9d2647284d3e95e3a9cd56831"
+  },
+  "n_windows": 4046,
+  "inferred_change_point_bp": 14737499.5,
+  "inversion_coordinates_used_for_change_point": false,
+  "distance_units": "published ML substitution units"
+}

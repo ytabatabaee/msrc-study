@@ -1413,3 +1413,23 @@ ALL_TIPS D(w), A_distance, and A_relative. The 250-kb version is clearer for
 the main paper; the 5-kb version preserves local spikes and genuine gaps for
 supplementary inspection. The frozen Stage 4 values and prior figures were
 preserved.
+
+## House mouse Stage 6 distance-discontinuity diagnostic
+
+The Stage 6 source-tree audit found the largest coordinate-blind change in
+arrangement-blind B(w) at 14.7375 Mb. The downstream mean is 0.322949 versus
+0.009128 upstream, a 35.38-fold increase. Direct recomputation from all 4,046
+published Newick trees matches the frozen Stage 4 B(w), A_distance, and
+A_relative values exactly within the recorded numerical checks.
+
+The proximate cause is a single terminal branch: downstream of the change
+point, every local tree has `Mmd_FRA4_18B.variant` as its longest terminal tip.
+Removing that tip as a sensitivity analysis reduces the downstream B(w) mean to
+0.007854, close to the upstream value. This verifies that the discontinuity is
+driven by a subset of the retained taxa and terminal branch lengths, rather
+than by a general increase in all pairwise distances. The exact cause in the
+tree-estimation or input-processing pipeline remains unresolved because the
+committed data do not include alignment length, SNP count, missing-data
+fractions, or per-window IQ-TREE settings. The original distance tracks and
+manuscript figures remain unchanged; Stage 6 outputs are under
+`empirical/house_mouse_t_complex/results/stage6_distance_discontinuity/`.

@@ -1,0 +1,3 @@
+# Methods
+
+The published local ML trees were parsed in metadata order. Patristic distances were computed from the Newick branch lengths. B(w) is the mean over all non-M. spretus terminal pairs. Component tables classify pairs by subspecies relation and t-status; component contributions are pair-count weighted. A_distance and A_relative were compared with the frozen Stage 4 table. The change-point scan maximizes the standardized difference between the means before and after each candidate position with 100-window minimum segments; inversion coordinates were not used to select it. Branch diagnostics include total tree length, terminal/internal branch summaries, branch validity counts, retained tips, and pairwise-distance summaries.
