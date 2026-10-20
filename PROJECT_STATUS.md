@@ -1392,3 +1392,14 @@ denominator. The 250-kb matched-resolution figure is recommended for the main
 paper because it is readable while preserving observed genomic gaps; the
 native 5-kb figure is retained for supplementary local detail. Outputs are
 under `empirical/house_mouse_t_complex/results/stage5_unified_tracks/`.
+
+The follow-up multi-resolution analysis adds pooled 25-, 50-, 100-, and
+250-kb tracks with common bin boundaries, observed-window counts, base-pair
+coverage, and explicit missing-bin handling. Quartet support is pooled from
+the frozen ALL_TIPS counts; distance features are means of valid observations.
+The 25-kb version retains more local variation but remains noisy, while 100 kb
+is smoother at the cost of lower spatial detail and coverage. The 50-kb
+version is the initial main-paper candidate; 25 and 100 kb are retained as
+readability sensitivities. The multi-resolution comparison is a visualization
+analysis only and does not rerun boundary detection. The original 5-kb and
+250-kb Stage 5 outputs remain preserved as supplementary outputs.

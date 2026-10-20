@@ -1,0 +1,20 @@
+{
+  "stage": "5_multiresolution",
+  "seed": 20261020,
+  "command": "python empirical/house_mouse_t_complex/scripts/06_multiresolution_unified_tracks.py",
+  "resolutions_bp": [
+    25000,
+    50000,
+    100000,
+    250000
+  ],
+  "bin_anchor_bp": 5000000,
+  "inputs": {
+    "empirical/house_mouse_t_complex/results/stage2_fixed_quartet_scan.tsv": "9ad62b579fae816d04b05b234f075e2b6f143198bdb5e05df0df592bddfbcbcd",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990",
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb_metadata.tsv": "a9e38f113799e8d275478151f702917b607435b9b1dbc036c59a8f283bc84007",
+    "empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv": "0e880cbcae86d66d522ffaf70b1e3e4ca16d63c9d2647284d3e95e3a9cd56831"
+  },
+  "preserved_outputs": true,
+  "boundary_detection_rerun": false
+}
