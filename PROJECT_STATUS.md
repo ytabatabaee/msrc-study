@@ -1433,3 +1433,21 @@ committed data do not include alignment length, SNP count, missing-data
 fractions, or per-window IQ-TREE settings. The original distance tracks and
 manuscript figures remain unchanged; Stage 6 outputs are under
 `empirical/house_mouse_t_complex/results/stage6_distance_discontinuity/`.
+
+## Anopheles Stage 6 three-topology support figure
+
+The new Anopheles figure joins the frozen Stage 2R three-resolution quartet
+supports with the frozen Stage 12 NJ distance tracks and the existing Stump et
+al. recombination-rate schematic. The supports are `q_species`,
+`q_arrangement`, and `q_third` from the same 2,304-informative-quartet design;
+the preferred contrast is `D(w) = q_arrangement - q_species`. Valid support
+fractions normalize to one and the saved D values agree with the reconstructed
+contrast to approximately 1e-12. The Stage 12 distances remain NJ
+substitution-distance summaries, not calibrated coalescence times.
+
+Inside the frozen 2La interval, mean arrangement support is 0.9992 versus
+0.0006 species support; outside, the corresponding means are 0.1306 and
+0.7711. The revised five-panel figure therefore shows a coherent topology
+transition aligned with the frozen interval, alongside the independent
+recombination reference and the distance contrasts. Existing Anopheles
+figures and frozen empirical results were preserved.

@@ -1,0 +1,15 @@
+{
+  "stage": "three_quartet_support",
+  "seed": 20261020,
+  "command": "python empirical/anopheles_2la/scripts/06_three_quartet_support_figure.py",
+  "inputs": {
+    "empirical/anopheles_2la/results/stage2r_quartet_topology_signal.tsv": "b21527ad2c6c28f9e8bea0e0fe2a64264969eb3e2145b123d0100961fb0cd754",
+    "empirical/anopheles_2la/results/stage12_distance/stage12_window_distance.tsv": "f418846c4bbfb5f0f8b01a29d306d0aab08413b48b5d54c8b20ff6bc099b8ad6",
+    "empirical/anopheles_2la/results/stage2r_crossed_distance_signal.tsv": "d0acfc4de9cb88c305d464e8cdff390fc65aa2b4544b73ad23ac04e79a1bd7e5",
+    "empirical/anopheles_2la/results/stage2r_quartet_margin_signal.tsv": "5e80910b635c610731d23d37f65f0e3a86222834cd7b82a117bc904300d5d668",
+    "data/anopheles_2la/processed/2la_recombination_summary.tsv": "5eaa3775de1e9f2dcb78a9e38440fdd79719338855af502557c12b3a50597167"
+  },
+  "inversion_start_bp": 20524058,
+  "inversion_end_bp": 42165532,
+  "existing_outputs_preserved": true
+}
