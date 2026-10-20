@@ -1499,3 +1499,25 @@ fixed-taxon B(w) remains a supplementary reference. The primary manuscript
 recommendation is to use the separate QQS topology designs and structural
 annotation; a defensible arrangement-informed avian A(w) requires additional
 independent, replicated arrangement-state sampling.
+
+## House-mouse Stage 7 influential-sample sensitivity
+
+Stage 7 recalculated the chromosome-17 distance and ALL_TIPS quartet tracks
+directly from all 4,046 frozen local ML trees. The original Stage 4 values were
+reproduced to floating-point precision. The primary analysis retains
+`Mmd_FRA4_18B.variant`; a separate leave-one-out analysis removes it
+consistently from both the arrangement-informed numerator and the
+arrangement-blind denominator.
+
+The Stage 6 discontinuity at 14.7375 Mb remains reproducible. B(w) changes
+from about 0.00913 upstream to 0.32295 downstream, while the leave-one-out
+means are about 0.00916 and 0.00785. The leave-one-out A_distance and
+A_relative tracks were recalculated rather than changing only the denominator.
+The ALL_TIPS quartet track was also recomputed separately after exclusion.
+
+No concrete tree-label, branch-format, or processing error was found in the
+available files. Alignments, per-window SNP counts, filtering summaries, and
+complete IQ-TREE settings are unavailable, so biological divergence and a
+region-specific tree-estimation or ascertainment effect remain unresolved.
+The original-data and sensitivity figures should both be retained; the
+leave-one-out figure should not be presented as a correction.

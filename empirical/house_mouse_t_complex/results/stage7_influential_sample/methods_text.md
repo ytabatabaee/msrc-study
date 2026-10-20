@@ -1,0 +1,3 @@
+# Methods
+
+Patristic distances were recalculated from every frozen local ML Newick tree. Original and leave-one-out A_distance and A_relative were calculated with the same within-subspecies t-versus-standard design; B is the mean across the corresponding non-M. spretus pair universe. Median and 5% trimmed means are robust sensitivity summaries. ALL_TIPS quartet support was recomputed with the frozen Stage 2 definitions. Boundary sensitivity uses the fixed shared detector with robust MAD scaling, min_size=3, one-interval primary fitting, and a zero-to-four interval sensitivity; reference intervals are post-fit evaluation only.
