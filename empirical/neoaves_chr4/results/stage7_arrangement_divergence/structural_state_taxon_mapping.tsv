@@ -1,0 +1,7 @@
+structural_species	local_tree_tip	jarvis_mapping_status	local_tree_exact_label	note
+Stork	Ciconia_maguari	not_in_47_taxon_mapping	Ciconia_maguari	structural-state label mapped through frozen role definitions
+Flamingo	Phoenicopterus_ruber	exact	Phoenicopterus_ruber	structural-state label mapped through frozen role definitions
+Dove	Columba_livia	exact	Columba_livia	structural-state label mapped through frozen role definitions
+Sandgrouse	Pterocles_gutturalis	exact	Pterocles_gutturalis	structural-state label mapped through frozen role definitions
+Turaco	Tauraco_erythrolophus	exact	Tauraco_erythrolophus	structural-state label mapped through frozen role definitions
+Cuckoo	Cuculus_canorus	exact	Cuculus_canorus	structural-state label mapped through frozen role definitions

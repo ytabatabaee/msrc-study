@@ -1,0 +1,43 @@
+{
+  "stage": "Neoaves Stage 7 arrangement-informed divergence audit",
+  "script": "empirical/neoaves_chr4/scripts/07_arrangement_divergence.py",
+  "reproduction_command": "MPLBACKEND=Agg python empirical/neoaves_chr4/scripts/07_arrangement_divergence.py",
+  "inputs": {
+    "data/neoaves_chr4/processed/locus_table_chr4.tsv": "52493ab4aadd4bce6dff84540ee8b27ad7a2fadfe1cd718cc4e2a859585beccb",
+    "data/neoaves_chr4/processed/canonical_arrangement_states.tsv": "df1bf88ea7a868c9f566b9a223a26b450199a790b6d18acfa5eb1d3c91b34f34",
+    "data/neoaves_chr4/processed/canonical_structural_regions.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2",
+    "data/neoaves_chr4/processed/stage3b_v2_quartet_role_mapping.tsv": "767c27e66ddb98d2f006f8252569492557738ef3797eaffbf49db71f9cbd2bc1",
+    "empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b",
+    "empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv": "8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_quartet_support.tsv": "4d1413ef2dc1019106b3222a5541a9c6a6b065dc27745c1855230a8833ae9ba4",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_distance_tracks.tsv": "4642c7bd766765750596496cadd87c705e806b7b89c7ab4ccbe870b43f668d41"
+  },
+  "n_tree_metrics": 6140,
+  "n_arrangement_distance_rows": 17831,
+  "candidate_regions": [
+    "CR_01",
+    "CR_10",
+    "CR_11"
+  ],
+  "arrangement_A_primary_supported": false,
+  "notes": [
+    "States are independent synteny/anchor classifications.",
+    "A is exploratory only where multistate same-versus-different state pairs are numerically estimable; no binary qH is assigned."
+  ],
+  "output_sha256": {
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/window_arrangement_distance.tsv": "0e22bf6e757c5d09b7dadd7476da55f46f4f67da1b97cb00482d2120138d168e",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/window_matched_background_distance.tsv": "f4d0ea4d78599acbd8c94d3005469ce4723476421f2a2fd3ed131bb9ddeb2298",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/window_relative_distance.tsv": "510f3a97811271ffca6ae0e19b36f16e40b0251330d140f2db888c0b34dd3654",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/distance_sensitivity.tsv": "7be799375895015c6a8fe08cd008e91c7a46e88e8020554aca9b5927c0f0a08a",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/focal_design_region_mapping.tsv": "86baa4b8d04cf541063fa22f06e0d9f3131621c0eac4be1dc870725f1a957388",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/inside_outside_comparison.tsv": "d5d18f6d3bfdc637592aaae541567a5e3e99c04cc79dec3ddd2de26e6f8aa05b",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/structural_state_taxon_mapping.tsv": "6cc9457e70a1662b6d34927cc38dae8e0bebf77880b0e651a57a7e73c7dffdbb",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/region_arrangement_eligibility.tsv": "5bd054aa3652a6f440f03c5cc0dfbfe4b18a1ac79bb1b463f5e2ad5699965d4e",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/structural_state_provenance.md": "a65089ed18701060b920406b966197fd39c2bc0bd5457574b73c81324753d6dd",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/report.md": "2c16fd4f95d505aea608dd3c885cd25e8d7e1f2439686a0fadb62e3262bba62f",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/results_text.md": "b2f0de18bdaec70f81c5647fd79ef841713cc2f1c411410aded58c75eaa672fc",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/methods_text.md": "36c950cb8193d5295fe61120c4fc841bd37b4e12619a6d441949862fe6cba18b",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/validation_report.md": "017f0c312181836104792c516b59254f0b7b3167f7055cf16bd52b7157075b69",
+    "empirical/neoaves_chr4/results/stage7_arrangement_divergence/figure_caption.md": "9612f09ab9fb5c18d57f11e62d2f0cbc8c5e5fc6ea939e350501493b16f6ca9f"
+  }
+}

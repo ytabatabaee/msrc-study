@@ -1,0 +1,3 @@
+# Figure caption
+
+Neoaves chromosome-4 topology and structural-state distance audit. Columbea, N61, and N62 are separate source-defined quartet designs; q1 is the species-history resolution and q2/q3 are separate alternatives. Exploratory region-specific A tracks are shown only for numerically eligible multistate synteny regions and are labeled as same-versus-different-state substitution-distance contrasts. They are not calibrated coalescence times or direct evidence of recombination suppression. Structural regions are independently derived synteny regions, not necessarily nucleotide-resolved breakpoints.

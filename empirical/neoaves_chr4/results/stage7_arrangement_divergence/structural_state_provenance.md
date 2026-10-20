@@ -1,0 +1,9 @@
+# Structural-state provenance and compatibility audit
+
+The canonical states are region-specific synteny states derived from GalGal6-to-focal-genome alignment anchors and block order/orientation. They are independent of the local ML trees and QQS values used here. They are multistate labels (`A0`, `A1`, ...), not a universal binary arrangement assignment.
+
+There are 11 canonical regions. Eligibility counts are {'exploratory_eligible_state_uncertainty': 3, 'unsupported_insufficient_or_singleton_states': 8}. Most regions contain singleton states or low-confidence assignments; only candidate regions with at least four mapped structural species, at least one same-state pair, at least two different-state pairs, and at least two state groups receive exploratory distance rows. State equality is used as the explicit multistate comparison; biologically distinct state labels are not collapsed into a binary orientation.
+
+The six structural species map to exact local-tree labels: Stork=Ciconia_maguari, Flamingo=Phoenicopterus_ruber, Dove=Columba_livia, Sandgrouse=Pterocles_gutturalis, Turaco=Tauraco_erythrolophus, Cuckoo=Cuculus_canorus. Ciconia is present in the local trees but is absent from the exact 47-taxon Jarvis mapping used by Stage 6, so Stage 7 records this distinction rather than silently expanding the Stage 6 set. The structural states are species-level and cross-clade; there are no replicate individuals within a state in these trees. Consequently the raw contrasts remain confounded with deep taxonomic divergence and are exploratory rather than a direct analogue of population-level A(w).
+
+The local trees have substitution-unit ML branch lengths. The QQS table contains normalized support but not raw informative quartet counts. Structural-region coordinates and state assignments are inherited from the frozen processed tables; no region was selected using the local topology or distance signal.

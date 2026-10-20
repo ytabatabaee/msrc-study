@@ -1,0 +1,3 @@
+# Methods
+
+Canonical region-specific synteny states were joined to exact local-tree species labels. For each eligible region and locus, `A_distance = mean(different-state pairs) - mean(same-state pairs)` and `B_region` is the mean across the union of those eligible pairs. `A_relative = A_distance/B_region` is missing for near-zero denominators. Because states are multistate, same versus different is an equality comparison; state labels are not collapsed into a binary orientation. A sensitivity estimator gives equal weight to observed state-pair categories. The primary interpretation is exploratory because the comparisons are across deep species-level lineages.

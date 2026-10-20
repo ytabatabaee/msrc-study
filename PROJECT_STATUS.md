@@ -1476,3 +1476,26 @@ manifest. The analysis passed three deterministic tests. The figure is suitable
 for presenting the separate quartet designs and the arrangement-blind distance
 sensitivity; a house-mouse-style arrangement-informed A(w) panel requires
 additional independent avian arrangement metadata.
+
+## Neoaves Stage 7 arrangement-informed divergence audit
+
+Stage 7 audited the independent chromosome-4 synteny and structural-state
+tables against the three frozen QQS focal designs. The structural labels are
+region-specific, multistate synteny/anchor classifications and are independent
+of the local ML trees. They do not provide a universal binary arrangement
+partition with within-state population replication.
+
+The analysis therefore does not claim a primary population-level A(w). It
+retains exploratory same-state versus different-state substitution-distance
+contrasts only for CR_01, CR_10, and CR_11, where the state table contains a
+numerically usable pair design. CR_02–CR_09 are unsupported because their six
+mapped structural species are all singleton state classes. The exploratory
+tracks use a region-matched B_r denominator and a balanced state-pair
+sensitivity analysis; they are not calibrated coalescence times.
+
+The Stage 7 topology figure now shows normalized q1/q2/q3 support separately
+for Columbea, N61, and N62, followed by D2=q2−q1 and D3=q3−q1. The global
+fixed-taxon B(w) remains a supplementary reference. The primary manuscript
+recommendation is to use the separate QQS topology designs and structural
+annotation; a defensible arrangement-informed avian A(w) requires additional
+independent, replicated arrangement-state sampling.
