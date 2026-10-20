@@ -1125,3 +1125,89 @@ benchmark. It does not establish a statistically significant advantage over
 all alternatives, and the time statistic is not a realized gene-lineage
 coalescence time. Next steps are replication on house mouse, fire ants, and
 Anopheles with data types appropriate to each detector's observation model.
+
+## Atlantic cod Stage 12b robust boundary validation
+
+Stage 12b preserves the Stage 12 outputs and reproduces all 20 frozen primary
+fit scores and statuses exactly. It adds four prespecified objectives: Model A
+is the original Stage 12 joint detector; Model B uses robust median/MAD and
+IQR-bounded scaling with equal topology/time block weight; Model C requires
+positive inside-minus-outside shifts for both `D(w)` and the arrangement-
+informed SNAPP population-tree contrast `A(w)`; and Model D combines separate
+one-dimensional topology and time score profiles with fixed equal weights.
+
+The original joint objective fails on LG12 because its highest-scoring
+candidate is a right-censored 13.500001–27.250000 Mb interval, giving IoU
+0.0314. Candidate profiles show that the objective is driven by a large
+topology improvement for the opposite interval and a positive time improvement
+for the selected interval; the unconstrained combined scan can therefore
+prefer a biologically inconsistent spatial segment. Model B selects
+1–13.750000 Mb on LG12 (IoU 0.9147), while the directional Model C selects
+1–13.250000 Mb (IoU 0.8967). Model D retains the original wrong LG12 segment.
+These alternatives are exploratory and were not tuned to LG12 coordinates.
+
+Across the four linkage groups, mean full-reference IoU/F1 were 0.7250/0.7559
+for Model A, 0.9458/0.9780 for Model B, 0.7022/0.7323 for Model C, and
+0.7250/0.7559 for Model D. Model B is a useful robustness result but is not a
+validated universal detector from four linkage groups. LG07 was recovered at
+13.750001–23.000000 Mb by Models A, B, and D with IoU 0.9566 and F1 0.9730;
+the direction-aware Model C declined to no detection. Leave-contiguous-block-
+out perturbations keep the Model A LG07 interval stable apart from modest
+endpoint changes, while robust-model LG07 stability is affected by a small
+number of influential blocks.
+
+The arrangement-blind analysis summarizes each published local SNAPP tree by
+pairwise-distance, branch-length, and tree-height features, with total-length
+normalized sensitivities. The feature selected without inversion coordinates
+was mean internal branch length. It recovers LG07 at 13.750001–23.000000 Mb
+(IoU 0.9566, F1 0.9730), showing that the LG07 temporal/local-tree-scale
+signal is not dependent on the known arrangement labels. These remain
+summaries of SNAPP population-tree/local-tree scale, not realized lineage
+coalescence times.
+
+Maximum-score detection p-values use 99 deterministic permutations of
+contiguous five-window blocks and Holm adjustment within method. This is a
+heuristic spatial-dependence diagnostic that accounts for the interval scan;
+it is not treated as calibrated boundary significance. The four linkage groups
+are too few for strong generalization. Model A remains the reference for the
+main analysis; Model B and arrangement-blind branch-length summaries should
+remain supplementary pending replication on house mouse, fire ants, and
+Anopheles.
+
+Stage 12b outputs, figures, methods, diagnostics, and the reproducibility
+manifest are under
+`empirical/atlantic_cod/results/boundary_detection_stage12b/` and
+`empirical/atlantic_cod/figures/`. The original Stage 11 Phlag diagnostic and
+all Stage 12 files remain unchanged.
+
+## Fire-ant chromosome-16 patristic distance track
+
+Stage 9 adds a new descriptive distance track from all 213 published RAxML
+local trees. It uses the verified Stage-6C individual-to-group mapping and
+calculates patristic distances in substitution units among the four focal
+supergene groups. The primary statistic averages within each of the six focal
+group pairs and then gives equal weight to the four opposite-haplotype pairs
+and the two same-haplotype pairs. It is explicitly not a coalescence-time
+estimate and does not assume a molecular clock.
+
+All 213 windows had complete focal-group observations. In the 52 frozen
+supergene windows, mean `A_distance` was 0.001718 substitution units, versus
+-0.003447 in the 44 chromosome-16 outside windows, for a difference of
+0.005165. The corresponding `A_relative` means were 0.2417 and -0.3029, a
+difference of 0.5447. The individual-pair-weighted sensitivity gave a
+0.004720 `A_distance` difference, and the outgroup-normalized sensitivity
+gave a 0.3570 difference.
+
+Using the existing chromosome-16 spatial-null framework, the exact circular
+shift p-values were 0.0208 for `A_distance` and 0.0104 for `A_relative`.
+Coordinate-membership sensitivity gave p=0.0309 and 0.0206, respectively;
+continuous coordinate-length weighting gave p=0.0241 and 0.0603. The
+individual-weighted and outgroup-normalized tracks retained the same positive
+direction. These are spatial alignment summaries for substitution-unit
+distance tracks, not evidence of a molecular-clock divergence-time shift.
+
+Outputs are under
+`empirical/fire_ants_chr16/results/stage9_distance/`, with the track figure
+under `empirical/fire_ants_chr16/figures/`. The plotted points retain their
+observed genomic coordinates and lines are broken across large unobserved
+gaps. Existing fire-ant results and figures were not overwritten.

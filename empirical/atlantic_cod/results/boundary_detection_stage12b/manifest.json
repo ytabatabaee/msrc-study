@@ -1,0 +1,45 @@
+{
+  "arrangement_blind_feature_selected_without_truth": "blind_mean_internal_branch",
+  "figures": {
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_LG07_LG12_cases.pdf": "40cb7922449872921cf8957767cbab01ee5448819425c5da8553007f62ddf67f",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_LG07_LG12_cases.png": "dce57315dafda3b3f32e65b9b09c0c017ab45f9a82f91b415696549c6cd2417a",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_detector_accuracy.pdf": "b14435b5fd7495030d73c094da380336fa427103d8c6bb6a9c4b9ae7cbf37b7f",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_detector_accuracy.png": "4c0535ef54e3964fafbb42b3b3d4d705d19163b80b0e965ffa2cf1e387abbf0e",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_spatial_signals.pdf": "cd0182dd3dcbc18b7fbd82e2335ad9b6a7780aa07e74195cbdd3b7b2142197c8",
+    "empirical/atlantic_cod/figures/atlantic_cod_stage12b_spatial_signals.png": "9e520760b8a6d7510097633780a6886fd90d15994ff6e5264faeb4b27f6a8566"
+  },
+  "inputs": {
+    "data/atlantic_cod/metadata/region_manifest.tsv": "97e9fdc4cd294deede0eaf8e333c883d9d41b636e265b78f5e7b0858acf6a408",
+    "data/atlantic_cod/processed/cod_window_trees.tsv": "26ed195ee26cb860ca0885c76d768d427639a4338b74a787d9421498e10dfb0b",
+    "empirical/atlantic_cod/results/boundary_detection/model_selection.tsv": "bebbf1595639b5ebf5065f5db641d3313ff7da138b5c9d6dd9f8b2c013d23c1c",
+    "empirical/atlantic_cod/results/boundary_detection/predicted_intervals.tsv": "21486b1981bbd0fdd313e14b3ecde291175dd25ecdb346d4901ec010737068a7"
+  },
+  "minimum_segment": 3,
+  "models": [
+    "Model A current",
+    "Model B robust",
+    "Model C direction",
+    "Model D profiles"
+  ],
+  "outputs": {
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/arrangement_blind_features.tsv": "f28b440c749a328ad77d6a2da2c58f828b87e6013593a91661af714187357786",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/arrangement_blind_predictions.tsv": "4b01e908763e4c482fa32ecbf0c9dd8485fdc86ef3fb6737d521d599d80a0671",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/baseline_reproduction.tsv": "d4ee17b477f1fd0d02dfeab139e07a6202ed534809fc6e30a61e8658a7e5316b",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/boundary_stability.tsv": "ba992516b6f8fb3df2bd27732d2c22ce4a8b8f375def399f89bede1c0972df54",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/candidate_interval_profiles.tsv": "cc4b6de4ccb6bc9d369e159d219e2ee1cc6a1ef5f566b9f7bbb32d90c93137f4",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/cross_validation.tsv": "1918f3663f8d393f03e482fd29b4a8ac4fa516dcc9e7df283f6b6fa4da8fc592",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/detection_significance.tsv": "b33a326cd0ca25b19b5820aed217c2e2d9776805856e9f2435c986de2d59b58c",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/joint_model_diagnostics.tsv": "ff3e20e471bf42f925d3bf65cd27f7cc2c283840e91a5d4609858ef3af2f7707",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/methods_text.md": "88b5a12c9ab70d2798e652a1e7391fa1d984200992504576a0cd4ed25c5ffffe",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/model_comparison.tsv": "f491cefe0c45dcdbc59a0d950649eef29f8f557fa40f3f8f82ca33cdac1abc29",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/phlag_diagnostics.md": "c64d8efe896891b5979ab1f22b20320292ea8b0148de0f82ebbb624c986d7e34",
+    "empirical/atlantic_cod/results/boundary_detection_stage12b/report.md": "538e528abf046d69ca118f5752c22609d0d8e1a44578e28442831fcb936c9a6c"
+  },
+  "penalty_factor": 1.0,
+  "permutation_block_size": 5,
+  "permutation_count": 99,
+  "reproduction_command": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria/bin/python empirical/atlantic_cod/scripts/12b_robust_boundary_validation.py",
+  "seed": 20261019,
+  "stage": "12b",
+  "stage12_outputs_preserved": true
+}

@@ -1,0 +1,21 @@
+method	lg	new_score	saved_stage12_score	score_abs_difference	new_status	saved_status	exact_within_1e-9
+Boundary topology	LG01	171.11391597902343	171.11391597902343	0.0	internal	internal	True
+Boundary topology	LG02	78.03220815961569	78.03220815961569	0.0	right_censored	right_censored	True
+Boundary topology	LG07	1.305764047005363	1.305764047005363	0.0	left_censored	left_censored	True
+Boundary topology	LG12	83.0321939713341	83.0321939713341	0.0	left_censored	left_censored	True
+Boundary topology D	LG01	94.55102074346757	94.55102074346757	0.0	internal	internal	True
+Boundary topology D	LG02	47.14015273930502	47.14015273930502	0.0	right_censored	right_censored	True
+Boundary topology D	LG07	4.221391109226454	4.221391109226454	0.0	internal	internal	True
+Boundary topology D	LG12	59.857278038401425	59.857278038401425	0.0	right_censored	right_censored	True
+Boundary topology forced	LG01	189.9158374421931	189.9158374421931	0.0	internal	internal	True
+Boundary topology forced	LG02	87.07578531371377	87.07578531371377	0.0	right_censored	right_censored	True
+Boundary topology forced	LG07	16.16709183202022	16.16709183202022	0.0	internal	internal	True
+Boundary topology forced	LG12	92.34011467164915	92.34011467164915	0.0	left_censored	left_censored	True
+Boundary time A	LG01	84.0746453584703	84.0746453584703	0.0	internal	internal	True
+Boundary time A	LG02	65.42577351872949	65.42577351872949	0.0	right_censored	right_censored	True
+Boundary time A	LG07	104.89978114915074	104.89978114915074	0.0	internal	internal	True
+Boundary time A	LG12	84.6845871599054	84.6845871599054	0.0	internal	internal	True
+Boundary joint	LG01	144.93530507054334	144.93530507054334	0.0	internal	internal	True
+Boundary joint	LG02	81.0069735349482	81.0069735349482	0.0	right_censored	right_censored	True
+Boundary joint	LG07	88.54900605051381	88.54900605051381	0.0	internal	internal	True
+Boundary joint	LG12	107.56828655929732	107.56828655929732	0.0	right_censored	right_censored	True

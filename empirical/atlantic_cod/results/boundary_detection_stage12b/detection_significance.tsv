@@ -1,0 +1,25 @@
+method	lg	observed_max_score	n_block_permutations	block_size_windows	p_heuristic	holm_p_within_method	score_detection	null_description
+Model A current	LG01	144.93530507054334	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model A current	LG02	81.0069735349482	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model A current	LG07	88.54900605051381	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model A current	LG12	107.56828655929732	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model B robust	LG01	73.20526001738318	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model B robust	LG02	1127.5111750827666	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model B robust	LG07	33.1382641414528	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model B robust	LG12	146.02372832118914	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model C direction	LG01	74.57509661445653	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model C direction	LG02	1136.5230250903885	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model C direction	LG07	0.0	99	5	1.0	1.0	False	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model C direction	LG12	90.48521058159146	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model D profiles	LG01	27.88658757564343	99	5	0.05	0.1	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model D profiles	LG02	563.7397239681452	99	5	0.31	0.31	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model D profiles	LG07	11.010564873353761	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Model D profiles	LG12	40.58864494063822	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Topology-only	LG01	40.45352401700019	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Topology-only	LG02	23.839659863612315	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Topology-only	LG07	4.728834357125928	99	5	0.07	0.07	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Topology-only	LG12	44.92331758367153	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Time-only	LG01	34.51898304621449	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Time-only	LG02	1114.6392049554076	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Time-only	LG07	50.62880065440534	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score
+Time-only	LG12	46.32369058882116	99	5	0.01	0.04	True	random permutation of contiguous five-window blocks; heuristic spatial-dependence correction for maximum scanned interval score

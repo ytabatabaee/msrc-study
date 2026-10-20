@@ -1,0 +1,17 @@
+held_out_lg	method	selection_rule	predicted_status	predicted_start	predicted_end	interval_iou_full_evaluation_only	f1_evaluation_only
+LG01	Model A current	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	9000001	26000000	0.9675946084505083	1.0
+LG01	Model B robust	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	9000001	26000000	0.9675946084505083	1.0
+LG01	Model C direction	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	9000001	26000000	0.9675946084505083	1.0
+LG01	Model D profiles	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	9000001	26000000	0.9675946084505083	1.0
+LG02	Model A current	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	18500001	24000000	0.9443633291307666	0.9767441860465117
+LG02	Model B robust	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	18500001	24000000	0.9443633291307666	0.9767441860465117
+LG02	Model C direction	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	18500001	24000000	0.9443633291307666	0.9767441860465117
+LG02	Model D profiles	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	18500001	24000000	0.9443633291307666	0.9767441860465117
+LG07	Model A current	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	13750001	23000000	0.9565794758645964	0.972972972972973
+LG07	Model B robust	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	13750001	23000000	0.9565794758645964	0.972972972972973
+LG07	Model C direction	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	no_detection			0.0	0.0
+LG07	Model D profiles	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	internal	13750001	23000000	0.9565794758645964	0.972972972972973
+LG12	Model A current	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	13500001	27250000	0.031402780854081803	0.07407407407407407
+LG12	Model B robust	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	left_censored	1	13750000	0.9146513370624326	0.9622641509433962
+LG12	Model C direction	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	left_censored	1	13250000	0.896716997120032	0.9523809523809523
+LG12	Model D profiles	all weights, penalty, minimum segment and score threshold predeclared; no held-out coordinates used	right_censored	13500001	27250000	0.031402780854081803	0.07407407407407407
