@@ -1,0 +1,46 @@
+{
+  "stage": "House Mouse Stage 8 branch-length validation",
+  "script": "empirical/house_mouse_t_complex/scripts/08_branch_length_validation.py",
+  "command": "MPLBACKEND=Agg python empirical/house_mouse_t_complex/scripts/08_branch_length_validation.py",
+  "inputs_sha256": {
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb.tre": "6e5c406887b412668adb45c1b4445dc098dda3611696eaee559bc1ec543da020",
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb_metadata.tsv": "a9e38f113799e8d275478151f702917b607435b9b1dbc036c59a8f283bc84007",
+    "data/house_mouse_t_complex/metadata/tip_mapping.tsv": "0c8f6e040bb410144fe69fe5e658d004ca583da75a1dd6a5ea8369fd0ff04299",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990",
+    "empirical/house_mouse_t_complex/results/stage2_fixed_quartet_scan.tsv": "9ad62b579fae816d04b05b234f075e2b6f143198bdb5e05df0df592bddfbcbcd",
+    "empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv": "0e880cbcae86d66d522ffaf70b1e3e4ca16d63c9d2647284d3e95e3a9cd56831",
+    "IST-2017-78-v1+1_Data.zip": "f925084a87ac3837661ad99f931da608c129ea3e590c3470030b3ba649d47877"
+  },
+  "n_trees": 4046,
+  "excluded_sample": "Mmd_FRA4_18B.variant",
+  "change_point_bp": 14737499.5,
+  "source_archive_available": true,
+  "output_sha256": {
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/binned_100kb_tracks.tsv": "37723574883b00b949c78cfb51df6d53464f75b2926a900d7a4fb12760092471",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/boundary_sensitivity.tsv": "2ae61a056c4ded3306e6a2335053b59e11ca207c02f460667a6e210109c53a71",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/branch_length_distribution.tsv": "108b5199d9cef6d238f60a4a58b19eb768d98a96ff75ab9118f5c9707c0309b9",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/data_provenance_audit.md": "2e24272f90581c811f66c35fd470037b83082b09b5758bc49e8f3127817f9706",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/diagnostic_report.md": "12062d9b7bd1f5220a65f816870c596313e4bf76317e3d7582b7f37e8191ba84",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/extreme_windows.tsv": "3e668b796f27cc5a5ed72c303b3624e3c0a5914ccaa52a5c09709b8d3f08112c",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/figure_caption.md": "4881517788a42d39887b575c399cfcf74a6229a496620d711941e8da26145375",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/methods_text.md": "64153f78465a2fd50055ae858eb094150025403b2c8b116b589cb5e06ac2d2d9",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/report.md": "6a0466411809ff295c5e4db33673d73c4169fd118efd9f9e243dffdefb2863dc",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/results_text.md": "e9833db3004fa7c959f0c676ef356db239e7406cac356560272d62f80b369d5d",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/robust_distance_comparison.tsv": "1861770ef4533d78f128ebf90e479019bacac17e29b606c2a62234abcc8edcb3",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/sample_branch_length_audit.tsv": "108b5199d9cef6d238f60a4a58b19eb768d98a96ff75ab9118f5c9707c0309b9",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/sample_influence_ranking.tsv": "5966670563da100abbe25a12c65813bf16edfd7edcb6cd44f481ff28ed09aca8",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/source_filter_comparison.tsv": "6b258671ad86c75925ca690d5641fa2695e816cd8c5052a394df89e9794def43",
+    "empirical/house_mouse_t_complex/results/stage8_branch_length_validation/validation_report.md": "f5d37d7be5731c2c5d0faeda4afd2d0b2570878fa2c8ead3192ccb9fb364f21c"
+  },
+  "script_sha256": "f9c189e181354d1b38eeb7bc4fcab0b4a095e71da4f11726bff8c67fbf593193",
+  "figure_sha256": {
+    "empirical/house_mouse_t_complex/figures/house_mouse_chr17_stage8_leave_one_out_100kb.pdf": "6cd986791c403bb8b2be0903c83914d8475d100121c48b8920a9872055d19005",
+    "empirical/house_mouse_t_complex/figures/house_mouse_chr17_stage8_leave_one_out_100kb.png": "b5fdf299be58e273472e8275e6303cf66c6711a3629d48f62433f85eea6dae33",
+    "empirical/house_mouse_t_complex/figures/house_mouse_chr17_stage8_original_100kb.pdf": "afef4ca391906cbba30734be1ef8a0d4ca0c393ba454fc173f7d21f1934c2814",
+    "empirical/house_mouse_t_complex/figures/house_mouse_chr17_stage8_original_100kb.png": "d774f530f8df165909173f038aeb0bc343e36de63489a3e4cca1c22cff4be1f6",
+    "empirical/house_mouse_t_complex/figures/house_mouse_stage8_branch_diagnostics.pdf": "7f1c38efcd5deacbc8c3eecb95d8a1454598c03e6eeeb2530e0c1fd302e75f52",
+    "empirical/house_mouse_t_complex/figures/house_mouse_stage8_branch_diagnostics.png": "ccdcb2e195850da79efceb6d8309709f48385502eb579001ec30e3ba7de7860a",
+    "empirical/house_mouse_t_complex/figures/house_mouse_stage8_distance_robustness.pdf": "31b06946804e125718c9bcee4b2e529abd3c5088be70e214d9f4607c7497d170",
+    "empirical/house_mouse_t_complex/figures/house_mouse_stage8_distance_robustness.png": "dfcaf9f07ad495c0def6d6b6c9aab95229aa397a083a6ed48eb209e24545b34e"
+  }
+}

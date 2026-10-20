@@ -1,0 +1,16 @@
+locus_id	filtering_procedure	focal_terminal_branch	median_terminal_branch	max_terminal_branch	total_tree_length	status
+w002032	PASS_SNPs		0.0002	0.003009	0.05184	parsed_from_published_nested_ML_tree_archive
+w002032	Coverage_AlleleRatio_Filtered	52.733546	0.0002	52.733546	52.79179	parsed_from_published_nested_ML_tree_archive
+w002032	Coverage_Filtered	0.0002	0.0002	0.003009	0.056866	parsed_from_published_nested_ML_tree_archive
+w001186	PASS_SNPs		3e-06	0.004923	0.082652	parsed_from_published_nested_ML_tree_archive
+w001186	Coverage_AlleleRatio_Filtered	50.147865	0.0002	50.147865	50.239559	parsed_from_published_nested_ML_tree_archive
+w001186	Coverage_Filtered	3e-06	0.0002	0.004663	0.085461	parsed_from_published_nested_ML_tree_archive
+w002157	PASS_SNPs		3e-06	0.005605	0.078931	parsed_from_published_nested_ML_tree_archive
+w002157	Coverage_AlleleRatio_Filtered	49.067577	0.0002	49.067577	49.148082	parsed_from_published_nested_ML_tree_archive
+w002157	Coverage_Filtered	3e-06	3e-06	0.005069	0.080943	parsed_from_published_nested_ML_tree_archive
+w001259	PASS_SNPs		0.0002	0.002932	0.063298	parsed_from_published_nested_ML_tree_archive
+w001259	Coverage_AlleleRatio_Filtered	45.014636	0.0004	45.014636	45.098692	parsed_from_published_nested_ML_tree_archive
+w001259	Coverage_Filtered	0.0004	0.0004	0.003339	0.084086	parsed_from_published_nested_ML_tree_archive
+w001381	PASS_SNPs		0.0002	0.007049	0.092498	parsed_from_published_nested_ML_tree_archive
+w001381	Coverage_AlleleRatio_Filtered	43.63992	0.000399	43.63992	43.739394	parsed_from_published_nested_ML_tree_archive
+w001381	Coverage_Filtered	3e-06	0.0002	0.007241	0.097722	parsed_from_published_nested_ML_tree_archive

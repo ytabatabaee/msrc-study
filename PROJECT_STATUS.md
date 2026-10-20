@@ -1545,3 +1545,26 @@ patristic distances from local ML trees. The Stage 8 result is suitable as a
 conservative supplementary sensitivity analysis; the Stage 7 topology overview
 remains the primary Neoaves figure until broader independent structural-state
 replication is available.
+## House mouse Stage 8: extreme ML branch-length validation
+
+Completed `empirical/house_mouse_t_complex/scripts/08_branch_length_validation.py`
+and the results under
+`empirical/house_mouse_t_complex/results/stage8_branch_length_validation/`.
+The approximately 40–53 substitution-unit terminal branches for
+`Mmd_FRA4_18B.variant` are present in the frozen 4,046 local ML Newick trees;
+2,748 windows exceed 1 substitution unit, 1,678 exceed 5, 309 exceed 10, 212
+exceed 20, and 83 exceed 30. The all-sample B(w) mean changes from 0.00912753
+upstream of 14.7375 Mb to 0.322949 downstream, while leave-one-out means are
+0.00916046 and 0.00785359. Stage 4 B, A_distance, and A_relative values were
+reproduced to floating-point precision.
+
+The source archive comparison is informative: in representative windows, the
+extreme branch is present in the coverage-plus-allele-ratio-filtered ML tree
+product but is ordinary or absent in the PASS-SNP and coverage-only products.
+This verifies a filtering-product-specific anomaly, while the precise cause
+remains unresolved because per-window alignments and complete IQ-TREE command
+provenance are unavailable. The original all-sample B(w) remains a
+reproducible audit statistic with a filtering/provenance caveat; leave-one-out,
+median, and trimmed tracks are sensitivity analyses rather than corrections.
+Five Stage 8 regression tests pass. Original Stage 4–7 outputs and figures
+were preserved.
