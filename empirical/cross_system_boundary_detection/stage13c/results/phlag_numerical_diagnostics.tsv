@@ -1,0 +1,6 @@
+dataset	replicate	focal_branch	status	posterior_finite	diagnosis
+anopheles_2la	0	N002	numerically_degenerate	false	nonfinite posterior; branch-length/zero-scale degeneracy
+fire_ants_chr16	0	N002	numerically_degenerate	false	nonfinite posterior; branch-length/zero-scale degeneracy
+house_mouse_t_complex	0	N002	valid_informative	true	finite posterior and nonconstant state path
+house_mouse_t_complex	1	N002	valid_informative	true	finite posterior and nonconstant state path
+house_mouse_t_complex	2	N002	valid_informative	true	finite posterior and nonconstant state path

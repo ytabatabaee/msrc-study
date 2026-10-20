@@ -1,0 +1,3 @@
+# Stage 13c methods
+
+The primary Atlantic-cod implementation imports and executes the frozen Stage 12b Model B feature join, robust scaling, shared-background objective, penalty, censoring, and tie-breaking. The Stage 13 cross-system feature definition is retained under a distinct identifier because it uses D(w), A(w), and arrangement-blind summaries rather than the original two-dimensional topology representation. Change-point nulls permute contiguous blocks and recompute the complete maximum interval statistic; 999 replicates are used below 1,000 windows and 99 for the larger tracks as a documented computational approximation.

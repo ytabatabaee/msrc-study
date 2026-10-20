@@ -1,0 +1,13 @@
+{
+  "stage": "13c",
+  "seed": 20261020,
+  "stage12b_reference": "executed frozen implementation",
+  "previous_outputs_preserved": true,
+  "null_replicates": 19,
+  "null_note": "A 19-replicate pilot was used for the full modality/system grid because 999 and 199 were computationally infeasible in this execution; p-values have coarse Monte Carlo resolution and are not manuscript claims.",
+  "inputs": {
+    "empirical/atlantic_cod/results/stage7_window_divergence_time_signal.tsv": "5f6849175e53c6720cb8dd018f46fe426d1490ab1bf038bc25d9db3d8b6f8dc5",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_window_patristic_distance.tsv": "886a85e204c4da0064c443a99b9e72a3ff444e8f7c0607d342477b76c00ac296"
+  }
+}

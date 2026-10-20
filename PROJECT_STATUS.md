@@ -1344,3 +1344,31 @@ replicate. These pilot results are not a cross-system benchmark: the requested
 20-replicate expansion and full edge aggregation remain future work, and the
 valid mouse result is explicitly exploratory. No Phlag accuracy is assigned
 to the degenerate Anopheles/fire-ant runs.
+
+## Stage 13c final validation
+
+Stage 13c makes the frozen Atlantic-cod Stage 12b Model B executable in the
+cross-system validation path. All four predicted intervals reproduce exactly:
+LG01 9.00--26.00 Mb, LG02 18.50--24.00 Mb (right-censored), LG07
+13.75--23.00 Mb, and LG12 0--13.75 Mb. The previous LG02 discrepancy arose
+because the Stage 13 cross-system feature matrix used `D(w)` plus `A(w)`,
+whereas Stage 12b Model B uses two topology simplex coordinates plus `A(w)`
+with its original robust modality scaling. These are now separate method
+identifiers, and the top-20 candidate audit is in
+`stage13c/results/lg02_detector_discrepancy.tsv`.
+
+Stage 13c adds BIC-style K=0--4 model-selection records, Huber-loss fire-ant
+outlier sensitivity, descriptive leave-block boundary stability, and full
+ordered-block maximum-score null pilots. The null pilots use 19 replicates for
+the full cross-system grid because larger replicate counts were computationally
+infeasible in this execution; their p-values have coarse Monte Carlo
+resolution and should not be used as manuscript significance claims.
+
+Three house-mouse Phlag representative sets were run on focal edge N002. All
+three had finite posterior probabilities and informative state paths. Their
+default state-call scores were IoU 0.1326/F1 0.2342, IoU 0.1256/F1 0.2231,
+and IoU 0.1394/F1 0.2446. This remains a one-edge pilot rather than a full
+multi-edge, 20-replicate benchmark. Anopheles and fire-ant matched-taxon runs
+remain numerically degenerate because posterior probabilities are nonfinite;
+their failures are retained as diagnostic results and are not scored as zero
+accuracy.

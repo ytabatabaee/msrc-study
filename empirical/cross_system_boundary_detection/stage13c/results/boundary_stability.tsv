@@ -1,0 +1,5 @@
+system	group	method	n_perturbations	median_start	median_end	start_min	start_max	end_min	end_max	detection_frequency	status_counts	note
+Atlantic cod	LG01	Stage12b_ModelB	10	9000001.0	26000000.0	1	11250001	9000000	26000000	1.0	internal:9;left_censored:1	leave-one-contiguous-block-out; descriptive stability, not a confidence interval
+Atlantic cod	LG02	Stage12b_ModelB	10	18500001.0	24000000.0	1	18750001	18500000	24000000	1.0	left_censored:3;right_censored:7	leave-one-contiguous-block-out; descriptive stability, not a confidence interval
+Atlantic cod	LG07	Stage12b_ModelB	10	13750001.0	23000000.0	13750001	14750001	20500000	23000000	1.0	internal:10	leave-one-contiguous-block-out; descriptive stability, not a confidence interval
+Atlantic cod	LG12	Stage12b_ModelB	10	13500001.0	27250000.0	1	14250001	13000000	27250000	1.0	left_censored:4;right_censored:6	leave-one-contiguous-block-out; descriptive stability, not a confidence interval

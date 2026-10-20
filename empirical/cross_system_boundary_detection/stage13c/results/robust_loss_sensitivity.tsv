@@ -1,0 +1,4 @@
+feature	loss	delta	selected_start	selected_end	selected_score	n_windows	outlier_policy
+A_distance	Huber	0.0021790696024212236	6614040.0	6875454.0	0.0003473826253790498	96	no deletion; robust loss only
+A_relative	Huber	0.49394620196002326	1003361.0	11719720.0	1.9376085687109588	96	no deletion; robust loss only
+A_distance_outgroup_normalized	Huber	0.32146309039674814	1003361.0	11719720.0	0.8530955470364019	96	no deletion; robust loss only

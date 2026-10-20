@@ -1,0 +1,3 @@
+# Stage 13c results
+
+The exact Stage 12b Model B path reproduces all four frozen cod intervals. LG02 differs in the cross-system implementation because its feature matrix is D(w)+A(w), whereas Stage 12b Model B uses two topology simplex coordinates plus A(w), with explicit modality scaling. Matched-taxon Phlag diagnostics retain valid and degenerate runs separately. Three house-mouse representative replicates on focal edge N002 were valid, with IoU 0.1326, 0.1256, and 0.1394 and F1 0.2342, 0.2231, and 0.2446. Anopheles and fire ants remain numerically degenerate. The mouse result is still a one-edge pilot rather than a full multi-edge, 20-replicate benchmark.

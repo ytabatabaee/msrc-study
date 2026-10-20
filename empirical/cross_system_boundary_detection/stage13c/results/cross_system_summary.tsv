@@ -1,0 +1,36 @@
+system	group	method	iou_union	f1	status	source
+Atlantic cod	LG01	Stage12b_shared_background	0.9821359292421656	0.9909874643336573	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG01	Stage12b_shared_background	0.9808143347156862	0.9903142536137454	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG01	Stage12b_shared_background	0.9821359292421656	0.9909874643336573	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG01	Stage12b_shared_background	0.9808143347156862	0.9903142536137454	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG01	Stage13_independent_segment	0.9808143347156862	0.9903142536137454	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG02	Stage12b_shared_background	0.6485512813680941	0.7868135965171512	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG02	Stage12b_shared_background	0.3147877763769222	0.4788419576646248	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG02	Stage12b_shared_background	0.3147877763769222	0.4788419576646248	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG02	Stage12b_shared_background	0.3147877763769222	0.4788419576646248	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG02	Stage13_independent_segment	0.3147877763769222	0.4788419576646248	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG07	Stage12b_shared_background	0.0	0.0	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG07	Stage12b_shared_background	0.9831511279719463	0.9915039898924475	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG07	Stage12b_shared_background	0.9831511279719463	0.9915039898924475	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG07	Stage12b_shared_background	0.9831511279719463	0.9915039898924475	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG07	Stage13_independent_segment	0.9831511279719463	0.9915039898924475	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG12	Stage12b_shared_background	0.876569003731116	0.934225175827017	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG12	Stage12b_shared_background	0.8583071494867177	0.9237516518448422	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG12	Stage12b_shared_background	0.8583071494867177	0.9237516518448422	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG12	Stage12b_shared_background	0.8583071494867177	0.9237516518448422	internal	Stage13b frozen re-evaluation
+Atlantic cod	LG12	Stage13_independent_segment	0.8583071494867177	0.9237516518448422	internal	Stage13b frozen re-evaluation
+Fire ants	chr16	Stage12b_shared_background	0.5297362004121312	0.6925850356021035	internal	Stage13b frozen re-evaluation
+Fire ants	chr16	Stage12b_shared_background	0.0	0.0	internal	Stage13b frozen re-evaluation
+Fire ants	chr16	Stage12b_shared_background	0.0	0.0	internal	Stage13b frozen re-evaluation
+Fire ants	chr16	Stage12b_shared_background	0.0	0.0	internal	Stage13b frozen re-evaluation
+Fire ants	chr16	Stage13_independent_segment	0.0	0.0	internal	Stage13b frozen re-evaluation
+Anopheles	2L	Stage12b_shared_background	0.9950103448275862	0.9974989326820534	internal	Stage13b frozen re-evaluation
+Anopheles	2L	Stage12b_shared_background	0.9973029953917051	0.9986496767818817	internal	Stage13b frozen re-evaluation
+Anopheles	2L	Stage12b_shared_background	0.9973029953917051	0.9986496767818817	internal	Stage13b frozen re-evaluation
+Anopheles	2L	Stage12b_shared_background	0.47046684782608694	0.6398877316025412	internal	Stage13b frozen re-evaluation
+Anopheles	2L	Stage13_independent_segment	0.9973029953917051	0.9986496767818817	internal	Stage13b frozen re-evaluation
+House mouse	chr17	Stage12b_shared_background	0.15561336551421975	0.2693173515607023	internal	Stage13b frozen re-evaluation
+House mouse	chr17	Stage12b_shared_background	0.11089197773742013	0.19964493390847313	internal	Stage13b frozen re-evaluation
+House mouse	chr17	Stage12b_shared_background	0.11089197773742013	0.19964493390847313	internal	Stage13b frozen re-evaluation
+House mouse	chr17	Stage12b_shared_background	0.32253189220275585	0.48774913346786636	internal	Stage13b frozen re-evaluation
+House mouse	chr17	Stage13_independent_segment	0.11089197773742013	0.19964493390847313	internal	Stage13b frozen re-evaluation

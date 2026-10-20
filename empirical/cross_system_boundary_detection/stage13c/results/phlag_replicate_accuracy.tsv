@@ -1,0 +1,4 @@
+replicate	focal_branch	status	iou	f1	note
+0	N002	valid_informative	0.13263334985673808	0.23420350437944332	default state call; one fixed representative and one focal edge
+1	N002	valid_informative	0.1255586886041793	0.22310464994035334	default state call; one fixed representative and one focal edge
+2	N002	valid_informative	0.13935649912291473	0.2446231697106084	default state call; one fixed representative and one focal edge

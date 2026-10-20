@@ -1,0 +1,6 @@
+dataset	replicate	focal_branch	runtime_seconds	peak_memory_mb	status
+anopheles_2la	0	N002	67.712	not_recorded	numerically_degenerate
+fire_ants_chr16	0	N002	66.655	not_recorded	numerically_degenerate
+house_mouse_t_complex	0	N002	131.260	not_recorded	valid_informative
+house_mouse_t_complex	1	N002	230.784	not_recorded	valid_informative
+house_mouse_t_complex	2	N002	200.176	not_recorded	valid_informative

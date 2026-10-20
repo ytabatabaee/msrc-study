@@ -1,0 +1,29 @@
+system	group	feature	observed_max_score	n_replicates	block_length_windows	p_value	null_hypothesis	status
+Atlantic cod	LG01	topology	40.45352401700019	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG01	continuous	34.51898304621445	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG01	joint	74.5750966144565	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG01	arrangement_blind	35.06203093426768	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG02	topology	23.839659863612358	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG02	continuous	1114.639204955407	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG02	joint	1136.5230250903883	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG02	arrangement_blind	1097.5582296980626	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG07	topology	4.262743962346592	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG07	continuous	50.62880065440533	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG07	joint	41.09806555678004	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG07	arrangement_blind	47.81356152267805	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG12	topology	44.92331758367153	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG12	continuous	46.32369058882113	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG12	joint	90.48521058159143	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Atlantic cod	LG12	arrangement_blind	42.71833449014785	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Fire ants	chr16	topology	23.135763908797294	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Fire ants	chr16	continuous	396.817572616652	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Fire ants	chr16	joint	394.36327016268035	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Fire ants	chr16	arrangement_blind	422.8341576880922	19	5	0.25	existence of a scanned one-interval change point	completed_exact_scan
+Anopheles	2L	topology	384.52751989697293	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Anopheles	2L	continuous	499.99809109976866	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Anopheles	2L	joint	884.0384019312155	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+Anopheles	2L	arrangement_blind	397.3483868232954	19	5	0.05	existence of a scanned one-interval change point	completed_exact_scan
+House mouse	chr17	topology	196.70630264785595	19	20	0.05	existence of a scanned one-interval change point	completed_approximate_block_scan
+House mouse	chr17	continuous	1388.8537097597493	19	20	0.05	existence of a scanned one-interval change point	completed_approximate_block_scan
+House mouse	chr17	joint	1387.1975037465488	19	20	0.05	existence of a scanned one-interval change point	completed_approximate_block_scan
+House mouse	chr17	arrangement_blind	2319.6042703919616	19	20	0.05	existence of a scanned one-interval change point	completed_approximate_block_scan
