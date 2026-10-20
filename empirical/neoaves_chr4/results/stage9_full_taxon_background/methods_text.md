@@ -1,0 +1,3 @@
+# Methods
+
+We reused the named chromosome-4 ML local trees and the frozen QQS locus table. The expected full-taxon universe was defined as the union of exact leaf labels observed across the unique chromosome-4 loci. All-observed mean pairwise distance was calculated directly from branch-length contributions, while fixed-set estimates used patristic paths for the selected taxa. A fixed broad set was prespecified by >=95% locus presence. Pair-standardized residuals used pair-specific medians estimated from windows outside all canonical structural regions, requiring at least 20 observations per pair. QQS support tracks remain separate for Columbea, N61, and N62. No arrangement labels were inferred and no Stage-6–8 output was overwritten.

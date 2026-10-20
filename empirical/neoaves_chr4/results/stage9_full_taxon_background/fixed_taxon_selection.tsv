@@ -1,0 +1,3 @@
+selection	threshold	n_taxa	n_complete_windows	excluded_taxa
+Stage6_exact_observed	exact mapping and observed in universe	47	2707	
+fixed_broad_95pct	presence in >=95% of chr4 local trees	108	2943	

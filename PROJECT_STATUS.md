@@ -1568,3 +1568,24 @@ reproducible audit statistic with a filtering/provenance caveat; leave-one-out,
 median, and trimmed tracks are sensitivity analyses rather than corrections.
 Five Stage 8 regression tests pass. Original Stage 4–7 outputs and figures
 were preserved.
+
+## Neoaves chromosome 4 Stage 9: full-taxon background divergence
+
+Stage 9 adds `empirical/neoaves_chr4/scripts/09_full_taxon_background.py` and
+results under `empirical/neoaves_chr4/results/stage9_full_taxon_background/`.
+The chromosome-4 trees contain 363 distinct observed taxon labels across
+6,140 unique loci; only 232 loci contain all 363 labels. The historical
+Stage-6 fixed mapped set contains 47 observed taxa and 2,707 complete loci.
+Its distance values reproduce the frozen Stage-6 track to machine precision.
+
+The new analysis reports all-observed mean patristic distance, the complete
+47-taxon reference, a fixed 108-taxon set defined only by presence in at least
+95% of loci, and pair-standardized residual summaries using pair-specific
+strict-outside-region medians. The preferred full-taxon figure track is
+`B_observed`, selected by a coverage rule rather than by structural-region
+signal. All distances remain ML substitution units and are not calibrated
+divergence or coalescence times. Missing taxa are retained as missing
+observations, and the six-species Stage-8 arrangement-adjusted analysis remains
+separate. The full-taxon audit is suitable as a supplementary/background
+analysis; causal rearrangement interpretation remains limited by
+taxon-composition variation and the absence of full-taxon arrangement labels.

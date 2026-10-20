@@ -1,0 +1,20 @@
+{
+  "stage": "Neoaves chr4 Stage 9 full-taxon background divergence",
+  "script": "empirical/neoaves_chr4/scripts/09_full_taxon_background.py",
+  "inputs": {
+    "data/neoaves_chr4/processed/locus_table_chr4.tsv": "52493ab4aadd4bce6dff84540ee8b27ad7a2fadfe1cd718cc4e2a859585beccb",
+    "data/neoaves_chr4/processed/canonical_structural_regions.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2",
+    "empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv": "8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac",
+    "empirical/neoaves_chr4/data/stage4d/jarvis48_taxa.tsv": "5bd5c663c65c5b1bad797f2d337e97a29b6400184c32a2d1e0892a012da37f64",
+    "empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_distance_tracks.tsv": "4642c7bd766765750596496cadd87c705e806b7b89c7ab4ccbe870b43f668d41"
+  },
+  "n_loci": 6140,
+  "n_expected_observed_taxa": 363,
+  "n_stage6_exact_mapped": 47,
+  "n_stage6_exact_observed": 47,
+  "n_fixed_broad_95pct": 108,
+  "preferred_estimator": "B_observed",
+  "stage6_regression_max_abs_difference": 0.0,
+  "random_seed": null
+}
