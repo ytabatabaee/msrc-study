@@ -1,0 +1,21 @@
+{
+  "stage": "12",
+  "primary_penalty_factor": 1.0,
+  "primary_minimum_segment": 3,
+  "truth_loaded_after_primary_fit": true,
+  "inputs": {
+    "data/atlantic_cod/processed/cod_window_trees.tsv": "26ed195ee26cb860ca0885c76d768d427639a4338b74a787d9421498e10dfb0b",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/atlantic_cod/results/stage7_window_divergence_time_signal.tsv": "5f6849175e53c6720cb8dd018f46fe426d1490ab1bf038bc25d9db3d8b6f8dc5",
+    "data/atlantic_cod/metadata/region_manifest.tsv": "97e9fdc4cd294deede0eaf8e333c883d9d41b636e265b78f5e7b0858acf6a408",
+    "empirical/atlantic_cod/results/phlag_benchmark/window_predictions.tsv": "83e3ac1acc9c320207ac16020ae486af087c6cab4ad049aa9e58f2f57c782469"
+  },
+  "methods": [
+    "original Phlag",
+    "Stage 11 sign rules",
+    "boundary topology",
+    "boundary time A",
+    "boundary joint"
+  ],
+  "note": "A and A_relative are SNAPP-derived population-tree contrasts, not realized gene-lineage coalescence times."
+}

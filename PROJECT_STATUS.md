@@ -1088,3 +1088,40 @@ signals, while these inputs are SNAPP MCC population-tree summaries. The
 result should remain supplementary until Phlag's calibration on this input
 representation is independently validated. Reproduction files and raw Phlag
 outputs are under `empirical/atlantic_cod/results/phlag_benchmark/`.
+
+## Atlantic cod Stage 12 boundary detection
+
+Stage 12 adds a deterministic, gap-aware least-squares interval detector with a
+predeclared BIC-like penalty, minimum segment size, an explicit no-change
+option, and internal/left-censored/right-censored outcomes. Frozen inversion
+coordinates are loaded only after primary fitting. Existing Stage 11 sign-rule
+and Phlag outputs remain unchanged and are compared as separate baselines.
+
+The primary topology detector selected LG01 9.000001–26.000000 Mb, LG02
+18.250001–24.000000 Mb right-censored, LG07 left-censored through 12.000000
+Mb, and LG12 left-censored through 13.250000 Mb. The primary time-A detector
+selected LG01 9.250001–26.000000 Mb, LG02 18.500001–24.000000 Mb
+right-censored, LG07 13.750001–23.000000 Mb, and LG12 1.500001–13.250000
+Mb. The primary joint detector selected the same LG07 interval, but a poor
+LG12 interval extending beyond the observed domain.
+
+Mean full-reference IoU/F1 were 0.6929/0.7381 for boundary topology,
+0.9314/0.9682 for boundary time-A, and 0.7250/0.7559 for boundary joint.
+LG07 is recovered accurately by the time-A detector (IoU 0.9566, F1 0.9730),
+while topology-only remains a weak and unstable localization signal. The
+forced topology fit for LG07 selected a short early outlier, so its apparent
+topology signal does not support the long known inversion interval.
+
+The Stage 11 Phlag diagnostic found all 36 saved runs had all-zero paths,
+`nan` posterior anomaly probabilities, `State divergence: nan`, and final
+focal-edge estimates collapsed to `1e-06`. This is a numerical/calibration
+degeneracy on SNAPP MCC population-tree inputs, not evidence of a calibrated
+Phlag null state. Stage 12 therefore does not claim that Phlag generally fails
+on inversion datasets.
+
+The time result supports the limited statement that SNAPP-derived temporal
+contrasts provide useful boundary-localization structure in this Atlantic-cod
+benchmark. It does not establish a statistically significant advantage over
+all alternatives, and the time statistic is not a realized gene-lineage
+coalescence time. Next steps are replication on house mouse, fire ants, and
+Anopheles with data types appropriate to each detector's observation model.

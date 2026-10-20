@@ -1,0 +1,281 @@
+analysis	method	lg	minimum_segment	penalty_factor	topology_weight	time_weight	outlier_removed	status	start_index	end_index	score
+parameter_grid	Boundary topology	LG01	2	0.5	1	1	0	internal	35	101	180.51487671060826
+parameter_grid	Boundary topology	LG02	2	0.5	1	1	0	right_censored	70	91	82.55399673666473
+parameter_grid	Boundary topology	LG07	2	0.5	1	1	0	internal	9	10	13.36302576577071
+parameter_grid	Boundary topology	LG12	2	0.5	1	1	0	left_censored	0	50	87.68615432149163
+parameter_grid	Boundary topology	LG01	2	1.0	1	1	0	internal	35	101	171.11391597902343
+parameter_grid	Boundary topology	LG02	2	1.0	1	1	0	right_censored	70	91	78.03220815961569
+parameter_grid	Boundary topology	LG07	2	1.0	1	1	0	internal	9	10	3.80477877954765
+parameter_grid	Boundary topology	LG12	2	1.0	1	1	0	left_censored	0	50	83.0321939713341
+parameter_grid	Boundary topology	LG01	2	2.0	1	1	0	internal	35	101	152.31199451585377
+parameter_grid	Boundary topology	LG02	2	2.0	1	1	0	right_censored	70	91	68.9886310055176
+parameter_grid	Boundary topology	LG07	2	2.0	1	1	0	no_detection			0.0
+parameter_grid	Boundary topology	LG12	2	2.0	1	1	0	left_censored	0	50	73.72427327101906
+parameter_grid	Boundary topology	LG01	3	0.5	1	1	0	internal	35	101	180.51487671060826
+parameter_grid	Boundary topology	LG02	3	0.5	1	1	0	right_censored	70	91	82.55399673666473
+parameter_grid	Boundary topology	LG07	3	0.5	1	1	0	internal	9	11	6.60884484579716
+parameter_grid	Boundary topology	LG12	3	0.5	1	1	0	left_censored	0	50	87.68615432149163
+parameter_grid	Boundary topology	LG01	3	1.0	1	1	0	internal	35	101	171.11391597902343
+parameter_grid	Boundary topology	LG02	3	1.0	1	1	0	right_censored	70	91	78.03220815961569
+parameter_grid	Boundary topology	LG07	3	1.0	1	1	0	left_censored	0	43	1.305764047005363
+parameter_grid	Boundary topology	LG12	3	1.0	1	1	0	left_censored	0	50	83.0321939713341
+parameter_grid	Boundary topology	LG01	3	2.0	1	1	0	internal	35	101	152.31199451585377
+parameter_grid	Boundary topology	LG02	3	2.0	1	1	0	right_censored	70	91	68.9886310055176
+parameter_grid	Boundary topology	LG07	3	2.0	1	1	0	no_detection			0.0
+parameter_grid	Boundary topology	LG12	3	2.0	1	1	0	left_censored	0	50	73.72427327101906
+parameter_grid	Boundary topology	LG01	4	0.5	1	1	0	internal	35	101	180.51487671060826
+parameter_grid	Boundary topology	LG02	4	0.5	1	1	0	right_censored	70	91	82.55399673666473
+parameter_grid	Boundary topology	LG07	4	0.5	1	1	0	left_censored	0	43	6.084887540116893
+parameter_grid	Boundary topology	LG12	4	0.5	1	1	0	left_censored	0	50	87.68615432149163
+parameter_grid	Boundary topology	LG01	4	1.0	1	1	0	internal	35	101	171.11391597902343
+parameter_grid	Boundary topology	LG02	4	1.0	1	1	0	right_censored	70	91	78.03220815961569
+parameter_grid	Boundary topology	LG07	4	1.0	1	1	0	left_censored	0	43	1.305764047005363
+parameter_grid	Boundary topology	LG12	4	1.0	1	1	0	left_censored	0	50	83.0321939713341
+parameter_grid	Boundary topology	LG01	4	2.0	1	1	0	internal	35	101	152.31199451585377
+parameter_grid	Boundary topology	LG02	4	2.0	1	1	0	right_censored	70	91	68.9886310055176
+parameter_grid	Boundary topology	LG07	4	2.0	1	1	0	no_detection			0.0
+parameter_grid	Boundary topology	LG12	4	2.0	1	1	0	left_censored	0	50	73.72427327101906
+parameter_grid	Boundary topology	LG01	5	0.5	1	1	0	internal	35	101	180.51487671060826
+parameter_grid	Boundary topology	LG02	5	0.5	1	1	0	right_censored	70	91	82.55399673666473
+parameter_grid	Boundary topology	LG07	5	0.5	1	1	0	left_censored	0	43	6.084887540116893
+parameter_grid	Boundary topology	LG12	5	0.5	1	1	0	left_censored	0	50	87.68615432149163
+parameter_grid	Boundary topology	LG01	5	1.0	1	1	0	internal	35	101	171.11391597902343
+parameter_grid	Boundary topology	LG02	5	1.0	1	1	0	right_censored	70	91	78.03220815961569
+parameter_grid	Boundary topology	LG07	5	1.0	1	1	0	left_censored	0	43	1.305764047005363
+parameter_grid	Boundary topology	LG12	5	1.0	1	1	0	left_censored	0	50	83.0321939713341
+parameter_grid	Boundary topology	LG01	5	2.0	1	1	0	internal	35	101	152.31199451585377
+parameter_grid	Boundary topology	LG02	5	2.0	1	1	0	right_censored	70	91	68.9886310055176
+parameter_grid	Boundary topology	LG07	5	2.0	1	1	0	no_detection			0.0
+parameter_grid	Boundary topology	LG12	5	2.0	1	1	0	left_censored	0	50	73.72427327101906
+parameter_grid	Boundary time A	LG01	2	0.5	1	1	0	internal	36	101	88.77512572426272
+parameter_grid	Boundary time A	LG02	2	0.5	1	1	0	right_censored	71	91	67.686667807254
+parameter_grid	Boundary time A	LG07	2	0.5	1	1	0	internal	51	86	109.67046577361641
+parameter_grid	Boundary time A	LG12	2	0.5	1	1	0	internal	4	50	89.33854751006294
+parameter_grid	Boundary time A	LG01	2	1.0	1	1	0	internal	36	101	84.0746453584703
+parameter_grid	Boundary time A	LG02	2	1.0	1	1	0	right_censored	71	91	65.42577351872949
+parameter_grid	Boundary time A	LG07	2	1.0	1	1	0	internal	51	86	104.89978114915074
+parameter_grid	Boundary time A	LG12	2	1.0	1	1	0	internal	4	50	84.6845871599054
+parameter_grid	Boundary time A	LG01	2	2.0	1	1	0	internal	36	101	74.67368462688547
+parameter_grid	Boundary time A	LG02	2	2.0	1	1	0	right_censored	71	91	60.90398494168044
+parameter_grid	Boundary time A	LG07	2	2.0	1	1	0	internal	51	86	95.35841190021941
+parameter_grid	Boundary time A	LG12	2	2.0	1	1	0	left_censored	0	50	75.53438174524716
+parameter_grid	Boundary time A	LG01	3	0.5	1	1	0	internal	36	101	88.77512572426272
+parameter_grid	Boundary time A	LG02	3	0.5	1	1	0	right_censored	71	91	67.686667807254
+parameter_grid	Boundary time A	LG07	3	0.5	1	1	0	internal	51	86	109.67046577361641
+parameter_grid	Boundary time A	LG12	3	0.5	1	1	0	internal	4	50	89.33854751006294
+parameter_grid	Boundary time A	LG01	3	1.0	1	1	0	internal	36	101	84.0746453584703
+parameter_grid	Boundary time A	LG02	3	1.0	1	1	0	right_censored	71	91	65.42577351872949
+parameter_grid	Boundary time A	LG07	3	1.0	1	1	0	internal	51	86	104.89978114915074
+parameter_grid	Boundary time A	LG12	3	1.0	1	1	0	internal	4	50	84.6845871599054
+parameter_grid	Boundary time A	LG01	3	2.0	1	1	0	internal	36	101	74.67368462688547
+parameter_grid	Boundary time A	LG02	3	2.0	1	1	0	right_censored	71	91	60.90398494168044
+parameter_grid	Boundary time A	LG07	3	2.0	1	1	0	internal	51	86	95.35841190021941
+parameter_grid	Boundary time A	LG12	3	2.0	1	1	0	left_censored	0	50	75.53438174524716
+parameter_grid	Boundary time A	LG01	4	0.5	1	1	0	internal	36	101	88.77512572426272
+parameter_grid	Boundary time A	LG02	4	0.5	1	1	0	right_censored	71	91	67.686667807254
+parameter_grid	Boundary time A	LG07	4	0.5	1	1	0	internal	51	86	109.67046577361641
+parameter_grid	Boundary time A	LG12	4	0.5	1	1	0	internal	4	50	89.33854751006294
+parameter_grid	Boundary time A	LG01	4	1.0	1	1	0	internal	36	101	84.0746453584703
+parameter_grid	Boundary time A	LG02	4	1.0	1	1	0	right_censored	71	91	65.42577351872949
+parameter_grid	Boundary time A	LG07	4	1.0	1	1	0	internal	51	86	104.89978114915074
+parameter_grid	Boundary time A	LG12	4	1.0	1	1	0	internal	4	50	84.6845871599054
+parameter_grid	Boundary time A	LG01	4	2.0	1	1	0	internal	36	101	74.67368462688547
+parameter_grid	Boundary time A	LG02	4	2.0	1	1	0	right_censored	71	91	60.90398494168044
+parameter_grid	Boundary time A	LG07	4	2.0	1	1	0	internal	51	86	95.35841190021941
+parameter_grid	Boundary time A	LG12	4	2.0	1	1	0	left_censored	0	50	75.53438174524716
+parameter_grid	Boundary time A	LG01	5	0.5	1	1	0	internal	36	101	88.77512572426272
+parameter_grid	Boundary time A	LG02	5	0.5	1	1	0	right_censored	71	91	67.686667807254
+parameter_grid	Boundary time A	LG07	5	0.5	1	1	0	internal	51	86	109.67046577361641
+parameter_grid	Boundary time A	LG12	5	0.5	1	1	0	internal	5	50	88.28767633604804
+parameter_grid	Boundary time A	LG01	5	1.0	1	1	0	internal	36	101	84.0746453584703
+parameter_grid	Boundary time A	LG02	5	1.0	1	1	0	right_censored	71	91	65.42577351872949
+parameter_grid	Boundary time A	LG07	5	1.0	1	1	0	internal	51	86	104.89978114915074
+parameter_grid	Boundary time A	LG12	5	1.0	1	1	0	internal	5	50	83.6337159858905
+parameter_grid	Boundary time A	LG01	5	2.0	1	1	0	internal	36	101	74.67368462688547
+parameter_grid	Boundary time A	LG02	5	2.0	1	1	0	right_censored	71	91	60.90398494168044
+parameter_grid	Boundary time A	LG07	5	2.0	1	1	0	internal	51	86	95.35841190021941
+parameter_grid	Boundary time A	LG12	5	2.0	1	1	0	left_censored	0	50	75.53438174524716
+parameter_grid	Boundary joint	LG01	2	0.5	1	1	0	internal	35	101	159.03674616792057
+parameter_grid	Boundary joint	LG02	2	0.5	1	1	0	right_censored	71	91	87.78965640052176
+parameter_grid	Boundary joint	LG07	2	0.5	1	1	0	internal	51	86	102.8610599239108
+parameter_grid	Boundary joint	LG12	2	0.5	1	1	0	right_censored	51	104	114.54922708453361
+parameter_grid	Boundary joint	LG01	2	1.0	1	1	0	internal	35	101	144.93530507054334
+parameter_grid	Boundary joint	LG02	2	1.0	1	1	0	right_censored	71	91	81.0069735349482
+parameter_grid	Boundary joint	LG07	2	1.0	1	1	0	internal	51	86	88.54900605051381
+parameter_grid	Boundary joint	LG12	2	1.0	1	1	0	right_censored	51	104	107.56828655929732
+parameter_grid	Boundary joint	LG01	2	2.0	1	1	0	internal	35	101	116.73242287578883
+parameter_grid	Boundary joint	LG02	2	2.0	1	1	0	right_censored	71	91	67.44160780380108
+parameter_grid	Boundary joint	LG07	2	2.0	1	1	0	internal	51	86	59.924898303719814
+parameter_grid	Boundary joint	LG12	2	2.0	1	1	0	right_censored	51	104	93.60640550882475
+parameter_grid	Boundary joint	LG01	3	0.5	1	1	0	internal	35	101	159.03674616792057
+parameter_grid	Boundary joint	LG02	3	0.5	1	1	0	right_censored	71	91	87.78965640052176
+parameter_grid	Boundary joint	LG07	3	0.5	1	1	0	internal	51	86	102.8610599239108
+parameter_grid	Boundary joint	LG12	3	0.5	1	1	0	right_censored	51	104	114.54922708453361
+parameter_grid	Boundary joint	LG01	3	1.0	1	1	0	internal	35	101	144.93530507054334
+parameter_grid	Boundary joint	LG02	3	1.0	1	1	0	right_censored	71	91	81.0069735349482
+parameter_grid	Boundary joint	LG07	3	1.0	1	1	0	internal	51	86	88.54900605051381
+parameter_grid	Boundary joint	LG12	3	1.0	1	1	0	right_censored	51	104	107.56828655929732
+parameter_grid	Boundary joint	LG01	3	2.0	1	1	0	internal	35	101	116.73242287578883
+parameter_grid	Boundary joint	LG02	3	2.0	1	1	0	right_censored	71	91	67.44160780380108
+parameter_grid	Boundary joint	LG07	3	2.0	1	1	0	internal	51	86	59.924898303719814
+parameter_grid	Boundary joint	LG12	3	2.0	1	1	0	right_censored	51	104	93.60640550882475
+parameter_grid	Boundary joint	LG01	4	0.5	1	1	0	internal	35	101	159.03674616792057
+parameter_grid	Boundary joint	LG02	4	0.5	1	1	0	right_censored	71	91	87.78965640052176
+parameter_grid	Boundary joint	LG07	4	0.5	1	1	0	internal	51	86	102.8610599239108
+parameter_grid	Boundary joint	LG12	4	0.5	1	1	0	right_censored	51	104	114.54922708453361
+parameter_grid	Boundary joint	LG01	4	1.0	1	1	0	internal	35	101	144.93530507054334
+parameter_grid	Boundary joint	LG02	4	1.0	1	1	0	right_censored	71	91	81.0069735349482
+parameter_grid	Boundary joint	LG07	4	1.0	1	1	0	internal	51	86	88.54900605051381
+parameter_grid	Boundary joint	LG12	4	1.0	1	1	0	right_censored	51	104	107.56828655929732
+parameter_grid	Boundary joint	LG01	4	2.0	1	1	0	internal	35	101	116.73242287578883
+parameter_grid	Boundary joint	LG02	4	2.0	1	1	0	right_censored	71	91	67.44160780380108
+parameter_grid	Boundary joint	LG07	4	2.0	1	1	0	internal	51	86	59.924898303719814
+parameter_grid	Boundary joint	LG12	4	2.0	1	1	0	right_censored	51	104	93.60640550882475
+parameter_grid	Boundary joint	LG01	5	0.5	1	1	0	internal	35	101	159.03674616792057
+parameter_grid	Boundary joint	LG02	5	0.5	1	1	0	right_censored	71	91	87.78965640052176
+parameter_grid	Boundary joint	LG07	5	0.5	1	1	0	internal	51	86	102.8610599239108
+parameter_grid	Boundary joint	LG12	5	0.5	1	1	0	right_censored	51	104	114.54922708453361
+parameter_grid	Boundary joint	LG01	5	1.0	1	1	0	internal	35	101	144.93530507054334
+parameter_grid	Boundary joint	LG02	5	1.0	1	1	0	right_censored	71	91	81.0069735349482
+parameter_grid	Boundary joint	LG07	5	1.0	1	1	0	internal	51	86	88.54900605051381
+parameter_grid	Boundary joint	LG12	5	1.0	1	1	0	right_censored	51	104	107.56828655929732
+parameter_grid	Boundary joint	LG01	5	2.0	1	1	0	internal	35	101	116.73242287578883
+parameter_grid	Boundary joint	LG02	5	2.0	1	1	0	right_censored	71	91	67.44160780380108
+parameter_grid	Boundary joint	LG07	5	2.0	1	1	0	internal	51	86	59.924898303719814
+parameter_grid	Boundary joint	LG12	5	2.0	1	1	0	right_censored	51	104	93.60640550882475
+joint_weight	Boundary joint	LG01	3	1.0	0.5	1	0	internal	36	101	84.64881197429378
+joint_weight	Boundary joint	LG02	3	1.0	0.5	1	0	right_censored	71	91	62.5383906572106
+joint_weight	Boundary joint	LG07	3	1.0	0.5	1	0	internal	51	86	86.50003350109452
+joint_weight	Boundary joint	LG12	3	1.0	0.5	1	0	right_censored	51	104	80.05238768614156
+joint_weight	Boundary joint	LG01	3	1.0	1	0.5	0	internal	35	101	75.46296235610674
+joint_weight	Boundary joint	LG02	3	1.0	1	0.5	0	left_censored	0	69	29.358450568225965
+joint_weight	Boundary joint	LG07	3	1.0	1	0.5	0	internal	51	86	2.7181432519522772
+joint_weight	Boundary joint	LG12	3	1.0	1	0.5	0	right_censored	51	104	43.93655972512567
+joint_weight	Boundary joint	LG01	3	1.0	1	2	0	internal	36	101	423.2038944814386
+joint_weight	Boundary joint	LG02	3	1.0	1	2	0	right_censored	71	91	290.8496598222838
+joint_weight	Boundary joint	LG07	3	1.0	1	2	0	internal	51	86	431.87245724476
+joint_weight	Boundary joint	LG12	3	1.0	1	2	0	internal	4	50	382.21521082389427
+joint_weight	Boundary joint	LG01	3	1.0	2	1	0	internal	35	101	386.4604960086905
+joint_weight	Boundary joint	LG02	3	1.0	2	1	0	left_censored	0	69	158.12989946634522
+joint_weight	Boundary joint	LG07	3	1.0	2	1	0	internal	51	86	96.74489624819108
+joint_weight	Boundary joint	LG12	3	1.0	2	1	0	right_censored	51	104	217.6318820519204
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	0	internal	24	90	157.98543444105414
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	1	internal	24	90	152.60310785968792
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	2	internal	24	90	159.33452929816764
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	3	internal	33	90	151.07549431870837
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	4	internal	35	90	150.87376642753136
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	5	internal	35	90	150.87376642753136
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	6	internal	35	90	150.87376642753136
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	7	internal	35	90	150.87376642753136
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	8	internal	35	90	150.87376642753136
+leave_block_out	Boundary topology	LG01	3	1.0	1	1	9	left_censored	0	34	159.34526126184082
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	0	right_censored	60	81	72.3054886044376
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	1	left_censored	0	59	74.17662000291324
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	2	right_censored	60	81	68.94656799522646
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	3	right_censored	60	81	71.54296930278205
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	4	right_censored	60	81	75.87007207316219
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	5	left_censored	0	59	74.20286375115874
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	6	right_censored	60	81	71.77655792841357
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	7	right_censored	70	81	44.62628604330808
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	8	left_censored	0	69	61.70973887001565
+leave_block_out	Boundary topology	LG02	3	1.0	1	1	9	right_censored	70	89	72.25827126472274
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	0	left_censored	0	102	1.8360696737533644
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	1	right_censored	103	106	2.1562060864836585
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	2	left_censored	0	31	2.1826383599621213
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	3	right_censored	103	106	0.8710072089201706
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	4	left_censored	0	43	0.7569941128946827
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	5	left_censored	0	43	0.04239677805660769
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	6	no_detection			0.0
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	7	left_censored	0	102	0.566170028257849
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	8	left_censored	0	43	2.8185183212953095
+leave_block_out	Boundary topology	LG07	3	1.0	1	1	9	left_censored	0	43	2.997993975401549
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	0	left_censored	0	39	72.17951982795044
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	1	left_censored	0	39	67.91851503600104
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	2	left_censored	0	39	67.91851503600104
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	3	left_censored	0	39	67.91851503600104
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	4	left_censored	0	43	71.27063468254326
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	5	right_censored	51	93	78.36207834695635
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	6	right_censored	51	93	76.56667879080914
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	7	right_censored	51	93	76.35369900500537
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	8	right_censored	51	93	80.67015567204297
+leave_block_out	Boundary topology	LG12	3	1.0	1	1	9	right_censored	51	98	78.88094941430425
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	0	internal	25	90	72.41589193155785
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	1	internal	25	90	72.40601540544834
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	2	internal	25	90	72.42293926482604
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	3	internal	33	90	75.14353639107149
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	4	internal	36	90	74.9651052866503
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	5	internal	36	90	77.26632039477188
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	6	internal	36	90	74.9884469247652
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	7	internal	36	90	77.66145912344855
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	8	internal	36	90	75.04041741395058
+leave_block_out	Boundary time A	LG01	3	1.0	1	1	9	left_censored	0	35	80.33921230865953
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	0	right_censored	61	81	57.38692899364745
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	1	right_censored	61	81	57.39316349201374
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	2	right_censored	61	81	57.38425523983973
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	3	right_censored	61	81	57.38770098303984
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	4	right_censored	61	81	57.384415507522675
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	5	right_censored	61	81	57.377066466478475
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	6	left_censored	0	60	57.373931914184
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	7	left_censored	0	69	53.24380207933031
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	8	right_censored	71	81	72.28864370789266
+leave_block_out	Boundary time A	LG02	3	1.0	1	1	9	internal	71	84	65.44021016380358
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	0	internal	39	74	93.3246843473576
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	1	internal	39	74	93.31757365412786
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	2	internal	39	74	93.31412459739633
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	3	internal	39	74	93.32199946537477
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	4	internal	48	74	94.01237060634367
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	5	internal	51	74	93.6464588458253
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	6	internal	51	74	93.75097491437016
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	7	internal	51	83	94.28302026055368
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	8	internal	51	86	93.31033810198238
+leave_block_out	Boundary time A	LG07	3	1.0	1	1	9	internal	51	86	94.27702149584094
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	0	left_censored	0	39	80.40890141651721
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	1	internal	4	39	75.93722022957222
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	2	internal	4	39	76.77907957312256
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	3	internal	4	39	75.8301381548887
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	4	internal	4	43	75.00111528644048
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	5	internal	4	50	74.23153302166742
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	6	internal	4	50	74.09034779819189
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	7	internal	4	50	74.10774433685684
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	8	internal	4	50	74.09556794481618
+leave_block_out	Boundary time A	LG12	3	1.0	1	1	9	internal	4	50	78.91422943508084
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	0	internal	24	90	135.36483692118549
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	1	internal	24	90	124.87712637380329
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	2	internal	24	90	126.05791998939245
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	3	internal	33	90	128.3085503951317
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	4	internal	35	90	127.04725360752388
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	5	internal	35	90	129.2862208377856
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	6	internal	35	90	127.10961867875298
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	7	internal	35	90	129.68293761830722
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	8	internal	35	90	127.1915063504494
+leave_block_out	Boundary joint	LG01	3	1.0	1	1	9	left_censored	0	34	140.33354152154385
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	0	right_censored	61	81	71.20773620160165
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	1	right_censored	61	81	72.18352513826424
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	2	right_censored	61	81	70.50964875307429
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	3	right_censored	61	81	71.1026340182192
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	4	left_censored	0	60	71.09664857782855
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	5	left_censored	0	60	71.93166959360104
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	6	left_censored	0	60	71.4514481780396
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	7	right_censored	70	81	61.45275167507228
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	8	right_censored	71	81	83.59112113488247
+leave_block_out	Boundary joint	LG02	3	1.0	1	1	9	right_censored	71	89	76.5187656778087
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	0	internal	39	74	76.68969418053551
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	1	internal	39	74	76.63001815660816
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	2	internal	39	74	77.30574448580792
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	3	internal	39	74	77.22769832539602
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	4	internal	48	74	78.09414091835227
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	5	internal	51	74	76.85579134215622
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	6	internal	51	74	76.05866195125924
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	7	internal	51	83	80.0698364868889
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	8	internal	51	86	77.51198048211639
+leave_block_out	Boundary joint	LG07	3	1.0	1	1	9	internal	51	86	78.32618754891828
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	0	left_censored	0	39	103.74509403266892
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	1	left_censored	0	39	93.09734251691474
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	2	left_censored	0	39	93.44272196255334
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	3	left_censored	0	39	92.80398102756826
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	4	left_censored	0	43	92.81526369690961
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	5	left_censored	0	50	96.39814198410917
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	6	right_censored	51	93	95.54842020969029
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	7	left_censored	0	50	95.54164798877879
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	8	right_censored	51	93	93.62092133153153
+leave_block_out	Boundary joint	LG12	3	1.0	1	1	9	right_censored	51	98	100.0358582205305
