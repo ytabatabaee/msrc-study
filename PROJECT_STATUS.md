@@ -1289,3 +1289,29 @@ not treat patristic substitution distances as calibrated coalescence times.
 The unified results are suitable for supplementary cross-system analysis;
 claims of general superiority require more independent systems and null-model
 validation for each spatial design.
+
+## Stage 13 Phlag cross-system benchmark
+
+The original Phlag implementation was audited at version 0.2.0, commit
+`76597d0e4ebd0e507fdafebf7f5163ef634a36d6`, with its bundled example retained
+as a finite-output check. The new audit is under
+`empirical/cross_system_boundary_detection/phlag/` and does not modify the
+Atlantic cod Stage 11 raw outputs.
+
+The unchanged cod Phlag runs are classified as numerically degenerate on
+SNAPP MCC population-tree inputs: posterior anomaly probabilities are
+nonfinite and the state paths are not interpretable. They are not scored as
+valid Phlag negatives. Fire ants, Anopheles, and house mouse are classified as
+input-incompatible for the primary benchmark because their local trees contain
+individual, phased haplotype, or pseudo-t-haplotype tips while the available
+reference trees use collapsed group/species/population taxa. No arbitrary tip
+collapse or representative selection was introduced.
+
+Therefore Phlag has no valid empirical IoU/F1 score in this cross-system
+extension. The existing unified MSRC detector scores remain available in the
+comparison table for context, while Phlag invalidity is reported separately.
+The result is a compatibility limitation, not evidence that Phlag generally
+fails on inversion datasets. A future benchmark needs taxon-compatible
+individual-level species trees or an independently validated multi-sample
+mapping layer. The Phlag extension is supplementary and does not support a
+cross-system superiority claim.

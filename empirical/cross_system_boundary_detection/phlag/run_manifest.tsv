@@ -1,0 +1,6 @@
+dataset	status	phlag_version	phlag_commit	command	defaults	raw_output
+bundled_example	valid_informative	0.2.0	76597d0e4ebd0e507fdafebf7f5163ef634a36d6	/private/tmp/phlag-venv/bin/phlag -s test/neoaves.nwk -g test/emission.gtrees -e N159 -L 1 -l 5 --n-replicates 10 --read-qqs-path test/qqs.tsv	rho=0.9; beta-prime=0.0025; emission-lambda=1.0; eta=0.5; no cod coordinates used	raw_results/upstream_bundled_example_stage12b.txt
+atlantic_cod	degenerate_numeric	0.2.0	76597d0e4ebd0e507fdafebf7f5163ef634a36d6	Reused unchanged Stage 11 four-LG default runs; see empirical/atlantic_cod/results/phlag_benchmark/phlag_commands.txt	Stage 11 defaults; 9 focal branches per LG; no threshold tuning	raw_results/atlantic_cod_stage11_raw/
+fire_ants_chr16	incompatible_input	0.2.0	76597d0e4ebd0e507fdafebf7f5163ef634a36d6	not run: taxon-set/species-tree incompatibility	original Phlag defaults retained; no forced collapse	
+anopheles_2la	incompatible_input	0.2.0	76597d0e4ebd0e507fdafebf7f5163ef634a36d6	not run: taxon-set/species-tree incompatibility	original Phlag defaults retained; no forced collapse	
+house_mouse_t_complex	incompatible_input	0.2.0	76597d0e4ebd0e507fdafebf7f5163ef634a36d6	not run: taxon-set/species-tree incompatibility	original Phlag defaults retained; no forced collapse	

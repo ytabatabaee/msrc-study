@@ -1,0 +1,33 @@
+dataset	group	method	execution_class	valid_for_accuracy	f1	iou	boundary_error
+Atlantic cod	LG01	topology	valid_unified_detector	true	0.9909874643336573	0.9821359292421656	153.563
+Atlantic cod	LG01	continuous	valid_unified_detector	true	0.9903142536137454	0.9808143347156862	163.82299999999998
+Atlantic cod	LG01	joint	valid_unified_detector	true	0.9909874643336573	0.9821359292421656	153.563
+Atlantic cod	LG01	arrangement_blind	valid_unified_detector	true	0.9903142536137454	0.9808143347156862	163.82299999999998
+Atlantic cod	LG02	topology	valid_unified_detector	true	0.7868135965171512	0.6485512813680941	1018.9565
+Atlantic cod	LG02	continuous	valid_unified_detector	true	0.4788419576646248	0.3147877763769222	1904.6505
+Atlantic cod	LG02	joint	valid_unified_detector	true	0.4788419576646248	0.3147877763769222	1904.6505
+Atlantic cod	LG02	arrangement_blind	valid_unified_detector	true	0.4788419576646248	0.3147877763769222	1904.6505
+Atlantic cod	LG07	topology	valid_unified_detector	true	0	0.0	15189.8515
+Atlantic cod	LG07	continuous	valid_unified_detector	true	0.9915039898924475	0.9831511279719463	79.2615
+Atlantic cod	LG07	joint	valid_unified_detector	true	0.9915039898924475	0.9831511279719463	79.2615
+Atlantic cod	LG07	arrangement_blind	valid_unified_detector	true	0.9915039898924475	0.9831511279719463	79.2615
+Atlantic cod	LG12	topology	valid_unified_detector	true	0.934225175827017	0.876569003731116	844.8689999999999
+Atlantic cod	LG12	continuous	valid_unified_detector	true	0.9237516518448422	0.8583071494867177	969.8689999999999
+Atlantic cod	LG12	joint	valid_unified_detector	true	0.9237516518448422	0.8583071494867177	969.8689999999999
+Atlantic cod	LG12	arrangement_blind	valid_unified_detector	true	0.9237516518448422	0.8583071494867177	969.8689999999999
+Fire ants	chr16	topology	valid_unified_detector	true	0.6925850356021035	0.5297362004121312	3817.851
+Fire ants	chr16	continuous	valid_unified_detector	true	0	0.0	13054.221000000001
+Fire ants	chr16	joint	valid_unified_detector	true	0	0.0	13054.221000000001
+Fire ants	chr16	arrangement_blind	valid_unified_detector	true	0	0.0	13054.221000000001
+Anopheles	2L	topology	valid_unified_detector	true	0.9974989326820534	0.9950103448275862	54.2625
+Anopheles	2L	continuous	valid_unified_detector	true	0.9986496767818817	0.9973029953917051	29.262500000000003
+Anopheles	2L	joint	valid_unified_detector	true	0.9986496767818817	0.9973029953917051	29.262500000000003
+Anopheles	2L	arrangement_blind	valid_unified_detector	true	0.6398877316025412	0.47046684782608694	12179.2625
+House mouse	chr17	topology	valid_unified_detector	true	0.2693173515607023	0.1425546504679495	6545.1314999999995
+House mouse	chr17	continuous	valid_unified_detector	true	0.19964493390847313	0.11704640524106691	1434.8745
+House mouse	chr17	joint	valid_unified_detector	true	0.19964493390847313	0.11704640524106691	1434.8745
+House mouse	chr17	arrangement_blind	valid_unified_detector	true	0.48774913346786636	0.34749518069078894	4635.1315
+atlantic_cod	all	Phlag	degenerate_numeric	false	NA	NA	NA
+fire_ants_chr16	all	Phlag	incompatible_input	false	NA	NA	NA
+anopheles_2la	all	Phlag	incompatible_input	false	NA	NA	NA
+house_mouse_t_complex	all	Phlag	incompatible_input	false	NA	NA	NA

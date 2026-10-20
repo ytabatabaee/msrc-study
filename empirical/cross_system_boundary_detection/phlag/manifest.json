@@ -1,0 +1,16 @@
+{
+  "stage": "13_phlag_extension",
+  "seed": 20261020,
+  "phlag_version": "0.2.0",
+  "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
+  "script": "empirical/cross_system_boundary_detection/phlag/scripts/14_phlag_cross_system_benchmark.py",
+  "input_audit": "empirical/cross_system_boundary_detection/phlag/input_compatibility_audit.tsv",
+  "raw_results": "empirical/cross_system_boundary_detection/phlag/raw_results",
+  "primary_policy": "do not collapse mismatched taxa; do not score invalid runs",
+  "input_hashes": {
+    "empirical/atlantic_cod/results/phlag_benchmark/manifest.json": "4cbba841d60a7f2f7d90f46ae241a820c49df24c3540fc7c296179108aec2d5e",
+    "data/fire_ants_chr16/processed/stage1_window_trees.tsv": "f14bf03fdeefe060d9446745d3b9eafb73bc1af7997b694ebb3f858265bfaaad",
+    "data/anopheles_2la/processed/stage4r_haplotype_species_map.tsv": "5ff6d723f5debb0468e12724f89dfb107bf54e30a3d5500b7ee158becff5032f",
+    "data/house_mouse_t_complex/metadata/tip_mapping.tsv": "0c8f6e040bb410144fe69fe5e658d004ca583da75a1dd6a5ea8369fd0ff04299"
+  }
+}

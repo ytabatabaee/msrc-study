@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="white"/>
+  <text x="45" y="48" font-family="Arial" font-size="24" font-weight="bold">Stage 13 Phlag cross-system benchmark</text>
+  <text x="45" y="80" font-family="Arial" font-size="15">Original Phlag v0.2.0; invalid executions are reported as status, not zero accuracy</text>
+  <line x1="500" y1="105" x2="500" y2="470" stroke="#cccccc"/>
+  <text x="55" y="125" font-family="Arial" font-size="18" font-weight="bold">Phlag execution status</text>
+  <text x="55" y="175" font-family="Arial" font-size="16">Atlantic cod</text><rect x="230" y="155" width="200" height="32" fill="#f6caca"/><text x="245" y="177" font-family="Arial" font-size="15">degenerate numeric</text>
+  <text x="55" y="245" font-family="Arial" font-size="16">Fire ants</text><rect x="230" y="225" width="200" height="32" fill="#f6caca"/><text x="245" y="247" font-family="Arial" font-size="15">incompatible input</text>
+  <text x="55" y="315" font-family="Arial" font-size="16">Anopheles</text><rect x="230" y="295" width="200" height="32" fill="#f6caca"/><text x="245" y="317" font-family="Arial" font-size="15">incompatible input</text>
+  <text x="55" y="385" font-family="Arial" font-size="16">House mouse</text><rect x="230" y="365" width="200" height="32" fill="#f6caca"/><text x="245" y="387" font-family="Arial" font-size="15">incompatible input</text>
+  <text x="55" y="450" font-family="Arial" font-size="13">No invalid run is scored as a biological negative.</text>
+  <text x="545" y="125" font-family="Arial" font-size="18" font-weight="bold">Benchmark interpretation</text>
+  <text x="545" y="175" font-family="Arial" font-size="16">Bundled example: finite, informative state path</text>
+  <text x="545" y="225" font-family="Arial" font-size="16">Cod: SNAPP MCC input, posterior values nonfinite</text>
+  <text x="545" y="275" font-family="Arial" font-size="16">Other systems: individual/haplotype tips differ</text>
+  <text x="545" y="325" font-family="Arial" font-size="16">from available collapsed species/population trees</text>
+  <text x="545" y="390" font-family="Arial" font-size="16" font-weight="bold">Phlag accuracy: not estimable here</text>
+  <text x="545" y="430" font-family="Arial" font-size="14">A valid cross-system comparison requires taxon-compatible</text>
+  <text x="545" y="452" font-family="Arial" font-size="14">gene-tree/species-tree inputs or a separately validated mapping.</text>
+</svg>

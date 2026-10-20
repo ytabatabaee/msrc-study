@@ -1,0 +1,5 @@
+dataset	runtime_source	runtime_seconds	peak_memory_mb	valid_run_fraction
+atlantic_cod	Stage 11 .runtime_seconds files	see Stage 11 raw files	not recorded	0/36
+fire_ants_chr16	not run after compatibility audit	NA	NA	0/0
+anopheles_2la	not run after compatibility audit	NA	NA	0/0
+house_mouse_t_complex	not run after compatibility audit	NA	NA	0/0

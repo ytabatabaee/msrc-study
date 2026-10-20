@@ -1,0 +1,5 @@
+dataset	execution_class	posterior_finite	state_path	focal_edge_estimate	emission_finite	transition_parameters	diagnostic
+atlantic_cod	degenerate_numeric	false	constant_zero_or_nan	1e-06 (Stage 11)	false	estimated but output degenerate	SNAPP MCC population trees; Stage 11 runs are retained and audited, not reinterpreted as gene trees.
+fire_ants_chr16	incompatible_input	not_run	not_run	not_run	not_run	not_run	Local trees have 267 individual tips; reference has seven group tips. No silent individual-to-group collapse.
+anopheles_2la	incompatible_input	not_run	not_run	not_run	not_run	not_run	Local trees have phased haplotype tips; six-species reference cannot receive them without a non-original collapse. Heterokaryotypes are not relabeled.
+house_mouse_t_complex	incompatible_input	not_run	not_run	not_run	not_run	not_run	Local trees have 55 individual/pseudo-t-haplotype tips; population reference has collapsed taxa. No arbitrary representative selection.
