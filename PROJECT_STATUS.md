@@ -1265,3 +1265,27 @@ information beyond discrete topology in Anopheles, while the mouse analysis
 shows that a single-interval detector is inadequate for a multi-interval
 reference. Neither result is a direct coalescence-time measurement or a
 general claim that distance tracks improve boundary recovery in all systems.
+
+## Stage 13 unified spatial boundary detection
+
+Stage 13 adds a shared robustly standardized spatial segmentation module at
+`empirical/shared/spatial_boundary_detector.py` and applies it to Atlantic cod,
+fire ants, Anopheles, and house mouse. The fixed detector uses an explicit
+`2 log(n)` penalty per added free-mean segment and exact dynamic programming
+for each fixed segment count. It preserves observed coordinates and gaps,
+supports censored endpoints, and reports a separate exact multi-interval model.
+
+Mean union IoU/F1 for topology versus continuous features were 0.627/0.678 vs
+0.784/0.846 in cod, 0.530/0.693 vs 0.000/0.000 in fire ants, 0.995/0.997 vs
+0.997/0.999 in Anopheles, and 0.143/0.269 vs 0.117/0.200 in house mouse.
+The joint detector did not improve over the better single modality. Anopheles
+is the clearest concordant case; fire ants favor topology under the common
+penalty; mouse requires multi-interval treatment and remains heterogeneous.
+
+Circular-shift results test alignment with frozen reference regions. The
+separate change-point permutation diagnostic tests existence of a scanned
+change point and is heuristic under strong spatial dependence. Stage 13 does
+not treat patristic substitution distances as calibrated coalescence times.
+The unified results are suitable for supplementary cross-system analysis;
+claims of general superiority require more independent systems and null-model
+validation for each spatial design.

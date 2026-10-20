@@ -1,0 +1,14 @@
+{
+  "seed": 20261020,
+  "detector": "empirical/shared/spatial_boundary_detector.py",
+  "penalty": "2 log(n) per added free-mean segment after robust MAD scaling",
+  "min_size": 3,
+  "max_intervals": 4,
+  "input_hashes": {
+    "empirical/atlantic_cod/results/stage7_window_divergence_time_signal.tsv": "5f6849175e53c6720cb8dd018f46fe426d1490ab1bf038bc25d9db3d8b6f8dc5",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_window_patristic_distance.tsv": "886a85e204c4da0064c443a99b9e72a3ff444e8f7c0607d342477b76c00ac296",
+    "empirical/anopheles_2la/results/stage12_distance/stage12_window_distance.tsv": "f418846c4bbfb5f0f8b01a29d306d0aab08413b48b5d54c8b20ff6bc099b8ad6",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990"
+  }
+}

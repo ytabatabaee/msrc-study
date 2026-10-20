@@ -1,0 +1,22 @@
+system	group	method	min_size	status	n_intervals	score
+Atlantic cod	LG01	continuous	3	internal	1	41.450758048286296
+Atlantic cod	LG01	continuous	5	internal	1	41.450758048286296
+Atlantic cod	LG01	continuous	10	internal	1	37.11533256696171
+Atlantic cod	LG02	continuous	3	internal	1	551307.2562491886
+Atlantic cod	LG02	continuous	5	internal	1	551307.2562491886
+Atlantic cod	LG02	continuous	10	internal	1	542981.9800103696
+Atlantic cod	LG07	continuous	3	internal	1	78814.1795426064
+Atlantic cod	LG07	continuous	5	internal	1	78814.1795426064
+Atlantic cod	LG07	continuous	10	internal	1	78814.1795426064
+Atlantic cod	LG12	continuous	3	internal	1	10480.608037608126
+Atlantic cod	LG12	continuous	5	internal	1	10452.127264211538
+Atlantic cod	LG12	continuous	10	internal	1	10064.860275378689
+Fire ants	chr16	continuous	3	internal	1	520.287946657352
+Fire ants	chr16	continuous	5	internal	1	520.287946657352
+Fire ants	chr16	continuous	10	internal	1	476.1810925463351
+Anopheles	2L	continuous	3	internal	1	7398.837118581914
+Anopheles	2L	continuous	5	internal	1	7398.837118581914
+Anopheles	2L	continuous	10	internal	1	7398.837118581914
+House mouse	chr17	continuous	3	internal	1	1742.393102493292
+House mouse	chr17	continuous	5	internal	1	1742.393102493292
+House mouse	chr17	continuous	10	internal	1	1742.393102493292

@@ -1,0 +1,22 @@
+system	group	feature	observed_max_score	n_replicates	p_block_permutation	hypothesis
+Atlantic cod	LG01	topology	15.394922586009395	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG01	continuous	8.095077735506711	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG01	blind	9.164557785328533	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG02	topology	9.847398619922519	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG02	continuous	85904.76833950242	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG02	blind	1289.8366734708106	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG07	topology	0.6462569039776387	99	0.45	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG07	continuous	6319.134056150722	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG07	blind	1142.9571780307697	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG12	topology	223.68351372363048	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG12	continuous	2355.8574041956776	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Atlantic cod	LG12	blind	53.83109017715357	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Fire ants	chr16	topology	60.36145168729439	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Fire ants	chr16	continuous	76.39038920362619	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Fire ants	chr16	blind	138.9129677670289	99	0.08	existence of a scanned one-interval change point; heuristic permutation null
+Anopheles	2L	topology	91.19312404356356	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Anopheles	2L	continuous	939.8880429654135	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+Anopheles	2L	blind	31.368781780615155	99	0.01	existence of a scanned one-interval change point; heuristic permutation null
+House mouse	chr17	topology	29.209442929132656	19	0.05	existence of a scanned one-interval change point; heuristic permutation null
+House mouse	chr17	continuous	244.43257571438468	19	0.05	existence of a scanned one-interval change point; heuristic permutation null
+House mouse	chr17	blind	687.5411714171945	19	0.05	existence of a scanned one-interval change point; heuristic permutation null

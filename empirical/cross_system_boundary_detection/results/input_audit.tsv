@@ -1,0 +1,8 @@
+system	group	n_windows	first_start	last_end	n_reference_intervals	units	missing_coordinate_policy
+Atlantic cod	LG01	110	1	28250000	1	SNAPP population-tree time units	retain observed rows; no interpolation
+Atlantic cod	LG02	92	1	24000000	1	SNAPP population-tree time units	retain observed rows; no interpolation
+Atlantic cod	LG07	118	1	31250000	1	SNAPP population-tree time units	retain observed rows; no interpolation
+Atlantic cod	LG12	105	1	27250000	1	SNAPP population-tree time units	retain observed rows; no interpolation
+Fire ants	chr16	96	23916.0	28943581.0	1	RAxML patristic substitution units	retain observed rows; no interpolation
+Anopheles	2L	978	1	49364325	1	NJ patristic substitution units	retain observed rows; no interpolation
+House mouse	chr17	4046	5000000	37054999	4	IQ-TREE ML patristic substitution units	retain observed rows; no interpolation

@@ -1,0 +1,22 @@
+system	group	feature	source	units	n_nonmissing
+Atlantic cod	LG01	topology	frozen local quartet/topology track	dimensionless	110
+Atlantic cod	LG01	continuous	arrangement-informed A_distance	SNAPP population-tree time units	110
+Atlantic cod	LG01	arrangement_blind	mean pairwise distance/time summary	SNAPP population-tree time units	110
+Atlantic cod	LG02	topology	frozen local quartet/topology track	dimensionless	92
+Atlantic cod	LG02	continuous	arrangement-informed A_distance	SNAPP population-tree time units	92
+Atlantic cod	LG02	arrangement_blind	mean pairwise distance/time summary	SNAPP population-tree time units	92
+Atlantic cod	LG07	topology	frozen local quartet/topology track	dimensionless	118
+Atlantic cod	LG07	continuous	arrangement-informed A_distance	SNAPP population-tree time units	118
+Atlantic cod	LG07	arrangement_blind	mean pairwise distance/time summary	SNAPP population-tree time units	118
+Atlantic cod	LG12	topology	frozen local quartet/topology track	dimensionless	105
+Atlantic cod	LG12	continuous	arrangement-informed A_distance	SNAPP population-tree time units	105
+Atlantic cod	LG12	arrangement_blind	mean pairwise distance/time summary	SNAPP population-tree time units	105
+Fire ants	chr16	topology	frozen local quartet/topology track	dimensionless	96
+Fire ants	chr16	continuous	arrangement-informed A_distance	RAxML patristic substitution units	96
+Fire ants	chr16	arrangement_blind	mean pairwise distance/time summary	RAxML patristic substitution units	96
+Anopheles	2L	topology	frozen local quartet/topology track	dimensionless	975
+Anopheles	2L	continuous	arrangement-informed A_distance	NJ patristic substitution units	978
+Anopheles	2L	arrangement_blind	mean pairwise distance/time summary	NJ patristic substitution units	978
+House mouse	chr17	topology	frozen local quartet/topology track	dimensionless	4046
+House mouse	chr17	continuous	arrangement-informed A_distance	IQ-TREE ML patristic substitution units	4046
+House mouse	chr17	arrangement_blind	mean pairwise distance/time summary	IQ-TREE ML patristic substitution units	4046
