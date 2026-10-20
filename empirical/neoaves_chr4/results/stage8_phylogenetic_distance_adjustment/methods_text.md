@@ -1,0 +1,5 @@
+# Methods
+
+For each eligible canonical structural region, the six exact Stage 7 structural species were paired using their independently supplied region-specific multistate synteny labels. For each species pair, the background distance was the median local ML patristic distance in windows outside the focal region (broad baseline) or outside every canonical structural region (strict baseline). Pair-specific residuals were `R_ij(w)=d_ij(w)-d0_ij`. The adjusted arrangement contrast was the mean residual for different-state pairs minus the mean residual for same-state pairs. Relative residuals divide each residual by its positive pair-specific baseline. Equal-weight state-pair-category summaries are retained as a sensitivity analysis.
+
+Distances are in ML substitution units. They are not calibrated divergence times or realized coalescence times. Pairwise observations share species and loci, so no iid pairwise standard errors are reported. Leave-one-species-out recomputation quantifies sensitivity to the limited six-species sample.

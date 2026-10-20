@@ -1521,3 +1521,27 @@ complete IQ-TREE settings are unavailable, so biological divergence and a
 region-specific tree-estimation or ascertainment effect remain unresolved.
 The original-data and sensitivity figures should both be retained; the
 leave-one-out figure should not be presented as a correction.
+## Neoaves chromosome 4 Stage 8: phylogenetically controlled arrangement divergence
+
+Stage 8 adds a separate residual-distance analysis under
+`empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/`.
+It uses the six exact structural-state species mappings validated in Stage 7,
+the independently supplied region-specific multistate synteny labels, and
+pair-specific background medians from chromosome-4 local ML-tree patristic
+distances outside each focal region. Broad and strict outside-region baselines,
+relative residual contrasts, leave-one-species-out recomputation, and
+descriptive concordance with the separate Columbea/N61/N62 QQS designs are
+reported. The Stage 7 raw A-distance values reproduce exactly; no Stage 7
+outputs were modified.
+
+The structural-state sample could not be expanded beyond six exact local-tree
+taxa without unsupported state imputation. CR_01, CR_10, and CR_11 remain the
+only exploratory regions with same-state and different-state comparisons;
+CR_01 has one same-state pair, while CR_10 and CR_11 reuse the same six species
+across shared pairs. Accordingly, the adjusted contrasts are not independent
+population-level evidence and are not direct estimates of recombination rate,
+divergence time, or coalescence time. All distances remain substitution-unit
+patristic distances from local ML trees. The Stage 8 result is suitable as a
+conservative supplementary sensitivity analysis; the Stage 7 topology overview
+remains the primary Neoaves figure until broader independent structural-state
+replication is available.

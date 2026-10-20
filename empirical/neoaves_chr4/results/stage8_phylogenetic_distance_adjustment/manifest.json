@@ -1,0 +1,48 @@
+{
+  "stage": "Neoaves Stage 8 phylogenetically controlled arrangement divergence",
+  "script": "empirical/neoaves_chr4/scripts/08_phylogenetic_distance_adjustment.py",
+  "command": "MPLBACKEND=Agg python empirical/neoaves_chr4/scripts/08_phylogenetic_distance_adjustment.py",
+  "inputs_sha256": {
+    "data/neoaves_chr4/processed/locus_table_chr4.tsv": "52493ab4aadd4bce6dff84540ee8b27ad7a2fadfe1cd718cc4e2a859585beccb",
+    "empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv": "8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac",
+    "data/neoaves_chr4/processed/canonical_arrangement_states.tsv": "df1bf88ea7a868c9f566b9a223a26b450199a790b6d18acfa5eb1d3c91b34f34",
+    "data/neoaves_chr4/processed/canonical_structural_regions.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_quartet_support.tsv": "4d1413ef2dc1019106b3222a5541a9c6a6b065dc27745c1855230a8833ae9ba4",
+    "empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b",
+    "data/neoaves_chr4/processed/stage3b_v2_quartet_role_mapping.tsv": "767c27e66ddb98d2f006f8252569492557738ef3797eaffbf49db71f9cbd2bc1",
+    "empirical/neoaves_chr4/data/stage4d/jarvis48_taxa.tsv": "5bd5c663c65c5b1bad797f2d337e97a29b6400184c32a2d1e0892a012da37f64"
+  },
+  "n_source_trees_with_six_species": 6247,
+  "n_residual_rows": 514566,
+  "parse_errors": 0,
+  "eligible_regions": [
+    "CR_01",
+    "CR_10",
+    "CR_11"
+  ],
+  "structural_taxon_count": 6,
+  "additional_taxa_added": 0,
+  "baseline_types": [
+    "broad_outside_focal",
+    "strict_outside_all_structural_regions"
+  ],
+  "interpretation": "exploratory species-level multistate synteny contrast; not calibrated time, coalescence time, or recombination-rate inference",
+  "output_sha256": {
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/region_eligibility_updated.tsv": "b454a0f9755ea76baaaaab89729b7400e0b22be4e8614be9da72738537dc26a6",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/inside_outside_adjusted_summary.tsv": "5660743ce9decb31fc80091695327828deb9ffa0327c162509a108a611f854b4",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/window_adjusted_arrangement_contrast.tsv": "b0635d61a5bb255dad391a1c357c3a7370620a377e106294767ddcd820ad5c5c",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/spatial_concordance_summary.tsv": "b272c4fda6bfbefc509612c8fe425a113d6b864cefd4362619e26f6134ac99ac",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/pairwise_background_distances.tsv": "853cb14408361a925a9e82e9bb904008ce684231c1d13874363b8088897978cc",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/structural_taxon_expansion_audit.tsv": "3413451538590e1b86db33df5638e81f293883b4074a0136806a8d3140c51389",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/leave_one_species_out.tsv": "ba44f22d4f62582103104a85f4170bf68483f8540c0af46727a693cb23e80bce",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/window_pairwise_residuals.tsv": "d4342c18aa74ba55122cd0a5113e1dc85b363ae2e382022743c68899bff13c7a",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/window_relative_residual_contrast.tsv": "beca599298a6773e35310d4ac26a62b770ea610c092935779ec9af4fdb2ddb9d",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/expanded_structural_state_mapping.tsv": "afd7f4cae7db47679a83bc0762ac20e4a4fd4181a9e7dfc44f2bb05e553d5716",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/raw_stage7_reproduction.tsv": "52160b25354cec641cefa0d88d9b2e228cc97b5ccc2e985c005a6f42ac023992",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/report.md": "1da9a4821b7989a2e8640d0a208238d9566f521627f564bcc5b6b77bded0461e",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/structural_taxon_expansion_audit.md": "ce1b72adb4bca59436037e47ab51dbec59f553a9f782a6d474eea38491c59963",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/results_text.md": "403082481fa7f5897532d2bed06d3bb197b5f37432ba1a6d09c8d6ddce7a91d7",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/methods_text.md": "a6526aa14ce5e6671a370d3ff9ea10b60677cf56ab85ea34c63ae96fd45b9d62",
+    "empirical/neoaves_chr4/results/stage8_phylogenetic_distance_adjustment/validation_report.md": "2387a04be40ccc1001a28b1560abd9ddd11edd48ec1a865aa7a92b372d3079bc"
+  }
+}

@@ -1,0 +1,35 @@
+canonical_region_id	excluded_species	baseline_type	inside_mean_A_adjusted	outside_mean_A_adjusted	delta_inside_minus_outside	n_inside_windows	n_outside_windows	status
+CR_01	Stork	broad_outside_focal	-0.00544489571658	-0.000550691215855	-0.00489420450073	492	5185	exploratory_leave_one_species_out
+CR_01	Stork	strict_outside_all_structural_regions	-0.00761118253572	-0.00274715240999	-0.00486403012573	492	5185	exploratory_leave_one_species_out
+CR_01	Flamingo	broad_outside_focal	-0.00612155217257	-0.000727336126948	-0.00539421604563	492	5184	exploratory_leave_one_species_out
+CR_01	Flamingo	strict_outside_all_structural_regions	-0.00821455046545	-0.00282567347086	-0.00538887699459	492	5184	exploratory_leave_one_species_out
+CR_01	Dove	broad_outside_focal						unsupported_after_exclusion
+CR_01	Sandgrouse	broad_outside_focal	-0.00630093640849	-0.00162943693773	-0.00467149947077	492	5186	exploratory_leave_one_species_out
+CR_01	Sandgrouse	strict_outside_all_structural_regions	-0.0083071602878	-0.0036431163998	-0.004664043888	492	5186	exploratory_leave_one_species_out
+CR_01	Turaco	broad_outside_focal						unsupported_after_exclusion
+CR_01	Cuckoo	broad_outside_focal	-0.00462312700105	-0.00104902942474	-0.00357409757631	492	5183	exploratory_leave_one_species_out
+CR_01	Cuckoo	strict_outside_all_structural_regions	-0.00709015488881	-0.00351775546043	-0.00357239942838	492	5183	exploratory_leave_one_species_out
+CR_10	Stork	broad_outside_focal	-0.0392580268199	0.000393344183713	-0.0396513710036	34	5975	exploratory_leave_one_species_out
+CR_10	Stork	strict_outside_all_structural_regions	-0.0402219310201	-0.00044928623834	-0.0397726447818	34	5975	exploratory_leave_one_species_out
+CR_10	Flamingo	broad_outside_focal	-0.0290840230738	0.00158430743608	-0.0306683305099	35	5982	exploratory_leave_one_species_out
+CR_10	Flamingo	strict_outside_all_structural_regions	-0.0261289499677	0.00430219404998	-0.0304311440177	35	5982	exploratory_leave_one_species_out
+CR_10	Dove	broad_outside_focal	-0.0148195006497	0.00159351434395	-0.0164130149936	28	5758	exploratory_leave_one_species_out
+CR_10	Dove	strict_outside_all_structural_regions	-0.0144725092574	0.00202398496791	-0.0164964942253	28	5758	exploratory_leave_one_species_out
+CR_10	Sandgrouse	broad_outside_focal	-0.0248664755839	0.000223978872688	-0.0250904544566	35	5791	exploratory_leave_one_species_out
+CR_10	Sandgrouse	strict_outside_all_structural_regions	-0.0242401298494	0.0011771633072	-0.0254172931566	35	5791	exploratory_leave_one_species_out
+CR_10	Turaco	broad_outside_focal	-0.0193213471294	0.00129750215503	-0.0206188492844	39	6010	exploratory_leave_one_species_out
+CR_10	Turaco	strict_outside_all_structural_regions	-0.0198752594756	0.000889468514651	-0.0207647279902	39	6010	exploratory_leave_one_species_out
+CR_10	Cuckoo	broad_outside_focal	-0.014196663494	0.000910694935814	-0.0151073584298	38	6011	exploratory_leave_one_species_out
+CR_10	Cuckoo	strict_outside_all_structural_regions	-0.0145897529463	0.000622646762439	-0.0152123997087	38	6011	exploratory_leave_one_species_out
+CR_11	Stork	broad_outside_focal	0.000127606578417	5.145310725e-05	7.61534711666e-05	352	5632	exploratory_leave_one_species_out
+CR_11	Stork	strict_outside_all_structural_regions	0.000244992008918	0.000261379013753	-1.63870048355e-05	352	5632	exploratory_leave_one_species_out
+CR_11	Flamingo	broad_outside_focal	0.00191770208527	0.000452016786033	0.00146568529924	354	5647	exploratory_leave_one_species_out
+CR_11	Flamingo	strict_outside_all_structural_regions	0.00217143634357	0.000583264988362	0.00158817135521	354	5647	exploratory_leave_one_species_out
+CR_11	Dove	broad_outside_focal	0.00770510388816	0.000874579144553	0.00683052474361	341	5597	exploratory_leave_one_species_out
+CR_11	Dove	strict_outside_all_structural_regions	0.00752843664658	0.000709347961709	0.00681908868487	341	5597	exploratory_leave_one_species_out
+CR_11	Sandgrouse	broad_outside_focal	-0.00105331638991	0.00119441021581	-0.00224772660572	362	5713	exploratory_leave_one_species_out
+CR_11	Sandgrouse	strict_outside_all_structural_regions	-0.000930995788868	0.00129759299871	-0.00222858878758	362	5713	exploratory_leave_one_species_out
+CR_11	Turaco	broad_outside_focal	-0.00937980936263	0.000154590970246	-0.00953440033288	355	5466	exploratory_leave_one_species_out
+CR_11	Turaco	strict_outside_all_structural_regions	-0.00959199351714	-8.59104152488e-05	-0.00950608310189	355	5466	exploratory_leave_one_species_out
+CR_11	Cuckoo	broad_outside_focal	0.000866436270995	0.000737117573597	0.000129318697398	360	5704	exploratory_leave_one_species_out
+CR_11	Cuckoo	strict_outside_all_structural_regions	0.000914648496569	0.000837756623423	7.6891873146e-05	360	5704	exploratory_leave_one_species_out

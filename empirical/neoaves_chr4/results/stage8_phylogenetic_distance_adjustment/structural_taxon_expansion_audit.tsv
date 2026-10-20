@@ -1,0 +1,7 @@
+structural_species	local_tree_exact_tip	independent_state_table	expansion_status	reason
+Cuckoo		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
+Dove		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
+Flamingo		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
+Sandgrouse		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
+Stork		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
+Turaco		canonical_arrangement_states.tsv	not_in_stage7_frozen_six_species_scope	No exact local-tree tip/state validation was available for an additional species; not imputed
