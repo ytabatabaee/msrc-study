@@ -1,0 +1,15 @@
+{
+  "stage": "5_arrangement_blind_distance_figure",
+  "seed": 20261020,
+  "command": "python empirical/house_mouse_t_complex/scripts/07_arrangement_blind_distance_figure.py",
+  "inputs": {
+    "empirical/house_mouse_t_complex/results/stage5_unified_tracks/window_unified_tracks.tsv": "36c923f303d0432ca31494eb37b812edaa8c4e7815f7005023bdd83e76cbbcaa",
+    "empirical/house_mouse_t_complex/results/stage2_fixed_quartet_scan.tsv": "9ad62b579fae816d04b05b234f075e2b6f143198bdb5e05df0df592bddfbcbcd",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990",
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb_metadata.tsv": "a9e38f113799e8d275478151f702917b607435b9b1dbc036c59a8f283bc84007",
+    "empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv": "0e880cbcae86d66d522ffaf70b1e3e4ca16d63c9d2647284d3e95e3a9cd56831"
+  },
+  "arrangement_blind_feature": "mean_pair_distance_no_spretus",
+  "units": "local ML patristic substitution units",
+  "existing_outputs_preserved": true
+}
