@@ -1372,3 +1372,23 @@ multi-edge, 20-replicate benchmark. Anopheles and fire-ant matched-taxon runs
 remain numerically degenerate because posterior probabilities are nonfinite;
 their failures are retained as diagnostic results and are not scored as zero
 accuracy.
+
+## House mouse Stage 5 unified topology and distance tracks
+
+The new Stage 5 visualization restores the frozen ALL_TIPS quartet scan as the
+primary topology signal for all 4,046 chromosome-17 windows. It defines
+`D(w) = q_T(w) - q_S(w)`, the negative of the historical `delta_species_alt`
+sign; historical source files remain unchanged. The TTT sampling scheme is
+retained as a supplementary comparison because it uses a different
+status-pattern-specific sampling design. The ALL_TIPS and TTT tracks have
+Pearson correlation 0.3286, so they should not be substituted for one another.
+
+The existing Stage 4 `A_distance` and `A_relative` values were copied without
+recomputing the underlying ML-tree distances. They are patristic distances in
+substitution units, not calibrated divergence times or realized coalescence
+times. All topology coordinates and support checks passed; resolved support
+averages 0.999707 because unresolved quartets are retained in the source
+denominator. The 250-kb matched-resolution figure is recommended for the main
+paper because it is readable while preserving observed genomic gaps; the
+native 5-kb figure is retained for supplementary local detail. Outputs are
+under `empirical/house_mouse_t_complex/results/stage5_unified_tracks/`.

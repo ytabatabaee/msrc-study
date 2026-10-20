@@ -1,0 +1,2 @@
+comparison	n_windows	pearson_correlation	mean_ALL_TIPS_D	mean_TTT_D	mean_difference_ALL_minus_TTT	median_abs_difference	max_abs_difference	ALL_TIPS_definition	TTT_definition
+ALL_TIPS_vs_TTT	4046	0.3285788373015965	0.042103247553210876	-0.1876840809852924	0.22978732853850325	0.44419642856499997	1.7714285714	stage2_fixed_quartet_scan.tsv treatment=ALL_TIPS	stage2_arrangement_pattern_spatial_summary.tsv TTT_delta sign reversed

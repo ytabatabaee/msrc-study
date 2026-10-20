@@ -1,0 +1,18 @@
+{
+  "stage": "5_unified_tracks",
+  "seed": 20261020,
+  "command": "python empirical/house_mouse_t_complex/scripts/05_unified_topology_distance_tracks.py",
+  "inputs": {
+    "empirical/house_mouse_t_complex/results/stage2_fixed_quartet_scan.tsv": "9ad62b579fae816d04b05b234f075e2b6f143198bdb5e05df0df592bddfbcbcd",
+    "empirical/house_mouse_t_complex/results/stage2_arrangement_pattern_spatial_summary.tsv": "be76793f8e5d8ab85078d27eeab9722dc8043cabf2732572d070458a28c1f36a",
+    "empirical/house_mouse_t_complex/results/stage4_distance/stage4_window_distance.tsv": "e2690e951c91d57399e1da374ad4471a9b337c2c622ae0716fb4f3e54a80f990",
+    "data/house_mouse_t_complex/processed/house_mouse_t_complex_ml_5kb_metadata.tsv": "a9e38f113799e8d275478151f702917b607435b9b1dbc036c59a8f283bc84007",
+    "empirical/house_mouse_t_complex/results/t_complex_inversion_intervals.tsv": "0e880cbcae86d66d522ffaf70b1e3e4ca16d63c9d2647284d3e95e3a9cd56831"
+  },
+  "n_windows": 4046,
+  "primary_topology": "ALL_TIPS",
+  "historical_sign_transformation": "D_new=-delta_species_alt",
+  "distance_units": "IQ-TREE/ML patristic substitution units",
+  "bin_size_bp": 250000,
+  "existing_outputs_preserved": true
+}
