@@ -1,0 +1,6 @@
+metric	value
+n_windows	978
+n_arrangement_eligible	978
+arrangement_spatial_null_p	0.001
+branch_length_units	NJ patristic substitution-distance units; not coalescence times
+heterokaryotype_policy	excluded from primary arrangement contrast; retained in arrangement-blind summaries

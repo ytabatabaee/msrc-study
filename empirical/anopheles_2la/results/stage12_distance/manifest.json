@@ -1,0 +1,15 @@
+{
+  "seed": 20261019,
+  "inputs": {
+    "data/anopheles_2la/processed/stage4r_all72_haplotype_local_trees.nwk.gz": "34fa5f9cc9d9e47b86da05a8bf4074d9382ed2bbae6b1a73910ab64035aba773",
+    "data/anopheles_2la/processed/stage4r_haplotype_species_map.tsv": "5ff6d723f5debb0468e12724f89dfb107bf54e30a3d5500b7ee158becff5032f",
+    "data/anopheles_2la/processed/stage2r_window_grid.tsv": "37b28ceb3e9d3928e2e3c2a3f95aa72132690bd5bca8b3798e8ac14aa1c51ecf",
+    "empirical/anopheles_2la/results/stage2r_quartet_topology_signal.tsv": "b21527ad2c6c28f9e8bea0e0fe2a64264969eb3e2145b123d0100961fb0cd754",
+    "empirical/anopheles_2la/results/stage4r_window_qc.tsv": "c71f52da62da4e1d0ebad57c618791e9b6d400d65a972d7a1d421550a8957222"
+  },
+  "n_windows": 978,
+  "outputs": [
+    "stage12_window_distance.tsv",
+    "stage12_spatial_null.tsv"
+  ]
+}

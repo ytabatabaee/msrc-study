@@ -1211,3 +1211,57 @@ Outputs are under
 under `empirical/fire_ants_chr16/figures/`. The plotted points retain their
 observed genomic coordinates and lines are broken across large unobserved
 gaps. Existing fire-ant results and figures were not overwritten.
+
+## Anopheles 2La and house-mouse t-complex distance tracks
+
+New dataset-specific spatial analyses were added without changing the frozen
+upstream results. Anopheles Stage 12 processes the 976 usable Stage-4R local
+haplotype NJ trees and restricts the primary arrangement contrast to within-
+species homozygous 2La versus 2L+a haplotypes; heterokaryotypes remain in the
+arrangement-blind summaries. Mouse Stage 4 processes all 4,046 published
+5-kb IQ-TREE ML trees and restricts the t-versus-standard contrast to mapped
+within-subspecies groups. M. spretus is excluded from that primary contrast
+and retained in the arrangement-blind all-tip audit.
+
+Both analyses report patristic branch-length distances in the source tree
+units. These are substitution-distance summaries, not calibrated coalescence
+times and do not assume a molecular clock. The tracks preserve coordinates
+and gaps, include normalized contrasts and sample-balanced sensitivities, and
+apply frozen inversion intervals only after track construction for spatial
+alignment summaries and interval evaluation. The mouse analysis also includes
+an explicitly labelled multi-interval scan because its reference contains four
+published intervals.
+
+Outputs are under
+`empirical/anopheles_2la/results/stage12_distance/` and
+`empirical/house_mouse_t_complex/results/stage4_distance/`; figures and
+detector outputs are in the corresponding `figures/` directories. These
+analyses are descriptive cross-dataset extensions and should remain
+supplementary until independent replication establishes how much branch-length
+signal is driven by local informative-site density or sampling composition.
+
+The Anopheles arrangement-informed interval scan selected 20.500001--42.200000
+Mb for both `A_distance` and `A_relative`, giving IoU 0.9973 against the frozen
+2La interval. The arrangement-blind mean-pair-distance scan was broader and
+gave IoU 0.4705. The prespecified inside/outside spatial alignment permutation
+gave p=0.001 for the arrangement contrast; this is an interval-alignment test,
+not a change-point-existence test. The primary contrast was supported by
+within-species homozygous groups in gambiae and coluzzii; heterokaryotypes were
+not assigned to either arrangement.
+
+The mouse t/standard track showed mean inside-minus-outside `A_distance` values
+of 0.00201, 0.00307, 0.00186, and -0.00279 for In(17)1 through In(17)4,
+respectively. A single-interval scan selected 5.780--15.865 Mb and therefore
+does not represent the four published intervals; its IoU values were 0.116,
+0.553, 0.146, and 0.000 for those four intervals. The separately labelled
+greedy multi-interval extension is retained for this multi-interval dataset.
+The spatial permutation summaries are alignment diagnostics and are not
+evidence that a change point exists. These mouse results are limited by the
+published 5-kb ML tree design, pseudo-t haplotype construction, and the fact
+that substitution branch lengths are sensitive to sequence-scale variation.
+
+Across the two extensions, continuous branch-length summaries add spatial
+information beyond discrete topology in Anopheles, while the mouse analysis
+shows that a single-interval detector is inadequate for a multi-interval
+reference. Neither result is a direct coalescence-time measurement or a
+general claim that distance tracks improve boundary recovery in all systems.
