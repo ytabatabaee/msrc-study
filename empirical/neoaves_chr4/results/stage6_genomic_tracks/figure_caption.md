@@ -1,0 +1,3 @@
+# Figure caption
+
+Neoaves chromosome-4 structural regions and genealogy tracks. Each focal quartet design is shown separately: q1 is the source-defined species-history resolution, while q2 and q3 are the two alternative resolutions. The lower distance track is the mean patristic distance among a fixed mapped-taxon set from the verified taxon mapping. It is an arrangement-blind substitution-distance summary, not a calibrated coalescence time. Shaded regions are canonical GalGal6 chr4 structural regions; their boundaries are published/inferred region boundaries rather than nucleotide-resolved causal breakpoints.

@@ -1,0 +1,39 @@
+{
+  "stage": "Neoaves chr4 genomic rearrangement, quartet support, and distance tracks",
+  "script": "empirical/neoaves_chr4/scripts/06_genomic_rearrangement_tracks.py",
+  "inputs": {
+    "data/neoaves_chr4/processed/locus_table_chr4.tsv": "52493ab4aadd4bce6dff84540ee8b27ad7a2fadfe1cd718cc4e2a859585beccb",
+    "data/neoaves_chr4/processed/stage3b_v2_quartet_role_mapping.tsv": "767c27e66ddb98d2f006f8252569492557738ef3797eaffbf49db71f9cbd2bc1",
+    "data/neoaves_chr4/processed/canonical_structural_regions.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2",
+    "empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv": "8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac",
+    "empirical/neoaves_chr4/data/stage4d/jarvis48_taxa.tsv": "5bd5c663c65c5b1bad797f2d337e97a29b6400184c32a2d1e0892a012da37f64",
+    "empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b"
+  },
+  "n_support_rows": 18109,
+  "n_distance_rows": 6140,
+  "fixed_taxa": 47,
+  "distance_statistic": "mean pairwise patristic distance among fixed mapped taxa",
+  "arrangement_informed_A_supported": false,
+  "outputs": {
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/branch_length_validation.md": "a5ebd1d1f94c4c067f3c0069f35d65869f578b229e709a73fbcb84166556c4e7",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/data_availability_audit.md": "964c2e283aba09eb271606e041cf72c2b75ed6df666092200ace61d82500a6d5",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/figure_caption.md": "9219b7e10de528e28b9f7ce53070d991cf6ce0d504b3137dc68c48265ce5ac53",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/focal_quartet_definitions.tsv": "39289404441811798918ff291aaa65e375d2003f68fe04e17d6fb638b1c5a928",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/genomic_coverage_summary.tsv": "3421876066ca0958884e5922ef337a5834bc7154bde48348ac466eea95980cfe",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/inside_outside_summary.tsv": "1ad11a2df9911b27fc7506c8a83d879f2c8c7c63918995270f11c3c27a71ade8",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/methods_text.md": "189af10bf7d4ee99c3e7dee03ebd88ba38032435d021800f9ddd9f702c018b72",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/rearrangement_intervals.tsv": "b77ef54362f26c6180023e14a50bf1ad671071c1c6c20f1a8ef8d8a569ef5cc2",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/report.md": "657d9ed1565b586fa92b7f24802a224226236bc3e1898e3808bd8ebe2bc4ad71",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/results_text.md": "77c7c244db6df961fa7a00f28375f9451d79be1220ffb010ce19b807f11eaa93",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/validation_report.md": "bae498f236c8dac219f2428ee1def583f6ffde4ea630f613417e3db2e3e1c53d",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_distance_tracks.tsv": "4642c7bd766765750596496cadd87c705e806b7b89c7ab4ccbe870b43f668d41",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_quartet_support.tsv": "4d1413ef2dc1019106b3222a5541a9c6a6b065dc27745c1855230a8833ae9ba4",
+    "empirical/neoaves_chr4/results/stage6_genomic_tracks/window_topology_contrast.tsv": "c3e3d02c1d321789072748c625373bfae418ae510d79644fa9a654e07ea6f2f9"
+  },
+  "reproduction_command": "MPLBACKEND=Agg PYTHONPATH=/tmp/neoaves-site MPLCONFIGDIR=/tmp/neoaves-fontcache XDG_CACHE_HOME=/tmp/neoaves-fontcache FONTCONFIG_PATH=/etc/fonts .venv-malaria/bin/python empirical/neoaves_chr4/scripts/06_genomic_rearrangement_tracks.py",
+  "notes": [
+    "q1/q2/q3 are separate source-defined focal quartet designs",
+    "A_distance and A_relative are intentionally omitted because no independent binary arrangement partition is available",
+    "B is computed on 47 exact fixed mapped taxa when complete"
+  ]
+}

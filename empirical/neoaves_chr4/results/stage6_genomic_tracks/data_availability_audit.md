@@ -1,0 +1,9 @@
+# Neoaves chromosome-4 data-availability audit
+
+- Coordinate axis: `GCF_000002315.5_GalGal6.chr4`; locus records are deposited 10-kb windows containing a selected 1-kb alignment, with `start`, `end`, and `midpoint` retained from the published locus metadata.
+- Local trees: `empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz`; the source contains 6,262 chromosome-4 tree records, the Stage-4D manifest contains 6,247 chr4 records, and the frozen QQS table contains 6,140 unique chr4 loci. Coordinate alignment uses the published locus identifier and Stage-4D manifest. Trees contain branch lengths and are treated as ML substitution-distance units; they are not calibrated coalescence times.
+- Quartet data: `data/neoaves_chr4/processed/locus_table_chr4.tsv` contains QQS-derived q1/q2/q3 support for 6,096 Columbea, 6,132 N61, and 5,881 N62 rows. The source formula normalizes resolved QQS support to one; raw informative quartet counts are not retained in this summary table.
+- Focal designs: q1 is the source-defined species-history resolution `(C1,C2)|(S,O)`. q2 and q3 are the two alternative resolutions. Because the three clades have different C1/C2/S/O definitions, no single cross-clade qH is assigned.
+- Structural intervals: `data/neoaves_chr4/processed/canonical_structural_regions.tsv` and the canonical GalGal6 chr4 regions are independently derived from published synteny blocks. Their boundaries are region boundaries, not nucleotide-resolved causal breakpoints.
+- Distance: a fixed mapped-taxon set from the verified Jarvis mapping is used for a comparable arrangement-blind mean pairwise distance. No defensible binary arrangement labels are present for the full mapped taxon set, so arrangement-informed A_distance/A_relative are not constructed.
+- Recombination: no validated coordinate-resolved local rate track is available; the existing recombination audit is preserved.

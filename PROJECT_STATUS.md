@@ -1451,3 +1451,28 @@ Inside the frozen 2La interval, mean arrangement support is 0.9992 versus
 transition aligned with the frozen interval, alongside the independent
 recombination reference and the distance contrasts. Existing Anopheles
 figures and frozen empirical results were preserved.
+
+## Neoaves chromosome 4 genomic rearrangement and distance tracks
+
+The new Neoaves stage uses the GalGal6 chromosome-4 coordinate axis and the
+frozen QQS locus table. It retains three source-defined focal quartet designs
+(Columbea, N61, and N62) separately: q1 is the species-history resolution and
+q2/q3 are the two alternative resolutions. The displayed contrasts are
+therefore D_q2-q1 and D_q3-q1, rather than an invented single cross-clade qH.
+
+The coordinate-aligned local ML trees contain branch lengths, so a fixed mapped
+taxon-set arrangement-blind mean patristic-distance track was recalculated for
+complete observations. It uses 47 exact Jarvis-to-Stiller mappings and is a
+substitution-distance summary, not a calibrated divergence time or coalescence
+time. An arrangement-informed A_distance/A_relative statistic was not created
+because the repository does not provide an independent binary arrangement
+partition for these avian taxa. No validated local recombination-rate track is
+available either.
+
+The main output is the reduced, supported topology-plus-distance figure under
+`empirical/neoaves_chr4/figures/neoaves_chr4_genomic_rearrangement_tracks.*`;
+source structural regions and coordinates are preserved in the stage-6 result
+manifest. The analysis passed three deterministic tests. The figure is suitable
+for presenting the separate quartet designs and the arrangement-blind distance
+sensitivity; a house-mouse-style arrangement-informed A(w) panel requires
+additional independent avian arrangement metadata.
