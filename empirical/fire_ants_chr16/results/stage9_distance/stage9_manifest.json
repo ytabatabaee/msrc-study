@@ -1,0 +1,28 @@
+{
+  "clock_assumption": false,
+  "inputs": {
+    "data/fire_ants_chr16/metadata/region_manifest.tsv": "1769e44309ba0433d446a18da7b1317e180f57057cb406e3a8ad3cc33e9c14a0",
+    "data/fire_ants_chr16/processed/stage1_window_index.tsv": "96ed3fcca3d351a96b2434f17aa7510349d94138d11d60ccb56d45d1b57e237d",
+    "data/fire_ants_chr16/processed/stage1_window_trees.tsv": "f14bf03fdeefe060d9446745d3b9eafb73bc1af7997b694ebb3f858265bfaaad",
+    "data/fire_ants_chr16/processed/stage4a_window_quartet_support.tsv": "b8ff3ea95ba31ae5553f56f0aeb45a393bdb0ba2b19081fc1aca822dfdd70758",
+    "data/fire_ants_chr16/processed/stage6c_group_label_map.tsv": "e9bb5dd64239a98f8b102f94679b60fd9afed733479f420a67a5ca20d5f54a63",
+    "data/fire_ants_chr16/processed/stage6c_individual_to_group.tsv": "aa4aa23f1ae3d5a7f24aa083c9160951b578f442e1549c6d00c83b3f94305a81"
+  },
+  "n_chr16_windows": 96,
+  "n_windows": 213,
+  "outputs": {
+    "empirical/fire_ants_chr16/figures/fire_ants_chr16_A_distance_track.pdf": "9294492eebf1e6ef28f31cf88ea55c604af5fe9bb202bec604b7b71b140f43ca",
+    "empirical/fire_ants_chr16/figures/fire_ants_chr16_A_distance_track.png": "eacbe00ac1dc82125a6483e7090b9a7775e5e4febe2e93c2e29de063c8704228",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_methods_text.md": "bebce0902addfbe3eadeaa7b4a3931a996e3541cb5a6b09f4fdadfc6a5f65e6a",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_pairwise_sample_sizes.tsv": "e860e4ca163a06ca1e7b67b3d25a1a72d88e6aeb3228cea3c0894779a4b881ed",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_report.md": "d981009d40c301888e4f3b082b63ef436f227ff5b1b87d886544ff11197b2eac",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_spatial_null.tsv": "39dc2ff05abd6b0ff0fe216c9c8a3f79d6c83b0784dd6a0b2228c2dbf793e603",
+    "empirical/fire_ants_chr16/results/stage9_distance/stage9_window_patristic_distance.tsv": "886a85e204c4da0064c443a99b9e72a3ff444e8f7c0607d342477b76c00ac296"
+  },
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "primary_units": "patristic substitution units",
+  "python": "3.12.11 (main, Jul 15 2025, 01:27:44) [Clang 14.0.0 (clang-1400.0.29.102)]",
+  "seed": 20261019,
+  "spatial_null": "exact physical-order circular shifts of the 96-window chromosome-16 track with frozen 52-window supergene mask",
+  "stage": "9_patristic_distance_track"
+}

@@ -1,0 +1,16 @@
+test	signal	observed_delta	n_alignments	rank	n_ge_observed	p_one_sided	observed_interval_start	observed_interval_end	interval_width	coordinate_domain_start	coordinate_domain_end
+exact_physical_order_circular_shift	A_distance	0.00516457896917538	96	2	2	0.020833333333333332					
+unique_membership_state_coordinate_sensitivity	A_distance	0.00516457896917538	97	3	3	0.030927835051546393	11680438.0	27917498.0	16237060.0	23916.0	28943581.0
+continuous_coordinate_length_weighted_sensitivity	A_distance	0.00516457896917538	97			0.024124381386946926				23916.0	28943581.0
+exact_physical_order_circular_shift	A_relative	0.5446692147692044	96	1	1	0.010416666666666666					
+unique_membership_state_coordinate_sensitivity	A_relative	0.5446692147692044	97	2	2	0.020618556701030927	11680438.0	27917498.0	16237060.0	23916.0	28943581.0
+continuous_coordinate_length_weighted_sensitivity	A_relative	0.5446692147692044	97			0.06030606488178099				23916.0	28943581.0
+exact_physical_order_circular_shift	A_distance_individual_weighted	0.004719949793948475	96	2	2	0.020833333333333332					
+unique_membership_state_coordinate_sensitivity	A_distance_individual_weighted	0.004719949793948475	97	3	3	0.030927835051546393	11680438.0	27917498.0	16237060.0	23916.0	28943581.0
+continuous_coordinate_length_weighted_sensitivity	A_distance_individual_weighted	0.004719949793948475	97			0.024124381386946926				23916.0	28943581.0
+exact_physical_order_circular_shift	A_relative_individual_weighted	0.5093104810788075	96	1	1	0.010416666666666666					
+unique_membership_state_coordinate_sensitivity	A_relative_individual_weighted	0.5093104810788075	97	2	2	0.020618556701030927	11680438.0	27917498.0	16237060.0	23916.0	28943581.0
+continuous_coordinate_length_weighted_sensitivity	A_relative_individual_weighted	0.5093104810788075	97			0.06030606488178099				23916.0	28943581.0
+exact_physical_order_circular_shift	A_distance_outgroup_normalized	0.35702366817746495	96	1	1	0.010416666666666666					
+unique_membership_state_coordinate_sensitivity	A_distance_outgroup_normalized	0.35702366817746495	97	2	2	0.020618556701030927	11680438.0	27917498.0	16237060.0	23916.0	28943581.0
+continuous_coordinate_length_weighted_sensitivity	A_distance_outgroup_normalized	0.35702366817746495	97			0.06030606488178099				23916.0	28943581.0

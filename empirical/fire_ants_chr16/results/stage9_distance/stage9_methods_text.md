@@ -1,0 +1,7 @@
+# Methods
+
+For each published RAxML local tree, patristic distances were calculated between all individual tips belonging to the four focal Stage-6C groups: invicta/macdonaghi_SB, invicta/macdonaghi_Sb, richteri_SB, and richteri_Sb. Six unordered group pairs were retained. Opposite-haplotype pairs were the four SB/Sb combinations; same-haplotype pairs were the two cross-species SB/SB and Sb/Sb combinations. Distances were averaged within each group pair and then averaged equally across pairs, so unequal sample sizes did not determine the primary track. An individual-pair-weighted contrast was computed as a sensitivity analysis.
+
+`A_distance(w)` is the balanced opposite-haplotype mean minus the balanced same-haplotype mean. `A_relative(w)` divides this value by the equally weighted mean of the six focal group-pair distances, with zero denominators recorded as missing. An outgroup-normalized sensitivity divides `A_distance` by the mean focal-to-nonfocal patristic distance in that tree.
+
+The existing Stage-4A `D(w)=q_H-q_S` values were joined by frozen window index. Chromosome-16 windows were plotted at their observed midpoints; no sequence was interpolated across absent coordinate intervals. The supergene/outside comparison used the existing Stage-4B physical-order exact circular-shift framework: the observed 52-window supergene mask was held fixed while the complete 96-window chromosome-16 signal was rotated through all alignments.
