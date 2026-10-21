@@ -1,0 +1,2 @@
+method	resolution	note
+our_detector	native locus	Primary detector input; 100/250/500 kb tracks are visualization-only sensitivity inputs in Stage 10

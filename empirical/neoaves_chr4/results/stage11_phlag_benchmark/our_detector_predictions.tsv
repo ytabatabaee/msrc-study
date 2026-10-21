@@ -1,3 +1,3 @@
 method	input	status	score	predicted_intervals	n_loci
-topology	Columbea locus-level D2,D3	internal	1346.698020554094	25020000-56820000	6096
-topology_plus_B	Columbea locus-level D2,D3 + B_observed	internal	1466.703888157872	44130000-56820000	6096
+topology	Columbea locus-level D2,D3	internal	1423.640276447577	44130000-56820000	6096
+topology_plus_B	Columbea locus-level D2,D3 + B_observed	internal	1627.7094634988516	44130000-56820000	6096

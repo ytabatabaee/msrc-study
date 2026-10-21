@@ -1,2 +1,2 @@
 status	n_manifest	n_input_gene_trees	n_states	n_posteriors	n_flagged	n_finite_posteriors	state_values	raw_output
-valid_informative	5619	5619	5619	5619	1200	5619	[0, 1]	/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage11_phlag_benchmark/raw_phlag/Columbea_default_stage11b.txt
+valid_informative	5619	5619	5619	5619	1200	5619	[0, 1]	empirical/neoaves_chr4/results/stage11_phlag_benchmark/raw_phlag/Columbea_default_stage11b.txt

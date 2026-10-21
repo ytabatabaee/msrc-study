@@ -1,3 +1,3 @@
 # Results
 
-The local audit supports a chromosome-4 matched-taxon pilot rather than a full published-result reproduction. The QQS summaries are retained as a compatibility audit and are not mislabeled as Phlag inputs. Detector and pilot status are in the TSV outputs.
+Phlag produced 1,200 anomalous windows in 5,619 validated positions and seven intervals at the 250-kb physical-gap rule. Exact coordinates and all merging thresholds are in the TSV outputs. The matched detector and the two original multi-taxon detector configurations are reported separately in `interval_comparison.tsv`; the latter use 6,096 observations and are unmatched exploratory comparisons. The earlier zero-interval result was invalid because its committed input manifest was empty.
