@@ -22,7 +22,7 @@ Current state:
   `analysis/results/RUNTIME_BENCHMARK.md`.
 - No full MSRC parameter grid has been launched.
 
-The scaled-WF pilot is now prepared at `datasets/configs/mai30_msrc_pilot/`.
+The scaled-WF pilot is complete at `datasets/configs/mai30_msrc_pilot/`.
 It uses `c=0.001`, 20 loci per independent history, 25 histories per 500-locus
 collection, and suppression fractions 1.0, 0.5, and 0.1. The primary
 configuration uses initial frequency 0.5; frequency 0.2 is prepared as a
@@ -39,20 +39,21 @@ CULength saturation audit is in
 `wf_diffusion` configurations are prepared but not executed under
 `datasets/configs/mai30_diffusion_experimental/`.
 
-The two primary gene-tree comparisons are summarized in
+The four-replicate pilot contains 12 complete collections: 25 independent
+histories × 20 loci and 500 validated gene trees per collection. The two
+primary gene-tree comparisons are summarized in
 `analysis/results/MAI30_MSRC_COMPARISON_RESULTS.md`. The reproducible script
 `analysis/scripts/summarize_msrc_discordance.py` measures MSRC discordance
 from the true species tree and compares MSRC and original Mai gene-tree
 distributions without pairing independent realizations. Complete 500-tree
-comparisons currently cover replicates 042 and 007; 005 and 074 remain marked
-as partial 20-tree smoke collections.
+comparisons cover replicates 042, 007, 005, and 074.
 
 The corrected strict RF analysis is documented in
 `analysis/results/MAI30_RF_CORRECTION_REPORT.md`. It produces explicit
 300-replicate matching and validation manifests, distributional RF metrics,
 within-pool baselines, and corrected CSV/TSV outputs. The 300-replicate MSRC
-analysis remains incomplete because only six complete MSRC collections are
-currently available.
+analysis remains planned. Its 900-task manifest and resumable SLURM array are
+prepared, but no production array has been launched.
 
 Read `DATASET_AUDIT.md`, `SIMULATOR_COMPATIBILITY.md`, and
 `analysis/results/MAI30_PILOT_RESULTS.md` for the current gates and results.

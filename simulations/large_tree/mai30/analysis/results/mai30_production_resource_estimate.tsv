@@ -1,0 +1,14 @@
+source	condition	replicate	treatment	n_histories	n_gene_trees	runtime_seconds	peak_rss_mb	status	note
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	25	500	96.47507901792414	71	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	25	500	98.4508054049511	72	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	25	500	112.46578661701642	72	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	25	500	1660.7791733669874	174	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	25	500	1850.3344855819887	174	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	25	500	2013.3026764800597	173	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	25	500	1947.01	116	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	25	500	2130.56	117	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	25	500	2110.0	116	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.5.genes.5	005	msrc_no_suppression	25	500	535.9	86	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	25	500	633.9	87	PASS	completed pilot collection
+pilot_manifest_freq_0.5	outgroup.0.species.5.genes.5	005	msrc_strong_suppression	25	500	457.38	86	PASS	completed pilot collection
+local_probe	outgroup.0.species.0.15.genes.0.15	001	msrc_no_suppression	1	0	562.8		INCOMPLETE	stopped before a validated 20-tree history was produced

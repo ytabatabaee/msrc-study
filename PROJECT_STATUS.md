@@ -1981,3 +1981,94 @@ direct consequence of the validated MSRC quartet theorem. Continuous
 features remain a possible empirical observation block, but a stronger
 time-distribution theory or a clearly validated simulator regime is required
 before treating topology and time as complementary MSRC predictions.
+## Atlantic cod Stage 8c TCMM projection
+
+Stage 8c was added under `empirical/atlantic_cod/results/stage8c_tcmm/` with
+the driver `empirical/atlantic_cod/scripts/08c_tcmm_baseline_projection.py`.
+It executes the original TCMM implementation at commit
+`e6064b46ed0359ab7358d5110521fce1b1a825f7` on 250 outside-supergene and 426
+all-window published 250-kb MCC-like reference trees. The fixed rooted
+12-population baseline topology and labels are preserved. The source induced
+tree contains a unary external root stem; the TCMM query copy removes only that
+stem, matching the frozen Stage 8b induced baseline, without MRCA-driven
+rerooting.
+
+TCMM succeeded at lambda 0 and 0.001. Every output preserved all taxa and the
+query topology, but raw outputs are generally non-ultrametric and contain tiny
+solver-scale negative edges. The all-window treatment includes extreme LG07
+branch lengths and has large metric deviations. Therefore TCMM output is
+retained as a metric-matching sensitivity analysis, not promoted to a calibrated
+time-tree estimator. Per-window posterior SNAPP samples were unavailable; the
+references are published window MCC-like trees. Stage 8b results remain
+unchanged and remain the calibrated time-tree result. Six Stage 8c tests pass.
+
+Remaining limitation: a fair calibrated TCMM comparison would require an
+explicit ultrametric/time-constrained extension or suitable posterior time-tree
+inputs. No such extension is labeled as unmodified TCMM in this stage.
+
+## Mai30 scaled Wright–Fisher pilot and production preparation
+
+The four-replicate Mai30 MSRC pilot under
+`simulations/large_tree/mai30/` is complete. All 12 collections (replicates
+007, 042, 074, and 005; three suppression fractions each) contain 25
+independent forward histories × 20 loci and 500 validated 30-taxon gene trees.
+The resumable runner reused completed 007/042 histories and filled the
+previously partial 005/074 collections. ASTRAL-IV was rerun consistently for
+all 12 collections, and gene-tree RF, quartet/split concordance, MSRC-versus-
+Mai distribution distances, species-tree RF, topology recovery, and common-
+split branch-length errors were recalculated.
+
+Pilot outputs are in `simulations/large_tree/mai30/analysis/results/`,
+including `mai30_scaled_wf_astral.tsv`,
+`mai30_msrc_vs_species.tsv`, and
+`mai30_msrc_vs_original_distribution.tsv`. The four-replicate design is a
+pilot and does not support population-level inconsistency inference.
+
+The production manifest
+`simulations/large_tree/mai30/datasets/processed/mai30_production_manifest.tsv`
+contains 900 planned collection tasks: the three no-outgroup Mai D1
+conditions, 100 replicates per condition, and three suppression treatments.
+It retains `c=0.001`, the validated `N_e=N_H/2` mapping, initial frequency
+0.5, 25 histories, and 20 loci per history. New production and ASTRAL SLURM
+arrays are prepared with validation-gated completion markers and controlled
+concurrency, but neither array has been submitted.
+
+Completed pilot collection runtimes range from about 96 to 2,130 seconds per
+500-tree collection with 71--174 MB recorded peak RSS. A condition-0.15
+one-history local probe was stopped after 562.8 seconds without a validated
+output, so that condition remains locally unbenchmarked to completion. This
+is recorded as an incomplete resource probe, not a negative simulation
+result. The next step is a Bridges2 resource benchmark for that condition
+before any 900-task launch. Epsilon-mixture results remain separate from the
+direct MSRC histories.
+
+## Conditional topology and coalescence-time signals under MSRC
+
+The follow-up conditional experiment is implemented under
+`simulations/conditional_topology_time/`. It reuses the authoritative
+`msrc-sim` commit `1658db065a3b42a2fc1d0bebda874eecc4da6d3b`, records one
+genealogy per independent forward Moran frequency history, and stratifies true
+genealogical times by the sampled terminal arrangement pattern `Z` and by
+quartet topology `Q`. The exact finite-M full-species-tree operator is used
+for `P(Q,Z)`, `P(Z)`, and `P(Q|Z)`; it is not presented as an analytic theory
+for time distributions.
+
+The 12-cell discovery stage used 500 histories per cell. Independent
+validation used four balanced cells (`M={20,40}`, `rho={0,0.5}`) with 5,000
+histories per cell. Joint theory/simulation errors were small (RMSE 0.00205,
+maximum 0.00572); conditional errors were larger because individual pattern
+strata are smaller (RMSE 0.02865, maximum 0.08266). Pattern-weighted
+reconstruction of the marginal quartet law and mean pairwise time passes to
+machine precision.
+
+Some conditional time contrasts are larger than the marginal effects: the
+mean pairwise time for `1010` minus `0011` was 1.90 time units at `M=20,
+rho=0` and 2.66 at `M=40,rho=0.5`, but the contrast was small or reversed in
+other cells. Marginal topology total variation was 0.0036--0.0220 and the
+standardized marginal mean-time difference was 0.0048--0.0403. The result is
+simulation-supported evidence for a conditional latent-stratum signal in some
+settings, with dilution and opposing pattern contributions, not a new
+genealogical-time theorem. Arrangement labels are generally latent to an
+empirical detector, so this does not yet establish observable
+branch-length/topology complementarity. The next step is an observation-model
+and independent validation study before detector implementation.
