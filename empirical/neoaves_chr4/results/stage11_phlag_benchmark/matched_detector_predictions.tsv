@@ -1,0 +1,2 @@
+method	input	status	score	start	end	n_loci	scaling
+matched_four_taxon_categorical_adaptation	same 4-taxon trees as Phlag	internal	389.78994035993543	25020000	56820000	5619	median/MAD with SD floor

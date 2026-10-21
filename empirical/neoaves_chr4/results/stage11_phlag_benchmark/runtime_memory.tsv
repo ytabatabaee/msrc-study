@@ -1,3 +1,3 @@
-method	mode	runtime_seconds	peak_rss_kb	status
-our_detector	Columbea locus-level	NA	NA	completed
-Phlag	matched four-taxon Columbea default	48.94	not instrumented	valid_informative
+command	method	mode	n_flagged	n_loci	peak_rss_raw	peak_rss_units	returncode	runtime_seconds	status
+/private/tmp/phlag-venv/bin/phlag -s /Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage11_phlag_benchmark/matched_inputs/species_tree.nwk -g /Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage11_phlag_benchmark/matched_inputs/Columbea.gtrees -e Columbea_focal -o /Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage11_phlag_benchmark/raw_phlag/Columbea_default_stage11b.txt	Phlag	official_v0.2.0_default	1200	5619	602116096	bytes on macOS if available	0	82.50158526899759	valid_informative
+	our_detector_matched_four_taxon	fixed categorical adaptation			not separately instrumented			measured_in_script	completed

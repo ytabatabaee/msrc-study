@@ -1636,3 +1636,31 @@ These are not independent accuracy claims because the canonical regions are
 an imperfect biological reference and the pilot and detector use different
 taxon summaries. The stage therefore supports a reproducible method-agreement
 and feasibility benchmark, not a superiority claim for either method.
+
+## Neoaves chromosome 4 Stage 11B: repaired Phlag benchmark
+
+Stage 11B repairs the earlier Phlag coordinate failure without deleting its
+provenance. The committed Stage 11 manifest and gene-tree input were empty,
+while the retained raw output had 6,096 state/posterior positions; its zero
+interval was therefore invalid and must not be interpreted as a Phlag negative.
+Those files are archived under
+`empirical/neoaves_chr4/results/stage11_phlag_benchmark/provenance_invalid_stage11/`.
+
+The repaired input and manifest are written together in genomic order. They
+contain 5,619 identical positions and 5,619 exact four-taxon local trees; 477
+of 6,096 source Columbea loci were excluded because a selected representative
+was missing. Official Phlag v0.2.0 (commit
+`76597d0e4ebd0e507fdafebf7f5163ef634a36d6`) returned 5,619 finite posteriors
+and 1,200 anomalous state-1 windows. With a prespecified 250-kb physical-gap
+merge rule these form seven intervals: 25.02–32.30, 32.67–32.68,
+33.46–34.48, 44.13–46.42, 46.77–47.54, 47.80–48.58, and 49.05–56.82 Mb.
+
+The matched detector is explicitly a categorical four-taxon adaptation, not
+the original multi-taxon QQS detector. It selected 25.02–56.82 Mb; the
+unmatched original multi-taxon exploratory detector remains 44.13–56.82 Mb.
+The corrected outputs report both method classes and exact interval-merging
+sensitivity. The local Phlag run took 82.5 seconds and used approximately
+602 MB peak child RSS on this machine. Because the matched detector and Phlag
+use different statistical objectives, and the structural annotations are
+overlapping synteny-derived regions rather than independent breakpoint truth,
+these results do not support a superiority claim.
