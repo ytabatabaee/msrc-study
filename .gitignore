@@ -68,6 +68,8 @@ data/house_mouse_t_complex/raw/**/*.tar.gz
 data/house_mouse_t_complex/raw/IST-2017-78-v1+1_Data.zip
 data/house_mouse_t_complex/intermediate/**/*.zip
 data/house_mouse_t_complex/processed/matplotlib_cache/
+data/house_mouse_t_complex/processed/stage2/**/*.tre
+data/house_mouse_t_complex/processed/stage2/**/*.map
 !empirical/house_mouse_t_complex/results/stage1_aster/*.log
 
 # Large Neoaves Stage 4E ASTER/ASTRAL4 inputs and cluster outputs are prepared

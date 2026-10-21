@@ -1,13 +1,16 @@
 {
-  "stage": "11B",
+  "stage": "Neoaves Stage 11 Phlag benchmark",
   "seed": 20261020,
-  "n_input_trees": 5619,
-  "n_manifest": 5619,
-  "n_excluded": 477,
   "phlag_version": "0.2.0",
   "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
-  "source_trees_sha256": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b",
-  "matched_input": "four fixed representatives; positions ordered by start/end/Gene",
-  "physical_gap_merge_bp": 250000,
-  "previous_invalid_evidence": "provenance_invalid_stage11"
+  "primary_detector": "existing Stage 13b-style shared-background scan on locus-level D2,D3",
+  "additional_information_detector": "D2,D3 plus B_observed; not equal-input comparison",
+  "inputs": {
+    "stage6_support": "4d1413ef2dc1019106b3222a5541a9c6a6b065dc27745c1855230a8833ae9ba4",
+    "stage9_background": "821bd39ec5b33be0d30d87ae5783c964b1da0040f47e057ab08fd9530116f605",
+    "source_trees": "cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392b",
+    "source_species_tree": "d3b4a9f202bb5337338f6814ea4b64757d5ffa6547b8ff9e50faaa9260ed076f"
+  },
+  "reference_regions": "post-fit evaluation only",
+  "published_predictions": "not found in local checkout"
 }

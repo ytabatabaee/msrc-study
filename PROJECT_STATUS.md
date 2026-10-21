@@ -1727,3 +1727,83 @@ matched-input benchmark and numerical diagnostics, but does not support a
 cross-system claim that MSRC outperforms Phlag. The benchmark is recommended
 for supplementary material until valid matched Phlag executions are available
 for the other systems.
+
+## Exact finite-M Moran-integrated shared-population quartet kernel
+
+Implemented under `simulations/quartet/moran_theory/`. The calculation uses
+the authoritative `msrc-sim` Moran rates, structured-coalescent switching and
+finite coalescence floors, terminal independent sampling weights, and the
+sparse dual operator
+
+`A4 = Q_M kron I_19 + blockdiag(G4(0)^T, ..., G4(M)^T)`.
+
+The exact joint formula is `J[z,r] = (pi_old kron h_r) exp(A4 T) b_z`, with
+`q_r=sum_z J[z,r]`, `P(Z=z)=sum_r J[z,r]`, and conditional quartet law given
+by their ratio. Unit tests cover conservation, direct terminal Moran-count
+probabilities, `T=0`, `rho=0`, fixed `p=1/2` recovery of `H_m/A_m`, and the
+forward/backward operator ordering regression.
+
+The standalone simulator comparison is implemented in
+`simulations/quartet/moran_theory/validate_against_msrc_sim.py` and uses
+`msrcsim.moran.simulate_frequency_history` plus
+`msrcsim.structured_coalescent.simulate_genealogy` directly. The validation
+status and generated tabular summaries are recorded in
+`simulations/quartet/moran_theory/results/`. The retained 36-cell compact
+validation pilot used 200 replicates per cell and gave RMSE 0.03237, maximum
+absolute error 0.20, 94.8% within 2 MC SE, and 98.1% within 3 MC SE. Its
+largest errors were confined to low-frequency conditional patterns near the
+minimum reporting threshold; no systematic unconditional discrepancy or
+orientation failure was found. Higher replicate counts remain appropriate for
+publication-scale conditional estimates.
+
+This stage intentionally does not claim a microscopic ancestral dual of Moran
+reproduction events and does not implement the full species-tree recursion.
+If the direct simulator comparison validates, the next step is to extend the
+operator to `S=((1,2),(3,4))` using the `n=1`, `n=2`, and `n=4` branch
+operators plus the simulator's speciation inheritance rule.
+Given the passing orientation and fixed-frequency checks and the absence of a
+systematic discrepancy in the compact direct-simulation validation, it is safe
+to proceed to that extension, while retaining the stated Monte Carlo and
+microscopic-duality limitations.
+
+## Exact finite-M Moran MSRC quartet law on `((1,2),(3,4))`
+
+The full species-tree recursion is implemented in
+`simulations/quartet/moran_theory/full_species_tree.py`. It uses the reusable
+`G1`, `G2`, and `G4` conditional genealogy generators, transpose dual branch
+operators, and the exact binomial inheritance kernel
+`H_{M_P->M_D}(k,a)` from the default `msrc-sim` speciation rule. Left and right
+sister outputs remain conditional on their common root-node count until they
+are multiplied; marginal daughter kernels are never multiplied as if
+independent.
+
+For survivor mass `F[k_P,z]` entering the root, the exact root contribution is
+`(pi_old kron h_r) exp(A4 T_A) F`. If either sister pair coalesces before the
+root, its mass is added directly to `Q1=12|34`. The six-state sister output
+(`00,01,10,11,C0,C1`) retains continued switching of `C0/C1`.
+
+The 14-test suite passes, including conservation, inheritance dependence,
+fixed-`p=1/2` recovery of the old species-tree result, and conditional
+`H_m/A_m` recovery. The retained direct validation pilot covers 72 cells at
+200 independent histories per cell: RMSE 0.03031, maximum absolute error
+0.09273, 94.1% within 2 MC SE, and 99.3% within 3 MC SE. A focused 300-history
+check had RMSE 0.01411 and every reported quantity within 2 MC SE.
+
+A conceptual boundary condition was discovered. The separate
+shared-population kernel samples all four taxa independently conditional on one
+terminal count. The literal finite-M species tree in `msrc-sim` still performs
+binomial daughter initialization at zero-duration speciation events, so
+`T_L=T_R=0` does not reduce to that shared kernel. The exact recursion preserves
+the simulator behavior and documents the distinction; the zero-sister
+reduction cannot be claimed for the literal simulator without changing that
+boundary convention.
+
+The rho sensitivity diagnostic shows a weak nonzero change in `q(rho)` over
+`rho=0,...,1` in the tested setting, but no identifiability claim is made. The
+high-switching exploration at `rho=1000` approached the matched finite-root
+ordinary MSC value in the tested `M=20` setting, without establishing a general
+limit. The
+full finite-M operator is validated for the literal positive-branch hierarchy,
+but the zero-sister boundary-condition conflict remains a blocker before
+presenting it as the manuscript's unconditional main quartet theorem without
+qualification.

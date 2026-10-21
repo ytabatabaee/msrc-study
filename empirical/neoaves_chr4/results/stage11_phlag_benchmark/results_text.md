@@ -1,3 +1,3 @@
 # Results
 
-Phlag produced 1200 anomalous windows in 5619 validated positions and 7 intervals at the 250-kb physical-gap rule. Exact coordinates and all merging thresholds are in the TSV outputs. The earlier zero-interval result was invalid because its committed input manifest was empty.
+The local audit supports a chromosome-4 matched-taxon pilot rather than a full published-result reproduction. The QQS summaries are retained as a compatibility audit and are not mislabeled as Phlag inputs. Detector and pilot status are in the TSV outputs.
