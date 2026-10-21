@@ -108,6 +108,29 @@ This is an exact finite-state operator expression. There are no arbitrary
 terminal-pattern weights and no independence approximation between the two
 daughters after marginalizing their parent count.
 
+For the full joint law, repeat the construction with terminal sampling
+vectors conditioned on each pattern `z`. If `F_z` is the corresponding root
+entry vector, then
+
+```text
+J[z,r] = (pi_old kron h_r) exp(A_4 T_A) F_z
+         + 1[r=1] J_sister[z].
+```
+
+Here `J_sister[z]` is the mass for which at least one sister pair coalesces
+before entering the root, and therefore has topology `Q1`. The implementation
+returns
+
+```text
+P(Z=z)       = sum_r J[z,r]
+P(Q_r)      = sum_z J[z,r]
+P(Q_r|Z=z)  = J[z,r] / P(Z=z).
+```
+
+This derives `P(Q,Z)` from the same terminal, inheritance, sister-branch, and
+root operators; it does not reconstruct the conditional law from arbitrary
+pattern weights.
+
 ## Fixed-frequency regression
 
 With all counts held at `K=M/2`,
@@ -129,7 +152,32 @@ The `A_m` statement is conditional on the pattern. An unconditional
 fixed-`p=1/2` average over all terminal patterns is symmetric and generally
 uniform.
 
-## A finite-M boundary-condition inconsistency
+## Structured origin and the ordinary ancestral phase
+
+The genealogy simulator now carries the explicit rearrangement origin age
+
+```text
+origin_age = origin_branch.older_age
+             - origin_time_from_branch_start.
+```
+
+While backward time is younger than this boundary, the structured process uses
+frequency-dependent switching and same-background coalescence. Once the
+boundary is crossed, the rearrangement is not yet present in the older
+population: switching stops, background labels cease to constrain events, and
+all lineage pairs coalesce at the ordinary pairwise rate `1/(2 Ne)`. The
+frequency history is therefore not used as a frozen oldest-frequency process
+after the origin. For a root origin at the oldest end of the root branch this
+age equals `tree.root.age + tree.root_extension`; that equality is a special
+configuration, not the definition of the boundary.
+
+The operator theory has the same two-phase interpretation. Its structured
+operator covers the finite interval where the rearrangement exists, and the
+residual unresolved mass is resolved by the ordinary panmictic ancestor. This
+is exact for the hierarchical simulator model and is not a claim about a
+single microscopic Moran ancestral dual.
+
+## A finite-M boundary-condition distinction
 
 The literal finite-M `msrc-sim` species tree performs binomial daughter
 initialization at every speciation, even when the branch duration is zero.
@@ -148,7 +196,7 @@ Thus there are two distinct limits:
 
 The tests make this distinction explicit rather than forcing the two operators
 to agree. The direct simulator validation agrees with the literal recursion on
-positive sister branches. This boundary-condition distinction must be resolved
-before presenting the zero-sister reduction as a theorem about the literal
-`msrc-sim` species tree.
-
+positive sister branches after the structured-to-panmictic boundary fix. This
+zero-duration distinction remains intentional: it is a difference between
+removing the speciation events in the collapsed kernel and retaining the
+literal simulator's instantaneous inheritance events.

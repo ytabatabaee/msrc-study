@@ -1,0 +1,8 @@
+metric	value
+cells	54
+replicates_per_cell	1000
+reported_rows	2670
+rmse	0.053529500147030125
+maximum_absolute_error	0.3218390804597701
+fraction_within_2_se	0.9420234937476317
+fraction_within_3_se	0.989010989010989

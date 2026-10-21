@@ -55,6 +55,13 @@ def test_inheritance_kernel_is_stochastic_and_parent_dependence_is_retained():
 def test_full_probability_conservation_and_sister_diagnostics():
     result = full_species_tree_quartet_probabilities(**_params())
     assert np.isclose(result.quartet_probabilities.sum(), 1.0)
+    assert result.joint.shape == (16, 3)
+    assert np.isclose(result.joint.sum(), 1.0)
+    assert np.allclose(result.joint.sum(axis=1), result.pattern_probabilities)
+    assert np.allclose(
+        result.joint,
+        result.pattern_probabilities[:, None] * result.conditional_quartet_probabilities,
+    )
     assert 0.0 <= result.diagnostics["sister_q1"] <= 1.0
     assert np.isclose(
         result.diagnostics["sister_q1"] + result.diagnostics["neither_sister_coalesces"], 1.0

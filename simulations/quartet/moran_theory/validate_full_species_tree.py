@@ -15,6 +15,11 @@ from pathlib import Path
 import numpy as np
 
 try:
+    from .moran_quartet_operator import PATTERNS
+except ImportError:
+    from moran_quartet_operator import PATTERNS
+
+try:
     from .full_species_tree import full_species_tree_quartet_probabilities
 except ImportError:
     from full_species_tree import full_species_tree_quartet_probabilities
@@ -49,15 +54,21 @@ def _direct_cell(msrc_sim: Path, M: int, k0: int, rho: float, T_L: float, T_A: f
     rr = Rearrangement("quartet", "inversion", "ROOT", 0, k0, 0.0)
     rng = np.random.default_rng(seed)
     topology_counts = np.zeros(3, dtype=int)
+    pattern_counts = np.zeros(16, dtype=int)
+    joint_counts = np.zeros((16, 3), dtype=int)
     sister_q1 = 0
     for locus in range(reps):
         history = simulate_frequency_history(tree, rr, rng)
         sampled = {taxon: int(rng.random() < history.terminal_frequency(taxon)) for taxon in tree.taxa}
         result = simulate_genealogy(locus, tree, history, sampled, rho, 1.0, rng, record_events=False)
         topology_counts[int(result.topology_index)] += 1
+        pattern = "".join(str(sampled[taxon]) for taxon in tree.taxa)
+        zi = PATTERNS.index(pattern)
+        pattern_counts[zi] += 1
+        joint_counts[zi, int(result.topology_index)] += 1
         if any(coal.population in {"AB", "CD"} for coal in result.coalescences):
             sister_q1 += 1
-    return topology_counts, sister_q1
+    return topology_counts, sister_q1, pattern_counts, joint_counts
 
 
 def _analytic(M: int, k0: int, rho: float, T_L: float, T_A: float):
@@ -86,7 +97,7 @@ def run_validation(args: argparse.Namespace):
                 for T_L in args.sister_length:
                     for T_A in args.root_length:
                         analytic = _analytic(M, k0, rho, T_L, T_A)
-                        counts, sister_count = _direct_cell(
+                        counts, sister_count, pattern_counts, joint_counts = _direct_cell(
                             args.msrc_sim, M, k0, rho, T_L, T_A, args.replicates,
                             args.seed + M + k0 + round(1000 * rho) + round(100 * T_L) + round(10 * T_A),
                         )
@@ -97,7 +108,8 @@ def run_validation(args: argparse.Namespace):
                             rows.append({
                                 "M": M, "k0": k0, "initial_fraction": fraction,
                                 "rho": rho, "T_L": T_L, "T_A": T_A,
-                                "quantity": f"q{r + 1}", "analytic": analytic.quartet_probabilities[r],
+                                "quantity": f"q{r + 1}", "pattern": "", "topology": f"q{r + 1}",
+                                "analytic": analytic.quartet_probabilities[r],
                                 "empirical": observed[r], "absolute_error": abs(error),
                                 "mc_se": se, "standardized_residual": error / se if se else np.nan,
                                 "replicates": args.replicates, "history_unit": "independent_forward_history",
@@ -109,11 +121,53 @@ def run_validation(args: argparse.Namespace):
                         rows.append({
                             "M": M, "k0": k0, "initial_fraction": fraction,
                             "rho": rho, "T_L": T_L, "T_A": T_A,
-                            "quantity": "sister_q1", "analytic": expected_sister,
+                            "quantity": "sister_q1", "pattern": "", "topology": "q1", "analytic": expected_sister,
                             "empirical": observed_sister, "absolute_error": abs(error),
                             "mc_se": se, "standardized_residual": error / se if se else np.nan,
                             "replicates": args.replicates, "history_unit": "independent_forward_history",
                         })
+                        observed_pattern = pattern_counts / args.replicates
+                        for zi, pattern in enumerate(PATTERNS):
+                            se = _se(observed_pattern[zi], args.replicates)
+                            error = observed_pattern[zi] - analytic.pattern_probabilities[zi]
+                            rows.append({
+                                "M": M, "k0": k0, "initial_fraction": fraction,
+                                "rho": rho, "T_L": T_L, "T_A": T_A,
+                                "quantity": "pattern", "pattern": pattern, "topology": "",
+                                "analytic": analytic.pattern_probabilities[zi],
+                                "empirical": observed_pattern[zi], "absolute_error": abs(error),
+                                "mc_se": se, "standardized_residual": error / se if se else np.nan,
+                                "replicates": args.replicates, "history_unit": "independent_forward_history",
+                            })
+                            for r in range(3):
+                                joint_observed = joint_counts[zi, r] / args.replicates
+                                se = _se(joint_observed, args.replicates)
+                                error = joint_observed - analytic.joint[zi, r]
+                                rows.append({
+                                    "M": M, "k0": k0, "initial_fraction": fraction,
+                                    "rho": rho, "T_L": T_L, "T_A": T_A,
+                                    "quantity": "joint", "pattern": pattern, "topology": f"q{r + 1}",
+                                    "analytic": analytic.joint[zi, r], "empirical": joint_observed,
+                                    "absolute_error": abs(error), "mc_se": se,
+                                    "standardized_residual": error / se if se else np.nan,
+                                    "replicates": args.replicates, "history_unit": "independent_forward_history",
+                                })
+                            if pattern_counts[zi] >= args.min_pattern_observations:
+                                conditional_observed = joint_counts[zi] / pattern_counts[zi]
+                                for r in range(3):
+                                    se = _se(conditional_observed[r], pattern_counts[zi])
+                                    error = conditional_observed[r] - analytic.conditional_quartet_probabilities[zi, r]
+                                    rows.append({
+                                        "M": M, "k0": k0, "initial_fraction": fraction,
+                                        "rho": rho, "T_L": T_L, "T_A": T_A,
+                                        "quantity": "conditional", "pattern": pattern, "topology": f"q{r + 1}",
+                                        "analytic": analytic.conditional_quartet_probabilities[zi, r],
+                                        "empirical": conditional_observed[r],
+                                        "absolute_error": abs(error), "mc_se": se,
+                                        "standardized_residual": error / se if se else np.nan,
+                                        "replicates": args.replicates,
+                                        "history_unit": "independent_forward_history",
+                                    })
     finite = np.asarray([abs(float(r["standardized_residual"])) for r in rows if np.isfinite(r["standardized_residual"])])
     errors = np.asarray([float(r["absolute_error"]) for r in rows])
     summary = {
@@ -124,7 +178,22 @@ def run_validation(args: argparse.Namespace):
         "fraction_within_2_se": float(np.mean(finite <= 2.0)),
         "fraction_within_3_se": float(np.mean(finite <= 3.0)),
     }
-    return rows, summary
+    grouped = []
+    q_rows = [row for row in rows if row["quantity"] in {"q1", "q2", "q3"}]
+    for group_type, key in (("rho", "rho"), ("root_length", "T_A"), ("topology", "quantity")):
+        values = sorted({row[key] for row in q_rows})
+        for value in values:
+            subset = [row for row in q_rows if row[key] == value]
+            residuals = np.asarray([float(row["empirical"]) - float(row["analytic"]) for row in subset])
+            grouped.append({
+                "group": group_type,
+                "value": value,
+                "n": len(subset),
+                "mean_signed_residual": float(np.mean(residuals)),
+                "rmse": float(np.sqrt(np.mean(residuals ** 2))),
+                "max_absolute_error": float(np.max(np.abs(residuals))),
+            })
+    return rows, summary, grouped
 
 
 def sensitivity_rows(args: argparse.Namespace) -> list[dict]:
@@ -134,13 +203,26 @@ def sensitivity_rows(args: argparse.Namespace) -> list[dict]:
     pi[k0] = 1.0
     rho_grid = np.linspace(0.0, args.sensitivity_max_rho, args.sensitivity_points)
     qs = []
+    conditional = []
     for rho in rho_grid:
-        qs.append(_analytic(M, k0, float(rho), args.sister_length[0], args.root_length[0]).quartet_probabilities)
+        result = _analytic(M, k0, float(rho), args.sister_length[0], args.root_length[0])
+        qs.append(result.quartet_probabilities)
+        conditional.append(result.conditional_quartet_probabilities)
     qs = np.asarray(qs)
+    conditional = np.asarray(conditional)
     rows = []
-    for i, rho in enumerate(rho_grid):
-        derivative = np.gradient(qs[:, 0], rho_grid)[i] if len(rho_grid) > 1 else np.nan
-        rows.append({"rho": rho, "q1": qs[i, 0], "q2": qs[i, 1], "q3": qs[i, 2], "dq1_drho": derivative})
+    for r in range(3):
+        derivatives = np.gradient(qs[:, r], rho_grid) if len(rho_grid) > 1 else np.full(len(rho_grid), np.nan)
+        for i, rho in enumerate(rho_grid):
+            rows.append({"quantity": "marginal", "pattern": "", "topology": f"q{r + 1}",
+                         "rho": rho, "probability": qs[i, r], "d_probability_d_rho": derivatives[i]})
+    for pattern in ("1010", "0101", "0011", "0110"):
+        zi = PATTERNS.index(pattern)
+        for r in range(3):
+            derivatives = np.gradient(conditional[:, zi, r], rho_grid) if len(rho_grid) > 1 else np.full(len(rho_grid), np.nan)
+            for i, rho in enumerate(rho_grid):
+                rows.append({"quantity": "conditional", "pattern": pattern, "topology": f"q{r + 1}",
+                             "rho": rho, "probability": conditional[i, zi, r], "d_probability_d_rho": derivatives[i]})
     return rows
 
 
@@ -155,12 +237,20 @@ def main() -> None:
     parser.add_argument("--rho", type=float, nargs="+", default=[0.0, 0.1, 0.5])
     parser.add_argument("--sister-length", type=float, nargs="+", default=[0.25, 0.5])
     parser.add_argument("--root-length", type=float, nargs="+", default=[0.25, 0.5])
+    parser.add_argument("--min-pattern-observations", type=int, default=25)
     parser.add_argument("--sensitivity-max-rho", type=float, default=1.0)
     parser.add_argument("--sensitivity-points", type=int, default=21)
+    parser.add_argument("--sensitivity-only", action="store_true")
     args = parser.parse_args()
-    rows, summary = run_validation(args)
+    if args.sensitivity_only:
+        rows = sensitivity_rows(args)
+        _write_tsv(args.output / "rho_sensitivity.tsv", rows)
+        print({"rows": len(rows), "rho_points": args.sensitivity_points})
+        return
+    rows, summary, grouped = run_validation(args)
     _write_tsv(args.output / "full_species_tree_validation.tsv", rows)
     _write_tsv(args.output / "rho_sensitivity.tsv", sensitivity_rows(args))
+    _write_tsv(args.output / "full_species_tree_grouped_residuals.tsv", grouped)
     (args.output / "full_species_tree_validation_summary.tsv").write_text(
         "metric\tvalue\n" + "\n".join(f"{key}\t{value}" for key, value in summary.items()) + "\n"
     )

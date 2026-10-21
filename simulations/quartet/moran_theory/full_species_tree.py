@@ -20,6 +20,7 @@ try:
         G1,
         G2,
         G4,
+        PATTERNS,
         PAIR_BACKGROUND_STATES,
         TOPOLOGY_NAMES,
         dual_lift,
@@ -33,6 +34,7 @@ except ImportError:  # pragma: no cover - supports direct script execution
         G1,
         G2,
         G4,
+        PATTERNS,
         PAIR_BACKGROUND_STATES,
         TOPOLOGY_NAMES,
         dual_lift,
@@ -49,6 +51,9 @@ PAIR_SURVIVOR_INDICES = (0, 1, 2, 3)
 @dataclass(frozen=True)
 class FullSpeciesTreeResult:
     quartet_probabilities: np.ndarray
+    joint: np.ndarray
+    pattern_probabilities: np.ndarray
+    conditional_quartet_probabilities: np.ndarray
     left_root_states: np.ndarray
     right_root_states: np.ndarray
     root_survivor_entry: np.ndarray
@@ -79,11 +84,15 @@ def _validate_pi(pi_old: np.ndarray, M: int) -> np.ndarray:
     return pi
 
 
-def _one_lineage_terminal_values(M: int) -> np.ndarray:
-    """Young-boundary values for one sampled taxon, summed over its sample."""
+def _one_lineage_terminal_values(M: int, sampled_bit: int | None = None) -> np.ndarray:
+    """Young-boundary values, optionally conditional on one sampled bit."""
     out = np.zeros((M + 1) * 2, dtype=float)
     for k in range(M + 1):
-        out[2 * k:2 * k + 2] = (1.0 - k / M, k / M)
+        p = k / M
+        if sampled_bit is None:
+            out[2 * k:2 * k + 2] = (1.0 - p, p)
+        else:
+            out[2 * k + int(sampled_bit)] = p if sampled_bit else 1.0 - p
     return out
 
 
@@ -94,14 +103,15 @@ def _pair_terminal_values(
     terminal_lengths: tuple[float, float],
     rho: float,
     selection: float,
+    terminal_bits: tuple[int, int] | None = None,
 ) -> np.ndarray:
     """Join two terminal-lifted lineages at the younger sister boundary."""
     u1 = dual_lift(
-        M_1, rho, terminal_lengths[0], _one_lineage_terminal_values(M_1), 1,
+        M_1, rho, terminal_lengths[0], _one_lineage_terminal_values(M_1, None if terminal_bits is None else terminal_bits[0]), 1,
         selection=selection,
     ).reshape(M_1 + 1, 2)
     u2 = dual_lift(
-        M_2, rho, terminal_lengths[1], _one_lineage_terminal_values(M_2), 1,
+        M_2, rho, terminal_lengths[1], _one_lineage_terminal_values(M_2, None if terminal_bits is None else terminal_bits[1]), 1,
         selection=selection,
     ).reshape(M_2 + 1, 2)
     H1 = inheritance_kernel(M_sister, M_1)
@@ -124,9 +134,10 @@ def _sister_root_states(
     sister_length: float,
     rho: float,
     selection: float,
+    terminal_bits: tuple[int, int] | None = None,
 ) -> np.ndarray:
     """Return left/right pair states conditional on each root-node count."""
-    young = _pair_terminal_values(M_sister, M_1, M_2, terminal_lengths, rho, selection)
+    young = _pair_terminal_values(M_sister, M_1, M_2, terminal_lengths, rho, selection, terminal_bits)
     old = dual_lift(
         M_sister, rho, sister_length, young.reshape(-1), 2, selection=selection
     ).reshape(M_sister + 1, 6)
@@ -192,38 +203,74 @@ def full_species_tree_quartet_probabilities(
     if len(M_terminal) != 4 or len(terminal_lengths) != 4 or len(sister_lengths) != 2:
         raise ValueError("terminal and sister parameter tuples have the wrong length")
     pi = _validate_pi(pi_old, M_root)
-    left = _sister_root_states(
-        M_root, M_left, M_terminal[0], M_terminal[1], terminal_lengths[:2],
-        sister_lengths[0], rho, selection,
-    )
-    right = _sister_root_states(
-        M_root, M_right, M_terminal[2], M_terminal[3], terminal_lengths[2:],
-        sister_lengths[1], rho, selection,
-    )
+    pi_root = np.asarray(expm_multiply(moran_generator(M_root, selection).transpose() * root_length, pi))
+    pair_bits = tuple("".join(str(x) for x in bits) for bits in PAIR_BACKGROUND_STATES)
+    left_by_bits = {
+        bits: _sister_root_states(
+            M_root, M_left, M_terminal[0], M_terminal[1], terminal_lengths[:2],
+            sister_lengths[0], rho, selection, tuple(int(x) for x in bits),
+        )
+        for bits in pair_bits
+    }
+    right_by_bits = {
+        bits: _sister_root_states(
+            M_root, M_right, M_terminal[2], M_terminal[3], terminal_lengths[2:],
+            sister_lengths[1], rho, selection, tuple(int(x) for x in bits),
+        )
+        for bits in pair_bits
+    }
+    # Summing over the four possible sampled pair patterns recovers the
+    # unconditional sister outputs used by the original recursion.
+    left = sum(left_by_bits.values())
+    right = sum(right_by_bits.values())
     left_survivors = left[:, :4].sum(axis=1)
     right_survivors = right[:, :4].sum(axis=1)
 
-    survivor_values = np.zeros((M_root + 1, 19), dtype=float)
-    for k in range(M_root + 1):
-        for il, zl in enumerate(PAIR_BACKGROUND_STATES):
-            for ir, zr in enumerate(PAIR_BACKGROUND_STATES):
-                z = zl + zr
-                survivor_values[k, BACKGROUND_STATES.index(z)] = left[k, il] * right[k, ir]
+    survivor_values_by_pattern = np.zeros((M_root + 1, 19, 16), dtype=float)
+    sister_q1_by_pattern = np.zeros(16, dtype=float)
+    for zi, z in enumerate(PATTERNS):
+        left_z = left_by_bits[z[:2]]
+        right_z = right_by_bits[z[2:]]
+        left_survivor_z = left_z[:, :4].sum(axis=1)
+        right_survivor_z = right_z[:, :4].sum(axis=1)
+        for k in range(M_root + 1):
+            for il, zl in enumerate(PAIR_BACKGROUND_STATES):
+                for ir, zr in enumerate(PAIR_BACKGROUND_STATES):
+                    background = BACKGROUND_STATES.index(zl + zr)
+                    survivor_values_by_pattern[k, background, zi] = left_z[k, il] * right_z[k, ir]
+        left_total_z = left_z.sum(axis=1)
+        right_total_z = right_z.sum(axis=1)
+        sister_q1_by_pattern[zi] = float(
+            np.dot(pi_root, left_total_z * right_total_z - left_survivor_z * right_survivor_z)
+        )
 
-    root_contributions = _root_quartet_from_survivors(
-        M_root, root_length, rho, pi, survivor_values, selection
+    A = joint_operator_n(M_root, rho, 4, selection)
+    propagated = expm_multiply(A * root_length, survivor_values_by_pattern.reshape((M_root + 1) * 19, 16))
+    initial = np.column_stack([np.kron(pi, h) for h in residual_vectors()])
+    root_joint = (initial.T @ propagated).T
+    joint = np.asarray(root_joint, dtype=float)
+    joint[:, 0] += sister_q1_by_pattern
+    pattern = joint.sum(axis=1)
+    q = joint.sum(axis=0)
+    conditional = np.divide(
+        joint,
+        pattern[:, None],
+        out=np.full_like(joint, np.nan),
+        where=pattern[:, None] > 0,
     )
-    pi_root = np.asarray(expm_multiply(moran_generator(M_root, selection).transpose() * root_length, pi))
-    sister_q1 = float(np.dot(pi_root, 1.0 - left_survivors * right_survivors))
-    q = np.asarray(root_contributions, dtype=float).copy()
-    q[0] += sister_q1
+    sister_q1 = float(sister_q1_by_pattern.sum())
     diagnostics = {
         "sister_q1": sister_q1,
         "neither_sister_coalesces": float(np.dot(pi_root, left_survivors * right_survivors)),
         "left_survivor_mean": float(np.dot(pi_root, left_survivors)),
         "right_survivor_mean": float(np.dot(pi_root, right_survivors)),
     }
-    return FullSpeciesTreeResult(q, left, right, survivor_values, diagnostics)
+    survivor_entry = np.zeros((M_root + 1, 19), dtype=float)
+    for k in range(M_root + 1):
+        for il, zl in enumerate(PAIR_BACKGROUND_STATES):
+            for ir, zr in enumerate(PAIR_BACKGROUND_STATES):
+                survivor_entry[k, BACKGROUND_STATES.index(zl + zr)] = left[k, il] * right[k, ir]
+    return FullSpeciesTreeResult(q, joint, pattern, conditional, left, right, survivor_entry, diagnostics)
 
 
 def fixed_p_half_species_tree_quartet_probabilities(

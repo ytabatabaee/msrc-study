@@ -1688,12 +1688,30 @@ merge rule these form seven intervals: 25.02–32.30, 32.67–32.68,
 The matched detector is explicitly a categorical four-taxon adaptation, not
 the original multi-taxon QQS detector. It selected 25.02–56.82 Mb; the
 unmatched original multi-taxon exploratory detector remains 44.13–56.82 Mb.
-The corrected outputs report both method classes and exact interval-merging
-sensitivity. The local Phlag run took 82.5 seconds and used approximately
+The latest reconciliation preserves the original multi-taxon topology-only
+track at 25.02–56.82 Mb and its topology-plus-`B_observed` track at
+44.13–56.82 Mb under
+`empirical/neoaves_chr4/results/stage11_original_multitaxon_detector/`.
+Those 6,096-observation outputs are explicitly separate from the 5,619-locus
+matched-input benchmark because their committed coordinate manifest is not
+verified for the full 6,096-locus domain. The corrected outputs report all
+four methods, matched and unmatched evaluation domains, and exact
+interval-merging sensitivity. The local Phlag run took 82.5 seconds and used approximately
 602 MB peak child RSS on this machine. Because the matched detector and Phlag
 use different statistical objectives, and the structural annotations are
 overlapping synteny-derived regions rather than independent breakpoint truth,
 these results do not support a superiority claim.
+
+The reconciliation is documented in
+`empirical/neoaves_chr4/results/phlag_reconciliation_report.md`. The official
+5,619-locus Phlag run remains fully validated: its input, manifest, state and
+posterior lengths, finite posterior range, 1,200 anomalous windows, and seven
+reported intervals agree. The regenerated comparison table and figure are
+derived from retained predictions. The remaining provenance issue is limited
+to genomic evaluation of the 6,096-locus multi-taxon detector outputs; they
+remain exploratory and do not block the next representative-selection
+robustness experiment, provided that experiment uses the validated matched
+benchmark as its input definition.
 
 ## Stage 13d: completed Phlag benchmarking
 
@@ -1807,3 +1825,49 @@ full finite-M operator is validated for the literal positive-branch hierarchy,
 but the zero-sister boundary-condition conflict remains a blocker before
 presenting it as the manuscript's unconditional main quartet theorem without
 qualification.
+
+## Post-fix finite-M Moran quartet status
+
+The authoritative `msrc-sim` genealogy boundary has now been corrected. The
+old implementation computed a root maximum time but continued structured
+switching and same-background coalescence indefinitely by freezing the oldest
+frequency record. The corrected implementation carries the explicit
+rearrangement origin age, stops structured dynamics there, and continues with
+an ordinary unstructured ancestral population with pairwise rate `1/(2 Ne)`.
+The change applies to Moran and Wright-Fisher frequency histories; the
+frequency-history extrapolation itself remains available for other uses.
+
+The shared-population result remains the exact finite-M dual formula
+`J[z,r] = (pi_old kron h_r) exp(A4 T) b_z`, with
+`q_r=sum_z J[z,r]` and `P(Q_r|Z=z)=J[z,r]/P(Z=z)`. The full
+`((1,2),(3,4))` recursion is also implemented: it uses the `n=1`, `n=2`, and
+`n=4` branch operators, the simulator's binomial daughter inheritance, and
+keeps the two sister outputs conditional on their common parental count before
+combining them. The implementation now returns the exact joint array
+`P(Q,Z)` in addition to `P(Q)`, `P(Z)`, and `P(Q|Z)`.
+
+Post-fix validation used 1,000 independent forward histories per cell. The
+54-cell shared-population grid gave RMSE `0.05353`, maximum absolute error
+`0.32184`, with `94.20%` and `98.90%` of reported rows within 2 and 3 MC SE.
+The 72-cell full-species-tree grid gave RMSE `0.03756`, maximum absolute
+error `0.30081`, with `94.47%` and `98.88%` within 2 and 3 MC SE. The maximum
+errors are rare conditional-pattern rows; unconditional topology rows showed
+no systematic bias. Grouped mean signed residuals for `Q1,Q2,Q3` were
+`+0.00088,+0.00410,-0.00498`.
+
+The boundary regression and theory suites pass (`4` new simulator boundary
+tests and `15` Moran-theory tests). The fixed-`p=1/2` and `H_m/A_m` reductions,
+operator-ordering checks, conservation checks, and parental-count dependence
+checks remain passing. Literal `T_L=T_R=0` species-tree inheritance is still
+distinct from the collapsed-speciation shared-population kernel because the
+simulator performs instantaneous binomial daughter initialization; this is an
+intentional model distinction, not silently collapsed in the theory.
+
+The rho diagnostic found weak marginal sensitivity and substantially stronger
+conditional sensitivity in selected terminal patterns. It is exploratory and
+does not establish identifiability. The corrected operator is now suitable as
+the main exact hierarchical finite-M quartet theorem, provided the manuscript
+states the explicit ordinary-ancestor boundary and the zero-duration
+speciation distinction. It remains a theorem for the hierarchical simulator
+model, not a proved microscopic ancestral dual of one Moran reproduction
+process.
