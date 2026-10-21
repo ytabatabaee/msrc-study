@@ -1,0 +1,21 @@
+{
+  "experiment": "MSRC topology-coalescence-time signal separation",
+  "authoritative_simulator": "../msrc-sim",
+  "simulator_commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+  "python_execution": "/Users/ytabatabaee/opt/anaconda3/bin/python",
+  "population_process": "finite-M Moran, M=2Ne",
+  "time_observables": "true simulated genealogies and coalescence records",
+  "theory_scope": "P(Q) and P(Q,Z) only; no analytic time-distribution claim",
+  "discovery": {"histories_per_cell": 100, "genes_per_history": 1, "seed": 20261021, "cells": 72},
+  "validation_compact": {"histories_per_cell": 1000, "genes_per_history": 1, "seed": 20261031, "cells": 6},
+  "validation_strong": {"histories_per_cell": 5000, "genes_per_history": 1, "seed": 20261101, "cells": 4},
+  "validation_long": {"histories_per_cell": 1000, "genes_per_history": 1, "seed": 20261111, "cells": 8},
+  "commands": [
+    "./.venv-malaria/bin/python simulations/topology_time_separation/scripts/signal_separation.py --output simulations/topology_time_separation/results/discovery --histories 100",
+    "/Users/ytabatabaee/opt/anaconda3/bin/python simulations/topology_time_separation/scripts/signal_separation.py --validation --output simulations/topology_time_separation/results/validation_strong --histories 5000 --M 20 40 --initial-fraction 0.5 --rho 0.0 0.5 --sister-length 0.25 --root-length 0.5",
+    "/Users/ytabatabaee/opt/anaconda3/bin/python simulations/topology_time_separation/scripts/make_figures.py"
+  ],
+  "independence_unit": "independent forward frequency history",
+  "sequence_simulation": false,
+  "gene_tree_estimation": false
+}

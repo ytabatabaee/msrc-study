@@ -1871,3 +1871,113 @@ states the explicit ordinary-ancestor boundary and the zero-duration
 speciation distinction. It remains a theorem for the hierarchical simulator
 model, not a proved microscopic ancestral dual of one Moran reproduction
 process.
+
+## Neoaves Stage 11C Phlag representative-sampling robustness
+
+The final Neoaves chromosome 4 representative-selection benchmark is complete
+under `empirical/neoaves_chr4/results/stage11c_phlag_robustness/`. It evaluates
+10 deterministic representative sets, including replicate zero copied byte
+for byte from the frozen Stage 11B input, manifest, and Phlag output. Nine
+additional sets use taxa present in the source gene trees and reference
+phylogeny while preserving the intended induced four-taxon quartet topology.
+Eligible-locus counts range from 5,351 to 5,619 because loci missing a chosen
+representative are excluded.
+
+All 10 Phlag runs are valid: state and posterior lengths equal their manifests,
+posteriors are finite and in `[0,1]`, and all runs completed with recorded
+status, runtime, and raw output. The original seven Stage 11B intervals are
+recovered in every replicate. Their call fraction is `1.0` for all seven
+regions; six retain the same boundaries in every run, while the long seventh
+region is split once and the starts of two neighboring intervals move by a
+small number of windows. The resulting Phlag accuracy distribution has mean
+IoU `0.792109` (median `0.792416`, range `0.783188–0.794614`) and mean F1
+`0.883993` (median `0.884188`, range `0.878413–0.885554`).
+
+The frozen matched four-taxon detector was run on the same eligible loci for
+each representative set. Its prediction was unchanged in this benchmark:
+mean and median IoU `0.638987`, mean and median F1 `0.779734`, and one merged
+interval spanning the detected region. Pairwise agreement uses only common
+eligible loci; the reported agreement tables and anomaly-frequency tracks
+retain their denominators. The matched detector remains less accurate under
+the same representative selections.
+
+The observed differences are primarily small Phlag boundary and fragmentation
+changes, with no loss of the seven broad predicted regions. These comparisons
+use 11 synteny-derived candidate structural regions, not experimentally
+verified inversion breakpoints, and the 10 representative sets are not
+independent biological datasets. Structural annotations were excluded from
+representative selection, detector fitting, and Phlag execution. The Neoaves
+Phlag benchmark is complete for the available valid representative sets; the
+next research priority is the separately planned unified multi-interval
+topology-plus-branch-length detector.
+
+## MSRC theory-to-observable audit and multi-interval detector design
+
+The theory-to-observable audit is under
+`empirical/multi_interval_detector_design/`. It confirms that the strongest
+directly derived observable is the finite-M joint quartet law
+`J[z,r]=(pi_old kron h_r) exp(A4 T) b_z`, extended on the species tree to
+`P(Q,Z)`, `P(Z)`, `P(Q)`, and `P(Q|Z)` with conditional parental-count
+dependence at speciation. The fixed-frequency `H_m/A_m` result is retained as a
+special case. The corrected simulator validation supports the hierarchical
+frequency-history plus backward-genealogy model, while the microscopic Moran
+dual and a general empirical branch-length law remain unproved.
+
+The feature audit records that cod A(w) and SNAPP summaries use population-tree
+time units, while the fire-ant, Anopheles, mouse, and Neoaves continuous tracks
+are primarily patristic or local-tree substitution-unit summaries. They are
+not interchangeable with realized coalescence times. Common within-tree
+branch-length multipliers cancel in ratios such as A_relative, but raw
+contrasts remain rate-sensitive and lineage-specific variation is not removed.
+Topology contrasts D(w) are directly interpretable as quartet-support contrasts;
+the continuous features are currently empirical/descriptive unless the planned
+time-focused simulator experiment establishes an MSRC regime for them.
+
+The recommended next detector is one penalized multivariate semi-Markov
+change-point model solved by dynamic programming, with an unknown number of
+segments, segment-specific unconstrained shifts, minimum support and physical
+length, explicit missingness/gaps, and topology-only, continuous-only, and
+joint feature masks. The design does not implement or alter a production
+detector. Required preimplementation controls include ordinary MSC, finite-M
+MSRC topology and joint regimes, a verified time-focused regime, multiple
+intervals, frequency regimes, common and lineage-specific mutation-rate
+controls, and gene-tree estimation error. Structural annotations remain
+post-fit evaluation targets only. Open questions and the smallest defensible
+implementation are recorded in `MODEL_DESIGN.md`, `SIMULATION_PLAN.md`, and
+`OPEN_THEORY_QUESTIONS.md`.
+
+## MSRC topology–coalescence-time signal separation
+
+The controlled experiment is implemented under
+`simulations/topology_time_separation/`. It imports the authoritative
+`msrc-sim` Moran frequency-history, structured genealogy, and ordinary MSC
+functions directly. No second simulator, sequence simulation, or gene-tree
+estimation was added. The simulator already exposed rooted Newick genealogies,
+coalescence records, and topology indices, so true pairwise MRCA times,
+`R_T`, quartet internal branch length, and total genealogical branch length are
+calculated from those realized histories.
+
+The discovery grid contains 72 cells with 100 independent forward histories
+per cell. Strong validation used four balanced-frequency cells with 5,000
+histories per cell, and a separate long-structured-phase validation used eight
+cells with 1,000 histories per cell. The tested settings did not produce a
+convincing substantial time shift with little marginal topology separation.
+The strongest balanced validation cell had `M=40`, `rho=0.5`, sister length
+`0.25`, root length `0.5`, `Delta_Q=0.0186`, and standardized mean-time
+separation `Delta_T=0.0396`, with approximate Monte Carlo errors `0.0141` and
+`0.0196`. The long-phase maximum was `Delta_T=0.0685` with approximate error
+`0.0454`; it was not decisive.
+
+The finite-M theory comparison agrees with direct Moran simulation within the
+expected Monte Carlo uncertainty for the reported topology cells. This
+comparison is limited to `P(Q)` and `P(Q,Z)`; the current exact operator does
+not predict the genealogical-time distributions. The rate-control experiment
+shows that common and window-wide branch-length multipliers preserve `R_T`,
+while branch-specific multipliers change it. This is conditional robustness,
+not universal mutation-rate invariance.
+
+The present evidence does not justify calling branch-length-aware detection a
+direct consequence of the validated MSRC quartet theorem. Continuous
+features remain a possible empirical observation block, but a stronger
+time-distribution theory or a clearly validated simulator regime is required
+before treating topology and time as complementary MSRC predictions.

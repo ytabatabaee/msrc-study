@@ -1,0 +1,14 @@
+{
+  "experiment": "MSRC topology-coalescence-time signal separation",
+  "msrc_sim_path": "/Users/ytabatabaee/Desktop/msrc-sim",
+  "msrc_sim_commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+  "population_process": "authoritative Moran process",
+  "time_observables": "true genealogy Newick/coalescence output",
+  "histories_per_cell": 100,
+  "genes_per_history": 1,
+  "seed": 20261021,
+  "validation_mode": false,
+  "grid_cells": 72,
+  "theory_scope": "full finite-M quartet topology/joint law; no analytic time distribution",
+  "command": "simulations/topology_time_separation/scripts/signal_separation.py --output simulations/topology_time_separation/results/discovery --histories 100 --genes-per-history 1 --seed 20261021"
+}
