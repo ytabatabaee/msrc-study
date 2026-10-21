@@ -1,8 +1,8 @@
 metric	value
 cells	36
-replicates_per_cell	200
-reported_rows	828
-rmse	0.03237174679451778
-maximum_absolute_error	0.19999999999999998
-fraction_within_2_se	0.9478787878787879
-fraction_within_3_se	0.9806060606060606
+replicates_per_cell	1000
+reported_rows	1188
+rmse	0.03667241872887703
+maximum_absolute_error	0.27044025157232704
+fraction_within_2_se	0.9372349448685326
+fraction_within_3_se	0.9881255301102629

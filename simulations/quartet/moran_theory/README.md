@@ -34,3 +34,15 @@ python simulations/quartet/moran_theory/validate_against_msrc_sim.py --smoke --r
 Increase `--replicates` and use the default grid for publication-scale
 Monte Carlo summaries. Outputs are written to `results/`.
 
+The full rooted species-tree recursion is in `full_species_tree.py`, with its
+derivation in `FULL_SPECIES_TREE_DERIVATION.md`. Its validation driver is:
+
+```text
+python simulations/quartet/moran_theory/validate_full_species_tree.py --replicates 500
+```
+
+The recursion preserves the common parent count through each speciation and
+multiplies left/right sister contributions only conditionally on that count.
+The derivation documents a finite-M boundary distinction: literal zero-
+duration `msrc-sim` speciation still performs binomial daughter initialization,
+so it is distinct from the separate collapsed shared-population kernel.

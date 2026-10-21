@@ -27,6 +27,8 @@ PATTERNS = tuple("".join(str(x) for x in z) for z in product((0, 1), repeat=4))
 BACKGROUND_STATES = tuple(product((0, 1), repeat=4))
 BACKGROUND_INDEX = {z: i for i, z in enumerate(BACKGROUND_STATES)}
 TOPOLOGY_PAIRS = (((0, 1), (2, 3)), ((0, 2), (1, 3)), ((0, 3), (1, 2)))
+PAIR_BACKGROUND_STATES = tuple(product((0, 1), repeat=2))
+PAIR_BACKGROUND_INDEX = {z: i for i, z in enumerate(PAIR_BACKGROUND_STATES)}
 
 
 @dataclass(frozen=True)
@@ -100,6 +102,98 @@ def G4(k: int, M: int, rho: float) -> csr_matrix:
     out[:16, :16] = S
     out[:16, 16:] = csr_matrix(R)
     return out.tocsr()
+
+
+def G1(k: int, M: int, rho: float) -> csr_matrix:
+    """Conditional one-lineage background generator."""
+    if M <= 0 or not 0 <= k <= M or rho < 0:
+        raise ValueError("require M>0, 0<=k<=M, and rho>=0")
+    p = k / M
+    out = lil_matrix((2, 2), dtype=float)
+    out[0, 1] = rho * p
+    out[1, 0] = rho * (1.0 - p)
+    out[0, 0] = -out[0, 1]
+    out[1, 1] = -out[1, 0]
+    return out.tocsr()
+
+
+def G2(k: int, M: int, rho: float) -> csr_matrix:
+    """Conditional six-state two-lineage generator.
+
+    States are ``00, 01, 10, 11, C0, C1``.  A coalesced lineage continues
+    switching, exactly as the simulator's single ancestral lineage does.
+    """
+    if M <= 0 or not 0 <= k <= M or rho < 0:
+        raise ValueError("require M>0, 0<=k<=M, and rho>=0")
+    p = k / M
+    c1 = 1.0 / max(k, 1)
+    c0 = 1.0 / max(M - k, 1)
+    out = lil_matrix((6, 6), dtype=float)
+    for row, z in enumerate(PAIR_BACKGROUND_STATES):
+        exit_rate = 0.0
+        for i, bit in enumerate(z):
+            rate = rho * p if bit == 0 else rho * (1.0 - p)
+            if rate:
+                zz = list(z)
+                zz[i] = 1 - bit
+                out[row, PAIR_BACKGROUND_INDEX[tuple(zz)]] += rate
+                exit_rate += rate
+        if z == (0, 0):
+            out[row, 4] = c0
+            exit_rate += c0
+        elif z == (1, 1):
+            out[row, 5] = c1
+            exit_rate += c1
+        out[row, row] = -exit_rate
+    out[4, 5] = rho * p
+    out[4, 4] = -out[4, 5]
+    out[5, 4] = rho * (1.0 - p)
+    out[5, 5] = -out[5, 4]
+    return out.tocsr()
+
+
+def genealogy_generator(n: int, k: int, M: int, rho: float) -> csr_matrix:
+    """Return the reusable conditional generator for n=1, 2, or 4."""
+    if n == 1:
+        return G1(k, M, rho)
+    if n == 2:
+        return G2(k, M, rho)
+    if n == 4:
+        return G4(k, M, rho)
+    raise ValueError("only n=1, n=2, and n=4 are implemented")
+
+
+def joint_operator_n(
+    M: int,
+    rho: float,
+    n: int,
+    selection: float = 0.0,
+    *,
+    moran_enabled: bool = True,
+) -> csr_matrix:
+    """Return the dual branch operator for n=1, 2, or 4 lineages."""
+    state_count = {1: 2, 2: 6, 4: 19}[n]
+    Q = moran_generator(M, selection) if moran_enabled else csr_matrix((M + 1, M + 1))
+    blocks = [genealogy_generator(n, k, M, rho).transpose().tocsr() for k in range(M + 1)]
+    return (kron(Q, eye(state_count, format="csr"), format="csr") + block_diag(blocks, format="csr")).tocsr()
+
+
+def dual_lift(
+    M: int,
+    rho: float,
+    T: float,
+    terminal_values: np.ndarray,
+    n: int,
+    *,
+    selection: float = 0.0,
+) -> np.ndarray:
+    """Map young-boundary values to older-boundary values with the dual operator."""
+    values = np.asarray(terminal_values, dtype=float)
+    state_count = {1: 2, 2: 6, 4: 19}[n]
+    if values.shape[0] != (M + 1) * state_count:
+        raise ValueError("terminal_values has the wrong joint-state dimension")
+    A = joint_operator_n(M, rho, n, selection)
+    return np.asarray(expm_multiply(A * float(T), values))
 
 
 def joint_operator(
