@@ -1694,3 +1694,36 @@ sensitivity. The local Phlag run took 82.5 seconds and used approximately
 use different statistical objectives, and the structural annotations are
 overlapping synteny-derived regions rather than independent breakpoint truth,
 these results do not support a superiority claim.
+
+## Stage 13d: completed Phlag benchmarking
+
+Stage 13d completed the prepared house-mouse matched-taxon benchmark using the
+unmodified Phlag v0.2.0 executable at commit
+`76597d0e4ebd0e507fdafebf7f5163ef634a36d6`. Six fixed representative sets
+were run independently on four eligible focal edges (N002--N005), giving 24
+valid informative runs with finite, length-matched posterior sequences and
+nonconstant state paths. The representative mapping was held fixed across
+all 4,046 chromosome-17 windows within each replicate. Across six replicate
+aggregates, union-of-state-1 calls had mean IoU 0.247 and F1 0.387; the
+prespecified maximum-posterior-at-0.5 aggregation had mean IoU 0.254 and F1
+0.396. These summaries describe sampling and focal-edge variability, not 24
+independent biological replicates. Inv5 was scored only through the observed
+37.055-Mb endpoint and is explicitly right-censored.
+
+The macOS `/usr/bin/time -l` wrapper returned status 1 because its optional
+`sysctl` memory probe was denied. Phlag output itself was complete and valid
+for all 24 runs; peak memory is therefore recorded as unavailable rather than
+imputed. Runtime is retained per run. The corrected interval-set scorer merges
+only overlapping or adjacent intervals for primary IoU; physical-gap merging
+is a separate construction choice.
+
+Atlantic cod, Anopheles, and fire-ant Phlag runs remain numerically invalid:
+their raw outputs show a focal edge at Phlag's `1e-6` floor followed by
+nonfinite state-divergence/posterior values. They receive no accuracy score,
+not zero accuracy. The repaired Neoaves Stage 11B result remains a separate,
+valid one-pilot benchmark on 5,619 matched loci; no unsupported multi-replicate
+claim is made here. Consequently, Stage 13d supports a valid house-mouse
+matched-input benchmark and numerical diagnostics, but does not support a
+cross-system claim that MSRC outperforms Phlag. The benchmark is recommended
+for supplementary material until valid matched Phlag executions are available
+for the other systems.

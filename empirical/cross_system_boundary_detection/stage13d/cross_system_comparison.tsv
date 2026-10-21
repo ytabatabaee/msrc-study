@@ -1,0 +1,23 @@
+dataset	method	iou	f1	valid	n_source_rows
+Anopheles	MSRC arrangement_blind	0.47046684782608694	0.6398877316025412	yes	1
+Anopheles	MSRC continuous	0.9973029953917051	0.9986496767818817	yes	1
+Anopheles	MSRC joint	0.9973029953917051	0.9986496767818817	yes	1
+Anopheles	MSRC topology	0.9950103448275862	0.9974989326820534	yes	1
+Atlantic cod	MSRC arrangement_blind	0.7842650971378181	0.846102963253915	yes	4
+Atlantic cod	MSRC continuous	0.7842650971378181	0.846102963253915	yes	4
+Atlantic cod	MSRC joint	0.784595495769438	0.8462712659338929	yes	4
+Atlantic cod	MSRC topology	0.6268140535853439	0.6780065591694564	yes	4
+Fire ants	MSRC arrangement_blind	0.0	0.0	yes	1
+Fire ants	MSRC continuous	0.0	0.0	yes	1
+Fire ants	MSRC joint	0.0	0.0	yes	1
+Fire ants	MSRC topology	0.5297362004121312	0.6925850356021035	yes	1
+House mouse	MSRC arrangement_blind	0.34749518069078894	0.48774913346786636	yes	1
+House mouse	MSRC continuous	0.11704640524106691	0.19964493390847313	yes	1
+House mouse	MSRC joint	0.11704640524106691	0.19964493390847313	yes	1
+House mouse	MSRC topology	0.1425546504679495	0.2693173515607023	yes	1
+House mouse	Phlag union_state1 (mean across 6 reps)	0.24749412238111126	0.38718836762449044	yes	6
+House mouse	Phlag max_posterior_ge_0.5 (mean across 6 reps)	0.25398101078063656	0.39610415834298857	yes	6
+Atlantic cod	Phlag	NA	NA	invalid: nonfinite posterior / SNAPP population-tree input	0
+Anopheles	Phlag	NA	NA	invalid: nonfinite posterior in matched pilot	0
+Fire ants	Phlag	NA	NA	invalid: nonfinite posterior in matched pilot	0
+Neoaves	Phlag	NA	NA	pilot_valid: 5,619-locus Columbea pilot; separate Stage 11B result	0

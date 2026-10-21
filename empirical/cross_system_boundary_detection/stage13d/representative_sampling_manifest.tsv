@@ -1,0 +1,7 @@
+dataset	replicate	n_windows	focal_edges	representative_mapping	selection_fixed_across_windows
+house_mouse_t_complex	0	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_000/representatives.tsv	true
+house_mouse_t_complex	1	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_001/representatives.tsv	true
+house_mouse_t_complex	2	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_002/representatives.tsv	true
+house_mouse_t_complex	3	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_003/representatives.tsv	true
+house_mouse_t_complex	4	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_004/representatives.tsv	true
+house_mouse_t_complex	5	4046	N002,N003,N004,N005	empirical/cross_system_boundary_detection/stage13b/phlag/raw_results/matched_inputs/house_mouse_t_complex/replicate_005/representatives.tsv	true

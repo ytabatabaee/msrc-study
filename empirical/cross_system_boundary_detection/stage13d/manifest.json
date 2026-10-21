@@ -1,0 +1,18 @@
+{
+  "stage": "13d",
+  "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
+  "algorithm_modified": false,
+  "house_mouse_runs": 24,
+  "valid_house_mouse_runs": 24,
+  "observation_domain": [
+    5000000,
+    37054999
+  ],
+  "inv5_right_censored": true,
+  "invalid_accuracy_datasets": [
+    "Atlantic cod",
+    "Anopheles",
+    "Fire ants"
+  ],
+  "timing_memory_note": "macOS time -l sysctl probe denied; peak memory unavailable"
+}

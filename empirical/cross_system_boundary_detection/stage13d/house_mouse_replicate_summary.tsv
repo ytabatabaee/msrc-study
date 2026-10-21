@@ -1,0 +1,13 @@
+dataset	scope	configuration	metric	n	mean	median	min	max
+house_mouse_t_complex	replicate_aggregate	union_state1	iou	6	0.24749412238111126	0.2089636293263817	0.1850494655417657	0.47520313963727745
+house_mouse_t_complex	replicate_aggregate	union_state1	precision	6	0.9676663623410452	0.966663801953421	0.9482543548387097	0.9879519485162674
+house_mouse_t_complex	replicate_aggregate	union_state1	recall	6	0.24924276151107497	0.21049235051584836	0.1864635166832437	0.47797303709873284
+house_mouse_t_complex	replicate_aggregate	union_state1	f1	6	0.38718836762449044	0.34562147454899517	0.31230673642330564	0.6442545123027874
+house_mouse_t_complex	replicate_aggregate	union_state1	n_predicted_intervals	6	133.66666666666666	131.0	124.0	148.0
+house_mouse_t_complex	replicate_aggregate	union_state1	predicted_bp	6	7417500.0	6300000.0	5545000.0	13985000.0
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	iou	6	0.25398101078063656	0.21926669155812056	0.18871185016834435	0.47513853202020856
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	precision	6	0.9658763619766563	0.9608568738750871	0.9534521472392639	0.9861988587731811
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	recall	6	0.2559578812472327	0.22091097356476624	0.19044186629707915	0.4783189805434142
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	f1	6	0.39610415834298857	0.359623944349268	0.3175064674279459	0.6441951338217765
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	n_predicted_intervals	6	146.0	145.5	136.0	158.0
+house_mouse_t_complex	replicate_aggregate	max_posterior_ge_0.5	predicted_bp	6	7631666.666666667	6605000.0	5770000.0	14020000.0
