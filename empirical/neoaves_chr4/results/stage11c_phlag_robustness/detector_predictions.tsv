@@ -1,0 +1,11 @@
+replicate	method	status	score	start	end	n_loci
+0	matched_four_taxon_detector	internal	389.78994035993543	25020000	56820000	5619
+1	matched_four_taxon_detector	internal	378.0314940364939	25020000	56820000	5485
+2	matched_four_taxon_detector	internal	388.9313798990612	25020000	56820000	5600
+3	matched_four_taxon_detector	internal	397.4754111696423	25020000	56820000	5654
+4	matched_four_taxon_detector	internal	381.54020073540727	25020000	56820000	5540
+5	matched_four_taxon_detector	internal	383.2375967185119	25020000	56820000	5508
+6	matched_four_taxon_detector	internal	394.4040064692309	25020000	56820000	5616
+7	matched_four_taxon_detector	internal	377.2161453414292	25020000	56820000	5351
+8	matched_four_taxon_detector	internal	384.8330490721702	25020000	56820000	5555
+9	matched_four_taxon_detector	internal	382.711043922197	25020000	56820000	5552

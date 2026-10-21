@@ -1,0 +1,16 @@
+{
+  "stage": "11C",
+  "baseline_commit": "b4f6b6c13406ac9cb5426a0ec2ce519d3f2b5eb5",
+  "phlag_version": "0.2.0",
+  "phlag_commit": "76597d0e4ebd0e507fdafebf7f5163ef634a36d6",
+  "n_representative_sets": 10,
+  "valid_phlag_runs": 10,
+  "source_gene_trees": "empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz",
+  "reference_species_tree": "empirical/neoaves_chr4/external/stiller2024/63K.tre",
+  "source_loci": 6096,
+  "stage11b_matched_loci": 5619,
+  "physical_gap_merge_bp": 250000,
+  "evaluation_regions": 11,
+  "structural_annotations_used_for_fitting": false,
+  "original_stage11b_preserved": true
+}
