@@ -1,0 +1,6 @@
+/Users/ytabatabaee/opt/anaconda3/bin/python /tmp/tcmm-stage8c/multiple_tree_matching.py -i /Users/ytabatabaee/Desktop/msrc-paper/data/atlantic_cod/processed/baseline_population_tree_12taxa.nwk -r /Users/ytabatabaee/Desktop/msrc-paper/empirical/atlantic_cod/results/stage8c_tcmm/raw/reference_trees/reference_all.trees -o /Users/ytabatabaee/Desktop/msrc-paper/empirical/atlantic_cod/results/stage8c_tcmm/raw/tcmm_runs/all_lambda_0p001 -l 0.001 -g /Users/ytabatabaee/Desktop/msrc-paper/empirical/atlantic_cod/results/stage8c_tcmm/raw/tcmm_runs/all_lambda_0p001.log
+
+STDOUT
+Runtime:  13.081480026245117
+
+STDERR
