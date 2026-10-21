@@ -1,0 +1,32 @@
+{
+  "conditional_min_report_n": 20,
+  "experiment": "conditional topology and coalescence-time signals under MSRC",
+  "genes_per_history": 1,
+  "grid_cells": 12,
+  "histories_per_cell": 500,
+  "independent_unit": "forward Moran frequency history",
+  "msc_conditional_Z": "undefined; ordinary MSC is used only as an unconditional comparator",
+  "msrc_sim_commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+  "msrc_sim_path": "/Users/ytabatabaee/Desktop/msrc-sim",
+  "pattern_order": [
+    "0000",
+    "0001",
+    "0010",
+    "0011",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1000",
+    "1001",
+    "1010",
+    "1011",
+    "1100",
+    "1101",
+    "1110",
+    "1111"
+  ],
+  "seed": 20261121,
+  "stage": "discovery",
+  "theory": "simulations/quartet/moran_theory/full_species_tree.py; P(Q,Z), P(Z), P(Q|Z)"
+}

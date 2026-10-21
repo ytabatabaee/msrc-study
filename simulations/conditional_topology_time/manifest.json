@@ -1,0 +1,22 @@
+{
+  "experiment": "conditional topology and coalescence-time signals under MSRC",
+  "authoritative_simulator": {
+    "path": "../msrc-sim",
+    "commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+    "role": "forward Moran histories and backward structured genealogies"
+  },
+  "theory": {
+    "path": "simulations/quartet/moran_theory/full_species_tree.py",
+    "outputs": ["P(Q,Z)", "P(Z)", "P(Q|Z)"],
+    "time_distribution": "not analytically claimed"
+  },
+  "independent_unit": "forward Moran frequency history",
+  "genes_per_history": 1,
+  "stages": {
+    "discovery": {"histories_per_cell": 500, "seed": 20261121, "grid_cells": 12},
+    "validation": {"histories_per_cell": 5000, "seed": 20261131, "grid_cells": 4}
+  },
+  "pattern_order": ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"],
+  "msc_comparison": "unconditional only; MSC has no intrinsic arrangement-pattern variable",
+  "prior_experiment": "simulations/topology_time_separation/results_text.md"
+}
