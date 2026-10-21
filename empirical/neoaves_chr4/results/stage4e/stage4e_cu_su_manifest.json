@@ -1,0 +1,20 @@
+{
+  "stage": "neoaves_chr4_stage4f",
+  "status": "pending_cluster_output",
+  "units": {
+    "CU": "coalescent units",
+    "SU": "CASTLES substitution-per-site units"
+  },
+  "runner_modes": [
+    "topology_cu",
+    "topology_su",
+    "both"
+  ],
+  "fixed_topology": {
+    "supported_command": "-C -c <species-tree>",
+    "status": "pending_validated_T0"
+  },
+  "cu_treatments": [],
+  "su_treatments": [],
+  "missing_empirical_outputs_are_not_zero": true
+}

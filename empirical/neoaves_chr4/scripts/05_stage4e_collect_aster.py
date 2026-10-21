@@ -24,12 +24,14 @@ def read_manifest(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle, delimiter="\t"))
 
 
-def classify(output_dir: Path, treatment: str, expected_taxa: int) -> dict[str, str]:
+def classify(output_dir: Path, treatment: str, expected_taxa: int, mode: str) -> dict[str, str]:
     exit_code = output_dir / "exit_code.txt"
-    tree = output_dir / "tree.nwk"
-    stdout = output_dir / "stdout.log"
-    stderr = output_dir / "stderr.log"
-    row = {"treatment": treatment, "status": "missing", "output_dir": str(output_dir), "tree_sha256": ""}
+    tree = output_dir / ("tree.cu.nwk" if mode == "topology_cu" else "tree.su.nwk")
+    # The CU/SU runner writes mode-specific logs; accept the historical
+    # single-log names as well.
+    stdout_paths = [output_dir / f"{mode}.stdout.log", output_dir / "stdout.log"]
+    stderr_paths = [output_dir / f"{mode}.stderr.log", output_dir / "stderr.log"]
+    row = {"treatment": treatment, "mode": mode, "status": "missing", "output_dir": str(output_dir), "tree_sha256": "", "error": "output_not_present"}
     if not output_dir.exists():
         return row
     if not exit_code.exists():
@@ -52,7 +54,7 @@ def classify(output_dir: Path, treatment: str, expected_taxa: int) -> dict[str, 
         row["status"] = "failed"
         row["error"] = f"Expected {expected_taxa} taxa, observed {len(taxa)}"
         return row
-    logs = (stdout.read_text() if stdout.exists() else "") + "\n" + (stderr.read_text() if stderr.exists() else "")
+    logs = "\n".join(path.read_text() for path in stdout_paths + stderr_paths if path.exists())
     if logs and any(marker in logs.lower() for marker in ("error", "exception", "killed")):
         row["status"] = "failed"
         row["error"] = "Log contains error/exception/killed marker"
@@ -73,22 +75,29 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cluster-root", type=Path, default=BASE / "results/stage4e/cluster")
     parser.add_argument("--manifest", type=Path, default=RESULTS / "stage4e_input_manifest.tsv")
+    parser.add_argument("--status-output", type=Path, default=RESULTS / "stage4e_cu_su_collect_status.tsv")
+    parser.add_argument("--legacy-status-output", type=Path,
+                        help="Explicitly replace the historical single-unit status table.")
     args = parser.parse_args()
     rows = []
     for item in read_manifest(args.manifest):
         expected_taxa = 48 if item["scope"] == "jarvis48" else 363
         output_dir = args.cluster_root / item["treatment"]
-        row = classify(output_dir, item["treatment"], expected_taxa)
-        rows.append(row)
-        if row["status"] == "complete":
-            copy_validated_tree(output_dir / "tree.nwk", TREE_DIR / f"{item['treatment']}.nwk")
-    fields = ["treatment", "status", "output_dir", "tree_sha256", "error"]
-    out = RESULTS / "stage4e_collect_status.tsv"
+        for mode in ("topology_cu", "topology_su"):
+            row = classify(output_dir, item["treatment"], expected_taxa, mode)
+            rows.append(row)
+            if row["status"] == "complete":
+                suffix = "cu" if mode == "topology_cu" else "su"
+                copy_validated_tree(output_dir / f"tree.{suffix}.nwk", TREE_DIR / f"{item['treatment']}.{suffix}.nwk")
+    fields = ["treatment", "mode", "status", "output_dir", "tree_sha256", "error"]
+    out = args.status_output
     with out.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in fields})
+    if args.legacy_status_output:
+        shutil.copyfile(out, args.legacy_status_output)
     print(f"Wrote {out}")
 
 

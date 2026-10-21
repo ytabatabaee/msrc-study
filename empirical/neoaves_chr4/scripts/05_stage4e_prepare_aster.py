@@ -444,7 +444,7 @@ mkdir -p "$NEOAVES_STAGE4E_OUT"
             [
                 f'TREATMENTS=({" ".join(treatments)})',
                 'for treatment in "${TREATMENTS[@]}"; do',
-                f'  "$PYTHON" "{run_py}" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment"',
+                f'  "$PYTHON" "{run_py}" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment" --mode both',
                 "done",
                 "",
             ]
@@ -458,7 +458,7 @@ mkdir -p "$NEOAVES_STAGE4E_OUT"
             [
                 f'TREATMENTS=({" ".join(j48)})',
                 'for treatment in "${TREATMENTS[@]}"; do',
-                f'  "$PYTHON" "{run_py}" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment"',
+                f'  "$PYTHON" "{run_py}" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment" --mode both',
                 "done",
                 "",
             ]
@@ -489,7 +489,8 @@ mkdir -p "$(dirname "$INPUT")"
   --treatment "$TREATMENT" \\
   --aster-bin "$ASTER_BIN" \\
   --input "$INPUT" \\
-  --output-dir "$NEOAVES_STAGE4E_OUT/random_matched/$TREATMENT"
+  --output-dir "$NEOAVES_STAGE4E_OUT/random_matched/$TREATMENT" \\
+  --mode both
 """
     )
     (CLUSTER / "README.md").write_text(
@@ -532,7 +533,12 @@ Run preflight first:
 sbatch empirical/neoaves_chr4/cluster/stage4e_aster/00_preflight.sbatch
 ```
 
-Then submit primary jobs manually after preflight passes:
+Then submit primary jobs manually after preflight passes. Each treatment runs
+the verified CU and SU modes and writes `tree.cu.nwk` and `tree.su.nwk` plus
+mode-specific logs. `CULength` is a coalescent-unit branch length and
+`SULength` is a CASTLES substitution-per-site branch length; the SU default
+uses `--genelength 1000` and `--sulengthtype 1`, which must be reviewed against
+the source gene-tree metadata before interpreting returned SU values:
 
 ```bash
 sbatch empirical/neoaves_chr4/cluster/stage4e_aster/01_full363_primary.sbatch
@@ -540,6 +546,12 @@ sbatch empirical/neoaves_chr4/cluster/stage4e_aster/02_full363_sensitivities.sba
 sbatch empirical/neoaves_chr4/cluster/stage4e_aster/03_j48_primary.sbatch
 sbatch empirical/neoaves_chr4/cluster/stage4e_aster/04_random_matched_array.sbatch
 ```
+
+The collector validates CU and SU outputs independently. The analyzer records
+absolute and relative changes only for branches shared with T0; absent or
+zero-baseline branches remain missing. Fixed-topology estimation is supported
+only through the official ASTRAL-IV `-C -c` interface and remains pending until
+a validated T0 topology has been returned.
 """
     )
 

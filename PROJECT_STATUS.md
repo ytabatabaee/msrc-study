@@ -257,6 +257,36 @@ manuscript integration, with no new empirical question started.
 
 ## Neoaves chromosome 4 Stage 4E ASTER/ASTRAL4 preparation
 
+## Neoaves chromosome 4 Stage 4F ASTRAL-IV CU/SU extension
+
+Stage 4F code and local validation are complete; full empirical inference is
+still pending Bridges-2 execution. The Stage 4E treatment definitions,
+predeclared random-matched manifests, and input checksums were preserved.
+The runner now supports `topology_cu`, `topology_su`, and `both` modes, writes
+separate `tree.cu.nwk` and `tree.su.nwk` outputs, records mode-specific
+provenance, and refuses large execution outside SLURM. The collector validates
+CU and SU outputs independently, and the analyzer matches internal branches by
+normalized unrooted bipartition and terminal branches by exact taxon label.
+
+The official ASTER/ASTRAL-IV interface was verified from its source and
+tutorial: `CULength` is coalescent units, while `SULength` is CASTLES
+substitution-per-site length; SU estimation also requires an average gene
+length and `sulengthtype`. The current configured default is `--genelength
+1000 --sulengthtype 1`, which must be checked against source alignment metadata
+before interpreting returned SU values. The local four-taxon smoke tests pass
+for both modes, including finite nonnegative branch lengths and explicit
+annotation parsing. Fixed-topology commands use the documented `-C -c`
+interface but remain pending a validated T0 topology.
+
+No Bridges-2 jobs were submitted by this workflow. At the current freeze,
+`stage4e_collect_status.tsv` reports all treatment/unit outputs as missing, so
+there are no valid 363-species topology, CU, SU, fixed-topology, or
+matched-random scientific results to interpret. Pending outputs are represented
+as pending/missing rather than zero. Required next commands are the generated
+preflight job, then the five primary treatments (`T0`, `T_PNAS`,
+`T_STRUCT_PRIMARY`, `T_BLOCK_500K`, `NONCHR4`), followed by collection and
+analysis before supplementary treatments or random controls.
+
 ## House mouse t-complex recombination-suppression audit
 
 Direct quantitative suppression evidence was recovered from primary literature,

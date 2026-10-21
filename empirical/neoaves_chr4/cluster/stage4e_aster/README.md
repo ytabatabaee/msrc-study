@@ -1,7 +1,10 @@
 # Stage 4E ASTER/ASTRAL4 Bridges-2 execution
 
 This directory contains submission scripts only. Do not run ASTER/ASTRAL4 on
-the large Neoaves inputs locally.
+the large Neoaves inputs locally. The job scripts call the Stage 4E runner in
+`--mode both`, producing separate `tree.cu.nwk` (`CULength`) and `tree.su.nwk`
+(`SULength`) outputs. SU uses CASTLES with `--sulengthtype 1` and the explicit
+`--genelength` default of 1000 unless changed at submission time.
 
 Default Bridges-2 configuration:
 
@@ -72,3 +75,8 @@ Recommended launch order:
 Do not submit the 500-task random-matched array until the deterministic Stage-4E
 treatments have completed and the resulting topology effects have been
 inspected.
+
+The collector validates CU and SU outputs independently. The analyzer matches
+internal branches by normalized bipartition and terminal branches by exact taxon
+label. Fixed-topology scoring is available through the runner's `--constraint`
+option, but is reported pending until a validated T0 topology has been returned.

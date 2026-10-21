@@ -1,0 +1,17 @@
+treatment	cu_status	su_status
+J48_NONCHR4	pending	pending
+J48_T0	pending	pending
+J48_T_BLOCK_1MB	pending	pending
+J48_T_BLOCK_250K	pending	pending
+J48_T_BLOCK_500K	pending	pending
+J48_T_PNAS	pending	pending
+J48_T_STRUCT_PRIMARY	pending	pending
+NONCHR4	pending	pending
+T0	pending	pending
+T_BLOCK_1MB	pending	pending
+T_BLOCK_250K	pending	pending
+T_BLOCK_500K	pending	pending
+T_PNAS	pending	pending
+T_STRUCT_INCLUSIVE	pending	pending
+T_STRUCT_PRIMARY	pending	pending
+T_STRUCT_STRINGENT	pending	pending

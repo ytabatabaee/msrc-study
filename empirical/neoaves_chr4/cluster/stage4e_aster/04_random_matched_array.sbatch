@@ -41,4 +41,5 @@ mkdir -p "$(dirname "$INPUT")"
   --treatment "$TREATMENT" \
   --aster-bin "$ASTER_BIN" \
   --input "$INPUT" \
-  --output-dir "$NEOAVES_STAGE4E_OUT/random_matched/$TREATMENT"
+  --output-dir "$NEOAVES_STAGE4E_OUT/random_matched/$TREATMENT" \
+  --mode both

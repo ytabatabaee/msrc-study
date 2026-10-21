@@ -20,5 +20,5 @@ set -euo pipefail
 mkdir -p "$NEOAVES_STAGE4E_OUT"
 TREATMENTS=(T_STRUCT_STRINGENT T_STRUCT_INCLUSIVE T_BLOCK_250K T_BLOCK_1MB)
 for treatment in "${TREATMENTS[@]}"; do
-  "$PYTHON" "${MSRC_REPO}/empirical/neoaves_chr4/scripts/05_stage4e_run_aster.py" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment"
+  "$PYTHON" "${MSRC_REPO}/empirical/neoaves_chr4/scripts/05_stage4e_run_aster.py" --execute --treatment "$treatment" --aster-bin "$ASTER_BIN" --input "$NEOAVES_STAGE4E_DATA/$treatment.tre" --output-dir "$NEOAVES_STAGE4E_OUT/$treatment" --mode both
 done
