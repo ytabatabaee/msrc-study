@@ -1,5 +1,14 @@
 # Manuscript theorem and corollaries
 
+> Scope note: this document retains the earlier fixed-frequency result. Its
+> constant `lambda` and `H_m` formulas are the fixed-frequency `p(t)=1/2`
+> special case of the shared-population calculation. They are not the general
+> Moran-consistent MSRC quartet law. In particular, `p=1/2` does not imply
+> `T_L=T_R=0`; those lengths describe the shared-population limit, and the
+> `A_m` formula also holds the shared-population frequency fixed at one half.
+> The finite-M Moran-integrated shared-population kernel is documented in
+> `../moran_theory/DERIVATION.md`.
+
 **Theorem (symmetric four-taxon MSRC quartet law).** For
 `S=((1,2),(3,4))`, one sampled lineage per species, fixed terminal pattern
 `Z=z`, symmetric switching `m01=m10=m`, and symmetric coalescence

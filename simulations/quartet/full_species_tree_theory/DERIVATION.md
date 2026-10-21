@@ -1,5 +1,13 @@
 # First complete symmetric four-taxon MSRC species-tree theorem
 
+> Scope note: the constant-frequency `lambda` calculation in this document is
+> a fixed-frequency `p(t)=1/2` special-case result. It is not the general
+> Moran-consistent MSRC quartet law. `p=1/2` does not imply `T_L=T_R=0`;
+> `T_L=T_R=0` is the shared-population limit, while `A_m` additionally fixes
+> the shared-population frequency at `p(t)=1/2`. See
+> `../moran_theory/DERIVATION.md` for the exact finite-M Moran-integrated
+> shared-population kernel.
+
 This derivation conditions on a fixed terminal background pattern
 `Z=(z_1,z_2,z_3,z_4)` for the rooted species tree
 `S=((1,2),(3,4))). It uses the symmetric backward process
@@ -231,6 +239,26 @@ H_m(1010)=
 The new theorem is the species-tree extension: it propagates each lineage
 through terminal branches, allows sister-pair coalescence on the two
 species-tree branches, and only then invokes `H_m`.
+
+## Closed-form symmetric quartet probabilities
+
+For equal sister branches, the scalar coefficients and the four class formulas
+are collected in `SCALAR_FORMULAS.md`. They follow by inserting the four
+survivor vectors into the master identity. In particular, for the discordant
+2:2 class,
+
+\[
+q_2-q_3=\alpha e^{-4mT},
+\]
+
+and the conditional topology-reversal condition is
+
+\[
+\alpha(d^2+e^2-2c^2)>1-s_D^2.
+\]
+
+The implementation checks these formulas against the current matrix evaluator
+for every pattern over the requested numerical grid.
 
 ## All 16 patterns
 

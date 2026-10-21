@@ -15,7 +15,13 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from quartet_theory import PATTERNS, TOPOLOGY_NAMES, conditional_quartet_probabilities
+from quartet_theory import (
+    PATTERNS,
+    TOPOLOGY_NAMES,
+    conditional_quartet_probabilities,
+    conditional_scalar,
+    topology_reversal_condition,
+)
 
 
 class FixedHistory:
@@ -112,6 +118,37 @@ def run(args):
     ax.legend()
     fig.tight_layout()
     fig.savefig(out / "msc_limit_vs_m.png", dpi=180)
+    plt.close(fig)
+
+    errors = []
+    for m in m_grid:
+        errors.append(max(
+            np.max(np.abs(exact(z, m=m, lam=args.lam, terminal_length=args.terminal_length,
+                                sister_length=args.sister_length[0], shared_length=args.root_duration)
+                          - conditional_scalar(z, args.sister_length[0], m, args.lam, args.root_duration)))
+            for z in PATTERNS
+        ))
+    fig, ax = plt.subplots(figsize=(5.5, 4))
+    ax.loglog(m_grid, np.maximum(errors, 1e-18))
+    ax.set(xlabel="m", ylabel="max |matrix - scalar|", title="Scalar/matrix agreement")
+    ax.grid(alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out / "scalar_vs_matrix_validation.png", dpi=180)
+    plt.close(fig)
+
+    m_phase = np.logspace(-4, 2, 160)
+    T_phase = np.linspace(0.0, 3.0, 160)
+    reversal = np.array([
+        [topology_reversal_condition(T, m, args.lam, args.root_duration) for m in m_phase]
+        for T in T_phase
+    ])
+    fig, ax = plt.subplots(figsize=(5.5, 4))
+    image = ax.pcolormesh(m_phase, T_phase, reversal, shading="auto", cmap="RdYlBu_r", vmin=0, vmax=1)
+    ax.set_xscale("log")
+    ax.set(xlabel="m", ylabel="sister branch length T", title="Conditional topology-reversal region")
+    fig.colorbar(image, ax=ax, label="q2 > q1")
+    fig.tight_layout()
+    fig.savefig(out / "conditional_topology_reversal_region.png", dpi=180)
     plt.close(fig)
 
 

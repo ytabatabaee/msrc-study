@@ -22,6 +22,39 @@ PAIR_TO_TOPOLOGY = {
 }
 
 
+def scalar_coefficients(T: float, m: float, lam: float, T_A: float = 0.0) -> dict[str, float]:
+    """Return the symmetric sister-pair and shared-population scalars."""
+    if T < 0 or T_A < 0 or m < 0 or lam < 0:
+        raise ValueError("times and rates must be non-negative")
+    delta = np.sqrt(lam * lam + 16.0 * m * m)
+    c0 = (lam + 4.0 * m) / 2.0
+    if delta == 0.0:
+        G = K_s = 1.0
+        H = 0.0
+    else:
+        sh = np.sinh(delta * T / 2.0)
+        ch = np.cosh(delta * T / 2.0)
+        pref = np.exp(-c0 * T)
+        G = pref * (ch - (lam / delta) * sh)
+        H = pref * ((4.0 * m / delta) * sh)
+        K_s = pref * (ch + (lam / delta) * sh)
+    epsilon = np.exp(-2.0 * m * T)
+    delta_pair = np.exp(-(lam + 2.0 * m) * T)
+    alpha = 0.0 if lam + 2.0 * m == 0.0 else lam / (lam + 2.0 * m) * (1.0 - np.exp(-2.0 * (lam + 2.0 * m) * T_A))
+    return {
+        "G": G, "H": H, "K_s": K_s,
+        "delta": delta_pair, "epsilon": epsilon,
+        "a": (G + delta_pair) / 2.0,
+        "b": (G - delta_pair) / 2.0,
+        "c": H / 2.0,
+        "d": (K_s + epsilon) / 2.0,
+        "e": (K_s - epsilon) / 2.0,
+        "s_S": G + H,
+        "s_D": H + K_s,
+        "alpha": alpha,
+    }
+
+
 def U(t: float, m: float) -> np.ndarray:
     """One-lineage background transition matrix exp([[−m,m],[m,−m]]t)."""
     if t < 0 or m < 0:
@@ -158,6 +191,83 @@ def conditional_quartet_probabilities(
     return q
 
 
+def q_40_scalar(T: float, m: float, lam: float, T_A: float) -> np.ndarray:
+    x = scalar_coefficients(T, m, lam, T_A)
+    a, b, c, s, alpha = x["a"], x["b"], x["c"], x["s_S"], x["alpha"]
+    contrast = a * b - c * c
+    return np.array([
+        1.0 - 2.0 * s * s / 3.0 + 4.0 * alpha * contrast / 3.0,
+        s * s / 3.0 - 2.0 * alpha * contrast / 3.0,
+        s * s / 3.0 - 2.0 * alpha * contrast / 3.0,
+    ])
+
+
+def q_31_scalar(T: float, m: float, lam: float, T_A: float) -> np.ndarray:
+    x = scalar_coefficients(T, m, lam, T_A)
+    c, G, K_s, s, alpha = x["c"], x["G"], x["K_s"], x["s_S"] * x["s_D"], x["alpha"]
+    return np.array([
+        1.0 - 2.0 * s / 3.0 + 2.0 * alpha * c * (G - K_s) / 3.0,
+        s / 3.0 + alpha * c * (K_s - G) / 3.0,
+        s / 3.0 + alpha * c * (K_s - G) / 3.0,
+    ])
+
+
+def q_22_concordant_scalar(T: float, m: float, lam: float, T_A: float) -> np.ndarray:
+    x = scalar_coefficients(T, m, lam, T_A)
+    a, b, c, s, alpha = x["a"], x["b"], x["c"], x["s_S"], x["alpha"]
+    contrast = a * a + b * b - 2.0 * c * c
+    return np.array([
+        1.0 - 2.0 * s * s / 3.0 + 2.0 * alpha * contrast / 3.0,
+        s * s / 3.0 - alpha * contrast / 3.0,
+        s * s / 3.0 - alpha * contrast / 3.0,
+    ])
+
+
+def q_22_discordant_scalar(T: float, m: float, lam: float, T_A: float, associated_topology: int = 1) -> np.ndarray:
+    x = scalar_coefficients(T, m, lam, T_A)
+    c, d, e, s, Ks, eps, alpha = x["c"], x["d"], x["e"], x["s_D"], x["K_s"], x["epsilon"], x["alpha"]
+    q = np.array([
+        1.0 - 2.0 * s * s / 3.0 + alpha * (4.0 * c * c - Ks * Ks) / 3.0,
+        s * s / 3.0 + alpha * (Ks * Ks + 3.0 * eps * eps - 4.0 * c * c) / 6.0,
+        s * s / 3.0 + alpha * (Ks * Ks - 3.0 * eps * eps - 4.0 * c * c) / 6.0,
+    ])
+    if associated_topology == 2:
+        q[1], q[2] = q[2], q[1]
+    elif associated_topology != 1:
+        raise ValueError("associated_topology must be 1 (Q2) or 2 (Q3)")
+    return q
+
+
+def conditional_scalar(z: str, T: float, m: float, lam: float, T_A: float) -> np.ndarray:
+    """Compact equal-branch scalar evaluator for all 16 patterns."""
+    if len(z) != 4 or set(z) - set("01"):
+        raise ValueError("z must be a four-character 0/1 pattern")
+    n_ones = z.count("1")
+    if n_ones in (0, 4):
+        return q_40_scalar(T, m, lam, T_A)
+    if n_ones in (1, 3):
+        return q_31_scalar(T, m, lam, T_A)
+    if z in {"0011", "1100"}:
+        return q_22_concordant_scalar(T, m, lam, T_A)
+    if z in {"0101", "1010"}:
+        return q_22_discordant_scalar(T, m, lam, T_A, 1)
+    return q_22_discordant_scalar(T, m, lam, T_A, 2)
+
+
+def unconditional_scalar(weights: dict[str, float], T: float, m: float, lam: float, T_A: float) -> np.ndarray:
+    """Average the scalar conditional law over arbitrary pattern weights."""
+    missing = set(PATTERNS) - set(weights)
+    if missing:
+        raise ValueError(f"missing pattern weights: {sorted(missing)}")
+    return sum(weights[z] * conditional_scalar(z, T, m, lam, T_A) for z in PATTERNS)
+
+
+def topology_reversal_condition(T: float, m: float, lam: float, T_A: float) -> bool:
+    """Whether q2 exceeds q1 for the Q2-associated discordant class."""
+    x = scalar_coefficients(T, m, lam, T_A)
+    return x["alpha"] * (x["d"] ** 2 + x["e"] ** 2 - 2.0 * x["c"] ** 2) > 1.0 - x["s_D"] ** 2
+
+
 def all_pattern_probabilities(**kwargs) -> dict[str, np.ndarray]:
     return {z: conditional_quartet_probabilities(z, **kwargs) for z in PATTERNS}
 
@@ -167,7 +277,7 @@ def pattern_classes() -> dict[str, tuple[str, str]]:
     for z in PATTERNS:
         ones = z.count("1")
         cls = "4:0" if ones in (0, 4) else ("3:1" if ones in (1, 3) else "2:2")
-        split = "Q1-associated" if z in {"0000", "1111"} else ""
+        split = ""
         if cls == "2:2":
             split = {"0011": "W1", "1100": "W1", "0101": "W2", "1010": "W2", "0110": "W3", "1001": "W3"}[z]
         classes[z] = (cls, split)
