@@ -551,3 +551,19 @@ It writes:
 - `empirical/neoaves_chr4/figures/chr4_change_points_vs_denovo_structure.png`
 - `empirical/neoaves_chr4/figures/breakpoint_enrichment_null_primary.pdf`
 - `empirical/neoaves_chr4/figures/breakpoint_enrichment_structural_set_sensitivity.pdf`
+
+## MSRC threshold figure
+
+The publication-style threshold figure is rendered by
+`scripts/make_neoaves_msrc_threshold_figure.py` from the recovered QQS tables,
+the chr4 locus track, the frozen structural mask, and the completed J48
+topology comparison. It does not run quartet enumeration or ASTRAL. The main
+figure has three panels: spatial N61/N62 signal, empirical mixture curves with
+observed weights and valid crossovers, and categorical J48 topology outcomes.
+The companion figure contains Columbea and separate focal tracks.
+
+Outputs are written to `figures/neoaves_msrc_threshold_main.{pdf,png,svg}` and
+`figures/neoaves_msrc_threshold_supplement.{pdf,png,svg}`. The legacy
+`figures/neoaves_msrc_threshold.{pdf,png,svg}` names are updated to the same
+main rendering. The caption is in
+`figures/neoaves_msrc_threshold_main_caption.md`.
