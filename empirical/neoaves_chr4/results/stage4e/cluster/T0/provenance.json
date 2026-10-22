@@ -1,0 +1,53 @@
+{
+  "treatment": "T0",
+  "dry_run": false,
+  "command": [
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/T0.tre",
+      "-o",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/T0/tree.cu.nwk",
+      "-u",
+      "2",
+      "-t",
+      "32",
+      "--length",
+      "CULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ],
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/T0.tre",
+      "-o",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/T0/tree.su.nwk",
+      "-u",
+      "2",
+      "-t",
+      "32",
+      "--length",
+      "SULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ]
+  ],
+  "input": "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/T0.tre",
+  "input_sha256": "c0a0ec9b432405da548a6cdb37460ccf1c0d9d1b5a5211d74d5f397c70e0f943",
+  "aster_bin": "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+  "aster_bin_sha256": "38d2aad2879605b3bd3d26bb7dbc978dce9cec510d684f64da4a58ead836872a",
+  "hostname": "r305.ib.bridges2.psc.edu",
+  "date_utc": "2026-10-21T16:19:55.784379+00:00",
+  "slurm_job_id": "49555313",
+  "cpu_count": 32,
+  "memory_request": "1900",
+  "mode": "both",
+  "genelength": 1000.0,
+  "sulengthtype": 1,
+  "constraint": null
+}
