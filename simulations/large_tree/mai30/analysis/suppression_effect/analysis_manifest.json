@@ -1,0 +1,6 @@
+{
+  "bootstrap_replicates": 5,
+  "bootstrap_seed": 20261130,
+  "independent_unit": "MSRC forward frequency history; MSC sequential pseudo-blocks",
+  "astral_settings": "-t 2 -u 1 --length CULength"
+}
