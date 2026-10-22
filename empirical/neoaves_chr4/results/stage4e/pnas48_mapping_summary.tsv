@@ -1,0 +1,7 @@
+component	status	value	evidence
+collapsed_archive_record_count	verified	63430	local archive line count
+header_gene_to_locus_mapping	strongly_supported	63430	63K_trees.names_header.txt.xz plus exact named-archive locus set
+collapsed_to_locus_taxon_set_mapping	strongly_supported_with_unresolved_rows	63113 matched; 317 unresolved	collapsed Gene order compared with named tree at header-derived locus
+published_outlier_mask	verified_for_header_loci	1431	delta_quartet.R inclusive GalGal4 window-start predicate
+exact_published_48_input	unverified	not constructed	317 collapsed records lack a matching named taxon set; source does not provide IDs in the collapsed file
+existing_j48_inputs	preserved	7	stage4e_input_manifest.tsv

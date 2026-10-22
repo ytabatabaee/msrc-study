@@ -257,6 +257,28 @@ manuscript integration, with no new empirical question started.
 
 ## Neoaves chromosome 4 Stage 4E ASTER/ASTRAL4 preparation
 
+The PNAS 48-taxon source reconstruction audit is complete without running
+ASTRAL-IV or submitting a cluster job. The local Stiller archives match the
+recorded checksums. The 63K header maps all 63,430 Gene indices to unique
+genomic loci, and all of those IDs occur exactly once in the named archive.
+Comparing the collapsed archive in header Gene order with the named tree at the
+header-derived locus gives 63,113 identical taxon sets and 317 unresolved
+records. This supersedes the earlier conclusion that all row correspondence
+was rejected by the 31,066 naive same-row disagreements: much of that count
+was archive ordering. The 317 unresolved records remain unmapped, so no exact
+full published collapsed 48-taxon input was fabricated.
+
+The frozen PNAS interval predicate still selects exactly 1,431 header-derived
+loci. Existing `J48_*` and 363-species inputs/checksums are preserved. The
+source report, per-record mapping audit, and old-versus-published-design
+comparison are in `empirical/neoaves_chr4/results/stage4e/`; the deterministic
+audit and regression tests are in
+`empirical/neoaves_chr4/scripts/pnas48_source_reconstruction.py` and
+`empirical/neoaves_chr4/tests/test_pnas48_source_reconstruction.py`. The
+existing J48 files remain the MSRC reconstructed-design inputs; strict PNAS
+replication is pending a source-side mapping for the 317 records or explicit
+acceptance of a partial 317-locus omission.
+
 ## Neoaves chromosome 4 Stage 4F ASTRAL-IV CU/SU extension
 
 Stage 4F code and local validation are complete; full empirical inference is

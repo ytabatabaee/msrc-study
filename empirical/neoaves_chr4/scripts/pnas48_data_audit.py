@@ -2,9 +2,10 @@
 """Audit the reconstructed Stage 4E Jarvis-48 inputs against published metadata.
 
 This deliberately does not infer a species tree or overwrite an existing input.
-The Stiller collapsed archive has no locus IDs and is not row aligned with the
-named archive, so the script reports that identity boundary instead of assigning
-IDs by position.
+The collapsed archive has no embedded locus IDs, so locus assignment is made
+only through the published 63K header plus the exact named-archive locus set.
+The source reconstruction reports the 317 records whose taxon sets remain
+unresolved; it never assigns those IDs by topology or guessed row order.
 """
 from __future__ import annotations
 
@@ -55,8 +56,8 @@ def main() -> None:
 
     add("species_selection", "reconstructed_match_with_mapping", f"48 source / {len(stiller)} Stiller labels; missing=0; extra=0", "data/stage4d/jarvis48_taxa.tsv")
     add("species_mapping", "documented_nonexact_mapping", ";".join(sorted(status)), "data/stage4d/jarvis48_taxa.tsv")
-    add("source_gene_trees", "reconstructed_not_exactly_verified", "named Stiller archive used; PNAS says ASTRAL used collapsed aLRT-0.95 archive", "stiller2024/README.txt; stage4d/input_audit.json")
-    add("gene_tree_preprocessing", "mismatch_from_published_input", "31,066 same-row named/collapsed disagreements; current inputs use ID-preserving re-collapse", "results/stage4d_report.md; results/stage4d/named_collapsed_mismatches.tsv")
+    add("source_gene_trees", "strongly_supported_partial_mapping", "63,113/63,430 collapsed records match the header-derived named-locus taxon set; 317 remain unresolved", "results/stage4e/pnas48_source_reconstruction.md; results/stage4e/pnas48_locus_mapping_audit.tsv")
+    add("gene_tree_preprocessing", "exact_full_mapping_unverified", "The published collapsed archive is the documented ASTRAL input; current J48 inputs remain the named-tree re-collapse fallback", "stiller2024/README.txt; results/stage4e/pnas48_source_reconstruction.md")
     add("locus_filtering", "verified_for_reconstruction", f"{len(locus)} unique locus IDs; fewer-than-four omitted after pruning", "results/stage4d_locus_manifest.tsv; scripts/05_stage4e_prepare_aster.py")
     add("pnas_outlier_exclusions", "exact_predicate_and_count_verified", f"expected={len(expected_pnas)}; recorded={len(recorded_pnas)}; only_ours=0; only_published=0", "scripts/stage4d_core.py; chr4avian/genetreesupport/delta_quartet.R")
     add("species_tree_settings", "unverifiable_for_48_comparison", "published 48-taxon command/output not present in available PNAS archive", "chr4avian-v1.0.0.zip inventory")

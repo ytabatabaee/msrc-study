@@ -168,6 +168,13 @@
       "sha256": "cfecbc68da62fc6bd03b971f09bd95b34fa5efa5ff247cef3672ae90f6667760"
     }
   ],
+  "source_reconstruction": {
+    "mapping_status": "strongly_supported_partial",
+    "header_gene_order_taxon_set_matches": 63113,
+    "header_gene_order_unresolved": 317,
+    "mapping_audit": "results/stage4e/pnas48_locus_mapping_audit.tsv",
+    "report": "results/stage4e/pnas48_source_reconstruction.md"
+  },
   "current_input_identity": "reconstructed_named_recollapse_not_exact_published_collapsed",
   "existing_inputs_preserved": true,
   "original_stage4d_input_audit": {

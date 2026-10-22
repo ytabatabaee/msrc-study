@@ -9,20 +9,22 @@ was run and no cluster job was submitted.
 They are a reconstructed published-design dataset. The PNAS/Stiller README
 identifies `63430.aLRT-0.95-collapsed.gene.trees.gz` as the ASTRAL input,
 whereas the current Stage 4E inputs come from the ID-preserving
-`named_recollapsed.tre` fallback. The local audit found 31,066 named/collapsed
-same-row disagreements, so exact gene-tree identity is not established.
+`named_recollapsed.tre` fallback. A provenance-aware comparison resolves the
+archive-order problem behind most of the 31,066 naive same-row disagreements:
+63,113/63,430 collapsed records match the header-derived named-locus taxon set,
+while 317 records remain unresolved.
 
 2. **What differs?** The input gene-tree collection/preprocessing is the
 material discrepancy. Current pruning retains the 48 mapped Stiller labels,
 omits trees with fewer than four retained taxa, and preserves branch lengths;
-the exact collapsed-file locus correspondence needed to verify every topology
-and exclusion cannot be recovered by row because the files are not aligned.
+317 collapsed records still lack a verified locus assignment.
 
 3. **Did we identify original published 48-taxon gene-tree files?** No.
 The available PNAS archive contains scripts, support data, and species-tree
 outputs, but no authoritative 48-taxon gene-tree file with locus IDs. The
 published method describes restricting the 63,430 Stiller loci to the 48
-Jarvis species. Exact 48-taxon files remain unavailable.
+Jarvis species. A strong partial mapping exists, but exact complete 48-taxon
+files remain unavailable.
 
 4. **Are PNAS excluded intervals and locus IDs correct?** The interval
 predicate and local locus membership are exactly reproduced: 1431
@@ -32,9 +34,9 @@ unavailable original 48-taxon file. The three intervals are GalGal4 `chr4`
 window-start intervals and are inclusive.
 
 5. **What was corrected?** No raw `.tre` was overwritten and no corrected
-published-equivalent dataset was fabricated. The audit adds machine-readable
-provenance and preflight records; current J48 inputs remain explicitly
-reconstructed inputs.
+published-equivalent dataset was fabricated. The audit records
+header-derived locus assignments and retains the 317 unresolved records
+explicitly; current J48 inputs remain explicitly reconstructed inputs.
 
 6. **What remains unverifiable?** Exact collapsed-tree-to-locus identity,
 published 48-taxon gene-tree topology/branch/support equality, the original
