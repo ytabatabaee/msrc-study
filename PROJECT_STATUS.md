@@ -2211,3 +2211,35 @@ cluster-scale design. The existing staged 30-replicate and 300-replicate
 manifests were not changed. The original internal origin remains the
 recommended Mai30 production setting until a checkpointed Bridges2 origin
 experiment is benchmarked and validated.
+
+## Mai30 grouped backward MSRC validation
+
+The authoritative `msrc-sim` backward genealogy code now retains the original
+lineage-level implementation as `simulate_genealogy_reference` and uses an
+exact grouped-hazard implementation for `simulate_genealogy`. Switching and
+coalescence hazards are aggregated by population/background, with uniform
+lineage or pair selection within the selected event class. The stochastic
+model, Wright--Fisher process, structured-origin boundary, and ordinary
+panmictic fallback were not changed.
+
+A Mai replicate-007 benchmark measured 0.276 seconds per 30-taxon genealogy
+for the reference and 0.128 seconds for the grouped implementation at
+rho=0.02, approximately 2.15x faster. Focused simulator tests passed,
+including topology distribution, complete coalescence, origin-boundary, and
+event-invariant checks. Exact same-seed tree identity is not expected because
+the optimized implementation consumes random numbers differently.
+
+A small 20-history exploratory genealogy pilot was completed for replicate 007
+under the existing, deeper, and root-adjacent origin scenarios through
+rho=0.02. It produced conditional and marginal quartet tables but no
+independently validated dominant discordant quartet. The planned 1,000-history
+all-tree forward validation was attempted and stopped before completion:
+long Wright--Fisher histories and older-root extensions remain the main
+bottleneck. The older-root stress case and rho=0.1/1 backward stress runs
+remain unexecuted. No origin-placement ASTRAL collection was generated.
+
+The optimization is suitable for controlled small and moderate quartet
+pilots, but the simulator is not yet cleared for the full 30-replicate staged
+origin-placement experiment or the 300-replicate study. A checkpointed cluster
+workflow and a forward-history optimization or larger allocation are needed
+before making quartet-reversal or ASTRAL-bias claims.

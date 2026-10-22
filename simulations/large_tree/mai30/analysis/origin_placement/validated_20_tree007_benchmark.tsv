@@ -1,0 +1,4 @@
+condition	replicate	scenario	histories	genealogy_histories	seconds
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	20	20	12.109757269000001
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	20	20	9.499525588
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	20	20	10.061893369000003

@@ -1,0 +1,15 @@
+condition	replicate	scenario	quartet	selection_rule	n_histories_observed
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,2	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,5	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,2	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,5	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	1,10,11,12	first lexicographic quartet in structural exposure count bin 2/3/4	0
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	1,10,11,13	first lexicographic quartet in structural exposure count bin 2/3/4	0

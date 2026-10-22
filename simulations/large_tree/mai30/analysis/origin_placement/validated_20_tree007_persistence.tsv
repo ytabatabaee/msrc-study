@@ -1,0 +1,4 @@
+condition	replicate	scenario	n_histories	mean_origin_polymorphic_fraction	history_se	origin_end_polymorphic_fraction	ever_fixed_fraction	ever_lost_fraction
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	20	0.6666666666666664	5.0940525990875e-17	1.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	20	0.8333333333333336	5.0940525990875e-17	1.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	20	0.011373578302712158	7.959457186074219e-19	1.0	0.0	0.0

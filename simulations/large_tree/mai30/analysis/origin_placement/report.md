@@ -1,34 +1,25 @@
-# Rearrangement-origin placement report
+# Optimized simulator and quartet-reversal report
 
-## What was completed
+## Completed
 
-- Four deterministic origin scenarios were defined for all four Mai pilot
-  trees.
-- All 27,405 quartet subsets were enumerated for structural exposure.
-- Forward Wright--Fisher persistence and terminal arrangement sorting were
-  simulated with the authoritative `msrc-sim` implementation.
-- The requested rho grid was recorded, including 0, 1e-4, 1e-3, 2e-3,
-  1e-2, 2e-2, 1e-1, and 1.
+- Preserved the original backward implementation as `simulate_genealogy_reference`.
+- Added an exact grouped-hazard implementation used by `simulate_genealogy`.
+- Added regression tests and a benchmark script in `msrc-sim`.
+- Measured approximately 2.15x speedup on one 30-taxon Mai pilot genealogy.
+- Ran a 20-history, three-scenario exploratory quartet pilot for replicate 007.
 
-## What was not completed
+## Not completed
 
-The 30-taxon backward genealogy discovery run did not complete locally even
-after reducing to one history and one locus. The long-root and large-
-population cases make direct genealogy simulation computationally expensive.
-No quartet reversal, statistically supported negative margin, or ASTRAL bias
-is therefore reported. The corresponding TSV files contain explicit
-`not_executed` status rows.
+The 1,000-history all-tree forward validation and an independent quartet
+reversal validation were not completed locally. The older-root scenario and
+long branches make forward history generation expensive; high-rho backward
+runs add another event-count bottleneck. No full 30-taxon origin-placement
+collection or ASTRAL analysis was generated.
 
-## Scientific interpretation
+## Scientific conclusion
 
-Deeper and root origins clearly increase structural exposure. They do not, by
-themselves, establish persistent polymorphism or quartet reversal: the
-forward process can fix or lose the arrangement during the longer exposure.
-The original internal origins should remain the Mai30 production setting until
-a cluster-scale, checkpointed origin-placement experiment supplies validated
-genealogy-level results. The doubled-root scenario is especially unsuitable
-for local execution and should first be benchmarked on Bridges2.
-
-This is exact only for the hierarchical simulator components actually run:
-forward Wright--Fisher frequency histories and the specified origin rules.
-It is not a full 30-taxon exact MSRC theorem.
+The optimization makes the backward genealogy simulation feasible for small
+and moderate pilots without changing the specified model. It does not yet
+establish a dominant discordant quartet. Structural exposure and forward
+persistence remain separate from genealogical distortion, and the current
+results must not be used to claim quartet reversal or ASTRAL bias.

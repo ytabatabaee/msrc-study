@@ -1,0 +1,17 @@
+{
+  "status": "executed",
+  "histories": 20,
+  "genealogy_histories": 20,
+  "rho_grid": [
+    0.0,
+    0.0001,
+    0.001,
+    0.002,
+    0.01,
+    0.02
+  ],
+  "seed": 20261022,
+  "simulator": "/Users/ytabatabaee/Desktop/msrc-sim",
+  "forward_histories_reused_across_rho": true,
+  "quartets_are_induced_from_full_30_taxon_genealogies": true
+}
