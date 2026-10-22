@@ -1,0 +1,76 @@
+{
+  "treatment": "J48_T_PNAS",
+  "dry_run": false,
+  "command": [
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/J48_T_PNAS.tre",
+      "-o",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_T_PNAS/tree.annotated.nwk",
+      "-u",
+      "2",
+      "-t",
+      "32",
+      "--length",
+      "SULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ]
+  ],
+  "input": "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/J48_T_PNAS.tre",
+  "input_sha256": "6c60dce91603d46f5d0af75ec46093065cb605bcc8a8ce26e112d420482953b8",
+  "aster_bin": "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+  "aster_bin_sha256": "38d2aad2879605b3bd3d26bb7dbc978dce9cec510d684f64da4a58ead836872a",
+  "hostname": "r026.ib.bridges2.psc.edu",
+  "date_utc": "2026-10-22T18:28:51.848877+00:00",
+  "slurm_job_id": "49599448",
+  "cpu_count": 32,
+  "memory_request": "1900",
+  "mode": "topology_su",
+  "genelength": 1000.0,
+  "sulengthtype": 1,
+  "constraint": null,
+  "runs": [
+    {
+      "mode": "topology_su",
+      "length": "SULength",
+      "command": [
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+        "-i",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/J48_T_PNAS.tre",
+        "-o",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_T_PNAS/tree.annotated.nwk",
+        "-u",
+        "2",
+        "-t",
+        "32",
+        "--length",
+        "SULength",
+        "--genelength",
+        "1000.0",
+        "--sulengthtype",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_T_PNAS/tree.annotated.nwk",
+      "started_utc": "2026-10-22T18:28:51.850114+00:00"
+    }
+  ],
+  "taxa": 48,
+  "branches": 94,
+  "source_sha256": "26752cc5997a6cd9771500bcec27c25c59595c9b5a1b9429a1bf8fc734242733",
+  "annotated_sha256": "26752cc5997a6cd9771500bcec27c25c59595c9b5a1b9429a1bf8fc734242733",
+  "source_kind": "single_run",
+  "internal_branches": 45,
+  "terminal_branches": 49,
+  "extraction_wall_seconds": 2.6364150969311595,
+  "inference_wall_seconds": 558.3719583768398,
+  "output_sha256": {
+    "tree.annotated.nwk": "26752cc5997a6cd9771500bcec27c25c59595c9b5a1b9429a1bf8fc734242733",
+    "tree.cu.nwk": "81141c161081f88c1072b3a833ca6634e6f60d12b884324b6288e7300d5df040",
+    "tree.su.nwk": "82d66ed4816f0065ab93e68a88647ed22b00b39946269734597dc1a0f55b8c11"
+  }
+}

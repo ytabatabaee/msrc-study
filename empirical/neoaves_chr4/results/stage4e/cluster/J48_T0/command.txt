@@ -1,0 +1,1 @@
+/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4 -i /ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/J48_T0.tre -o /ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_T0/tree.annotated.nwk -u 2 -t 32 --length SULength --genelength 1000.0 --sulengthtype 1
