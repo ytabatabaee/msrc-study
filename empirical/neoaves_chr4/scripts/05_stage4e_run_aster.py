@@ -15,8 +15,15 @@ import os
 import platform
 import shutil
 import subprocess
+import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+from stage4e_annotations import extract_and_write, sha256 as annotation_sha256
 
 
 def sha256(path: Path) -> str:
@@ -167,15 +174,44 @@ def run_one(args: argparse.Namespace, mode: str, output_path: Path) -> dict[str,
 
 
 def run_treatment(args: argparse.Namespace) -> None:
+    if getattr(args, "extract_existing", False):
+        if args.input_annotated is None or args.output_dir is None or not args.treatment:
+            raise SystemExit("--extract-existing requires --input-annotated, --output-dir, and --treatment")
+        started = time.monotonic()
+        summary = extract_and_write(args.input_annotated, args.output_dir, args.treatment,
+                                    source_kind="extracted_from_existing_su_run")
+        provenance = {"treatment": args.treatment, "mode": "extract-existing",
+                      "migration_status": "extracted_from_existing_su_run",
+                      "source_annotated_path": str(args.input_annotated.resolve()),
+                      "source_annotated_sha256": annotation_sha256(args.input_annotated),
+                      "extraction_wall_seconds": time.monotonic() - started,
+                      "hostname": platform.node(), "date_utc": datetime.now(timezone.utc).isoformat()}
+        (args.output_dir / "provenance.json").write_text(json.dumps({**provenance, **summary}, indent=2) + "\n")
+        (args.output_dir / "exit_code.txt").write_text("0\n")
+        (args.output_dir / "run.json").write_text(json.dumps({**provenance, **summary}, indent=2) + "\n")
+        print(json.dumps({"status": "extracted", **summary}, indent=2))
+        return
     require_cluster_execution(args.execute, args.allow_cluster_execution)
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    mode = getattr(args, "mode", "topology_cu")
+    mode = getattr(args, "mode", "topology_su")
     genelen = getattr(args, "genelength", 1000.0)
     sulengthtype = getattr(args, "sulengthtype", 1)
     constraint = getattr(args, "constraint", None)
     args.genelength, args.sulengthtype, args.constraint = genelen, sulengthtype, constraint
+    # The production path is one SULength inference.  ASTRAL annotates that
+    # same tree with both CU and SU values; the historical ``both`` mode is
+    # retained only for old reproduction workflows.
+    if mode == "topology_su" and (args.output_dir / "tree.annotated.nwk").exists():
+        try:
+            extract_and_write(args.output_dir / "tree.annotated.nwk", args.output_dir, args.treatment)
+            if (args.output_dir / "branch_lengths.tsv").exists():
+                print(f"SKIP_VALIDATED {args.output_dir}")
+                return
+        except Exception:
+            pass
     modes = ["topology_cu", "topology_su"] if mode == "both" else [mode]
-    outputs = {"topology_cu": args.output_dir / "tree.cu.nwk", "topology_su": args.output_dir / "tree.su.nwk"}
+    outputs = {"topology_cu": args.output_dir / "tree.cu.nwk",
+               "topology_su": args.output_dir / "tree.annotated.nwk" if mode == "topology_su" else args.output_dir / "tree.su.nwk"}
     commands = [astra_command(args.aster_bin, args.input, outputs[m], int(os.environ.get("SLURM_CPUS_PER_TASK") or args.threads), length=("CULength" if m == "topology_cu" else "SULength"), genelen=genelen, sulengthtype=sulengthtype, constraint=constraint) for m in modes]
     (args.output_dir / "command.txt").write_text("\n".join(" ".join(c) for c in commands) + "\n")
     provenance = {"treatment": args.treatment, "dry_run": not args.execute, "command": commands,
@@ -194,6 +230,7 @@ def run_treatment(args: argparse.Namespace) -> None:
         print("DRY RUN:\n" + "\n".join(" ".join(c) for c in commands))
         return
     runs = []
+    inference_started = time.monotonic()
     for m in modes:
         run = run_one(args, m, outputs[m]); runs.append(run)
         if run["returncode"] != 0:
@@ -201,8 +238,17 @@ def run_treatment(args: argparse.Namespace) -> None:
             raise SystemExit(run["returncode"])
     if mode == "topology_cu":
         shutil.copyfile(outputs["topology_cu"], args.output_dir / "tree.nwk")
+    extraction = {}
+    if mode == "topology_su":
+        extraction_started = time.monotonic()
+        extraction = extract_and_write(outputs["topology_su"], args.output_dir, args.treatment)
+        extraction["extraction_wall_seconds"] = time.monotonic() - extraction_started
+        extraction["inference_wall_seconds"] = time.monotonic() - inference_started - extraction["extraction_wall_seconds"]
     (args.output_dir / "exit_code.txt").write_text("0\n")
     provenance["runs"] = runs
+    provenance.update(extraction)
+    provenance["output_sha256"] = {str(path.name): sha256(path) for path in args.output_dir.glob("tree*.nwk")}
+    (args.output_dir / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
     (args.output_dir / "run.json").write_text(json.dumps(provenance, indent=2) + "\n")
 
 
@@ -211,24 +257,31 @@ def main() -> None:
     parser.add_argument("--preflight", action="store_true")
     parser.add_argument("--execute", action="store_true", help="Actually launch ASTER/ASTRAL4; default is dry-run.")
     parser.add_argument("--allow-cluster-execution", action="store_true")
-    parser.add_argument("--aster-bin", type=Path, required=True)
+    parser.add_argument("--aster-bin", type=Path, default=Path("astral4"))
     parser.add_argument("--input", type=Path)
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--treatment")
     parser.add_argument("--threads", type=int, default=1)
-    parser.add_argument("--mode", choices=["topology_cu", "topology_su", "both"], default="both")
+    parser.add_argument("--mode", choices=["topology_cu", "topology_su", "both"], default="topology_su")
     parser.add_argument("--genelength", type=float, default=1000.0)
     parser.add_argument("--sulengthtype", type=int, choices=[1, 2], default=1)
     parser.add_argument("--constraint", type=Path)
     parser.add_argument("--input-manifest", type=Path)
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--output-root", type=Path)
+    parser.add_argument("--extract-existing", action="store_true",
+                        help="Extract CU/SU and derived artifacts from an existing annotated SU tree without running ASTRAL")
+    parser.add_argument("--input-annotated", type=Path,
+                        help="Existing annotated SU Newick used with --extract-existing")
     args = parser.parse_args()
     if args.preflight:
         for required in ("input_manifest", "data_dir", "output_root"):
             if getattr(args, required) is None:
                 parser.error(f"--preflight requires --{required.replace('_', '-')}")
         run_preflight(args)
+        return
+    if args.extract_existing:
+        run_treatment(args)
         return
     if args.input is None or args.output_dir is None or not args.treatment:
         parser.error("--input, --output-dir, and --treatment are required outside --preflight")

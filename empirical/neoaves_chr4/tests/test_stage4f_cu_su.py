@@ -15,6 +15,7 @@ def load(name, path):
 
 runner = load("stage4f_runner", BASE / "scripts/05_stage4e_run_aster.py")
 analyzer = load("stage4f_analyzer", BASE / "scripts/05_stage4e_analyze_aster.py")
+annotations = load("stage4e_annotations", BASE / "scripts/stage4e_annotations.py")
 
 
 def test_verified_length_commands_are_explicit():
@@ -65,3 +66,42 @@ def test_missing_empirical_outputs_are_not_coerced_to_zero(tmp_path, monkeypatch
     rows = analyzer.branch_tables({}, "CU")
     assert rows[0][0]["status"] == "PENDING_CLUSTER_OUTPUT"
 
+
+def annotated_fixture():
+    return ("((A:0.1,B:0.2)'[CULength=1.2;SULength=0.3;localPP=1;"
+            "q1=0.9;q2=0.05;q3=0.05]':0.3,(C:0.4,D:0.5)"
+            "'[CULength=1.2;SULength=0.3;localPP=1;q1=0.9;q2=0.05;q3=0.05]':0.3);")
+
+
+def test_single_annotated_tree_extracts_internal_lengths_and_terminal_su(tmp_path):
+    source = tmp_path / "tree.su.nwk"
+    source.write_text(annotated_fixture())
+    summary = annotations.extract_and_write(source, tmp_path / "out", "T0")
+    assert summary["taxa"] == 4
+    text = (tmp_path / "out/branch_lengths.tsv").read_text()
+    assert "terminal_A\tterminal\tA\tA\tNA\t0.1" in text
+    assert "internal_0001\tinternal\tA|B\tinternal_0001\t1.2\t0.3" in text
+    assert (tmp_path / "out/tree.annotated.nwk").read_text() == source.read_text()
+
+
+def test_single_run_command_requests_only_su_annotation():
+    command = runner.astra_command(Path("astral4"), Path("in.tre"), Path("tree.annotated.nwk"), 32,
+                                   length="SULength", genelen=1000, sulengthtype=1)
+    assert command.count("--length") == 1
+    assert command[command.index("--length") + 1] == "SULength"
+
+
+def test_migration_is_idempotent_and_refuses_overwrite(tmp_path):
+    source = tmp_path / "legacy.su.nwk"
+    source.write_text(annotated_fixture())
+    out = tmp_path / "out"
+    first = annotations.extract_and_write(source, out, "T0", source_kind="extracted_from_existing_su_run")
+    second = annotations.extract_and_write(source, out, "T0", source_kind="extracted_from_existing_su_run")
+    assert first["annotated_sha256"] == second["annotated_sha256"]
+    source.write_text(source.read_text().replace("0.3);", "0.31);"))
+    try:
+        annotations.extract_and_write(source, out, "T0")
+    except FileExistsError:
+        pass
+    else:
+        raise AssertionError("migration overwrote a differing annotated source")

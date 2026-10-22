@@ -14,6 +14,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from stage4d_core import ROOT, RESULTS, named_splits, sha256  # noqa: E402
+from stage4e_annotations import extract_and_write  # noqa: E402
 
 BASE = ROOT / "empirical/neoaves_chr4"
 TREE_DIR = BASE / "results/stage4e/trees"
@@ -64,6 +65,34 @@ def classify(output_dir: Path, treatment: str, expected_taxa: int, mode: str) ->
     return row
 
 
+def classify_single_run(output_dir: Path, treatment: str, expected_taxa: int) -> dict[str, str]:
+    row = {"treatment": treatment, "mode": "single_annotated", "status": "missing",
+           "output_dir": str(output_dir), "tree_sha256": "", "error": "output_not_present"}
+    if not output_dir.exists():
+        return row
+    if not (output_dir / "exit_code.txt").exists() or (output_dir / "exit_code.txt").read_text().strip() != "0":
+        row["status"] = "incomplete"
+        return row
+    annotated = output_dir / "tree.annotated.nwk"
+    if not annotated.exists() or annotated.stat().st_size == 0:
+        row["status"] = "incomplete"
+        row["error"] = "annotated_output_missing"
+        return row
+    try:
+        summary = extract_and_write(annotated, output_dir, treatment)
+    except Exception as exc:
+        row["status"] = "failed"
+        row["error"] = f"annotation validation failed: {exc}"
+        return row
+    if summary["taxa"] != expected_taxa:
+        row["status"] = "failed"
+        row["error"] = f"Expected {expected_taxa} taxa, observed {summary['taxa']}"
+        return row
+    row.update(status="complete", tree_sha256=sha256(annotated), error="",
+               n_internal=str(summary["internal_branches"]), n_terminal=str(summary["terminal_branches"]))
+    return row
+
+
 def copy_validated_tree(source: Path, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and sha256(dest) != sha256(source):
@@ -83,13 +112,20 @@ def main() -> None:
     for item in read_manifest(args.manifest):
         expected_taxa = 48 if item["scope"] == "jarvis48" else 363
         output_dir = args.cluster_root / item["treatment"]
+        single = classify_single_run(output_dir, item["treatment"], expected_taxa)
+        if single["status"] == "complete":
+            rows.append(single)
+            for suffix in ("annotated", "cu", "su"):
+                copy_validated_tree(output_dir / f"tree.{suffix}.nwk", TREE_DIR / f"{item['treatment']}.{suffix}.nwk")
+            continue
+        rows.append(single)
         for mode in ("topology_cu", "topology_su"):
             row = classify(output_dir, item["treatment"], expected_taxa, mode)
             rows.append(row)
             if row["status"] == "complete":
                 suffix = "cu" if mode == "topology_cu" else "su"
                 copy_validated_tree(output_dir / f"tree.{suffix}.nwk", TREE_DIR / f"{item['treatment']}.{suffix}.nwk")
-    fields = ["treatment", "mode", "status", "output_dir", "tree_sha256", "error"]
+    fields = ["treatment", "mode", "status", "output_dir", "tree_sha256", "error", "n_internal", "n_terminal"]
     out = args.status_output
     with out.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t", lineterminator="\n")

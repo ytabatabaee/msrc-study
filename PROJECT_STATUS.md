@@ -278,6 +278,18 @@ for both modes, including finite nonnegative branch lengths and explicit
 annotation parsing. Fixed-topology commands use the documented `-C -c`
 interface but remain pending a validated T0 topology.
 
+The execution path is now optimized around the confirmed ASTRAL-IV behavior:
+one `--length SULength` inference supplies internal `CULength` and
+`SULength` annotations in the same tree. The local runner preserves that
+annotated source, derives CU and SU trees, and records terminal CU as missing
+rather than inserting artificial values. Existing two-run modes remain
+available for legacy reproduction, while the new Bridges-2 workflow submits
+one treatment per job. Migration from an existing annotated SU result is
+supported without rerunning ASTRAL. No Bridges-2 jobs were submitted by this
+update. The preliminary approximately 9.5-hour full-tree runtime is a
+planning measurement only; fixed-topology scoring and independent topology
+inference remain separate scientific analyses.
+
 No Bridges-2 jobs were submitted by this workflow. At the current freeze,
 `stage4e_collect_status.tsv` reports all treatment/unit outputs as missing, so
 there are no valid 363-species topology, CU, SU, fixed-topology, or

@@ -1,42 +1,26 @@
-# Stage 4E ASTER/ASTRAL4 Bridges-2 execution
+# Stage 4E ASTRAL-IV Bridges-2 execution
 
-This directory contains submission scripts only. Do not run ASTER/ASTRAL4 on
-the large Neoaves inputs locally. The job scripts call the Stage 4E runner in
-`--mode both`, producing separate `tree.cu.nwk` (`CULength`) and `tree.su.nwk`
-(`SULength`) outputs. SU uses CASTLES with `--sulengthtype 1` and the explicit
-`--genelength` default of 1000 unless changed at submission time.
+Do not run the full Neoaves inputs locally. The production path uses one
+ASTRAL-IV v1.25.4.8 inference per treatment with `--length SULength`,
+`--sulengthtype 1`, and configurable `--genelength` (default 1000). The
+annotated output contains both internal `CULength` and `SULength` values; the
+runner extracts both after inference. Terminal CU values remain undefined.
 
-Default Bridges-2 configuration:
+`01_full363_primary.sbatch`, `02_full363_sensitivities.sbatch`, and
+`03_j48_primary.sbatch` are retained as legacy sequential workflows. Use
+`01_single_treatment.sbatch` for new runs. It executes exactly one treatment
+and is restart-safe.
 
-- partition: `RM-shared`
-- cores: `32`
-- memory: determined by the Bridges-2 `RM-shared` core allocation
-
-Provide your PSC allocation at submission time, or add it to the scripts as:
-
-```bash
-#SBATCH -A YOUR_ALLOCATION
-```
-
-Suggested cluster layout:
+The expected Bridges-2 layout is:
 
 ```text
 $PROJECT/neoaves_stage4e/
   repo/
-  inputs/
   outputs/
-  software/
+  software/astral4
 ```
 
-Transfer the repository and Stage 4E input files manually. Example:
-
-```bash
-rsync -avP empirical/neoaves_chr4/data/stage4e/ PSC_USER@bridges2.psc.edu:$PROJECT/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/
-rsync -avP empirical/neoaves_chr4/results/stage4e_* PSC_USER@bridges2.psc.edu:$PROJECT/neoaves_stage4e/repo/empirical/neoaves_chr4/results/
-rsync -avP empirical/neoaves_chr4/cluster/stage4e_aster/ PSC_USER@bridges2.psc.edu:$PROJECT/neoaves_stage4e/repo/empirical/neoaves_chr4/cluster/stage4e_aster/
-```
-
-On Bridges-2, set:
+After transferring inputs and checking out the repository, set:
 
 ```bash
 export MSRC_REPO=$PROJECT/neoaves_stage4e/repo
@@ -49,34 +33,51 @@ export PYTHON=python3
 Run preflight first:
 
 ```bash
-sbatch -A YOUR_ALLOCATION empirical/neoaves_chr4/cluster/stage4e_aster/00_preflight.sbatch
+sbatch -A bio240015p empirical/neoaves_chr4/cluster/stage4e_aster/00_preflight.sbatch
 ```
 
-After preflight completes, inspect:
-
-```text
-$NEOAVES_STAGE4E_OUT/stage4e_preflight_runtime.json
-```
-
-Only after preflight passes, submit the first primary deterministic job script:
+Then submit the five primary treatments independently:
 
 ```bash
-sbatch -A YOUR_ALLOCATION empirical/neoaves_chr4/cluster/stage4e_aster/01_full363_primary.sbatch
+for T in T0 T_PNAS T_STRUCT_PRIMARY T_BLOCK_500K NONCHR4; do
+  sbatch -A bio240015p --qos=rm -p RM-shared --cpus-per-task=32 \
+    --time=16:00:00 --export=ALL,TREATMENT="$T" \
+    empirical/neoaves_chr4/cluster/stage4e_aster/01_single_treatment.sbatch
+done
 ```
 
-Recommended launch order:
+Generate commands without submitting:
 
-1. Run preflight.
-2. Inspect `stage4e_preflight_runtime.json`.
-3. Run the primary deterministic job.
-4. Inspect T0 runtime, memory behavior, and output.
-5. Only then submit sensitivities, J48 jobs, or random-matched jobs.
+```bash
+python empirical/neoaves_chr4/scripts/05_stage4e_make_commands.py --group primary
+```
 
-Do not submit the 500-task random-matched array until the deterministic Stage-4E
-treatments have completed and the resulting topology effects have been
-inspected.
+Collect returned outputs with `05_stage4e_collect_aster.py`. Existing legacy
+SU-annotated outputs can be migrated without rerunning ASTRAL:
 
-The collector validates CU and SU outputs independently. The analyzer matches
-internal branches by normalized bipartition and terminal branches by exact taxon
-label. Fixed-topology scoring is available through the runner's `--constraint`
-option, but is reported pending until a validated T0 topology has been returned.
+```bash
+python empirical/neoaves_chr4/scripts/05_stage4e_run_aster.py \
+  --extract-existing --input-annotated /path/to/T0/tree.su.nwk \
+  --output-dir empirical/neoaves_chr4/results/stage4e/cluster/T0 \
+  --treatment T0
+```
+
+Migration preserves the source checksum, refuses to overwrite a different
+annotated tree, and writes `tree.annotated.nwk`, `tree.cu.nwk`, `tree.su.nwk`,
+and `branch_lengths.tsv`. Derived files are written atomically.
+
+Fixed-topology scoring is useful for branch-length comparisons on a common
+topology, but it does not test topology selection:
+
+```bash
+astral4 -i MATCHED_INPUT.tre -C -c T0_TREE.nwk -u 2 \
+  --length SULength --genelength 1000 --sulengthtype 1 \
+  -o fixed.annotated.nwk
+```
+
+Use `sacct -j JOBID --format=JobID,State,Elapsed,AllocCPUS,MaxRSS,ExitCode`
+for resource accounting. A preliminary Bridges-2 observation was about 9.5
+hours for one full 363-species inference with 32 cores; this is a planning
+measurement, not a runtime guarantee. Do not submit the 500 random-matched
+inferences until deterministic outputs have been validated. Fixed-topology
+and independent-topology comparisons must remain separate.

@@ -27,10 +27,37 @@ analysis. Stage 4E prepares ASTER/ASTRAL4 full-tree treatments for Bridges-2;
 large inference must run only under SLURM and Stage 4E is not complete until
 cluster outputs are returned and validated.
 
+The current Stage 4E runner performs one ASTRAL-IV `SULength` inference per
+treatment and extracts internal CU annotations from that same annotated tree.
+Terminal CU lengths remain undefined. See
+`cluster/stage4e_aster/README.md` for resumable single-treatment jobs,
+legacy-output migration, and fixed-topology scoring guidance.
+
 Stage 4E uses the ID-preserving `data/stage4d/named_recollapsed.tre` source and
 never maps the problematic published collapsed tree to locus metadata by row.
 The generated `.tre` inputs under `data/stage4e/` are large and git-ignored;
 tracked manifests and checksums are written under `results/`.
+
+## Recombination-map audit
+
+The recombination-source audit is complete in
+`results/recombination_source_audit.tsv` and
+`results/recombination_source_audit.md`. Groenen et al. (2009) and Elferink et
+al. (2010) provide pedigree-based chicken linkage maps with local cM/Mb
+measurements and GGA4 coverage. Elferink et al.'s approximately 500-kb
+marker-defined tables are the best candidate for a GalGal6-aligned track, but
+the publisher's XLS endpoint returned HTML protection pages in the recovery
+environment, and the source uses WASHUC2 coordinates. No numeric workbook was
+accepted or preserved as downloaded, no WASHUC2-to-GalGal6 conversion was
+validated, and no local cM/Mb table or recombination-rate figure was generated.
+
+The PNAS Neoaves study supplies the GalGal6-referenced approximately 21-Mb
+focal region and an inference about historical suppression, not direct cM/Mb
+measurements. Genealogy switching, QQS, synteny disruption, and the PNAS
+historical inference remain excluded from the recombination-rate panel. The
+whole-chromosome GGA4 averages reported by the linkage-map paper are not used
+as local rates. Run `tests/test_recombination_audit.sh` for the repository-side
+schema, arithmetic, coordinate, and no-fabrication checks.
 
 ## Inputs
 
