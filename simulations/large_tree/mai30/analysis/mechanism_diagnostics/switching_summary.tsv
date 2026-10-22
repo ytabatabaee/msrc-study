@@ -1,0 +1,4 @@
+treatment	rho	n_histories	mean_switches_per_genealogy	sd_history_mean_switches	mean_zero_switch_fraction	mean_max_switches
+msrc_moderate_suppression	0.01	100	14.902	21.53743149856908	0.0485	22.03
+msrc_no_suppression	0.02	100	31.634	45.61756200890578	0.0395	42.42
+msrc_strong_suppression	0.002	100	3.7345	4.318615419485062	0.0695	6.78

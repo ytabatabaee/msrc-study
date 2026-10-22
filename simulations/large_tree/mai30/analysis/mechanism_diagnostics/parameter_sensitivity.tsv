@@ -1,0 +1,6 @@
+parameter	status	reason
+initial_frequency	planned_not_executed	requires new authoritative simulations
+structured_duration	planned_not_executed	requires new authoritative simulations
+population_size	planned_not_executed	requires new authoritative simulations
+origin_placement	planned_not_executed	requires new authoritative simulations
+internal_branch_length	planned_not_executed	requires new authoritative simulations

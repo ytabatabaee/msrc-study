@@ -1,0 +1,19 @@
+{
+  "status": "retrospective_pilot_diagnostics_plus_planned_grid",
+  "pilot_groups": 12,
+  "pilot_histories_per_group": 25,
+  "pilot_genealogies_per_group": 500,
+  "base_rate": 0.02,
+  "pattern_classification": "2:2 patterns classified against each quartet's induced species-tree split",
+  "simulator_outputs_used": [
+    "arrangement_history.tsv",
+    "terminal_states.tsv",
+    "genealogy_blocks.tsv"
+  ],
+  "unavailable_from_retained_outputs": [
+    "lineage-level switch time and branch",
+    "coalescence-before/after-switch ordering",
+    "backward time spent in each background"
+  ],
+  "expanded_rate_grid_executed": false
+}

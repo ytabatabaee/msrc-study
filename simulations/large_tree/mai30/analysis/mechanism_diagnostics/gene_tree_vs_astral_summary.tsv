@@ -1,0 +1,13 @@
+group	condition	replicate	treatment	rho	gene_tree_normalized_rf	astral_normalized_rf	analysis_status
+outgroup.0.species.1.5.genes.1.5__replicate_007__msrc_moderate_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	0.01	0.9762222222222222	0.7407407407407407	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_007__msrc_no_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	0.02	0.976074074074074	0.6666666666666666	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_007__msrc_strong_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	0.002	0.9745185185185185	0.6666666666666666	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_042__msrc_moderate_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	0.01	0.006518518518518518	0.0	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_042__msrc_no_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	0.02	0.006	0.0	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_042__msrc_strong_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	0.002	0.007481481481481481	0.0	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_074__msrc_moderate_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	0.01	0.5814074074074074	0.0	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_074__msrc_no_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	0.02	0.5757777777777777	0.0	completed_pilot
+outgroup.0.species.1.5.genes.1.5__replicate_074__msrc_strong_suppression__freq_0.5	outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	0.002	0.5715555555555556	0.0	completed_pilot
+outgroup.0.species.5.genes.5__replicate_005__msrc_moderate_suppression__freq_0.5	outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	0.01	0.29948148148148146	0.0	completed_pilot
+outgroup.0.species.5.genes.5__replicate_005__msrc_no_suppression__freq_0.5	outgroup.0.species.5.genes.5	005	msrc_no_suppression	0.02	0.3098518518518518	0.0	completed_pilot
+outgroup.0.species.5.genes.5__replicate_005__msrc_strong_suppression__freq_0.5	outgroup.0.species.5.genes.5	005	msrc_strong_suppression	0.002	0.29962962962962963	0.0	completed_pilot
