@@ -367,7 +367,8 @@ def main() -> None:
     summaries, pairwise = validate_results()
     write_topology_reports(summaries, pairwise)
     write_focal_reports()
-    write_mixture_reports()
+    # Genome-wide quartet mixtures must come from the published QQS archive;
+    # do not regenerate the old chromosome-4-only endpoint table here.
     write_experiment_manifest()
     print("validated five completed J48 trees; wrote bounded reports and Bridges-2 manifest")
 

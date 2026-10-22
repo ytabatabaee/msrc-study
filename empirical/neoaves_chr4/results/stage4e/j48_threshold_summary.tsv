@@ -1,6 +1,4 @@
 quantity	value	definition
-chr4_locus_fraction	0.09872300173419518	6262/63430 locus-manifest fraction; distinct from epsilon
-chr4_locus_count	6262	stage4d locus manifest
-total_locus_count	63430	stage4d locus manifest
-chr4_coordinate_extent_end	90170000	maximum chr4 end in locus manifest; not a genome-wide affected fraction
-astral_transition	pending_bridges2	no new inference was run locally
+source_statistics_scope	published_full_taxon_QQS	not a 48-taxon gene-tree quartet estimate
+chr4_locus_fraction	0.09872300173419518	6262/63430 distinct-locus fraction
+astral_transition	pending_bridges2	completed J48 endpoints are qualitative only

@@ -25,6 +25,15 @@ reported from it. `scripts/05_stage4e_prepare_threshold_mixtures.py` and
 stratified mixture inputs and one ASTRAL-IV inference per mixture on Bridges-2;
 they do not submit jobs. The generated figure is explicitly partial until the
 background quartet endpoint and mixture-run outputs are available.
+
+The cached PNAS archive also supplies the complete published QQS source.
+`scripts/recover_genomewide_qqs.py` streams its locus header and
+`clade-rec.stat.xz`, joins them to the frozen Stage 4D manifest, and reproduces
+the existing chromosome-4 QQS rows exactly. It recovers genome-wide
+full-source QQS distributions and thresholds for the focal partitions. These
+statistics are not quartet frequencies recomputed from the 48-taxon J48 gene
+trees, so their thresholds support direction and partition comparisons without
+being exact predictions of the J48 ASTRAL transition.
 - `figures/`: rendered PDF/PNG figures.
 - `config/`: run profiles or parameter files when defaults are externalized.
 - `tests/`: shared regression tests; several stage-local tests remain embedded
