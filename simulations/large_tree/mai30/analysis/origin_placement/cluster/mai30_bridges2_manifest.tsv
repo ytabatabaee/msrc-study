@@ -1,0 +1,77 @@
+stage	task_id	condition	replicate	scenario	rho	history_count	seed_policy	status
+benchmark_forward	0	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	1	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	2	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	3	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	4	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	5	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	6	outgroup.0.species.5.genes.5	005	A_existing_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_forward	7	outgroup.0.species.5.genes.5	005	B_deep_internal	0	1	20261022+tree*10000000+scenario*100000+history	planned
+benchmark_backward	0	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	1	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	2	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	3	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	4	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	5	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	6	outgroup.0.species.5.genes.5	005	A_existing_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+benchmark_backward	7	outgroup.0.species.5.genes.5	005	B_deep_internal	0.02	1	20261022+1000000000+tree*10000000+scenario*100000+history*100+rho_index	planned
+forward	0	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	1	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	2	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	3	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	4	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	5	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	6	outgroup.0.species.5.genes.5	005	A_existing_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+forward	7	outgroup.0.species.5.genes.5	005	B_deep_internal		100	20261022+tree*10000000+scenario*100000+history	planned
+backward	0	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0	100	derived_from_forward_history	planned
+backward	1	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.0001	100	derived_from_forward_history	planned
+backward	2	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.001	100	derived_from_forward_history	planned
+backward	3	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.002	100	derived_from_forward_history	planned
+backward	4	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.01	100	derived_from_forward_history	planned
+backward	5	outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0.02	100	derived_from_forward_history	planned
+backward	6	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0	100	derived_from_forward_history	planned
+backward	7	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.0001	100	derived_from_forward_history	planned
+backward	8	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.001	100	derived_from_forward_history	planned
+backward	9	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.002	100	derived_from_forward_history	planned
+backward	10	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.01	100	derived_from_forward_history	planned
+backward	11	outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0.02	100	derived_from_forward_history	planned
+backward	12	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0	100	derived_from_forward_history	planned
+backward	13	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.0001	100	derived_from_forward_history	planned
+backward	14	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.001	100	derived_from_forward_history	planned
+backward	15	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.002	100	derived_from_forward_history	planned
+backward	16	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.01	100	derived_from_forward_history	planned
+backward	17	outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0.02	100	derived_from_forward_history	planned
+backward	18	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0	100	derived_from_forward_history	planned
+backward	19	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.0001	100	derived_from_forward_history	planned
+backward	20	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.001	100	derived_from_forward_history	planned
+backward	21	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.002	100	derived_from_forward_history	planned
+backward	22	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.01	100	derived_from_forward_history	planned
+backward	23	outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0.02	100	derived_from_forward_history	planned
+backward	24	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0	100	derived_from_forward_history	planned
+backward	25	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.0001	100	derived_from_forward_history	planned
+backward	26	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.001	100	derived_from_forward_history	planned
+backward	27	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.002	100	derived_from_forward_history	planned
+backward	28	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.01	100	derived_from_forward_history	planned
+backward	29	outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0.02	100	derived_from_forward_history	planned
+backward	30	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0	100	derived_from_forward_history	planned
+backward	31	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.0001	100	derived_from_forward_history	planned
+backward	32	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.001	100	derived_from_forward_history	planned
+backward	33	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.002	100	derived_from_forward_history	planned
+backward	34	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.01	100	derived_from_forward_history	planned
+backward	35	outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0.02	100	derived_from_forward_history	planned
+backward	36	outgroup.0.species.5.genes.5	005	A_existing_internal	0	100	derived_from_forward_history	planned
+backward	37	outgroup.0.species.5.genes.5	005	A_existing_internal	0.0001	100	derived_from_forward_history	planned
+backward	38	outgroup.0.species.5.genes.5	005	A_existing_internal	0.001	100	derived_from_forward_history	planned
+backward	39	outgroup.0.species.5.genes.5	005	A_existing_internal	0.002	100	derived_from_forward_history	planned
+backward	40	outgroup.0.species.5.genes.5	005	A_existing_internal	0.01	100	derived_from_forward_history	planned
+backward	41	outgroup.0.species.5.genes.5	005	A_existing_internal	0.02	100	derived_from_forward_history	planned
+backward	42	outgroup.0.species.5.genes.5	005	B_deep_internal	0	100	derived_from_forward_history	planned
+backward	43	outgroup.0.species.5.genes.5	005	B_deep_internal	0.0001	100	derived_from_forward_history	planned
+backward	44	outgroup.0.species.5.genes.5	005	B_deep_internal	0.001	100	derived_from_forward_history	planned
+backward	45	outgroup.0.species.5.genes.5	005	B_deep_internal	0.002	100	derived_from_forward_history	planned
+backward	46	outgroup.0.species.5.genes.5	005	B_deep_internal	0.01	100	derived_from_forward_history	planned
+backward	47	outgroup.0.species.5.genes.5	005	B_deep_internal	0.02	100	derived_from_forward_history	planned
+panel	0	all	all	all		0	none	planned
+analysis	0	all	all	all		0	none	planned
+validation	0	all	all	all		0	none	planned
+astral	0	all	all	all		0	none	optional

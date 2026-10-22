@@ -2301,3 +2301,20 @@ replications and MSRC extensions. The recommended Bridges-2 preparation set
 is `J48_T0`, `J48_T_PNAS`, `J48_T_STRUCT_PRIMARY`, `J48_T_BLOCK_500K`, and
 `J48_NONCHR4`; no job was submitted. See
 `empirical/neoaves_chr4/results/stage4e/pnas48_data_audit.md`.
+## Mai30 Bridges2 quartet-validation preparation
+
+The origin-placement quartet validation has a Bridges2-only workflow under
+`simulations/large_tree/mai30/analysis/origin_placement/cluster/`. It separates
+preflight, forward-history generation, quartet-panel selection, backward
+genealogy generation, quartet analysis, independent validation, and optional
+ASTRAL analysis. Simulation arrays are capped at two concurrent tasks,
+forward histories are the independent replication unit, and completion
+markers are written only after a delegated stage command succeeds.
+
+The workflow defaults to `--prepare-only`, refuses computational modes outside
+a Slurm allocation, and requires the optimized `msrc-sim` commit
+`bfba58d627f6f467af649cdb0b37f969349e0aab`. That checkout is not available in
+the current workspace, so the stage-specific simulator commands remain
+explicit Bridges2 configuration items; no simulator API was guessed and no
+local simulation or benchmark was run. See
+`simulations/large_tree/mai30/analysis/origin_placement/cluster/BRIDGES2_RUNBOOK.md`.
