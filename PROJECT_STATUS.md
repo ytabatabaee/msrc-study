@@ -2332,3 +2332,22 @@ marker is written. The simulator checkout is not available in the current
 workspace, so only syntax, manifest, checksum, Newick-fixture, and refusal
 tests were run; no local simulation or benchmark was run. See
 `simulations/large_tree/mai30/analysis/origin_placement/cluster/BRIDGES2_RUNBOOK.md`.
+
+The persistence adapter was subsequently corrected to use recorded Wright--Fisher
+copy counts at branch start/end boundaries: polymorphism is the binary event
+`0 < K < M`, and joint persistence is the product of those indicators across
+the origin branch start/end set. Mean arrangement frequency, fixation/loss,
+joint persistence, and sampled terminal-pattern probabilities are now separate
+outputs. The former terminal-frequency average/product table is superseded and
+must not be used for persistence claims. Checkpoints now retain split-event
+provenance and validate arrangement counts, population sizes, and frequency
+consistency; legacy checkpoints missing required provenance are marked for
+Bridges2 regeneration.
+
+The quartet panel now classifies species topologies using canonical induced
+unrooted bipartitions, with fixture coverage for all three quartet topologies,
+taxon permutations, and unresolved polytomies. Analysis retains history-level
+observations and both pairwise species-versus-discordant margins. Independent
+validation applies a multiple-testing-adjusted history-level uncertainty gate
+before marking either discordant topology as supported. No simulator-backed
+integration test or cluster job was run locally.

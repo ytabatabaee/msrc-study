@@ -23,6 +23,10 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Iterable
 
+
+class CheckpointRequiresRegeneration(ValueError):
+    """Raised when a legacy checkpoint lacks provenance needed for replay."""
+
 HERE = Path(__file__).resolve().parent
 MAI = HERE.parents[2]
 MANIFEST = HERE / "mai30_bridges2_manifest.tsv"
@@ -124,6 +128,7 @@ def load_simulator() -> dict[str, Any]:
     from msrcsim import SpeciesTree  # type: ignore
     from msrcsim.population_process import simulate_population_history  # type: ignore
     from msrcsim.rearrangement import Rearrangement  # type: ignore
+    from msrcsim.speciation_split import SplitInitializationEvent  # type: ignore
     from msrcsim.structured_coalescent import simulate_genealogy  # type: ignore
     from msrcsim.wright_fisher import FrequencyHistory, FrequencyRecord  # type: ignore
     return locals()
@@ -268,17 +273,38 @@ def parse_splits(newick: str) -> tuple[set[str], set[frozenset[str]]]:
 
 
 def quartet_topology(newick: str, quartet: tuple[str, str, str, str]) -> str:
+    split = induced_quartet_split(newick, quartet)
+    if split is None:
+        return "unresolved"
+    left, right = split
+    return f"{left[0]}|{left[1]}::{right[0]}|{right[1]}"
+
+
+def induced_quartet_split(newick: str, quartet: Iterable[str]) -> tuple[tuple[str, str], tuple[str, str]] | None:
+    quartet = tuple(quartet)
     leaves, splits = parse_splits(newick)
     if not set(quartet) <= leaves:
-        return "missing"
+        return None
     q = set(quartet)
     for split in splits:
         part = split & q
         if len(part) == 2:
             pair = tuple(sorted(part))
             other = tuple(sorted(q - part))
-            return f"{pair[0]}|{pair[1]}::{other[0]}|{other[1]}"
-    return "unresolved"
+            return (pair, other) if pair <= other else (other, pair)
+    return None
+
+
+def canonical_quartet_topologies(quartet: Iterable[str]) -> tuple[str, str, str]:
+    taxa = tuple(quartet)
+    if len(set(taxa)) != 4:
+        raise ValueError("a quartet must contain four unique taxa")
+    result = []
+    for left_indices in ((0, 1), (0, 2), (0, 3)):
+        left = tuple(sorted((taxa[left_indices[0]], taxa[left_indices[1]])))
+        right = tuple(sorted(set(taxa) - set(left)))
+        result.append(f"{left[0]}|{left[1]}::{right[0]}|{right[1]}" if left <= right else f"{right[0]}|{right[1]}::{left[0]}|{left[1]}")
+    return tuple(result)
 
 
 def history_payload(row: dict[str, str], history_id: int, tree: Any, history: Any, sampled: dict[str, int], seed: int, metadata: dict[str, str]) -> dict[str, Any]:
@@ -298,6 +324,7 @@ def history_payload(row: dict[str, str], history_id: int, tree: Any, history: An
         "terminal_frequencies": {taxon: float(history.terminal_frequency(taxon)) for taxon in tree.taxa},
         "structured_origin_age": history.structured_origin_age,
         "structured_origin_branch": history.structured_origin_branch,
+        "split_events": [asdict(event) if hasattr(event, "__dataclass_fields__") else dict(event.__dict__) for event in getattr(history, "split_events", [])],
         "records": records,
     }
 
@@ -313,6 +340,10 @@ def read_gzip_json(path: Path) -> dict[str, Any]:
 
 
 def validate_history_payload(payload: dict[str, Any], row: dict[str, str], history_id: int) -> None:
+    if "history_id" not in payload and "history" in payload:
+        raise CheckpointRequiresRegeneration("legacy checkpoint uses history, not history_id; regenerate on Bridges2")
+    if "sampled" not in payload and "sampled_arrangements" in payload:
+        raise CheckpointRequiresRegeneration("legacy checkpoint uses sampled_arrangements; regenerate with the validated schema")
     metadata = config_metadata(row)
     required = {"schema_version", "history_id", "condition", "replicate", "scenario", "seed", "simulator_commit", "taxa", "sampled", "terminal_frequencies", "structured_origin_age", "structured_origin_branch", "records", *metadata}
     missing = required - set(payload)
@@ -325,11 +356,65 @@ def validate_history_payload(payload: dict[str, Any], row: dict[str, str], histo
             raise ValueError(f"history checkpoint {key} mismatch")
     if payload["condition"] != row["condition"] or payload["replicate"] != row["replicate"] or payload["scenario"] != row["scenario"]:
         raise ValueError("history checkpoint configuration mismatch")
+    scenario = scenario_row(row["condition"], row["replicate"], row["scenario"])
+    if "origin_branch" in payload and payload["origin_branch"] != scenario["origin_branch"]:
+        raise ValueError("history checkpoint origin branch mismatch")
+    if "origin_time_from_branch_start" in payload and int(payload["origin_time_from_branch_start"]) != int(scenario["origin_time_from_branch_start"]):
+        raise ValueError("history checkpoint origin time mismatch")
     taxa = set(payload["taxa"])
     if taxa != set(payload["sampled"]):
         raise ValueError("history checkpoint sampled taxa mismatch")
     if not isinstance(payload["records"], list):
         raise ValueError("history records are not a list")
+    validate_record_states(payload["records"])
+
+
+def boundary_observations(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    """Return recorded parent/daughter boundary states without interpolation."""
+    observations = []
+    for record in payload["records"]:
+        count = int(record["copy_count_A1"])
+        total = int(record["population_chromosomes"])
+        for role in (["start"] if record["is_branch_start"] else []) + (["end"] if record["is_branch_end"] else []):
+            observations.append({
+                "boundary_id": f"{record['branch_id']}:{role}",
+                "branch_id": record["branch_id"],
+                "parent_branch_id": record.get("parent_branch_id"),
+                "role": role,
+                "absolute_age": float(record["absolute_age"]),
+                "copy_count_A1": count,
+                "population_chromosomes": total,
+                "arrangement_frequency": count / total,
+                "polymorphic": int(0 < count < total),
+                "fixed": int(count == total),
+                "lost": int(count == 0),
+            })
+    if len({item["boundary_id"] for item in observations}) != len(observations):
+        raise ValueError("duplicate population-boundary observations in checkpoint")
+    return observations
+
+
+def sampled_pattern(payload: dict[str, Any]) -> str:
+    taxa = sorted(payload["taxa"])
+    return "".join(str(int(payload["sampled"][taxon])) for taxon in taxa)
+
+
+def validate_record_states(records: list[dict[str, Any]]) -> None:
+    for record in records:
+        required_record = {"branch_id", "absolute_age", "copy_count_A1", "copy_count_A0", "population_chromosomes", "frequency_A1", "frequency_A0", "is_branch_start", "is_branch_end"}
+        if required_record - set(record):
+            raise CheckpointRequiresRegeneration("checkpoint records lack complete population-boundary state; regenerate on Bridges2")
+        total = int(record["population_chromosomes"])
+        raw_count = float(record["copy_count_A1"])
+        raw_count_a0 = float(record["copy_count_A0"])
+        count = int(raw_count)
+        count_a0 = int(raw_count_a0)
+        if raw_count != count or raw_count_a0 != count_a0:
+            raise ValueError("arrangement count is not an integer")
+        if total <= 0 or count < 0 or count > total or count_a0 != total - count:
+            raise ValueError("invalid arrangement/population count in history checkpoint")
+        if abs(float(record["frequency_A1"]) - count / total) > 1e-10 or abs(float(record["frequency_A0"]) - count_a0 / total) > 1e-10:
+            raise ValueError("checkpoint frequency does not match recorded arrangement count")
 
 
 def rebuild_history(payload: dict[str, Any], row: dict[str, str], tree: Any) -> Any:
@@ -338,8 +423,10 @@ def rebuild_history(payload: dict[str, Any], row: dict[str, str], tree: Any) -> 
     by_branch: dict[str, list[Any]] = {}
     for record in records:
         by_branch.setdefault(record.branch_id, []).append(record)
+    split_events = [api["SplitInitializationEvent"](**raw) for raw in payload.get("split_events", [])]
     return api["FrequencyHistory"](
         records=records, by_branch=by_branch,
+        split_events=split_events,
         structured_origin_age=payload["structured_origin_age"],
         structured_origin_branch=payload["structured_origin_branch"],
     )

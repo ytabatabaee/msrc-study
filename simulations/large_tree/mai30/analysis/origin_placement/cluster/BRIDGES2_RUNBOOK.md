@@ -7,8 +7,8 @@ This workflow is prepared for Bridges2. No simulation, benchmark, genealogy gene
 Use the existing PSC account, partition, modules, and Python environment from the project configuration. This repository intentionally does not encode an account name.
 
 ```bash
-git clone <the-project-repository-url> msrc-study
-git clone <the-msrc-sim-repository-url> msrc-sim
+git clone https://github.com/ytabatabaee/msrc-study.git msrc-study
+git clone https://github.com/ytabatabaee/msrc-sim.git msrc-sim
 git -C msrc-sim checkout bfba58d627f6f467af649cdb0b37f969349e0aab
 cd msrc-study/simulations/large_tree/mai30/analysis/origin_placement/cluster
 export BRIDGES2_ACCOUNT='<account from the existing PSC configuration>'
@@ -23,6 +23,7 @@ Verify the pinned checkout and prepare the manifest without starting a simulator
 ```bash
 git -C "$MSRC_SIM_ROOT" rev-parse HEAD
 "$MSRC_PYTHON" mai30_bridges2_driver.py --mode prepare-only
+bash test_static_workflow.sh
 sbatch --account="$BRIDGES2_ACCOUNT" --partition="$BRIDGES2_PARTITION" 00_preflight.sbatch
 ```
 
@@ -60,3 +61,10 @@ Resubmit an interrupted array with the same command. Valid checkpoints are reuse
 Benchmark forward/backward tasks request 4 GB and 2 hours. Production forward and backward tasks request 8 GB and 24 hours. Quartet analysis requests 16 GB; all arrays are capped at two concurrent tasks. Persistence, panel, and validation are bounded single tasks. Review `sacct` elapsed time, MaxRSS, output size, completed history count, and genealogies per second before considering a separately reviewed 100-history or 1,000-history manifest.
 
 The independent forward history is the replication unit. Each forward history is reused across all six rates: `0, 0.0001, 0.001, 0.002, 0.01, 0.02`.
+
+The persistence output from the earlier adapter version, which averaged or
+multiplied terminal frequencies, is superseded. Use the new boundary and
+terminal-pattern tables only after their output manifest passes validation.
+Existing schema-compatible checkpoints are reused; legacy checkpoints lacking
+history IDs, configuration hashes, sampled states, or complete boundary
+records fail closed and must be regenerated on Bridges2.
