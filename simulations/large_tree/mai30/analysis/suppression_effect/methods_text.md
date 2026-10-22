@@ -11,6 +11,9 @@ existing recalculated tables. ASTRAL outputs were produced with
 `-t 2 -u 1 --length CULength`. Normalized RF uses the fully bifurcating
 30-taxon denominator `2(n-3)`. Branch-length summaries use only common true
 and inferred internal splits; branch lengths on incorrect splits are excluded.
+True lengths are read from the scaled pilot species tree and divided by
+`2*N_scaled`; the raw SimPhy tree remains in generation units and is not used.
+Per-split tables include signed, absolute, and relative errors.
 
 For uncertainty, the analysis resamples complete 20-locus MSRC histories. Five
 bootstrap collections were generated per replicate and treatment as an initial

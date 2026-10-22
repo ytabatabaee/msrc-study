@@ -1,0 +1,33 @@
+{
+  "status": "prepared_not_submitted",
+  "selection_summary": "300 original no-outgroup Mai collections summarized; 10 per condition selected by original mean normalized RF strata",
+  "conditions": [
+    "outgroup.0.species.0.15.genes.0.15",
+    "outgroup.0.species.1.5.genes.1.5",
+    "outgroup.0.species.5.genes.5"
+  ],
+  "replicates_per_condition": 10,
+  "treatments": {
+    "msrc_no_suppression": 1.0,
+    "msrc_moderate_suppression": 0.5,
+    "msrc_strong_suppression": 0.1
+  },
+  "initial_frequency": 0.5,
+  "scale_factor": 0.001,
+  "histories_per_collection": 25,
+  "loci_per_history": 20,
+  "collection_tasks": 90,
+  "gene_trees_if_complete": 45000,
+  "selection_inputs": [
+    "original_baseline_all.tsv",
+    "datasets/processed/mai30_replicate_parameters.tsv",
+    "datasets/processed/mai30_production_manifest.tsv"
+  ],
+  "selection_excludes": [
+    "MSRC treatment outcomes",
+    "structural annotations",
+    "pilot suppression effects"
+  ],
+  "astral_settings": "-t 2 -u 1 --length CULength",
+  "cluster_submission": "not executed"
+}

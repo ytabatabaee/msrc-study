@@ -49,13 +49,30 @@ def group_parts(group: str) -> tuple[str, str]:
     return condition, rep
 
 
-def true_species(condition: str, rep: str):
-    return MAI / "datasets/raw" / condition / rep / "s_tree.trees"
+def scaled_species_source(condition: str, rep: str) -> tuple[Path, int]:
+    """Return the scaled pilot species tree and its scaled diploid Ne.
+
+    The raw SimPhy tree is in generation units.  The pilot simulator applies
+    c=0.001 to both times and population sizes before writing this copy.  The
+    ASTRAL ``CULength`` output is therefore compared with this scaled tree,
+    divided by 2*N_scaled.  Using the raw tree here creates a silent factor
+    1,000 error in every true branch length.
+    """
+    root = MAI / "datasets/processed/mai30_scaled_wf_runs"
+    matches = sorted(root.glob(f"{condition}__replicate_{rep}__*__freq_0.5/history_000"))
+    if not matches:
+        raise FileNotFoundError(f"no scaled pilot source for {condition} replicate {rep}")
+    history = matches[0]
+    config = json.loads((history / "simulation_config.json").read_text())
+    return history / "species_tree.nwk", int(config["species_tree"]["default_effective_population_size"])
+
+
+def true_species(condition: str, rep: str) -> Path:
+    return scaled_species_source(condition, rep)[0]
 
 
 def scaled_ne(condition: str, rep: str) -> int:
-    config = next((MAI / "datasets/processed/mai30_scaled_wf_runs").glob(f"{condition}__replicate_{rep}__*__freq_0.5/history_000/simulation_config.json"))
-    return int(json.loads(config.read_text())["species_tree"]["default_effective_population_size"])
+    return scaled_species_source(condition, rep)[1]
 
 
 def split_label(split: frozenset[str]) -> str:
@@ -143,7 +160,8 @@ def branch_rows(by_cell: dict[str, dict]) -> list[dict]:
         for split in sorted(true_splits & inferred_splits, key=lambda x: tuple(sorted(x))):
             true_cu = true_lengths[split] / (2 * scaled_ne(condition, rep))
             estimate = inferred_lengths[split]
-            out.append({"condition": condition, "replicate": rep, "method": method, "split": split_label(split), "true_culength": true_cu, "estimated_culength": estimate, "signed_error": estimate - true_cu, "absolute_error": abs(estimate - true_cu), "topology_correct": 1})
+            signed = estimate - true_cu
+            out.append({"condition": condition, "replicate": rep, "method": method, "split": split_label(split), "true_culength": true_cu, "estimated_culength": estimate, "signed_error": signed, "absolute_error": abs(signed), "relative_error": signed / true_cu if true_cu else "", "topology_correct": 1})
     return out
 
 

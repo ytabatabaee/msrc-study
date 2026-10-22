@@ -2072,3 +2072,67 @@ genealogical-time theorem. Arrangement labels are generally latent to an
 empirical detector, so this does not yet establish observable
 branch-length/topology complementarity. The next step is an observation-model
 and independent validation study before detector implementation.
+
+## Mai30 MSRC–MSC ASTRAL suppression-effect analysis
+
+The completed four-replicate Mai30 pilot was audited without changing the
+frozen pilot collections or the authoritative simulator. A separate analysis
+under `simulations/large_tree/mai30/analysis/suppression_effect/` uses MSRC
+κ=1 as the primary within-model reference and reports ordinary MSC separately.
+This distinction is necessary because κ=1 retains finite arrangement
+backgrounds, switching, frequency-dependent coalescence, and a finite
+structured interval; it is not ordinary MSC.
+
+The pilot shows no systematic suppression effect on ASTRAL topology accuracy.
+Replicates 042, 005, and 074 recover the exact ASTRAL topology under all MSRC
+treatments. In difficult replicate 007, κ=0.5 has normalized RF 0.7407 versus
+0.6667 for κ=1, while κ=0.1 also has 0.6667. The ordinary MSC value is 0.8148.
+The split audit recovers 9/27 true splits for κ=1, 7/27 for κ=0.5, 9/27 for
+κ=0.1, and 5/27 for MSC. These are finite pilot outcomes, not evidence that
+MSRC reduces ILS or improves species-tree inference.
+
+Branch-length errors vary even when topology is unchanged. The new tables
+restrict errors to common true/inferred splits and retain signed and absolute
+errors. Five history-level ASTRAL bootstrap collections per method provide a
+runtime-limited variance diagnostic; replicate 007 RF ranges were 0.667--0.889
+for κ=1, 0.630--0.815 for κ=0.5, and 0.630--0.889 for κ=0.1. Ordinary MSC
+bootstrap rows use sequential 20-tree pseudo-blocks and are explicitly not
+frequency-history resamples.
+
+The suppression analysis is suitable for supplementary validation, not a main
+manuscript claim of systematic MSRC-induced ASTRAL bias. A larger study needs
+more independently selected Mai species-tree replicates, a prespecified
+staged design across all three conditions, a validated Bridges2 benchmark for
+the slow 0.15 condition, and an explicit panmictic-limit control.
+
+## Mai30 staged production validation
+
+The pilot branch-length discrepancy was traced to an analysis-layer unit error:
+the suppression-effect code compared ASTRAL `CULength` output with raw SimPhy
+species-tree lengths in generations. The corrected calculation uses the
+scaled pilot species tree and `true_CU = scaled_length/(2*N_scaled)`. The raw
+and scaled trees differ by exactly 1,000. Regression tests now check this
+conversion and restrict branch errors to matching internal splits. The
+corrected pilot audit is in
+`simulations/large_tree/mai30/analysis/staged_production/results/`, with
+per-split signed, absolute, and relative errors. Replicate 042 true internal
+lengths are approximately 1.88--136.09 CU; the remaining large errors are
+consistent with finite-sample CULength saturation on long branches.
+
+The staged selection audit summarized all 300 existing original no-outgroup
+Mai collections without rerunning them. It selected exactly ten replicates in
+each of the 0.15, 1.5, and 5 conditions by the prespecified endpoints of
+five equal strata of original mean normalized RF. The resulting manifest has
+90 planned MSRC collections (30 replicates × three treatments), each with 25
+independent histories × 20 loci, `c=0.001`, and initial frequency 0.5. The
+selected set includes pilot replicates 042 and 007; 005 and 074 remain
+separate pilot data because they were not selected by the fixed rule.
+
+No staged collection or ASTRAL job has been submitted. Resumable Bridges2
+arrays, validation-gated ASTRAL tasks, deterministic seeds, per-history
+markers, and an opt-in runtime benchmark are prepared under
+`analysis/staged_production/`. The condition-0.15 local probe remains
+incomplete after 562.8 seconds, so computational feasibility is not yet
+established. A one-history Bridges2 benchmark for all three conditions is the
+next decision gate. The `kappa=1` treatment remains an unsuppressed MSRC
+control, not ordinary MSC; ordinary MSC is an external baseline.

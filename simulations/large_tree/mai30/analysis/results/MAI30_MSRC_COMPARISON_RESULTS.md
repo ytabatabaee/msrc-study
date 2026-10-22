@@ -26,12 +26,10 @@ concordance, mean quartet-frequency L1 distance, and mean quartet-margin
 difference. The quartet comparison uses the same deterministic 1,000 sampled
 taxon quartets for all trees in a replicate.
 
-The six complete primary collections are the three suppression treatments for
-replicates 042 and 007. Each has 500 trees from 25 independent frequency
-histories and 20 loci per history. Replicates 005 and 074 currently have only
-one validated 20-tree history per treatment. They remain in the tables with
-`analysis_scope=partial_smoke`, but are excluded from the complete-pool
-conclusions below.
+All 12 primary collections are complete: the three suppression treatments for
+replicates 042, 007, 005, and 074. Each has 500 trees from 25 independent
+frequency histories and 20 loci per history. The rows are marked
+`analysis_scope=complete_500` and are included in the pilot summaries below.
 
 ## Complete MSRC collections
 
@@ -70,9 +68,10 @@ This supports treating gene-tree distribution shift and species-tree inference
 error as separate quantities. It does not establish a population-level quartet
 reversal or ASTRAL inconsistency.
 
-The partial 20-tree collections for 005 and 074 are retained for workflow
-checks, but their estimates have high sampling error and should be regenerated
-after the resumable scaled-WF runner completes 25 histories per treatment.
+The suppression-effect analysis in `analysis/suppression_effect/` provides the
+within-MSRC κ=1 contrasts, split-level replicate-007 audit, and a small
+history-level ASTRAL bootstrap. The ordinary MSC remains an external control;
+κ=1 is not an ordinary MSC limit because finite background dynamics remain.
 
 Reproduce the tables with:
 

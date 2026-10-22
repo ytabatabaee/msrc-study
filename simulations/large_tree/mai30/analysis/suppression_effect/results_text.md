@@ -20,7 +20,10 @@ The five-history bootstrap illustrates substantial variation. For replicate
 formal confidence interval study.
 
 Branch-length error varies substantially even when topology is unchanged.
-The ASTRAL table and `branch_length_comparison.tsv` report signed and absolute
-errors only on matching splits. Large errors in replicate 042 arise mainly
-from the CULength fit and are present across treatments; they cannot be
-assigned to suppression without a larger, independently replicated study.
+The ASTRAL table and `branch_length_comparison.tsv` report signed, absolute,
+and relative errors only on matching splits. An earlier version used the raw
+SimPhy tree and therefore had a factor-1,000 generation-versus-scaled-time
+error; the corrected replicate-042 true lengths span approximately
+1.88--136.09 CU. Remaining large errors arise mainly from the finite-sample
+CULength fit and are present across treatments; they cannot be assigned to
+suppression without a larger, independently replicated study.

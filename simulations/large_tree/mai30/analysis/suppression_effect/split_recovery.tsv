@@ -1,31 +1,31 @@
 condition	replicate	method	split_type	split	recovered	estimated_culength	true_culength	shared_inferred_split
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		6.780659705776806	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.106371	41.06897567480306	1
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		13.631047267943108	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.0235622	7.95339594083151	1
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	0.040822	0.9948213228993436	1
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		20.059962849584245	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		1.0155912886214442	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		0.052151405940919035	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		6.864052652045952	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	0		23.632328466487962	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		1.3977156322647701	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		14.655152643380744	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		31.042023464682714	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	0		6.6166319742450765	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		4.259441534595186	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.500576348172865	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		14.82894462321663	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.845683956739606	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.00898066	8.757809170021883	1
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		2.1603775618599563	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		1.3477523908096278	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		7.802175790547046	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0348265	16.08468510498906	1
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		10.914551319223195	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.26546870984682713	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,2,3,4,5,6,7,8,9	0		0.7568035337527352	0
-outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,9	0		27.47710222008753	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		0.006780659705776805	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.106371	0.04106897567483588	1
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		0.013631047267943107	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.0235622	0.00795339594083151	1
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	0.040822	0.0009948213228993434	1
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		0.020059962849562362	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		0.0010155912886214442	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		5.215140594091904e-05	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		0.006864052652045952	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	0		0.02363232846652079	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.0013977156322647702	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.01465515264332604	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.031042023464660833	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	0		0.006616631974245077	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.004259441534595186	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010500576348172867	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.01482894462319475	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010845683956739608	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.00898066	0.008757809170021882	1
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.0021603775618599563	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.001347752390809628	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		0.007802175790547047	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0348265	0.01608468510503282	1
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		0.010914551319223195	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.00026546870984682714	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,2,3,4,5,6,7,8,9	0		0.0007568035337527352	0
+outgroup.0.species.1.5.genes.1.5	007	MSC	true_split	1,9	0		0.02747710222013129	0
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,7,8,9	0	0.0317564		0
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	0	0.0274205		0
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,28,29,3,30,4,5,6,7,8,9	0	0.00991817		0
@@ -48,33 +48,33 @@ outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,11,12,13,14,
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,11,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0	0.0025287		0
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,11,13,14,19,2,20,21,25,26,28,3,30,4,5,6,8,9	0	0.00451158		0
 outgroup.0.species.1.5.genes.1.5	007	MSC	incorrect_inferred_split	1,11,14,19,2,21,26,28,3,30,4,5,6,8,9	0	0.0045429		0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		6.780659705776806	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0364744	41.06897567480306	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		13.631047267943108	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	0		7.95339594083151	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.9948213228993436	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		20.059962849584245	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		1.0155912886214442	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		0.052151405940919035	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		6.864052652045952	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.057742	23.632328466487962	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		1.3977156322647701	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		14.655152643380744	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0121536	31.042023464682714	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	0		6.6166319742450765	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	1	0.013037	4.259441534595186	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.500576348172865	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.020162	14.82894462321663	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.845683956739606	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.0119336	8.757809170021883	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		2.1603775618599563	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		1.3477523908096278	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		7.802175790547046	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	0		16.08468510498906	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		10.914551319223195	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.26546870984682713	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.237989	0.7568035337527352	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,9	0		27.47710222008753	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		0.006780659705776805	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0364744	0.04106897567483588	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		0.013631047267943107	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	0		0.00795339594083151	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.0009948213228993434	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		0.020059962849562362	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		0.0010155912886214442	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		5.215140594091904e-05	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		0.006864052652045952	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.057742	0.02363232846652079	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.0013977156322647702	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.01465515264332604	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0121536	0.031042023464660833	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	0		0.006616631974245077	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	1	0.013037	0.004259441534595186	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010500576348172867	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.020162	0.01482894462319475	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010845683956739608	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.0119336	0.008757809170021882	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.0021603775618599563	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.001347752390809628	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		0.007802175790547047	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	0		0.01608468510503282	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		0.010914551319223195	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.00026546870984682714	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.237989	0.0007568035337527352	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	true_split	1,9	0		0.02747710222013129	0
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7	0	0.0287387		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	0	0.0589212		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,5,7,8,9	0	0.0110186		0
@@ -95,33 +95,33 @@ outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferre
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,2,4,5,6,7,8,9	0	0.0530532		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,2,4,6,7	0	0.0258639		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_moderate_suppression	incorrect_inferred_split	1,7	0	0.0708337		0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		6.780659705776806	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0431205	41.06897567480306	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		13.631047267943108	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	0		7.95339594083151	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.9948213228993436	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		20.059962849584245	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		1.0155912886214442	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		0.052151405940919035	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		6.864052652045952	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0258354	23.632328466487962	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0174827	1.3977156322647701	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.02702	14.655152643380744	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0252555	31.042023464682714	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.011281	6.6166319742450765	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		4.259441534595186	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.500576348172865	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		14.82894462321663	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.845683956739606	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		8.757809170021883	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		2.1603775618599563	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		1.3477523908096278	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		7.802175790547046	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0152815	16.08468510498906	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0111118	10.914551319223195	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.26546870984682713	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.242853	0.7568035337527352	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,9	0		27.47710222008753	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		0.006780659705776805	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0431205	0.04106897567483588	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		0.013631047267943107	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	0		0.00795339594083151	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.0009948213228993434	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		0.020059962849562362	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		0.0010155912886214442	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		5.215140594091904e-05	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		0.006864052652045952	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0258354	0.02363232846652079	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0174827	0.0013977156322647702	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.02702	0.01465515264332604	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0252555	0.031042023464660833	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.011281	0.006616631974245077	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.004259441534595186	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010500576348172867	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.01482894462319475	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010845683956739608	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.008757809170021882	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.0021603775618599563	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.001347752390809628	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	0		0.007802175790547047	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0152815	0.01608468510503282	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0111118	0.010914551319223195	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.00026546870984682714	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.242853	0.0007568035337527352	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	true_split	1,9	0		0.02747710222013129	0
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	0	0.0242436		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8	0	0.0272019		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,27,28,29,3,30,4,5,6,7,8,9	0	0.0220045		0
@@ -140,33 +140,33 @@ outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_spli
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,3,4,5,8,9	0	0.00433116		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,3,4,8,9	0	0.0050443		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_no_suppression	incorrect_inferred_split	1,3,9	0	0.0116848		0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		6.780659705776806	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	0		41.06897567480306	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		13.631047267943108	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.00978827	7.95339594083151	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.9948213228993436	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		20.059962849584245	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		1.0155912886214442	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		0.052151405940919035	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		6.864052652045952	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0407388	23.632328466487962	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		1.3977156322647701	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0109266	14.655152643380744	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		31.042023464682714	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.0361341	6.6166319742450765	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		4.259441534595186	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		10.500576348172865	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		14.82894462321663	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	1	0.0003906	10.845683956739606	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.0101447	8.757809170021883	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		2.1603775618599563	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		1.3477523908096278	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	1	0.01034	7.802175790547046	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0102434	16.08468510498906	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		10.914551319223195	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.26546870984682713	0
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.146424	0.7568035337527352	1
-outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,9	0		27.47710222008753	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	0		0.006780659705776805	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	0		0.04106897567483588	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,26,28,29,3,30,4,5,6,7,8,9	0		0.013631047267943107	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.00978827	0.00795339594083151	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	0		0.0009948213228993434	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,6,7,9	0		0.020059962849562362	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,7,9	0		0.0010155912886214442	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,5,9	0		5.215140594091904e-05	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,9	0		0.006864052652045952	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0407388	0.02363232846652079	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.0013977156322647702	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.0109266	0.01465515264332604	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,14,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.031042023464660833	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.0361341	0.006616631974245077	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.004259441534595186	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,2,20,21,22,23,24,25,26,27,29,3,4,5,6,7,8,9	0		0.010500576348172867	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0		0.01482894462319475	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,26,27,29,3,4,5,6,7,8,9	1	0.0003906	0.010845683956739608	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	1	0.0101447	0.008757809170021882	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,13,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.0021603775618599563	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,15,16,17,18,2,20,22,23,24,25,27,29,3,4,5,6,7,8,9	0		0.001347752390809628	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,10,15,16,17,18,2,20,23,24,25,27,29,3,4,5,6,7,8,9	1	0.01034	0.007802175790547047	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	0.0102434	0.01608468510503282	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,19,2,20,21,22,24,25,26,27,28,3,30,4,5,6,7,8,9	0		0.010914551319223195	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,11,12,13,14,19,2,21,22,26,28,3,30,4,5,6,7,8,9	0		0.00026546870984682714	0
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,2,3,4,5,6,7,8,9	1	0.146424	0.0007568035337527352	1
+outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	true_split	1,9	0		0.02747710222013129	0
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8	0	0.0529252		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,27,28,29,3,30,4,5,6,7,8,9	0	0.0278972		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,10,11,12,13,14,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	0	0.00762921		0
@@ -185,328 +185,328 @@ outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,2,3,6,8	0	0.0854505		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,6,8	0	0.0559686		0
 outgroup.0.species.1.5.genes.1.5	007	msrc_strong_suppression	incorrect_inferred_split	1,8	0	0.127309		0
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10036.247518629265	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136093.38312085398	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19801.040325400147	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55250.66619147044	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15266.205519782794	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56846.406174877644	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114133.48734797073	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9128.940441129413	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29957.05129907456	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22461.857334558972	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.71253	4868.7063427716175	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66753.83944488352	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33975.361020489116	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11138.22560759853	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25522.195767573678	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9608.75886539603	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33870.019360005586	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7353.229579240735	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11537.175303930588	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63548.61561243265	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16930.714398211323	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.65226	1883.3856230960293	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84172.55900570632	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57295.50412244353	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,3,5,6,7,8	1	5.81114	59930.96715494412	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,5,6,7	1	5.81114	72257.79263602868	1
-outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,6,7	1	3.32623	3393.3402724989705	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10036.247518629265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136093.38312085398	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19801.040325400147	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55250.66619147044	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15266.205519782794	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56846.406174877644	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114133.48734797073	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9128.940441129413	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29957.05129907456	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22461.857334558972	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.2017	4868.7063427716175	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66753.83944488352	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33975.361020489116	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11138.22560759853	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25522.195767573678	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9608.75886539603	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33870.019360005586	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7353.229579240735	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11537.175303930588	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63548.61561243265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16930.714398211323	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.54846	1883.3856230960293	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84172.55900570632	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57295.50412244353	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59930.96715494412	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,5,6,7	1	5.81114	72257.79263602868	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,6,7	1	3.10309	3393.3402724989705	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10036.247518629265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136093.38312085398	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19801.040325400147	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55250.66619147044	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15266.205519782794	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56846.406174877644	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114133.48734797073	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9128.940441129413	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29957.05129907456	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22461.857334558972	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	3.86523	4868.7063427716175	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66753.83944488352	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33975.361020489116	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11138.22560759853	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25522.195767573678	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9608.75886539603	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33870.019360005586	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7353.229579240735	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11537.175303930588	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63548.61561243265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16930.714398211323	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.62149	1883.3856230960293	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84172.55900570632	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57295.50412244353	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59930.96715494412	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,5,6,7	1	5.81114	72257.79263602868	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,6,7	1	3.41325	3393.3402724989705	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10036.247518629265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136093.38312085398	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19801.040325400147	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55250.66619147044	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15266.205519782794	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56846.406174877644	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114133.48734797073	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9128.940441129413	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29957.05129907456	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22461.857334558972	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.71253	4868.7063427716175	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66753.83944488352	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33975.361020489116	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11138.22560759853	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25522.195767573678	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9608.75886539603	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33870.019360005586	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7353.229579240735	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11537.175303930588	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63548.61561243265	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16930.714398211323	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.36849	1883.3856230960293	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84172.55900570632	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57295.50412244353	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59930.96715494412	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,5,6,7	1	5.81114	72257.79263602868	1
-outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,6,7	1	3.03855	3393.3402724989705	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0777997	48.357024144398245	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.546534	560.3221016705689	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.377201	379.85875996738514	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.634155	653.4807144326148	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.27874	348.61928698971553	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.18519	2094.49594259407	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.188797	111.3878318222976	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.30928	1441.810995049409	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.244707	272.34869237817287	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.34125	329.05550540273526	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	0		5.112773502330416	0
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.126319	143.34696336278992	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	2.05847	1995.4904451210614	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.219436	186.61433229208973	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.21834	1268.0805761791466	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.254313	293.22778266830414	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94154	1982.9808032066303	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.446325	457.98374407981396	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.385702	420.8140415102735	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.153738	178.8588095812801	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0736507	59.255450666706786	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.503199	553.8275814471007	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.06914	979.0336808908096	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16	1	0.151659	132.72066230425602	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.157963	135.94495907504376	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.204128	197.22268215924507	1
-outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.17942	2033.1511431091467	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10.036247518632353	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136.09338312088235	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19.801040325441175	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55.250666191470586	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15.26620551985294	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56.84640617485294	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114.13348734794118	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9.128940441132352	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29.957051299117644	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22.46185733455882	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.71253	4.868706342764706	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66.75383944485294	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.97536102044118	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11.13822560760294	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25.52219576764706	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9.608758865397059	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.87001936	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7.353229579235294	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11.537175303926471	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63.5486156125	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16.930714398235295	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.65226	1.883385623102941	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84.1725590057353	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57.2955041225	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,3,5,6,7,8	1	5.81114	59.930967155000005	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,2,5,6,7	1	5.81114	72.25779263602942	1
+outgroup.0.species.1.5.genes.1.5	042	MSC	true_split	1,6,7	1	3.32623	3.3933402725	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10.036247518632353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136.09338312088235	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19.801040325441175	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55.250666191470586	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15.26620551985294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56.84640617485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114.13348734794118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9.128940441132352	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29.957051299117644	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22.46185733455882	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.2017	4.868706342764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66.75383944485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.97536102044118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11.13822560760294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25.52219576764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9.608758865397059	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.87001936	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7.353229579235294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11.537175303926471	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63.5486156125	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16.930714398235295	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.54846	1.883385623102941	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84.1725590057353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57.2955041225	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59.930967155000005	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,2,5,6,7	1	5.81114	72.25779263602942	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_moderate_suppression	true_split	1,6,7	1	3.10309	3.3933402725	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10.036247518632353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136.09338312088235	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19.801040325441175	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55.250666191470586	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15.26620551985294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56.84640617485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114.13348734794118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9.128940441132352	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29.957051299117644	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22.46185733455882	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	3.86523	4.868706342764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66.75383944485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.97536102044118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11.13822560760294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25.52219576764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9.608758865397059	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.87001936	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7.353229579235294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11.537175303926471	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63.5486156125	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16.930714398235295	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.62149	1.883385623102941	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84.1725590057353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57.2955041225	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59.930967155000005	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,2,5,6,7	1	5.81114	72.25779263602942	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_no_suppression	true_split	1,6,7	1	3.41325	3.3933402725	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	5.81114	10.036247518632353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8	1	5.81114	136.09338312088235	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,9	1	5.81114	19.801040325441175	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	55.250666191470586	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	5.81114	15.26620551985294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,28,29,3,30,4,5,6,7,8,9	1	5.81114	56.84640617485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,28,3,30,4,5,6,7,8,9	1	5.81114	114.13348734794118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	5.81114	9.128940441132352	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	29.957051299117644	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,25,26,27,29,3,30,4,5,6,7,8,9	1	5.81114	22.46185733455882	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	4.71253	4.868706342764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	66.75383944485294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.97536102044118	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	11.13822560760294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,13,14,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	25.52219576764706	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,13,14,16,17,2,20,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	9.608758865397059	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,14,16,17,2,20,22,23,24,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	33.87001936	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	7.353229579235294	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,10,12,16,17,2,20,22,23,24,27,28,29,3,4,5,6,7,8,9	1	5.81114	11.537175303926471	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	63.5486156125	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,17,18,19,2,20,21,22,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	5.81114	16.930714398235295	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,11,13,14,15,18,19,2,20,21,22,25,26,27,29,3,30,4,5,6,7,8,9	1	1.36849	1.883385623102941	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,20,22,27,29,3,4,5,6,7,8,9	1	5.81114	84.1725590057353	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,3,4,5,6,7,8,9	1	5.81114	57.2955041225	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,3,5,6,7,8	1	5.81114	59.930967155000005	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,2,5,6,7	1	5.81114	72.25779263602942	1
+outgroup.0.species.1.5.genes.1.5	042	msrc_strong_suppression	true_split	1,6,7	1	3.03855	3.3933402725	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0777997	0.048357024144420134	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.546534	0.5603221016706783	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.377201	0.3798587599671773	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.634155	0.6534807144321663	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.27874	0.34861928699015315	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.18519	2.0944959425929977	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.188797	0.1113878318227571	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.30928	1.4418109950547044	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.244707	0.2723486923785558	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.34125	0.3290555054026258	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	0		0.005112773502330416	0
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.126319	0.14334696336323852	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	2.05847	1.9954904451203501	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.219436	0.18661433229212251	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.21834	1.2680805761816192	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.254313	0.2932277826684902	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94154	1.9829808032056893	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.446325	0.4579837440798687	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.385702	0.42081404150984686	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.153738	0.1788588095809628	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0736507	0.05925545066673961	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.503199	0.5538275814474836	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.06914	0.9790336808905907	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16	1	0.151659	0.13272066230415755	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.157963	0.13594495907549234	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.204128	0.1972226821597374	1
+outgroup.0.species.1.5.genes.1.5	074	MSC	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.17942	2.033151143107221	1
 outgroup.0.species.1.5.genes.1.5	074	MSC	incorrect_inferred_split	1,10,16,23,24,25,26,27,28,29,30	0	0.00948639		0
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0449055	48.357024144398245	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.538711	560.3221016705689	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.388818	379.85875996738514	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.650597	653.4807144326148	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.307844	348.61928698971553	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.09425	2094.49594259407	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.175836	111.3878318222976	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.4135	1441.810995049409	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.275474	272.34869237817287	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.337956	329.05550540273526	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.189935	5.112773502330416	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.131165	143.34696336278992	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.98501	1995.4904451210614	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.168444	186.61433229208973	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.19778	1268.0805761791466	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.305508	293.22778266830414	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.76338	1982.9808032066303	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.487422	457.98374407981396	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.55693	420.8140415102735	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.150721	178.8588095812801	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0464725	59.255450666706786	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.590299	553.8275814471007	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.929369	979.0336808908096	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16	1	0.0488189	132.72066230425602	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.102004	135.94495907504376	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.204534	197.22268215924507	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.12876	2033.1511431091467	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0304386	48.357024144398245	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.491026	560.3221016705689	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.36558	379.85875996738514	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.623135	653.4807144326148	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.381576	348.61928698971553	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.14596	2094.49594259407	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.0937935	111.3878318222976	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.51411	1441.810995049409	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.26837	272.34869237817287	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.379078	329.05550540273526	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.247587	5.112773502330416	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.160881	143.34696336278992	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.81153	1995.4904451210614	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.179614	186.61433229208973	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.29994	1268.0805761791466	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.309883	293.22778266830414	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.05712	1982.9808032066303	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.448567	457.98374407981396	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.336384	420.8140415102735	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.199769	178.8588095812801	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.045754	59.255450666706786	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.486207	553.8275814471007	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.07609	979.0336808908096	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16	1	0.111701	132.72066230425602	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.196554	135.94495907504376	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.226641	197.22268215924507	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.19623	2033.1511431091467	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0503902	48.357024144398245	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.64911	560.3221016705689	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.421385	379.85875996738514	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.629357	653.4807144326148	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.388396	348.61928698971553	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	1.99582	2094.49594259407	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.115073	111.3878318222976	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.33675	1441.810995049409	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.2333	272.34869237817287	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.373928	329.05550540273526	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.262138	5.112773502330416	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.160273	143.34696336278992	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.91775	1995.4904451210614	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.160291	186.61433229208973	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.22585	1268.0805761791466	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.408297	293.22778266830414	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94879	1982.9808032066303	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.466483	457.98374407981396	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.400984	420.8140415102735	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.15394	178.8588095812801	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0275295	59.255450666706786	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.523971	553.8275814471007	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.04818	979.0336808908096	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16	1	0.152153	132.72066230425602	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.145765	135.94495907504376	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.271084	197.22268215924507	1
-outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.07966	2033.1511431091467	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.66801	1780.377441096475	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.61684	1781.683675863741	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.07057	1064.649099452338	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.855314	814.2976781045683	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	2.64672	2930.221120207086	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.68056	643.859739267482	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.16897	1175.8975826821222	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.05111	1072.4515102356474	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.62133	1718.5242751617625	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.678901	507.84325793874103	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.2258	1215.6721930534532	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.57429	532.3227234959712	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.680257	694.4487917369424	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.29546	3525.123584507554	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.21602	1286.763487673633	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.55304	2548.6636988244604	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.22612	1244.7737127591006	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.283789	273.61590235625897	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.02275	2092.5980847865467	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.231411	283.9461205969065	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.47276	1523.0384655987768	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.352741	306.2484030570144	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.59607	636.5439683346043	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.22074	3187.7001647630937	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.558408	498.50062453244607	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,14,15,2,20,23,24,26,5,8	1	0.404179	392.4085466681295	1
-outgroup.0.species.5.genes.5	005	MSC	true_split	1,2	1	2.82294	65.69111212219426	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.60645	1780.377441096475	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.62587	1781.683675863741	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.03623	1064.649099452338	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.783976	814.2976781045683	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	3.15878	2930.221120207086	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.665437	643.859739267482	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.23802	1175.8975826821222	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.07166	1072.4515102356474	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.5352	1718.5242751617625	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.493258	507.84325793874103	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.26824	1215.6721930534532	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.448495	532.3227234959712	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.810556	694.4487917369424	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	4.41552	3525.123584507554	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.20597	1286.763487673633	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.68211	2548.6636988244604	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.18729	1244.7737127591006	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.278863	273.61590235625897	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.12226	2092.5980847865467	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.32268	283.9461205969065	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.53834	1523.0384655987768	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.384208	306.2484030570144	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.668901	636.5439683346043	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.1713	3187.7001647630937	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.436124	498.50062453244607	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.409132	392.4085466681295	1
-outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,2	1	4.22191	65.69111212219426	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.93994	1780.377441096475	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.80591	1781.683675863741	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.07934	1064.649099452338	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.717391	814.2976781045683	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	2.97389	2930.221120207086	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.571023	643.859739267482	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.21292	1175.8975826821222	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.06675	1072.4515102356474	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.61708	1718.5242751617625	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.463619	507.84325793874103	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.21341	1215.6721930534532	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.557057	532.3227234959712	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.627954	694.4487917369424	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.05668	3525.123584507554	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.21602	1286.763487673633	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.63928	2548.6636988244604	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.16618	1244.7737127591006	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.277164	273.61590235625897	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.20022	2092.5980847865467	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.265964	283.9461205969065	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.57282	1523.0384655987768	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.24353	306.2484030570144	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.640583	636.5439683346043	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.05727	3187.7001647630937	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.497007	498.50062453244607	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.376669	392.4085466681295	1
-outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,2	1	3.93168	65.69111212219426	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	2.00448	1780.377441096475	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.62645	1781.683675863741	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.06621	1064.649099452338	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.797178	814.2976781045683	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	3.16364	2930.221120207086	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.636513	643.859739267482	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.22108	1175.8975826821222	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.09824	1072.4515102356474	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.72289	1718.5242751617625	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.447629	507.84325793874103	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.31133	1215.6721930534532	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.577055	532.3227234959712	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.681242	694.4487917369424	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.74904	3525.123584507554	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.3225	1286.763487673633	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.40625	2548.6636988244604	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.31121	1244.7737127591006	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.259106	273.61590235625897	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94148	2092.5980847865467	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.35467	283.9461205969065	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.47603	1523.0384655987768	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.376346	306.2484030570144	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.61318	636.5439683346043	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.25298	3187.7001647630937	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.46801	498.50062453244607	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.302892	392.4085466681295	1
-outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,2	1	4.48939	65.69111212219426	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0449055	0.048357024144420134	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.538711	0.5603221016706783	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.388818	0.3798587599671773	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.650597	0.6534807144321663	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.307844	0.34861928699015315	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.09425	2.0944959425929977	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.175836	0.1113878318227571	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.4135	1.4418109950547044	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.275474	0.2723486923785558	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.337956	0.3290555054026258	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.189935	0.005112773502330416	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.131165	0.14334696336323852	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.98501	1.9954904451203501	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.168444	0.18661433229212251	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.19778	1.2680805761816192	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.305508	0.2932277826684902	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.76338	1.9829808032056893	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.487422	0.4579837440798687	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.55693	0.42081404150984686	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.150721	0.1788588095809628	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0464725	0.05925545066673961	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.590299	0.5538275814474836	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.929369	0.9790336808905907	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16	1	0.0488189	0.13272066230415755	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.102004	0.13594495907549234	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.204534	0.1972226821597374	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_moderate_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.12876	2.033151143107221	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0304386	0.048357024144420134	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.491026	0.5603221016706783	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.36558	0.3798587599671773	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.623135	0.6534807144321663	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.381576	0.34861928699015315	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	2.14596	2.0944959425929977	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.0937935	0.1113878318227571	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.51411	1.4418109950547044	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.26837	0.2723486923785558	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.379078	0.3290555054026258	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.247587	0.005112773502330416	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.160881	0.14334696336323852	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.81153	1.9954904451203501	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.179614	0.18661433229212251	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.29994	1.2680805761816192	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.309883	0.2932277826684902	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.05712	1.9829808032056893	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.448567	0.4579837440798687	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.336384	0.42081404150984686	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.199769	0.1788588095809628	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.045754	0.05925545066673961	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.486207	0.5538275814474836	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.07609	0.9790336808905907	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16	1	0.111701	0.13272066230415755	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.196554	0.13594495907549234	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.226641	0.1972226821597374	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_no_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.19623	2.033151143107221	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,6,7,8,9	1	0.0503902	0.048357024144420134	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,25,26,28,29,3,30,4,5,6,7,8,9	1	0.64911	0.5603221016706783	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,26,28,29,3,30,4,5,6,7,8,9	1	0.421385	0.3798587599671773	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,26,27,29,3,30,4,5,6,7,8,9	1	0.629357	0.6534807144321663	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,29,3,30,4,5,6,7,8,9	1	0.388396	0.34861928699015315	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,24,25,27,3,4,5,6,7,8,9	1	1.99582	2.0944959425929977	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9	1	0.115073	0.1113878318227571	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.33675	1.4418109950547044	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.2333	0.2723486923785558	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	0.373928	0.3290555054026258	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,21,3,4,6,7,8,9	1	0.262138	0.005112773502330416	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.160273	0.14334696336323852	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,7,8,9	1	1.91775	1.9954904451203501	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,18,2,20,21,22,23,24,25,26,27,28,29,30,4,5,7,8,9	1	0.160291	0.18661433229212251	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.22585	1.2680805761816192	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.408297	0.2932277826684902	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94879	1.9829808032056893	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,11,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,8,9	1	0.466483	0.4579837440798687	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,8,9	1	0.400984	0.42081404150984686	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.15394	0.1788588095809628	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	0.0275295	0.05925545066673961	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7	1	0.523971	0.5538275814474836	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,12,13,15,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6,7,9	1	1.04818	0.9790336808905907	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16	1	0.152153	0.13272066230415755	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16,17,19,2,20,22,23,24,25,26,27,28,29,3,30,5,6	1	0.145765	0.13594495907549234	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,10,16,2,20,22,23,24,25,26,27,28,29,30,5	1	0.271084	0.1972226821597374	1
+outgroup.0.species.1.5.genes.1.5	074	msrc_strong_suppression	true_split	1,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.07966	2.033151143107221	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.66801	1.7803774410971223	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.61684	1.7816836758633092	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.07057	1.0646490994532374	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.855314	0.8142976781043165	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	2.64672	2.930221120208633	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.68056	0.6438597392661871	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.16897	1.1758975826834532	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.05111	1.0724515102374101	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.62133	1.7185242751618706	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.678901	0.507843257938849	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.2258	1.215672193053957	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.57429	0.5323227234964029	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.680257	0.6944487917374101	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.29546	3.525123584507194	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.21602	1.286763487672662	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.55304	2.548663698823741	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.22612	1.2447737127589928	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.283789	0.27361590235611516	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.02275	2.0925980847877694	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.231411	0.28394612059676255	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.47276	1.5230384655971223	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.352741	0.30624840305719425	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.59607	0.6365439683345324	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.22074	3.18770016476259	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.558408	0.4985006245323741	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,14,15,2,20,23,24,26,5,8	1	0.404179	0.3924085466690647	1
+outgroup.0.species.5.genes.5	005	MSC	true_split	1,2	1	2.82294	0.06569111212230216	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.60645	1.7803774410971223	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.62587	1.7816836758633092	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.03623	1.0646490994532374	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.783976	0.8142976781043165	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	3.15878	2.930221120208633	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.665437	0.6438597392661871	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.23802	1.1758975826834532	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.07166	1.0724515102374101	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.5352	1.7185242751618706	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.493258	0.507843257938849	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.26824	1.215672193053957	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.448495	0.5323227234964029	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.810556	0.6944487917374101	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	4.41552	3.525123584507194	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.20597	1.286763487672662	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.68211	2.548663698823741	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.18729	1.2447737127589928	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.278863	0.27361590235611516	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.12226	2.0925980847877694	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.32268	0.28394612059676255	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.53834	1.5230384655971223	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.384208	0.30624840305719425	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.668901	0.6365439683345324	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.1713	3.18770016476259	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.436124	0.4985006245323741	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.409132	0.3924085466690647	1
+outgroup.0.species.5.genes.5	005	msrc_moderate_suppression	true_split	1,2	1	4.22191	0.06569111212230216	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	1.93994	1.7803774410971223	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.80591	1.7816836758633092	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.07934	1.0646490994532374	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.717391	0.8142976781043165	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	2.97389	2.930221120208633	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.571023	0.6438597392661871	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.21292	1.1758975826834532	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.06675	1.0724515102374101	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.61708	1.7185242751618706	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.463619	0.507843257938849	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.21341	1.215672193053957	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.557057	0.5323227234964029	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.627954	0.6944487917374101	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.05668	3.525123584507194	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.21602	1.286763487672662	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.63928	2.548663698823741	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.16618	1.2447737127589928	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.277164	0.27361590235611516	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.20022	2.0925980847877694	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.265964	0.28394612059676255	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.57282	1.5230384655971223	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.24353	0.30624840305719425	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.640583	0.6365439683345324	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.05727	3.18770016476259	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.497007	0.4985006245323741	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.376669	0.3924085466690647	1
+outgroup.0.species.5.genes.5	005	msrc_no_suppression	true_split	1,2	1	3.93168	0.06569111212230216	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,8,9	1	2.00448	1.7803774410971223	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	1.62645	1.7816836758633092	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,28,29,3,30,5,6,7,8,9	1	1.06621	1.0646490994532374	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,27,29,3,30,4,5,6,7,8,9	1	0.797178	0.8142976781043165	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,26,29,3,30,5,6,7,8,9	1	3.16364	2.930221120208633	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.636513	0.6438597392661871	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,23,24,25,26,27,28,29,3,30,4,6,7,8,9	1	1.22108	1.1758975826834532	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,18,19,2,21,22,25,26,27,28,29,3,30,4,6,7,8,9	1	1.09824	1.0724515102374101	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	1.72289	1.7185242751618706	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,15,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,4,5,8,9	1	0.447629	0.507843257938849	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,9	1	1.31133	1.215672193053957	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,14,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.577055	0.5323227234964029	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,16,17,18,19,2,20,21,22,23,24,25,27,28,29,3,30,4,5,6,7,9	1	0.681242	0.6944487917374101	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,13,16,17,18,19,2,21,22,25,27,28,29,3,30,4,6,7,9	1	3.74904	3.525123584507194	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	1.3225	1.286763487672662	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	2.40625	2.548663698823741	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,16,18,19,2,20,21,22,23,24,25,26,27,28,3,30,4,5,6,7,8,9	1	1.31121	1.2447737127589928	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,11,13,14,15,18,19,2,20,21,22,23,24,25,26,27,28,3,4,5,8,9	1	0.259106	0.27361590235611516	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,21,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.94148	2.0925980847877694	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,19,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	0.35467	0.28394612059676255	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,18,2,20,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9	1	1.47603	1.5230384655971223	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,12,13,14,15,16,17,2,20,23,24,25,26,27,28,29,30,4,5,6,7,8,9	1	0.376346	0.30624840305719425	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,10,13,14,15,2,20,23,24,25,26,27,28,4,5,8,9	1	0.61318	0.6365439683345324	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,11,12,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8	1	3.25298	3.18770016476259	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,14,15,2,20,23,24,25,26,27,28,4,5,8	1	0.46801	0.4985006245323741	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,14,15,2,20,23,24,26,5,8	1	0.302892	0.3924085466690647	1
+outgroup.0.species.5.genes.5	005	msrc_strong_suppression	true_split	1,2	1	4.48939	0.06569111212230216	1
