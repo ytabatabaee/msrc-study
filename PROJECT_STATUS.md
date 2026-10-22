@@ -2316,17 +2316,19 @@ was constructed. See
 ## Mai30 Bridges2 quartet-validation preparation
 
 The origin-placement quartet validation has a Bridges2-only workflow under
-`simulations/large_tree/mai30/analysis/origin_placement/cluster/`. It separates
-preflight, forward-history generation, quartet-panel selection, backward
-genealogy generation, quartet analysis, independent validation, and optional
-ASTRAL analysis. Simulation arrays are capped at two concurrent tasks,
-forward histories are the independent replication unit, and completion
-markers are written only after a delegated stage command succeeds.
+`simulations/large_tree/mai30/analysis/origin_placement/cluster/`. It now
+contains repository-maintained lazy adapters for forward checkpoints,
+persistence, deterministic quartet panels, backward genealogies, quartet
+analysis, independent validation, and optional ASTRAL. Forward histories are
+the independent replication unit and are reused across all six rho treatments.
+Simulation arrays remain capped at two concurrent tasks.
 
 The workflow defaults to `--prepare-only`, refuses computational modes outside
-a Slurm allocation, and requires the optimized `msrc-sim` commit
-`bfba58d627f6f467af649cdb0b37f969349e0aab`. That checkout is not available in
-the current workspace, so the stage-specific simulator commands remain
-explicit Bridges2 configuration items; no simulator API was guessed and no
-local simulation or benchmark was run. See
+a live Slurm compute allocation verified through `scontrol`, and requires the
+optimized `msrc-sim` commit
+`bfba58d627f6f467af649cdb0b37f969349e0aab`. Checkpoints, gene trees, output
+manifests, hashes, IDs, and taxa are validated before an atomic completion
+marker is written. The simulator checkout is not available in the current
+workspace, so only syntax, manifest, checksum, Newick-fixture, and refusal
+tests were run; no local simulation or benchmark was run. See
 `simulations/large_tree/mai30/analysis/origin_placement/cluster/BRIDGES2_RUNBOOK.md`.

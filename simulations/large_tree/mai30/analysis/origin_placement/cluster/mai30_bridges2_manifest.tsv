@@ -71,6 +71,7 @@ backward	44	outgroup.0.species.5.genes.5	005	B_deep_internal	0.001	100	derived_f
 backward	45	outgroup.0.species.5.genes.5	005	B_deep_internal	0.002	100	derived_from_forward_history	planned
 backward	46	outgroup.0.species.5.genes.5	005	B_deep_internal	0.01	100	derived_from_forward_history	planned
 backward	47	outgroup.0.species.5.genes.5	005	B_deep_internal	0.02	100	derived_from_forward_history	planned
+persistence	0	all	all	all		100	derived_from_forward_history	planned
 panel	0	all	all	all		0	none	planned
 analysis	0	all	all	all		0	none	planned
 validation	0	all	all	all		0	none	planned
