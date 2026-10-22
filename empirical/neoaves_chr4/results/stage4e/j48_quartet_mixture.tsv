@@ -1,0 +1,10 @@
+clade	background_n_loci	affected_n_loci	q1_B	q2_B	q3_B	q1_R	q2_R	q3_R	sample_weight_R	estimand	pair	epsilon_star	status	third_topology_at_epsilon
+Columbea	0	6096	nan	nan	nan	0.4781383824716235	0.2731349681900805	0.2487266493382991	1.0	normalized_QQS_locus_mean	q1=q2	NA	missing_endpoint	NA
+Columbea	0	6096	nan	nan	nan	0.4781383824716235	0.2731349681900805	0.2487266493382991	1.0	normalized_QQS_locus_mean	q1=q3	NA	missing_endpoint	NA
+Columbea	0	6096	nan	nan	nan	0.4781383824716235	0.2731349681900805	0.2487266493382991	1.0	normalized_QQS_locus_mean	q2=q3	NA	missing_endpoint	NA
+N61	0	6132	nan	nan	nan	0.28343760842273535	0.4589112880427177	0.25765110353454235	1.0	normalized_QQS_locus_mean	q1=q2	NA	missing_endpoint	NA
+N61	0	6132	nan	nan	nan	0.28343760842273535	0.4589112880427177	0.25765110353454235	1.0	normalized_QQS_locus_mean	q1=q3	NA	missing_endpoint	NA
+N61	0	6132	nan	nan	nan	0.28343760842273535	0.4589112880427177	0.25765110353454235	1.0	normalized_QQS_locus_mean	q2=q3	NA	missing_endpoint	NA
+N62	0	5881	nan	nan	nan	0.47370949468117807	0.26862808330982235	0.2576624220089935	1.0	normalized_QQS_locus_mean	q1=q2	NA	missing_endpoint	NA
+N62	0	5881	nan	nan	nan	0.47370949468117807	0.26862808330982235	0.2576624220089935	1.0	normalized_QQS_locus_mean	q1=q3	NA	missing_endpoint	NA
+N62	0	5881	nan	nan	nan	0.47370949468117807	0.26862808330982235	0.2576624220089935	1.0	normalized_QQS_locus_mean	q2=q3	NA	missing_endpoint	NA

@@ -1,0 +1,20 @@
+mixture_id	kind	epsilon_requested	seed	source_background	source_affected	target_records	status	command
+J48_BASELINE_T0	exact_completed_baseline	observed_manifest_fraction	NA	J48_T0	J48_T0	62945	reference_only	use existing empirical/neoaves_chr4/data/stage4e/J48_T0.tre
+J48_MIX_E0p00	coarse_grid	0.00	74000	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p00 --epsilon 0.00 --seed 74000
+J48_MIX_E0p02	coarse_grid	0.02	74001	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p02 --epsilon 0.02 --seed 74001
+J48_MIX_E0p05	coarse_grid	0.05	74002	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p05 --epsilon 0.05 --seed 74002
+J48_MIX_E0p10	coarse_grid	0.10	74003	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p10 --epsilon 0.10 --seed 74003
+J48_MIX_E0p15	coarse_grid	0.15	74004	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p15 --epsilon 0.15 --seed 74004
+J48_MIX_E0p20	coarse_grid	0.20	74005	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p20 --epsilon 0.20 --seed 74005
+J48_MIX_E0p25	coarse_grid	0.25	74006	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p25 --epsilon 0.25 --seed 74006
+J48_MIX_E0p30	coarse_grid	0.30	74007	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p30 --epsilon 0.30 --seed 74007
+J48_MIX_E0p40	coarse_grid	0.40	74008	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p40 --epsilon 0.40 --seed 74008
+J48_MIX_E0p50	coarse_grid	0.50	74009	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p50 --epsilon 0.50 --seed 74009
+J48_MIX_E0p60	coarse_grid	0.60	74010	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p60 --epsilon 0.60 --seed 74010
+J48_MIX_E0p75	coarse_grid	0.75	74011	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E0p75 --epsilon 0.75 --seed 74011
+J48_MIX_E1p00	coarse_grid	1.00	74012	J48_NONCHR4	J48_T0_chr4_stratum	62945	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --mixture-id J48_MIX_E1p00 --epsilon 1.00 --seed 74012
+J48_CTRL_RANDOM_01	random_genome_deletion_control	NA	75001	J48_T0	NA	matched	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --control random_genome_deletion --replicate 1 --seed 75001
+J48_CTRL_RANDOM_02	random_genome_deletion_control	NA	75002	J48_T0	NA	matched	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --control random_genome_deletion --replicate 2 --seed 75002
+J48_CTRL_RANDOM_03	random_genome_deletion_control	NA	75003	J48_T0	NA	matched	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --control random_genome_deletion --replicate 3 --seed 75003
+J48_CTRL_RANDOM_04	random_genome_deletion_control	NA	75004	J48_T0	NA	matched	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --control random_genome_deletion --replicate 4 --seed 75004
+J48_CTRL_RANDOM_05	random_genome_deletion_control	NA	75005	J48_T0	NA	matched	prepared_not_run	python scripts/05_stage4e_prepare_threshold_mixtures.py --control random_genome_deletion --replicate 5 --seed 75005

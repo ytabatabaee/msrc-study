@@ -8,6 +8,23 @@ the original `genetreesupport/` analysis files.
 
 - `scripts/`: executable stage scripts.
 - `results/`: tabular analysis outputs and final manifests.
+
+## J48 topology and MSRC threshold preparation
+
+`scripts/j48_threshold_analysis.py` validates the five completed 48-taxon
+ASTRAL-IV outputs using canonical unrooted splits, checks their taxon sets and
+branch annotations, and writes the topology, focal-branch, quartet-mixture,
+and threshold reports under `results/stage4e/`. The independent comparison
+confirms two topology groups: `J48_T0`/`J48_T_STRUCT_PRIMARY` and
+`J48_T_PNAS`/`J48_T_BLOCK_500K`/`J48_NONCHR4`, separated by RF 6.
+
+The cached quartet table is a chromosome-4 `normalized_QQS` summary and has no
+non-chromosome-4 endpoint. Consequently, no quartet crossover or MSRC claim is
+reported from it. `scripts/05_stage4e_prepare_threshold_mixtures.py` and
+`cluster/stage4e_aster/05_threshold_mixture.sbatch` prepare deterministic
+stratified mixture inputs and one ASTRAL-IV inference per mixture on Bridges-2;
+they do not submit jobs. The generated figure is explicitly partial until the
+background quartet endpoint and mixture-run outputs are available.
 - `figures/`: rendered PDF/PNG figures.
 - `config/`: run profiles or parameter files when defaults are externalized.
 - `tests/`: shared regression tests; several stage-local tests remain embedded

@@ -89,3 +89,23 @@ hours for one full 363-species inference with 32 cores; this is a planning
 measurement, not a runtime guarantee. Do not submit the 500 random-matched
 inferences until deterministic outputs have been validated. Fixed-topology
 and independent-topology comparisons must remain separate.
+
+## J48 threshold experiment
+
+Threshold preparation is Bridges-2-only. From the repository root, after
+checking out the pinned ASTRAL executable and setting a real allocation:
+
+```bash
+export MSRC_REPO=$PWD
+export NEOAVES_STAGE4E_ASTRAL=/path/to/pinned/astral4
+python empirical/neoaves_chr4/scripts/j48_threshold_analysis.py --prepare-only
+sbatch --account="$PSC_ACCOUNT" empirical/neoaves_chr4/cluster/stage4e_aster/05_threshold_mixture.sbatch
+```
+
+`PSC_ACCOUNT` is supplied by the user environment; no account is invented in
+the repository. The array is capped at two concurrent jobs and covers the 13
+coarse mixture rows. Each task builds a deterministic streamed background/chr4
+resample with its manifest seed, then invokes the existing single-treatment
+ASTRAL-IV runner. The exact completed-baseline row is reference-only and is not
+submitted by this array. Review the report, source checksums, and Bridges-2
+preflight before submitting.
