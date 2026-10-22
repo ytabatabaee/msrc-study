@@ -1,0 +1,17 @@
+condition	replicate	scenario	n_histories	mean_origin_polymorphic_fraction	fraction_origin_end_polymorphic	fraction_origin_ever_fixed	fraction_origin_ever_lost	fraction_root_terminal_polymorphic
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1	0.6666666666666666	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1	0.8333333333333334	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	1	0.011373578302712161	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	007	D_older_root_extended	1	0.09461824546051192	0.0	0.0	1.0	0.0
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	1	0.5076923076923077	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	1	0.013340174448435094	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	042	C_root_adjacent	1	0.1495601173020528	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	042	D_older_root_extended	1	0.0513950073421439	0.0	1.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1	0.6666666666666666	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1	0.9285714285714286	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	074	C_root_adjacent	1	0.011373578302712161	1.0	0.0	0.0	0.0
+outgroup.0.species.1.5.genes.1.5	074	D_older_root_extended	1	0.2345219864362284	0.0	1.0	0.0	0.0
+outgroup.0.species.5.genes.5	005	A_existing_internal	1	0.55	1.0	0.0	0.0	0.0
+outgroup.0.species.5.genes.5	005	B_deep_internal	1	0.95	1.0	0.0	0.0	0.0
+outgroup.0.species.5.genes.5	005	C_root_adjacent	1	0.03666427030913012	1.0	0.0	0.0	0.0
+outgroup.0.species.5.genes.5	005	D_older_root_extended	1	0.06040992448759439	0.0	0.0	1.0	0.0

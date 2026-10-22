@@ -1,0 +1,17 @@
+condition	replicate	scenario	n_taxa	descendant_taxa	total_quartets	quartets_with_at_least_two_descendants	fraction_structurally_exposed
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	30	9	27405	9450	0.3448275862068966
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	30	9	27405	9450	0.3448275862068966
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	30	30	27405	27405	1.0
+outgroup.0.species.1.5.genes.1.5	007	D_older_root_extended	30	30	27405	27405	1.0
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	30	7	27405	6153	0.22452107279693487
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	30	21	27405	25515	0.9310344827586207
+outgroup.0.species.1.5.genes.1.5	042	C_root_adjacent	30	30	27405	27405	1.0
+outgroup.0.species.1.5.genes.1.5	042	D_older_root_extended	30	30	27405	27405	1.0
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	30	18	27405	22950	0.8374384236453202
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	30	22	27405	26103	0.9524904214559387
+outgroup.0.species.1.5.genes.1.5	074	C_root_adjacent	30	30	27405	27405	1.0
+outgroup.0.species.1.5.genes.1.5	074	D_older_root_extended	30	30	27405	27405	1.0
+outgroup.0.species.5.genes.5	005	A_existing_internal	30	28	27405	27405	1.0
+outgroup.0.species.5.genes.5	005	B_deep_internal	30	28	27405	27405	1.0
+outgroup.0.species.5.genes.5	005	C_root_adjacent	30	30	27405	27405	1.0
+outgroup.0.species.5.genes.5	005	D_older_root_extended	30	30	27405	27405	1.0

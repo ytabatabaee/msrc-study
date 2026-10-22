@@ -1,0 +1,20 @@
+{
+  "status": "forward_audit_complete_genealogy_discovery_unexecuted",
+  "simulator": "/Users/ytabatabaee/Desktop/msrc-sim",
+  "simulator_commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+  "trees": [
+    ["outgroup.0.species.1.5.genes.1.5", "007"],
+    ["outgroup.0.species.1.5.genes.1.5", "042"],
+    ["outgroup.0.species.1.5.genes.1.5", "074"],
+    ["outgroup.0.species.5.genes.5", "005"]
+  ],
+  "rho_grid": [0.0, 0.0001, 0.001, 0.002, 0.01, 0.02, 0.1, 1.0],
+  "initial_frequency": 0.5,
+  "scale_factor": 0.001,
+  "structural_quartets": 27405,
+  "forward_histories_per_scenario_tree": 1,
+  "genealogy_discovery_completed": false,
+  "astral_completed": false,
+  "forward_histories_reused_across_rho": "planned but not realized in the stopped genealogy run",
+  "raw_genealogies_retained": false
+}

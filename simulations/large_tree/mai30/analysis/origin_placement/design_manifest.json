@@ -1,0 +1,16 @@
+{
+  "rho_grid": [
+    0.0,
+    0.0001,
+    0.001,
+    0.002,
+    0.01,
+    0.02,
+    0.1,
+    1.0
+  ],
+  "executed_genealogy_rhos": "rho<=0.02 in design; local genealogy run did not complete",
+  "scenario_rules": "see origin_scenarios.tsv",
+  "total_quartets": 27405,
+  "structural_exposure_calculated_for_all_quartets": true
+}

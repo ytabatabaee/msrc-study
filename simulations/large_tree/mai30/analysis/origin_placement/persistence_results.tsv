@@ -1,0 +1,17 @@
+condition	replicate	scenario	history	origin_branch	origin_age	origin_branch_polymorphic_fraction	origin_branch_end_polymorphic	origin_branch_ever_fixed	origin_branch_ever_lost	root_terminal_polymorphic	status
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	0	N8	51.02414045553	0.6666666666666666	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	0	N8	52.02414045553	0.8333333333333334	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	0	N29	103.02414045552996	0.011373578302712161	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	007	D_older_root_extended	0	N29	9191.02414045553	0.09461824546051192	0	0	1	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	0	N23	6338.496028627001	0.5076923076923077	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	0	N28	12176.324321340002	0.013340174448435094	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	042	C_root_adjacent	0	N29	16072.324321340002	0.1495601173020528	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	042	D_older_root_extended	0	N29	16700.324321340002	0.0513950073421439	0	1	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	0	N20	3003.2368256719997	0.6666666666666666	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	0	N21	3055.3860175679997	0.9285714285714286	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	074	C_root_adjacent	0	N29	3109.386017568	0.011373578302712161	1	0	0	0	executed_forward_history
+outgroup.0.species.1.5.genes.1.5	074	D_older_root_extended	0	N29	12197.386017568	0.2345219864362284	0	1	0	0	executed_forward_history
+outgroup.0.species.5.genes.5	005	A_existing_internal	0	N28	1674.4776312029999	0.55	1	0	0	0	executed_forward_history
+outgroup.0.species.5.genes.5	005	B_deep_internal	0	N28	1682.4776312029999	0.95	1	0	0	0	executed_forward_history
+outgroup.0.species.5.genes.5	005	C_root_adjacent	0	N29	1733.4776312029999	0.03666427030913012	1	0	0	0	executed_forward_history
+outgroup.0.species.5.genes.5	005	D_older_root_extended	0	N29	4461.477631203	0.06040992448759439	0	0	1	0	executed_forward_history

@@ -2136,3 +2136,66 @@ incomplete after 562.8 seconds, so computational feasibility is not yet
 established. A one-history Bridges2 benchmark for all three conditions is the
 next decision gate. The `kappa=1` treatment remains an unsuppressed MSRC
 control, not ordinary MSC; ordinary MSC is an external baseline.
+
+## Mai30 weak-MSRC mechanism diagnostics
+
+The retained four-replicate Mai30 pilot was audited under
+`simulations/large_tree/mai30/analysis/mechanism_diagnostics/` without
+launching new production jobs or changing the staged 30-replicate manifest.
+The effective switching intensities are rho=0.02, 0.01, and 0.002 for
+kappa=1, 0.5, and 0.1. They produce materially different realized switching:
+about 31.6, 14.9, and 3.73 switches per genealogy, with mean zero-switch
+fractions of 0.040, 0.049, and 0.070 across the 300 retained histories.
+
+The rearrangement origin is on an internal branch in all four pilot trees, so
+the structured process is restricted to a descendant clade; root extension is
+not equivalent to whole-tree structured ancestry. Persistence is strongly
+branch-specific. In replicate 007, the N8 origin branch is polymorphic at its
+younger end in approximately 0.31, 0.28, and 0.30 of histories across the
+three treatments. After correcting the arrangement-pattern classification to
+use each induced quartet's actual species-tree split, discordant 2:2 terminal
+patterns average approximately 0.057, 0.086, and 0.080 across the diagnostic
+panel. These are natural pattern frequencies, not conditional sampling
+weights.
+
+The diagnostic tables and figures separate observed pilot results from a
+predeclared but unexecuted expanded switching-rate grid. Retained outputs do
+not contain lineage-level switch times, branch-specific backward event counts,
+or coalescence-before/after-switch ordering. The current evidence supports
+restricted-clade exposure, heterogeneous persistence, and marginal dilution as
+plausible mechanisms for weak whole-tree ASTRAL effects, but does not establish
+a validated quartet reversal or systematic suppression effect. No change to
+Mai30 production parameters is recommended until a small mechanistic rate
+experiment with optional backward-event diagnostics is run and validated.
+
+## Mai30 rearrangement-origin placement audit
+
+The origin-placement analysis is under
+`simulations/large_tree/mai30/analysis/origin_placement/`. Four deterministic
+scenarios were defined on all four pilot species trees: the original internal
+origin, the oldest eligible deeper internal origin, a root-extension origin 50
+scaled generations before root speciation, and a doubled-root-extension stress
+scenario. Structural exposure was enumerated over all 27,405 four-taxon
+subsets. Root scenarios expose all quartets; internal scenarios expose between
+22.5% and 100%, depending on the descendant clade.
+
+Forward Wright--Fisher persistence and terminal arrangement sampling were
+executed for one history per tree/scenario. Persistence was not monotone in
+origin age: longer exposure sometimes produced fixation or loss. This is a
+forward-process result and is not conditioned on survival.
+
+The single-history terminal audit produced mean discordant 2:2 arrangement
+frequencies of approximately 0.0014 for the existing origin, 0.0390 for the
+deeper internal origin, 0.0020 for the root-adjacent origin, and 0 for the
+doubled-root stress case. These are arrangement frequencies, not quartet
+topology reversals.
+
+The local 30-taxon backward genealogy discovery run was stopped after runtime
+stress in large ancestral populations, even after reducing to one history and
+one locus. No origin-placement quartet margins, reversal estimates, or ASTRAL
+results are claimed; their output files explicitly record `not_executed`.
+The requested rho grid, including 0.1 and 1.0 stress points, is retained as a
+cluster-scale design. The existing staged 30-replicate and 300-replicate
+manifests were not changed. The original internal origin remains the
+recommended Mai30 production setting until a checkpointed Bridges2 origin
+experiment is benchmarked and validated.

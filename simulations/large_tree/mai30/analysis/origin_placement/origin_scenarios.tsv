@@ -1,0 +1,17 @@
+scenario	origin_branch	origin_time_from_branch_start	root_extension	rule	condition	replicate	n_taxa	descendant_taxa	origin_younger_age	origin_older_age	origin_age	structured_duration_to_root_or_branch_end
+A_existing_internal	N8	2	4570.0	original pilot configuration	outgroup.0.species.1.5.genes.1.5	007	30	9	48.1164227859	53.02414045553	51.02414045553	2
+B_deep_internal	N8	1	4570.0	oldest non-root internal branch, with approximately 50 generations of structured exposure when possible	outgroup.0.species.1.5.genes.1.5	007	30	9	48.1164227859	53.02414045553	52.02414045553	1
+C_root_adjacent	N29	4520	4570.0	root-extension origin 50 generations before root speciation	outgroup.0.species.1.5.genes.1.5	007	30	30	53.02414045553	4623.02414045553	103.02414045552996	4520
+D_older_root_extended	N29	2	9140.0	root-extension origin near older boundary with doubled root extension	outgroup.0.species.1.5.genes.1.5	007	30	30	53.02414045553	9193.02414045553	9191.02414045553	2
+A_existing_internal	N23	64	340.0	original pilot configuration	outgroup.0.species.1.5.genes.1.5	042	30	7	6274.42580625	6402.496028627001	6338.496028627001	64
+B_deep_internal	N28	3846	340.0	oldest non-root internal branch, with approximately 50 generations of structured exposure when possible	outgroup.0.species.1.5.genes.1.5	042	30	21	12126.230041017001	16022.324321340002	12176.324321340002	3846
+C_root_adjacent	N29	290	340.0	root-extension origin 50 generations before root speciation	outgroup.0.species.1.5.genes.1.5	042	30	30	16022.324321340002	16362.324321340002	16072.324321340002	290
+D_older_root_extended	N29	2	680.0	root-extension origin near older boundary with doubled root extension	outgroup.0.species.1.5.genes.1.5	042	30	30	16022.324321340002	16702.324321340002	16700.324321340002	2
+A_existing_internal	N20	2	4570.0	original pilot configuration	outgroup.0.species.1.5.genes.1.5	074	30	18	3000.5637506979997	3005.2368256719997	3003.2368256719997	2
+B_deep_internal	N21	4	4570.0	oldest non-root internal branch, with approximately 50 generations of structured exposure when possible	outgroup.0.species.1.5.genes.1.5	074	30	22	3005.2368256719997	3059.3860175679997	3055.3860175679997	4
+C_root_adjacent	N29	4520	4570.0	root-extension origin 50 generations before root speciation	outgroup.0.species.1.5.genes.1.5	074	30	30	3059.3860175679997	7629.386017568	3109.386017568	4520
+D_older_root_extended	N29	2	9140.0	root-extension origin near older boundary with doubled root extension	outgroup.0.species.1.5.genes.1.5	074	30	30	3059.3860175679997	12199.386017568	12197.386017568	2
+A_existing_internal	N28	9	1390.0	original pilot configuration	outgroup.0.species.5.genes.5	005	30	28	1665.215502033	1683.4776312029999	1674.4776312029999	9
+B_deep_internal	N28	1	1390.0	oldest non-root internal branch, with approximately 50 generations of structured exposure when possible	outgroup.0.species.5.genes.5	005	30	28	1665.215502033	1683.4776312029999	1682.4776312029999	1
+C_root_adjacent	N29	1340	1390.0	root-extension origin 50 generations before root speciation	outgroup.0.species.5.genes.5	005	30	30	1683.4776312029999	3073.477631203	1733.4776312029999	1340
+D_older_root_extended	N29	2	2780.0	root-extension origin near older boundary with doubled root extension	outgroup.0.species.5.genes.5	005	30	30	1683.4776312029999	4463.477631203	4461.477631203	2
