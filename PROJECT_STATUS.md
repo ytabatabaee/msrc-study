@@ -2255,3 +2255,27 @@ pilots, but the simulator is not yet cleared for the full 30-replicate staged
 origin-placement experiment or the 300-replicate study. A checkpointed cluster
 workflow and a forward-history optimization or larger allocation are needed
 before making quartet-reversal or ASTRAL-bias claims.
+
+## Neoaves Stage 4E PNAS-48 data audit
+
+The 48-taxon audit is complete as a provenance audit. The frozen mapping has
+48 source Jarvis labels and 48 Stiller labels, with the documented Manacus
+reidentification. The published PNAS outlier predicate was independently
+recomputed from the local locus manifest: 1,431 loci match, with zero
+implementation-only or published-only loci. The current J48 inputs remain
+unchanged.
+
+Exact published-input reproduction is not established. The authors' Stiller
+README identifies the aLRT-0.95 collapsed archive as the ASTRAL input, while
+the current Stage 4E files use an ID-preserving re-collapse of named trees.
+The local audit records 31,066 named/collapsed same-row disagreements, and the
+collapsed archive lacks the locus-ID alignment needed to assign exclusions
+without fabrication. No authoritative published 48-taxon gene-tree file,
+original 48-taxon command, or identified published 48-taxon full/outlier-
+removed species trees was found in the available archive.
+
+Use the current J48 treatments only as reconstructed published-design
+replications and MSRC extensions. The recommended Bridges-2 preparation set
+is `J48_T0`, `J48_T_PNAS`, `J48_T_STRUCT_PRIMARY`, `J48_T_BLOCK_500K`, and
+`J48_NONCHR4`; no job was submitted. See
+`empirical/neoaves_chr4/results/stage4e/pnas48_data_audit.md`.

@@ -1,0 +1,190 @@
+{
+  "sources": {
+    "pnas_repository": "https://github.com/smirarab/chr4avian/tree/master",
+    "pnas_repository_commit": "17b408a622c9589fe9f6ca8a434c150974e39cd4",
+    "pnas_zenodo": "https://doi.org/10.5281/zenodo.10699423",
+    "pnas_zenodo_downloaded_record": "https://zenodo.org/api/records/10699424/files/smirarab/chr4avian-v1.0.0.zip/content",
+    "stiller_figshare": "https://doi.org/10.6084/m9.figshare.25825408.v1",
+    "stiller_erda": "https://sid.erda.dk/sharelink/ENhZODU9YE"
+  },
+  "taxa": {
+    "source_2014": [
+      "Acanthisitta_chloris",
+      "Anas_platyrhynchos",
+      "Antrostomus_carolinensis",
+      "Apaloderma_vittatum",
+      "Aptenodytes_forsteri",
+      "Balearica_regulorum",
+      "Buceros_rhinoceros",
+      "Calypte_anna",
+      "Cariama_cristata",
+      "Cathartes_aura",
+      "Chaetura_pelagica",
+      "Charadrius_vociferus",
+      "Chlamydotis_macqueenii",
+      "Colius_striatus",
+      "Columba_livia",
+      "Corvus_brachyrhynchos",
+      "Cuculus_canorus",
+      "Egretta_garzetta",
+      "Eurypyga_helias",
+      "Falco_peregrinus",
+      "Fulmarus_glacialis",
+      "Gallus_gallus",
+      "Gavia_stellata",
+      "Geospiza_fortis",
+      "Haliaeetus_albicilla",
+      "Haliaeetus_leucocephalus",
+      "Leptosomus_discolor",
+      "Manacus_vitellinus",
+      "Meleagris_gallopavo",
+      "Melopsittacus_undulatus",
+      "Merops_nubicus",
+      "Mesitornis_unicolor",
+      "Nestor_notabilis",
+      "Nipponia_nippon",
+      "Opisthocomus_hoazin",
+      "Pelecanus_crispus",
+      "Phaethon_lepturus",
+      "Phalacrocorax_carbo",
+      "Phoenicopterus_ruber",
+      "Picoides_pubescens",
+      "Podiceps_cristatus",
+      "Pterocles_gutturalis",
+      "Pygoscelis_adeliae",
+      "Struthio_camelus",
+      "Taeniopygia_guttata",
+      "Tauraco_erythrolophus",
+      "Tinamus_guttatus",
+      "Tyto_alba"
+    ],
+    "stiller2024": [
+      "Acanthisitta_chloris",
+      "Anas_platyrhynchos",
+      "Antrostomus_carolinensis",
+      "Apaloderma_vittatum",
+      "Aptenodytes_forsteri",
+      "Balearica_regulorum",
+      "Buceros_rhinoceros",
+      "Calypte_anna",
+      "Cariama_cristata",
+      "Cathartes_aura",
+      "Chaetura_pelagica",
+      "Charadrius_vociferus",
+      "Chlamydotis_macqueenii",
+      "Colius_striatus",
+      "Columba_livia",
+      "Corvus_brachyrhynchos",
+      "Cuculus_canorus",
+      "Egretta_garzetta",
+      "Eurypyga_helias",
+      "Falco_peregrinus",
+      "Fulmarus_glacialis",
+      "Gallus_gallus",
+      "Gavia_stellata",
+      "Geospiza_fortis",
+      "Haliaeetus_albicilla",
+      "Haliaeetus_leucocephalus",
+      "Leptosomus_discolor",
+      "Manacus_manacus",
+      "Meleagris_gallopavo",
+      "Melopsittacus_undulatus",
+      "Merops_nubicus",
+      "Mesitornis_unicolor",
+      "Nestor_notabilis",
+      "Nipponia_nippon",
+      "Opisthocomus_hoazin",
+      "Pelecanus_crispus",
+      "Phaethon_lepturus",
+      "Phalacrocorax_carbo",
+      "Phoenicopterus_ruber",
+      "Picoides_pubescens",
+      "Podiceps_cristatus",
+      "Pterocles_gutturalis",
+      "Pygoscelis_adeliae",
+      "Struthio_camelus",
+      "Taeniopygia_guttata",
+      "Tauraco_erythrolophus",
+      "Tinamus_guttatus",
+      "Tyto_alba"
+    ],
+    "n": 48,
+    "mapping_status": [
+      "exact",
+      "source_genome_taxon_reidentified_in_stiller"
+    ]
+  },
+  "pnas_exclusions": {
+    "published_interval_rule": "chr4 window start inclusive: 25030000-32670000; 33510000-34470000; 44130000-56810000",
+    "published_loci_in_local_manifest": 1431,
+    "recorded_loci_in_local_manifest": 1431,
+    "loci_only_ours": 0,
+    "loci_only_published": 0,
+    "ambiguous_or_unmapped": 0,
+    "assembly": "GalGal4 coordinates as used by published script; local manifest retains Stiller window coordinates",
+    "boundary": "window start, inclusive; overlap reduces to locus membership"
+  },
+  "current_j48": [
+    {
+      "treatment": "J48_T0",
+      "n_loci": "62945",
+      "trees_with_fewer_than_four_taxa_omitted": "485",
+      "sha256": "cb5195cc449582084a0afc1ce11c87cc8eaa176863f4682f78ad4a29eb22dc14"
+    },
+    {
+      "treatment": "J48_T_PNAS",
+      "n_loci": "61524",
+      "trees_with_fewer_than_four_taxa_omitted": "475",
+      "sha256": "6c60dce91603d46f5d0af75ec46093065cb605bcc8a8ce26e112d420482953b8"
+    },
+    {
+      "treatment": "J48_T_STRUCT_PRIMARY",
+      "n_loci": "62116",
+      "trees_with_fewer_than_four_taxa_omitted": "479",
+      "sha256": "000213a5e5628e1498a0dd8aebca889c056d789cde0d743c5a858d059ff15ef3"
+    },
+    {
+      "treatment": "J48_T_BLOCK_250K",
+      "n_loci": "57084",
+      "trees_with_fewer_than_four_taxa_omitted": "451",
+      "sha256": "f1e187276b8bf3783b15c947b74f604efaa32efa0056923d1234dc86a52056fa"
+    },
+    {
+      "treatment": "J48_T_BLOCK_500K",
+      "n_loci": "56905",
+      "trees_with_fewer_than_four_taxa_omitted": "450",
+      "sha256": "d9d6004ae80a6b17289ac57afe7941fc539d041eb76576bd0d6a27879d405357"
+    },
+    {
+      "treatment": "J48_T_BLOCK_1MB",
+      "n_loci": "56817",
+      "trees_with_fewer_than_four_taxa_omitted": "448",
+      "sha256": "a01a90932b564afbcdfc68f2e4e42343d79a2c3019178ed29805ed765a1cc4e9"
+    },
+    {
+      "treatment": "J48_NONCHR4",
+      "n_loci": "56721",
+      "trees_with_fewer_than_four_taxa_omitted": "447",
+      "sha256": "cfecbc68da62fc6bd03b971f09bd95b34fa5efa5ff247cef3672ae90f6667760"
+    }
+  ],
+  "current_input_identity": "reconstructed_named_recollapse_not_exact_published_collapsed",
+  "existing_inputs_preserved": true,
+  "original_stage4d_input_audit": {
+    "validation": "Existing inputs inspected; not regenerated",
+    "counts": {
+      "J48_ALL": 62945,
+      "J48_PNAS_OUTLIER_EXCLUDED": 61524,
+      "taxa": 48
+    },
+    "source_sha256": {
+      "J48_ALL.tre": "cb5195cc449582084a0afc1ce11c87cc8eaa176863f4682f78ad4a29eb22dc14",
+      "J48_PNAS_OUTLIER_EXCLUDED.tre": "6c60dce91603d46f5d0af75ec46093065cb605bcc8a8ce26e112d420482953b8",
+      "jarvis48_taxa.tsv": "5bd5c663c65c5b1bad797f2d337e97a29b6400184c32a2d1e0892a012da37f64",
+      "named_recollapsed.tre": "c0a0ec9b432405da548a6cdb37460ccf1c0d9d1b5a5211d74d5f397c70e0f943"
+    },
+    "trees_omitted_fewer_than_four_tips": 485,
+    "usable_pnas_excluded": 1421,
+    "caveat": "Input construction was performed earlier; full-tree validation of re-collapsed named-tree fallback remains pending."
+  }
+}

@@ -69,6 +69,14 @@ and `branch_lengths.tsv`. Derived files are written atomically.
 Fixed-topology scoring is useful for branch-length comparisons on a common
 topology, but it does not test topology selection:
 
+The PNAS-48 audit must be read before running Jarvis-48 treatments. The
+current `J48_*` files are reconstructed-design inputs, not exact published
+collapsed-file inputs. Run `pnas48_data_audit.py` and verify the input-manifest
+checksums before preparing `J48_T0`, `J48_T_PNAS`, `J48_T_STRUCT_PRIMARY`,
+`J48_T_BLOCK_500K`, and `J48_NONCHR4`. No exact published-input claim is
+permitted until an ID-resolved copy of the authors' collapsed 48-taxon gene
+trees is obtained.
+
 ```bash
 astral4 -i MATCHED_INPUT.tre -C -c T0_TREE.nwk -u 2 \
   --length SULength --genelength 1000 --sulengthtype 1 \

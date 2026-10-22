@@ -27,6 +27,16 @@ analysis. The committed full-363-taxon Stage 4E T0 result is now parsed and
 validated locally; T_PNAS and the remaining treatment comparisons remain
 pending until their cluster outputs are returned and audited.
 
+The Stage 4E Jarvis-48 source audit is in
+`results/stage4e/pnas48_data_audit.md` and `.tsv`. The current J48 inputs are a
+reconstructed published-design dataset: the authors document the collapsed
+aLRT-0.95 Stiller archive as their ASTRAL input, while the existing inputs use
+the ID-preserving named-tree re-collapse because the collapsed archive is not
+locus-ID aligned. The audit verified the 48-taxon mapping and all 1,431 PNAS
+window-start exclusions, but exact published 48-taxon gene-tree identity and
+the original 48-taxon ASTRAL output remain unverifiable. Existing J48 and
+full-363 inputs are preserved.
+
 The current Stage 4E runner performs one ASTRAL-IV `SULength` inference per
 treatment and extracts internal CU annotations from that same annotated tree.
 Terminal CU lengths remain undefined. The committed T0 audit is in

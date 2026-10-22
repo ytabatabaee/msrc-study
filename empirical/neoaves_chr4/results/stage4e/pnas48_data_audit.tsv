@@ -1,0 +1,9 @@
+component	determination	value	evidence
+species_selection	reconstructed_match_with_mapping	48 source / 48 Stiller labels; missing=0; extra=0	data/stage4d/jarvis48_taxa.tsv
+species_mapping	documented_nonexact_mapping	exact;source_genome_taxon_reidentified_in_stiller	data/stage4d/jarvis48_taxa.tsv
+source_gene_trees	reconstructed_not_exactly_verified	named Stiller archive used; PNAS says ASTRAL used collapsed aLRT-0.95 archive	stiller2024/README.txt; stage4d/input_audit.json
+gene_tree_preprocessing	mismatch_from_published_input	31,066 same-row named/collapsed disagreements; current inputs use ID-preserving re-collapse	results/stage4d_report.md; results/stage4d/named_collapsed_mismatches.tsv
+locus_filtering	verified_for_reconstruction	63430 unique locus IDs; fewer-than-four omitted after pruning	results/stage4d_locus_manifest.tsv; scripts/05_stage4e_prepare_aster.py
+pnas_outlier_exclusions	exact_predicate_and_count_verified	expected=1431; recorded=1431; only_ours=0; only_published=0	scripts/stage4d_core.py; chr4avian/genetreesupport/delta_quartet.R
+species_tree_settings	unverifiable_for_48_comparison	published 48-taxon command/output not present in available PNAS archive	chr4avian-v1.0.0.zip inventory
+published_output_topology	unverifiable	available score.tre is not an identified published 48-taxon output	external/chr4avian/score.tre
