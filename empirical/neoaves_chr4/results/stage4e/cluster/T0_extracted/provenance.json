@@ -1,0 +1,17 @@
+{
+  "treatment": "T0",
+  "mode": "extract-existing",
+  "migration_status": "extracted_from_existing_su_run",
+  "source_annotated_path": "/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage4e/cluster/T0/tree.su.nwk",
+  "source_annotated_sha256": "f345e8cfa014395a92d0632f3ec73ad11a01332ffa48ed58c6ddd447f3237837",
+  "extraction_wall_seconds": 0.8584185499930754,
+  "hostname": "Yasamins-MacBook-Pro-211.local",
+  "date_utc": "2026-10-22T16:07:54.117175+00:00",
+  "taxa": 363,
+  "branches": 724,
+  "source_sha256": "f345e8cfa014395a92d0632f3ec73ad11a01332ffa48ed58c6ddd447f3237837",
+  "annotated_sha256": "f345e8cfa014395a92d0632f3ec73ad11a01332ffa48ed58c6ddd447f3237837",
+  "source_kind": "extracted_from_existing_su_run",
+  "internal_branches": 360,
+  "terminal_branches": 364
+}

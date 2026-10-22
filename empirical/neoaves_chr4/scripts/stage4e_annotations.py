@@ -85,7 +85,10 @@ def _dendropy_tree(text: str):
                              preserve_underscores=True)
 
 
-def extract_records(text: str, tolerance: float = 1e-8) -> tuple[object, set[str], list[dict[str, object]]]:
+def extract_records(text: str, tolerance: float = 1e-8,
+                    edge_annotation: str = "SULength") -> tuple[object, set[str], list[dict[str, object]]]:
+    if edge_annotation not in {"CULength", "SULength"}:
+        raise ValueError("edge_annotation must be CULength or SULength")
     tree = _dendropy_tree(text)
     leaves = list(tree.leaf_node_iter())
     taxa = {node.taxon.label for node in leaves if node.taxon is not None}
@@ -121,8 +124,9 @@ def extract_records(text: str, tolerance: float = 1e-8) -> tuple[object, set[str
         if branch_type == "internal":
             if cu is None or su is None:
                 raise ValueError(f"internal branch {split_key} lacks CU/SU annotation")
-            if edge_length is None or abs(edge_length - su) > tolerance * max(1.0, abs(su)):
-                raise ValueError(f"internal SULength disagrees with Newick edge for {split_key}")
+            expected_edge = cu if edge_annotation == "CULength" else su
+            if edge_length is None or abs(edge_length - expected_edge) > tolerance * max(1.0, abs(expected_edge)):
+                raise ValueError(f"internal {edge_annotation} disagrees with Newick edge for {split_key}")
             internal_index += 1
             branch_id = f"internal_{internal_index:04d}"
         else:

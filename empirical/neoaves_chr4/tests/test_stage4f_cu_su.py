@@ -17,6 +17,9 @@ runner = load("stage4f_runner", BASE / "scripts/05_stage4e_run_aster.py")
 analyzer = load("stage4f_analyzer", BASE / "scripts/05_stage4e_analyze_aster.py")
 annotations = load("stage4e_annotations", BASE / "scripts/stage4e_annotations.py")
 
+T0 = BASE / "results/stage4e/cluster/T0"
+T0_EXTRACTED = BASE / "results/stage4e/cluster/T0_extracted"
+
 
 def test_verified_length_commands_are_explicit():
     command = runner.astra_command(Path("astral4"), Path("in.tre"), Path("out.nwk"), 4,
@@ -105,3 +108,48 @@ def test_migration_is_idempotent_and_refuses_overwrite(tmp_path):
         pass
     else:
         raise AssertionError("migration overwrote a differing annotated source")
+
+
+def test_committed_t0_has_363_taxa_and_360_root_invariant_internal_splits():
+    _, cu_taxa, cu_records = annotations.extract_records(
+        (T0 / "tree.cu.nwk").read_text(), edge_annotation="CULength")
+    _, su_taxa, su_records = annotations.extract_records(
+        (T0 / "tree.su.nwk").read_text(), edge_annotation="SULength")
+    cu = {r["split_key"] for r in cu_records if r["branch_type"] == "internal"}
+    su = {r["split_key"] for r in su_records if r["branch_type"] == "internal"}
+    assert len(cu_taxa) == len(su_taxa) == 363
+    assert len(cu) == len(su) == 360
+    assert cu == su
+
+
+def test_committed_t0_extraction_matches_original_runs_and_has_no_terminal_cu():
+    _, cu_taxa, cu_records = annotations.extract_records(
+        (T0 / "tree.cu.nwk").read_text(), edge_annotation="CULength")
+    _, su_taxa, su_records = annotations.extract_records(
+        (T0 / "tree.su.nwk").read_text(), edge_annotation="SULength")
+    _, ext_cu_taxa, ext_cu_records = annotations.extract_records(
+        (T0_EXTRACTED / "tree.cu.nwk").read_text(), edge_annotation="CULength")
+    _, ext_su_taxa, ext_su_records = annotations.extract_records(
+        (T0_EXTRACTED / "tree.su.nwk").read_text(), edge_annotation="SULength")
+    cu = {r["split_key"]: r for r in cu_records if r["branch_type"] == "internal"}
+    su = {r["split_key"]: r for r in su_records if r["branch_type"] == "internal"}
+    ext_cu = {r["split_key"]: r for r in ext_cu_records if r["branch_type"] == "internal"}
+    ext_su = {r["split_key"]: r for r in ext_su_records if r["branch_type"] == "internal"}
+    assert cu_taxa == su_taxa == ext_cu_taxa == ext_su_taxa
+    assert all(ext_cu[k]["CU_length"] == cu[k]["CU_length"] for k in cu)
+    assert all(ext_su[k]["SU_length"] == su[k]["SU_length"] for k in su)
+    assert all(r["CU_length"] is None for r in ext_cu_records if r["branch_type"] == "terminal")
+    assert len({r["taxon_label"] for r in ext_su_records if r["branch_type"] == "terminal"}) == 363
+
+
+def test_committed_t0_focal_branches_are_exact_and_extraction_report_passes():
+    rows = (BASE / "results/stage4e/t0_focal_branches.tsv").read_text().splitlines()
+    assert rows[0].startswith("focal_relationship\t")
+    assert {row.split("\t", 1)[0] for row in rows[1:]} == {"Columbea", "N61", "N62"}
+    states = {row.split("\t")[0]: row.split("\t")[1] for row in rows[1:]}
+    assert states == {"Columbea": "q2", "N61": "q1", "N62": "q1"}
+    report = (BASE / "results/stage4e/t0_full363_validation.md").read_text()
+    assert "Original CU/SU unrooted RF symmetric difference: **0**" in report
+    assert "| taxa_363 | PASS |" in report
+    assert "| extracted_cu_terminal_lengths_missing | PASS |" in report
+    assert "No ASTRAL-IV subprocess was invoked" in report

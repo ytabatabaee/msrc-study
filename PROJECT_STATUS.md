@@ -276,7 +276,8 @@ length and `sulengthtype`. The current configured default is `--genelength
 before interpreting returned SU values. The local four-taxon smoke tests pass
 for both modes, including finite nonnegative branch lengths and explicit
 annotation parsing. Fixed-topology commands use the documented `-C -c`
-interface but remain pending a validated T0 topology.
+interface; fixed-topology work remains pending treatment inputs, but the
+committed T0 topology is now validated by the local full-363 audit below.
 
 The execution path is now optimized around the confirmed ASTRAL-IV behavior:
 one `--length SULength` inference supplies internal `CULength` and
@@ -290,14 +291,25 @@ update. The preliminary approximately 9.5-hour full-tree runtime is a
 planning measurement only; fixed-topology scoring and independent topology
 inference remain separate scientific analyses.
 
-No Bridges-2 jobs were submitted by this workflow. At the current freeze,
-`stage4e_collect_status.tsv` reports all treatment/unit outputs as missing, so
-there are no valid 363-species topology, CU, SU, fixed-topology, or
-matched-random scientific results to interpret. Pending outputs are represented
-as pending/missing rather than zero. Required next commands are the generated
-preflight job, then the five primary treatments (`T0`, `T_PNAS`,
-`T_STRUCT_PRIMARY`, `T_BLOCK_500K`, `NONCHR4`), followed by collection and
-analysis before supplementary treatments or random controls.
+The committed full-363-taxon T0 output is now validated locally in
+`empirical/neoaves_chr4/results/stage4e/t0_full363_validation.md`, with the
+machine-readable baseline in `t0_reference_branch_lengths.tsv` and the exact
+focal rows in `t0_focal_branches.tsv`. The audit found 363 taxa, 360 unique
+unrooted internal splits, zero CU/SU RF distance, and maximum extracted-versus-
+original CU and SU differences of 0.0. Both original logs returned code 0 and
+reported optimization score `30019936712278`. The extraction used the
+committed SU tree and did not invoke ASTRAL-IV; terminal CU values remain
+missing. The repository does not contain a nonempty independent 363-taxon
+reference species tree, so focal agreement with such a reference remains
+unavailable. T0 is a valid baseline for treatment comparisons, but it does not
+by itself support a structural-rearrangement claim.
+
+No Bridges-2 jobs were submitted by this validation workflow. T_PNAS and the
+remaining treatment, fixed-topology, and matched-random outputs remain pending
+returned and validated cluster results. Pending outputs are represented as
+pending/missing rather than zero. Required next commands are the generated
+preflight job, then the remaining primary treatments, followed by collection
+and analysis before supplementary treatments or random controls.
 
 ## House mouse t-complex recombination-suppression audit
 

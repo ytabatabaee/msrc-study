@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-10-22T16:10:39.449984+00:00",
+  "astral_invoked": false,
+  "t0_dir": "empirical/neoaves_chr4/results/stage4e/cluster/T0",
+  "extracted_dir": "empirical/neoaves_chr4/results/stage4e/cluster/T0_extracted",
+  "reference_tree": "empirical/neoaves_chr4/results/stage4d/trees/FULL363_ORIGINAL_REPRO.nwk",
+  "checks": {
+    "taxa_363": true,
+    "unique_internal_splits_360": true,
+    "original_cu_su_unrooted_rf_zero": true,
+    "source_cu_lengths_finite_nonnegative": true,
+    "source_su_lengths_finite_nonnegative": true,
+    "extracted_cu_terminal_lengths_missing": true,
+    "extracted_su_terminal_lengths_present": true,
+    "extracted_source_hash_matches": true,
+    "extracted_cu_topology_matches_original": true,
+    "extracted_su_topology_matches_original": true,
+    "focal_mappings_exact_in_t0": true
+  },
+  "scores_in_logs": {
+    "topology_cu": true,
+    "topology_su": true
+  },
+  "original_cu_sha256": "9a4095efbfabd794d8bf82bfc76112b8b1f79886aac8ad6d3f7213be880f232e",
+  "original_su_sha256": "f345e8cfa014395a92d0632f3ec73ad11a01332ffa48ed58c6ddd447f3237837",
+  "extracted_source_sha256": "f345e8cfa014395a92d0632f3ec73ad11a01332ffa48ed58c6ddd447f3237837"
+}

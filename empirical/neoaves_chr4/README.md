@@ -23,13 +23,14 @@ the original `genetreesupport/` analysis files.
 
 Stage 4C is complete. Historical Stage 4D ASTRAL-MP reproduction attempts are
 preserved as provenance but discontinued as a prerequisite for the new full-tree
-analysis. Stage 4E prepares ASTER/ASTRAL4 full-tree treatments for Bridges-2;
-large inference must run only under SLURM and Stage 4E is not complete until
-cluster outputs are returned and validated.
+analysis. The committed full-363-taxon Stage 4E T0 result is now parsed and
+validated locally; T_PNAS and the remaining treatment comparisons remain
+pending until their cluster outputs are returned and audited.
 
 The current Stage 4E runner performs one ASTRAL-IV `SULength` inference per
 treatment and extracts internal CU annotations from that same annotated tree.
-Terminal CU lengths remain undefined. See
+Terminal CU lengths remain undefined. The committed T0 audit is in
+`results/stage4e/t0_full363_validation.md`; see
 `cluster/stage4e_aster/README.md` for resumable single-treatment jobs,
 legacy-output migration, and fixed-topology scoring guidance.
 
