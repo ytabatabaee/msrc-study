@@ -5,3 +5,7 @@ collapsed_to_locus_taxon_set_mapping	strongly_supported_with_unresolved_rows	631
 published_outlier_mask	verified_for_header_loci	1431	delta_quartet.R inclusive GalGal4 window-start predicate
 exact_published_48_input	unverified	not constructed	317 collapsed records lack a matching named taxon set; source does not provide IDs in the collapsed file
 existing_j48_inputs	preserved	7	stage4e_input_manifest.tsv
+unresolved317_candidate_index	audited	117 rows with candidates; 200 without candidates	pnas48_unresolved317.tsv exact named taxon-set index
+unresolved317_source_discrepancy	strongly_supported	200	collapsed taxon sets absent from all 63,430 named loci; ordinary branch collapse preserves leaves
+unresolved317_treatment_equivalent	candidate_only	26	all exact taxon-set candidates share all eight treatment memberships; no locus identity established
+unresolved317_verified_locus_mappings	none	0	no independent source file links an unresolved collapsed row to a locus

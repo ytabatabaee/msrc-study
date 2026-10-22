@@ -1,0 +1,9 @@
+treatment	unresolved_records	proposed_membership_true_count	candidate_membership_invariant_count	candidate_membership_variable_count	potentially_affecting_membership_count	membership_verifiable
+PNAS_outlier_removal	317	6	48	69	269	Partial
+STRUCTURAL_PRIMARY	317	315	47	70	270	Partial
+STRUCTURAL_STRINGENT	317	316	58	59	259	Partial
+STRUCTURAL_INCLUSIVE	317	313	44	73	273	Partial
+BLOCK_250K	317	275	27	90	290	Partial
+BLOCK_500K	317	272	28	89	289	Partial
+BLOCK_1MB	317	270	27	90	290	Partial
+NONCHR4	317	270	27	90	290	Partial

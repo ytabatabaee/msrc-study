@@ -2301,6 +2301,18 @@ replications and MSRC extensions. The recommended Bridges-2 preparation set
 is `J48_T0`, `J48_T_PNAS`, `J48_T_STRUCT_PRIMARY`, `J48_T_BLOCK_500K`, and
 `J48_NONCHR4`; no job was submitted. See
 `empirical/neoaves_chr4/results/stage4e/pnas48_data_audit.md`.
+
+The 317-record follow-up audit is now complete. Of the unresolved collapsed
+records, 200 have taxon sets absent from all 63,430 named loci, 117 have
+mathematically possible exact taxon-set candidates, 26 are treatment-equivalent
+across all eight genomic treatments, and zero have verified new locus
+mappings. The mismatches are scattered rather than a contiguous reorder and
+are not explained by naming normalization or ordinary branch collapse. The
+PNAS mask remains 1,431 loci for header-derived IDs, but unresolved membership
+is partial for every treatment, so no exact collapsed-source 48-taxon dataset
+was constructed. See
+`empirical/neoaves_chr4/results/stage4e/pnas48_unresolved317_summary.md`.
+
 ## Mai30 Bridges2 quartet-validation preparation
 
 The origin-placement quartet validation has a Bridges2-only workflow under

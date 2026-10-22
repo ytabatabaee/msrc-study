@@ -20,6 +20,57 @@ unresolved. No locus ID is assigned from topology similarity or from a guessed
 row correspondence. Therefore the complete published collapsed collection is
 not an exact verifiable input for locus-filtered 48-taxon treatments.
 
+## Follow-up audit of the 317 records
+
+The follow-up audit is in `pnas48_unresolved317.tsv` and
+`pnas48_unresolved317_summary.md`. It indexes all 63,430 named loci by exact
+taxon set and tests the 317 collapsed records against that index.
+
+- **200** collapsed taxon sets do not occur anywhere in the named archive.
+  Because ordinary aLRT branch collapse preserves leaf sets, these are
+  strongly supported source/preprocessing discrepancies, not recoverable locus
+  identities from the available named file.
+- **117** records have one or more named loci with the same taxon set. The
+  maximum one-to-one matching among these unresolved rows is 117, but every
+  candidate is already the header-derived locus of another collapsed record.
+  This is a mathematical constraint, not provenance evidence.
+- **26** records are treatment-equivalent under all eight membership tests
+  across their candidate loci. They remain identity-ambiguous and are not
+  promoted to verified mappings.
+- **91** records have candidate loci with unresolved identity and variable
+  treatment implications. No record has a verified locus mapping.
+- The records are scattered: the longest consecutive row runs have length 2.
+  They occur across 24 proposed chromosome/contig labels, including 47 on
+  `chr4`, rather than forming one contiguous reorder block.
+- Only 5 records differ by a single taxon; none is explained by the tested
+  taxon-name normalization. All 317 collapsed records contain a polytomy, as
+  expected for the aLRT-collapsed file, but polytomies do not explain changed
+  leaf sets.
+
+The treatment audit reports the following unresolved membership exposure. The
+`potentially affecting` count includes rows with no candidate locus and rows
+whose candidates disagree in membership; it is not an estimate of scientific
+effect size.
+
+| treatment | potentially affecting | candidate membership variable | membership verifiable |
+|---|---:|---:|---|
+| PNAS outlier removal | 269 | 69 | Partial |
+| Structural primary | 270 | 70 | Partial |
+| Structural stringent | 259 | 59 | Partial |
+| Structural inclusive | 273 | 73 | Partial |
+| Block 250 kb | 290 | 90 | Partial |
+| Block 500 kb | 289 | 89 | Partial |
+| Block 1 Mb | 290 | 90 | Partial |
+| Non-chr4 | 290 | 90 | Partial |
+
+The header-derived 1,431-locus PNAS mask remains verified for the header locus
+set, but its membership cannot be transferred to all collapsed records. No
+exact published-source 48-taxon dataset is constructed. The 26
+treatment-equivalent rows are suitable only for a separately labeled
+sensitivity analysis that preserves their identity uncertainty; they do not
+justify replacing the current `J48_*` inputs or claiming exact PNAS
+reproduction.
+
 ## Source evidence
 
 | source | checksum / version |
