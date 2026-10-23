@@ -1,0 +1,76 @@
+{
+  "treatment": "NONCHR4",
+  "dry_run": false,
+  "command": [
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/NONCHR4.tre",
+      "-o",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/NONCHR4/tree.annotated.nwk",
+      "-u",
+      "2",
+      "-t",
+      "32",
+      "--length",
+      "SULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ]
+  ],
+  "input": "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/NONCHR4.tre",
+  "input_sha256": "7da463cfaa509d53fbaf77b8e8780a6cbdd53a50768953d3d197a0bdb6908871",
+  "aster_bin": "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+  "aster_bin_sha256": "38d2aad2879605b3bd3d26bb7dbc978dce9cec510d684f64da4a58ead836872a",
+  "hostname": "r389.ib.bridges2.psc.edu",
+  "date_utc": "2026-10-22T16:30:55.612390+00:00",
+  "slurm_job_id": "49596239",
+  "cpu_count": 32,
+  "memory_request": "1900",
+  "mode": "topology_su",
+  "genelength": 1000.0,
+  "sulengthtype": 1,
+  "constraint": null,
+  "runs": [
+    {
+      "mode": "topology_su",
+      "length": "SULength",
+      "command": [
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+        "-i",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/repo/empirical/neoaves_chr4/data/stage4e/NONCHR4.tre",
+        "-o",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/NONCHR4/tree.annotated.nwk",
+        "-u",
+        "2",
+        "-t",
+        "32",
+        "--length",
+        "SULength",
+        "--genelength",
+        "1000.0",
+        "--sulengthtype",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/NONCHR4/tree.annotated.nwk",
+      "started_utc": "2026-10-22T16:30:55.613664+00:00"
+    }
+  ],
+  "taxa": 363,
+  "branches": 724,
+  "source_sha256": "7f97337f63ef2bb94f99d855585e8568ecb5e2908d42931930e80f9899b49851",
+  "annotated_sha256": "7f97337f63ef2bb94f99d855585e8568ecb5e2908d42931930e80f9899b49851",
+  "source_kind": "single_run",
+  "internal_branches": 360,
+  "terminal_branches": 364,
+  "extraction_wall_seconds": 3.9585301778279245,
+  "inference_wall_seconds": 47968.94251294527,
+  "output_sha256": {
+    "tree.annotated.nwk": "7f97337f63ef2bb94f99d855585e8568ecb5e2908d42931930e80f9899b49851",
+    "tree.cu.nwk": "7876ef2477cede913deb566e6e73434d9156dd8c770ba0e9649f2a93ef00fd7d",
+    "tree.su.nwk": "1cba44efdce0aeb4f3826332a4c0b664e1c4267d507beac48df3eb75abd4c941"
+  }
+}
