@@ -567,3 +567,18 @@ Outputs are written to `figures/neoaves_msrc_threshold_main.{pdf,png,svg}` and
 `figures/neoaves_msrc_threshold.{pdf,png,svg}` names are updated to the same
 main rendering. The caption is in
 `figures/neoaves_msrc_threshold_main_caption.md`.
+
+## Full 363-taxon PNAS replication audit
+
+`scripts/full363_pnas_replication_audit.py` compares the committed 363- and
+48-taxon trees with the cached `chr4avian-v1.0.0` Figure S9 species trees using
+canonical unrooted bipartitions. It writes the RF comparison, focal split and
+branch tables, source checksums, and the verified comparison figure under
+`results/stage4e/` and `figures/`.
+
+The current full-data T0 matches the cached published 363-taxon tree exactly.
+The cached published outlier-removed tree retains the same N62/S2024-side
+relationship, while reconstructed T_PNAS changes that split (RF 2 against the
+published outlier-removed tree). This comparison identifies an input
+reproduction discrepancy in the named-recollapsed source; it does not show
+that the PNAS increased-tax sampling result is contradicted.

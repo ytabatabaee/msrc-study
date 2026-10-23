@@ -2351,3 +2351,20 @@ observations and both pairwise species-versus-discordant margins. Independent
 validation applies a multiple-testing-adjusted history-level uncertainty gate
 before marking either discordant topology as supported. No simulator-backed
 integration test or cluster job was run locally.
+
+## Neoaves full 363-taxon PNAS replication audit
+
+The cached `chr4avian-v1.0.0` Figure S9 species trees were compared with the
+completed full363 and J48 ASTRAL outputs using canonical unrooted splits. The
+full-data T0 tree matches the cached published 363-taxon tree exactly (RF 0),
+and the cached published outlier-removed tree retains the same N62/S2024-side
+relationship. The reconstructed T_PNAS tree differs from the published
+outlier-removed tree by RF 2: its N62 split changes from Columbimorphae to
+Columbiformes + Otidimorphae. Because the current T_PNAS input is derived from
+`named_recollapsed.tre`, this is an input-reproduction discrepancy rather than
+a demonstrated contradiction of the PNAS increased-tax-sampling result.
+
+The audit and source checksums are in
+`empirical/neoaves_chr4/results/stage4e/full363_pnas_replication_audit.md` and
+`full363_pnas_source_manifest.json`. No new ASTRAL inference or cluster job was
+run for this audit.

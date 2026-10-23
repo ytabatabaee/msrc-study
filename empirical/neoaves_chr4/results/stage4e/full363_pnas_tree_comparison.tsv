@@ -1,0 +1,13 @@
+left	right	comparison	left_taxa	right_taxa	taxa_equal	rf	left_only_splits	right_only_splits
+T0	T_PNAS	reconstructed full363 treatments	363	363	True	2	1	1
+T0	T_STRUCT_PRIMARY	reconstructed full363 treatments	363	363	True	0	0	0
+T0	T_BLOCK_500K	reconstructed full363 treatments	363	363	True	2	1	1
+T0	NONCHR4	reconstructed full363 treatments	363	363	True	2	1	1
+J48_T0	J48_T_PNAS	reconstructed Jarvis-48 treatments	48	48	True	6	3	3
+J48_T0	J48_T_STRUCT_PRIMARY	reconstructed Jarvis-48 treatments	48	48	True	0	0	0
+J48_T0	J48_T_BLOCK_500K	reconstructed Jarvis-48 treatments	48	48	True	6	3	3
+J48_T0	J48_NONCHR4	reconstructed Jarvis-48 treatments	48	48	True	6	3	3
+T0	PNAS_FULL	our full-data tree versus cached published full-data tree	363	363	True	0	0	0
+T0	PNAS_OUTLIER_REMOVED	our full-data tree versus cached published outlier-removed tree	363	363	True	0	0	0
+T_PNAS	PNAS_OUTLIER_REMOVED	our reconstructed outlier-removed tree versus cached published tree	363	363	True	2	1	1
+PNAS_FULL	PNAS_OUTLIER_REMOVED	cached published full versus outlier-removed trees	363	363	True	0	0	0

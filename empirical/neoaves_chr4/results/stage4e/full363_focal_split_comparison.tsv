@@ -1,0 +1,50 @@
+tree	taxa	split_name	group_taxa_present	group_taxa_expected	monophyletic_unrooted_split	interpretation
+T0	363	Columbimorphae	9	9	True	direct unrooted split
+T0	363	Columbea	12	12	False	direct unrooted split
+T0	363	Otidimorphae	13	13	True	direct unrooted split
+T0	363	Columbiformes_plus_Otidimorphae	18	18	False	direct unrooted split
+T0	363	Columbea_focal_state				q2
+T0	363	N61_focal_state				q1
+T0	363	N62_focal_state				q1
+T_PNAS	363	Columbimorphae	9	9	False	direct unrooted split
+T_PNAS	363	Columbea	12	12	False	direct unrooted split
+T_PNAS	363	Otidimorphae	13	13	True	direct unrooted split
+T_PNAS	363	Columbiformes_plus_Otidimorphae	18	18	True	direct unrooted split
+T_PNAS	363	Columbea_focal_state				q2
+T_PNAS	363	N61_focal_state				q1
+T_PNAS	363	N62_focal_state				q2
+T_STRUCT_PRIMARY	363	Columbimorphae	9	9	True	direct unrooted split
+T_STRUCT_PRIMARY	363	Columbea	12	12	False	direct unrooted split
+T_STRUCT_PRIMARY	363	Otidimorphae	13	13	True	direct unrooted split
+T_STRUCT_PRIMARY	363	Columbiformes_plus_Otidimorphae	18	18	False	direct unrooted split
+T_STRUCT_PRIMARY	363	Columbea_focal_state				q2
+T_STRUCT_PRIMARY	363	N61_focal_state				q1
+T_STRUCT_PRIMARY	363	N62_focal_state				q1
+T_BLOCK_500K	363	Columbimorphae	9	9	False	direct unrooted split
+T_BLOCK_500K	363	Columbea	12	12	False	direct unrooted split
+T_BLOCK_500K	363	Otidimorphae	13	13	True	direct unrooted split
+T_BLOCK_500K	363	Columbiformes_plus_Otidimorphae	18	18	True	direct unrooted split
+T_BLOCK_500K	363	Columbea_focal_state				q2
+T_BLOCK_500K	363	N61_focal_state				q1
+T_BLOCK_500K	363	N62_focal_state				q2
+NONCHR4	363	Columbimorphae	9	9	False	direct unrooted split
+NONCHR4	363	Columbea	12	12	False	direct unrooted split
+NONCHR4	363	Otidimorphae	13	13	True	direct unrooted split
+NONCHR4	363	Columbiformes_plus_Otidimorphae	18	18	True	direct unrooted split
+NONCHR4	363	Columbea_focal_state				q2
+NONCHR4	363	N61_focal_state				q1
+NONCHR4	363	N62_focal_state				q2
+PNAS_FULL	363	Columbimorphae	9	9	True	direct unrooted split
+PNAS_FULL	363	Columbea	12	12	False	direct unrooted split
+PNAS_FULL	363	Otidimorphae	13	13	True	direct unrooted split
+PNAS_FULL	363	Columbiformes_plus_Otidimorphae	18	18	False	direct unrooted split
+PNAS_FULL	363	Columbea_focal_state				q2
+PNAS_FULL	363	N61_focal_state				q1
+PNAS_FULL	363	N62_focal_state				q1
+PNAS_OUTLIER_REMOVED	363	Columbimorphae	9	9	True	direct unrooted split
+PNAS_OUTLIER_REMOVED	363	Columbea	12	12	False	direct unrooted split
+PNAS_OUTLIER_REMOVED	363	Otidimorphae	13	13	True	direct unrooted split
+PNAS_OUTLIER_REMOVED	363	Columbiformes_plus_Otidimorphae	18	18	False	direct unrooted split
+PNAS_OUTLIER_REMOVED	363	Columbea_focal_state				q2
+PNAS_OUTLIER_REMOVED	363	N61_focal_state				q1
+PNAS_OUTLIER_REMOVED	363	N62_focal_state				q1

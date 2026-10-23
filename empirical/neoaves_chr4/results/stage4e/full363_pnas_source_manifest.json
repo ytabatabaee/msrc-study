@@ -1,0 +1,16 @@
+{
+  "archive": "empirical/neoaves_chr4/external/chr4avian/chr4avian-v1.0.0.zip",
+  "archive_sha256": "0dc24ebde4dd904115bd1e56735550e792d5cf8f7af437dbadf809108c313763",
+  "repository_commit": "17b408a622c9589fe9f6ca8a434c150974e39cd4",
+  "repository_url": "https://github.com/smirarab/chr4avian/tree/17b408a622c9589fe9f6ca8a434c150974e39cd4",
+  "zenodo_url": "https://zenodo.org/api/records/10699424/files/smirarab/chr4avian-v1.0.0.zip/content",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11009670/",
+  "published_full_archive_path": "score-columbea/score.tre",
+  "published_full_sha256": "064e34ad6132d8c043650bf5aa5ae21528bb4b60e825afc37d91fb17db34a6d8",
+  "published_full_git_blob_sha": "aedc2d4890a7bff26e779724a05beb35777d6a0b",
+  "published_outlier_removed_archive_path": "score-columbea/score-post-astral-63430_filter_mRNA_random_region.gene.trees.aLRT0.05-by-63430_filter_mRNA_random_region.gene.trees.aLRT0.05.chr4outlierremoved.gene.trees.tre",
+  "published_outlier_removed_sha256": "9357df58f4e25a693c9b30655a09e93badf4cf402209ba372e23a52ee29d5477",
+  "published_outlier_removed_git_blob_sha": "f88f18219e915ddbed71161b0a25c542c72a3370",
+  "published_reference_63k": "empirical/neoaves_chr4/external/stiller2024/63K.tre",
+  "published_reference_63k_sha256": "d3b4a9f202bb5337338f6814ea4b64757d5ffa6547b8ff9e50faaa9260ed076f"
+}
