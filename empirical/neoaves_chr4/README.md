@@ -582,3 +582,23 @@ relationship, while reconstructed T_PNAS changes that split (RF 2 against the
 published outlier-removed tree). This comparison identifies an input
 reproduction discrepancy in the named-recollapsed source; it does not show
 that the PNAS increased-tax sampling result is contradicted.
+## 48/363 species-tree comparison figures
+
+`scripts/make_neoaves_tree_comparison_figures.py` renders the completed ASTRAL-IV
+trees at both taxon scales. The CU and SU panels prune the inferred trees only
+for display; all RF and branch-length comparisons use complete-tree canonical
+unrooted splits. The 12 displayed taxa are Acanthisitta, Chlamydotis, Columba,
+Cuculus, Eurypyga, Gallus, Mesitornis, Phoenicopterus, Podiceps, Pterocles,
+Tauraco, and Tyto. Internal focal edges are highlighted from the observed
+48-taxon T0/PNAS topology changes; terminal CU lengths remain unavailable and
+are drawn schematically. `results/stage4e/neoaves_display_tree_edge_mapping.tsv`
+records exact versus composite display paths.
+
+Outputs are `figures/neoaves_48_363_trees_cu.{pdf,png,svg}`,
+`figures/neoaves_48_363_trees_su.{pdf,png,svg}`, and
+`figures/neoaves_48_363_branch_length_comparison.{pdf,png,svg}`. The current
+full-tree comparisons show 42 shared internal splits for 48-taxon PNAS,
+500-kb, and non-chr4 treatments, and 359 shared internal splits for their
+363-taxon counterparts. Missing focal splits are retained as absent rather than
+assigned zero length. The full-data PNAS reference match and reconstructed
+outlier-removal discrepancy remain part of the interpretation.

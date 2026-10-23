@@ -2368,3 +2368,9 @@ The audit and source checksums are in
 `empirical/neoaves_chr4/results/stage4e/full363_pnas_replication_audit.md` and
 `full363_pnas_source_manifest.json`. No new ASTRAL inference or cluster job was
 run for this audit.
+
+## Neoaves 48/363 species-tree comparison figures
+
+The completed ASTRAL-IV trees were postprocessed without rerunning inference. Canonical unrooted comparisons reproduce RF patterns of 0, 6, 0, 6, 6 for the five 48-taxon treatments and 0, 2, 0, 2, 2 for the five 363-taxon treatments. T0 and structural-primary share a topology at each scale; PNAS removal, 500-kb blocks, and non-chr4 share the alternative topology.
+
+`scripts/make_neoaves_tree_comparison_figures.py` now renders CU and SU phylograms for a common 12-taxon display subset and a complete-tree homologous branch-length comparison. Terminal CU lengths remain undefined and are drawn schematically. Display-edge provenance is recorded in `results/stage4e/neoaves_display_tree_edge_mapping.tsv`; absent focal splits are never assigned zero length. The full363 PNAS audit limitation remains: reconstructed PNAS removal differs from the cached published outlier-removed reference by RF 2.
