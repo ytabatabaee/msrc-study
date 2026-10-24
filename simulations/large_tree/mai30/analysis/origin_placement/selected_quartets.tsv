@@ -1,15 +1,97 @@
-condition	replicate	scenario	quartet	selection_rule	n_histories_observed
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,2	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,5	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,2	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,3	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,4	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,5	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	1,10,11,12	first lexicographic quartet in structural exposure count bin 2/3/4	0
-outgroup.0.species.1.5.genes.1.5	007	C_root_adjacent	1,10,11,13	first lexicographic quartet in structural exposure count bin 2/3/4	0
+condition	replicate	scenario	quartet	exposure_count	induced_internal_length	selection_rule
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,2	2	0.6917184298700008	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,11,3	2	0.6917184298700008	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	2,20,25,3	2	38.67085524003	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	2,28,3,30	2	38.67085524003	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,3	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,10,2,4	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	30,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	30,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,4	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,2,3,5	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,3,8,9	4	25.1140714292	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	1,4,8,9	4	25.1140714292	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,2	2	0.6917184298700008	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,11,3	2	0.6917184298700008	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	2,20,25,3	2	38.67085524003	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	2,28,3,30	2	38.67085524003	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,3	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,10,2,4	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	30,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	30,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,4	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,2,3,5	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,3,8,9	4	25.1140714292	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	1,4,8,9	4	25.1140714292	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	1,10,11,12	2	0.0	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	1,10,11,16	2	0.0	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	12,23,6,7	2	15029.130113363002	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	24,28,6,7	2	15029.130113363002	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	1,10,12,16	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	1,10,12,17	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	23,24,28,8	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	23,24,28,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	10,12,16,17	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	10,12,16,23	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	10,23,24,28	4	5284.451599768	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	12,23,24,28	4	5284.451599768	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	1,10,2,20	2	3896.094280323001	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	1,10,2,22	2	3896.094280323001	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	20,27,6,7	2	15029.130113363002	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	24,28,6,7	2	15029.130113363002	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	1,10,11,12	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	1,10,11,13	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	28,29,30,8	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	28,29,30,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	10,11,12,16	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	10,11,12,17	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	15,18,20,27	4	11626.632759560001	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	042	B_deep_internal	19,20,21,27	4	11626.632759560001	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,2,23	2	0.0	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,2,24	2	0.0	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	12,13,23,28	2	2862.3892805399996	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	14,18,23,28	2	2923.3983313659996	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,11,2	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,11,20	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	5,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	5,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,11,16	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	1,10,12,16	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	13,14,15,18	4	2231.041596222	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	12,13,14,18	4	2499.051789581	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,2,23,24	2	54.14919189600005	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,2,23,25	2	54.14919189600005	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	12,13,23,28	2	2862.3892805399996	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	14,18,23,28	2	2923.3983313659996	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,10,11,23	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,10,11,24	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	30,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	30,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,10,11,16	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	1,10,11,2	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	13,14,15,18	4	2231.041596222	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.1.5.genes.1.5	074	B_deep_internal	12,13,14,18	4	2499.051789581	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,10,14,2	2	18.26212916999998	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,10,15,2	2	18.26212916999998	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,2,5,8	2	970.9128387929999	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,2,6,7	2	970.9128387929999	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,10,11,12	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	1,10,11,13	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	2,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	2,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	10,11,12,14	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	10,11,12,15	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	20,5,6,7	4	1605.0254043246998	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.5.genes.5	005	A_existing_internal	15,6,7,8	4	1632.1306098681998	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,10,14,2	2	18.26212916999998	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,10,15,2	2	18.26212916999998	geometry-only exposure=2; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,2,5,8	2	970.9128387929999	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,2,6,7	2	970.9128387929999	geometry-only exposure=2; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,10,11,12	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	1,10,11,13	3	0.0	geometry-only exposure=3; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	2,6,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	2,7,8,9	3	0.0	geometry-only exposure=3; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	10,11,12,14	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	10,11,12,15	4	0.0	geometry-only exposure=4; short induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	20,5,6,7	4	1605.0254043246998	geometry-only exposure=4; long induced internal branch
+outgroup.0.species.5.genes.5	005	B_deep_internal	15,6,7,8	4	1632.1306098681998	geometry-only exposure=4; long induced internal branch

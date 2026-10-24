@@ -1,0 +1,51 @@
+mode: arbitrary_tree
+seed: 20261011
+num_loci: 20
+species_tree:
+  newick: (((9:23.0023513567,1:23.0023513567):25.1140714292,(5:41.8426786619,(((4:22.5319557946,((3:14.3532852155,2:14.3532852155):7.26940388992,8:21.6226891054):0.90926668913):18.3348060445,6:40.8667618391):0.9282504378,7:41.7950122769):0.04766638503):6.27374412397):4.90771766963,((22:45.2012333531,(13:43.9693876679,(12:41.9948025764,((((30:10.5865535137,(28:4.53895188921,14:4.53895188921):6.04760162446):3.89312956262,19:14.4796830763):9.59752678223,(11:10.5235544729,21:10.5235544729):13.5536553856):9.91295513646,26:33.990164995):8.0046375814):1.97458509154):1.2318456852):7.13118867256,(((24:33.4334834509,27:33.4334834509):6.19752297108,(25:2.0939626552,20:2.0939626552):37.5370437668):12.4587772029,((10:27.4124815331,(18:5.81253331478,29:5.81253331478):21.5999482184):14.701402186,((23:12.4639621845,16:12.4639621845):1.27751208789,(17:0.34666475634,15:0.34666475634):13.394809516):28.3724094467):9.97589990577):0.2426384008):0.69171842985);
+  root_extension: 4570
+  default_effective_population_size: 457
+  ultrametric_tolerance: 1.0e-06
+rearrangement:
+  id: mai_pilot_inv
+  type: inversion
+  origin_branch: N8
+  origin_time_from_branch_start: 2
+  initial_copy_count: 457
+  selection:
+    model: genic
+    coefficient: 0.0
+recombination:
+  baseline_rate: 0.02
+  effective_cross_arrangement_fraction: 1.0
+genome:
+  length_bp: 20
+  rearrangement_interval:
+    start: 0
+    end: 20
+    id: mai_pilot_inv
+  breakpoint_rate_per_bp: 0.0
+population_process:
+  model: wright_fisher
+ordinary_msc_outside: true
+output:
+  directory: /Users/ytabatabaee/Desktop/msrc-paper/simulations/large_tree/mai30/datasets/processed/mai30_msrc_pilot/outgroup.0.species.1.5.genes.1.5__replicate_007__msrc_no_suppression__freq_0.5
+  plots: false
+provenance:
+  source: Mai et al. 2017 D1 fixed backbone
+  condition: outgroup.0.species.1.5.genes.1.5
+  replicate: '007'
+  computational_scale_factor: 0.001
+  scale_interpretation: coalescent-timescale-preserving approximation; not original-scale
+    MSRC
+  simphy_haploid_ne: 914965
+  msrc_diploid_ne_exact: 457482.5
+  msrc_diploid_ne_integer: 457483
+  scaled_effective_population_size_exact: 457.4825
+  scaled_effective_population_size_integer: 457
+  scaled_population_rounding_relative_error: -0.0010546851518910907
+  initial_frequency_requested: 0.5
+  initial_copy_count: 457
+  cross_arrangement_fraction: 1.0
+  independent_history_replicates_planned: 25
+  gene_trees_per_history: 20

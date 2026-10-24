@@ -1,0 +1,44 @@
+mode: arbitrary_tree
+seed: 20561012
+num_loci: 20
+species_tree:
+  newick: ((1:712.56479241,2:712.56479241):970.912838793,((((((29:818.47121624,(12:109.942707966,17:109.942707966):708.528508273):346.047092147,(16:1023.33788268,((6:33.0848921648,7:33.0848921648):494.944928625,30:528.02982079):495.30806189):141.180425707):76.065220855,((3:677.696724697,18:677.696724697):477.749748495,(((11:71.3624906588,22:71.3624906588):581.742267571,21:653.104758229):78.9370215259,19:732.041779755):423.404693436):85.1370560499):176.959223197,(10:531.362106635,(9:173.641857061,13:173.641857061):357.720249573):886.180645804):138.58317362,((27:445.552004993,4:445.552004993):295.972449648,(25:515.149700128,28:515.149700128):226.374754513):814.601471418):109.089575974,((((8:6.23179463579,15:6.23179463579):337.956869669,26:344.188664305):147.985717132,14:492.174381437):193.056764103,((5:60.1900977083,20:60.1900977083):326.899527986,(23:208.096618178,24:208.096618178):178.993007516):298.141519846):979.984356493):18.26212917);
+  root_extension: 1390
+  default_effective_population_size: 139
+  ultrametric_tolerance: 1.0e-06
+rearrangement:
+  id: mai_pilot_inv
+  type: inversion
+  origin_branch: N28
+  origin_time_from_branch_start: 9
+  initial_copy_count: 1
+  selection:
+    model: genic
+    coefficient: 0.0
+recombination:
+  baseline_rate: 0.02
+  effective_cross_arrangement_fraction: 0.1
+genome:
+  length_bp: 20
+  rearrangement_interval:
+    start: 0
+    end: 20
+    id: mai_pilot_inv
+  breakpoint_rate_per_bp: 0.0
+population_process:
+  model: wright_fisher
+ordinary_msc_outside: true
+output:
+  directory: datasets/processed/mai30_msrc_pilot/outgroup.0.species.5.genes.5__replicate_005__msrc_moderate_suppression
+provenance:
+  source: Mai et al. 2017 D1 fixed backbone
+  condition: outgroup.0.species.5.genes.5
+  replicate: '005'
+  computational_scale_factor: 0.001
+  scale_interpretation: coalescent-timescale-preserving approximation; not original-scale
+    MSRC
+  simphy_haploid_ne: 277674
+  msrc_diploid_ne_exact: 138837.0
+  msrc_diploid_ne_integer: 138837
+  independent_history_replicates_planned: 3
+  gene_trees_per_history: 20

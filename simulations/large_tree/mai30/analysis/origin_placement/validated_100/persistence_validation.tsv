@@ -1,0 +1,6 @@
+condition	replicate	scenario	n_histories	origin_polymorphic_fraction_mean	origin_polymorphic_fraction_se	origin_end_polymorphic_mean	origin_end_polymorphic_se	ever_fixed_mean	ever_fixed_se	ever_lost_mean	ever_lost_se	terminal_polymorphic_mean	terminal_polymorphic_se	status
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	100	0.6666666666666669	2.2316322462394835e-17	1.0	0.0	0.0	0.0	0.0	0.0	1.0	0.0	complete
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	100	0.8333333333333331	2.2316322462394835e-17	1.0	0.0	0.0	0.0	0.0	0.0	1.0	0.0	complete
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	52	0.41819526627218934	0.018294323418001017	0.5961538461538461	0.06870717031248967	0.19230769230769232	0.055186927229187645	0.21153846153846154	0.057187332483998064	0.0	0.0	partial
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	6	0.6666666666666666	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.5	0.22360679774997896	partial
+outgroup.0.species.5.genes.5	005	A_existing_internal	19	0.5500000000000002	2.6168207644729584e-17	1.0	0.0	0.0	0.0	0.0	0.0	0.05263157894736842	0.05263157894736842	partial

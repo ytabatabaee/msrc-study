@@ -1,0 +1,6 @@
+condition	replicate	scenario	histories_requested	histories_completed	rho_count	simulator_commit	status	checkpoint_dir
+outgroup.0.species.1.5.genes.1.5	007	A_existing_internal	100	100	6	bfba58d627f6f467af649cdb0b37f969349e0aab	complete	simulations/large_tree/mai30/analysis/origin_placement/validated_100/outgroup.0.species.1.5.genes.1.5__replicate_007__A_existing_internal
+outgroup.0.species.1.5.genes.1.5	007	B_deep_internal	100	100	6	bfba58d627f6f467af649cdb0b37f969349e0aab	complete	simulations/large_tree/mai30/analysis/origin_placement/validated_100/outgroup.0.species.1.5.genes.1.5__replicate_007__B_deep_internal
+outgroup.0.species.1.5.genes.1.5	042	A_existing_internal	100	52	6	bfba58d627f6f467af649cdb0b37f969349e0aab	partial	simulations/large_tree/mai30/analysis/origin_placement/validated_100/outgroup.0.species.1.5.genes.1.5__replicate_042__A_existing_internal
+outgroup.0.species.1.5.genes.1.5	074	A_existing_internal	100	6	6	bfba58d627f6f467af649cdb0b37f969349e0aab	partial	simulations/large_tree/mai30/analysis/origin_placement/validated_100/outgroup.0.species.1.5.genes.1.5__replicate_074__A_existing_internal
+outgroup.0.species.5.genes.5	005	A_existing_internal	100	19	6	bfba58d627f6f467af649cdb0b37f969349e0aab	partial	simulations/large_tree/mai30/analysis/origin_placement/validated_100/outgroup.0.species.5.genes.5__replicate_005__A_existing_internal

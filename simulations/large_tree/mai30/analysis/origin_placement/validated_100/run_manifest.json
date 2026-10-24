@@ -1,0 +1,16 @@
+{
+  "status": "partial",
+  "histories_requested": 100,
+  "rho_grid": [
+    0.0,
+    0.0001,
+    0.001,
+    0.002,
+    0.01,
+    0.02
+  ],
+  "forward_histories_reused_across_rho": true,
+  "genealogies_per_history_per_rho": 1,
+  "simulator_commit": "bfba58d627f6f467af649cdb0b37f969349e0aab",
+  "checkpoint_count": 277
+}
