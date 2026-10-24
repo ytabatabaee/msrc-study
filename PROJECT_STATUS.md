@@ -540,6 +540,25 @@ historical suppression, not direct rates. Existing structural and quartet
 outputs remain frozen, and no ASTRAL analysis was rerun. Validation is in
 `empirical/neoaves_chr4/tests/test_recombination_audit.sh`.
 
+## Anopheles 2La Patterson's D workflow
+
+Prepared an independent nucleotide-site ABBA–BABA workflow under
+`empirical/anopheles_2la/analysis/patterson_d/` and
+`empirical/anopheles_2la/scripts/run_patterson_d.py`. The frozen designs use
+`((P1,P2),P3),O`, with A. merus as the primary outgroup and A. melas as a
+sensitivity outgroup. A. christyi is a published external outgroup but is not
+present in the authenticated `fontaine-2015-rebuild` sample set and was not
+downloaded.
+
+The estimator uses direct diploid SNP genotypes, fixed-outgroup polarization,
+ratio-of-summed ABBA/BABA contributions, explicit exclusion counts, MAC>=2
+sensitivity, and physically blocked jackknife code. It does not reuse Stage 2R
+quartet frequencies or gene trees. Synthetic tests pass. The current local
+interpreter lacks `malariagen_data`, so the eight-window empirical pilot is
+blocked pending restoration of the existing authenticated Ag3.10 SNP-access
+environment. No empirical Patterson's D values, full scan, or D figures are
+reported.
+
 ## Anopheles 2La Stage 0
 
 Implemented a parallel empirical scaffold under `empirical/anopheles_2la/` and

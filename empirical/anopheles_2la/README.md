@@ -344,6 +344,24 @@ Primary crossed signals: `Delta_C=0.1055` with circular p=0.001012; `Delta_M=0.2
 
 Decision: **SUPERSEDE**. The next step is manuscript integration using the MalariaGEN sample-level analysis as the primary Anopheles result and retaining the Fontaine tree analysis as historical/external comparison.
 
+## Patterson's D analysis
+
+An isolated ABBA–BABA workflow is prepared under
+`analysis/patterson_d/` and `scripts/run_patterson_d.py`. It freezes four
+population-level designs of the form `((P1,P2),P3),O`, with A. merus as the
+primary outgroup and A. melas as a sensitivity outgroup. The designs use the
+existing sample-level Ag3.10 calls and retain the geographic and ancestral
+arrangement-polymorphism confounding explicitly. A. christyi is not in the
+authenticated Fontaine sample set and was not downloaded.
+
+Patterson's D is calculated from nucleotide genotype allele frequencies as a
+ratio of summed ABBA and BABA contributions. It is kept separate from the
+existing Stage 2R `D_topology(w)` track. Synthetic tests pass. The local
+interpreter currently lacks `malariagen_data`, so the eight-window real-data
+pilot is pending restoration of the authenticated SNP-access environment; no
+empirical D values or figures are reported. Full-scan commands and checkpoint
+behavior are documented in `analysis/patterson_d/README.md`.
+
 ## Stage 3R — ASTRAL species-tree sensitivity
 
 Stage 3R reused the Stage-2R local 53-individual NJ trees and ASTRAL4's documented multi-individual mapping (`-a`) to test whether linked arrangement-dominated 2La windows alter four-species summary-tree inference. The Stage-2R phased validation text was corrected to 6/6 concordant deterministic validation windows, and the main Anopheles figure was rebuilt with matplotlib axes.

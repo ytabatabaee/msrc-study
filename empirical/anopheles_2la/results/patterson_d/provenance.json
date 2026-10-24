@@ -1,0 +1,20 @@
+{
+  "analysis": "Patterson D ABBA-BABA",
+  "release": "3.10",
+  "sample_set": "fontaine-2015-rebuild",
+  "bucket": "gs://vo_agam_release_master_us_central1",
+  "chromosome": "2L",
+  "inversion_interval_1based_inclusive": [
+    20524058,
+    42165532
+  ],
+  "window_size": 50000,
+  "stage2r_grid_sha256": "37b28ceb3e9d3928e2e3c2a3f95aa72132690bd5bca8b3798e8ac14aa1c51ecf",
+  "sample_manifest_sha256": "efdcae45b2a54b5571f03efb60431d00495c76980833107b7a425ed6f262e8c0",
+  "primary_sample_table_sha256": "2f33fa485e3229caab45bf24de986433228ef003deef93571ac34ea9f3c6c621",
+  "malariagen_data_version": "not-imported",
+  "host": "Yasamins-MacBook-Pro-211.local",
+  "python": "3.12.11 (main, Jul 15 2025, 01:27:44) [Clang 14.0.0 (clang-1400.0.29.102)]",
+  "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --design-only",
+  "status": "design_frozen"
+}

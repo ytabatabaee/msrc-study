@@ -1,0 +1,15 @@
+{
+  "status": "prepared_not_run",
+  "pilot": "not_run",
+  "full": "not_run",
+  "designs": [
+    "A_merus",
+    "A_melas",
+    "B_merus",
+    "B_melas",
+    "C_merus",
+    "C_melas",
+    "D_merus",
+    "D_melas"
+  ]
+}
