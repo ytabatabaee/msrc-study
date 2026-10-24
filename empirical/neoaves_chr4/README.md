@@ -44,6 +44,16 @@ mixture weight is a with-replacement sampling fraction, not a measured
 fraction of the genome under suppressed recombination. Follow-up replication
 recommendations are in `results/stage4e/j48_mixture_followup_design.md`.
 
+The replication workflow is prepared under `analysis/j48_mixture_replication/`.
+It audits the low localPP values in the completed trees and freezes 25 new
+with-replacement mixtures at five epsilon values, but no replicate ASTRAL job
+has been launched. The exact manifest is
+`results/stage4e/j48_mixture_replication_manifest.tsv`; the Bridges-2 runbook
+uses a separate `J48_MIX_REPLICATES` output tree and refuses to overwrite
+invalid existing results. The current single-seed grid supports an observed
+0.05–0.10 transition interval only. Replicates are required to estimate the
+probability of recovering T0 at each weight.
+
 The cached PNAS archive also supplies the complete published QQS source.
 `scripts/recover_genomewide_qqs.py` streams its locus header and
 `clade-rec.stat.xz`, joins them to the frozen Stage 4D manifest, and reproduces

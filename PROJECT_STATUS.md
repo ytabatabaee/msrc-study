@@ -91,6 +91,25 @@ The existing grouped TWISST / ASTRAL4 Stage 6 trees were reused to compare ASTRA
 
 # MSRC Project Status
 
+## Neoaves J48 mixture replication workflow
+
+The completed 13-run J48 mixture analysis remains frozen. A local raw-Newick
+audit confirms that the very low focal localPP values are valid branch-local
+ASTRAL annotations: at epsilon 0.10, N62 is retained in the globally selected
+T0 topology even though q3 (approximately 0.345133) slightly exceeds q1
+(approximately 0.340876), and localPP is approximately 2.93e-5. This does
+not provide a fixed-topology Delta-Q score. The audit is in
+`empirical/neoaves_chr4/results/stage4e/j48_mixture_localpp_audit.md`.
+
+A deterministic 25-job Bridges-2 replication workflow is prepared for epsilon
+0.02, 0.05, 0.075, 0.10, and 0.15, with five seeds per weight and 62,945
+records per mixture. The jobs have not been submitted and no replicate is
+reported complete. The manifest, validator, restart-safe SLURM array, runbook,
+and postprocessing code are under
+`empirical/neoaves_chr4/analysis/j48_mixture_replication/`. Fixed-candidate
+quartet scoring remains pending validation of ASTRAL `-C -c` semantics or a
+direct scorer on returned mixture records.
+
 ## Controlled quartet Experiment 1: conditional grid using msrc-sim
 
 Completed the first controlled four-taxon quartet experiment under
