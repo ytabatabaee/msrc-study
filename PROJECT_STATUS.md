@@ -1061,6 +1061,34 @@ collections but finds only six complete MSRC collections, so the 300-replicate
 MSRC result is **BLOCKED**. See
 `simulations/large_tree/mai30/analysis/results/MAI30_RF_CORRECTION_REPORT.md`.
 
+### Mai30 origin-placement quartet-reversal validation
+
+The quartet-reversal extension uses the optimized authoritative `msrc-sim`
+implementation at commit `bfba58d627f6f467af649cdb0b37f969349e0aab`. A
+deterministic geometry-only panel of 96 induced quartets (12 for each of four
+Mai trees and scenarios A/B) was generated. The six effective
+background-switching intensities were evaluated by reusing each forward
+Wright–Fisher history across rho values and treating the forward history as
+the independent uncertainty unit.
+
+The initial 100-history batch is partial: both A and B are complete for
+replicate 007; A has partial checkpoints for 042, 074, and 005; B for those
+three trees remains unexecuted. The current checkpoint inventory and exact
+status are in
+`simulations/large_tree/mai30/analysis/origin_placement/validated_100/`.
+Scenario B has a higher origin-polymorphism fraction than A in the complete
+007 batch (0.833 versus 0.667), but this is not a four-tree conclusion.
+
+One quartet/configuration row passes the nominal history-level negative-margin
+rule, while zero rows pass the conservative multiple-comparison gate. No
+population-level discordant quartet reversal is validated, and the ASTRAL gate
+was therefore not reached. No full 30-taxon ASTRAL collection was generated
+for this experiment. The 1,000-history expansion and any ASTRAL follow-up
+remain gated on completing the initial configurations and independent
+validation. This result is simulation-based for the Wright–Fisher Mai model;
+the finite-M Moran quartet theory is not being asserted as an exact theorem
+for these settings.
+
 ## House-mouse t-complex three-treatment ASTRAL update
 
 The full-data t-haplotype-only ASTRAL analysis now uses the frozen 4,046 local
@@ -2352,6 +2380,38 @@ validation applies a multiple-testing-adjusted history-level uncertainty gate
 before marking either discordant topology as supported. No simulator-backed
 integration test or cluster job was run locally.
 
+## Neoaves J48 topology transition preparation
+
+The five completed J48 ASTRAL-IV result directories were independently
+validated with canonical unrooted splits. All have 48 taxa and 45 internal
+splits; `J48_T0` and `J48_T_STRUCT_PRIMARY` share one topology, while
+`J48_T_PNAS`, `J48_T_BLOCK_500K`, and `J48_NONCHR4` share the other. The two
+groups differ by three internal splits in each direction (RF 6). Focal branch
+measurements are matched by the exact T0 split and are reported absent when a
+split is absent.
+
+The current cached quartet support table contains only chromosome-4
+`normalized_QQS` rows. Its background endpoint is therefore unavailable, so
+no analytical quartet crossover or empirical MSRC threshold is claimed. A
+bounded report and a partial four-panel figure record this limitation. A
+deterministic mixture manifest and Bridges-2-only wrapper are ready at
+`empirical/neoaves_chr4/results/stage4e/j48_threshold_experiment_manifest.tsv`
+and `empirical/neoaves_chr4/cluster/stage4e_aster/05_threshold_mixture.sbatch`.
+The wrapper uses the frozen named-recollapsed source order and 48-taxon
+mapping, samples strata with a declared seed, and runs no job automatically.
+No new ASTRAL inference or large local analysis was run for this preparation.
+
+The cached PNAS `chr4avian-v1.0.0.zip` contains the complete published QQS
+source. `scripts/recover_genomewide_qqs.py` recovered 761,160 focal source
+records and 184,751 valid per-locus QQS rows across the three focal clades.
+The recovered chromosome-4 rows match the existing 18,109-row Stage 1 table
+exactly. Full-source non-chr4 versus chr4 comparisons give valid q1/q2
+crossovers for N61 and N62 at approximately 0.1540 and 0.01354 respectively;
+Columbea remains q1 dominant at both endpoints. These are published full-source
+QQS mixtures, not 48-taxon quartet distributions or exact predictions of the
+J48 ASTRAL transition. The 46-MB per-locus table is a generated artifact and
+is intentionally excluded from the commit; compact summaries are retained.
+
 ## Neoaves full 363-taxon PNAS replication audit
 
 The cached `chr4avian-v1.0.0` Figure S9 species trees were compared with the
@@ -2374,3 +2434,39 @@ run for this audit.
 The completed ASTRAL-IV trees were postprocessed without rerunning inference. Canonical unrooted comparisons reproduce RF patterns of 0, 6, 0, 6, 6 for the five 48-taxon treatments and 0, 2, 0, 2, 2 for the five 363-taxon treatments. T0 and structural-primary share a topology at each scale; PNAS removal, 500-kb blocks, and non-chr4 share the alternative topology.
 
 `scripts/make_neoaves_tree_comparison_figures.py` now renders CU and SU phylograms for a common 12-taxon display subset and a complete-tree homologous branch-length comparison. Terminal CU lengths remain undefined and are drawn schematically. Display-edge provenance is recorded in `results/stage4e/neoaves_display_tree_edge_mapping.tsv`; absent focal splits are never assigned zero length. The full363 PNAS audit limitation remains: reconstructed PNAS removal differs from the cached published outlier-removed reference by RF 2.
+## Neoaves J48 mixture transition analysis
+
+Completed the analysis of all 13 committed 48-taxon ASTRAL-IV mixture runs
+without rerunning ASTRAL or submitting a cluster job. Each run has exit code
+zero, 48 identical CU/SU taxon labels, 45 internal splits, identical CU/SU
+unrooted topologies, valid ASTRAL branch annotations, and output SHA-256 values
+matching the recorded provenance.
+
+The independently recomputed RF series is `(RF from NONCHR4, RF from T0)`:
+`0.00 (0,6)`, `0.02 (4,6)`, `0.05 (2,4)`, `0.10 (6,0)`, followed by `(6,0)`
+for every tested epsilon through `1.00`. The complete T0 topology therefore
+first appears at epsilon = 0.10 on this coarse grid. The epsilon = 0.02 tree
+contains one novel split absent from both references; epsilon = 0.05 contains
+no novel split but remains intermediate. The exact six reference-specific
+splits, their presence states, branch-local support, and CU/SU lengths are in
+`empirical/neoaves_chr4/results/stage4e/j48_mixture_split_presence.tsv` and
+`j48_mixture_branch_lengths.tsv`.
+
+The frozen focal classifier shows that N62 changes first at epsilon = 0.02,
+while Columbea and N61 change by epsilon = 0.10. ASTRAL localPP and q1/q2/q3
+are reported only for the exact inferred split and are not concatenated across
+competing edges into fixed-topology support curves. The natural chromosome-4
+fraction is 6262/63430 = 0.098723, calculated from the locus manifest and
+shown separately from the with-replacement mixture weight.
+
+The main publication figure is
+`empirical/neoaves_chr4/figures/neoaves_j48_mixture_transition.pdf`, with SVG
+and PNG outputs and a CU/SU branch-length supplement. The result is consistent
+with sensitivity to a localized genomic genealogy regime, but one independent
+resample per epsilon cannot estimate a transition probability or threshold and
+the mixture weight is not a measured suppressed-recombination fraction. The
+QQS crossover estimates N61 = 0.1540 and N62 = 0.01354 are different
+estimands; they are not validated or rejected by the 48-taxon ASTRAL transition.
+The minimum follow-up is five independent seeds at epsilon 0.02, 0.05, 0.075,
+0.10, and 0.15, with three additional seeds at 0.025, 0.05, 0.075, 0.10,
+and 0.125 only if the first replication set shows disagreement.

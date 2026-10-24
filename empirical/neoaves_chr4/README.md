@@ -23,8 +23,26 @@ non-chromosome-4 endpoint. Consequently, no quartet crossover or MSRC claim is
 reported from it. `scripts/05_stage4e_prepare_threshold_mixtures.py` and
 `cluster/stage4e_aster/05_threshold_mixture.sbatch` prepare deterministic
 stratified mixture inputs and one ASTRAL-IV inference per mixture on Bridges-2;
-they do not submit jobs. The generated figure is explicitly partial until the
-background quartet endpoint and mixture-run outputs are available.
+they do not submit jobs.
+
+The 13 completed mixtures are analyzed by
+`scripts/05_stage4e_analyze_j48_mixtures.py`. The script reads the committed
+CU/SU trees directly, verifies exit codes, 48-taxon label sets, CU/SU topology
+agreement, ASTRAL metadata, and output checksums, and writes the reports under
+`results/stage4e/j48_mixture_*.tsv`. It does not rerun ASTRAL.
+
+The main figure is
+`figures/neoaves_j48_mixture_transition.pdf` (with SVG and PNG versions). The
+non-chromosome-4 topology is recovered at epsilon = 0, mixtures at 0.02 and
+0.05 are intermediate or distinct from both references, and the complete
+J48_T0 topology first appears at epsilon = 0.10 and persists through 1.00.
+N62 changes first at epsilon = 0.02; Columbea and N61 change by epsilon =
+0.10. There is one novel split at epsilon = 0.02 and none at epsilon = 0.05.
+Branch-local support and CU/SU branch-length reports preserve gaps for absent
+splits and do not treat ASTRAL q1/q2/q3 values as fixed-topology scores. The
+mixture weight is a with-replacement sampling fraction, not a measured
+fraction of the genome under suppressed recombination. Follow-up replication
+recommendations are in `results/stage4e/j48_mixture_followup_design.md`.
 
 The cached PNAS archive also supplies the complete published QQS source.
 `scripts/recover_genomewide_qqs.py` streams its locus header and
@@ -49,9 +67,10 @@ being exact predictions of the J48 ASTRAL transition.
 
 Stage 4C is complete. Historical Stage 4D ASTRAL-MP reproduction attempts are
 preserved as provenance but discontinued as a prerequisite for the new full-tree
-analysis. The committed full-363-taxon Stage 4E T0 result is now parsed and
-validated locally; T_PNAS and the remaining treatment comparisons remain
-pending until their cluster outputs are returned and audited.
+analysis. The committed full-363-taxon Stage 4E T0 result is parsed and
+validated locally. The completed J48 mixture analysis is frozen in the reports
+and figures above; the single-resample coarse grid does not estimate a
+statistical transition threshold.
 
 The Stage 4E Jarvis-48 source audit is in
 `results/stage4e/pnas48_data_audit.md` and the source reconstruction is in
