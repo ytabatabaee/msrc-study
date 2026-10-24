@@ -1,27 +1,30 @@
 # Fixed-topology quartet-score method
 
-For fixed candidate trees T0 and NONCHR4, define Q(T) as the sum over the
-candidate's induced quartets of the number of input gene-tree records that
-resolve each quartet in the same unrooted topology as T. A record contributes
-only when all four taxa are present and its induced quartet is resolved;
-missing taxa and polytomies are excluded symmetrically. Report Delta-Q =
-Q(T0) - Q(NONCHR4), raw eligible quartet counts, and a normalized difference.
+For fixed candidate trees T0 and NONCHR4, define the diagnostic quartet
+universe U as every four-taxon subset on which the two candidates induce
+different resolved unrooted topologies. For each input gene-tree record g and
+quartet u in U, let I(g,u,T)=1 when g contains all four taxa, resolves u, and
+matches candidate T; otherwise the observation is excluded. Repeated records
+are repeated observations. Then `Q(T) = sum_g sum_u I(g,u,T)` and
+`Delta-Q = Q(T0)-Q(T_NONCHR4)`.
 
-This is a fixed-candidate concordance score. It is not ASTRAL localPP and is
-not automatically identical to an ASTRAL internal optimization objective.
+The normalized difference is `Delta-Q / N`, where N is the number of resolved,
+eligible gene-tree-by-diagnostic-quartet observations. The same N is used for
+both candidates. Missing taxa and unresolved/polytomous quartets are excluded
+symmetrically. This is an exact cancellation-aware fixed-candidate quartet
+concordance score: quartets on which the candidates agree add equally to both
+scores and cannot change Delta-Q.
 
-## Current status
+The repository also contains `score_gene_records_bruteforce`, an intentionally
+slow all-four-taxon reference implementation used on small fixtures. The
+optimized implementation was checked against it exactly. For the 48-taxon
+candidates, the diagnostic universe contains 3,597 quartets; a full production
+score should be benchmarked on Bridges-2 before processing all mixtures.
 
-No score is reported yet. The committed outputs contain inferred trees and
-branch-local annotations only; they do not contain fixed-candidate scores.
-The optional ASTRAL `-C -c` workflow must first be run on a small known test
-and its help/output semantics inspected on Bridges-2. If that interface
-reports a constrained objective compatible with the definition above, it can
-be compared with the direct scorer. Otherwise, use a cluster-side direct
-scorer on the returned mixture gene-tree records.
-
-The scorer must keep T0 and NONCHR4 fixed at every epsilon, use the same
-records for both candidates, exclude unresolved or incomplete quartets
-symmetrically, and report eligible counts with every difference. No smooth
-curve or confidence interval is justified before independent inputs are
-scored.
+This score is distinct from ASTRAL localPP, branch-local q1/q2/q3, the ASTRAL
+topology optimization objective, and the published PNAS Delta-Q unless those
+definitions are independently shown to coincide. The executable scorer does
+not synthesize scores from completed ASTRAL annotations. ASTRAL/ASTER documents
+`-C -c` as a scoring/annotation mode for a fully resolved candidate tree, but
+the pinned Bridges-2 executable still needs a tiny known-answer validation
+before its output can be used as this score.

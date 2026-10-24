@@ -70,11 +70,27 @@ def read_manifest(path: Path) -> list[dict[str, str]]:
         raise ValueError("replication manifest must contain 25 unique jobs")
     return result
 
+def validate_sources(path: Path, source: Path = SOURCE, locus: Path = LOCUS, taxa: Path = TAXA) -> None:
+    frozen = read_manifest(path)
+    expected = frozen[0]
+    checks = (("source_tree_sha256", source), ("locus_manifest_sha256", locus), ("taxon_mapping_sha256", taxa))
+    for field, file_path in checks:
+        if not file_path.exists(): raise FileNotFoundError(file_path)
+        observed = sha256(file_path)
+        if observed != expected[field]: raise ValueError(f"{field} mismatch: manifest={expected[field]} observed={observed} path={file_path}")
+    for row in frozen:
+        if row["source_tree_sha256"] != expected["source_tree_sha256"] or row["locus_manifest_sha256"] != expected["locus_manifest_sha256"] or row["taxon_mapping_sha256"] != expected["taxon_mapping_sha256"]:
+            raise ValueError(f"inconsistent frozen source checksums in {row['mixture_id']}")
+    print(json.dumps({"status": "source_checksums_validated", "manifest": str(path), "n_jobs": len(frozen), "source": str(source), "locus_manifest": str(locus), "taxa": str(taxa)}, indent=2))
+
 def realize(row: dict[str, str], input_root: Path, source: Path, locus: Path, taxa_path: Path) -> dict[str, object]:
     if sha256(source) != row["source_tree_sha256"] or sha256(locus) != row["locus_manifest_sha256"] or sha256(taxa_path) != row["taxon_mapping_sha256"]:
         raise ValueError("source checksum differs from frozen manifest")
     output = input_root / Path(row["input_relative_path"]).name
     sidecar = output.with_suffix(".json")
+    partial = output.with_suffix(".tre.partial")
+    if partial.exists():
+        raise FileExistsError(f"refusing to resume over incomplete mixture input: {partial}")
     if output.exists() or sidecar.exists():
         if sidecar.exists() and output.exists() and json.loads(sidecar.read_text()).get("input_sha256") == sha256(output):
             return json.loads(sidecar.read_text()) | {"status": "already_validated"}
@@ -95,7 +111,6 @@ def realize(row: dict[str, str], input_root: Path, source: Path, locus: Path, ta
     selected += [strata["chr4"][rng.randrange(len(strata["chr4"]))] for _ in range(n_chr4)]
     rng.shuffle(selected)
     input_root.mkdir(parents=True, exist_ok=True)
-    partial = output.with_suffix(".tre.partial")
     with partial.open("x") as f:
         f.writelines(selected)
     partial.replace(output)
@@ -106,6 +121,7 @@ def realize(row: dict[str, str], input_root: Path, source: Path, locus: Path, ta
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write-manifest", action="store_true")
+    parser.add_argument("--validate-sources", action="store_true")
     parser.add_argument("--manifest", type=Path, default=MANIFEST)
     parser.add_argument("--realize", action="store_true")
     parser.add_argument("--job-index", type=int)
@@ -114,6 +130,9 @@ def main() -> None:
     parser.add_argument("--locus-manifest", type=Path, default=LOCUS)
     parser.add_argument("--taxa", type=Path, default=TAXA)
     args = parser.parse_args()
+    if args.validate_sources:
+        validate_sources(args.manifest, args.source, args.locus_manifest, args.taxa)
+        return
     if args.write_manifest:
         write_manifest(args.manifest)
     if args.realize:

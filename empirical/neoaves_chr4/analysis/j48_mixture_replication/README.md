@@ -20,9 +20,11 @@ has been transferred and validated.
 
 The fixed-topology score method is documented in
 `results/stage4e/j48_mixture_fixed_topology_score_method.md`. Existing branch
-annotations are insufficient for Delta-Q. A constrained ASTRAL output must be
-validated against its executable semantics or a direct fixed-candidate scorer
-must be run on the returned gene-tree records.
+annotations are insufficient for Delta-Q. The executable direct scorer defines
+Q on the fixed candidate-disagreement quartet universe and has a brute-force
+reference implementation for small fixtures; it has not been run on the full
+mixtures. A constrained ASTRAL output must still be validated against its
+executable semantics before being interpreted as the same score.
 
 Run the deterministic tests with the configured project Python interpreter:
 

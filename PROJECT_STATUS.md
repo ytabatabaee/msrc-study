@@ -2508,3 +2508,23 @@ estimands; they are not validated or rejected by the 48-taxon ASTRAL transition.
 The minimum follow-up is five independent seeds at epsilon 0.02, 0.05, 0.075,
 0.10, and 0.15, with three additional seeds at 0.025, 0.05, 0.075, 0.10,
 and 0.125 only if the first replication set shows disagreement.
+
+The J48 replication support audit was corrected after identifying a label
+interpretation error: biological focal states such as Columbea q2 are not the
+same labels as branch-local ASTRAL q1/q2/q3. The corrected audit reports both
+labels and tests whether branch-local q1/pp1 is favored. At epsilon 0,
+Columbea has biological state q2 but branch-local q1 is favored with localPP
+1. At epsilon 0.10, N62 and Columbea have q3 as the largest branch-local
+quartet frequency and localPP values of approximately 2.93e-5 and 1.07e-11,
+respectively; these are valid locally disfavored inferred branches and do not
+measure whole-tree correctness. No completed ASTRAL output was changed.
+
+The replication workflow now uses SSH/tar transfers, frozen-manifest checksum
+validation, a single `topology_su` inference, restart-safe output handling,
+and explicit array indexing. No Bridges-2 task has been submitted. The fixed
+candidate scorer defines an exact cancellation-aware Delta-Q on the 3,597
+quartets where J48_T0 and J48_NONCHR4 disagree and is validated against a
+small all-quartet reference implementation. Full mixture scoring remains
+pending returned gene-tree inputs and a cluster performance benchmark; this
+diagnostic score is distinct from the ASTRAL optimization objective and the
+published PNAS Delta-Q statistic.

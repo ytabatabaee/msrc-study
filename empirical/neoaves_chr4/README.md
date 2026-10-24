@@ -50,9 +50,20 @@ with-replacement mixtures at five epsilon values, but no replicate ASTRAL job
 has been launched. The exact manifest is
 `results/stage4e/j48_mixture_replication_manifest.tsv`; the Bridges-2 runbook
 uses a separate `J48_MIX_REPLICATES` output tree and refuses to overwrite
-invalid existing results. The current single-seed grid supports an observed
-0.05–0.10 transition interval only. Replicates are required to estimate the
-probability of recovering T0 at each weight.
+invalid or incomplete existing results. The corrected localPP audit separates
+the biological focal state from branch-local q1/q2/q3 labels: at epsilon 0
+Columbea is biologically q2 while branch-local q1 is favored, whereas at
+epsilon 0.10 N62 and Columbea have branch-local q3 slightly favored and very
+low localPP. The current single-seed grid supports an observed 0.05–0.10
+transition interval only. Replicates are required to estimate the probability
+of recovering T0 at each weight.
+
+`analyze_fixed_topology_scores.py` implements an exact cancellation-aware
+fixed-candidate quartet concordance score on the 3,597 four-taxon subsets
+where J48_T0 and J48_NONCHR4 disagree, plus a slow all-quartet reference
+implementation for small fixtures. It is distinct from ASTRAL's optimization
+objective and no production score has been reported yet; the returned mixture
+gene-tree records and a Bridges-2 performance benchmark are still required.
 
 The cached PNAS archive also supplies the complete published QQS source.
 `scripts/recover_genomewide_qqs.py` streams its locus header and
