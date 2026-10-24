@@ -1,0 +1,2 @@
+/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4 -i empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p75.tre -o empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p75/tree.cu.nwk -u 2 -t 8 --length CULength --genelength 1000.0 --sulengthtype 1
+/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4 -i empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p75.tre -o empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p75/tree.su.nwk -u 2 -t 8 --length SULength --genelength 1000.0 --sulengthtype 1

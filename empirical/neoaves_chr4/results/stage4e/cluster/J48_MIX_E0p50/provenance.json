@@ -1,0 +1,107 @@
+{
+  "treatment": "J48_MIX_E0p50",
+  "dry_run": false,
+  "command": [
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p50.tre",
+      "-o",
+      "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.cu.nwk",
+      "-u",
+      "2",
+      "-t",
+      "8",
+      "--length",
+      "CULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ],
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p50.tre",
+      "-o",
+      "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.su.nwk",
+      "-u",
+      "2",
+      "-t",
+      "8",
+      "--length",
+      "SULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ]
+  ],
+  "input": "empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p50.tre",
+  "input_sha256": "859f5e956ad33fe64fecf5a0b435b968c60e2f3b7f3ad778250a819b53bffd1f",
+  "aster_bin": "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+  "aster_bin_sha256": "38d2aad2879605b3bd3d26bb7dbc978dce9cec510d684f64da4a58ead836872a",
+  "hostname": "r313.ib.bridges2.psc.edu",
+  "date_utc": "2026-10-23T21:29:16.351326+00:00",
+  "slurm_job_id": "49711644",
+  "cpu_count": 8,
+  "memory_request": "15200",
+  "mode": "both",
+  "genelength": 1000.0,
+  "sulengthtype": 1,
+  "constraint": null,
+  "runs": [
+    {
+      "mode": "topology_cu",
+      "length": "CULength",
+      "command": [
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+        "-i",
+        "empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p50.tre",
+        "-o",
+        "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.cu.nwk",
+        "-u",
+        "2",
+        "-t",
+        "8",
+        "--length",
+        "CULength",
+        "--genelength",
+        "1000.0",
+        "--sulengthtype",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.cu.nwk",
+      "started_utc": "2026-10-23T21:29:16.352356+00:00"
+    },
+    {
+      "mode": "topology_su",
+      "length": "SULength",
+      "command": [
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+        "-i",
+        "empirical/neoaves_chr4/results/stage4e/threshold_mixtures/J48_MIX_E0p50.tre",
+        "-o",
+        "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.su.nwk",
+        "-u",
+        "2",
+        "-t",
+        "8",
+        "--length",
+        "SULength",
+        "--genelength",
+        "1000.0",
+        "--sulengthtype",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "empirical/neoaves_chr4/results/stage4e/cluster/J48_MIX_E0p50/tree.su.nwk",
+      "started_utc": "2026-10-23T22:00:52.052508+00:00"
+    }
+  ],
+  "output_sha256": {
+    "tree.cu.nwk": "9d8ca48264da645d3a54727a48cb8668631841b7dc32bb2b19364bef1f72da93",
+    "tree.su.nwk": "bb1c7c0ca429687e9448ae80eb14f0b937d032049d1e0ef19fa4393b42e84e80"
+  }
+}
