@@ -565,7 +565,13 @@ correcting the macOS `ru_maxrss` unit interpretation. Descriptive pooled
 inside/outside D values are in `results/patterson_d/pilot_report.md`; they are
 feasibility summaries from eight windows, not chromosome-wide inference or
 proof of introgression/MSRC. The preflight is marked READY_FOR_FULL_SCAN, but
-the 988-window scan remains prepared and unsubmitted.
+the 988-window scan remains prepared and unsubmitted. The final preflight now
+has an isolated one-chunk Bridges-2 mode under
+`results/patterson_d/bridges_preflight/`; the full branch writes
+`full_scan_report.md` without overwriting the pilot report. Submission
+instructions resolve the repository root from the verified
+`/ocean/projects/cis260126p/shared/neoaves_stage4e/repo` checkout and validate
+the analysis script before `sbatch`.
 
 ## Anopheles 2La Stage 0
 

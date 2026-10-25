@@ -125,3 +125,41 @@ def test_checkpoint_keys_skip_complete_regions_and_reject_bad_rows():
         assert "coordinate mismatch" in str(exc)
     else:
         raise AssertionError("incompatible checkpoint row was accepted")
+
+def test_repository_root_and_preflight_output_are_isolated(tmp_path, monkeypatch):
+    assert run_patterson_d.repository_root() == Path(__file__).resolve().parents[3]
+    monkeypatch.setattr(run_patterson_d, "OUT", tmp_path)
+    assert run_patterson_d.OUT / "bridges_preflight" != run_patterson_d.OUT / "pilot_results.tsv"
+
+def test_full_report_finalization_does_not_overwrite_pilot_files(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_patterson_d, "OUT", tmp_path)
+    frozen = {name: f"sentinel-{name}\n" for name in ("pilot_results.tsv", "pilot_report.md", "frozen_quartet_designs.tsv", "design_audit.md")}
+    for name, value in frozen.items(): (tmp_path / name).write_text(value)
+    (tmp_path / "inside_outside_summary.tsv").write_text("test_id\tregion\tpooled_D\tn_windows\tpooled_ABBA\tpooled_BABA\twindow_mean_D\twindow_median_D\nA_merus\tinside\t0.5\t1\t3\t1\t0.5\t0.5\n")
+    (tmp_path / "jackknife_results.tsv").write_text("test_id\tregion\tblock_size_bp\tdelta_d\tse\tz\tci_low\tci_high\tn_blocks\nA_merus\tinside_minus_outside\t1000000\t0.5\t0.1\t5\t0.3\t0.7\t3\n")
+    rows = [{"window_id": "w1", "eligibility": "valid", "query_seconds": "1", "compute_seconds": "2", "total_elapsed_seconds": "3", "peak_rss_mib": "10"}]
+    run_patterson_d.write_full_report(rows)
+    assert (tmp_path / "full_scan_report.md").exists()
+    assert "Completed windows: 1" in (tmp_path / "full_scan_report.md").read_text()
+    for name, value in frozen.items(): assert (tmp_path / name).read_text() == value
+
+def test_full_output_completeness_is_enforced():
+    windows = [{"window_id": "w1", "chrom": "2L", "start": "1", "end": "10"}]
+    designs = [{"test_id": "A", "P1": "G_s", "P2": "G_i", "P3": "C_s", "outgroup": "merus"}]
+    def row(label): return {"window_id": "w1", "chrom": "2L", "start": "1", "end": "10", "test_id": "A", "filter_label": label, "P1": "G_s", "P2": "G_i", "P3": "C_s", "outgroup": "merus"}
+    try:
+        run_patterson_d.validate_complete_output([row("primary")], windows, designs)
+    except ValueError as exc:
+        assert "incomplete full output" in str(exc)
+    else:
+        raise AssertionError("incomplete full output was accepted")
+    run_patterson_d.validate_complete_output([row("primary"), row("MAC2")], windows, designs)
+
+def test_slurm_scripts_propagate_python_and_ca_environment():
+    full = (Path(__file__).resolve().parents[1] / "analysis" / "patterson_d" / "run_full_patterson_d.sbatch").read_text()
+    preflight = (Path(__file__).resolve().parents[1] / "analysis" / "patterson_d" / "preflight_patterson_d.sbatch").read_text()
+    for script in (full, preflight):
+        assert 'PYTHON_BIN="${PYTHON_BIN:?set PYTHON_BIN' in script
+        assert 'SSL_CERT_FILE' in script and 'REQUESTS_CA_BUNDLE' in script
+        assert 'test -f "$MSRC_REPO/empirical/anopheles_2la/scripts/run_patterson_d.py"' in script
+    assert "--preflight-one-chunk" in preflight

@@ -8,7 +8,8 @@ The design and numerical core are in
 `scripts/run_patterson_d.py` and `scripts/patterson_d_core.py`. The default
 command freezes the design and writes explicit pending tables. The eight-window
 pilot is run only with `--pilot`; the 988-window analysis is run only with
-`--run-full`.
+`--run-full`. The isolated `--preflight-one-chunk` mode queries one frozen
+1-Mb chunk and writes only to `results/patterson_d/bridges_preflight/`.
 
 The validated Stage 1R environment is
 `/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python` with
@@ -46,7 +47,7 @@ site counts. The full mode checkpoints by completed window/design/filter and
 uses the frozen Stage 2R grid. It does not redownload reads or alter Stage 1R
 or Stage 2R outputs.
 
-The explicit submission command is:
+The exact Bridges-2 preflight submission command is:
 
 ```bash
 export MSRC_REPO=/ocean/projects/cis260126p/shared/neoaves_stage4e/repo
@@ -54,8 +55,33 @@ export PYTHON_BIN=/path/to/authenticated/python
 export AG3_URL=gs://vo_agam_release_master_us_central1
 cd "$MSRC_REPO/empirical/anopheles_2la/analysis/patterson_d"
 mkdir -p logs
-sbatch --export=ALL,MSRC_REPO="$MSRC_REPO",PYTHON_BIN="$PYTHON_BIN",AG3_URL="$AG3_URL" run_full_patterson_d.sbatch
+test -f "$MSRC_REPO/empirical/anopheles_2la/scripts/run_patterson_d.py"
+sbatch --export=ALL,MSRC_REPO="$MSRC_REPO",PYTHON_BIN="$PYTHON_BIN",AG3_URL="$AG3_URL" preflight_patterson_d.sbatch
 ```
+
+The preflight is expected to produce `bridges_preflight/window_results.tsv`,
+`manifest.json`, and `README.md`, containing 16 rows, verified sample order,
+position bounds, access time, computation time, and peak RSS. It cannot write
+the pilot or full result tables.
+
+After reviewing the preflight, submit the full scan with:
+
+```bash
+export MSRC_REPO=/ocean/projects/cis260126p/shared/neoaves_stage4e/repo
+export PYTHON_BIN=/path/to/authenticated/linux/python
+export AG3_URL=gs://vo_agam_release_master_us_central1
+cd "$MSRC_REPO/empirical/anopheles_2la/analysis/patterson_d"
+export MSRC_REPO="$(cd ../../../.. && pwd)"
+test -f "$MSRC_REPO/empirical/anopheles_2la/scripts/run_patterson_d.py"
+mkdir -p logs
+sbatch --export=ALL,MSRC_REPO="$MSRC_REPO",PYTHON_BIN="$PYTHON_BIN",AG3_URL="$AG3_URL",SSL_CERT_FILE="${SSL_CERT_FILE:-}",REQUESTS_CA_BUNDLE="${REQUESTS_CA_BUNDLE:-}" run_full_patterson_d.sbatch
+```
+
+The `mkdir -p logs` command must run before `sbatch`, because Slurm opens log
+paths before executing the batch body. Monitor with `squeue -j JOBID` and
+`sacct -j JOBID --format=JobID,State,Elapsed,MaxRSS,ExitCode`; the scripts print
+host, interpreter, package version, working directory, commit, URL, job ID,
+timestamp, and CA-bundle presence.
 
 Run the pilot interactively first with the same `PYTHON_BIN`, certifi CA
 variables, and Ag3 URL. The command above is the next full-scan command only

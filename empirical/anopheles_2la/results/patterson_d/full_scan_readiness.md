@@ -15,14 +15,27 @@ but remote array chunking and library overhead must be checked in the first
 1-Mb query. Query wall time is the dominant unknown and cannot be inferred
 reliably from CPU-only benchmarking.
 
-From the repository root, after checking the authenticated Linux environment:
+From the verified Bridges-2 checkout, after checking the authenticated Linux
+environment, run the isolated preflight first:
 
 ```bash
-cd empirical/anopheles_2la/analysis/patterson_d
+export MSRC_REPO=/ocean/projects/cis260126p/shared/neoaves_stage4e/repo
+export PYTHON_BIN=/path/to/authenticated/linux/python
+export AG3_URL=gs://vo_agam_release_master_us_central1
+cd "$MSRC_REPO/empirical/anopheles_2la/analysis/patterson_d"
+export MSRC_REPO="$(cd ../../../.. && pwd)"
+test -f "$MSRC_REPO/empirical/anopheles_2la/scripts/run_patterson_d.py"
 mkdir -p logs
-sbatch --export=ALL,MSRC_REPO="$PWD/../../..",PYTHON_BIN=/path/to/ag3-python,AG3_URL=gs://vo_agam_release_master_us_central1 run_full_patterson_d.sbatch
+sbatch --export=ALL,MSRC_REPO="$MSRC_REPO",PYTHON_BIN="$PYTHON_BIN",AG3_URL="$AG3_URL",SSL_CERT_FILE="${SSL_CERT_FILE:-}",REQUESTS_CA_BUNDLE="${REQUESTS_CA_BUNDLE:-}" preflight_patterson_d.sbatch
 ```
 
-Do not use this command until the pilot reports and the remote credentials,
-CA bundle, sample metadata, and source checksums have been verified. It is the
-only command that can start the full scan; no submission was made here.
+Inspect `bridges_preflight/manifest.json` and its 16-row TSV. Then use:
+
+```bash
+test -f "$MSRC_REPO/empirical/anopheles_2la/scripts/run_patterson_d.py"
+mkdir -p logs
+sbatch --export=ALL,MSRC_REPO="$MSRC_REPO",PYTHON_BIN="$PYTHON_BIN",AG3_URL="$AG3_URL",SSL_CERT_FILE="${SSL_CERT_FILE:-}",REQUESTS_CA_BUNDLE="${REQUESTS_CA_BUNDLE:-}" run_full_patterson_d.sbatch
+```
+
+The full branch writes `full_scan_report.md` and never overwrites the frozen
+pilot report or pilot results. No submission was made during this audit.

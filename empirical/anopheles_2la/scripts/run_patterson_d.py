@@ -28,6 +28,10 @@ LITERATURE = {
     "thawornwattana2018": "https://doi.org/10.1093/molbev/msy137",
 }
 
+def repository_root() -> Path:
+    """Return the repository root inferred from this script's location."""
+    return Path(__file__).resolve().parents[3]
+
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -187,6 +191,14 @@ def validate_completed_rows(rows: list[dict[str, str]], windows_list: list[dict[
 def expected_result_keys(window_rows: list[dict[str, str]], designs: list[dict[str, str]]) -> set[tuple[str, str, str]]:
     return {(w["window_id"], d["test_id"], label) for w in window_rows for d in designs for label in ("primary", "MAC2")}
 
+def validate_complete_output(rows: list[dict[str, object]], windows_list: list[dict[str, str]], designs: list[dict[str, str]]) -> None:
+    observed = validate_completed_rows(rows, windows_list, designs)
+    expected = expected_result_keys(windows_list, designs)
+    if observed != expected:
+        missing = sorted(expected - observed)
+        extra = sorted(observed - expected)
+        raise ValueError(f"incomplete full output: missing={missing[:5]} extra={extra[:5]}")
+
 def load_stage2r_comparison(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     sources = {"C": BASE / "results" / "stage2r_crossed_distance_signal.tsv", "M": BASE / "results" / "stage2r_quartet_margin_signal.tsv", "D_topology": BASE / "results" / "stage2r_quartet_topology_signal.tsv"}
     maps = {key: {r["window_id"]: r for r in read_tsv(path)} for key, path in sources.items()}
@@ -273,11 +285,65 @@ def run_access(args: argparse.Namespace, pilot: bool) -> list[dict[str, object]]
         atomic_write_tsv(output, existing + chunk_rows, fields)
         update_status("pilot_running" if pilot else "full_running", completed_windows=sorted({r["window_id"] for r in existing + chunk_rows}))
         atomic_write_json(OUT / "checkpoint.json", {"last_region": region, "completed_rows": len(existing) + len(chunk_rows), "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
-    rows = read_tsv(output); validate_completed_rows(rows, windows_list, selected_designs)
+    rows = read_tsv(output)
+    if pilot:
+        validate_completed_rows(rows, windows_list, selected_designs)
+    else:
+        validate_complete_output(rows, windows_list, selected_designs)
     if not pilot:
         summarize(rows); comparison = load_stage2r_comparison(rows); atomic_write_tsv(OUT / "comparison_with_stage2r.tsv", comparison, list(comparison[0]))
         make_figures(rows)
     return rows
+
+def write_full_report(rows: list[dict[str, object]]) -> None:
+    """Write a full-scan report without touching any pilot artifact."""
+    expected_windows = len(read_tsv(GRID))
+    completed_windows = len({r["window_id"] for r in rows})
+    valid = [r for r in rows if r.get("eligibility") == "valid"]
+    summary = read_tsv(OUT / "inside_outside_summary.tsv") if (OUT / "inside_outside_summary.tsv").exists() else []
+    jk = read_tsv(OUT / "jackknife_results.tsv") if (OUT / "jackknife_results.tsv").exists() else []
+    lines = ["# Patterson's D full scan", "", "This report was generated from the validated full output table. It does not replace the frozen pilot report.", "", f"- Completed windows: {completed_windows}", f"- Expected windows: {expected_windows}", f"- Result rows: {len(rows)}", f"- Valid result rows: {len(valid)}", "", "## Pooled regional results", "", "| test | region | pooled D | windows | pooled ABBA | pooled BABA | window mean D | window median D |", "|---|---|---:|---:|---:|---:|---:|---:|"]
+    for r in summary:
+        lines.append(f"| {r.get('test_id','')} | {r.get('region','')} | {r.get('pooled_D','')} | {r.get('n_windows','')} | {r.get('pooled_ABBA','')} | {r.get('pooled_BABA','')} | {r.get('window_mean_D','')} | {r.get('window_median_D','')} |")
+    lines += ["", "## Inside-minus-outside jackknife", "", "| test | block size (bp) | delta D | SE | Z | CI low | CI high | blocks |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for r in jk:
+        if r.get("region") == "inside_minus_outside":
+            lines.append(f"| {r.get('test_id','')} | {r.get('block_size_bp','')} | {r.get('delta_d','')} | {r.get('se','')} | {r.get('z','')} | {r.get('ci_low','')} | {r.get('ci_high','')} | {r.get('n_blocks','')} |")
+    if rows:
+        timings = {(r.get("query_seconds", ""), r.get("compute_seconds", ""), r.get("total_elapsed_seconds", "")) for r in rows if r.get("total_elapsed_seconds", "")}
+        query_s = sum(float(t[0]) for t in timings if t[0]); compute_s = sum(float(t[1]) for t in timings if t[1]); elapsed_s = sum(float(t[2]) for t in timings if t[2])
+        rss = [float(r["peak_rss_mib"]) for r in rows if r.get("peak_rss_mib", "")]
+        lines += ["", "## Runtime and limitations", "", f"- Sum of recorded unique chunk query time: {query_s:.3f} s.", f"- Sum of recorded unique chunk computation time: {compute_s:.3f} s.", f"- Sum of recorded unique chunk elapsed time: {elapsed_s:.3f} s.", f"- Maximum recorded peak RSS: {max(rss):.3f} MiB." if rss else "- Peak RSS: unavailable.", "- Outgroup sensitivity is represented by separate merus and melas design rows.", "- Patterson's D is a nucleotide site-pattern statistic, separate from Stage 2R D_topology; it does not by itself establish introgression or MSRC causation.", "- Boundary-overlap windows are retained in the output and excluded from primary inside/outside summaries."]
+    (OUT / "full_scan_report.md").write_text("\n".join(lines) + "\n")
+
+def run_preflight_one_chunk(args: argparse.Namespace) -> int:
+    """Run one isolated 1-Mb Ag3 query without changing pilot/full state."""
+    import malariagen_data
+    preflight_out = OUT / "bridges_preflight"; preflight_out.mkdir(parents=True, exist_ok=True)
+    selected_designs = list({r["test_id"]: r for r in design_rows()}.values())
+    all_ids = sorted({x for d in selected_designs for key in ("P1_sample_ids", "P2_sample_ids", "P3_sample_ids", "outgroup_sample_ids") for x in d[key].split(";") if x})
+    chunks = query_regions(windows(False), False, 1_000_000)
+    if not chunks: raise ValueError("the frozen Stage-2R grid has no eligible preflight chunk")
+    chunk = chunks[0]; region = f"{CHROM}:{chunk[0]['start']}-{chunk[-1]['end']}"; started = time.perf_counter()
+    ag3 = malariagen_data.Ag3(url=args.url or BUCKET, check_location=False, show_progress=False)
+    metadata = ag3.sample_metadata(sample_sets=SAMPLE_SET); indices = design_index(all_ids, metadata)
+    ds = ag3.snp_calls(region=region, sample_sets=SAMPLE_SET, sample_indices=[indices[x] for x in all_ids], site_mask=None, inline_array=True, chunks="native")
+    returned_ids = dataset_sample_ids(ds)
+    if returned_ids != all_ids: raise ValueError("Ag3 preflight sample order does not match the requested order")
+    positions = np.asarray(ds["variant_position"].values); gt_all = np.asarray(ds["call_genotype"].values)
+    if len(np.unique(positions)) != len(positions): raise ValueError("Ag3 preflight returned duplicate positions")
+    request_start, request_end = int(chunk[0]["start"]), int(chunk[-1]["end"])
+    if len(positions) and (int(positions.min()) < request_start or int(positions.max()) > request_end): raise ValueError("Ag3 preflight returned positions outside the requested interval")
+    access_seconds = time.perf_counter() - started; compute_started = time.perf_counter(); rows = []; local_ids = {sid: i for i, sid in enumerate(all_ids)}
+    for window in chunk:
+        for design in selected_designs:
+            for min_mac in (0, 2):
+                row = calculate_row(gt_all, positions, window, design, local_ids, min_mac); row["query_seconds"] = f"{access_seconds:.6f}"; rows.append(row)
+    compute_seconds = time.perf_counter() - compute_started
+    for row in rows:
+        row["compute_seconds"] = f"{compute_seconds:.6f}"; row["total_elapsed_seconds"] = f"{time.perf_counter() - started:.6f}"; row["peak_rss_mib"] = f"{peak_rss_mib():.3f}"
+    atomic_write_tsv(preflight_out / "window_results.tsv", rows, list(rows[0])); manifest = {"status": "preflight_complete", "region": region, "window_ids": [w["window_id"] for w in chunk], "n_rows": len(rows), "n_sites": int(len(positions)), "sample_order_verified": True, "positions_unique_and_in_range": True, "url": args.url or BUCKET, "sample_set": SAMPLE_SET, "python_executable": sys.executable, "python": sys.version, "malariagen_data_version": importlib.metadata.version("malariagen-data"), "access_seconds": access_seconds, "compute_seconds": compute_seconds, "peak_rss_mib": peak_rss_mib(), "ssl_cert_file_set": bool(os.environ.get("SSL_CERT_FILE")), "requests_ca_bundle_set": bool(os.environ.get("REQUESTS_CA_BUNDLE")), "output_sha256": sha256(preflight_out / "window_results.tsv")}
+    atomic_write_json(preflight_out / "manifest.json", manifest); (preflight_out / "README.md").write_text("# Bridges-2 one-chunk preflight\n\nThis isolated first 1-Mb query does not modify pilot_results.tsv or the full window_results.tsv.\n"); print(json.dumps(manifest, indent=2), flush=True); return 0
 
 def make_figures(rows: list[dict[str, object]]) -> None:
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
@@ -327,7 +393,10 @@ def provenance(args: argparse.Namespace) -> None:
     if not (OUT / "run_manifest.json").exists(): update_status("design_prepared", designs=[r["test_id"] for r in design_rows()], sample_ids=sorted({x for r in design_rows() for key in ("P1_sample_ids", "P2_sample_ids", "P3_sample_ids", "outgroup_sample_ids") for x in r[key].split(";") if x}))
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--url", default=BUCKET); p.add_argument("--design-only", action="store_true"); p.add_argument("--pilot", action="store_true"); p.add_argument("--run-full", action="store_true"); p.add_argument("--chunk-bp", type=int, default=1_000_000); args = p.parse_args(); provenance(args)
+    p = argparse.ArgumentParser(); p.add_argument("--url", default=BUCKET); p.add_argument("--design-only", action="store_true"); p.add_argument("--pilot", action="store_true"); p.add_argument("--run-full", action="store_true"); p.add_argument("--preflight-one-chunk", action="store_true"); p.add_argument("--chunk-bp", type=int, default=1_000_000); args = p.parse_args()
+    if args.preflight_one_chunk:
+        return run_preflight_one_chunk(args)
+    provenance(args)
     if not args.pilot and not args.run_full:
         if json.loads((OUT / "run_manifest.json").read_text()).get("status") not in {"pilot_complete", "full_complete", "pilot_running", "full_running"}: update_status("design_prepared")
         return 0
@@ -340,7 +409,7 @@ def main():
     update_status("pilot_complete" if args.pilot else "full_complete", completed_windows=sorted({r["window_id"] for r in rows}))
     prov = json.loads((OUT / "provenance.json").read_text()); prov.update({"completed_window_count": len({r["window_id"] for r in rows}), "output_sha256": sha256(OUT / ("pilot_results.tsv" if args.pilot else "window_results.tsv")), "status": "pilot_complete" if args.pilot else "full_complete"}); (OUT / "provenance.json").write_text(json.dumps(prov, indent=2) + "\n")
     if args.pilot: write_pilot_report(rows)
-    else: (OUT / "pilot_report.md").write_text("# Patterson's D full scan\n\nThe full scan completed using the frozen Stage-2R grid. See `window_results.tsv`, `inside_outside_summary.tsv`, and `jackknife_results.tsv`.\n")
+    else: write_full_report(rows)
     (OUT / "methods_text.md").write_text("# Patterson's D methods\n\nPatterson's D was calculated directly from unphased diploid nucleotide genotypes using population allele frequencies and a fixed-outgroup ancestral allele. ABBA and BABA were summed across sites before taking the ratio. Sites with multiallelic calls, unsuitable missingness, insufficient group callability, missing or polymorphic outgroups, and sensitivity MAC failures were retained in counts and excluded from the estimator. The primary filter uses no MAC threshold; MAC >= 2 is a sensitivity analysis matching Stage 2R.\n")
     (OUT / "results_text.md").write_text("# Patterson's D results\n\nNumerical interpretation is deferred to the validated pilot or full output tables. Patterson's D and Stage 2R `D_topology` are separate estimands.\n")
     (OUT / "figure_caption.md").write_text("# Figure caption\n\nAligned 2L tracks compare Stage 2R arrangement-associated contrasts with nucleotide-site Patterson's D. The Patterson's D panel uses fixed candidate design A with A. merus as outgroup; alternative valid designs are reported separately. Boundary-overlap windows remain visible and are excluded from the primary inside/outside comparison.\n")
