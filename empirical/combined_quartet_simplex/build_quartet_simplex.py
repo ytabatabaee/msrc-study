@@ -44,10 +44,10 @@ REGION_ORDER = ("inside", "outside", "boundary", "unknown")
 REGION_MARKERS = {"inside": "o", "outside": "s", "boundary": "D", "unknown": "x"}
 SQRT3_2 = math.sqrt(3.0) / 2.0
 Q_SUM_TOLERANCE = 2e-6  # cod support is stored at six decimal places.
-MARKER_BASE_AREA = 2.5
-MARKER_LOG_SCALE = 1.25
+MARKER_BASE_AREA = 6.0
+MARKER_LOG_SCALE = 0.5
 MARKER_MAX_AREA = 8.0
-MARKER_ALPHA = 0.20
+MARKER_ALPHA = 0.48
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -390,7 +390,7 @@ def main() -> None:
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 2.5 + 1.25*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False}}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 6 + 0.5*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 
