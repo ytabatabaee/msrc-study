@@ -2545,3 +2545,23 @@ small all-quartet reference implementation. Full mixture scoring remains
 pending returned gene-tree inputs and a cluster performance benchmark; this
 diagnostic score is distinct from the ASTRAL optimization objective and the
 published PNAS Delta-Q statistic.
+## Empirical quartet-support simplex figures
+
+Added `empirical/combined_quartet_simplex/`, a postprocessing-only workflow for
+the five empirical QSS datasets used by the existing combined cross-dataset
+figure. The standardized table contains 2,616 valid window or binned
+observations: 426 Atlantic-cod windows, 868 Neoaves N61 100-kb bins, 96 fire-ant
+chr16 windows, 978 Anopheles 2La windows, and 248 house-mouse chr17 100-kb
+bins. The topology order is harmonized explicitly as baseline/species (`q1`),
+alternative/arrangement (`q2`), and third (`q3`); source provenance and region
+conventions are recorded in `empirical/combined_quartet_simplex/data_audit.md`.
+
+The simplex figures are descriptive visualizations of window-level or binned
+QSS aggregates. The source tables do not retain repeated support vectors for
+each fixed quartet across loci, so an individual-quartet simplex distribution
+was not reconstructed. Mouse q1-q3 values are explicitly conditioned on the
+resolved topologies because the source retains a small unresolved fraction.
+No gene trees, ASTRAL analyses, or downloads were performed.
+
+Outputs are under `empirical/combined_quartet_simplex/figures/`, with tests in
+`empirical/combined_quartet_simplex/tests/test_quartet_simplex.py`.

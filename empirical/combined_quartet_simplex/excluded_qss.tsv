@@ -1,0 +1,11 @@
+dataset	chromosome	window_id	start	end	midpoint	q1	q2	q3	region_class	region_id	n_informative_quartets	observation_unit	exclusion_reason
+anopheles_2la	2L	2L_0003_100001_150000	100001	150000	125000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0014_650001_700000	650001	700000	675000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0021_1000001_1050000	1000001	1050000	1025000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0103_5100001_5150000	5100001	5150000	5125000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0104_5150001_5200000	5150001	5200000	5175000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0108_5350001_5400000	5350001	5400000	5375000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0171_8500001_8550000	8500001	8550000	8525000.5	nan	nan	nan	outside		0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0601_30000001_30050000	30000001	30050000	30025000.5	nan	nan	nan	inside	2La	0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0602_30050001_30100000	30050001	30100000	30075000.5	nan	nan	nan	inside	2La	0	50-kb window quartet-support aggregate	zero_informative_quartets
+anopheles_2la	2L	2L_0748_37350001_37400000	37350001	37400000	37375000.5	nan	nan	nan	inside	2La	0	50-kb window quartet-support aggregate	zero_informative_quartets
