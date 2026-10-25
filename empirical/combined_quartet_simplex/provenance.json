@@ -69,23 +69,8 @@
     "halo": {
       "area": "24 + 18*sqrt(n_overlap)",
       "radius_factor": 2.5,
-      "total_alpha": "min(0.20, 0.025 + 0.03*log2(n_overlap))",
-      "nested_layer_fractions": [
-        1.0,
-        0.83,
-        0.66,
-        0.49,
-        0.32,
-        0.15
-      ],
-      "nested_layer_weights": [
-        0.08,
-        0.12,
-        0.16,
-        0.2,
-        0.2,
-        0.24
-      ]
+      "alpha": 0.18,
+      "rendering": "one translucent disk per grouped coordinate"
     }
   }
 }

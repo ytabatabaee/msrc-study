@@ -52,11 +52,7 @@ HALO_RADIUS_FACTOR = 2.5
 HALO_REFERENCE_RADIUS_FACTOR = 2.5
 HALO_BASE_AREA = 24.0
 HALO_SQRT_SCALE = 18.0
-HALO_BASE_ALPHA = 0.025
-HALO_LOG_ALPHA_SCALE = 0.030
-HALO_MAX_ALPHA = 0.20
-HALO_LAYER_FRACTIONS = (1.00, 0.83, 0.66, 0.49, 0.32, 0.15)
-HALO_LAYER_WEIGHTS = (0.08, 0.12, 0.16, 0.20, 0.20, 0.24)
+HALO_ALPHA = 0.18
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -288,15 +284,15 @@ def marker_area(n_overlap: int) -> float:
     return min(MARKER_MAX_AREA, MARKER_BASE_AREA + MARKER_LOG_SCALE * math.log2(max(1, n_overlap)))
 
 
-def halo_alpha(n_overlap: int) -> float:
-    """Total halo opacity, increasing logarithmically with multiplicity."""
-    return min(HALO_MAX_ALPHA, HALO_BASE_ALPHA + HALO_LOG_ALPHA_SCALE * math.log2(max(1, n_overlap)))
-
-
 def halo_area(n_overlap: int, radius_fraction: float) -> float:
-    """Original multiplicity-aware halo area with a soft layer fraction."""
+    """Single-disk halo area from the original multiplicity-aware renderer."""
     radius_scale = radius_fraction * HALO_RADIUS_FACTOR / HALO_REFERENCE_RADIUS_FACTOR
     return (HALO_BASE_AREA + HALO_SQRT_SCALE * math.sqrt(max(1, n_overlap))) * radius_scale ** 2
+
+
+def halo_size(n_overlap: int) -> float:
+    """Area for the one translucent halo disk drawn at each grouped coordinate."""
+    return halo_area(n_overlap, 1.0)
 
 
 def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: bool = False) -> None:
@@ -324,20 +320,12 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
         x, y = xy(q[:, 0], q[:, 1], q[:, 2])
         color = COLORS[region]
         marker = REGION_MARKERS[region]
-        # Approximate a smoothly fading halo with nested, outline-free disks.
-        # Batching by multiplicity keeps the renderer lightweight while making
-        # high-overlap coordinates more visible than single observations.
-        by_n: dict[int, list[dict[str, object]]] = defaultdict(list)
-        for group in grouped:
-            by_n[int(group["n_overlap"])].append(group)
-        for n_overlap in sorted(by_n):
-            halo_groups = by_n[n_overlap]
-            halo_q = np.array([[g[f] for f in Q_FIELDS] for g in halo_groups])
-            halo_x, halo_y = xy(halo_q[:, 0], halo_q[:, 1], halo_q[:, 2])
-            for fraction, weight in zip(HALO_LAYER_FRACTIONS, HALO_LAYER_WEIGHTS):
-                ax.scatter(halo_x, halo_y, s=halo_area(n_overlap, fraction), c=color,
-                           alpha=halo_alpha(n_overlap) * weight, edgecolors="none",
-                           linewidths=0, marker="o", clip_on=False, zorder=3)
+        # One translucent disk per grouped coordinate restores the original
+        # halo rendering and keeps the multiplicity cue visually distinct from
+        # the central marker.
+        ax.scatter(x, y, s=[halo_size(int(g["n_overlap"])) for g in grouped], c=color,
+                   alpha=HALO_ALPHA, edgecolors=color, linewidths=.65, marker="o",
+                   clip_on=False, zorder=3)
         ax.scatter(x, y, s=[marker_area(int(g["n_overlap"])) for g in grouped], c=color, alpha=MARKER_ALPHA,
                    edgecolors="none", linewidths=0, marker=marker, clip_on=False,
                    label=f"{region} (n={sum(int(g['n_overlap']) for g in grouped)})", zorder=4)
@@ -424,7 +412,7 @@ def main() -> None:
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 6 + 0.5*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False, "halo": {"area": "24 + 18*sqrt(n_overlap)", "radius_factor": HALO_RADIUS_FACTOR, "total_alpha": "min(0.20, 0.025 + 0.03*log2(n_overlap))", "nested_layer_fractions": HALO_LAYER_FRACTIONS, "nested_layer_weights": HALO_LAYER_WEIGHTS}}}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 6 + 0.5*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False, "halo": {"area": "24 + 18*sqrt(n_overlap)", "radius_factor": HALO_RADIUS_FACTOR, "alpha": HALO_ALPHA, "rendering": "one translucent disk per grouped coordinate"}}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 

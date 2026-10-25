@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
-from empirical.combined_quartet_simplex.build_quartet_simplex import interval_state, validate_qss, xy, SQRT3_2, TOPOLOGY_MAPPINGS, coordinate_groups, marker_area, MARKER_MAX_AREA, halo_alpha, halo_area
+from empirical.combined_quartet_simplex.build_quartet_simplex import interval_state, validate_qss, xy, SQRT3_2, TOPOLOGY_MAPPINGS, coordinate_groups, marker_area, MARKER_MAX_AREA, halo_area, HALO_ALPHA
 
 
 def test_simplex_vertices_and_barycenter():
@@ -65,7 +65,7 @@ def test_log_marker_scaling_distinguishes_counts_and_handles_vertices():
 
 
 def test_halo_scaling_is_independent_and_multiplicity_aware():
-    assert halo_alpha(1) < halo_alpha(10) < halo_alpha(100)
+    assert HALO_ALPHA == 0.18
     assert halo_area(1, 1.0) > marker_area(1)
     assert math.isclose(halo_area(1, 1.0), 42.0)
     assert math.isclose(halo_area(100, 1.0), 204.0)
