@@ -31,3 +31,10 @@ outgroup is missing or polymorphic.
 
 The complete frozen table is `frozen_quartet_designs.tsv`. A nonzero result is
 not evidence by itself for introgression or MSRC causation.
+
+The completed pilot verified all frozen sample IDs against 72 returned Ag3
+metadata rows and verified the requested sample order against the `sample_id`
+coordinate returned by every SNP query. No duplicate or missing sample IDs
+were detected. The returned array uses the API REF/ALT genotype encoding;
+ancestral polarization was based on complete outgroup diploid calls fixed for
+one allele at each site, never on the ingroup REF allele.

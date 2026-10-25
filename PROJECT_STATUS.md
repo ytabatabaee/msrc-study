@@ -553,11 +553,15 @@ downloaded.
 The estimator uses direct diploid SNP genotypes, fixed-outgroup polarization,
 ratio-of-summed ABBA/BABA contributions, explicit exclusion counts, MAC>=2
 sensitivity, and physically blocked jackknife code. It does not reuse Stage 2R
-quartet frequencies or gene trees. Synthetic tests pass. The current local
-interpreter lacks `malariagen_data`, so the eight-window empirical pilot is
-blocked pending restoration of the existing authenticated Ag3.10 SNP-access
-environment. No empirical Patterson's D values, full scan, or D figures are
-reported.
+quartet frequencies or gene trees. The corrected core requires complete fixed
+outgroup diploid calls and uses only informative physical blocks for jackknife
+deletion. Six synthetic tests pass. The restored Python 3.10/`malariagen-data
+14.0.0` environment completed all eight frozen pilot windows independently,
+producing 128 rows and verifying returned Ag3 sample order. Descriptive pooled
+inside/outside D values are in `results/patterson_d/pilot_report.md`; they are
+feasibility summaries from eight windows, not chromosome-wide inference or
+proof of introgression/MSRC. The 988-window scan remains prepared but
+unsubmitted.
 
 ## Anopheles 2La Stage 0
 

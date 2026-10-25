@@ -356,11 +356,19 @@ authenticated Fontaine sample set and was not downloaded.
 
 Patterson's D is calculated from nucleotide genotype allele frequencies as a
 ratio of summed ABBA and BABA contributions. It is kept separate from the
-existing Stage 2R `D_topology(w)` track. Synthetic tests pass. The local
-interpreter currently lacks `malariagen_data`, so the eight-window real-data
-pilot is pending restoration of the authenticated SNP-access environment; no
-empirical D values or figures are reported. Full-scan commands and checkpoint
-behavior are documented in `analysis/patterson_d/README.md`.
+existing Stage 2R `D_topology(w)` track. Synthetic tests pass. The validated
+pilot used the recorded Python 3.10 environment with `malariagen-data 14.0.0`
+and queried the eight frozen Stage-1R windows independently, totaling 400 kb.
+All 128 rows (8 designs × 8 windows × primary/MAC>=2 filters) completed with
+verified returned sample order and fixed complete-diploid outgroup
+polarization. Descriptive primary pooled inside/outside D values were:
+A_merus -0.765/-0.199, B_merus 0.762/0.199, C_merus -0.718/-0.049,
+D_merus 0.789/0.320; melas gave A -0.617/-0.126, B 0.814/0.238,
+C -0.580/0.014, and D 0.824/0.361. These are feasibility summaries from
+eight selected windows, not chromosome-wide inference or evidence of
+introgression/MSRC causation. Full-scan commands and checkpoint behavior are
+documented in `analysis/patterson_d/README.md`; the 988-window scan remains
+unrun.
 
 ## Stage 3R — ASTRAL species-tree sensitivity
 

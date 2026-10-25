@@ -62,13 +62,14 @@ def calculate_window(
             sub = row[idx]
             ok = (sub >= 0).all(axis=1)
             group_called[name] = int(ok.sum() * 2)
-            group_counts[name] = float(np.where(ok, sub, 0).sum())
+            group_counts[name] = float(np.where(ok[:, None], sub, 0).sum())
             call_totals[name] += group_called[name]
+        out_calls = row[outgroup]
+        if not np.all((out_calls >= 0).all(axis=1)):
+            exclusions["outgroup_missing"] += 1; continue
         if any(group_called[k] < min_callable_chromosomes for k in group_called):
             exclusions["insufficient_group_calls"] += 1; continue
-        out_alleles = row[outgroup][(row[outgroup] >= 0)].astype(int)
-        if out_alleles.size == 0:
-            exclusions["outgroup_missing"] += 1; continue
+        out_alleles = out_calls.astype(int).ravel()
         if np.any(out_alleles > 1):
             exclusions["outgroup_nonbinary"] += 1; continue
         if np.any(out_alleles != out_alleles[0]):
@@ -94,14 +95,14 @@ def calculate_window(
 
 def jackknife(block_values: list[tuple[float, float, int]], alpha: float = 0.05) -> dict[str, float | int | None]:
     """Delete-one-block jackknife for block ABBA/BABA sums."""
-    usable = [(a, b) for a, b, n in block_values if a + b > 0 and n > 0]
-    total_a, total_b = sum(a for a, _, _ in block_values), sum(b for _, b, _ in block_values)
+    usable = [(a, b, n) for a, b, n in block_values if a + b > 0 and n > 0]
+    total_a, total_b = sum(a for a, b, _ in usable), sum(b for a, b, _ in usable)
     total_d = (total_a - total_b) / (total_a + total_b) if total_a + total_b else None
     n_blocks = len(usable)
     if n_blocks < 2 or total_d is None:
         return {"pooled_d": total_d, "se": None, "z": None, "ci_low": None, "ci_high": None, "n_blocks": n_blocks}
     estimates = []
-    for a, b, _ in block_values:
+    for a, b, _ in usable:
         aa, bb = total_a - a, total_b - b
         estimates.append((aa - bb) / (aa + bb) if aa + bb else np.nan)
     estimates = np.asarray(estimates, dtype=float); estimates = estimates[np.isfinite(estimates)]
@@ -110,6 +111,34 @@ def jackknife(block_values: list[tuple[float, float, int]], alpha: float = 0.05)
     mean = float(estimates.mean())
     se = float(math.sqrt((len(estimates) - 1) / len(estimates) * np.sum((estimates - mean) ** 2)))
     return {"pooled_d": total_d, "se": se, "z": total_d / se if se else None, "ci_low": total_d - 1.96 * se if se else None, "ci_high": total_d + 1.96 * se if se else None, "n_blocks": n_blocks}
+
+def jackknife_difference(block_values: list[tuple[float, float, float, float, int, int]]) -> dict[str, float | int | None]:
+    """Delete-one-physical-block uncertainty for D_inside - D_outside.
+
+    Tuples contain inside ABBA, inside BABA, outside ABBA, outside BABA,
+    inside informative-site count, and outside informative-site count. A
+    block is retained when it contributes to either region; leave-one-block
+    estimates use the same physical block deletion for both regions.
+    """
+    usable = [v for v in block_values if (v[0] + v[1] > 0 and v[4] > 0) or (v[2] + v[3] > 0 and v[5] > 0)]
+    ia, ib = sum(v[0] for v in usable), sum(v[1] for v in usable)
+    oa, ob = sum(v[2] for v in usable), sum(v[3] for v in usable)
+    inside = (ia - ib) / (ia + ib) if ia + ib else None
+    outside = (oa - ob) / (oa + ob) if oa + ob else None
+    delta = inside - outside if inside is not None and outside is not None else None
+    if delta is None or len(usable) < 2:
+        return {"inside_pooled_d": inside, "outside_pooled_d": outside, "delta_d": delta, "se": None, "z": None, "ci_low": None, "ci_high": None, "n_blocks": len(usable)}
+    estimates = []
+    for v in usable:
+        x = [sum(w[j] for w in usable if w is not v) for j in range(4)]
+        di = (x[0] - x[1]) / (x[0] + x[1]) if x[0] + x[1] else np.nan
+        do = (x[2] - x[3]) / (x[2] + x[3]) if x[2] + x[3] else np.nan
+        estimates.append(di - do if np.isfinite(di) and np.isfinite(do) else np.nan)
+    estimates = np.asarray(estimates, dtype=float); estimates = estimates[np.isfinite(estimates)]
+    if len(estimates) < 2:
+        return {"inside_pooled_d": inside, "outside_pooled_d": outside, "delta_d": delta, "se": None, "z": None, "ci_low": None, "ci_high": None, "n_blocks": len(usable)}
+    mean = float(estimates.mean()); se = float(math.sqrt((len(estimates) - 1) / len(estimates) * np.sum((estimates - mean) ** 2)))
+    return {"inside_pooled_d": inside, "outside_pooled_d": outside, "delta_d": delta, "se": se, "z": delta / se if se else None, "ci_low": delta - 1.96 * se if se else None, "ci_high": delta + 1.96 * se if se else None, "n_blocks": len(usable)}
 
 def block_id(position: int, size: int) -> str:
     return str(((int(position) - 1) // size) * size + 1)

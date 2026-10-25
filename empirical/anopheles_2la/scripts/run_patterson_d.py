@@ -7,7 +7,7 @@ frozen 988-window Stage-2R grid in 1-Mb regional chunks.
 """
 from __future__ import annotations
 
-import argparse, csv, hashlib, importlib.metadata, json, math, os, platform, sys, time
+import argparse, csv, hashlib, importlib.metadata, json, math, os, platform, resource, sys, time
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
@@ -109,16 +109,40 @@ def windows(pilot: bool) -> list[dict[str, str]]:
     if pilot and len(rows) != 8: raise ValueError("Stage-1R pilot window set must contain 8 windows")
     return rows
 
+def query_regions(window_rows: list[dict[str, str]], pilot: bool, chunk_bp: int) -> list[list[dict[str, str]]]:
+    """Return exact query groups; pilot windows are always queried singly."""
+    if pilot:
+        return [[w] for w in window_rows]
+    groups = []
+    current = []
+    for window in window_rows:
+        if not current or (int(window["end"]) - int(current[0]["start"]) + 1) <= chunk_bp:
+            current.append(window)
+        else:
+            groups.append(current); current = [window]
+    if current: groups.append(current)
+    return groups
+
 def design_index(sample_ids: list[str], metadata: object) -> dict[str, int]:
     ids = [str(x) for x in metadata["sample_id"].tolist()]
+    if len(ids) != len(set(ids)): raise ValueError("Ag3 sample metadata contains duplicate sample IDs")
     missing = sorted(set(sample_ids) - set(ids))
     if missing: raise ValueError(f"sample IDs absent from Ag3 sample metadata: {missing}")
     return {sid: ids.index(sid) for sid in sample_ids}
+
+def dataset_sample_ids(ds: object) -> list[str]:
+    """Read the returned sample coordinate rather than assuming API order."""
+    if "sample_id" not in ds:
+        raise ValueError("Ag3 SNP dataset did not return a sample_id coordinate")
+    values = [str(x) for x in np.asarray(ds["sample_id"].values).tolist()]
+    if len(values) != len(set(values)): raise ValueError("Ag3 SNP dataset returned duplicate sample IDs")
+    return values
 
 def calculate_row(gt: np.ndarray, positions: np.ndarray, window: dict[str, str], design: dict[str, str], ids: dict[str, int], min_mac: int) -> dict[str, object]:
     from patterson_d_core import calculate_window
     mask = (positions >= int(window["start"])) & (positions <= int(window["end"]))
     selected = [x for key in ("P1_sample_ids", "P2_sample_ids", "P3_sample_ids", "outgroup_sample_ids") for x in design[key].split(";") if x]
+    if len(selected) != len(set(selected)): raise ValueError(f"duplicate sample ID in design {design['test_id']}")
     take = [ids[x] for x in selected]
     arr = gt[mask][:, take, :]
     offsets = {}; cursor = 0
@@ -141,7 +165,7 @@ def load_stage2r_comparison(rows: list[dict[str, object]]) -> list[dict[str, obj
     return out
 
 def summarize(rows: list[dict[str, object]]) -> None:
-    from patterson_d_core import jackknife
+    from patterson_d_core import jackknife, jackknife_difference
     valid = [r for r in rows if r["filter_label"] == "primary"]
     summary = []; jkrows = []
     for test, region in sorted({(r["test_id"], r["region_class"]) for r in valid}):
@@ -151,10 +175,21 @@ def summarize(rows: list[dict[str, object]]) -> None:
         d = (abba - baba) / (abba + baba) if abba + baba else None
         ds = [float(r["D_patterson"]) for r in values if r["D_patterson"] is not None and r["D_patterson"] != ""]
         summary.append({"test_id": test, "filter_label": "primary", "region": region, "n_windows": len(values), "pooled_ABBA": abba, "pooled_BABA": baba, "pooled_denominator": abba + baba, "pooled_D": d, "window_mean_D": float(np.mean(ds)) if ds else "", "window_median_D": float(np.median(ds)) if ds else "", "n_informative_windows": len(ds)})
-        blocks = defaultdict(lambda: [0.0, 0.0, 0])
-        for r in values:
-            block = str(((int(r["start"]) - 1) // 1_000_000) * 1_000_000 + 1); blocks[block][0] += float(r["abba"]); blocks[block][1] += float(r["baba"]); blocks[block][2] += int(float(r["n_sites_informative"]))
-        jk = jackknife([(a, b, n) for a, b, n in blocks.values()]); jkrows.append({"test_id": test, "filter_label": "primary", "region": region, "block_size_bp": 1_000_000, **jk})
+        for block_size in (500_000, 1_000_000, 2_000_000):
+            blocks = defaultdict(lambda: [0.0, 0.0, 0])
+            for r in values:
+                block = str(((int(r["start"]) - 1) // block_size) * block_size + 1); blocks[block][0] += float(r["abba"]); blocks[block][1] += float(r["baba"]); blocks[block][2] += int(float(r["n_sites_informative"]))
+            jk = jackknife([(a, b, n) for a, b, n in blocks.values()]); jkrows.append({"test_id": test, "filter_label": "primary", "region": region, "block_size_bp": block_size, **jk})
+    for test in sorted({r["test_id"] for r in valid}):
+        inside_rows = [r for r in valid if r["test_id"] == test and r["region_class"] == "inside"]
+        outside_rows = [r for r in valid if r["test_id"] == test and r["region_class"] == "outside"]
+        for block_size in (500_000, 1_000_000, 2_000_000):
+            blocks = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0, 0, 0])
+            for r in inside_rows:
+                block = str(((int(r["start"]) - 1) // block_size) * block_size + 1); blocks[block][0] += float(r["abba"]); blocks[block][1] += float(r["baba"]); blocks[block][4] += int(float(r["n_sites_informative"]))
+            for r in outside_rows:
+                block = str(((int(r["start"]) - 1) // block_size) * block_size + 1); blocks[block][2] += float(r["abba"]); blocks[block][3] += float(r["baba"]); blocks[block][5] += int(float(r["n_sites_informative"]))
+            diff = jackknife_difference([tuple(v) for v in blocks.values()]); jkrows.append({"test_id": test, "filter_label": "primary", "region": "inside_minus_outside", "block_size_bp": block_size, **diff})
     write_tsv(OUT / "inside_outside_summary.tsv", summary, list(summary[0]) if summary else ["test_id"])
     write_tsv(OUT / "jackknife_results.tsv", jkrows, list(jkrows[0]) if jkrows else ["test_id"])
 
@@ -164,26 +199,35 @@ def run_access(args: argparse.Namespace, pilot: bool) -> list[dict[str, object]]
     all_ids = sorted({x for d in designs.values() for key in ("P1_sample_ids", "P2_sample_ids", "P3_sample_ids", "outgroup_sample_ids") for x in d[key].split(";") if x})
     ag3 = malariagen_data.Ag3(url=args.url or BUCKET, check_location=False, show_progress=False)
     metadata = ag3.sample_metadata(sample_sets=SAMPLE_SET); indices = design_index(all_ids, metadata)
+    prov_path = OUT / "provenance.json"; prov = json.loads(prov_path.read_text()); prov.update({"actual_metadata_sample_count": len(metadata), "requested_sample_ids": all_ids, "requested_sample_indices": [indices[x] for x in all_ids], "sample_order_verified": True, "pilot_window_ids": [w["window_id"] for w in windows(pilot)], "pilot_query_mode": "one independent 50-kb query per window" if pilot else "contiguous bounded chunks"}); prov_path.write_text(json.dumps(prov, indent=2) + "\n")
     windows_list = windows(pilot); results = []; output = OUT / ("pilot_results.tsv" if pilot else "window_results.tsv")
-    fields = ["window_id","chrom","start","end","region_class","test_id","P1","P2","P3","outgroup","filter_label","abba","baba","abba_plus_baba","D_patterson","n_sites_examined","n_sites_pass","n_sites_informative","n_outgroup_fixed","mean_callable_P1","mean_callable_P2","mean_callable_P3","mean_callable_O","exclusion_counts","eligibility"]
-    completed = set()
-    if not pilot and output.exists(): completed = {(r["window_id"], r["test_id"], r["filter_label"]) for r in read_tsv(output)}
-    for chunk_start in range(0, len(windows_list), max(1, args.chunk_bp // WIN)):
-        chunk = windows_list[chunk_start:chunk_start + max(1, args.chunk_bp // WIN)]; region = f"{CHROM}:{chunk[0]['start']}-{chunk[-1]['end']}"; print(f"query {region} ({len(chunk)} windows)", flush=True)
+    fields = ["window_id","chrom","start","end","region_class","test_id","P1","P2","P3","outgroup","filter_label","abba","baba","abba_plus_baba","D_patterson","n_sites_examined","n_sites_pass","n_sites_informative","n_outgroup_fixed","mean_callable_P1","mean_callable_P2","mean_callable_P3","mean_callable_O","exclusion_counts","eligibility","query_seconds","peak_rss_mb"]
+    existing_rows = [r for r in read_tsv(output) if r.get("window_id") and r.get("test_id") and r.get("filter_label")] if output.exists() else []
+    completed = {(r["window_id"], r["test_id"], r["filter_label"]) for r in existing_rows}
+    for chunk in query_regions(windows_list, pilot, args.chunk_bp):
+        region = f"{CHROM}:{chunk[0]['start']}-{chunk[-1]['end']}"
+        started = time.perf_counter(); print(f"query {region} ({len(chunk)} window{'s' if len(chunk) != 1 else ''})", flush=True)
         ds = ag3.snp_calls(region=region, sample_sets=SAMPLE_SET, sample_indices=[indices[x] for x in all_ids], site_mask=None, inline_array=True, chunks="native")
+        returned_ids = dataset_sample_ids(ds)
+        if returned_ids != all_ids:
+            raise ValueError("Ag3 SNP dataset sample order does not match requested sample order")
         positions = np.asarray(ds["variant_position"].values); gt_all = np.asarray(ds["call_genotype"].values); local_ids = {sid: i for i, sid in enumerate(all_ids)}
+        query_seconds = time.perf_counter() - started; peak_rss_mb = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (1024 if sys.platform == "darwin" else 1024)
         chunk_rows = []
         for window in chunk:
             for design in selected_designs:
                 for min_mac in (0, 2):
                     label = "MAC2" if min_mac else "primary"
-                    if (window["window_id"], design["test_id"], label) in completed: continue
-                    chunk_rows.append(calculate_row(gt_all, positions, window, design, local_ids, min_mac))
+                    key = (window["window_id"], design["test_id"], label)
+                    if key in completed: continue
+                    row = calculate_row(gt_all, positions, window, design, local_ids, min_mac)
+                    row["query_seconds"], row["peak_rss_mb"] = f"{query_seconds:.6f}", f"{peak_rss_mb:.3f}"
+                    chunk_rows.append(row); completed.add(key)
         results.extend(chunk_rows)
-        if not pilot:
-            existing = read_tsv(output) if output.exists() else []
-            write_tsv(output, existing + chunk_rows, fields); (OUT / "checkpoint.json").write_text(json.dumps({"last_chunk_start": chunk_start, "completed_rows": len(existing) + len(chunk_rows), "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}, indent=2) + "\n")
-    if pilot: write_tsv(output, results, fields)
+        existing = [r for r in read_tsv(output) if r.get("window_id") and r.get("test_id") and r.get("filter_label")] if output.exists() else []
+        write_tsv(output, existing + chunk_rows, fields)
+        update_status("pilot_running" if pilot else "full_running", completed_windows=sorted({r["window_id"] for r in existing + chunk_rows}))
+        (OUT / "checkpoint.json").write_text(json.dumps({"last_region": region, "completed_rows": len(existing) + len(chunk_rows), "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}, indent=2) + "\n")
     if not pilot:
         rows = read_tsv(output); summarize(rows); write_tsv(OUT / "comparison_with_stage2r.tsv", load_stage2r_comparison(rows), list(load_stage2r_comparison(rows)[0]))
         make_figures(rows)
@@ -207,23 +251,45 @@ def make_figures(rows: list[dict[str, object]]) -> None:
         ax.plot(xx, yy, ".-", lw=.7, ms=2, label=design)
     ax.axvspan(INV_START, INV_END, color="#b39ddb", alpha=.25); ax.axhline(0, color="0.5", lw=.6); ax.set_xlabel("AgamP4 2L coordinate"); ax.set_ylabel("Patterson's D"); ax.legend(ncol=4, fontsize=7); fig.savefig(FIG / "anopheles_2la_patterson_d_sensitivity.pdf"); fig.savefig(FIG / "anopheles_2la_patterson_d_sensitivity.svg"); fig.savefig(FIG / "anopheles_2la_patterson_d_sensitivity.png", dpi=300); plt.close(fig)
 
+def write_pilot_report(rows: list[dict[str, object]]) -> None:
+    primary = [r for r in rows if r.get("filter_label") == "primary"]
+    lines = ["# Patterson's D pilot", "", "The eight frozen Stage-1R windows were queried independently as eight 50-kb Ag3 regions (400,000 bp total). Each design has a primary no-MAC result and a MAC>=2 sensitivity result. This is a feasibility and estimator-validation pilot; it is not an inside/outside inferential analysis.", "", "## Access and mapping", "", f"- Windows: {len({r['window_id'] for r in rows})}; designs: {len({r['test_id'] for r in rows})}; rows: {len(rows)}.", "- Sample order was checked against the returned Ag3 `sample_id` coordinate for every query.", "- Outgroup polarization required complete diploid calls fixed for one allele; missing or polymorphic outgroups were excluded.", "- The primary designs A_merus and B_merus are exploratory population site-pattern contrasts under the frozen baseline, not automatic introgression tests. C/D and melas are sensitivity contrasts with smaller P2 or outgroup groups.", "", "## Primary results", "", "| test | window | D | ABBA | BABA | informative sites |", "|---|---|---:|---:|---:|---:|"]
+    for r in primary:
+        lines.append(f"| {r['test_id']} | {r['window_id']} | {float(r['D_patterson']):.6g} | {float(r['abba']):.6g} | {float(r['baba']):.6g} | {r['n_sites_informative']} |")
+    lines += ["", "## Runtime and exclusions", "", f"- Maximum recorded resident memory: {max(float(r['peak_rss_mb']) for r in rows) / 1024:.1f} MiB.", f"- Sum of independent regional query times: {sum(float(r['query_seconds']) for r in rows[::16]):.1f} s.", "- Exclusion counts are recorded as JSON in `pilot_results.tsv`; they are design/filter diagnostics and are not evidence for introgression.", "", "Patterson's D and Stage 2R `D_topology` remain separate estimands. No nonzero value is interpreted as proof of introgression or MSRC causation."]
+    (OUT / "pilot_report.md").write_text("\n".join(lines) + "\n")
+
+def update_status(status: str, **extra: object) -> None:
+    path = OUT / "run_manifest.json"; existing = json.loads(path.read_text()) if path.exists() else {"history": []}
+    existing["status"] = status
+    if status.startswith("pilot_"): existing["pilot"] = status.removeprefix("pilot_")
+    if status.startswith("full_"): existing["full"] = status.removeprefix("full_")
+    existing.update(extra); existing.setdefault("history", []).append({"status": status, "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "command": " ".join(sys.argv), "python": sys.executable})
+    path.write_text(json.dumps(existing, indent=2, sort_keys=True) + "\n")
+
 def provenance(args: argparse.Namespace) -> None:
     OUT.mkdir(parents=True, exist_ok=True); design_audit()
-    payload = {"analysis": "Patterson D ABBA-BABA", "release": RELEASE, "sample_set": SAMPLE_SET, "bucket": BUCKET, "chromosome": CHROM, "inversion_interval_1based_inclusive": [INV_START, INV_END], "window_size": WIN, "stage2r_grid_sha256": sha256(GRID), "sample_manifest_sha256": sha256(SAMPLE_MANIFEST), "primary_sample_table_sha256": sha256(PRIMARY), "malariagen_data_version": importlib.metadata.version("malariagen-data") if importlib.util.find_spec("malariagen_data") else "not-imported", "host": platform.node(), "python": sys.version, "command": " ".join(sys.argv), "status": "design_frozen"}
-    (OUT / "provenance.json").write_text(json.dumps(payload, indent=2) + "\n"); (OUT / "run_manifest.json").write_text(json.dumps({"status": "prepared_not_run", "pilot": "not_run", "full": "not_run", "designs": [r["test_id"] for r in design_rows()]}, indent=2) + "\n")
+    payload = {"analysis": "Patterson D ABBA-BABA", "release": RELEASE, "sample_set": SAMPLE_SET, "bucket": BUCKET, "chromosome": CHROM, "inversion_interval_1based_inclusive": [INV_START, INV_END], "window_size": WIN, "stage2r_grid_sha256": sha256(GRID), "stage1r_pilot_windows_sha256": sha256(PILOT), "sample_manifest_sha256": sha256(SAMPLE_MANIFEST), "primary_sample_table_sha256": sha256(PRIMARY), "malariagen_data_version": importlib.metadata.version("malariagen-data") if importlib.util.find_spec("malariagen_data") else "not-imported", "host": platform.node(), "python": sys.version, "python_executable": sys.executable, "command": " ".join(sys.argv), "filter_settings": {"max_site_missing": 0.25, "min_callable_chromosomes": 2, "primary_mac": 0, "sensitivity_mac": 2, "outgroup_requires_complete_fixed_diploids": True}}
+    if not (OUT / "provenance.json").exists(): (OUT / "provenance.json").write_text(json.dumps(payload, indent=2) + "\n")
+    else:
+        current = json.loads((OUT / "provenance.json").read_text()); payload["status"] = current.get("status", payload["status"]); current.update(payload); (OUT / "provenance.json").write_text(json.dumps(current, indent=2) + "\n")
+    if not (OUT / "run_manifest.json").exists(): update_status("design_prepared", designs=[r["test_id"] for r in design_rows()], sample_ids=sorted({x for r in design_rows() for key in ("P1_sample_ids", "P2_sample_ids", "P3_sample_ids", "outgroup_sample_ids") for x in r[key].split(";") if x}))
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--url", default=BUCKET); p.add_argument("--design-only", action="store_true"); p.add_argument("--pilot", action="store_true"); p.add_argument("--run-full", action="store_true"); p.add_argument("--chunk-bp", type=int, default=1_000_000); args = p.parse_args(); provenance(args)
-    if args.pilot == args.run_full:
-        write_tsv(OUT / "pilot_results.tsv", [{"status": "PENDING_AUTHENTICATED_ACCESS", "note": "No SNP-access package is installed in the current interpreter; no empirical pilot was run."}], ["status", "note"])
-        for name in ("inside_outside_summary.tsv", "jackknife_results.tsv", "comparison_with_stage2r.tsv"):
-            write_tsv(OUT / name, [{"status": "PENDING_PILOT_OR_FULL_RUN"}], ["status"])
-        (OUT / "pilot_report.md").write_text("# Patterson's D pilot\n\nThe eight-window empirical pilot is pending because the current configured Python environment does not provide `malariagen_data`. No numerical pilot values are reported. The existing repository provenance records prior successful Ag3.10 metadata access, but the authenticated SNP-access environment must be restored before querying genotype arrays.\n")
-        (OUT / "methods_text.md").write_text("# Patterson's D methods\n\nPatterson's D is calculated directly from unphased diploid nucleotide genotypes using population allele frequencies and a fixed-outgroup ancestral allele. ABBA and BABA are summed across sites before taking the ratio. Sites with multiallelic calls, unsuitable missingness, insufficient group callability, missing or polymorphic outgroups, and sensitivity MAC failures are retained in counts and excluded from the estimator. The primary filter uses no MAC threshold; MAC >= 2 is a sensitivity analysis matching Stage 2R.\n")
-        (OUT / "results_text.md").write_text("# Patterson's D results\n\nNo empirical numerical result is available. The pilot is blocked by the missing local `malariagen_data` package and must be run in the existing authenticated Ag3.10 environment.\n")
-        (OUT / "figure_caption.md").write_text("# Figure caption\n\nAligned 2L tracks will compare Stage 2R arrangement-associated contrasts with nucleotide-site Patterson's D after validated empirical output exists. Boundary-overlap windows remain visible and are excluded from the primary inside/outside comparison.\n")
+    if not args.pilot and not args.run_full:
+        if json.loads((OUT / "run_manifest.json").read_text()).get("status") not in {"pilot_complete", "full_complete", "pilot_running", "full_running"}: update_status("design_prepared")
         return 0
-    rows = run_access(args, args.pilot); (OUT / "pilot_report.md").write_text("# Patterson's D pilot\n\nPilot results were generated from the eight coordinate-frozen Stage-1R windows. Interpretive summaries are withheld until authentication, outgroup callability, and informative-site counts have been reviewed.\n" if args.pilot else "# Patterson's D full scan\n\nThe full scan completed using the frozen Stage-2R grid. See `window_results.tsv`, `inside_outside_summary.tsv`, and `jackknife_results.tsv`.\n")
+    update_status("pilot_running" if args.pilot else "full_running")
+    try:
+        rows = run_access(args, args.pilot)
+    except Exception as exc:
+        update_status("pilot_failed" if args.pilot else "full_failed", error=repr(exc))
+        raise
+    update_status("pilot_complete" if args.pilot else "full_complete", completed_windows=sorted({r["window_id"] for r in rows}))
+    prov = json.loads((OUT / "provenance.json").read_text()); prov.update({"completed_window_count": len({r["window_id"] for r in rows}), "output_sha256": sha256(OUT / ("pilot_results.tsv" if args.pilot else "window_results.tsv")), "status": "pilot_complete" if args.pilot else "full_complete"}); (OUT / "provenance.json").write_text(json.dumps(prov, indent=2) + "\n")
+    if args.pilot: write_pilot_report(rows)
+    else: (OUT / "pilot_report.md").write_text("# Patterson's D full scan\n\nThe full scan completed using the frozen Stage-2R grid. See `window_results.tsv`, `inside_outside_summary.tsv`, and `jackknife_results.tsv`.\n")
     (OUT / "methods_text.md").write_text("# Patterson's D methods\n\nPatterson's D was calculated directly from unphased diploid nucleotide genotypes using population allele frequencies and a fixed-outgroup ancestral allele. ABBA and BABA were summed across sites before taking the ratio. Sites with multiallelic calls, unsuitable missingness, insufficient group callability, missing or polymorphic outgroups, and sensitivity MAC failures were retained in counts and excluded from the estimator. The primary filter uses no MAC threshold; MAC >= 2 is a sensitivity analysis matching Stage 2R.\n")
     (OUT / "results_text.md").write_text("# Patterson's D results\n\nNumerical interpretation is deferred to the validated pilot or full output tables. Patterson's D and Stage 2R `D_topology` are separate estimands.\n")
     (OUT / "figure_caption.md").write_text("# Figure caption\n\nAligned 2L tracks compare Stage 2R arrangement-associated contrasts with nucleotide-site Patterson's D. The Patterson's D panel uses fixed candidate design A with A. merus as outgroup; alternative valid designs are reported separately. Boundary-overlap windows remain visible and are excluded from the primary inside/outside comparison.\n")

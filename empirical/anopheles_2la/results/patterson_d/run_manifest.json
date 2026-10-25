@@ -1,7 +1,15 @@
 {
-  "status": "prepared_not_run",
-  "pilot": "not_run",
-  "full": "not_run",
+  "completed_window_count": 8,
+  "completed_windows": [
+    "inside_deep_center",
+    "inside_deep_q1",
+    "inside_deep_q3",
+    "inside_left_boundary_50kb",
+    "inside_right_boundary_50kb",
+    "outside_left_distal_10Mb",
+    "outside_left_flank_50kb",
+    "outside_right_flank_50kb"
+  ],
   "designs": [
     "A_merus",
     "A_melas",
@@ -11,5 +19,178 @@
     "C_melas",
     "D_merus",
     "D_melas"
-  ]
+  ],
+  "full": "not_run",
+  "history": [
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:52:09Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_failed",
+      "timestamp_utc": "2026-10-24T23:53:08Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:53:16Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_failed",
+      "timestamp_utc": "2026-10-24T23:53:36Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:53:45Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_failed",
+      "timestamp_utc": "2026-10-24T23:54:18Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:54:34Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_failed",
+      "timestamp_utc": "2026-10-24T23:57:17Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:57:26Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-24T23:57:54Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:00:24Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:02:26Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:05:09Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:07:43Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:10:11Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:12:29Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:15:07Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_complete",
+      "timestamp_utc": "2026-10-25T00:15:07Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:16:19Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:19:28Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:21:26Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:23:06Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:25:03Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:27:00Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:29:13Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:31:26Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_running",
+      "timestamp_utc": "2026-10-25T00:33:19Z"
+    },
+    {
+      "command": "empirical/anopheles_2la/scripts/run_patterson_d.py --pilot --url gs://vo_agam_release_master_us_central1",
+      "python": "/Users/ytabatabaee/Desktop/msrc-paper/.venv-malaria310/bin/python",
+      "status": "pilot_complete",
+      "timestamp_utc": "2026-10-25T00:33:19Z"
+    }
+  ],
+  "pilot": "complete",
+  "status": "pilot_complete"
 }

@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
+#SBATCH --mem=14G
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/anopheles_patterson_d_%j.out
 #SBATCH --error=logs/anopheles_patterson_d_%j.err
