@@ -53,5 +53,16 @@
     "region_id",
     "n_informative_quartets",
     "observation_unit"
-  ]
+  ],
+  "overlap_encoding": {
+    "grouping_round_decimals": 12,
+    "halo_area": "24 + 18*sqrt(n_overlap)",
+    "core_markers": {
+      "inside": "o",
+      "outside": "s",
+      "boundary": "D",
+      "unknown": "x"
+    },
+    "coordinates_shifted": false
+  }
 }

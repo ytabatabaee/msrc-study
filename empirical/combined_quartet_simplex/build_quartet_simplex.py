@@ -41,6 +41,7 @@ TOPOLOGY_MAPPINGS = {
     "house_mouse_t_complex": ("species", "t-complex alternative", "other"),
 }
 REGION_ORDER = ("inside", "outside", "boundary", "unknown")
+REGION_MARKERS = {"inside": "o", "outside": "s", "boundary": "D", "unknown": "x"}
 SQRT3_2 = math.sqrt(3.0) / 2.0
 Q_SUM_TOLERANCE = 2e-6  # cod support is stored at six decimal places.
 
@@ -246,6 +247,34 @@ def xy(q1: np.ndarray, q2: np.ndarray, q3: np.ndarray) -> tuple[np.ndarray, np.n
     return 0.5 * q1 + q3, SQRT3_2 * q1
 
 
+def panel_for_row(row: dict[str, object]) -> str:
+    """Return the visual panel identifier used in overlap summaries."""
+    return str(row["chromosome"]) if row["dataset"] == "atlantic_cod" else str(row["dataset"])
+
+
+def coordinate_groups(rows: list[dict[str, object]], decimals: int = 12) -> list[dict[str, object]]:
+    """Group rows by rounded simplex coordinates and region without moving them.
+
+    The representative q values are copied from the first row in each group;
+    rounding is used only as a grouping key.  Thus plotted coordinates remain
+    the original coordinates from the standardized table.
+    """
+    grouped: dict[tuple[str, float, float, float], list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        key = (str(row["region_class"]), *(round(number(row[field]), decimals) for field in Q_FIELDS))
+        grouped[key].append(row)
+    output = []
+    for (region, _, _, _), members in grouped.items():
+        first = members[0]
+        output.append({"region_class": region, "q1": number(first["q1"]), "q2": number(first["q2"]), "q3": number(first["q3"]), "n_overlap": len(members)})
+    return output
+
+
+def halo_size(n_overlap: int) -> float:
+    """Scatter area in points^2; square-root count scaling keeps it compact."""
+    return 24.0 + 18.0 * math.sqrt(max(1, n_overlap))
+
+
 def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: bool = False) -> None:
     ax.set_aspect("equal")
     ax.set_xlim(-0.08, 1.08); ax.set_ylim(-0.08, SQRT3_2 + 0.08); ax.axis("off")
@@ -258,22 +287,33 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
             ax.plot([a[0], b[0]], [a[1], b[1]], color="#d9d9d9", lw=.45, zorder=0)
     ax.add_patch(Polygon(vertices, closed=True, fill=False, edgecolor="#333333", lw=.8, zorder=2))
     ax.plot([.5, .5], [0, SQRT3_2], color="#666666", lw=.65, ls="--", zorder=1)
-    for region in ("outside", "boundary", "inside", "unknown"):
-        subset = [r for r in rows if r["region_class"] == region]
-        if not subset: continue
-        q = np.array([[number(r[f]) for f in Q_FIELDS] for r in subset])
+    # Draw outside first and inside last, while retaining distinct marker
+    # shapes so coincident inside/outside observations remain visible.
+    for region in ("outside", "boundary", "unknown", "inside"):
+        grouped = [g for g in coordinate_groups(rows) if g["region_class"] == region]
+        if not grouped:
+            continue
+        q = np.array([[g[f] for f in Q_FIELDS] for g in grouped])
         x, y = xy(q[:, 0], q[:, 1], q[:, 2])
-        marker = "o" if region in {"inside", "outside"} else "x"
-        ax.scatter(x, y, s=9 if marker == "o" else 14, alpha=.42 if marker == "o" else .7, c=COLORS[region], marker=marker, linewidths=.5, label=f"{region} (n={len(subset)})", zorder=3)
+        color = COLORS[region]
+        marker = REGION_MARKERS[region]
+        ax.scatter(x, y, s=[halo_size(int(g["n_overlap"])) for g in grouped], c=color, alpha=.18,
+                   edgecolors=color, linewidths=.65, marker="o", clip_on=False, zorder=3)
+        ax.scatter(x, y, s=9 if marker != "x" else 14, c=color, alpha=.95,
+                   edgecolors=color, linewidths=.7, marker=marker, clip_on=False,
+                   label=f"{region} (n={sum(int(g['n_overlap']) for g in grouped)})", zorder=4)
     counts = {region: sum(1 for r in rows if r["region_class"] == region) for region in ("inside", "outside")}
     ax.text(.5, SQRT3_2 + .012, "q1 = 1\nbaseline", ha="center", va="bottom", fontsize=7)
     ax.text(-.035, -.035, "q2 = 1\nalternative", ha="right", va="top", fontsize=7)
     ax.text(1.035, -.035, "q3 = 1\nthird", ha="left", va="top", fontsize=7)
     ax.set_title(f"{title}\ninside n={counts['inside']}; outside n={counts['outside']}", fontsize=8.5, pad=16, linespacing=1.05)
     if show_legend:
-        handles = [Line2D([0], [0], marker="o", color="none", markerfacecolor=COLORS[r], markeredgecolor=COLORS[r], alpha=.7, markersize=5, label=r) for r in ("inside", "outside")]
-        handles.append(Line2D([0], [0], color="#666", ls="--", lw=.65, label="q2 = q3"))
-        ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(.5, -0.08), ncol=3, frameon=False, fontsize=7)
+        region_handles = [Line2D([0], [0], marker=REGION_MARKERS[r], color="none", markerfacecolor=COLORS[r], markeredgecolor=COLORS[r], alpha=.85, markersize=5, label=r) for r in ("inside", "outside")]
+        region_handles.append(Line2D([0], [0], color="#666", ls="--", lw=.65, label="q2 = q3"))
+        region_legend = ax.legend(handles=region_handles, loc="upper center", bbox_to_anchor=(.5, -0.08), ncol=3, frameon=False, fontsize=7)
+        ax.add_artist(region_legend)
+        size_handles = [Line2D([0], [0], marker="o", linestyle="none", color=COLORS["outside"], markerfacecolor=COLORS["outside"], alpha=.32, markersize=math.sqrt(halo_size(n)) * .9, label=f"n={n}") for n in (1, 5, 20, 100)]
+        ax.legend(handles=size_handles, title="overlap multiplicity", loc="upper center", bbox_to_anchor=(.5, -0.20), ncol=4, frameon=False, fontsize=6.5, title_fontsize=6.5, handletextpad=.4, columnspacing=.8)
 
 
 def savefig(fig, path: Path) -> None:
@@ -315,7 +355,7 @@ def make_figures(rows: list[dict[str, object]], out: Path) -> None:
     for dataset, title in (("neoaves_chr4", "Neoaves chr4 (N61)"), ("fire_ants_chr16", "Fire ants chr16"), ("anopheles_2la", "Anopheles 2La"), ("house_mouse_t_complex", "House mouse chr17")):
         fig, ax = plt.subplots(figsize=(4.2, 4.1)); draw_simplex(ax, by[dataset], title, True); savefig(fig, fig_dir / f"{dataset}_qss_simplex")
     fig, axes = plt.subplots(1, 4, figsize=(12.5, 3.5))
-    for ax, lg in zip(axes, ("LG01", "LG02", "LG07", "LG12")): draw_simplex(ax, [r for r in by["atlantic_cod"] if r["chromosome"] == lg], f"Atlantic cod {lg}", j == 0)
+    for j, (ax, lg) in enumerate(zip(axes, ("LG01", "LG02", "LG07", "LG12"))): draw_simplex(ax, [r for r in by["atlantic_cod"] if r["chromosome"] == lg], f"Atlantic cod {lg}", j == 0)
     savefig(fig, fig_dir / "atlantic_cod_qss_simplex_four_panel")
     fig, ax = plt.subplots(figsize=(4.8, 4.5)); draw_simplex(ax, by["atlantic_cod"], "Atlantic cod (LG01, LG02, LG07, LG12)", True); savefig(fig, fig_dir / "atlantic_cod_qss_simplex")
 
@@ -331,13 +371,21 @@ def main() -> None:
     summary_fields = ["dataset", "chromosome", "region_class", "n_observations", "mean_q1", "mean_q2", "mean_q3", "median_q1", "median_q2", "median_q3", "fraction_q2_gt_q1", "fraction_q2_gt_q3", "fraction_q1_gt_q2_and_q3"]
     write_tsv(out / "inside_outside_summary.tsv", summaries(rows), summary_fields)
     write_tsv(out / "excluded_qss.tsv", excluded, STANDARD_FIELDS + ["exclusion_reason"])
+    overlap_rows = []
+    panel_groups: dict[tuple[str, str], list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        panel_groups[(str(row["dataset"]), panel_for_row(row))].append(row)
+    for (dataset, panel), panel_rows in sorted(panel_groups.items()):
+        for group in coordinate_groups(panel_rows):
+            overlap_rows.append({"dataset": dataset, "panel": panel, **group})
+    write_tsv(out / "overlap_counts.tsv", overlap_rows, ["dataset", "panel", "region_class", "q1", "q2", "q3", "n_overlap"])
     audit = out / "data_audit.md"
     lines = ["# Empirical QSS simplex data audit", "", "All sources are frozen postprocessing tables used by the existing `qss_dw_aw_combined_all_datasets` figure. No gene trees or ASTRAL analyses were rerun.", "", "## Sources"]
     for dataset, p in provenance.items():
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "halo_area": "24 + 18*sqrt(n_overlap)", "core_markers": REGION_MARKERS, "coordinates_shifted": False}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 
