@@ -44,6 +44,9 @@ REGION_ORDER = ("inside", "outside", "boundary", "unknown")
 REGION_MARKERS = {"inside": "o", "outside": "s", "boundary": "D", "unknown": "x"}
 SQRT3_2 = math.sqrt(3.0) / 2.0
 Q_SUM_TOLERANCE = 2e-6  # cod support is stored at six decimal places.
+MARKER_BASE_AREA = 7.0
+MARKER_LOG_SCALE = 4.0
+MARKER_MAX_AREA = 32.0
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -270,9 +273,9 @@ def coordinate_groups(rows: list[dict[str, object]], decimals: int = 12) -> list
     return output
 
 
-def halo_size(n_overlap: int) -> float:
-    """Scatter area in points^2; square-root count scaling keeps it compact."""
-    return 24.0 + 18.0 * math.sqrt(max(1, n_overlap))
+def marker_area(n_overlap: int) -> float:
+    """Compact marker area in points^2 using logarithmic multiplicity scaling."""
+    return min(MARKER_MAX_AREA, MARKER_BASE_AREA + MARKER_LOG_SCALE * math.log2(max(1, n_overlap)))
 
 
 def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: bool = False) -> None:
@@ -288,19 +291,20 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
     ax.add_patch(Polygon(vertices, closed=True, fill=False, edgecolor="#333333", lw=.8, zorder=2))
     ax.plot([.5, .5], [0, SQRT3_2], color="#666666", lw=.65, ls="--", zorder=1)
     # Draw outside first and inside last, while retaining distinct marker
-    # shapes so coincident inside/outside observations remain visible.
+    # shapes so coincident inside/outside observations remain visible. Within
+    # every region, the sorted PathCollection draws smaller multiplicities
+    # before larger ones.
     for region in ("outside", "boundary", "unknown", "inside"):
         grouped = [g for g in coordinate_groups(rows) if g["region_class"] == region]
         if not grouped:
             continue
+        grouped.sort(key=lambda g: int(g["n_overlap"]))
         q = np.array([[g[f] for f in Q_FIELDS] for g in grouped])
         x, y = xy(q[:, 0], q[:, 1], q[:, 2])
         color = COLORS[region]
         marker = REGION_MARKERS[region]
-        ax.scatter(x, y, s=[halo_size(int(g["n_overlap"])) for g in grouped], c=color, alpha=.18,
-                   edgecolors=color, linewidths=.65, marker="o", clip_on=False, zorder=3)
-        ax.scatter(x, y, s=9 if marker != "x" else 14, c=color, alpha=.95,
-                   edgecolors=color, linewidths=.7, marker=marker, clip_on=False,
+        ax.scatter(x, y, s=[marker_area(int(g["n_overlap"])) for g in grouped], c=color, alpha=.88,
+                   edgecolors="#333333", linewidths=.25, marker=marker, clip_on=False,
                    label=f"{region} (n={sum(int(g['n_overlap']) for g in grouped)})", zorder=4)
     counts = {region: sum(1 for r in rows if r["region_class"] == region) for region in ("inside", "outside")}
     ax.text(.5, SQRT3_2 + .012, "q1 = 1\nbaseline", ha="center", va="bottom", fontsize=7)
@@ -312,8 +316,8 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
         region_handles.append(Line2D([0], [0], color="#666", ls="--", lw=.65, label="q2 = q3"))
         region_legend = ax.legend(handles=region_handles, loc="upper center", bbox_to_anchor=(.5, -0.08), ncol=3, frameon=False, fontsize=7)
         ax.add_artist(region_legend)
-        size_handles = [Line2D([0], [0], marker="o", linestyle="none", color=COLORS["outside"], markerfacecolor=COLORS["outside"], alpha=.32, markersize=math.sqrt(halo_size(n)) * .9, label=f"n={n}") for n in (1, 5, 20, 100)]
-        ax.legend(handles=size_handles, title="overlap multiplicity", loc="upper center", bbox_to_anchor=(.5, -0.20), ncol=4, frameon=False, fontsize=6.5, title_fontsize=6.5, handletextpad=.4, columnspacing=.8)
+        size_handles = [Line2D([0], [0], marker="o", linestyle="none", color="#333333", markerfacecolor=COLORS["outside"], alpha=.88, markersize=math.sqrt(marker_area(n)) * 1.15, label=f"n={n}") for n in (1, 10, 100)]
+        ax.legend(handles=size_handles, title="overlap multiplicity", loc="upper center", bbox_to_anchor=(.5, -0.20), ncol=3, frameon=False, fontsize=6.5, title_fontsize=6.5, handletextpad=.4, columnspacing=.8)
 
 
 def savefig(fig, path: Path) -> None:
@@ -385,7 +389,7 @@ def main() -> None:
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "halo_area": "24 + 18*sqrt(n_overlap)", "core_markers": REGION_MARKERS, "coordinates_shifted": False}}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(32, 7 + 4*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": 0.88, "coordinates_shifted": False}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 

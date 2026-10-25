@@ -56,13 +56,14 @@
   ],
   "overlap_encoding": {
     "grouping_round_decimals": 12,
-    "halo_area": "24 + 18*sqrt(n_overlap)",
+    "marker_area": "min(32, 7 + 4*log2(n_overlap))",
     "core_markers": {
       "inside": "o",
       "outside": "s",
       "boundary": "D",
       "unknown": "x"
     },
+    "alpha": 0.88,
     "coordinates_shifted": false
   }
 }

@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
-from empirical.combined_quartet_simplex.build_quartet_simplex import interval_state, validate_qss, xy, SQRT3_2, TOPOLOGY_MAPPINGS, coordinate_groups, halo_size
+from empirical.combined_quartet_simplex.build_quartet_simplex import interval_state, validate_qss, xy, SQRT3_2, TOPOLOGY_MAPPINGS, coordinate_groups, marker_area, MARKER_MAX_AREA
 
 
 def test_simplex_vertices_and_barycenter():
@@ -57,7 +57,8 @@ def test_coordinate_groups_preserve_coordinates_and_multiplicity():
     assert sum(g["n_overlap"] for g in groups) == len(rows)
 
 
-def test_halo_scaling_distinguishes_counts_and_handles_vertices():
-    assert halo_size(1) < halo_size(5) < halo_size(20) < halo_size(100)
+def test_log_marker_scaling_distinguishes_counts_and_handles_vertices():
+    assert marker_area(1) < marker_area(10) < marker_area(100)
+    assert marker_area(1000000) == MARKER_MAX_AREA
     x, y = xy(__import__('numpy').array([0.0]), __import__('numpy').array([1.0]), __import__('numpy').array([0.0]))
     assert (x[0], y[0]) == (0.0, 0.0)
