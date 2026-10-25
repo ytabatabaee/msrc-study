@@ -2569,6 +2569,8 @@ Outputs are under `empirical/combined_quartet_simplex/figures/`, with tests in
 The simplex rendering groups identical q1/q2/q3 coordinates by panel and
 region class, records multiplicities in `overlap_counts.tsv`, and uses compact
 alpha-0.48 markers with capped, subtle logarithmic area scaling and separate
-soft halos. Lower-multiplicity groups are drawn first, and distinct core
+soft halos using the original `24 + 18*sqrt(n_overlap)` area relationship.
+Halo opacity is capped at 0.10 so the larger halos remain subordinate to the
+core markers. Lower-multiplicity groups are drawn first, and distinct core
 shapes preserve coincident inside/outside observations without moving any
 coordinates.
