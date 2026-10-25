@@ -46,3 +46,26 @@ multiplies left/right sister contributions only conditionally on that count.
 The derivation documents a finite-M boundary distinction: literal zero-
 duration `msrc-sim` speciation still performs binomial daughter initialization,
 so it is distinct from the separate collapsed shared-population kernel.
+
+## Pectinate species tree
+
+`unbalanced_species_tree.py` implements the exact hierarchical recursion for
+`(((1,2),3),4)`. It adds the 11-state three-lineage operator `G3` (eight
+background configurations plus three absorbing quartet topologies), while
+reusing the existing 19-state `G4` root operator. Sister-pair coalescence is
+seeded into the `Q1` absorbing state before the intermediate branch is
+propagated, which preserves the shared count history and avoids double
+counting early events. The derivation and standalone theorem are in
+`UNBALANCED_SPECIES_TREE_DERIVATION.md` and `unbalanced_quartet_theorem.tex`.
+
+Run its compact independent simulator check with:
+
+```text
+python simulations/quartet/moran_theory/validate_unbalanced_species_tree.py \
+  --smoke --replicates 1000
+```
+
+The validation driver uses the authoritative `msrc-sim` checkout, creates a
+fresh Moran history for every replicate, and reports Monte Carlo standard
+errors. Larger grids are prepared by the same script but are not submitted or
+run automatically.

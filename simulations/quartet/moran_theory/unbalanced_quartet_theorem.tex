@@ -1,0 +1,73 @@
+\newcommand{\MSRC}{\mathrm{MSRC}}
+
+\begin{theorem}[Finite-$M$ pectinate quartet recursion]
+Consider the hierarchical finite-population model with species tree
+$(((1,2),3),4)$. Let $M_R,M_I,M_S,M_1,\ldots,M_4$ be the chromosome-copy
+counts on the root, intermediate, sister, and terminal branches. Let
+$T_A,T_I,T_S,T_1,\ldots,T_4$ be their durations, let $\rho\geq0$ be the
+effective switching rate, and let $\pi_{\mathrm{old}}$ be the count law at the
+older root boundary. Use the simulator rates
+\[
+c_1(k)=1/\max(k,1),\qquad c_0(k)=1/\max(M-k,1),
+\]
+and binomial daughter inheritance conditional on the parental count.
+
+For the eight background states of lineages $1,2,3$, define $G_3(k)$ by
+independent background switching and absorption into $Q_1=12|34$,
+$Q_2=13|24$, and $Q_3=14|23$ at rates
+\[
+R_3[z,1]={\bf1}_{z_1=z_2}c_{z_1}(k),\quad
+R_3[z,2]={\bf1}_{z_1=z_3}c_{z_1}(k),\quad
+R_3[z,3]={\bf1}_{z_2=z_3}c_{z_2}(k).
+\]
+Set
+\[
+A_3=Q_{M_I}\otimes I_{11}+
+\operatorname{blockdiag}_{k=0}^{M_I}G_3(k)^T,
+\quad
+A_4=Q_{M_R}\otimes I_{19}+
+\operatorname{blockdiag}_{k=0}^{M_R}G_4(k)^T.
+\]
+Let $W_3$ be the result of the terminal, sister, intermediate, and inheritance
+recursion described below, conditional on the root-node count, and let
+$F_{\mathrm{pect}}$ be the four-lineage unresolved entry vector formed by
+multiplying its eight transient states by the taxon-4 terminal distribution.
+If
+\[
+c_i=\sum_k \pi_R(k)W_3(k,Q_i),\qquad
+\pi_R=e^{Q_{M_R}^TT_A}\pi_{\mathrm{old}},
+\]
+and
+\[
+r_i=(\pi_{\mathrm{old}}\otimes h_i)^T
+e^{A_4T_A}F_{\mathrm{pect}},
+\]
+where $h_i$ is the usual residual vector for $Q_i$, then
+\[
+\Pr(12|34)=c_1+r_1,\qquad
+\Pr(13|24)=c_2+r_2,\qquad
+\Pr(14|23)=c_3+r_3.
+\]
+\end{theorem}
+
+\begin{proof}
+The first coalescence among lineages $1,2,3$ fixes the unrooted quartet
+resolution because lineage 4 enters only after that event. Thus the three
+absorbing states of $G_3$ are sufficient and no coalesced-lineage background
+state is needed. The terminal dual lifts, conditional multiplication at the
+shared sister count, and binomial inheritance produce the younger-end
+three-lineage vector. Sister-pair coalescence is inserted in $Q_1$ before
+propagation by $A_3$; the other eight states are propagated by the same
+operator, so the intermediate branch count history is retained.
+
+At the root node, the absorbing entries of the propagated $G_3$ vector give
+$c_i$ after averaging over the count distribution $\pi_R$. The remaining
+transient entries are multiplied by the conditional state of lineage 4 to form
+$F_{\mathrm{pect}}$. The four-lineage dual operator then gives the root
+contributions $r_i$.
+
+Every generator has zero row sum, every inheritance kernel is stochastic, and
+$h_1+h_2+h_3$ is one on the relevant four-lineage states. The three early
+absorbing masses and the root-entry transient mass therefore partition unit
+probability, and the displayed quartet probabilities sum to one.
+\end{proof}

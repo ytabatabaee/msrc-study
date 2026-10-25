@@ -2575,3 +2575,24 @@ of 1, 10, and 100 remain visibly distinct while the halos remain subordinate to
 the core markers. Lower-multiplicity groups are drawn first, and distinct core
 shapes preserve coincident inside/outside observations without moving any
 coordinates.
+
+## Exact finite-M Moran MSRC law on the pectinate tree
+
+The unbalanced species-tree extension is implemented in
+`simulations/quartet/moran_theory/unbalanced_species_tree.py` for
+`(((1,2),3),4)`. It adds an 11-state `G3` operator with eight transient
+arrangement configurations and three absorbing topology states. Sister-pair
+coalescence is seeded into `Q1` before the intermediate branch is propagated,
+so the shared intermediate count history is retained without double counting.
+The existing `A4` operator and residual vectors are reused unchanged at the
+root. The derivation and standalone theorem are in
+`UNBALANCED_SPECIES_TREE_DERIVATION.md` and `unbalanced_quartet_theorem.tex`.
+
+The full Moran theory test suite passes 20 tests, including generator boundary
+conditions, conservation, the ordinary MSC limit
+`q1=1-(2/3)exp(-t), q2=q3=exp(-t)/3`, zero-duration branches, and taxon-label
+symmetry. A compact independent `msrc-sim` smoke validation using 8 cells and
+1,000 independent histories per cell gave RMSE `0.01277`, maximum absolute
+error `0.02996`, and all reported topology rows within 2 and 3 Monte Carlo
+standard errors. Larger parameter-grid validation is prepared by
+`validate_unbalanced_species_tree.py` but has not been submitted or run.

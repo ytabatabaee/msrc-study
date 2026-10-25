@@ -29,6 +29,8 @@ BACKGROUND_INDEX = {z: i for i, z in enumerate(BACKGROUND_STATES)}
 TOPOLOGY_PAIRS = (((0, 1), (2, 3)), ((0, 2), (1, 3)), ((0, 3), (1, 2)))
 PAIR_BACKGROUND_STATES = tuple(product((0, 1), repeat=2))
 PAIR_BACKGROUND_INDEX = {z: i for i, z in enumerate(PAIR_BACKGROUND_STATES)}
+TRIPLE_BACKGROUND_STATES = tuple(product((0, 1), repeat=3))
+TRIPLE_BACKGROUND_INDEX = {z: i for i, z in enumerate(TRIPLE_BACKGROUND_STATES)}
 
 
 @dataclass(frozen=True)
@@ -152,15 +154,50 @@ def G2(k: int, M: int, rho: float) -> csr_matrix:
     return out.tocsr()
 
 
+def G3(k: int, M: int, rho: float) -> csr_matrix:
+    """Conditional 11-state generator for three unresolved lineages.
+
+    The first eight states are the background configurations of lineages
+    1,2,3.  The final states are absorbing quartet resolutions Q1=12|34,
+    Q2=13|24, and Q3=14|23.  Once any two of the three lineages coalesce,
+    the eventual placement of lineage 4 cannot change that unrooted split.
+    """
+    if M <= 0 or not 0 <= k <= M or rho < 0:
+        raise ValueError("require M>0, 0<=k<=M, and rho>=0")
+    p = k / M
+    c1 = 1.0 / max(k, 1)
+    c0 = 1.0 / max(M - k, 1)
+    out = lil_matrix((11, 11), dtype=float)
+    for row, z in enumerate(TRIPLE_BACKGROUND_STATES):
+        exit_rate = 0.0
+        for i, bit in enumerate(z):
+            rate = rho * p if bit == 0 else rho * (1.0 - p)
+            if rate:
+                zz = list(z)
+                zz[i] = 1 - bit
+                out[row, TRIPLE_BACKGROUND_INDEX[tuple(zz)]] += rate
+                exit_rate += rate
+        pair_topologies = ((0, 1), (0, 2), (1, 2))
+        for topology, (i, j) in enumerate(pair_topologies):
+            if z[i] == z[j]:
+                rate = c1 if z[i] else c0
+                out[row, 8 + topology] = rate
+                exit_rate += rate
+        out[row, row] = -exit_rate
+    return out.tocsr()
+
+
 def genealogy_generator(n: int, k: int, M: int, rho: float) -> csr_matrix:
-    """Return the reusable conditional generator for n=1, 2, or 4."""
+    """Return the reusable conditional generator for n=1, 2, 3, or 4."""
     if n == 1:
         return G1(k, M, rho)
     if n == 2:
         return G2(k, M, rho)
+    if n == 3:
+        return G3(k, M, rho)
     if n == 4:
         return G4(k, M, rho)
-    raise ValueError("only n=1, n=2, and n=4 are implemented")
+    raise ValueError("only n=1, n=2, n=3, and n=4 are implemented")
 
 
 def joint_operator_n(
@@ -171,11 +208,22 @@ def joint_operator_n(
     *,
     moran_enabled: bool = True,
 ) -> csr_matrix:
-    """Return the dual branch operator for n=1, 2, or 4 lineages."""
-    state_count = {1: 2, 2: 6, 4: 19}[n]
+    """Return the dual branch operator for n=1, 2, 3, or 4 lineages."""
+    state_count = {1: 2, 2: 6, 3: 11, 4: 19}[n]
     Q = moran_generator(M, selection) if moran_enabled else csr_matrix((M + 1, M + 1))
     blocks = [genealogy_generator(n, k, M, rho).transpose().tocsr() for k in range(M + 1)]
     return (kron(Q, eye(state_count, format="csr"), format="csr") + block_diag(blocks, format="csr")).tocsr()
+
+
+def joint_operator_3(
+    M: int,
+    rho: float,
+    selection: float = 0.0,
+    *,
+    moran_enabled: bool = True,
+) -> csr_matrix:
+    """Return ``A3 = Q_M kron I_11 + blockdiag(G3(k).T)``."""
+    return joint_operator_n(M, rho, 3, selection, moran_enabled=moran_enabled)
 
 
 def dual_lift(
@@ -189,7 +237,7 @@ def dual_lift(
 ) -> np.ndarray:
     """Map young-boundary values to older-boundary values with the dual operator."""
     values = np.asarray(terminal_values, dtype=float)
-    state_count = {1: 2, 2: 6, 4: 19}[n]
+    state_count = {1: 2, 2: 6, 3: 11, 4: 19}[n]
     if values.shape[0] != (M + 1) * state_count:
         raise ValueError("terminal_values has the wrong joint-state dimension")
     A = joint_operator_n(M, rho, n, selection)
