@@ -52,9 +52,9 @@ HALO_RADIUS_FACTOR = 2.5
 HALO_REFERENCE_RADIUS_FACTOR = 2.5
 HALO_BASE_AREA = 24.0
 HALO_SQRT_SCALE = 18.0
-HALO_BASE_ALPHA = 0.012
-HALO_LOG_ALPHA_SCALE = 0.018
-HALO_MAX_ALPHA = 0.10
+HALO_BASE_ALPHA = 0.025
+HALO_LOG_ALPHA_SCALE = 0.030
+HALO_MAX_ALPHA = 0.20
 HALO_LAYER_FRACTIONS = (1.00, 0.83, 0.66, 0.49, 0.32, 0.15)
 HALO_LAYER_WEIGHTS = (0.08, 0.12, 0.16, 0.20, 0.20, 0.24)
 
@@ -424,7 +424,7 @@ def main() -> None:
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 6 + 0.5*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False, "halo": {"area": "24 + 18*sqrt(n_overlap)", "radius_factor": HALO_RADIUS_FACTOR, "total_alpha": "min(0.10, 0.012 + 0.018*log2(n_overlap))", "nested_layer_fractions": HALO_LAYER_FRACTIONS, "nested_layer_weights": HALO_LAYER_WEIGHTS}}}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 6 + 0.5*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False, "halo": {"area": "24 + 18*sqrt(n_overlap)", "radius_factor": HALO_RADIUS_FACTOR, "total_alpha": "min(0.20, 0.025 + 0.03*log2(n_overlap))", "nested_layer_fractions": HALO_LAYER_FRACTIONS, "nested_layer_weights": HALO_LAYER_WEIGHTS}}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 

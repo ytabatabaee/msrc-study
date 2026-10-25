@@ -69,7 +69,7 @@
     "halo": {
       "area": "24 + 18*sqrt(n_overlap)",
       "radius_factor": 2.5,
-      "total_alpha": "min(0.10, 0.012 + 0.018*log2(n_overlap))",
+      "total_alpha": "min(0.20, 0.025 + 0.03*log2(n_overlap))",
       "nested_layer_fractions": [
         1.0,
         0.83,
