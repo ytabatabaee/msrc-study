@@ -1,0 +1,76 @@
+{
+  "treatment": "J48_MIX_REP_E0p075_R03",
+  "dry_run": false,
+  "command": [
+    [
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+      "-i",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/inputs/J48_MIX_REP_E0p075_R03.tre",
+      "-o",
+      "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/results/J48_MIX_REP_E0p075_R03/tree.annotated.nwk",
+      "-u",
+      "2",
+      "-t",
+      "8",
+      "--length",
+      "SULength",
+      "--genelength",
+      "1000.0",
+      "--sulengthtype",
+      "1"
+    ]
+  ],
+  "input": "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/inputs/J48_MIX_REP_E0p075_R03.tre",
+  "input_sha256": "62da500c4eeac2a640da4c3cbbfc1df47fec765bfcfd2a2c9924836d1e9b4da0",
+  "aster_bin": "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+  "aster_bin_sha256": "38d2aad2879605b3bd3d26bb7dbc978dce9cec510d684f64da4a58ead836872a",
+  "hostname": "r180.ib.bridges2.psc.edu",
+  "date_utc": "2026-10-25T05:04:10.715159+00:00",
+  "slurm_job_id": "49800044",
+  "cpu_count": 8,
+  "memory_request": "14336",
+  "mode": "topology_su",
+  "genelength": 1000.0,
+  "sulengthtype": 1,
+  "constraint": null,
+  "runs": [
+    {
+      "mode": "topology_su",
+      "length": "SULength",
+      "command": [
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4",
+        "-i",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/inputs/J48_MIX_REP_E0p075_R03.tre",
+        "-o",
+        "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/results/J48_MIX_REP_E0p075_R03/tree.annotated.nwk",
+        "-u",
+        "2",
+        "-t",
+        "8",
+        "--length",
+        "SULength",
+        "--genelength",
+        "1000.0",
+        "--sulengthtype",
+        "1"
+      ],
+      "returncode": 0,
+      "output": "/ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/results/J48_MIX_REP_E0p075_R03/tree.annotated.nwk",
+      "started_utc": "2026-10-25T05:04:10.747275+00:00"
+    }
+  ],
+  "taxa": 48,
+  "branches": 94,
+  "source_sha256": "33676d3af34024b7077e24ab2307b652e123eda4d0585a6e040616f026d26b9f",
+  "annotated_sha256": "33676d3af34024b7077e24ab2307b652e123eda4d0585a6e040616f026d26b9f",
+  "source_kind": "single_run",
+  "internal_branches": 45,
+  "terminal_branches": 49,
+  "extraction_wall_seconds": 1.4234139486216009,
+  "inference_wall_seconds": 2339.849300350994,
+  "output_sha256": {
+    "tree.annotated.nwk": "33676d3af34024b7077e24ab2307b652e123eda4d0585a6e040616f026d26b9f",
+    "tree.cu.nwk": "b5c05abaac10682c40be99ab45f7b9a22fb7a35e67e53725e2945f0fe4bb676c",
+    "tree.su.nwk": "81de7a6dd8b444d8c6efe311c5fdeaf7891e19370f8fa2c8d4931521c1499e05"
+  }
+}

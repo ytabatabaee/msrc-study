@@ -1,0 +1,1 @@
+/ocean/projects/cis260126p/shared/neoaves_stage4e/software/astral4 -i /ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/inputs/J48_MIX_REP_E0p050_R03.tre -o /ocean/projects/cis260126p/shared/neoaves_stage4e/outputs/J48_MIX_REPLICATES/results/J48_MIX_REP_E0p050_R03/tree.annotated.nwk -u 2 -t 8 --length SULength --genelength 1000.0 --sulengthtype 1

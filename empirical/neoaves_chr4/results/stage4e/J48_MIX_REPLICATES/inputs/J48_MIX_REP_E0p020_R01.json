@@ -1,0 +1,19 @@
+{
+  "mixture_id": "J48_MIX_REP_E0p020_R01",
+  "epsilon_requested": "0.020",
+  "replicate": "1",
+  "seed": "76001",
+  "total_records": "62945",
+  "n_chr4_records": "1259",
+  "n_background_records": "61686",
+  "realized_epsilon": "0.020001588689",
+  "source_tree_sha256": "c0a0ec9b432405da548a6cdb37460ccf1c0d9d1b5a5211d74d5f397c70e0f943",
+  "locus_manifest_sha256": "8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac",
+  "taxon_mapping_sha256": "5bd5c663c65c5b1bad797f2d337e97a29b6400184c32a2d1e0892a012da37f64",
+  "status": "prepared",
+  "input_relative_path": "inputs/J48_MIX_REP_E0p020_R01.tre",
+  "result_relative_path": "results/J48_MIX_REP_E0p020_R01",
+  "input_sha256": "85999ac8e4a13283131c14a96bf908a3353902bd7be8dba0a539291cf2274ffa",
+  "n_background_distinct": 57128,
+  "n_chr4_distinct": 6254
+}
