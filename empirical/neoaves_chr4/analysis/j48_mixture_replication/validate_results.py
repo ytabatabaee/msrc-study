@@ -19,8 +19,16 @@ def rows(path):
     with path.open(newline="") as f: return list(csv.DictReader(f, delimiter="\t"))
 
 def validate(root: Path, manifest: Path, only: str | None = None) -> list[dict[str, object]]:
+    manifest_rows = rows(manifest)
+    if only is None:
+        if len(manifest_rows) != 25 or len({r["mixture_id"] for r in manifest_rows}) != 25:
+            raise ValueError(f"expected 25 unique manifest rows, observed {len(manifest_rows)}")
+        if sorted({float(r["epsilon_requested"]) for r in manifest_rows}) != [0.02, 0.05, 0.075, 0.1, 0.15]:
+            raise ValueError("manifest epsilon grid is not the five-replicate grid")
+        if len({r["seed"] for r in manifest_rows}) != 25:
+            raise ValueError("replicate seeds are not unique")
     result = []
-    for row in rows(manifest):
+    for row in manifest_rows:
         if only and row["mixture_id"] != only: continue
         d = root / Path(row["result_relative_path"])
         if not d.is_dir(): raise ValueError(f"missing result directory: {d}")
@@ -38,13 +46,23 @@ def validate(root: Path, manifest: Path, only: str | None = None) -> list[dict[s
         if not input_sidecar.exists(): raise ValueError(f"missing input provenance sidecar: {input_sidecar}")
         input_meta = json.loads(input_sidecar.read_text())
         if input_meta.get("input_sha256") != prov.get("input_sha256"): raise ValueError(f"input checksum mismatch: {d}")
-        if input_meta.get("seed") != row.get("seed") or input_meta.get("epsilon_requested") != row.get("epsilon_requested"): raise ValueError(f"input manifest metadata mismatch: {d}")
+        if str(input_meta.get("seed")) != str(row.get("seed")) or str(input_meta.get("epsilon_requested")) != str(row.get("epsilon_requested")): raise ValueError(f"input manifest metadata mismatch: {d}")
+        if int(input_meta.get("total_records", -1)) != 62945: raise ValueError(f"record-count mismatch: {d}")
+        if int(input_meta.get("n_chr4_records", -1)) != int(row["n_chr4_records"]): raise ValueError(f"chr4-count mismatch: {d}")
+        if int(input_meta.get("n_background_records", -1)) != int(row["n_background_records"]): raise ValueError(f"background-count mismatch: {d}")
+        if not run.get("runs") or any(int(x.get("returncode", 1)) != 0 for x in run["runs"]): raise ValueError(f"ASTRAL run record is not successful: {d}")
         command_text = json.dumps(run.get("command", []))
         if run.get("mode") != "topology_su" or '"--length", "SULength"' not in command_text: raise ValueError(f"not a single topology_su/SULength run: {d}")
-        result.append({"mixture_id": row["mixture_id"], "epsilon": row["epsilon_requested"], "replicate": row["replicate"], "n_taxa": len(taxa_cu), "n_internal_splits": len([r for r in rec_cu if r["branch_type"] == "internal"]), "cu_su_topology_agree": "true", "exit_code": 0, "tree_cu_sha256": sha256(cu_tree), "tree_su_sha256": sha256(su_tree), "input_sha256": prov.get("input_sha256", ""), "astral_binary_sha256": prov.get("aster_bin_sha256", ""), "mode": run.get("mode", "")})
+        result.append({"mixture_id": row["mixture_id"], "epsilon": row["epsilon_requested"], "replicate": row["replicate"], "seed": row["seed"], "realized_epsilon": row["realized_epsilon"], "total_records": row["total_records"], "n_chr4_records": row["n_chr4_records"], "n_background_records": row["n_background_records"], "n_taxa": len(taxa_cu), "n_internal_splits": len([r for r in rec_cu if r["branch_type"] == "internal"]), "cu_su_topology_agree": "true", "exit_code": 0, "tree_cu_sha256": sha256(cu_tree), "tree_su_sha256": sha256(su_tree), "input_sha256": prov.get("input_sha256", ""), "astral_binary_sha256": prov.get("aster_bin_sha256", ""), "mode": run.get("mode", ""), "checksum_valid": "true", "metadata_valid": "true"})
     return result
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--root", type=Path, required=True); p.add_argument("--manifest", type=Path, required=True); p.add_argument("--only"); args = p.parse_args()
-    print(json.dumps(validate(args.root, args.manifest, args.only), indent=2))
+    p = argparse.ArgumentParser(); p.add_argument("--root", type=Path, required=True); p.add_argument("--manifest", type=Path, required=True); p.add_argument("--only"); p.add_argument("--output", type=Path); args = p.parse_args()
+    result = validate(args.root, args.manifest, args.only)
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        fields = list(result[0]) if result else ["status"]
+        with args.output.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n"); w.writeheader(); w.writerows(result)
+    print(json.dumps({"validated": len(result), "output": str(args.output) if args.output else None}, indent=2))
 if __name__ == "__main__": main()

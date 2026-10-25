@@ -12,6 +12,7 @@ def load(path, name):
 prep = load(BASE / "analysis/j48_mixture_replication/prepare_manifest.py", "rep_prepare")
 original = load(BASE / "scripts/05_stage4e_analyze_j48_mixtures.py", "rep_original")
 scorer = load(BASE / "analysis/j48_mixture_replication/analyze_fixed_topology_scores.py", "rep_scorer")
+rep_analysis = load(BASE / "analysis/j48_mixture_replication/analyze_replicates.py", "rep_analysis")
 
 class ReplicationWorkflowTest(unittest.TestCase):
     def test_frozen_manifest_shape_and_seeds(self):
@@ -72,5 +73,16 @@ class ReplicationWorkflowTest(unittest.TestCase):
             self.assertEqual(swapped["delta_Q"], -1)
             equal = scorer.score_gene_records(lines, t0, t0)
             self.assertEqual(equal["n_diagnostic_quartets"], 0); self.assertEqual(equal["delta_Q"], 0)
+
+    def test_completed_replicate_aggregation_and_focal_states(self):
+        root = BASE / "results/stage4e/J48_MIX_REPLICATES"
+        manifest = BASE / "results/stage4e/j48_mixture_replication_manifest.tsv"
+        rows, summary, focal, branches, meta = rep_analysis.analyze(root, manifest)
+        self.assertEqual(len(rows), 25)
+        counts = {(float(r["epsilon"]), r["state"]): r["n"] for r in summary if r["category"] == "complete_topology"}
+        self.assertEqual([counts[(e, "J48_T0")] for e in (0.02, 0.05, 0.075, 0.10, 0.15)], [0, 0, 5, 4, 4])
+        self.assertEqual(len(meta["novel"]), 3)
+        self.assertEqual({r["relationship"] for r in focal}, {"N61", "N62", "Columbea"})
+        self.assertTrue(all(r["homologous_cu_su"] in {"true", "false"} for r in branches))
 
 if __name__ == "__main__": unittest.main()

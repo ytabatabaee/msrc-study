@@ -44,10 +44,11 @@ mixture weight is a with-replacement sampling fraction, not a measured
 fraction of the genome under suppressed recombination. Follow-up replication
 recommendations are in `results/stage4e/j48_mixture_followup_design.md`.
 
-The replication workflow is prepared under `analysis/j48_mixture_replication/`.
-It audits the low localPP values in the completed trees and freezes 25 new
-with-replacement mixtures at five epsilon values, but no replicate ASTRAL job
-has been launched. The exact manifest is
+The replication workflow and its 25 completed Bridges-2 results are under
+`analysis/j48_mixture_replication/` and
+`results/stage4e/J48_MIX_REPLICATES/`. It audits the low localPP values in the
+completed trees and validates five independent with-replacement mixtures at
+five epsilon values. The exact manifest is
 `results/stage4e/j48_mixture_replication_manifest.tsv`; the Bridges-2 runbook
 uses a separate `J48_MIX_REPLICATES` output tree and refuses to overwrite
 invalid or incomplete existing results. The corrected localPP audit separates
@@ -56,7 +57,12 @@ Columbea is biologically q2 while branch-local q1 is favored, whereas at
 epsilon 0.10 N62 and Columbea have branch-local q3 slightly favored and very
 low localPP. The current single-seed grid supports an observed 0.05–0.10
 transition interval only. Replicates are required to estimate the probability
-of recovering T0 at each weight.
+of recovering T0 at each weight. The new replicates recover J48_T0 in 0/5,
+0/5, 5/5, 4/5, and 4/5 runs at epsilon 0.02, 0.05, 0.075, 0.10, and 0.15,
+respectively. This narrows the observed transition to between 0.05 and 0.075
+on the tested grid while retaining uncertainty from five replicates. The
+mixture weight remains a with-replacement sampling fraction, not a measured
+fraction of the genome under suppressed recombination.
 
 `analyze_fixed_topology_scores.py` implements an exact cancellation-aware
 fixed-candidate quartet concordance score on the 3,597 four-taxon subsets
