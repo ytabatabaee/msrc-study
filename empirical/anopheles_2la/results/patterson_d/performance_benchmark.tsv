@@ -1,0 +1,2 @@
+benchmark_type	n_sites	n_samples	scalar_seconds	vectorized_seconds	speedup	scalar_abba	vectorized_abba	scalar_baba	vectorized_baba	scalar_D	vectorized_D	peak_rss_scalar_mib	peak_rss_vectorized_mib	status
+synthetic_fixed_outgroup_50kb	50000	47	9.863339	0.453567	21.746	6229.729625	6229.729625	6257.679296	6257.679296	-0.002238228169	-0.002238228169	72.35	96.10	PASS

@@ -1,0 +1,7 @@
+case	fixture_description	expected_abba	expected_baba	expected_D	implementation_D	status
+plus_one	fixed polarized ABBA site	1.0	0.0	1.0	1.0	PASS
+minus_one	fixed polarized BABA site	0.0	1.0	-1.0	-1.0	PASS
+balanced	equal ABBA and BABA contributions	1.0	1.0	0.0	0.0	PASS
+frequency_weighted	heterozygous and intermediate population frequencies	0.375	0.125	0.5	0.5	PASS
+missing_calls	partial missing diploids excluded by the shared callable-site rule	1.0	0.0	1.0	1.0	PASS
+ref_alt_recode	REF/ALT complement with outgroup polarization flipped consistently	0.375	0.125	0.5	0.5	PASS

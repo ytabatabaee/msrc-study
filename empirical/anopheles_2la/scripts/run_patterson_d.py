@@ -34,6 +34,10 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: f.read(1 << 20), b""): h.update(block)
     return h.hexdigest()
 
+def peak_rss_mib() -> float:
+    raw = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    return float(raw / (1024 * 1024) if sys.platform == "darwin" else raw / 1024)
+
 def read_tsv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="") as f: return list(csv.DictReader(f, delimiter="\t"))
 
@@ -42,6 +46,16 @@ def write_tsv(path: Path, rows: list[dict], fields: list[str]) -> None:
     with path.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n"); w.writeheader()
         for row in rows: w.writerow({k: row.get(k, "") for k in fields})
+
+def atomic_write_tsv(path: Path, rows: list[dict], fields: list[str]) -> None:
+    temporary = path.with_name(path.name + ".partial")
+    write_tsv(temporary, rows, fields)
+    os.replace(temporary, path)
+
+def atomic_write_json(path: Path, value: object) -> None:
+    temporary = path.with_name(path.name + ".partial")
+    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
+    os.replace(temporary, path)
 
 def group_ids() -> tuple[dict[str, list[str]], list[dict[str, str]]]:
     all_rows, primary = read_tsv(SAMPLE_MANIFEST), read_tsv(PRIMARY)
@@ -152,6 +166,27 @@ def calculate_row(gt: np.ndarray, positions: np.ndarray, window: dict[str, str],
     row = {"window_id": window["window_id"], "chrom": window["chrom"], "start": window["start"], "end": window["end"], "region_class": window.get("region_class", window.get("position_class", "")), "test_id": design["test_id"], "P1": design["P1"], "P2": design["P2"], "P3": design["P3"], "outgroup": design["outgroup"], "filter_label": "MAC2" if min_mac else "primary", "abba": result.abba, "baba": result.baba, "abba_plus_baba": result.denominator, "D_patterson": result.d, "n_sites_examined": result.n_examined, "n_sites_pass": result.n_pass, "n_sites_informative": result.n_informative, "n_outgroup_fixed": result.outgroup_fixed_ancestral, "mean_callable_P1": result.mean_callable_chromosomes["P1"], "mean_callable_P2": result.mean_callable_chromosomes["P2"], "mean_callable_P3": result.mean_callable_chromosomes["P3"], "mean_callable_O": result.mean_callable_chromosomes["O"], "exclusion_counts": json.dumps(result.exclusions, sort_keys=True), "eligibility": "valid" if result.d is not None else "undefined_denominator"}
     return row
 
+def validate_completed_rows(rows: list[dict[str, str]], windows_list: list[dict[str, str]], designs: list[dict[str, str]]) -> set[tuple[str, str, str]]:
+    windows_by_id = {w["window_id"]: w for w in windows_list}; designs_by_id = {d["test_id"]: d for d in designs}; completed = set()
+    required = {"window_id", "chrom", "start", "end", "test_id", "filter_label", "P1", "P2", "P3", "outgroup"}
+    for row in rows:
+        if not required.issubset(row) or not row.get("window_id"):
+            raise ValueError("checkpoint contains a truncated or incompatible result row")
+        if row["window_id"] not in windows_by_id or row["test_id"] not in designs_by_id or row["filter_label"] not in {"primary", "MAC2"}:
+            raise ValueError(f"checkpoint contains an unknown result key: {row.get('window_id')}/{row.get('test_id')}/{row.get('filter_label')}")
+        window, design = windows_by_id[row["window_id"]], designs_by_id[row["test_id"]]
+        if (row["chrom"], row["start"], row["end"]) != (window["chrom"], window["start"], window["end"]):
+            raise ValueError(f"checkpoint coordinate mismatch for {row['window_id']}")
+        if (row["P1"], row["P2"], row["P3"], row["outgroup"]) != (design["P1"], design["P2"], design["P3"], design["outgroup"]):
+            raise ValueError(f"checkpoint design mismatch for {row['test_id']}")
+        key = (row["window_id"], row["test_id"], row["filter_label"])
+        if key in completed: raise ValueError(f"duplicate checkpoint row: {key}")
+        completed.add(key)
+    return completed
+
+def expected_result_keys(window_rows: list[dict[str, str]], designs: list[dict[str, str]]) -> set[tuple[str, str, str]]:
+    return {(w["window_id"], d["test_id"], label) for w in window_rows for d in designs for label in ("primary", "MAC2")}
+
 def load_stage2r_comparison(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     sources = {"C": BASE / "results" / "stage2r_crossed_distance_signal.tsv", "M": BASE / "results" / "stage2r_quartet_margin_signal.tsv", "D_topology": BASE / "results" / "stage2r_quartet_topology_signal.tsv"}
     maps = {key: {r["window_id"]: r for r in read_tsv(path)} for key, path in sources.items()}
@@ -201,18 +236,25 @@ def run_access(args: argparse.Namespace, pilot: bool) -> list[dict[str, object]]
     metadata = ag3.sample_metadata(sample_sets=SAMPLE_SET); indices = design_index(all_ids, metadata)
     prov_path = OUT / "provenance.json"; prov = json.loads(prov_path.read_text()); prov.update({"actual_metadata_sample_count": len(metadata), "requested_sample_ids": all_ids, "requested_sample_indices": [indices[x] for x in all_ids], "sample_order_verified": True, "pilot_window_ids": [w["window_id"] for w in windows(pilot)], "pilot_query_mode": "one independent 50-kb query per window" if pilot else "contiguous bounded chunks"}); prov_path.write_text(json.dumps(prov, indent=2) + "\n")
     windows_list = windows(pilot); results = []; output = OUT / ("pilot_results.tsv" if pilot else "window_results.tsv")
-    fields = ["window_id","chrom","start","end","region_class","test_id","P1","P2","P3","outgroup","filter_label","abba","baba","abba_plus_baba","D_patterson","n_sites_examined","n_sites_pass","n_sites_informative","n_outgroup_fixed","mean_callable_P1","mean_callable_P2","mean_callable_P3","mean_callable_O","exclusion_counts","eligibility","query_seconds","peak_rss_mb"]
-    existing_rows = [r for r in read_tsv(output) if r.get("window_id") and r.get("test_id") and r.get("filter_label")] if output.exists() else []
-    completed = {(r["window_id"], r["test_id"], r["filter_label"]) for r in existing_rows}
+    fields = ["window_id","chrom","start","end","region_class","test_id","P1","P2","P3","outgroup","filter_label","abba","baba","abba_plus_baba","D_patterson","n_sites_examined","n_sites_pass","n_sites_informative","n_outgroup_fixed","mean_callable_P1","mean_callable_P2","mean_callable_P3","mean_callable_O","exclusion_counts","eligibility","query_seconds","compute_seconds","total_elapsed_seconds","peak_rss_mib"]
+    existing_rows = read_tsv(output) if output.exists() else []
+    completed = validate_completed_rows(existing_rows, windows_list, selected_designs)
     for chunk in query_regions(windows_list, pilot, args.chunk_bp):
         region = f"{CHROM}:{chunk[0]['start']}-{chunk[-1]['end']}"
+        expected = expected_result_keys(chunk, selected_designs)
+        missing = expected - completed
+        if not missing:
+            print(f"skip complete {region}", flush=True)
+            continue
         started = time.perf_counter(); print(f"query {region} ({len(chunk)} window{'s' if len(chunk) != 1 else ''})", flush=True)
         ds = ag3.snp_calls(region=region, sample_sets=SAMPLE_SET, sample_indices=[indices[x] for x in all_ids], site_mask=None, inline_array=True, chunks="native")
         returned_ids = dataset_sample_ids(ds)
         if returned_ids != all_ids:
             raise ValueError("Ag3 SNP dataset sample order does not match requested sample order")
         positions = np.asarray(ds["variant_position"].values); gt_all = np.asarray(ds["call_genotype"].values); local_ids = {sid: i for i, sid in enumerate(all_ids)}
-        query_seconds = time.perf_counter() - started; peak_rss_mb = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (1024 if sys.platform == "darwin" else 1024)
+        if len(np.unique(positions)) != len(positions):
+            raise ValueError(f"Ag3 SNP query returned duplicate variant positions: {region}")
+        query_seconds = time.perf_counter() - started; compute_started = time.perf_counter()
         chunk_rows = []
         for window in chunk:
             for design in selected_designs:
@@ -221,17 +263,21 @@ def run_access(args: argparse.Namespace, pilot: bool) -> list[dict[str, object]]
                     key = (window["window_id"], design["test_id"], label)
                     if key in completed: continue
                     row = calculate_row(gt_all, positions, window, design, local_ids, min_mac)
-                    row["query_seconds"], row["peak_rss_mb"] = f"{query_seconds:.6f}", f"{peak_rss_mb:.3f}"
+                    row["query_seconds"] = f"{query_seconds:.6f}"
                     chunk_rows.append(row); completed.add(key)
+        compute_seconds = time.perf_counter() - compute_started; total_elapsed = time.perf_counter() - started
+        for row in chunk_rows:
+            row["compute_seconds"], row["total_elapsed_seconds"], row["peak_rss_mib"] = f"{compute_seconds:.6f}", f"{total_elapsed:.6f}", f"{peak_rss_mib():.3f}"
         results.extend(chunk_rows)
-        existing = [r for r in read_tsv(output) if r.get("window_id") and r.get("test_id") and r.get("filter_label")] if output.exists() else []
-        write_tsv(output, existing + chunk_rows, fields)
+        existing = read_tsv(output) if output.exists() else []
+        atomic_write_tsv(output, existing + chunk_rows, fields)
         update_status("pilot_running" if pilot else "full_running", completed_windows=sorted({r["window_id"] for r in existing + chunk_rows}))
-        (OUT / "checkpoint.json").write_text(json.dumps({"last_region": region, "completed_rows": len(existing) + len(chunk_rows), "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}, indent=2) + "\n")
+        atomic_write_json(OUT / "checkpoint.json", {"last_region": region, "completed_rows": len(existing) + len(chunk_rows), "timestamp_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+    rows = read_tsv(output); validate_completed_rows(rows, windows_list, selected_designs)
     if not pilot:
-        rows = read_tsv(output); summarize(rows); write_tsv(OUT / "comparison_with_stage2r.tsv", load_stage2r_comparison(rows), list(load_stage2r_comparison(rows)[0]))
+        summarize(rows); comparison = load_stage2r_comparison(rows); atomic_write_tsv(OUT / "comparison_with_stage2r.tsv", comparison, list(comparison[0]))
         make_figures(rows)
-    return results
+    return rows
 
 def make_figures(rows: list[dict[str, object]]) -> None:
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
@@ -256,7 +302,8 @@ def write_pilot_report(rows: list[dict[str, object]]) -> None:
     lines = ["# Patterson's D pilot", "", "The eight frozen Stage-1R windows were queried independently as eight 50-kb Ag3 regions (400,000 bp total). Each design has a primary no-MAC result and a MAC>=2 sensitivity result. This is a feasibility and estimator-validation pilot; it is not an inside/outside inferential analysis.", "", "## Access and mapping", "", f"- Windows: {len({r['window_id'] for r in rows})}; designs: {len({r['test_id'] for r in rows})}; rows: {len(rows)}.", "- Sample order was checked against the returned Ag3 `sample_id` coordinate for every query.", "- Outgroup polarization required complete diploid calls fixed for one allele; missing or polymorphic outgroups were excluded.", "- The primary designs A_merus and B_merus are exploratory population site-pattern contrasts under the frozen baseline, not automatic introgression tests. C/D and melas are sensitivity contrasts with smaller P2 or outgroup groups.", "", "## Primary results", "", "| test | window | D | ABBA | BABA | informative sites |", "|---|---|---:|---:|---:|---:|"]
     for r in primary:
         lines.append(f"| {r['test_id']} | {r['window_id']} | {float(r['D_patterson']):.6g} | {float(r['abba']):.6g} | {float(r['baba']):.6g} | {r['n_sites_informative']} |")
-    lines += ["", "## Runtime and exclusions", "", f"- Maximum recorded resident memory: {max(float(r['peak_rss_mb']) for r in rows) / 1024:.1f} MiB.", f"- Sum of independent regional query times: {sum(float(r['query_seconds']) for r in rows[::16]):.1f} s.", "- Exclusion counts are recorded as JSON in `pilot_results.tsv`; they are design/filter diagnostics and are not evidence for introgression.", "", "Patterson's D and Stage 2R `D_topology` remain separate estimands. No nonzero value is interpreted as proof of introgression or MSRC causation."]
+    rss = [float(r.get("peak_rss_mib", "")) if r.get("peak_rss_mib", "") else float(r.get("peak_rss_mb", 0.0)) / 1024 for r in rows]
+    lines += ["", "## Runtime and exclusions", "", f"- Maximum recorded resident memory: {max(rss):.1f} MiB.", f"- Sum of independent regional query times: {sum(float(r['query_seconds']) for r in rows[::16]):.1f} s.", "- Exclusion counts are recorded as JSON in `pilot_results.tsv`; they are design/filter diagnostics and are not evidence for introgression.", "", "Patterson's D and Stage 2R `D_topology` remain separate estimands. No nonzero value is interpreted as proof of introgression or MSRC causation."]
     (OUT / "pilot_report.md").write_text("\n".join(lines) + "\n")
 
 def update_status(status: str, **extra: object) -> None:
@@ -268,7 +315,11 @@ def update_status(status: str, **extra: object) -> None:
     path.write_text(json.dumps(existing, indent=2, sort_keys=True) + "\n")
 
 def provenance(args: argparse.Namespace) -> None:
-    OUT.mkdir(parents=True, exist_ok=True); design_audit()
+    OUT.mkdir(parents=True, exist_ok=True)
+    # Frozen design files and the accompanying audit are provenance artifacts.
+    # Do not regenerate them during a later design-only or resume invocation.
+    if not (OUT / "frozen_quartet_designs.tsv").exists() or not (OUT / "design_audit.md").exists():
+        design_audit()
     payload = {"analysis": "Patterson D ABBA-BABA", "release": RELEASE, "sample_set": SAMPLE_SET, "bucket": BUCKET, "chromosome": CHROM, "inversion_interval_1based_inclusive": [INV_START, INV_END], "window_size": WIN, "stage2r_grid_sha256": sha256(GRID), "stage1r_pilot_windows_sha256": sha256(PILOT), "sample_manifest_sha256": sha256(SAMPLE_MANIFEST), "primary_sample_table_sha256": sha256(PRIMARY), "malariagen_data_version": importlib.metadata.version("malariagen-data") if importlib.util.find_spec("malariagen_data") else "not-imported", "host": platform.node(), "python": sys.version, "python_executable": sys.executable, "command": " ".join(sys.argv), "filter_settings": {"max_site_missing": 0.25, "min_callable_chromosomes": 2, "primary_mac": 0, "sensitivity_mac": 2, "outgroup_requires_complete_fixed_diploids": True}}
     if not (OUT / "provenance.json").exists(): (OUT / "provenance.json").write_text(json.dumps(payload, indent=2) + "\n")
     else:

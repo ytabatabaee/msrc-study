@@ -25,7 +25,7 @@ def _counts(gt: np.ndarray, indices: list[int]) -> tuple[np.ndarray, np.ndarray]
     n_called = called.sum(axis=1).astype(float) * 2
     return chromosomes, n_called
 
-def calculate_window(
+def calculate_window_scalar(
     gt: np.ndarray,
     groups: dict[str, list[int]],
     outgroup: list[int],
@@ -93,6 +93,76 @@ def calculate_window(
     means = {name: call_totals[name] / n_sites if n_sites else 0.0 for name in call_totals}
     return DResult(abba, baba, denom, d, n_sites, passed, informative, exclusions, means, fixed)
 
+def calculate_window_vectorized(
+    gt: np.ndarray,
+    groups: dict[str, list[int]],
+    outgroup: list[int],
+    *,
+    max_site_missing: float = 0.25,
+    min_callable_chromosomes: int = 2,
+    min_mac: int = 0,
+) -> DResult:
+    """Vectorized equivalent of :func:`calculate_window_scalar`.
+
+    The exclusion precedence and callable-site definition intentionally match
+    the original pilot implementation.  The scalar function is retained as a
+    regression reference and is not used for production full-scan rows.
+    """
+    gt = np.asarray(gt)
+    if gt.ndim != 3 or gt.shape[2] != 2:
+        raise ValueError("expected variants x samples x diploid-ploidy calls")
+    n_sites = gt.shape[0]
+    exclusions = {k: 0 for k in ("multiallelic", "site_missing", "insufficient_group_calls", "outgroup_missing", "outgroup_polymorphic", "outgroup_nonbinary", "low_mac")}
+    if n_sites == 0:
+        return DResult(0.0, 0.0, 0.0, None, 0, 0, 0, exclusions, {k: 0.0 for k in ("P1", "P2", "P3", "O")}, 0)
+    called_alleles = gt >= 0
+    multiallelic = np.any(np.where(called_alleles, gt, 0) > 1, axis=(1, 2))
+    site_missing = (1.0 - called_alleles.all(axis=2).mean(axis=1)) > max_site_missing
+    active = ~(multiallelic | site_missing)
+    exclusions["multiallelic"] = int(multiallelic.sum())
+    exclusions["site_missing"] = int((~multiallelic & site_missing).sum())
+    call_totals = {k: 0.0 for k in ("P1", "P2", "P3", "O")}
+    group_data = {}
+    for name, idx in (("P1", groups["P1"]), ("P2", groups["P2"]), ("P3", groups["P3"]), ("O", outgroup)):
+        sub = gt[:, idx, :]
+        complete = (sub >= 0).all(axis=2)
+        group_data[name] = (complete.sum(axis=1) * 2, np.where(complete[:, :, None], sub, 0).sum(axis=(1, 2)).astype(float), complete)
+        call_totals[name] = float((group_data[name][0] * active).sum())
+    out_complete = group_data["O"][2].all(axis=1)
+    out_missing = active & ~out_complete
+    exclusions["outgroup_missing"] = int(out_missing.sum())
+    sufficient = active & ~out_missing
+    for name in ("P1", "P2", "P3", "O"):
+        sufficient &= group_data[name][0] >= min_callable_chromosomes
+    insufficient = active & ~out_missing & ~sufficient
+    exclusions["insufficient_group_calls"] = int(insufficient.sum())
+    out_alleles = gt[:, outgroup, :]
+    out_nonbinary = sufficient & np.any(out_alleles > 1, axis=(1, 2))
+    exclusions["outgroup_nonbinary"] = int(out_nonbinary.sum())
+    out_min = np.min(np.where(out_complete[:, None, None], out_alleles, 2), axis=(1, 2))
+    out_max = np.max(np.where(out_complete[:, None, None], out_alleles, -1), axis=(1, 2))
+    out_poly = sufficient & ~out_nonbinary & (out_min != out_max)
+    exclusions["outgroup_polymorphic"] = int(out_poly.sum())
+    usable = sufficient & ~out_nonbinary & ~out_poly
+    total_alt = sum(group_data[name][1] for name in ("P1", "P2", "P3", "O"))
+    total_called = sum(group_data[name][0] for name in ("P1", "P2", "P3", "O"))
+    mac = np.minimum(total_alt, total_called - total_alt)
+    low_mac = usable & (mac < min_mac)
+    exclusions["low_mac"] = int(low_mac.sum())
+    keep = usable & ~low_mac
+    passed = int(keep.sum())
+    ancestral = out_min.astype(float)
+    p = {name: np.divide(group_data[name][1], group_data[name][0], out=np.zeros(n_sites, dtype=float), where=group_data[name][0] > 0) for name in ("P1", "P2", "P3")}
+    flip = ancestral == 1
+    p = {name: np.where(flip, 1.0 - value, value) for name, value in p.items()}
+    abba_site = (1.0 - p["P1"]) * p["P2"] * p["P3"]
+    baba_site = p["P1"] * (1.0 - p["P2"]) * p["P3"]
+    abba = float(abba_site[keep].sum()); baba = float(baba_site[keep].sum()); denominator = abba + baba
+    d = (abba - baba) / denominator if denominator > 0 else None
+    return DResult(abba, baba, denominator, d, n_sites, passed, int(((abba_site + baba_site) > 0)[keep].sum()), exclusions, {k: call_totals[k] / n_sites for k in call_totals}, int(usable.sum()))
+
+calculate_window = calculate_window_vectorized
+
 def jackknife(block_values: list[tuple[float, float, int]], alpha: float = 0.05) -> dict[str, float | int | None]:
     """Delete-one-block jackknife for block ABBA/BABA sums."""
     usable = [(a, b, n) for a, b, n in block_values if a + b > 0 and n > 0]
@@ -129,8 +199,8 @@ def jackknife_difference(block_values: list[tuple[float, float, float, float, in
     if delta is None or len(usable) < 2:
         return {"inside_pooled_d": inside, "outside_pooled_d": outside, "delta_d": delta, "se": None, "z": None, "ci_low": None, "ci_high": None, "n_blocks": len(usable)}
     estimates = []
-    for v in usable:
-        x = [sum(w[j] for w in usable if w is not v) for j in range(4)]
+    for i, _ in enumerate(usable):
+        x = [sum(w[j] for k, w in enumerate(usable) if k != i) for j in range(4)]
         di = (x[0] - x[1]) / (x[0] + x[1]) if x[0] + x[1] else np.nan
         do = (x[2] - x[3]) / (x[2] + x[3]) if x[2] + x[3] else np.nan
         estimates.append(di - do if np.isfinite(di) and np.isfinite(do) else np.nan)

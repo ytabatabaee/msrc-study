@@ -61,7 +61,11 @@ Run the pilot interactively first with the same `PYTHON_BIN`, certifi CA
 variables, and Ag3 URL. The command above is the next full-scan command only
 after reviewing the pilot; it has not been submitted.
 
-The pilot completed with approximately 0.77 GiB peak resident memory and about
-8 minutes of summed regional query time on the local authenticated client.
-The full wrapper requests 8 CPUs and 14 GB, which is 1.75 GB per core and
-respects the 2,000 MB/core RM-shared limit. The full scan remains unsubmitted.
+The pilot completed with a corrected historical peak of 742.4 MiB (the old
+macOS raw column was KiB despite its `peak_rss_mb` name) and about 8 minutes of
+summed regional query time on the local authenticated client. New runs record
+platform-normalized `peak_rss_mib`. The vectorized estimator agrees with the
+scalar reference and gives a 21.7x synthetic CPU speedup. The full wrapper
+requests 8 CPUs and 14 GB, which is 1.75 GB per core and respects the 2,000
+MB/core RM-shared limit. Detailed preflight, checkpoint, design, and readiness
+reports are under `results/patterson_d/`; the full scan remains unsubmitted.

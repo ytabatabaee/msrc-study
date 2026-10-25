@@ -366,9 +366,12 @@ A_merus -0.765/-0.199, B_merus 0.762/0.199, C_merus -0.718/-0.049,
 D_merus 0.789/0.320; melas gave A -0.617/-0.126, B 0.814/0.238,
 C -0.580/0.014, and D 0.824/0.361. These are feasibility summaries from
 eight selected windows, not chromosome-wide inference or evidence of
-introgression/MSRC causation. Full-scan commands and checkpoint behavior are
-documented in `analysis/patterson_d/README.md`; the 988-window scan remains
-unrun.
+introgression/MSRC causation. The retained pilot's historical macOS peak is
+742.4 MiB after correcting the `ru_maxrss` unit interpretation; new runs use
+platform-normalized `peak_rss_mib`. The vectorized estimator agrees with the
+scalar reference and gives a 21.7x synthetic CPU speedup. Full-scan commands,
+checkpoint validation, and readiness limits are documented in
+`results/patterson_d/`; the 988-window scan remains unrun.
 
 ## Stage 3R — ASTRAL species-tree sensitivity
 

@@ -555,13 +555,17 @@ ratio-of-summed ABBA/BABA contributions, explicit exclusion counts, MAC>=2
 sensitivity, and physically blocked jackknife code. It does not reuse Stage 2R
 quartet frequencies or gene trees. The corrected core requires complete fixed
 outgroup diploid calls and uses only informative physical blocks for jackknife
-deletion. Six synthetic tests pass. The restored Python 3.10/`malariagen-data
-14.0.0` environment completed all eight frozen pilot windows independently,
-producing 128 rows and verifying returned Ag3 sample order. Descriptive pooled
+deletion. Eleven deterministic tests pass, including scalar/vectorized
+equivalence, ratio-of-sums behavior, checkpoint compatibility, and physical
+block edge cases. The restored Python 3.10/`malariagen-data 14.0.0` environment
+completed all eight frozen pilot windows independently, producing 128 rows and
+verifying returned Ag3 sample order. The production vectorization gives a
+21.7x synthetic CPU speedup; historical pilot peak RSS is 742.4 MiB after
+correcting the macOS `ru_maxrss` unit interpretation. Descriptive pooled
 inside/outside D values are in `results/patterson_d/pilot_report.md`; they are
 feasibility summaries from eight windows, not chromosome-wide inference or
-proof of introgression/MSRC. The 988-window scan remains prepared but
-unsubmitted.
+proof of introgression/MSRC. The preflight is marked READY_FOR_FULL_SCAN, but
+the 988-window scan remains prepared and unsubmitted.
 
 ## Anopheles 2La Stage 0
 
