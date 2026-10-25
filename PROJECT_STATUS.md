@@ -2567,7 +2567,7 @@ Outputs are under `empirical/combined_quartet_simplex/figures/`, with tests in
 `empirical/combined_quartet_simplex/tests/test_quartet_simplex.py`.
 
 The simplex rendering groups identical q1/q2/q3 coordinates by panel and
-region class, records multiplicities in `overlap_counts.tsv`, and uses compact
-opaque markers with capped logarithmic area scaling. Lower-multiplicity groups
-are drawn first, and distinct core shapes preserve coincident inside/outside
-observations without moving any coordinates.
+region class, records multiplicities in `overlap_counts.tsv`, and uses small
+alpha-0.20 markers with capped logarithmic area scaling and no outlines.
+Lower-multiplicity groups are drawn first, and distinct core shapes preserve
+coincident inside/outside observations without moving any coordinates.

@@ -44,9 +44,10 @@ REGION_ORDER = ("inside", "outside", "boundary", "unknown")
 REGION_MARKERS = {"inside": "o", "outside": "s", "boundary": "D", "unknown": "x"}
 SQRT3_2 = math.sqrt(3.0) / 2.0
 Q_SUM_TOLERANCE = 2e-6  # cod support is stored at six decimal places.
-MARKER_BASE_AREA = 7.0
-MARKER_LOG_SCALE = 4.0
-MARKER_MAX_AREA = 32.0
+MARKER_BASE_AREA = 2.5
+MARKER_LOG_SCALE = 1.25
+MARKER_MAX_AREA = 8.0
+MARKER_ALPHA = 0.20
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -303,8 +304,8 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
         x, y = xy(q[:, 0], q[:, 1], q[:, 2])
         color = COLORS[region]
         marker = REGION_MARKERS[region]
-        ax.scatter(x, y, s=[marker_area(int(g["n_overlap"])) for g in grouped], c=color, alpha=.88,
-                   edgecolors="#333333", linewidths=.25, marker=marker, clip_on=False,
+        ax.scatter(x, y, s=[marker_area(int(g["n_overlap"])) for g in grouped], c=color, alpha=MARKER_ALPHA,
+                   edgecolors="none", linewidths=0, marker=marker, clip_on=False,
                    label=f"{region} (n={sum(int(g['n_overlap']) for g in grouped)})", zorder=4)
     counts = {region: sum(1 for r in rows if r["region_class"] == region) for region in ("inside", "outside")}
     ax.text(.5, SQRT3_2 + .012, "q1 = 1\nbaseline", ha="center", va="bottom", fontsize=7)
@@ -312,11 +313,11 @@ def draw_simplex(ax, rows: list[dict[str, object]], title: str, show_legend: boo
     ax.text(1.035, -.035, "q3 = 1\nthird", ha="left", va="top", fontsize=7)
     ax.set_title(f"{title}\ninside n={counts['inside']}; outside n={counts['outside']}", fontsize=8.5, pad=16, linespacing=1.05)
     if show_legend:
-        region_handles = [Line2D([0], [0], marker=REGION_MARKERS[r], color="none", markerfacecolor=COLORS[r], markeredgecolor=COLORS[r], alpha=.85, markersize=5, label=r) for r in ("inside", "outside")]
+        region_handles = [Line2D([0], [0], marker=REGION_MARKERS[r], color="none", markerfacecolor=COLORS[r], markeredgecolor="none", alpha=MARKER_ALPHA, markersize=5, label=r) for r in ("inside", "outside")]
         region_handles.append(Line2D([0], [0], color="#666", ls="--", lw=.65, label="q2 = q3"))
         region_legend = ax.legend(handles=region_handles, loc="upper center", bbox_to_anchor=(.5, -0.08), ncol=3, frameon=False, fontsize=7)
         ax.add_artist(region_legend)
-        size_handles = [Line2D([0], [0], marker="o", linestyle="none", color="#333333", markerfacecolor=COLORS["outside"], alpha=.88, markersize=math.sqrt(marker_area(n)) * 1.15, label=f"n={n}") for n in (1, 10, 100)]
+        size_handles = [Line2D([0], [0], marker="o", linestyle="none", color="none", markerfacecolor=COLORS["outside"], markeredgecolor="none", alpha=MARKER_ALPHA, markersize=math.sqrt(marker_area(n)) * 1.5, label=f"n={n}") for n in (1, 10, 100)]
         ax.legend(handles=size_handles, title="overlap multiplicity", loc="upper center", bbox_to_anchor=(.5, -0.20), ncol=3, frameon=False, fontsize=6.5, title_fontsize=6.5, handletextpad=.4, columnspacing=.8)
 
 
@@ -389,7 +390,7 @@ def main() -> None:
         lines += [f"### {dataset}", f"- Source: `{p['source']}`", f"- SHA-256: `{p['sha256']}`", f"- Topology mapping: {p['topology_mapping']}", f"- Region source/convention: `{p['region_source']}`; {p['region_convention']}", f"- Raw standardized rows: {raw_counts[dataset]}", f"- Retained rows: {sum(1 for r in rows if r['dataset'] == dataset)}", "- Observation unit: one frozen window or 100-kb aggregate, never an individual quartet.", ""]
     lines += ["## Individual-quartet availability", "", "The retained QSS tables contain window-level or binned aggregates. They do not retain three support frequencies for each fixed quartet across multiple loci. A true individual-quartet simplex distribution therefore cannot be reconstructed without returning to lower-level source data; no such figure is generated.", "", "## Region classes", "", "Inside and outside points use the frozen source labels where present. For interval-based sources, the combined-figure convention is applied by midpoint; intervals crossed by a window whose midpoint lies outside are marked boundary. Boundary and unknown observations remain in the standardized table and are shown separately when present."]
     audit.write_text("\n".join(lines) + "\n")
-    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(32, 7 + 4*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": 0.88, "coordinates_shifted": False}}, indent=2) + "\n")
+    (out / "provenance.json").write_text(json.dumps({"script": str(Path(__file__).relative_to(ROOT)), "python": platform.python_version(), "sources": provenance, "standard_fields": STANDARD_FIELDS, "overlap_encoding": {"grouping_round_decimals": 12, "marker_area": "min(8, 2.5 + 1.25*log2(n_overlap))", "core_markers": REGION_MARKERS, "alpha": MARKER_ALPHA, "edgecolors": "none", "coordinates_shifted": False}}, indent=2) + "\n")
     make_figures(rows, out)
     print(f"retained {len(rows)} standardized observations")
 
