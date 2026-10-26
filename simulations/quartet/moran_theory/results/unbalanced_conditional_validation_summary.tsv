@@ -1,0 +1,7 @@
+metric	value
+analytic_conditions	12
+simulation_conditions	3
+replicates_per_simulation_condition	4000
+max_joint_absolute_error	0.006627382601025848
+joint_cells_within_3_se	0.9930555555555556
+runtime_seconds	15.985061334

@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\begin{document}
+
+\begin{theorem}[Arrangement-conditional pectinate quartet law]
+Consider the hierarchical finite-state Moran model with species tree
+$(((1,2),3),4)$, finite count processes on all branches, conditional binomial
+inheritance at speciation, and the structured genealogy operators $A_2,A_3,A_4$
+defined by the model. Let $Z=(Z_1,Z_2,Z_3,Z_4)$ be the sampled arrangement
+pattern and let $Q_1=12|34$, $Q_2=13|24$, and $Q_3=14|23$. For each pattern
+$z\in\{0,1\}^4$, construct pattern-specific terminal vectors
+\[
+u_{j,z_j}(k,b)=1_{\{b=z_j\}}p^{z_j}(1-p)^{1-z_j},
+\qquad p=k/M.
+\]
+Propagate these vectors through the sister and intermediate recursions,
+retaining the pattern mass, and let $F_z$ be the resulting unresolved
+four-lineage root-entry vector. If $c_i(z)$ is the corresponding early
+topology mass, then
+\[
+J[z,i]=P(Z=z,Q_i)=c_i(z)+
+(\pi_{\rm old}\otimes h_i)^T e^{A_4T_A}F_z.
+\]
+Consequently,
+\[
+P(Z=z)=\sum_iJ[z,i],\qquad
+P(Q_i)=\sum_zJ[z,i],\qquad
+P(Q_i\mid Z=z)=\frac{J[z,i]}{\sum_jJ[z,j]}
+\]
+whenever $P(Z=z)>0$.
+\end{theorem}
+
+\begin{proof}
+At a terminal count $k$, the event that the sampled arrangement is $z_j$ and
+the sampled lineage carries background $b$ has probability
+$1_{\{b=z_j\}}p^{z_j}(1-p)^{1-z_j}$. The two pattern vectors partition the
+ordinary terminal sampling vector. Linearity of the dual one-lineage operator
+and stochasticity of each inheritance kernel therefore preserve this
+partition through every terminal and speciation stage.
+
+At the intermediate node, unresolved pair states multiply conditionally on the
+shared count. If the pair has already coalesced, the topology is $Q_1$; the
+remaining taxon-3 pattern mass must still multiply that absorbing contribution.
+The three-lineage operator partitions the resulting mass into its transient
+states and the three absorbing topology states. The same argument applies at
+the root: for early topology mass, the taxon-4 sampling probability is retained
+conditional on the root count; for unresolved mass, $F_z$ contains the product
+of the three-lineage and taxon-4 background values without normalization.
+
+The residual vectors satisfy $h_1+h_2+h_3=1$ on every root state. Thus root
+propagation partitions unresolved mass among $Q_1,Q_2,Q_3$. Summing over
+topologies and patterns gives one, and summing in either order gives the two
+marginals stated above. Division by the positive pattern marginal gives the
+conditional law. If the pattern marginal is zero, no conditional probability
+is defined and the implementation returns NaN.
+\end{proof}
+
+\begin{proposition}[A sufficient symmetry condition]
+If the full conditional genealogy-and-sampling construction is invariant under
+a taxon permutation that exchanges the two discordant quartet resolutions,
+then $P(Q_2\mid Z=z)=P(Q_3\mid Z=z)$. In particular, a common fixed
+background with no arrangement distinction reduces the two discordant
+resolutions to exchangeable ordinary-coalescent outcomes.
+\end{proposition}
+
+\begin{proof}
+The permutation gives a measure-preserving bijection between histories ending
+in $Q_2$ and histories ending in $Q_3$, while preserving the specified pattern
+event. Their joint masses are equal, and division by the common pattern mass
+preserves equality.
+\end{proof}
+
+The theorem is exact for the hierarchical simulator model, including its
+finite boundary rates and binomial daughter initialization. It is not a claim
+about all biological Moran processes or about introgression.
+\end{document}

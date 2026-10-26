@@ -2633,3 +2633,27 @@ correction was required. The result remains exact only for the stated
 hierarchical finite-state simulator model; no Bridges-2 validation jobs were
 submitted, and manuscript integration remains pending broader parameter-scope
 review.
+
+## Arrangement-conditional pectinate quartet law
+
+Added the exact 16-pattern joint law for `(((1,2),3),4)` in
+`unbalanced_species_tree.py`. Pattern-specific terminal sampling masses are
+propagated without normalization through the shared sister, intermediate, and
+root count recursions. The implementation returns `P(Z=z,Q_i)`, `P(Z=z)`,
+`P(Q_i)`, conditional probabilities, early/root contributions, and unnormalized
+root-entry vectors. The joint-to-unconditional identities hold to numerical
+precision, including agreement with the existing unconditional recursion.
+
+The conditional theory test suite now passes 27 tests. In the base analytical
+condition, crossed patterns such as `0101` have
+`(q1,q2,q3)=(0.275862,0.449849,0.274289)` with `P(Z=0101)=0.044312`, so a
+conditional anomalous quartet and `q2 != q3` occur. Complementary patterns
+exchange the discordant resolutions, while marginalizing over all patterns
+returns the symmetric unconditional law. Fresh `msrc-sim` validation used
+4,000 genealogies for each of three conditions; the maximum joint-cell error
+was 0.00663 and 99.31% of cells were within three Monte Carlo standard errors.
+The derivation, theorem, tables, and figures are in
+`simulations/quartet/moran_theory/UNBALANCED_CONDITIONAL_DERIVATION.md`,
+`unbalanced_conditional_theorem.tex`, and `results/`. The balanced comparison
+uses matched root-to-tip depths but has a different ancestral-stage
+partition, so it is descriptive rather than a pure rooted-shape contrast.
