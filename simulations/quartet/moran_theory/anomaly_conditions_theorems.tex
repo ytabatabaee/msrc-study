@@ -2,91 +2,95 @@
 \usepackage{amsmath,amssymb,amsthm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
 \begin{document}
+\section*{Anomaly conditions for MSRC quartets}
 
-\begin{theorem}[Exact finite-state anomaly criterion]
-For any arrangement pattern $z$ with $P(Z=z)>0$ in the hierarchical finite-$M$
-MSRC model, define
+Let $Q_1=12|34$, $Q_2=13|24$, and $Q_3=14|23$ for
+$S=(((1,2),3),4)$. For an arrangement pattern $z$, write
+$J[z,i]=P(Z=z,Q_i)$ and $q_i(z)=J[z,i]/P(Z=z)$ whenever
+$P(Z=z)>0$.
+
+\begin{theorem}[Exact finite-state criterion]
+In the finite-$M$ operator model,
 \[
 J[z,i]=c_i(z)+(\pi_{\rm old}\otimes h_i)^T e^{A_4T_A}F_z.
 \]
-Then
+For every pattern of positive probability,
 \[
-\Gamma(z)>0
+\max\{q_2(z),q_3(z)\}>q_1(z)
 \iff
-\max\{J[z,2],J[z,3]\}>J[z,1],
+\max\{J[z,2],J[z,3]\}>J[z,1].
 \]
-and
-\[
-\Delta(z)=\frac{J[z,2]-J[z,3]}{P(Z=z)}.
-\]
+Moreover $q_2(z)-q_3(z)=[J[z,2]-J[z,3]]/P(Z=z)$.
 \end{theorem}
 
 \begin{proof}
-The common positive denominator is
-$P(Z=z)=\sum_iJ[z,i]$. Therefore comparisons among conditional probabilities
-are exactly comparisons among their joint numerators. Subtracting the two
-operator expressions gives the stated differences.
+All conditional probabilities have the same positive denominator
+$P(Z=z)=\sum_iJ[z,i]$. Subtracting the joint-mass expressions gives the
+stated criterion.
 \end{proof}
 
-\begin{theorem}[A zero-switching crossed-pattern bound]
-Assume a fixed frequency $p\in(0,1)$, zero switching, chromosome count $M$,
-and the finite-floor coalescence rates
+\begin{theorem}[Fixed-frequency zero-switching sufficient condition]
+Assume that frequency $p\in(0,1)$ is fixed on every pre-root branch,
+switching is zero, labels are inherited without switching, and
 \[
-c_0=1/[M(1-p)],\qquad c_1=1/(Mp).
+c_0=\frac{1}{M(1-p)},\qquad c_1=\frac{1}{Mp}.
 \]
-For $Z=0101$, if $T_I>M(1-p)\log2$, then $Q_2$ is more probable than $Q_1$.
-For $Z=0110$, if $T_I>Mp\log2$, then $Q_3$ is more probable than $Q_1$.
-The complementary cases $1010$ and $1001$ obey the same bounds with the
-matching background exchanged.
+Assume also that, conditional on $Z=0101$, taxa 1 and 3 enter the
+intermediate branch in background 0, taxon 2 in background 1, and taxa 1 and
+2 cannot coalesce on the sister branch. Then
+\[
+T_I>M(1-p)\log 2\Longrightarrow q_2(0101)>q_1(0101).
+\]
+For $Z=0110$, the analogous condition is $T_I>Mp\log2$ and the conclusion
+is $q_3(0110)>q_1(0110)$.
 \end{theorem}
 
 \begin{proof}
-For $0101$, lineages 1 and 2 have different backgrounds and cannot coalesce on
-the sister branch. On the intermediate branch, 1 and 3 are the only matching
-pair among the three lineages, with rate $c_0$. Its coalescence probability is
-$1-e^{-c_0T_I}$ and fixes $Q_2$. Hence
-$P(Q_2\mid Z=0101)\ge1-e^{-c_0T_I}$, while $Q_1$ is impossible on this event
-and so $P(Q_1\mid Z=0101)\le e^{-c_0T_I}$. The displayed condition makes the
-first bound larger than the second. The other cases follow by exchanging the
-matching pair and/or backgrounds.
+For $Z=0101$, the only matching pair among lineages 1, 2, and 3 is 1,3.
+If $E$ is its coalescence on the intermediate branch, then
+\[
+P(E\mid Z=0101)=1-e^{-c_0T_I}.
+\]
+Event $E$ fixes $Q_2$ and excludes $Q_1$, so
+\[
+q_2(0101)\ge1-e^{-c_0T_I},\qquad q_1(0101)\le e^{-c_0T_I}.
+\]
+The duration condition makes the first bound larger than the second. The
+$0110$ case uses pair 2,3 in background 1.
 \end{proof}
 
-\begin{proposition}[Complement transformation]
-Under neutral dynamics, replacing every arrangement bit by its complement and
-replacing $p$ by $1-p$ preserves the conditional quartet probabilities after
-mapping $z$ to its complement. With genic selection, the same statement holds
-under the additional parameter transformation $s\mapsto-s/(1+s)$.
+\begin{remark}
+This theorem is not a theorem for the full stochastic Moran-integrated model
+from terminal $Z$ alone. Random ancestral count histories and inheritance
+conditioning can make the hazard random. The general valid sufficient
+condition is $P(E\mid Z)>1/2$, evaluated by the exact pattern-specific
+operator.
+\end{remark}
+
+\begin{proposition}[Background-label complement]
+Under neutral dynamics, complementing all arrangement labels and replacing
+$p$ by $1-p$ maps $q_i(z;p)$ to $q_i(1-z;1-p)$ without permuting topology
+labels. Under the genic-selection convention
+$p'=p(1+s)/(1+sp)$, the corresponding label swap uses
+$s'=-s/(1+s)$, for $s>-1$.
 \end{proposition}
 
 \begin{proof}
-The background switching rates and finite-floor coalescence rates are
-interchanged by the transformation. The Moran count generator is unchanged in
-the neutral case. Under genic selection, exchanging the two relative fitnesses
-and rescaling by the former A1 fitness gives the stated transformed selection
-coefficient. The operator recursion is therefore conjugate under the bit
-complementation map.
+The transformation exchanges the two background rates and conjugates the
+finite-state recursion by bit complementation. It changes no taxon labels,
+and hence exchanges no quartet resolutions.
 \end{proof}
 
-\begin{proposition}[Fast-switching fixed-frequency limit]
-At fixed $p$ and fixed finite branch durations, the leading
-$\rho\to\infty$ averaged pair-coalescence rate is $1/M$. Thus arrangement
-conditioning loses its leading-order effect and the ordinary MSC quartet law is
-recovered at the averaged level.
+\begin{proposition}[Qualified fast-switching limit]
+At fixed frequency and fixed finite branch durations, rapid background
+switching has stationary weights $(1-p,p)$ and averaged pair hazard
+\[
+(1-p)^2c_0+p^2c_1=1/M.
+\]
+Thus the leading fixed-frequency averaged process is ordinary-MSC-like. This
+does not assert a complete conditional convergence theorem for the coupled
+Moran process; terminal conditioning can create boundary layers.
 \end{proposition}
-
-\begin{proof}
-The one-lineage switching chain has stationary probabilities $(1-p,p)$.
-A pair is in the same background with probabilities $(1-p)^2$ and $p^2$.
-Averaging the two hazards gives
-$(1-p)^2/[M(1-p)]+p^2/(Mp)=1/M$. Standard finite-state fast-slow averaging
-then gives the leading limit. A full coupled finite-M singular-perturbation
-bound is not asserted here.
-\end{proof}
-
-The exact finite-M operator criterion is necessary and sufficient. The crossed
-pattern bound is sufficient but not necessary; numerical roots in the full
-operator are not claimed to be unique without an additional monotonicity
-proof.
 \end{document}

@@ -43,7 +43,15 @@ def test_unbalanced_conditional_effect_is_present_for_crossed_pattern():
     assert result.conditional_quartet_probabilities[i, 1] != result.conditional_quartet_probabilities[i, 2]
 
 
-def test_complementary_patterns_swap_the_discordant_labels():
+def test_background_complement_preserves_neutral_conditional_law():
+    result = unbalanced_species_tree_conditional_quartet_probabilities(**_kwargs())
+    a = result.conditional_quartet_probabilities[PATTERNS.index("0101")]
+    b = result.conditional_quartet_probabilities[PATTERNS.index("1010")]
+    assert np.allclose(a, b, atol=2e-12)
+
+
+def test_taxon_pattern_permutation_can_exchange_discordants():
+    """0101 -> 0110 is a taxon-pattern transformation, not a bit complement."""
     result = unbalanced_species_tree_conditional_quartet_probabilities(**_kwargs())
     a = result.conditional_quartet_probabilities[PATTERNS.index("0101")]
     b = result.conditional_quartet_probabilities[PATTERNS.index("0110")]

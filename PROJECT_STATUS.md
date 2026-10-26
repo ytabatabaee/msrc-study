@@ -2647,9 +2647,11 @@ precision, including agreement with the existing unconditional recursion.
 The conditional theory test suite now passes 27 tests. In the base analytical
 condition, crossed patterns such as `0101` have
 `(q1,q2,q3)=(0.275862,0.449849,0.274289)` with `P(Z=0101)=0.044312`, so a
-conditional anomalous quartet and `q2 != q3` occur. Complementary patterns
-exchange the discordant resolutions, while marginalizing over all patterns
-returns the symmetric unconditional law. Fresh `msrc-sim` validation used
+conditional anomalous quartet and `q2 != q3` occur. Bit-complementary patterns
+preserve the topology labels and the sign of `q2-q3`; a separate taxon
+permutation can exchange the discordant resolutions. Marginalizing over all
+patterns returns the symmetric unconditional law in the tested base setting.
+Fresh `msrc-sim` validation used
 4,000 genealogies for each of three conditions; the maximum joint-cell error
 was 0.00663 and 99.31% of cells were within three Monte Carlo standard errors.
 The derivation, theorem, tables, and figures are in
@@ -2664,8 +2666,10 @@ Added a theorem-level anomaly criterion and a proved zero-switching sufficient
 condition for crossed arrangement patterns. For `Z=0101` in the fixed-frequency
 zero-switching model, `T_I > M(1-p) log(2)` guarantees `Q2 > Q1`; analogous
 bounds apply to `0110`, `1010`, and `1001` with the appropriate matching
-background. The exact finite-M criterion is the sign of the joint-mass
-operator difference `J[z,2]-J[z,1]` or `J[z,3]-J[z,1]`.
+background. This scalar bound is not asserted for the full Moran-integrated
+model without the fixed-frequency assumptions. The exact finite-M criterion is
+the sign of the joint-mass operator difference `J[z,2]-J[z,1]` or
+`J[z,3]-J[z,1]`.
 
 The analytical base example remains anomalous for `Z=0101`, with
 `P(Z=0101)=0.044312`, `Delta=0.175560`, and `Gamma=0.173987`. Numerical

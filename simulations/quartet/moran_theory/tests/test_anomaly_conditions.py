@@ -33,3 +33,20 @@ def test_exact_base_anomaly_is_positive_and_pattern_has_mass():
     assert result.pattern_probabilities[i] > 0
     assert q[1] > q[0]
     assert q[1] != q[2]
+
+
+def test_neutral_background_complement_preserves_delta():
+    condition = base_condition(p0=0.3, rho=0.17)
+    complement = base_condition(p0=0.7, rho=0.17)
+    a = conditional_q(condition, "0101")
+    b = conditional_q(complement, "1010")
+    assert np.allclose(a, b, atol=2e-11)
+    assert np.isclose(a[1] - a[2], b[1] - b[2], atol=2e-11)
+
+
+def test_selected_background_complement_uses_fitness_transform():
+    condition = base_condition(p0=0.3, selection=0.25)
+    complement = base_condition(p0=0.7, selection=-0.25 / 1.25)
+    a = conditional_q(condition, "0101")
+    b = conditional_q(complement, "1010")
+    assert np.allclose(a, b, atol=2e-10)

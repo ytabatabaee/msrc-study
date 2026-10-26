@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\begin{document}
+\section*{Finite-state MSRC quartet theory}
+
+We analyze the Multi-Species Recombination-Partitioned Coalescent (MSRC) in
+the finite chromosome-copy model used by the simulator. The arrangement count
+follows the finite Moran chain, and conditional genealogies follow the
+backward structured coalescent. Binomial inheritance at speciation and the
+arrangement-origin convention are retained explicitly. Matrix-exponential
+propagation therefore gives exact quartet probabilities for the specified
+hierarchical finite-state model.
+
+For the balanced and pectinate species-tree histories, the operator recursion
+returns the three unrooted quartet probabilities
+\(q_1=P(12|34),q_2=P(13|24),q_3=P(14|23)\). For the pectinate tree it can also
+retain the terminal arrangement pattern \(Z=z\), giving the joint law
+\[
+J[z,i]=P(Z=z,Q_i),\qquad
+P(Q_i\mid Z=z)=\frac{J[z,i]}{\sum_jJ[z,j]}.
+\]
+The pattern-specific vectors retain their probability mass, so summation over
+patterns recovers the unconditional quartet law.
+
+Define \(\Gamma(z)=\max(q_2(z),q_3(z))-q_1(z)\). The exact anomaly criterion
+is equivalently
+\[
+\Gamma(z)>0\iff \max\{J[z,2],J[z,3]\}>J[z,1],
+\]
+for patterns of positive probability.
+
+\begin{theorem}[A fixed-frequency sufficient condition]
+Suppose the arrangement frequency is fixed at \(p\in(0,1)\) through all
+pre-root branches, switching is zero, and labels are inherited without
+switching. Suppose further that conditional on \(Z=0101\), taxa 1 and 3
+enter the intermediate branch in background 0, taxon 2 in background 1, and
+taxa 1 and 2 cannot coalesce on the sister branch. With
+\(c_0=1/[M(1-p)]\),
+\[
+T_I>M(1-p)\log2
+\quad\Longrightarrow\quad
+P(Q_2\mid Z=0101)>P(Q_1\mid Z=0101).
+\]
+\end{theorem}
+
+\begin{proof}
+The only matching pair among lineages 1,2,3 is 1,3. Its intermediate-branch
+coalescence event has probability \(1-e^{-c_0T_I}\), fixes \(Q_2\), and excludes
+\(Q_1\). Thus \(q_2\ge1-e^{-c_0T_I}\) and \(q_1\le e^{-c_0T_I}\); the displayed
+condition makes the first bound larger.
+\end{proof}
+
+This theorem is deliberately narrower than the full Moran-integrated model.
+Terminal arrangement conditioning can alter ancestral count histories, so the
+constant-rate exponential bound cannot be applied without the fixed-frequency
+assumptions. In the general model the exact operator criterion remains the
+necessary and sufficient result; a valid event bound is \(P(E\mid Z)>1/2\).
+
+Under neutral background complementation with \(p\mapsto1-p\), the conditional
+law at \(z\) maps to the law at the bitwise complement with the same topology
+labels. Hence complementing backgrounds does not reverse \(q_2-q_3\). A sign
+change requires a taxon permutation exchanging the two discordant resolutions.
+Under the simulator's genic-selection convention, the corresponding selection
+transformation is \(s\mapsto-s/(1+s)\). Finally, rapid switching yields the
+fixed-frequency averaged pair hazard
+\[
+(1-p)^2\frac{1}{M(1-p)}+p^2\frac{1}{Mp}=\frac1M,
+\]
+but a full conditional convergence theorem for the coupled Moran process is
+not claimed because terminal conditioning can produce boundary layers.
+
+\end{document}
