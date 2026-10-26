@@ -2576,6 +2576,22 @@ the core markers. Lower-multiplicity groups are drawn first, and distinct core
 shapes preserve coincident inside/outside observations without moving any
 coordinates.
 
+## Local validation of the pectinate Moran quartet law
+
+The unbalanced `(((1,2),3),4)` recursion was run against independent
+`msrc-sim` simulations. All 20 Moran-theory tests passed. The prescribed
+8-cell smoke validation used 1,000 fresh frequency histories and genealogies
+per cell, completed in approximately 6 seconds, and gave RMSE `0.012767`,
+maximum absolute error `0.029964`, with 100% of topology comparisons within 2
+and 3 Monte Carlo standard errors. A targeted 300-history check at initial
+fractions 0.25 and 0.75 with selection `+0.25` and `-0.25` also had all rows
+within 2 Monte Carlo standard errors. The complete report and figures are in
+`simulations/quartet/moran_theory/LOCAL_VALIDATION_REPORT.md` and `results/`.
+
+This is evidence for the stated hierarchical simulator model, not a proof of
+all asymmetric branch-size cases or a claim of microscopic Moran duality. The
+prepared broader Bridges-2 validation workflow was not submitted.
+
 ## Exact finite-M Moran MSRC law on the pectinate tree
 
 The unbalanced species-tree extension is implemented in
