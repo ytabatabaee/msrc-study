@@ -16,3 +16,10 @@ from .matrix_free_quartet import (
     matrix_free_dual_lift,
     matrix_free_shared_population_quartet_probabilities,
 )
+from .prescribed_frequency_quartet import (
+    PrescribedQuartetResult,
+    PrescribedTrajectory,
+    balanced_prescribed_quartet_probabilities,
+    prescribed_generator,
+    unbalanced_prescribed_quartet_probabilities,
+)

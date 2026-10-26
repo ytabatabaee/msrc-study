@@ -96,3 +96,25 @@ chromosome-copy counts, seven starting frequencies, switching values from 0 to
 are written to `results/`; the numerical discussion is in
 `EXTENDED_VALIDATION_REPORT.md`. The run is local only and submits no cluster
 jobs.
+
+## Prescribed-frequency conditional recursion
+
+`prescribed_frequency_quartet.py` evaluates balanced and pectinate quartet
+probabilities conditional on externally supplied piecewise-constant frequency
+histories. It uses the 2-, 6-, 11-, and 19-state genealogical operators and
+ordered matrix-exponential propagation; it does not integrate the Moran count
+process. The exact relationship to the unconditional model is an expectation
+over jointly generated Moran histories. See `PRESCRIBED_FREQUENCY_DERIVATION.md`
+and the validation report in `results/`.
+
+Run the bounded validation with:
+
+```text
+/Users/ytabatabaee/opt/anaconda3/bin/python \
+  simulations/quartet/moran_theory/validate_prescribed_frequency.py \
+  --simulator-replicates 1000
+```
+
+This runs ODE, fixed-frequency, piecewise-history, and a small independent
+`msrc-sim` constant-history smoke check. It does not run a large
+stochastic-history experiment.

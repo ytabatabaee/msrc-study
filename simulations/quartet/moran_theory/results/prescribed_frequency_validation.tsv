@@ -1,0 +1,11 @@
+check	max_abs_error	value
+ode_generator_n1	2.220446049250313e-16	pass
+ode_generator_n2	4.884981308350689e-15	pass
+ode_generator_n3	1.630917623174355e-13	pass
+ode_generator_n4	3.7464475965975907e-13	pass
+balanced_constant_frequency	3.885780586188048e-16	pass
+varying_complete_balanced_conservation	0.0	pass
+msrc_sim_constant_q1	0.014863619746780687	count=373 observed=0.37300000 expected=0.35813638 z=0.980
+msrc_sim_constant_q2	0.002068190126609637	count=323 observed=0.32300000 expected=0.32093181 z=0.140
+msrc_sim_constant_q3	0.01693180987339038	count=304 observed=0.30400000 expected=0.32093181 z=-1.147
+runtime_seconds	0.0	0.462031

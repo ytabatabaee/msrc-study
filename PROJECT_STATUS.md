@@ -2700,3 +2700,18 @@ population cases and all genealogy state sizes. The audit, proposition,
 benchmark, and special-case discussion are in
 `simulations/quartet/moran_theory/EXACT_STATE_REDUCTION.md` and
 `exact_state_reduction_proposition.tex`.
+
+## Prescribed-frequency MSRC quartet recursion
+
+Added `prescribed_frequency_quartet.py` for exact conditional-on-history
+balanced and pectinate quartet probabilities. It propagates the 2-, 6-, 11-,
+and 19-state genealogical operators through ordered piecewise-constant
+frequency segments and optionally returns the joint terminal-pattern law. The
+new tests and full theory suite pass (5 focused tests; 42 total). Independent
+DOP853 propagation agrees to `3.75e-13`, and the constant-frequency balanced
+recursion agrees with the existing fixed-frequency result to `3.89e-16`.
+A 1,000-locus constant-history smoke check against `msrc-sim` had all topology
+residuals within two Monte Carlo standard errors. This is a conditional
+validation; averaging over jointly generated Moran trajectories remains the
+required route to unconditional finite-M probabilities and is not claimed by
+the new module.

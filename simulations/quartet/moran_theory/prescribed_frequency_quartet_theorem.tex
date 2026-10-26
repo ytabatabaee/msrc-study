@@ -1,0 +1,40 @@
+\paragraph{Prescribed-frequency quartet theorem.}
+Let each branch of a four-taxon species tree carry a finite piecewise-constant
+frequency history ordered from its younger to older boundary. Conditional on
+these histories, assume background switching rates
+\(\rho p\) and \(\rho(1-p)\), same-background coalescence rates
+\(c_0(p)=1/[M\max(1-p,1/M)]\) and
+\(c_1(p)=1/[M\max(p,1/M)]\), and the absorbing genealogy generators
+\(G_n(p)\) used by the MSRC simulator. Then the conditional quartet law is
+obtained by applying, on every branch, the ordered product
+\[
+\prod_j\exp(G_n(p_j)\Delta t_j)
+\]
+to the appropriate young-boundary row distribution. For the balanced tree,
+\[
+q_i=q_{\mathrm{early},i}+F_{\mathrm{bal}}^{\mathsf T}
+P_4(\mathcal P_A)h_i,
+\]
+and for the pectinate tree,
+\[
+q_i=c_i+F_{\mathrm{pect}}^{\mathsf T}P_4(\mathcal P_A)h_i.
+\]
+Here (c_i) is the mass absorbed into topology (i) before the four-lineage
+root stage. The formulas are exact conditional on the supplied histories and
+conserve probability. If the histories are random Moran histories, the
+unconditional law is the expectation of these conditional expressions; one
+prescribed trajectory is not an unconditional finite-(M) result.
+
+\paragraph{Proof.}
+The transient and absorbing states form a finite continuous-time Markov chain.
+The forward row Kolmogorov equation is (v'(t)=v(t)G_n(p)), giving the stated
+matrix exponential on each constant segment. Concatenation of segments gives
+the ordered product. At each speciation boundary, the conditional history
+supplies the daughter-boundary background distributions, so the product of
+independent daughter contributions is the conditional joint distribution.
+For the balanced tree, failure of either sister pair to survive contributes
+only (Q_1); the surviving mass is (F_{\rm bal}), after which the root
+chain absorbs into (h_i). For the pectinate tree, the three-lineage chain
+absorbs into (c_i) or enters the root as (F_{\rm pect}). These events are
+disjoint and exhaustive, proving the formulas and probability conservation.
+Taking expectation over the random histories proves the final statement.
