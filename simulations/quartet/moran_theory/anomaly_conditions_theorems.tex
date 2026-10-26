@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\begin{document}
+
+\begin{theorem}[Exact finite-state anomaly criterion]
+For any arrangement pattern $z$ with $P(Z=z)>0$ in the hierarchical finite-$M$
+MSRC model, define
+\[
+J[z,i]=c_i(z)+(\pi_{\rm old}\otimes h_i)^T e^{A_4T_A}F_z.
+\]
+Then
+\[
+\Gamma(z)>0
+\iff
+\max\{J[z,2],J[z,3]\}>J[z,1],
+\]
+and
+\[
+\Delta(z)=\frac{J[z,2]-J[z,3]}{P(Z=z)}.
+\]
+\end{theorem}
+
+\begin{proof}
+The common positive denominator is
+$P(Z=z)=\sum_iJ[z,i]$. Therefore comparisons among conditional probabilities
+are exactly comparisons among their joint numerators. Subtracting the two
+operator expressions gives the stated differences.
+\end{proof}
+
+\begin{theorem}[A zero-switching crossed-pattern bound]
+Assume a fixed frequency $p\in(0,1)$, zero switching, chromosome count $M$,
+and the finite-floor coalescence rates
+\[
+c_0=1/[M(1-p)],\qquad c_1=1/(Mp).
+\]
+For $Z=0101$, if $T_I>M(1-p)\log2$, then $Q_2$ is more probable than $Q_1$.
+For $Z=0110$, if $T_I>Mp\log2$, then $Q_3$ is more probable than $Q_1$.
+The complementary cases $1010$ and $1001$ obey the same bounds with the
+matching background exchanged.
+\end{theorem}
+
+\begin{proof}
+For $0101$, lineages 1 and 2 have different backgrounds and cannot coalesce on
+the sister branch. On the intermediate branch, 1 and 3 are the only matching
+pair among the three lineages, with rate $c_0$. Its coalescence probability is
+$1-e^{-c_0T_I}$ and fixes $Q_2$. Hence
+$P(Q_2\mid Z=0101)\ge1-e^{-c_0T_I}$, while $Q_1$ is impossible on this event
+and so $P(Q_1\mid Z=0101)\le e^{-c_0T_I}$. The displayed condition makes the
+first bound larger than the second. The other cases follow by exchanging the
+matching pair and/or backgrounds.
+\end{proof}
+
+\begin{proposition}[Complement transformation]
+Under neutral dynamics, replacing every arrangement bit by its complement and
+replacing $p$ by $1-p$ preserves the conditional quartet probabilities after
+mapping $z$ to its complement. With genic selection, the same statement holds
+under the additional parameter transformation $s\mapsto-s/(1+s)$.
+\end{proposition}
+
+\begin{proof}
+The background switching rates and finite-floor coalescence rates are
+interchanged by the transformation. The Moran count generator is unchanged in
+the neutral case. Under genic selection, exchanging the two relative fitnesses
+and rescaling by the former A1 fitness gives the stated transformed selection
+coefficient. The operator recursion is therefore conjugate under the bit
+complementation map.
+\end{proof}
+
+\begin{proposition}[Fast-switching fixed-frequency limit]
+At fixed $p$ and fixed finite branch durations, the leading
+$\rho\to\infty$ averaged pair-coalescence rate is $1/M$. Thus arrangement
+conditioning loses its leading-order effect and the ordinary MSC quartet law is
+recovered at the averaged level.
+\end{proposition}
+
+\begin{proof}
+The one-lineage switching chain has stationary probabilities $(1-p,p)$.
+A pair is in the same background with probabilities $(1-p)^2$ and $p^2$.
+Averaging the two hazards gives
+$(1-p)^2/[M(1-p)]+p^2/(Mp)=1/M$. Standard finite-state fast-slow averaging
+then gives the leading limit. A full coupled finite-M singular-perturbation
+bound is not asserted here.
+\end{proof}
+
+The exact finite-M operator criterion is necessary and sufficient. The crossed
+pattern bound is sufficient but not necessary; numerical roots in the full
+operator are not claimed to be unique without an additional monotonicity
+proof.
+\end{document}

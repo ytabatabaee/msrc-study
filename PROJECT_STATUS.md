@@ -2657,3 +2657,23 @@ The derivation, theorem, tables, and figures are in
 `unbalanced_conditional_theorem.tex`, and `results/`. The balanced comparison
 uses matched root-to-tip depths but has a different ancestral-stage
 partition, so it is descriptive rather than a pure rooted-shape contrast.
+
+## Analytical conditions for anomalous MSRC quartets
+
+Added a theorem-level anomaly criterion and a proved zero-switching sufficient
+condition for crossed arrangement patterns. For `Z=0101` in the fixed-frequency
+zero-switching model, `T_I > M(1-p) log(2)` guarantees `Q2 > Q1`; analogous
+bounds apply to `0110`, `1010`, and `1001` with the appropriate matching
+background. The exact finite-M criterion is the sign of the joint-mass
+operator difference `J[z,2]-J[z,1]` or `J[z,3]-J[z,1]`.
+
+The analytical base example remains anomalous for `Z=0101`, with
+`P(Z=0101)=0.044312`, `Delta=0.175560`, and `Gamma=0.173987`. Numerical
+operator roots for `q2=q1` occur at rho approximately 2.744, 2.558, 2.441,
+2.310, and 2.212 for intermediate durations 0, 0.1, 0.2, 0.4, and 0.8;
+uniqueness and monotonicity are not claimed. Fast-switching and complement
+symmetry results are stated with their explicit fixed-frequency or neutral
+assumptions. The tested unconditional base law remains symmetric and
+non-anomalous after pattern marginalization. Derivations, theorem text, exact
+condition tables, and figures are in `simulations/quartet/moran_theory/` and
+`results/`.

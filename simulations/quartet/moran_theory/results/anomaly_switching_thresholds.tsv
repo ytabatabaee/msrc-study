@@ -1,0 +1,6 @@
+parameter	intermediate_length	root_q2_equals_q1	existence
+rho	0.0	2.7438306094486404	numerically bracketed
+rho	0.1	2.5577174159957607	numerically bracketed
+rho	0.2	2.4405311628599566	numerically bracketed
+rho	0.4	2.309775859036142	numerically bracketed
+rho	0.8	2.2121384414751186	numerically bracketed
