@@ -1,0 +1,41 @@
+\paragraph{Two-regime quartet theorem.}
+Let (E_b(t)) be a two-state continuous-time Markov chain with row generator
+\(R_b\), and let the two regimes have fixed frequencies (p_L,p_H). Conditional
+on (E_b(t)=e), use the genealogy generator (G_n(p_e,M,\rho)). At each
+speciation let (H_b(e_p,e_d)) be a row-stochastic parent-to-child kernel,
+with daughter draws conditionally independent given (e_p). Then the exact
+conditional-regime/genealogy operator is
+\[
+\widetilde A_n=R_b\otimes I_{d_n}+
+\operatorname{blockdiag}(G_n(p_L)^T,G_n(p_H)^T).
+\]
+
+For a balanced four-taxon tree, if (F_B) is the regime-indexed unresolved
+root-entry vector and (c_B) is the early sister-resolution contribution,
+\[
+q_i=c_{B,i}+(\pi_E\otimes h_i)^T
+e^{\widetilde A_4T_A}F_B.
+\]
+For a pectinate tree, the same expression holds with the 22-state
+three-lineage intermediate operator, early vector (c_U), and root-entry
+vector (F_U):
+\[
+q_i=c_{U,i}+(\pi_E\otimes h_i)^T
+e^{\widetilde A_4T_A}F_U.
+\]
+
+\emph{Proof sketch.} The regime chain and the conditional genealogy form a
+finite Markov-modulated absorbing process. The forward regime generator and
+transposed backward genealogy blocks give the displayed dual operator. Branch
+values are propagated by its exponential. At a split, applying (H_b) to each
+daughter value before multiplication is exactly conditional independence given
+the parental regime. Early absorbing mass and unresolved root-entry mass are
+disjoint and exhaustive, proving conservation and the recursions. The result is
+an exact unconditional law for this regime model, not a reduction of the
+finite-(M) Moran model.
+
+If (p_L=p_H), the genealogy blocks are identical and the regime factor
+separates; because (R_b) is a conservative generator, the regime process
+marginalizes to one. If (a_b=b_b=0), the law is the mixture of the two fixed
+regime laws weighted by the initial regime distribution, for identity
+inheritance.

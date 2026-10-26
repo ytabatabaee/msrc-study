@@ -27,3 +27,10 @@ from .regime_switching_quartet import (
     RegimeSwitchingQuartetResult,
     regime_switching_shared_population_quartet_probabilities,
 )
+from .two_regime_species_tree import (
+    RegimeBranch,
+    TwoRegimeModel,
+    TwoRegimeSpeciesTreeResult,
+    balanced_two_regime_quartet_probabilities,
+    unbalanced_two_regime_quartet_probabilities,
+)

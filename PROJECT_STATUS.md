@@ -2732,3 +2732,16 @@ Added a separate 38-state two-frequency-regime model as an exact alternative
 for that explicitly modified stochastic process. It is not equivalent to the
 original Moran model. Existing sparse or matrix-free count-indexed propagation
 remains the exact method for the original unconditional hierarchy.
+
+## Exact two-regime MSRC species-tree model
+
+Added `two_regime_species_tree.py`, implementing the distinct two-regime
+stochastic frequency model with 4, 12, 22, and 38 states for one through four
+lineages and explicit parent-to-child regime inheritance kernels. Balanced and
+pectinate recursions return unconditional quartet laws and joint terminal
+pattern distributions. Deterministic tests verify conservation,
+identity/nonidentity inheritance, the `p_L=p_H` fixed-frequency limit, and
+zero-regime-switching mixtures. The compact diagnostic found conditional
+discordant asymmetry and anomaly margins up to approximately 0.21 in this
+alternative model. It remains a sensitivity model and has not replaced the
+finite-M Moran analysis.
