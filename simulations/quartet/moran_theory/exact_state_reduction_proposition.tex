@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\begin{document}
+
+\begin{proposition}[No general count-free closure]
+Consider the finite-$M$ MSRC operator
+\[
+A_n=Q_M\otimes I_{d_n}+
+\operatorname{blockdiag}(G_n(0)^T,\ldots,G_n(M)^T),
+\]
+where $G_n(k)$ contains background-dependent switching and coalescence rates.
+For arbitrary $M$, switching rate, selection, branch durations, and initial
+count distribution, the unconditional quartet probabilities do not admit a
+general exact closure on a state space independent of $M$ based only on the
+three topology probabilities.
+\end{proposition}
+
+\begin{proof}[Proof of the obstruction]
+The topology value at an older boundary is a function $v(k,s)$ of the Moran
+count $k$ and genealogy state $s$. In the structured generator, a pair in
+background 1 coalesces at $1/\max(k,1)$ and a pair in background 0 at
+$1/\max(M-k,1)$, while switching rates are proportional to $k/M$ and
+$(M-k)/M$. Hence the generator maps a count-independent value function to a
+function with distinct $k$-dependence whenever both coalescence and switching
+are relevant.
+
+Equivalently, the partition that identifies all count states is not strongly
+lumpable: its rows have different aggregate rates to the topology-absorbing
+states. Repeated generator application therefore produces additional
+count-dependent functions, including inverse-count terms, so the three
+topology masses are not a closed invariant coordinate system.
+
+At a species split, daughter value functions are multiplied after being
+conditioned on the same parental count. Thus replacing them by marginal means
+loses their shared-count covariance. The explicit balanced example with
+$M=10$ and initial distributions $\delta_5$ and
+$(\delta_2+\delta_8)/2$ has equal mean count but different quartet vectors,
+which rules out mean-frequency closure even for a neutral finite tree.
+\end{proof}
+
+The result does not exclude reductions at fixed frequency/count or under
+special exchangeability symmetries. It also does not rule out matrix-free
+application of the original count-indexed operator; that is an implementation
+optimization, not a reduction in mathematical dimension.
+
+\end{document}

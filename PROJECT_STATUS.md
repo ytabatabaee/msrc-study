@@ -2681,3 +2681,22 @@ assumptions. The tested unconditional base law remains symmetric and
 non-anomalous after pattern marginalization. Derivations, theorem text, exact
 condition tables, and figures are in `simulations/quartet/moran_theory/` and
 `results/`.
+
+## Exact unconditional quartet state-reduction audit
+
+The finite-M unconditional quartet calculation was audited for an
+M-independent exact reduction. No general count-free closure exists for the
+hierarchical model: switching and inverse-frequency coalescence rates depend
+on the Moran count, and daughter contributions are multiplied conditional on
+shared parental counts. Unconditional marginalization reduces the terminal
+outputs to three topology probabilities but does not remove the hidden count
+state.
+
+Added `matrix_free_quartet.py`, which applies the exact count-indexed operator
+with `LinearOperator` and `expm_multiply` without assembling the full sparse
+block matrix. It is an implementation optimization, not a mathematical state
+reduction. Tests match the sparse reference for neutral and selected shared
+population cases and all genealogy state sizes. The audit, proposition,
+benchmark, and special-case discussion are in
+`simulations/quartet/moran_theory/EXACT_STATE_REDUCTION.md` and
+`exact_state_reduction_proposition.tex`.

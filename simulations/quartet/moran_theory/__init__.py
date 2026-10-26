@@ -10,3 +10,9 @@ from .full_species_tree import (
     full_species_tree_quartet_probabilities,
     inheritance_kernel,
 )
+from .matrix_free_quartet import (
+    MatrixFreeQuartetResult,
+    matrix_free_operator,
+    matrix_free_dual_lift,
+    matrix_free_shared_population_quartet_probabilities,
+)

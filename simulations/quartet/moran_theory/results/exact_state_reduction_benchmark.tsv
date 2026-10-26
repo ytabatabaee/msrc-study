@@ -1,0 +1,7 @@
+M	method	state_dimension	elapsed_seconds	assembled_operator_nnz	matrix_free_stored_nnz	probability_sum_error
+10	sparse_assembled	209	0.058410468	1581	1239	2.220e-16
+10	matrix_free	209	0.480807169	1581	1239	0.000e+00
+20	sparse_assembled	399	0.139068779	3151	2429	2.220e-16
+20	matrix_free	399	0.441032328	3151	2429	2.220e-16
+40	sparse_assembled	779	0.122842153	6291	4809	2.220e-16
+40	matrix_free	779	0.821713652	6291	4809	2.220e-16

@@ -47,6 +47,16 @@ The derivation documents a finite-M boundary distinction: literal zero-
 duration `msrc-sim` speciation still performs binomial daughter initialization,
 so it is distinct from the separate collapsed shared-population kernel.
 
+## Exact state dimensionality
+
+The unconditional quartet law can sum the 16 terminal-pattern output columns,
+but arbitrary finite-M Moran dynamics still require the count-indexed state
+because switching and coalescence rates depend on the count and daughter
+contributions share parental counts. `matrix_free_quartet.py` provides exact
+matrix-free shared-population propagation with the same `(M+1)*d` state
+dimension. The reduction audit and benchmark are in
+`EXACT_STATE_REDUCTION.md` and `results/exact_state_reduction_benchmark.tsv`.
+
 ## Pectinate species tree
 
 `unbalanced_species_tree.py` implements the exact hierarchical recursion for
