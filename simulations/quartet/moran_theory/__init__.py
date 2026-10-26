@@ -23,3 +23,7 @@ from .prescribed_frequency_quartet import (
     prescribed_generator,
     unbalanced_prescribed_quartet_probabilities,
 )
+from .regime_switching_quartet import (
+    RegimeSwitchingQuartetResult,
+    regime_switching_shared_population_quartet_probabilities,
+)

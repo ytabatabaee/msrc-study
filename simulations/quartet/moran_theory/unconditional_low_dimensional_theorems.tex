@@ -1,0 +1,49 @@
+\paragraph{Proposition (growing-mode obstruction).}
+In the finite-\(M\) Moran MSRC model with zero background switching, the
+unresolved survival of a same-background pair on a branch is governed by
+\[
+B_M=Q_M-\operatorname{diag}\{1/\max(M-k,1):0\le k\le M\}.
+\]
+For the neutral Moran rates, the interior block on
+\(1\le k\le M-1\) is an irreducible tridiagonal matrix with a simple
+spectrum. Therefore, for generic initial count distributions, its survival
+function contains \(M-1\) independent exponential modes. Any exact
+time-homogeneous linear realization of this branch-value family requires
+dimension at least \(M-1\).
+
+\emph{Proof.} While the pair is unresolved, the count process evolves with
+the Moran generator and is killed at its background-specific coalescence rate,
+which gives the displayed subgenerator. Restricting to interior counts removes
+the absorbing count boundaries and leaves an irreducible tridiagonal matrix.
+It is diagonally symmetrizable under the positive neutral birth and death
+rates, and an irreducible symmetric tridiagonal matrix has simple eigenvalues.
+Generic initial and terminal vectors have nonzero projection onto each
+eigenmode, so the survival function contains \(M-1\) distinct exponentials.
+A \(C\)-dimensional time-homogeneous linear realization has at most \(C\)
+distinct exponential modes. Hence \(C\ge M-1\). The pair survival appears in
+the balanced-tree early term \(1-s_Ls_R\), so a universal branch-value closure
+for the arbitrary hierarchical recursion cannot remove these modes. \qed
+
+\paragraph{Scope.}
+This proposition rules out a universal finite-dimensional linear closure for
+the branch-value functions required by the full arbitrary-branch recursion.
+It does not claim that every specially chosen final scalar or symmetric
+parameter setting has no accidental cancellation. Such cancellations are
+special cases and do not supply a general formula for arbitrary initial count
+distributions and branch parameters.
+
+\paragraph{Corollary.}
+The original hierarchical model does not admit a general exact unconditional
+count-free recursion by ordinary moment summation, finitely many
+generating-function evaluations, or strong lumping. The count-indexed operator
+remains necessary for the general branch recursion.
+
+\paragraph{Separate model.}
+If the Moran count is replaced by a two-state frequency-regime CTMC with fixed
+frequencies \(p_L,p_H\), the shared-population quartet law is exactly obtained
+from the 38-state operator
+\[
+R\otimes I_{19}+\operatorname{blockdiag}(G_4(p_L)^T,G_4(p_H)^T).
+\]
+This statement concerns the regime model and is not an equivalence theorem
+for the finite-\(M\) Moran process.

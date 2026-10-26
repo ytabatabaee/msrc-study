@@ -2715,3 +2715,20 @@ residuals within two Monte Carlo standard errors. This is a conditional
 validation; averaging over jointly generated Moran trajectories remains the
 required route to unconditional finite-M probabilities and is not claimed by
 the new module.
+
+## Unconditional low-dimensional reduction audit
+
+The exact unconditional finite-M Moran model was audited beyond strong
+lumpability. A same-background unresolved pair with zero switching is governed
+by the killed count generator `B_M = Q_M - diag(c(k))`; its interior
+tridiagonal spectrum supplies generically `M-1` independent survival modes.
+Because this survival mass enters the balanced early-topology term, a universal
+time-homogeneous exact closure with dimension independent of M is not available
+for arbitrary initial count distributions and branch lengths. The diagnostic
+and proof are in `UNCONDITIONAL_LOW_DIMENSIONAL_THEORY.md` and
+`unconditional_low_dimensional_theorems.tex`.
+
+Added a separate 38-state two-frequency-regime model as an exact alternative
+for that explicitly modified stochastic process. It is not equivalent to the
+original Moran model. Existing sparse or matrix-free count-indexed propagation
+remains the exact method for the original unconditional hierarchy.
