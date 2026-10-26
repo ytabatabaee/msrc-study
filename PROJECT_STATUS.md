@@ -2612,3 +2612,24 @@ symmetry. A compact independent `msrc-sim` smoke validation using 8 cells and
 error `0.02996`, and all reported topology rows within 2 and 3 Monte Carlo
 standard errors. Larger parameter-grid validation is prepared by
 `validate_unbalanced_species_tree.py` but has not been submitted or run.
+
+## Extended local validation of the pectinate Moran quartet law
+
+The exact `(((1,2),3),4)` recursion was validated against 46,000 independent
+`msrc-sim` Moran genealogies across 23 targeted conditions. The grid includes
+asymmetric sister, intermediate, and root durations; unequal chromosome-copy
+counts on root, internal, and terminal branches; starting frequencies from 0
+to 1; switching rates from 0 to 1; and neutral, positive, and negative
+selection. All 23 theory tests pass. The extended run took 33.49 seconds and
+used 66.57 MiB peak resident memory, with RMSE 0.01218, maximum absolute error
+0.02438, 89.86% of topology comparisons within two Monte Carlo standard
+errors, and all comparisons within three. The report and diagnostic figure are
+in `simulations/quartet/moran_theory/EXTENDED_VALIDATION_REPORT.md` and
+`simulations/quartet/moran_theory/results/`.
+
+The pectinate topology remained the most probable in every tested condition,
+and the two unconditional discordant probabilities remained equal. No theorem
+correction was required. The result remains exact only for the stated
+hierarchical finite-state simulator model; no Bridges-2 validation jobs were
+submitted, and manuscript integration remains pending broader parameter-scope
+review.

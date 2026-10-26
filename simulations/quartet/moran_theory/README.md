@@ -69,3 +69,20 @@ The validation driver uses the authoritative `msrc-sim` checkout, creates a
 fresh Moran history for every replicate, and reports Monte Carlo standard
 errors. Larger grids are prepared by the same script but are not submitted or
 run automatically.
+
+The targeted extended validation is reproducible with:
+
+```text
+/Users/ytabatabaee/opt/anaconda3/bin/python \
+  simulations/quartet/moran_theory/validate_unbalanced_extended.py \
+  --msrc-sim /Users/ytabatabaee/Desktop/msrc-sim --replicates 2000
+MPLCONFIGDIR=/tmp/msrc-mpl /Users/ytabatabaee/opt/anaconda3/bin/python \
+  simulations/quartet/moran_theory/plot_extended_validation.py
+```
+
+It evaluates 23 targeted conditions, including asymmetric branch durations and
+chromosome-copy counts, seven starting frequencies, switching values from 0 to
+1, and both signs of selection. Results and the four-panel diagnostic figure
+are written to `results/`; the numerical discussion is in
+`EXTENDED_VALIDATION_REPORT.md`. The run is local only and submits no cluster
+jobs.
