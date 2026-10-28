@@ -6,17 +6,24 @@ of taxon 1 while holding `M=10`, initial count `K=5`, `rho=0.1`, sister
 durations `(0.2,0.3)`, and the other terminal durations `(0.1,0.2,0.3)`.
 
 At `(T_root,T_terminal1)=(1,0.2)` and `Z=0101`, finite-difference Jacobians
-over step sizes from `2e-3` to `5e-5` had determinant ranges:
+over step sizes from `2e-3` to `5e-5` had determinant ranges. The historical
+image script used `M=4` for its pectinate panel, while the balanced panel used
+`M=10`:
 
 | shape | determinant range |
 |---|---:|
 | balanced | `[-1.29743670e-4, -1.29743643e-4]` |
-| pectinate | `[-6.49491037e-4, -6.49490358e-4]` |
+| pectinate, `M=4` | `[-6.49491037e-4, -6.49490358e-4]` |
 
 The corresponding points are approximately `(q1,q2)=(0.23991861,0.52314100)`
 and `(0.13807319,0.72866960)`. These stable nonzero determinants are strong
 computational evidence of rank-two local reachability for `Z=0101` in both
 shapes.
+
+Using the same complete `M=10` configuration for both shapes gives the
+pectinate determinant `-2.619600004e-4` and point
+`(q1,q2,q3)=(0.231133491,0.539834653,0.229031857)`. The difference is the
+finite-population parameter `M`, not a topology-label or differentiation error.
 
 The inverse-function theorem gives an open neighborhood conditional on a
 rigorous nonzero determinant certificate. The current certificate is a

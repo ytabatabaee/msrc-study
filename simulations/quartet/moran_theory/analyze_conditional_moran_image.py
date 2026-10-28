@@ -71,6 +71,9 @@ def fit_target(fun, target, starts=((1.0, .2),)):
 def run(output: Path):
     output.mkdir(parents=True, exist_ok=True)
     derivative_rows = []
+    # The historical image uses M=4 for the pectinate panel to keep the
+    # descriptive grid lightweight. It is therefore not directly comparable
+    # to the M=10 pectinate certificate unless M is made explicit.
     for shape, maker in (("balanced", balanced_q), ("pectinate", lambda z, x: pectinate_q(z, x, M=4))):
         for z in ("0101",):
             values, low, high = derivative_stability(lambda x: maker(z, x))

@@ -38,3 +38,11 @@ def test_analytic_values_match_the_existing_conditional_recursions():
     q_pec, _, _, _ = pectinate_conditional_derivatives()
     assert np.max(np.abs(q_bal - balanced_q("0101", (1.0, .2)))) < 1e-12
     assert np.max(np.abs(q_pec - pectinate_q("0101", (1.0, .2), M=10))) < 1e-12
+
+
+def test_historical_pectinate_m4_value_is_reproduced_explicitly():
+    from ..analyze_conditional_moran_image import pectinate_q
+
+    q, jac, _, _ = pectinate_conditional_derivatives(M=4)
+    assert np.max(np.abs(q - pectinate_q("0101", (1.0, .2), M=4))) < 1e-12
+    assert np.isclose(np.linalg.det(jac), -6.494903570936153e-4, rtol=1e-8, atol=1e-12)

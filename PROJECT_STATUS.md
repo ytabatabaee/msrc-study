@@ -2838,3 +2838,17 @@ bound. A bounded exact grid and target-fit audit did not establish global
 coverage. New code and tables are under
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_COVERAGE_CERTIFICATE.md`
 and `results/conditional_moran_coverage/`.
+
+## Conditional Moran rigorous coverage audit
+
+Resolved the apparent pectinate Jacobian discrepancy: the older value
+`-6.4949035709e-4` used `M=4`, while the common audited value
+`-2.6196000042e-4` uses `M=10`; both agree with their exact solver at the
+corresponding parameters. Added a bounded geometry audit varying branch
+durations and switching, plus an illustrative hybridization line. The
+analytic derivatives remain numerically validated, but no interval-arithmetic
+matrix-exponential enclosure has been established. Thus local rank-two
+coverage is strongly supported for both rooted shapes, while formal local
+coverage, global simplex coverage, and rigorous hybridization overlap remain
+open. Results are under
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_RIGOROUS_COVERAGE.md`.
