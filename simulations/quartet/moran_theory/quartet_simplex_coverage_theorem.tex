@@ -1,0 +1,35 @@
+\paragraph{A vertex-closure construction.}
+Consider the two-regime model with $M=1$, $p_L=0$, $p_H=1$, zero background
+switching, zero duration below the root, and taxon-specific deterministic
+inheritance kernels. For $z\in\{0011,0101,0110\}$, let $j(z)$ be the
+corresponding quartet resolution $12|34$, $13|24$, or $14|23$.
+
+\begin{proposition}
+For a root branch of finite duration $T\geq0$,
+\[
+ P(Q_i\mid z)=\frac{e^{-2T}}3+(1-e^{-2T})\mathbf 1\{i=j(z)\}.
+\]
+Consequently, every simplex vertex lies in the closure of the image of the
+unrestricted two-regime model.
+\end{proposition}
+
+\begin{proof}
+Under the specified pattern, exactly two background-homogeneous pairs are
+available and each pair coalesces at rate one. Their independent survival
+probability through the root branch is $e^{-2T}$. If a pair coalesces, its
+quartet resolution is $j(z)$. If neither pair coalesces, the unresolved
+ancestral quartet has probability $1/3$ for each topology. Combining these
+events gives the formula. Letting $T\to\infty$ gives the vertex.
+\end{proof}
+
+Under finite branch durations and finite generator rates, a positive
+four-lineage unresolved mass entering the root has positive probability for
+each absorbing topology, because the residual vectors assign positive mass to
+every unresolved background state. Hence such a finite-parameter calculation
+cannot attain a simplex vertex. The construction reaches the vertices only in
+the $T\to\infty$ closure.
+
+This proposition does not imply full-simplex coverage, density of the full
+simplex, or validity under identity or founding inheritance. The original
+finite-$M$ Moran model is a different count-state process and is not covered
+by the proposition.

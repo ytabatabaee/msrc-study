@@ -2774,3 +2774,16 @@ identity-inheritance vector exactly. These are existence comparisons, not
 positive-area overlap or full-simplex results. Details and outputs are in
 `simulations/quartet/moran_theory/BIOLOGICAL_INHERITANCE_AND_ANOMALIES.md` and
 `results/biological_inheritance/`.
+
+## Quartet-simplex coverage audit
+
+Added an exact vertex-closure construction for the unrestricted two-regime
+model. With `M=1`, endpoint frequencies, zero switching, deterministic
+taxon-specific inheritance, and a finite root duration `T`, the three paired
+patterns produce `q=(1-2 exp(-2T)/3, exp(-2T)/3, exp(-2T)/3)` and its two
+permutations. Thus all vertices are approached as `T` grows, while finite
+unresolved root mass keeps the other topology probabilities positive. This
+proves a vertex-closure result, not full-simplex coverage. No full coverage
+theorem is established for the biologically constrained two-regime model or
+the original finite-M Moran model. See
+`simulations/quartet/moran_theory/QUARTET_SIMPLEX_COVERAGE_THEOREM.md`.
