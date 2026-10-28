@@ -2824,3 +2824,17 @@ noncentral target vectors remain unmatched in the restricted family. Results
 and the combined image figure are under
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_LOCAL_COVERAGE.md` and
 `results/conditional_moran_image/`.
+
+## Conditional Moran coverage certificate
+
+Added analytic duration derivatives for the exact finite-M conditional Moran
+recursions. At `M=10`, `K=5`, `rho=0.1`, `Z=0101`, and `(T_A,T_1)=(1,0.2)`,
+the determinants are `-1.297436435e-4` for the balanced tree and
+`-2.619600004e-4` for the pectinate tree. Centered finite differences agree
+with the analytic derivatives to below `3e-10`. These are strong numerical
+certificates of rank two, but not interval-arithmetic proofs; the inverse
+function theorem is therefore stated conditionally on a formal determinant
+bound. A bounded exact grid and target-fit audit did not establish global
+coverage. New code and tables are under
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_COVERAGE_CERTIFICATE.md`
+and `results/conditional_moran_coverage/`.
