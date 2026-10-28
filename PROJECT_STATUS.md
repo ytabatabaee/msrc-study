@@ -2893,3 +2893,11 @@ universal excluded-region inequality has been proved. The precise missing
 statement is a global level-set theorem controlling the full range of `r` at
 each fixed dominant probability `d`. See
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_GLOBAL_COVERAGE_RESOLUTION.md`.
+
+An autonomous research pass established a stronger partial result: in the
+neutral zero-switching, zero-lower-branch subfamily, each paired arrangement
+pattern covers the entire radial segment from the uniform quartet point to
+its corresponding vertex by continuity and the intermediate-value theorem.
+This is one-dimensional coverage only; transverse asymmetry at fixed `d`
+remains the unresolved global barrier. See
+`simulations/quartet/moran_theory/AUTONOMOUS_MORAN_SIMPLEX_RESEARCH.md`.
