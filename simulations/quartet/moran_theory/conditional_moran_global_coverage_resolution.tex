@@ -1,0 +1,30 @@
+\paragraph{Global coverage status.}
+For the original finite-$M$ Moran MSRC model define
+\[
+\mathcal Q_{\mathrm{MSRC}\mid Z}
+=\bigcup_{z,\theta:P_\theta(Z=z)>0}
+\{P_\theta(Q\mid Z=z)\}.
+\]
+The exact recursion proves that the closure of this set contains all three
+quartet-simplex vertices for both balanced and pectinate rooted trees. It does
+not currently prove
+\[
+\overline{\mathcal Q_{\mathrm{MSRC}\mid Z}}=\Delta_2.
+\]
+
+For $Z=0101$, writing
+\[
+q=((1-d)r,d,(1-d)(1-r)),
+\qquad d=q_2,
+\qquad r=\frac{q_1}{q_1+q_3},
+\]
+the exact solver gives valid pectinate examples with $r<1/2$ and $r>1/2$.
+Thus the simple obstruction $q_1\ge q_3$ is false. The missing global lemma is
+that, for every feasible $d$, the level set $q_2=d$ contains the complete
+sector interval of $r$ values (or has that closure). No such monotonicity,
+connectedness, endpoint, or degree theorem has been established.
+
+Accordingly, full conditional coverage and density remain unresolved. An
+external mixture of vertex constructions cannot fill this gap because it is
+not a single Moran parameterization. Any future introgression comparison must
+therefore be stated conditionally on a proven coverage or density theorem.

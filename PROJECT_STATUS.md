@@ -2881,3 +2881,15 @@ this pattern, but does not show that the full `r` interval is attainable at
 fixed `d`. Sector coverage, all-six-ordering attainability, and full simplex
 coverage remain open. Details are in
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_ASYMMETRY_THEOREM.md`.
+
+## Global conditional Moran coverage resolution
+
+The requested global coverage question remains unresolved for the original
+finite-`M` Moran model. The exact work establishes vertex closure and valid
+conditional asymmetry on both sides of `r=1/2`, ruling out a simple universal
+`q1 >= q3` obstruction. It does not establish sector coverage, a global
+inverse, density, or an internal convex-mixture representation, and no
+universal excluded-region inequality has been proved. The precise missing
+statement is a global level-set theorem controlling the full range of `r` at
+each fixed dominant probability `d`. See
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_GLOBAL_COVERAGE_RESOLUTION.md`.
