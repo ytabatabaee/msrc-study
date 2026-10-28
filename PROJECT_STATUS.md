@@ -2745,3 +2745,17 @@ zero-regime-switching mixtures. The compact diagnostic found conditional
 discordant asymmetry and anomaly margins up to approximately 0.21 in this
 alternative model. It remains a sensitivity model and has not replaced the
 finite-M Moran analysis.
+
+## Two-regime unconditional quartet reachability
+
+Added a bounded, deterministic reachability audit for the exact 38-state
+two-regime model. A 100-point-per-rooted-shape search found an unbalanced-tree
+witness with `(q1,q2,q3) = (0.35417018, 0.26868940, 0.37714042)`, demonstrating
+an unconditional anomaly and `|q2-q3| = 0.10845102` under nonidentity regime
+inheritance. Dense matrix-exponential recomputation agrees to `1.7e-16`.
+The local Jacobian has rank two at the tested interior point, but this does not
+establish full-simplex coverage. The new analysis, theorem notes, comparison
+table, tests, and simplex figure are under
+`simulations/quartet/moran_theory/` and `results/two_regime_reachability/`.
+The model remains distinct from the finite-M Moran process; one matched
+identity-inheritance comparison is descriptive only.

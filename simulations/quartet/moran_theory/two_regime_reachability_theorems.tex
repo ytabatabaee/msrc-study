@@ -1,0 +1,38 @@
+\paragraph{Two-regime identities.}
+Let $E$ be a two-state continuous-time Markov chain and let the conditional
+genealogy generator in regime $e$ be $G_n(p_e)^T$. The joint generator is
+\[
+ \widetilde A_n=R\otimes I_{d_n}+\operatorname{blockdiag}
+ (G_n(p_L)^T,G_n(p_H)^T).
+\]
+For four lineages, $d_4=19$ and therefore
+$\dim(\widetilde A_4)=38$.
+
+\begin{proposition}[Equal regime frequencies]
+If $p_L=p_H=p$, then the marginal quartet law of the two-regime model equals
+the fixed-frequency law at $p$, for every conservative regime generator $R$,
+initial regime distribution, and set of branch durations, provided all other
+genealogical parameters are equal between regimes.
+\end{proposition}
+\begin{proof}
+The two diagonal genealogy blocks are identical, so the joint semigroup is the
+Kronecker sum of $R$ and the common genealogy generator. The regime factor
+preserves total mass and disappears upon marginalization.
+\end{proof}
+
+\begin{proposition}[Taxon-exchange symmetry]
+Suppose a permutation of taxa exchanges $Q_2$ and $Q_3$ and leaves the complete
+parameterized species-tree, terminal sampling, branch parameters, and
+inheritance kernels invariant. Then the unconditional law satisfies
+$q_2=q_3$.
+\end{proposition}
+\begin{proof}
+Relabeling gives a measure-preserving bijection of regime and genealogy paths
+and exchanges the two absorbing topology labels. The two probabilities are
+therefore equal.
+\end{proof}
+
+The numerical search accompanying this proposition gives a deterministic
+witness with $q_3>q_1$ and $q_2\ne q_3$. This is an existence witness for the
+implemented model, not a universal analytic anomaly criterion. Full-simplex
+coverage is not established.
