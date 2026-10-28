@@ -55,6 +55,21 @@ not imply interior coverage, and the conditional Moran image is not known to
 be closed under convex mixtures. The global coverage question therefore
 remains unresolved.
 
+The bounded geometry sample exhibited only the strict orderings `1>2>3`,
+`2>1>3`, and `3>1>2`. This is descriptive evidence for the tested parameter
+families, not an excluded-region theorem; the other three orderings require
+either broader valid parameter searches or a structural proof of impossibility.
+
+| Claim | Status | Reason |
+|---|---|---|
+| Each of the three simplex vertices is in the conditional closure | proved | exact zero-lower-branch, long-root construction |
+| Rank-two local image at the audited `Z=0101` points | numerical certificate | analytic derivatives and stable finite differences |
+| Rank-two local image as a formal theorem | open | no validated interval bound for the matrix exponentials |
+| Any single pattern covers a dominance sector | open | no global inverse or boundary mapping |
+| All six strict orderings occur | unresolved | only three occurred in the bounded diagnostic sample |
+| Full conditional simplex closure | unresolved | no internal mixture or global coverage lemma |
+| Positive-length hybridization overlap | unresolved | local image is not formally certified and no overlap proof exists |
+
 The hybridization line in `hybridization_line.tsv` and the SVG diagnostic are
 illustrative. Because the local determinant is not formally interval-certified,
 the repository does not claim a rigorous nontrivial overlap or a positive

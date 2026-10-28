@@ -2852,3 +2852,20 @@ coverage is strongly supported for both rooted shapes, while formal local
 coverage, global simplex coverage, and rigorous hybridization overlap remain
 open. Results are under
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_RIGOROUS_COVERAGE.md`.
+
+## Conditional Moran full-simplex theorem audit
+
+The strongest global result currently established for the original
+finite-`M` conditional Moran model is vertex closure, for both balanced and
+pectinate rooted trees. An exact `M=4`, `K=2` certificate evaluates the paired
+patterns `0011`, `0101`, and `0110` at root durations 0, 1, and 8; the selected
+topology reaches approximately `0.99994` at duration 8 while every conditioning
+event remains positive and quartet probabilities normalize to one. This is a
+valid single-model parameter family, not an external mixture.
+
+Full interior coverage, density of the union in the closed simplex, sector
+coverage, and all-six-ordering attainability remain unresolved. Vertex
+approachability and numerical local rank do not imply convexity or global
+coverage. The formal theorem, certificate script, and regression tests are in
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_FULL_SIMPLEX_THEOREM.md`
+and `results/conditional_moran_full_simplex/`.

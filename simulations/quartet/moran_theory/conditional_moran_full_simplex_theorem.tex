@@ -1,0 +1,41 @@
+\paragraph{Conditional Moran quartet image.}
+Consider the finite-$M$ Moran-integrated MSRC recursion with a fixed rooted
+four-taxon species tree and condition on the observed arrangement pattern
+$Z=z$. For the neutral, zero-switching subfamily with equal branch copy
+counts, point-mass initial count $K\in\{1,\ldots,M-1\}$, and zero lower
+branch durations, let $T$ be the root ancestral duration. For
+$0011$, $0101$, and $0110$, respectively, the compatible pair determines
+$Q_1=12|34$, $Q_2=13|24$, and $Q_3=14|23$ when it coalesces before the root.
+
+\begin{proposition}[Vertex closure]
+For either $((1,2),(3,4))$ or $(((1,2),3),4)$, the conditional quartet law
+for the corresponding pattern satisfies
+\[
+q^{(j)}(T)=(1-S_j(T))e_j+S_j(T)r_j(T),
+\]
+where $S_j(T)$ is the compatible-pair survival probability and $r_j(T)$ is a
+probability vector. Moreover $S_j(T)\to0$ as $T\to\infty$, the conditioning
+event has positive probability for every finite $T$, and hence
+\[
+e_j\in\overline{\{q(z_j;\theta):P_\theta(Z=z_j)>0\}}.
+\]
+\end{proposition}
+
+\begin{proof}
+With zero switching and zero lower-branch durations, the compatible pair in
+pattern $z_j$ enters the first ancestral branch in one background. At every
+interior Moran count its pair-coalescence rate is positive. Thus its survival
+probability to the root is a finite-branch survival probability $S_j(T)$
+that tends to zero with the root duration. On the complementary event the
+first compatible coalescence fixes the unrooted quartet to $Q_j$, regardless
+of the later placement of the fourth lineage. The unresolved event contributes
+a probability vector $r_j(T)$. The joint Moran recursion retains the sampling
+mass of $z_j$; since $0<K<M$, that mass is positive, so division by it is
+valid. Therefore $q^{(j)}(T)\to e_j$. The pectinate case has the same
+argument because the sister and intermediate branches have zero duration.
+\end{proof}
+
+This proposition proves vertex closure only. It does not prove that the
+conditional image contains a sector, that it is convex, or that its union
+over patterns is dense in the full simplex. Establishing any of those claims
+requires a separate global inverse, degree, mixture, or obstruction theorem.
