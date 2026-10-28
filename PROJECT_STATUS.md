@@ -2759,3 +2759,18 @@ table, tests, and simplex figure are under
 `simulations/quartet/moran_theory/` and `results/two_regime_reachability/`.
 The model remains distinct from the finite-M Moran process; one matched
 identity-inheritance comparison is descriptive only.
+
+## Biologically constrained two-regime anomalies
+
+Added a targeted audit of identity, symmetric, and prespecified founding-count
+regime inheritance. Across 864 deterministic cases, no unconditional anomaly
+was found under these constrained kernels; the strongest margins were -0.01746
+for the pectinate identity model and -0.01864 for the pectinate founding model.
+Identity inheritance did produce small discordant asymmetry in some unbalanced
+cases. The unrestricted previous witness remains an unconditional anomaly, but
+it uses nonidentity inheritance kernels. A standard two-component network MSC
+quartet mixture matches that witness exactly, and also matches a non-anomalous
+identity-inheritance vector exactly. These are existence comparisons, not
+positive-area overlap or full-simplex results. Details and outputs are in
+`simulations/quartet/moran_theory/BIOLOGICAL_INHERITANCE_AND_ANOMALIES.md` and
+`results/biological_inheritance/`.
