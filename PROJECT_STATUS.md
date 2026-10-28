@@ -2869,3 +2869,15 @@ approachability and numerical local rank do not imply convexity or global
 coverage. The formal theorem, certificate script, and regression tests are in
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_FULL_SIMPLEX_THEOREM.md`
 and `results/conditional_moran_full_simplex/`.
+
+## Conditional Moran asymmetry audit
+
+Reparameterized the `Z=0101` conditional law as `q=((1-d)r,d,(1-d)(1-r))`
+and ran a small exact finite-`M` certificate. The symmetric zero-lower-branch
+case has `r=0.5`; asymmetric pectinate lower-branch durations produce valid
+examples on both sides of one-half (`r=0.48345` and `r=0.51908`) with positive
+conditioning probability. This rules out a universal `q1 >= q3` inequality for
+this pattern, but does not show that the full `r` interval is attainable at
+fixed `d`. Sector coverage, all-six-ordering attainability, and full simplex
+coverage remain open. Details are in
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_ASYMMETRY_THEOREM.md`.
