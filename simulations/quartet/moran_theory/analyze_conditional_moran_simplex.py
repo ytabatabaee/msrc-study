@@ -61,7 +61,9 @@ def run(output: Path):
                ("near_Q2", (.05, .9, .05)), ("interior_alt", (.7, .1, .2)))
     with (output / "target_status.tsv").open("w", newline="") as handle:
         w = csv.writer(handle, delimiter="\t"); w.writerow(("target", "q1", "q2", "q3", "status"))
-        for name, target in targets: w.writerow((name, *target, "unresolved_no_global_inverse"))
+        for name, target in targets:
+            status = "exact_at_zero_root_duration" if name == "center" else "unresolved_no_global_inverse"
+            w.writerow((name, *target, status))
     return rows
 
 
