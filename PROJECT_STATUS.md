@@ -2798,3 +2798,17 @@ regime variable has only two states, so it cannot serve as a three-component
 topology selector. A 57-state three-regime extension would be a different
 model and would still require biologically valid topology-specific regimes.
 Full interior coverage and density remain unresolved for the existing model.
+
+## Conditional finite-M Moran simplex audit
+
+Added an exact conditional analysis using the original finite-M Moran operator
+and binomial inheritance. For balanced trees, `rho=0`, fixed interior initial
+counts, zero lower branches, and patterns `0011`, `0101`, and `0110`, the
+conditional laws approach the three quartet vertices as the root duration
+increases. The same zero-lower-branch construction was verified in the
+pectinate recursion. Pattern probabilities remain positive in the reported
+finite cases. A local Jacobian has rank two after varying root and terminal
+branch durations, but this is not a global coverage proof. The target vectors
+requested for interior tests remain unresolved. See
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_SIMPLEX_THEOREM.md` and
+`results/conditional_moran_simplex/`.

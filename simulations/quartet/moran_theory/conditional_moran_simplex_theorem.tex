@@ -1,0 +1,25 @@
+\paragraph{Conditional vertex-density theorem.}
+In the finite-$M$ Moran model, consider the balanced quartet with neutral
+dynamics, zero background switching, equal finite copy counts, a fixed
+interior initial count, and zero lower-branch durations. For
+$z\in\{0011,0101,0110\}$, let $j(z)$ denote the paired topology selected by
+$z$. Then there is a finite-state transient survival function $S_z(T)$ such
+that
+\[
+P(Q_i\mid Z=z)=S_z(T)/3+(1-S_z(T))\mathbf 1\{i=j(z)\}.
+\]
+Moreover $S_z(T)\to0$ as $T\to\infty$, so each of the three simplex vertices
+is in the closure of the union of arrangement-conditional Moran quartet laws.
+
+\begin{proof}[Proof sketch]
+With zero switching, the paired pattern fixes which two background-homogeneous
+pairs can coalesce. Any such coalescence resolves the paired topology. The
+unresolved states form a finite killed Moran/genealogy chain; for an interior
+initial count every unresolved state has an eventual exit, so its survival
+probability tends to zero. At the older boundary, the residual quartet law is
+uniform. Conditioning on the positive terminal-pattern mass gives the stated
+formula.
+\end{proof}
+
+The theorem does not assert surjectivity of the interior. Exact finite-M
+coverage for a fixed pattern and for the union over patterns remains open.
