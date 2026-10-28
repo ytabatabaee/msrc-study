@@ -2787,3 +2787,14 @@ proves a vertex-closure result, not full-simplex coverage. No full coverage
 theorem is established for the biologically constrained two-regime model or
 the original finite-M Moran model. See
 `simulations/quartet/moran_theory/QUARTET_SIMPLEX_COVERAGE_THEOREM.md`.
+
+## Internal mixture coverage audit
+
+Audited the proposed three-component internal mixture construction. The weight
+formula exactly reproduces arbitrary interior target vectors when applied to an
+external mixture of the three separately parameterized vertex constructions,
+with errors below `2e-16`. It is not a single 38-state MSRC model: the existing
+regime variable has only two states, so it cannot serve as a three-component
+topology selector. A 57-state three-regime extension would be a different
+model and would still require biologically valid topology-specific regimes.
+Full interior coverage and density remain unresolved for the existing model.
