@@ -2901,3 +2901,16 @@ its corresponding vertex by continuity and the intermediate-value theorem.
 This is one-dimensional coverage only; transverse asymmetry at fixed `d`
 remains the unresolved global barrier. See
 `simulations/quartet/moran_theory/AUTONOMOUS_MORAN_SIMPLEX_RESEARCH.md`.
+
+## Conditional MSRC Patterson's D pilot
+
+Added a small branch-length Patterson's D pilot using the existing `msrc-sim`
+frequency-history and structured-genealogy implementations. Three independent
+histories were accepted under the predeclared terminal pattern `0101`, held
+fixed for 200 genealogies each, and compared with 600 standard-MSC
+genealogies. The conditional MSRC branch-length D estimates were -0.461,
+-0.187, and -0.159; sequence-mutation estimates had the same sign. The MSC
+baseline was close to zero relative to its genealogy-bootstrap uncertainty.
+This is feasibility evidence for conditional nonzero D, not an estimate over
+the full history distribution. See
+`simulations/quartet/moran_theory/results/conditional_patterson_d/`.
