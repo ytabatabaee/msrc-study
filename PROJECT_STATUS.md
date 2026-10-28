@@ -2812,3 +2812,15 @@ branch durations, but this is not a global coverage proof. The target vectors
 requested for interior tests remain unresolved. See
 `simulations/quartet/moran_theory/CONDITIONAL_MORAN_SIMPLEX_THEOREM.md` and
 `results/conditional_moran_simplex/`.
+
+## Conditional Moran local image
+
+The exact conditional two-duration families have stable nonzero numerical
+Jacobians at `Z=0101` for both balanced and pectinate trees. Determinant ranges
+are approximately `-1.2974e-4` and `-6.4949e-4` over multiple finite-difference
+scales. This supports local two-dimensional reachability but is not a formal
+interval-arithmetic proof or a global coverage theorem. The requested
+noncentral target vectors remain unmatched in the restricted family. Results
+and the combined image figure are under
+`simulations/quartet/moran_theory/CONDITIONAL_MORAN_LOCAL_COVERAGE.md` and
+`results/conditional_moran_image/`.
