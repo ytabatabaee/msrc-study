@@ -1,0 +1,5 @@
+condition_id	target_pattern	M	rho	histories	genealogies_per_history	base_seed
+rho_0	0101	20	0.0	100	5000	20261028
+rho_005	0101	20	0.05	100	5000	20262028
+rho_02	0101	20	0.2	100	5000	20263028
+rho_05	0101	20	0.5	100	5000	20264028

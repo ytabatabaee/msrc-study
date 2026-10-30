@@ -57,7 +57,6 @@ def run_pilot(msrc_sim: Path, output: Path, *, histories: int = 3, genealogies: 
     rearrangement = Rearrangement("quartet", "inversion", "ROOT", 0, M // 2, 0.0)
     rng = np.random.default_rng(seed)
     history_rows = []
-    gene_rows = []
     accepted = 0
     attempts = 0
     t0 = time.perf_counter()

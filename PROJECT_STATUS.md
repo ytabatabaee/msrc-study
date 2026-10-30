@@ -2914,3 +2914,13 @@ baseline was close to zero relative to its genealogy-bootstrap uncertainty.
 This is feasibility evidence for conditional nonzero D, not an estimate over
 the full history distribution. See
 `simulations/quartet/moran_theory/results/conditional_patterson_d/`.
+
+The implementation audit now has explicit rooted branch mapping tests and
+documents that Q3 is ABBA while Q2 is BABA, so the topology and Patterson-D
+diagnostics intentionally have opposite signs. A separate local convergence
+run sampled 10 additional accepted `0101` histories with 500 genealogies each:
+mean branch D was -0.193, SD 0.083, range -0.303 to -0.047. The standard MSC
+control used 5,000 genealogies and gave D=0.0110 (bootstrap SE 0.0258). A
+100-history × 5,000-genealogy Bridges-2 array and prespecified rho manifest
+are prepared but have not been submitted. Between-history uncertainty and
+parameter sensitivity therefore remain open.
