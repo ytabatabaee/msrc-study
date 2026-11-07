@@ -1,0 +1,15 @@
+dataset: edelman2019_erato_clade
+primary_assembly: H_erato_demophoon_v1
+secondary_assembly: Hmel2.5
+coordinate_system: 1-based-inclusive
+primary_window_sizes_bp: [10000, 50000]
+primary_windows: 10kb_abutting_and_50kb_sliding
+independence: spatially correlated; do not treat overlapping 50kb windows as independent
+baseline_topology: "The published erato-clade species-history topology, frozen before focal-window summaries"
+quartet_taxa: [HeraRef, Hhim, Htel, Hhsa]
+baseline_split: "HeraRef,Hhim|Hhsa,Htel"
+alternative_split: "HeraRef,Htel|Hhim,Hhsa"
+third_split: "HeraRef,Hhsa|Hhim,Htel"
+quartet_note: "Topology-only exploratory quartet using the four taxa present in the source trees; H. hecalesia is absent, so this is not a direct arrangement-state test of the published 15b hypothesis."
+region_policy: "Use only independently validated assembly-specific inversion coordinates; unresolved regions remain unclassified."
+branch_length_units: "source-tree units; report as patristic distances, never as coalescence times"

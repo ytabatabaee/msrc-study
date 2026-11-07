@@ -1,0 +1,11 @@
+scope	identifier	n_rows	n_branch_length_rows	status	notes
+all_local_tree_sources	all	57488	57488	descriptive_only	Rows are local trees; overlapping windows are not independent.
+source	erato_10kb	32871	True	available	unique_taxa=7; overlapping=False
+source	erato_50kb_hera	13743	True	available	unique_taxa=7; overlapping=True
+source	erato_50kb_hmel	10875	True	available	unique_taxa=7; overlapping=True
+source	melpomene_50kb	9880	True	available	unique_taxa=8; overlapping=False
+source	genome_info	0	unknown	available	
+interval	15b			verified	Hmel2.5-scaffold-Hmel215003o:15:1356511-1757545
+interval	15b			unresolved	H_erato_demophoon_v1:15:NA-NA
+interval	2b			verified	Hmel2.5-scaffold-Hmel202001o:2:4398947-6357046
+interval	2b			verified	H_erato_demophoon_v1:2:9114112-9292966

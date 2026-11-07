@@ -1,0 +1,5 @@
+region_id	chromosome	start	end	assembly	coordinate_system	status	source	hypothesis	notes
+15b	15	1356511	1757545	Hmel2.5-scaffold-Hmel215003o	1-based-inclusive	verified	Thawornwattana et al. 2023 Supplementary file 1, Table 2	15b/P-locus inversion	Verified on an Hmel2.5 scaffold; not silently projected to H. erato coordinates.
+15b	15	NA	NA	H_erato_demophoon_v1	1-based-inclusive	unresolved	Thawornwattana et al. 2023 Supplementary file 1, Table 2	15b/P-locus inversion	Table 2 reports n/a for the H. erato reference in the etales-8spp coordinate table; no H. erato 15b coordinate is invented.
+2b	2	4398947	6357046	Hmel2.5-scaffold-Hmel202001o	1-based-inclusive	verified	Thawornwattana et al. 2023 Supplementary file 1, Table 2	2b inversion	Verified on an Hmel2.5 scaffold; not silently projected to H. erato coordinates.
+2b	2	9114112	9292966	H_erato_demophoon_v1	1-based-inclusive	verified	Thawornwattana et al. 2023 Supplementary file 1, Table 2 plus Edelman eratoGenomeInfo Herato.transitions.tsv	2b inversion	Explicit conversion from Herato0206 scaffold coordinates 880283-1059137 using chr2 scaffold 6 start 8233830; 1-based inclusive.

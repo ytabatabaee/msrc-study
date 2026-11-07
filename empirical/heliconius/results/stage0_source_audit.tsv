@@ -1,0 +1,6 @@
+source_id	filename	assembly	expected_window_size_bp	exists	n_rows	n_tree_rows	n_malformed	n_taxa_max	branch_lengths_present	chromosomes	window_sizes	starts	endpoints	notes
+erato_10kb	eratoClade_10KBAbutting_HeraRef.ge2kb.trees.tsv	H_erato_demophoon_v1	10000	True	32871	32871	1	7	True					unique_taxa=7; overlapping=False
+erato_50kb_hera	eratoClade.50KBSliding.toHeraGenome.tsv	H_erato_demophoon_v1	50000	True	13743	13743	0	7	True					unique_taxa=7; overlapping=True
+erato_50kb_hmel	eratoClade_50KBSliding.allTrees.toHmelGenome.tsv	Hmel2.5	50000	True	10875	10875	0	7	True					unique_taxa=7; overlapping=True
+melpomene_50kb	melpomeneClade.50KBSliding.allTrees.nwk.tsv	Hmel2.5	50000	True	9880	9880	0	8	True					unique_taxa=8; overlapping=False
+genome_info	eratoGenomeInfo.zip	H_erato_demophoon_v1	10000	True	0	0	0	0	unknown					
