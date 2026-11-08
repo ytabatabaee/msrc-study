@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="650" viewBox="0 0 1450 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="725" y="35" text-anchor="middle" font-family="sans-serif" font-size="22">Documented Microbotryum mating-type organization and mapping status</text>
+<text x="725" y="63" text-anchor="middle" font-family="sans-serif" font-size="13">Gene-order schematic only; no MPbarcode50 chromosome coordinates or boundaries are asserted.</text>
+<rect x="130" y="115" width="280" height="64" rx="8" fill="#bdbdbd" opacity="0.9"/><text x="270" y="141" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white">PAR</text>
+<text x="450" y="139" font-family="sans-serif" font-size="15">recombining edge regions</text>
+<text x="450" y="161" font-family="sans-serif" font-size="13">published; categorical control</text>
+<rect x="130" y="200" width="280" height="64" rx="8" fill="#17becf" opacity="0.9"/><text x="270" y="226" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white">turquoise</text>
+<text x="450" y="224" font-family="sans-serif" font-size="15">young species-specific extension</text>
+<text x="450" y="246" font-family="sans-serif" font-size="13">published age class; position not recovered</text>
+<rect x="130" y="285" width="280" height="64" rx="8" fill="#8c564b" opacity="0.9"/><text x="270" y="311" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white">light/dark ruby</text>
+<text x="450" y="309" font-family="sans-serif" font-size="15">young species-specific strata</text>
+<text x="450" y="331" font-family="sans-serif" font-size="13">published; exact order not recovered</text>
+<rect x="130" y="370" width="280" height="64" rx="8" fill="#222222" opacity="0.9"/><text x="270" y="396" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white">black</text>
+<text x="450" y="394" font-family="sans-serif" font-size="15">older shared stratum</text>
+<text x="450" y="416" font-family="sans-serif" font-size="13">predates superbum–shykoffianum split</text>
+<rect x="130" y="455" width="280" height="64" rx="8" fill="#6b6ecf" opacity="0.9"/><text x="270" y="481" text-anchor="middle" font-family="sans-serif" font-size="16" fill="white">blue/orange/purple</text>
+<text x="450" y="479" font-family="sans-serif" font-size="15">ancient shared strata</text>
+<text x="450" y="501" font-family="sans-serif" font-size="13">published ancestral strata</text>
+<line x1="90" y1="115" x2="90" y2="535" stroke="#555" stroke-width="3"/><text x="270" y="570" text-anchor="middle" font-family="sans-serif" font-size="13">published regime labels, not physical scale</text>
+<text x="950" y="180" font-family="sans-serif" font-size="16" font-weight="bold">Validated in this repository</text>
+<text x="950" y="215" font-family="sans-serif" font-size="14">260/260 tree records parsed</text>
+<text x="950" y="245" font-family="sans-serif" font-size="14">260/260 provisional contig-ID matches</text>
+<text x="950" y="275" font-family="sans-serif" font-size="14">0 chromosome-scale positions</text>
+<text x="950" y="305" font-family="sans-serif" font-size="14">0 recovered orthogroup-to-tree links</text>
+<text x="950" y="350" font-family="sans-serif" font-size="16" font-weight="bold">Published structural context</text>
+<text x="950" y="385" font-family="sans-serif" font-size="14">PR chromosome fused with part of ancestral HD</text>
+<text x="950" y="415" font-family="sans-serif" font-size="14">small PARs at chromosome edges</text>
+<text x="950" y="445" font-family="sans-serif" font-size="14">M. lagerheimii used as ancestral-order proxy</text>
+</svg>

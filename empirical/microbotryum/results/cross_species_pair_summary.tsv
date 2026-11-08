@@ -1,0 +1,34 @@
+stratum	species_pair	species_pair_label	n_trees	q1_species	q2_mating_type	q3_third	D_q2_minus_q1	mean_B	mean_internal_branch
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	1.0	0.0	0.0	-1.0	0.13121098485	0.19582262866666666
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	1.0	0.0	0.0	-1.0	0.03056430787037037	0.04359922318888889
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	1.0	0.0	0.0	-1.0	0.12156796903148148	0.17919758625555557
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	1.0	0.0	0.0	-1.0	0.24246549776436782	0.36310770036551726
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	1.0	0.0	0.0	-1.0	0.0702984452229885	0.10437280435172414
+PARs	lag|sup	M. lagerheimii–M. superbum	29	1.0	0.0	0.0	-1.0	0.22952617797471261	0.34267361682758624
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	1.0	0.0	0.0	-1.0	0.19286298702997512	0.13676433157910448
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	0.11940298507462686	0.8731343283582089	0.007462686567164179	0.753731343283582	0.1476967693870647	0.059255754650000006
+black	lag|sup	M. lagerheimii–M. superbum	134	1.0	0.0	0.0	-1.0	0.15519966198644278	0.13411491920746269
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	1.0	0.0	0.0	-1.0	0.40827784525294114	0.3198956391352941
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	1.0	0.0	0.0	-1.0	0.28712787080294117	0.15572696696470587
+blue	lag|sup	M. lagerheimii–M. superbum	17	1.0	0.0	0.0	-1.0	0.164594084222549	0.21025306841764707
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	1.0	0.0	0.0	-1.0	0.3413399754693333	0.47030255336
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	0.6	0.4	0.0	-0.19999999999999996	0.255934620612	0.313922099904
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	1.0	0.0	0.0	-1.0	0.15375196512266665	0.17560478782
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	1.0	0.0	0.0	-1.0	0.13806469150833334	0.12425765705
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	0.0	1.0	0.0	1.0	0.08562165235	0.04155805440000001
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	1.0	0.0	0.0	-1.0	0.12947440260833334	0.12425765705000003
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	1.0	0.0	0.0	-1.0	0.42767381501282054	0.6382032723538462
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	1.0	0.0	0.0	-1.0	0.2682967549307692	0.3770437725692307
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	1.0	0.0	0.0	-1.0	0.24329311478205126	0.3372645058923077
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	1.0	0.0	0.0	-1.0	0.1404486616875	0.111472740525
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	0.25	0.75	0.0	0.5	0.10282607834166667	0.042663940299999994
+orange	lag|sup	M. lagerheimii–M. superbum	4	1.0	0.0	0.0	-1.0	0.12326649830416667	0.10809535569999998
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	1.0	0.0	0.0	-1.0	0.17515565988333334	0.04899225939999999
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	0.0	1.0	0.0	1.0	0.15852721365	0.0936351702
+purple	lag|sup	M. lagerheimii–M. superbum	3	1.0	0.0	0.0	-1.0	0.11899102016666667	0.048992259399999995
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	1.0	0.0	0.0	-1.0	2.7119393167416668	2.31042214525
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	1.0	0.0	0.0	-1.0	1.7709915828333334	0.8464178951
+red	lag|sup	M. lagerheimii–M. superbum	2	1.0	0.0	0.0	-1.0	3.091715634608333	1.0861292473999997
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	1.0	0.0	0.0	-1.0	0.13484169784545455	0.17540737354090907
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	0.9545454545454546	0.045454545454545456	0.0	-0.9090909090909092	0.04997336761515152	0.02626291440909091
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	1.0	0.0	0.0	-1.0	0.1255719916348485	0.16460750990909093

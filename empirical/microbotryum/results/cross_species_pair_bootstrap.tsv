@@ -1,0 +1,199 @@
+stratum	species_pair	species_pair_label	n_trees	statistic	estimate	ci_low	ci_high	bootstrap_replicates	note
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	B	0.13135759803357777	0.11119170652407408	0.1487861184814815	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|lag	M. shykoffianum (C212)–M. lagerheimii	9	internal	0.19607677044209998	0.16557680145555553	0.2228633095888889	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	B	0.03060127264026667	0.02436470257037037	0.03569827677777778	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	9	internal	0.043565734165066664	0.033777404588888886	0.052215422166666664	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	B	0.12144779896557778	0.09789939287037036	0.14052271840185185	1000	gene-level descriptive bootstrap; physical linkage remains
+HD_RR	lag|sup	M. lagerheimii–M. superbum	9	internal	0.17910394624413334	0.14500385573333333	0.20692145298888887	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	B	0.24267044867387355	0.18815176753965515	0.30073768606494256	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|lag	M. shykoffianum (C212)–M. lagerheimii	29	internal	0.3634276775588448	0.2816557257413793	0.45056390770000004	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	B	0.07045475817923565	0.053019221055172414	0.09222097679252873	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	29	internal	0.10461787713719656	0.0779067609413793	0.13700031112413794	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	B	0.22821175730308044	0.1809238942545977	0.2856498337235632	1000	gene-level descriptive bootstrap; physical linkage remains
+PARs	lag|sup	M. lagerheimii–M. superbum	29	internal	0.34069394055741375	0.2692712296724138	0.4261827679758621	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	B	0.19312600958219564	0.1525260281937811	0.2639620609909204	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|lag	M. shykoffianum (C212)–M. lagerheimii	134	internal	0.13672797165316194	0.12439386743880598	0.14993461551044773	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	q1_species	0.11898507462686567	0.06716417910447761	0.1791044776119403	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	q2_mating_type	0.8736716417910447	0.8208955223880597	0.9253731343283582	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	q3_third	0.007343283582089552	0.0	0.022388059701492536	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	D_q2_minus_q1	0.7546865671641791	0.6417910447761195	0.8582089552238806	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	B	0.14712744692329852	0.1082396431995025	0.2159361051665423	1000	gene-level descriptive bootstrap; physical linkage remains
+black	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	134	internal	0.05920562197456344	0.05303681165895523	0.06618948640223882	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	B	0.1551165412607954	0.14046918332487562	0.17082651468917912	1000	gene-level descriptive bootstrap; physical linkage remains
+black	lag|sup	M. lagerheimii–M. superbum	134	internal	0.13402163039081566	0.12136815886119402	0.14874984684029852	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	B	0.39980441988849214	0.1475525433627451	0.8879700170343137	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|lag	M. shykoffianum (C212)–M. lagerheimii	17	internal	0.3166907140908059	0.19594449544117645	0.5061364884705883	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	B	0.2839493451309215	0.035522087204901964	0.7774981377117646	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	17	internal	0.15426679118808231	0.04241800421764706	0.3620784215764705	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	B	0.16474711269058628	0.1264365693137255	0.20948252119411764	1000	gene-level descriptive bootstrap; physical linkage remains
+blue	lag|sup	M. lagerheimii–M. superbum	17	internal	0.21086466793897646	0.16293990238235292	0.26740380431764704	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	B	0.33920110582304863	0.148043151008	0.6999180444613333	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	25	internal	0.467218117132096	0.177789113012	1.0063736117679998	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	q1_species	0.59692	0.4	0.76	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	q2_mating_type	0.40308	0.24	0.6	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	D_q2_minus_q1	-0.19384	-0.52	0.19999999999999996	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	B	0.250291659456072	0.06553341683266667	0.628154782064	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	25	internal	0.30562132409463594	0.033312121959999996	0.865325631156	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	B	0.15376862149369533	0.133276760686	0.17618909529533333	1000	gene-level descriptive bootstrap; physical linkage remains
+dark_ruby	lag|sup	M. lagerheimii–M. superbum	25	internal	0.175752531691424	0.146998625712	0.208244730488	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	B	0.13791955283854168	0.10903695755	0.16709242546666667	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	internal	0.12399110856175	0.0709479594	0.1775673547	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q1_species	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q2_mating_type	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	D_q2_minus_q1	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	B	0.08570534230706665	0.08039103003333332	0.09085227466666666	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	internal	0.04155863817760001	0.04152156830000002	0.0415945405	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	B	0.12876893706008335	0.09028187215	0.1686669330666667	1000	gene-level descriptive bootstrap; physical linkage remains
+in_HD	lag|sup	M. lagerheimii–M. superbum	2	internal	0.12329808249230002	0.0709479594	0.17756735470000004	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	B	0.4356647594305538	0.20873483571538462	0.8154809142307692	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|lag	M. shykoffianum (C212)–M. lagerheimii	13	internal	0.6500364630792692	0.3120689375538462	1.2143362893	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	B	0.2689026340662397	0.06078206572307692	0.6684865244871795	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	13	internal	0.37775541707165383	0.06893929879230769	0.9783983856538462	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	B	0.2426815363342064	0.18555861126666665	0.31087360084102567	1000	gene-level descriptive bootstrap; physical linkage remains
+light_ruby	lag|sup	M. lagerheimii–M. superbum	13	internal	0.33633949165413846	0.2497052399	0.4334088957153846	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	B	0.14089393276512502	0.11205707834166667	0.17193709470416668	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|lag	M. shykoffianum (C212)–M. lagerheimii	4	internal	0.11178884790832501	0.09081772549999999	0.13866338355000002	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	q1_species	0.25475	0.0	0.75	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	q2_mating_type	0.74525	0.25	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	D_q2_minus_q1	0.4905	-0.5	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	B	0.1028322191216625	0.07170862985	0.1418912271875	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	4	internal	0.042562268549474994	0.027976583200000002	0.05735129739999999	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	B	0.123665633356375	0.10283721495	0.13779449995416668	1000	gene-level descriptive bootstrap; physical linkage remains
+orange	lag|sup	M. lagerheimii–M. superbum	4	internal	0.10846118128754999	0.09081772549999999	0.1324974235	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	B	0.1749440729322	0.11973687381666666	0.2641575722833333	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|lag	M. shykoffianum (C212)–M. lagerheimii	3	internal	0.048964036107399994	0.0302275266	0.0630277123	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	q1_species	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	q2_mating_type	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	D_q2_minus_q1	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	B	0.1573066410679	0.11042521731666667	0.24227511263333334	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	3	internal	0.0938847188982	0.07496918359999999	0.12407627100000002	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	B	0.11900858018855555	0.10797829856666667	0.13610598815	1000	gene-level descriptive bootstrap; physical linkage remains
+purple	lag|sup	M. lagerheimii–M. superbum	3	internal	0.048965815716433325	0.030227526599999985	0.0630277123	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	B	2.709120145807367	2.0071465831666666	3.4167320503166674	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|lag	M. shykoffianum (C212)–M. lagerheimii	2	internal	2.3070590320893998	1.4696438551000002	3.1512004354	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	B	1.7662949852104	1.1839168799666666	2.3580662857	1000	gene-level descriptive bootstrap; physical linkage remains
+red	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	2	internal	0.84622452846	0.8222470651	0.8705887251	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	B	3.0951322948195585	1.9528288975333332	4.230602371683333	1000	gene-level descriptive bootstrap; physical linkage remains
+red	lag|sup	M. lagerheimii–M. superbum	2	internal	1.0879873680491	0.4667556977	1.7055027970999996	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	B	0.13470989461350985	0.11260876539469698	0.15808788996060608	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|lag	M. shykoffianum (C212)–M. lagerheimii	22	internal	0.17537706860712726	0.14927879446363634	0.20366012337727274	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	q1_species	0.9544545454545454	0.8636363636363636	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	q2_mating_type	0.04554545454545455	0.0	0.13636363636363635	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	D_q2_minus_q1	-0.9089090909090909	-1.0	-0.7272727272727273	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	B	0.049862020050958335	0.04028868786439394	0.06406002593560606	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	cat|sup	M. shykoffianum (C212)–M. superbum (1065)	22	internal	0.026311279608486362	0.02008403292272727	0.03326660745909091	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	q1_species	1.0	1.0	1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	q2_mating_type	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	q3_third	0.0	0.0	0.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	D_q2_minus_q1	-1.0	-1.0	-1.0	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	B	0.1256503192921947	0.10983197252575758	0.1438322588310606	1000	gene-level descriptive bootstrap; physical linkage remains
+turquoise	lag|sup	M. lagerheimii–M. superbum	22	internal	0.16463277881203184	0.1409502879272727	0.1924594112090909	1000	gene-level descriptive bootstrap; physical linkage remains

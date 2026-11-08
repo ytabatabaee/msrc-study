@@ -10,6 +10,7 @@ Run from the repository root:
 ```bash
 python3 empirical/microbotryum/scripts/stage0_audit.py
 python3 empirical/microbotryum/scripts/stage1_analysis.py
+python3 empirical/microbotryum/scripts/stage2_analysis.py
 python3 -m unittest discover -s empirical/microbotryum/tests -p 'test_*.py'
 ```
 
@@ -24,6 +25,10 @@ generates topology, distance, all-quartet heatmap, and representative-tree
 figures. It intentionally does not make chromosome-wide tracks until the
 MPbarcode50-to-tree assembly and chromosome-order mapping is independently
 validated.
+
+Stage 2 reuses the Stage 1 assignments to audit tree-to-coordinate recovery and
+compare the three complete species-pair quartets. It does not infer physical
+chromosome order from topology or concatenate anonymous contigs.
 
 Relevant provenance:
 

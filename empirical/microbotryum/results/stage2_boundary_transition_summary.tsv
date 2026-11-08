@@ -1,0 +1,7 @@
+species_pair	left_stratum	right_stratum	boundary_status	left_n	right_n	delta_q1	delta_q2	delta_D	delta_B	delta_internal	interpretation
+cat|lag	PARs	black	not_spatially_testable; no validated coordinate boundary	29	134	0.0	0.0	0.0	-0.0496025107343927	-0.22634336878641279	stratum contrast only; not a detected genomic change point
+cat|lag	black	turquoise	not_spatially_testable; no validated coordinate boundary	134	22	0.0	0.0	0.0	-0.05802128918452057	0.0386430419618046	stratum contrast only; not a detected genomic change point
+cat|sup	PARs	black	not_spatially_testable; no validated coordinate boundary	29	134	-0.8805970149253731	0.8731343283582089	1.7537313432835822	0.07739832416407619	-0.04511704970172413	stratum contrast only; not a detected genomic change point
+cat|sup	black	turquoise	not_spatially_testable; no validated coordinate boundary	134	22	0.8351424694708277	-0.8276797829036635	-1.6628222523744913	-0.09772340177191317	-0.032992840240909094	stratum contrast only; not a detected genomic change point
+lag|sup	PARs	black	not_spatially_testable; no validated coordinate boundary	29	134	0.0	0.0	0.0	-0.07432651598826984	-0.20855869762012355	stratum contrast only; not a detected genomic change point
+lag|sup	black	turquoise	not_spatially_testable; no validated coordinate boundary	134	22	0.0	0.0	0.0	-0.029627670351594276	0.03049259070162824	stratum contrast only; not a detected genomic change point
