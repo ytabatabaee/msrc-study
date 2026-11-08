@@ -2,7 +2,7 @@ import sys, unittest
 from itertools import combinations
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from heliconius_pipeline import parse_newick, split_for_quartet, split_for_quartet_from_dist, distances, split_label, classify, QUARTET, BASELINE, ALTERNATIVE
+from heliconius_pipeline import parse_newick, split_for_quartet, split_for_quartet_from_dist, distances, split_label, classify, verified_regions, QUARTET, BASELINE, ALTERNATIVE
 
 class TestHeliconiusUtilities(unittest.TestCase):
     def test_root_independent_topology(self):
@@ -48,5 +48,10 @@ class TestHeliconiusUtilities(unittest.TestCase):
     def test_overlapping_windows_are_not_collapsed_by_classifier(self):
         self.assertEqual(classify(9114112,9164111,'H_erato_demophoon_v1','2'),'inside')
         self.assertEqual(classify(9164112,9214111,'H_erato_demophoon_v1','2'),'inside')
+
+    def test_hmel_coordinate_definition_is_source_specific(self):
+        self.assertEqual(verified_regions('Hmel2.5','2','erato_50kb_hmel'), [(2147755,2230606,'2b_etales8spp_hmel')])
+        self.assertIn((4398947,6357046,'2b_hmelv25_res'), verified_regions('Hmel2.5','2'))
+        self.assertEqual(verified_regions('Hmel2.5','2','hmelv25_res'), [])
 
 if __name__ == '__main__': unittest.main()

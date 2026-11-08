@@ -1,0 +1,3 @@
+reference_group	source	citation	newick	note
+hera	published_species_history	Edelman et al. 2019 Science Fig. 1A/2 Tree 2; topology description in text	(HmelRef,((HeraRef,Hhim),(Hhsa,(Htel,(Hdem,Hsar)))));	HmelRef is the outgroup to the erato-sara six-taxon backbone; Hhsa is the source label for H. hecalesia. Used for quartet resolutions, not branch lengths.
+hmel	published_species_history	Edelman et al. 2019 Science Fig. 1A/2 Tree 2; topology description in text	(Etal,((HeraRef,Hhim),(Hhsa,(Htel,(Hdem,Hsar)))));	Etal is Eueides tales, used as the external outgroup in the Hmel-coordinate source; used for quartet resolutions, not branch lengths.

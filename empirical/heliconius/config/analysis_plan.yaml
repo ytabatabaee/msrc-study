@@ -5,7 +5,7 @@ coordinate_system: 1-based-inclusive
 primary_window_sizes_bp: [10000, 50000]
 primary_windows: 10kb_abutting_and_50kb_sliding
 independence: spatially correlated; do not treat overlapping 50kb windows as independent
-baseline_topology: "Per-quartet majority topology in the source-specific genome-wide background excluding chromosomes 2 and 15, frozen before focal-region summaries"
+baseline_topology: "Per-quartet resolution from the fixed published species-history topology in published_species_trees.tsv; source-specific genome-wide background excluding chromosomes 2 and 15 is retained only as an agreement comparison"
 quartet_taxa: "All combinations of four taxa in each source-specific seven-taxon universe (35 quartets when complete)"
 alternative_topology: "The two non-baseline resolutions in deterministic canonical split order"
 quartet_note: "All-quartet topology-only analysis; Hera 10-kb and Hera 50-kb share a taxon universe but remain separate datasets, and Hmel2.5 has its own universe and coordinate system. Missing taxa and unresolved quartets are excluded from per-tree frequency denominators."

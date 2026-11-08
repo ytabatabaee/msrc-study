@@ -5,7 +5,8 @@ source	erato_50kb_hera	13743	True	available	unique_taxa=7; overlapping=True
 source	erato_50kb_hmel	10875	True	available	unique_taxa=7; overlapping=True
 source	melpomene_50kb	9880	True	available	unique_taxa=8; overlapping=False
 source	genome_info	0	unknown	available	
-interval	15b			verified	Hmel2.5-scaffold-Hmel215003o:15:1356511-1757545
-interval	15b			unresolved	H_erato_demophoon_v1:15:NA-NA
-interval	2b			verified	Hmel2.5-scaffold-Hmel202001o:2:4398947-6357046
-interval	2b			verified	H_erato_demophoon_v1:2:9114112-9292966
+interval	15b_hmelv25_res			verified	Hmel2.5:15:1356511-1757545
+interval	15b_hera			unresolved	H_erato_demophoon_v1:15:NA-NA
+interval	2b_etales8spp_hmel			verified	Hmel2.5:2:2147755-2230606
+interval	2b_hmelv25_res			verified	Hmel2.5:2:4398947-6357046
+interval	2b_etales8spp_hera			verified	H_erato_demophoon_v1:2:9114112-9292966
