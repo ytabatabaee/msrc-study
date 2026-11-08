@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="600.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="20">Microbotryum focal quartet support by evolutionary stratum</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="sans-serif" font-size="14">frequency across genes</text>
+<line x1="90" y1="460" x2="1160" y2="460" stroke="black"/>
+<line x1="90" y1="60" x2="90" y2="460" stroke="black"/>
+<text x="138.63636363636363" y="486" transform="rotate(45 138.63636363636363 486)" text-anchor="start" font-family="sans-serif" font-size="12">HD_RR</text>
+<rect x="111.63636363636363" y="60.0" width="18" height="400.0" fill="#4c78a8"/>
+<rect x="129.63636363636363" y="460.0" width="18" height="0.0" fill="#f58518"/>
+<rect x="147.63636363636363" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="235.9090909090909" y="486" transform="rotate(45 235.9090909090909 486)" text-anchor="start" font-family="sans-serif" font-size="12">PARs</text>
+<rect x="208.9090909090909" y="60.0" width="18" height="400.0" fill="#4c78a8"/>
+<rect x="226.9090909090909" y="460.0" width="18" height="0.0" fill="#f58518"/>
+<rect x="244.9090909090909" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="333.18181818181813" y="486" transform="rotate(45 333.18181818181813 486)" text-anchor="start" font-family="sans-serif" font-size="12">black</text>
+<rect x="306.18181818181813" y="412.23880597014926" width="18" height="47.76119402985074" fill="#4c78a8"/>
+<rect x="324.18181818181813" y="110.74626865671644" width="18" height="349.25373134328356" fill="#f58518"/>
+<rect x="342.18181818181813" y="457.0149253731343" width="18" height="2.9850746268656962" fill="#54a24b"/>
+<text x="430.45454545454544" y="486" transform="rotate(45 430.45454545454544 486)" text-anchor="start" font-family="sans-serif" font-size="12">blue</text>
+<rect x="403.45454545454544" y="60.0" width="18" height="400.0" fill="#4c78a8"/>
+<rect x="421.45454545454544" y="460.0" width="18" height="0.0" fill="#f58518"/>
+<rect x="439.45454545454544" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="527.7272727272727" y="486" transform="rotate(45 527.7272727272727 486)" text-anchor="start" font-family="sans-serif" font-size="12">dark_ruby</text>
+<rect x="500.72727272727275" y="220.0" width="18" height="240.0" fill="#4c78a8"/>
+<rect x="518.7272727272727" y="300.0" width="18" height="160.0" fill="#f58518"/>
+<rect x="536.7272727272727" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="625.0" y="486" transform="rotate(45 625.0 486)" text-anchor="start" font-family="sans-serif" font-size="12">in_HD</text>
+<rect x="598.0" y="460.0" width="18" height="0.0" fill="#4c78a8"/>
+<rect x="616.0" y="60.0" width="18" height="400.0" fill="#f58518"/>
+<rect x="634.0" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="722.2727272727273" y="486" transform="rotate(45 722.2727272727273 486)" text-anchor="start" font-family="sans-serif" font-size="12">light_ruby</text>
+<rect x="695.2727272727273" y="60.0" width="18" height="400.0" fill="#4c78a8"/>
+<rect x="713.2727272727273" y="460.0" width="18" height="0.0" fill="#f58518"/>
+<rect x="731.2727272727273" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="819.5454545454545" y="486" transform="rotate(45 819.5454545454545 486)" text-anchor="start" font-family="sans-serif" font-size="12">orange</text>
+<rect x="792.5454545454545" y="360.0" width="18" height="100.0" fill="#4c78a8"/>
+<rect x="810.5454545454545" y="160.0" width="18" height="300.0" fill="#f58518"/>
+<rect x="828.5454545454545" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="916.8181818181818" y="486" transform="rotate(45 916.8181818181818 486)" text-anchor="start" font-family="sans-serif" font-size="12">purple</text>
+<rect x="889.8181818181818" y="460.0" width="18" height="0.0" fill="#4c78a8"/>
+<rect x="907.8181818181818" y="60.0" width="18" height="400.0" fill="#f58518"/>
+<rect x="925.8181818181818" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="1014.090909090909" y="486" transform="rotate(45 1014.090909090909 486)" text-anchor="start" font-family="sans-serif" font-size="12">red</text>
+<rect x="987.090909090909" y="60.0" width="18" height="400.0" fill="#4c78a8"/>
+<rect x="1005.090909090909" y="460.0" width="18" height="0.0" fill="#f58518"/>
+<rect x="1023.090909090909" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<text x="1111.3636363636363" y="486" transform="rotate(45 1111.3636363636363 486)" text-anchor="start" font-family="sans-serif" font-size="12">turquoise</text>
+<rect x="1084.3636363636363" y="78.18181818181816" width="18" height="381.81818181818187" fill="#4c78a8"/>
+<rect x="1102.3636363636363" y="441.8181818181818" width="18" height="18.181818181818187" fill="#f58518"/>
+<rect x="1120.3636363636363" y="460.0" width="18" height="0.0" fill="#54a24b"/>
+<rect x="110" y="42" width="12" height="12" fill="#4c78a8"/><text x="128" y="53" font-family="sans-serif" font-size="13">species q1</text>
+<rect x="280" y="42" width="12" height="12" fill="#f58518"/><text x="298" y="53" font-family="sans-serif" font-size="13">mating-type q2</text>
+<rect x="450" y="42" width="12" height="12" fill="#54a24b"/><text x="468" y="53" font-family="sans-serif" font-size="13">third q3</text>
+</svg>

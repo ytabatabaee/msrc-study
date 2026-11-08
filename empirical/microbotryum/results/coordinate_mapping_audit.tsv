@@ -1,0 +1,12 @@
+stratum	n_gene_trees	unique_gene_numbers	mapped_to_MPbarcode50_gtf	mapping_fraction	contigs	coordinate_ranges	gene_order	coordinate_system	status
+HD_RR	9	9	9	1.0	contig_213	contig_213:144455-167388	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+PARs	29	29	29	1.0	contig_215,contig_224,contig_421,contig_426	contig_215:463203-976779;contig_224:174-82460;contig_421:68238-798826;contig_426:31584-34332	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+black	134	134	134	1.0	contig_215,contig_421,contig_426,contig_47	contig_215:98691-850307;contig_421:377774-841262;contig_426:2-7500;contig_47:507089-713901	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+blue	17	17	17	1.0	contig_213	contig_213:62865-145171	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+dark_ruby	25	25	25	1.0	contig_421	contig_421:169351-337399	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+in_HD	2	2	2	1.0	contig_215	contig_215:81398-82988	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+light_ruby	13	13	13	1.0	contig_421	contig_421:94186-157277	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+orange	4	4	4	1.0	contig_421	contig_421:337819-371429	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+purple	3	3	3	1.0	contig_421	contig_421:380508-571331	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+red	2	2	2	1.0	contig_213	contig_213:100280-102831	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified
+turquoise	22	22	22	1.0	contig_215	contig_215:793196-918978	available_within_contigs	MPbarcode50 contig/scaffold; chromosome mapping unverified	identifier_mapped_sample_correspondence_unverified

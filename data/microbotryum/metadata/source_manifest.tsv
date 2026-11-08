@@ -1,0 +1,10 @@
+source	doi_or_url	file	size_bytes	sha256	status	notes
+Lucotte et al. 2025	https://doi.org/10.1038/s41467-025-60222-5	published study	NA	NA	verified_metadata	Gene trees and species tree deposited in Dryad.
+Dryad	https://doi.org/10.5061/dryad.0k6djhb89	gene_trees	59490	7ca1c37b8dd6deeda786e57f42a3041438f3bd248437b4c3968317f60b10c968	downloaded_locally	Two-column stratum-gene and Newick file.
+Dryad	https://doi.org/10.5061/dryad.0k6djhb89	speciestree.tre	1619	ee253958e92034d7fb50c3284a7ab607a8e7c52307c37dda187675d21a4db722	downloaded_locally	Reference species tree.
+Dryad	https://doi.org/10.5061/dryad.0k6djhb89	README.md	6432	72e5ce89abf2e34e352ee26dae7d90647e51bb09467a6fe7aa0d3475a4dd6c6f	downloaded_locally	Data description and methods notes.
+Dryad	https://doi.org/10.5061/dryad.0k6djhb89	MPbarcode50_tsebra.gtf	26527766	4ef73c8e30e6e9cc01ddc403a270b667c50aa50e5639361a2b77f1cb4f0f5d52	downloaded_locally	M. superbum MPbarcode50 scaffold annotation used for gene-ID mapping.
+Dryad	https://doi.org/10.5061/dryad.0k6djhb89	Mv-lyc-1064_impuntedMAT_region_gene.gtf	4401549	3610ce0e28c328349d6939302f3769bc258972db0a48034844134780da6f6a16	downloaded_locally	M. lychnidis-dioicae mating-type-region annotation; not used for the MPbarcode50 gene-ID match.
+GitHub	https://github.com/eliselucotte/MicrobotryumOnDianthus	TP/0.pipeline.sh	2973	ba041107e4dc46a847fdc3397a2560b13868f62422b16a6815d41ba68c0b73fd	downloaded	Authors' trans-specific-polymorphism pipeline.
+GitHub	https://github.com/eliselucotte/MicrobotryumOnDianthus	TP/2a.make_code_to_group_trees.py	637	7765fe3ca40b09c98560e5789183a7e4aa68863ee2f63d1439cfa823c71e3489	downloaded	Authors' orthogroup-to-stratum mapping script.
+GitHub	https://github.com/eliselucotte/MicrobotryumOnDianthus	TP/3.Awk_command_parse_genetrees.sh	1513	6e2fd57be181572773f66a8c0b910b82affc7ea7c1c737306f47d982ece86c71	downloaded	Authors' gene-tree parser and label-rewrite script.

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="600.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="20">Microbotryum focal quartet distance summaries by evolutionary stratum</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="sans-serif" font-size="14">substitution-distance units</text>
+<line x1="90" y1="460" x2="1160" y2="460" stroke="black"/>
+<line x1="90" y1="60" x2="90" y2="460" stroke="black"/>
+<circle cx="138.63636363636363" cy="453.7242537577381" r="4" fill="#4c78a8"/>
+<circle cx="235.9090909090909" cy="445.56567335612044" r="4" fill="#4c78a8"/>
+<circle cx="333.18181818181813" cy="429.6735339335572" r="4" fill="#4c78a8"/>
+<circle cx="430.45454545454544" cy="401.0442512265406" r="4" fill="#4c78a8"/>
+<circle cx="527.7272727272727" cy="407.44913772029" r="4" fill="#4c78a8"/>
+<circle cx="625.0" cy="442.41937081412937" r="4" fill="#4c78a8"/>
+<circle cx="722.2727272727273" cy="404.9108300207867" r="4" fill="#4c78a8"/>
+<circle cx="819.5454545454545" cy="438.8867990240073" r="4" fill="#4c78a8"/>
+<circle cx="916.8181818181818" cy="427.44972699595496" r="4" fill="#4c78a8"/>
+<circle cx="1014.090909090909" cy="96.36363636363637" r="4" fill="#4c78a8"/>
+<circle cx="1111.3636363636363" cy="449.7390061847928" r="4" fill="#4c78a8"/>
+<polyline points="138.63636363636363,453.7242537577381 235.9090909090909,445.56567335612044 333.18181818181813,429.6735339335572 430.45454545454544,401.0442512265406 527.7272727272727,407.44913772029 625.0,442.41937081412937 722.2727272727273,404.9108300207867 819.5454545454545,438.8867990240073 916.8181818181818,427.44972699595496 1014.090909090909,96.36363636363637 1111.3636363636363,449.7390061847928" fill="none" stroke="#4c78a8" stroke-width="2"/>
+<circle cx="138.63636363636363" cy="451.0478044438736" r="4" fill="#f58518"/>
+<circle cx="235.9090909090909" cy="438.56921094098595" r="4" fill="#f58518"/>
+<circle cx="333.18181818181813" cy="464.77227581568815" r="4" fill="#f58518"/>
+<circle cx="430.45454545454544" cy="428.02469953212926" r="4" fill="#f58518"/>
+<circle cx="527.7272727272727" cy="399.02750557753075" r="4" fill="#f58518"/>
+<circle cx="625.0" cy="464.2665419554511" r="4" fill="#f58518"/>
+<circle cx="722.2727272727273" cy="382.5818870525291" r="4" fill="#f58518"/>
+<circle cx="819.5454545454545" cy="462.5501819500216" r="4" fill="#f58518"/>
+<circle cx="916.8181818181818" cy="469.6130193757122" r="4" fill="#f58518"/>
+<circle cx="1014.090909090909" cy="286.20565310734463" r="4" fill="#f58518"/>
+<circle cx="1111.3636363636363" cy="454.99857686773936" r="4" fill="#f58518"/>
+<polyline points="138.63636363636363,451.0478044438736 235.9090909090909,438.56921094098595 333.18181818181813,464.77227581568815 430.45454545454544,428.02469953212926 527.7272727272727,399.02750557753075 625.0,464.2665419554511 722.2727272727273,382.5818870525291 819.5454545454545,462.5501819500216 916.8181818181818,469.6130193757122 1014.090909090909,286.20565310734463 1111.3636363636363,454.99857686773936" fill="none" stroke="#f58518" stroke-width="2"/>
+<text x="138.63636363636363" y="486" transform="rotate(45 138.63636363636363 486)" text-anchor="start" font-family="sans-serif" font-size="12">HD_RR</text>
+<text x="235.9090909090909" y="486" transform="rotate(45 235.9090909090909 486)" text-anchor="start" font-family="sans-serif" font-size="12">PARs</text>
+<text x="333.18181818181813" y="486" transform="rotate(45 333.18181818181813 486)" text-anchor="start" font-family="sans-serif" font-size="12">black</text>
+<text x="430.45454545454544" y="486" transform="rotate(45 430.45454545454544 486)" text-anchor="start" font-family="sans-serif" font-size="12">blue</text>
+<text x="527.7272727272727" y="486" transform="rotate(45 527.7272727272727 486)" text-anchor="start" font-family="sans-serif" font-size="12">dark_ruby</text>
+<text x="625.0" y="486" transform="rotate(45 625.0 486)" text-anchor="start" font-family="sans-serif" font-size="12">in_HD</text>
+<text x="722.2727272727273" y="486" transform="rotate(45 722.2727272727273 486)" text-anchor="start" font-family="sans-serif" font-size="12">light_ruby</text>
+<text x="819.5454545454545" y="486" transform="rotate(45 819.5454545454545 486)" text-anchor="start" font-family="sans-serif" font-size="12">orange</text>
+<text x="916.8181818181818" y="486" transform="rotate(45 916.8181818181818 486)" text-anchor="start" font-family="sans-serif" font-size="12">purple</text>
+<text x="1014.090909090909" y="486" transform="rotate(45 1014.090909090909 486)" text-anchor="start" font-family="sans-serif" font-size="12">red</text>
+<text x="1111.3636363636363" y="486" transform="rotate(45 1111.3636363636363 486)" text-anchor="start" font-family="sans-serif" font-size="12">turquoise</text>
+<line x1="110" y1="48" x2="125" y2="48" stroke="#4c78a8" stroke-width="3"/><text x="132" y="53" font-family="sans-serif" font-size="13">B mean pairwise distance</text>
+<line x1="340" y1="48" x2="355" y2="48" stroke="#f58518" stroke-width="3"/><text x="362" y="53" font-family="sans-serif" font-size="13">A between - within</text>
+</svg>
