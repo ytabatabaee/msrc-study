@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="750" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">Representative deposited Microbotryum gene trees</text>
+<text x="30" y="58" font-family="sans-serif" font-size="12">Newick strings are reproduced verbatim; branch lengths are substitution-tree units and are not drawn to scale.</text>
+<text x="30" y="105" font-family="sans-serif" font-size="15" font-weight="bold">PARs — PARs-g2243 — q1_species</text>
+<text x="45" y="123" font-family="monospace" font-size="11">(Mv-lag-1253-A1:0.0000010000,Mv-lag-1253-A2:0.0000010000,((Mv-sup-1065-A1:0.0000010000,Mv-sup-1065-A2:0.0000010000):0.0478261824,(Mv-cat-C212-A2:</text>
+<text x="45" y="141" font-family="monospace" font-size="11">0.0000010000,Mv-cat-C212-A1:0.0000010000):0.0405516913):0.1717167959);</text>
+<text x="30" y="177" font-family="sans-serif" font-size="15" font-weight="bold">black — black-g2118 — q2_mating_type</text>
+<text x="45" y="195" font-family="monospace" font-size="11">(Mv-lag-1253-A1:0.0000010000,Mv-lag-1253-A2:0.0000010000,((Mv-sup-1065-A2:0.0274076150,Mv-cat-C212-A2:0.0439287164):0.0841250069,(Mv-sup-1065-A1:</text>
+<text x="45" y="213" font-family="monospace" font-size="11">0.0246766164,Mv-cat-C212-A1:0.0543899042):0.0368134658):0.0509292623);</text>
+<text x="30" y="249" font-family="sans-serif" font-size="15" font-weight="bold">turquoise — turquoise-g2357 — q2_mating_type</text>
+<text x="45" y="267" font-family="monospace" font-size="11">(Mv-lag-1253-A1:0.0000010000,Mv-lag-1253-A2:0.0000010000,((Mv-sup-1065-A1:0.0209648780,Mv-cat-C212-A1:0.0304111974):0.0134409584,(Mv-sup-1065-A2:</text>
+<text x="45" y="285" font-family="monospace" font-size="11">0.0223189535,Mv-cat-C212-A2:0.0437525235):0.0144968294):0.1174499478);</text>
+</svg>
