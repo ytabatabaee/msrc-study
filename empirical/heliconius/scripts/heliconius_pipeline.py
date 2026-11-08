@@ -6,8 +6,9 @@ analyze, figures, or all.  The parser is dependency-light so audit/tests can
 run before optional plotting packages are installed.
 """
 from __future__ import annotations
-import argparse, csv, hashlib, io, json, math, re, sys, urllib.request, zipfile
+import argparse, csv, gzip, hashlib, io, json, math, re, sys, urllib.request, zipfile
 from collections import Counter, defaultdict
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -96,6 +97,127 @@ def split_for_quartet(root, taxa):
     if vals.count(m)!=1: return None
     a,b=pairs[vals.index(m)]
     return frozenset((frozenset(a),frozenset(b)))
+
+def split_for_quartet_from_dist(d, taxa, weighted=False):
+    pairs=[((taxa[0],taxa[1]),(taxa[2],taxa[3])),((taxa[0],taxa[2]),(taxa[1],taxa[3])),((taxa[0],taxa[3]),(taxa[1],taxa[2]))]
+    try: vals=[d[tuple(sorted(a))]+d[tuple(sorted(b))] for a,b in pairs]
+    except KeyError: return None
+    m=min(vals)
+    if sum(abs(v-m)<=1e-12 for v in vals)!=1: return None
+    a,b=pairs[vals.index(m)]
+    return frozenset((frozenset(a),frozenset(b)))
+
+def quartet_id(taxa): return '|'.join(taxa)
+
+def quartet_reference_mapping(records):
+    """Freeze per-quartet baseline topologies from background windows.
+
+    The background is defined before focal summaries as all 10-kb Hera windows
+    outside chromosomes 2 and 15.  The Hmel2.5 50-kb source has its own
+    background because its taxon universe and coordinate system differ.
+    """
+    source_rows=defaultdict(list)
+    for r in records:
+        source_rows[r['source_id']].append(r)
+    universes={}
+    for sid,rs in source_rows.items():
+        counts=Counter(tuple(sorted(r['taxa'].split('|'))) for r in rs)
+        universes[sid]=counts.most_common(1)[0][0]
+    ref_by_group={}
+    for group,sids in [('hera',('erato_10kb',)),('hmel',('erato_50kb_hmel',))]:
+        rs=[r for sid in sids for r in source_rows.get(sid,[]) if str(r['chromosome']) not in ('2','15')]
+        taxa=universes.get(sids[0],())
+        counts=defaultdict(Counter)
+        for r in rs:
+            try: root,tips=parse_newick(r['tree_newick']); du=distances(root,weighted=False)
+            except Exception: continue
+            for qt in combinations(taxa,4):
+                sp=split_for_quartet_from_dist(du,qt)
+                if sp: counts[qt][split_label(sp)]+=1
+        mapping={}
+        for qt in combinations(taxa,4):
+            possible=sorted(split_label(frozenset((frozenset((qt[0],qt[1])),frozenset((qt[2],qt[3]))))) for _ in [0])
+            all_splits=sorted({split_label(frozenset((frozenset(a),frozenset(b)))) for a,b in [((qt[0],qt[1]),(qt[2],qt[3])),((qt[0],qt[2]),(qt[1],qt[3])),((qt[0],qt[3]),(qt[1],qt[2]))]})
+            observed=counts[qt]
+            baseline=max(all_splits,key=lambda s:(observed.get(s,0),-all_splits.index(s)))
+            alternatives=[s for s in all_splits if s!=baseline]
+            mapping[qt]={'quartet_id':quartet_id(qt),'taxa':'|'.join(qt),'baseline_topology':baseline,'alternative_topology':alternatives[0],'third_topology':alternatives[1],'background_n':sum(observed.values()),'background_counts':';'.join(f'{s}:{observed.get(s,0)}' for s in all_splits)}
+        ref_by_group[group]=mapping
+    return universes,ref_by_group
+
+def all_quartet_analysis(records):
+    if not records: return
+    universes,ref_by_group=quartet_reference_mapping(records)
+    group_for_source={'erato_10kb':'hera','erato_50kb_hera':'hera','erato_50kb_hmel':'hmel'}
+    group_universe={'hera':universes.get('erato_10kb',()),'hmel':universes.get('erato_50kb_hmel',())}
+    ref_rows=[]
+    for group,mapping in ref_by_group.items():
+        for row in mapping.values(): ref_rows.append({'reference_group':group,'reference_definition':'10-kb H. erato background excluding chromosomes 2 and 15' if group=='hera' else 'Hmel2.5 50-kb background excluding chromosomes 2 and 15','reference_tree':'per-quartet background majority; no single fully bifurcating tree imposed','baseline_topology_source':'background majority with deterministic lexical tie-break',**row})
+    with (PROC/'all_quartet_reference_baselines.tsv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(ref_rows[0]),delimiter='\t'); w.writeheader(); w.writerows(ref_rows)
+    assignments=[]; summaries=[]
+    for r in records:
+        group=group_for_source.get(r['source_id']); mapping=ref_by_group.get(group,{})
+        try: root,tips=parse_newick(r['tree_newick']); du=distances(root,weighted=False); dw=distances(root,weighted=True)
+        except Exception: continue
+        pair_vals=[v for k,v in dw.items() if k[0]!=k[1]]
+        mean_pairwise=sum(pair_vals)/len(pair_vals) if pair_vals else 'NA'
+        available=[]; qcounts=Counter(); internal=[]; row_assignments=[]
+        for qt in combinations(group_universe.get(group,()),4):
+            qtmap=mapping.get(qt)
+            if not qtmap: continue
+            sp=split_for_quartet_from_dist(du,qt)
+            cls='unresolved' if sp is None else ('q1' if split_label(sp)==qtmap['baseline_topology'] else ('q2' if split_label(sp)==qtmap['alternative_topology'] else 'q3'))
+            if cls!='unresolved': qcounts[cls]+=1; available.append(qt)
+            ib='NA'
+            if sp is not None:
+                sides=sorted(sp,key=lambda z:sorted(z)); a,b=sorted(sides[0]),sorted(sides[1]); x,y=a; z,w=b
+                try: ib=(dw[tuple(sorted((x,z)))]+dw[tuple(sorted((y,w)))]-dw[tuple(sorted((x,y))) ]-dw[tuple(sorted((z,w))) ])/2
+                except KeyError: pass
+            row_assignments.append({'source_id':r['source_id'],'source_tree':r['source_tree'],'assembly':r['assembly'],'chromosome':r['chromosome'],'window_id':r.get('window_id',''),'start':r['start'],'end':r['end'],'midpoint':r['midpoint'],'region_class':r['region_class'],'quartet_id':qtmap['quartet_id'],'taxa':qtmap['taxa'],'baseline_topology':qtmap['baseline_topology'],'alternative_topology':qtmap['alternative_topology'],'third_topology':qtmap['third_topology'],'local_topology':split_label(sp),'topology_class':cls,'internal_branch_length':ib,'mean_pairwise_patristic':mean_pairwise,'recomb_rate_cM_Mb':r.get('recomb_rate_cM_Mb','')})
+        assignments.extend(row_assignments)
+        valid_internal=[float(a['internal_branch_length']) for a in row_assignments if a['internal_branch_length']!='NA']
+        n=len(available); summaries.append({'source_id':r['source_id'],'source_tree':r['source_tree'],'assembly':r['assembly'],'chromosome':r['chromosome'],'window_id':r.get('window_id',''),'start':r['start'],'end':r['end'],'midpoint':r['midpoint'],'region_class':r['region_class'],'n_available_quartets':n,'n_unresolved_quartets':len(mapping)-n,'q1':qcounts['q1']/n if n else 'NA','q2':qcounts['q2']/n if n else 'NA','q3':qcounts['q3']/n if n else 'NA','D':(qcounts['q2']-qcounts['q1'])/n if n else 'NA','mean_quartet_internal_branch':sum(float(a['internal_branch_length']) for a in assignments[-len(mapping):] if a['internal_branch_length']!='NA')/max(1,sum(a['internal_branch_length']!='NA' for a in assignments[-len(mapping):])),'mean_pairwise_patristic':r.get('mean_pairwise_patristic','NA'),'recomb_rate_cM_Mb':r.get('recomb_rate_cM_Mb','')})
+        summaries[-1]['mean_quartet_internal_branch']=sum(valid_internal)/len(valid_internal) if valid_internal else 'NA'
+        summaries[-1]['mean_pairwise_patristic']=mean_pairwise
+    assignment_fields=['source_id','source_tree','assembly','chromosome','window_id','start','end','midpoint','region_class','quartet_id','taxa','baseline_topology','alternative_topology','third_topology','local_topology','topology_class','internal_branch_length','mean_pairwise_patristic','recomb_rate_cM_Mb']
+    with gzip.open(PROC/'all_quartet_assignments.tsv.gz','wt',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=assignment_fields,delimiter='\t'); w.writeheader(); w.writerows(assignments)
+    with (PROC/'all_quartet_window_summary.tsv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(summaries[0]),delimiter='\t'); w.writeheader(); w.writerows(summaries)
+    quartet_groups=defaultdict(list)
+    for a in assignments:
+        quartet_groups[(a['source_id'],a['assembly'],a['chromosome'],a['region_class'],a['quartet_id'])].append(a)
+    quartet_rows=[]
+    for (sid,assembly,chrom,region,quartet),ars in sorted(quartet_groups.items()):
+        n=len(ars); resolved=[a for a in ars if a['topology_class']!='unresolved']
+        internal=[float(a['internal_branch_length']) for a in ars if a['internal_branch_length']!='NA']
+        quartet_rows.append({'source_id':sid,'assembly':assembly,'chromosome':chrom,'region_class':region,'quartet_id':quartet,'taxa':ars[0]['taxa'],'baseline_topology':ars[0]['baseline_topology'],'alternative_topology':ars[0]['alternative_topology'],'third_topology':ars[0]['third_topology'],'n_trees':n,'n_resolved':len(resolved),'q1':sum(a['topology_class']=='q1' for a in ars)/len(resolved) if resolved else 'NA','q2':sum(a['topology_class']=='q2' for a in ars)/len(resolved) if resolved else 'NA','q3':sum(a['topology_class']=='q3' for a in ars)/len(resolved) if resolved else 'NA','D':(sum(a['topology_class']=='q2' for a in ars)-sum(a['topology_class']=='q1' for a in ars))/len(resolved) if resolved else 'NA','mean_internal_branch_length':sum(internal)/len(internal) if internal else 'NA'})
+    with (PROC/'all_quartet_quartet_summary.tsv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(quartet_rows[0]),delimiter='\t'); w.writeheader(); w.writerows(quartet_rows)
+    bins=defaultdict(list)
+    for r in summaries:
+        if r['q1']!='NA': bins[(r['source_id'],r['assembly'],r['chromosome'],int(float(r['start']))//50000*50000)].append(r)
+    bin_rows=[]
+    for (sid,assembly,chrom,bs),rs in sorted(bins.items()):
+        def avg(key):
+            vals=[]
+            for x in rs:
+                try: vals.append(float(x[key]))
+                except (TypeError,ValueError): pass
+            return sum(vals)/len(vals) if vals else 'NA'
+        bin_rows.append({'source_id':sid,'assembly':assembly,'chromosome':chrom,'bin_start':bs,'bin_end':bs+49999,'n_trees':len(rs),'q1':avg('q1'),'q2':avg('q2'),'q3':avg('q3'),'D':avg('D'),'mean_pairwise_patristic':avg('mean_pairwise_patristic'),'mean_quartet_internal_branch':avg('mean_quartet_internal_branch'),'recomb_rate_cM_Mb':avg('recomb_rate_cM_Mb')})
+    with (PROC/'all_quartet_binned_statistics.tsv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(bin_rows[0]),delimiter='\t'); w.writeheader(); w.writerows(bin_rows)
+    transitions=[]
+    for sid in sorted(set(r['source_id'] for r in bin_rows)):
+        for chrom in sorted(set(r['chromosome'] for r in bin_rows if r['source_id']==sid),key=lambda x:int(x) if x.isdigit() else 999):
+            rr=sorted([r for r in bin_rows if r['source_id']==sid and r['chromosome']==chrom],key=lambda r:int(r['bin_start']))
+            for a,b in zip(rr,rr[1:]): transitions.append({'source_id':sid,'chromosome':chrom,'left_bin_end':a['bin_end'],'right_bin_start':b['bin_start'],'transition_score':math.sqrt(sum((float(b[k])-float(a[k]))**2 for k in ('q1','q2','q3'))),'D_jump':float(b['D'])-float(a['D'])})
+    transitions.sort(key=lambda r:abs(r['D_jump']),reverse=True)
+    if transitions:
+        with (RES/'all_quartet_transition_summary.tsv').open('w',newline='') as f:
+            w=csv.DictWriter(f,fieldnames=list(transitions[0]),delimiter='\t'); w.writeheader(); w.writerows(transitions[:100])
 
 def split_label(split): return '|'.join(','.join(sorted(x)) for x in sorted(split, key=lambda z: sorted(z))) if split else 'unresolved'
 
@@ -259,9 +381,53 @@ def analyze():
     if bins:
         with (PROC/'binned_statistics_50kb.tsv').open('w',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(bins[0]),delimiter='\t'); w.writeheader(); w.writerows(bins)
+    all_quartet_analysis(rows)
     return obs
 
+def all_quartet_figures():
+    p=PROC/'all_quartet_binned_statistics.tsv'
+    if not p.exists(): return
+    try:
+        import os, tempfile
+        os.environ.setdefault('MPLCONFIGDIR', str(Path(tempfile.gettempdir())/'msrc-paper-mplconfig'))
+        import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+    except ImportError: return
+    rows=read_rows(p)
+    def affected(row):
+        c=classify(int(row['bin_start'])+1,int(row['bin_end'])+1,row['assembly'],row['chromosome'])
+        return {'outside':0.0,'overlap':0.5,'inside':1.0}.get(c,float('nan'))
+    def render(source,chrom,filename):
+        sub=sorted([r for r in rows if r['source_id']==source and r['chromosome']==chrom],key=lambda r:int(r['bin_start']))
+        if not sub: return
+        x=[(int(r['bin_start'])+int(r['bin_end']))/2/1e6 for r in sub]
+        fig,ax=plt.subplots(5,1,figsize=(12,10),sharex=True,constrained_layout=True,gridspec_kw={'height_ratios':[2,1,1,0.8,1.2]})
+        for j,k,c in [(0,'q1','#4c72b0'),(0,'q2','#dd8452'),(0,'q3','#55a868'),(1,'D','#c44e52'),(2,'mean_pairwise_patristic','#8172b3')]:
+            y=[float(r[k]) if r[k] not in ('','NA') else float('nan') for r in sub]; ax[j].plot(x,y,'.-',ms=3,label=k,color=c)
+        reg=[affected(r) for r in sub]; ax[3].plot(x,reg,'s-',ms=3,color='#7f7f7f'); ax[3].set_ylim(-.1,1.1); ax[3].set_yticks([0,.5,1]); ax[3].set_yticklabels(['outside','boundary','inside']); ax[3].set_ylabel('affected\nregion')
+        rec=[float(r['recomb_rate_cM_Mb']) if r['recomb_rate_cM_Mb'] not in ('','NA') else float('nan') for r in sub]; ax[4].plot(x,rec,'.-',ms=3,color='#1b9e77'); ax[4].set_ylabel('recombination\ncM/Mb')
+        if not any(math.isfinite(v) for v in rec): ax[4].text(.01,.5,'quantitative recombination unavailable',transform=ax[4].transAxes,va='center')
+        if not any(math.isfinite(v) for v in reg): ax[3].text(.01,.5,'affected-region boundary unresolved for this assembly',transform=ax[3].transAxes,va='center')
+        ax[0].legend(ncol=3); ax[0].set_ylabel('all-quartet support'); ax[1].set_ylabel('D = q2 - q1'); ax[2].set_ylabel('mean patristic'); ax[4].set_xlabel(f'chromosome {chrom} position (Mb)'); fig.suptitle(f'Heliconius all-quartet tracks: {source}, chromosome {chrom}')
+        for ext in ('pdf','png','svg'): fig.savefig(FIG/f'{filename}.{ext}',dpi=220 if ext=='png' else None)
+        plt.close(fig)
+    for source,prefix in [('erato_10kb','10kb_hera'),('erato_50kb_hera','50kb_hera'),('erato_50kb_hmel','50kb_hmel')]:
+        for chrom in ('2','15'): render(source,chrom,f'heliconius_{prefix}_chr{chrom}_all_quartet_tracks')
+    # Genome-wide cumulative Hera 10-kb track, retaining chromosome gaps.
+    sub=[r for r in rows if r['source_id']=='erato_10kb']
+    if sub:
+        chroms=sorted(set(r['chromosome'] for r in sub),key=lambda z:int(z) if z.isdigit() else 999); offsets={}; off=0; ticks=[]; cum=[]
+        for chrom in chroms:
+            rr=[r for r in sub if r['chromosome']==chrom]; length=max(int(r['bin_end']) for r in rr); offsets[chrom]=off; ticks.append((off+length/2/1e6,chrom)); off+=(length+500000)
+        for r in sub: cum.append((offsets[r['chromosome']]+(int(r['bin_start'])+int(r['bin_end']))/2)/1e6)
+        order=sorted(range(len(sub)),key=lambda i:cum[i]); fig,ax=plt.subplots(5,1,figsize=(15,10),sharex=True,constrained_layout=True,gridspec_kw={'height_ratios':[2,1,1,0.8,1.2]})
+        for j,k,c in [(0,'q1','#4c72b0'),(0,'q2','#dd8452'),(0,'q3','#55a868'),(1,'D','#c44e52'),(2,'mean_pairwise_patristic','#8172b3')]: ax[j].plot([cum[i] for i in order],[float(sub[i][k]) if sub[i][k] not in ('','NA') else float('nan') for i in order],'.',ms=2,label=k,color=c)
+        ax[3].plot([cum[i] for i in order],[affected(sub[i]) for i in order],'.',ms=2,color='#7f7f7f'); ax[3].set_ylim(-.1,1.1); ax[3].set_yticks([0,.5,1]); ax[3].set_yticklabels(['outside','boundary','inside']); ax[3].set_ylabel('affected\nregion')
+        rec=[float(sub[i]['recomb_rate_cM_Mb']) if sub[i]['recomb_rate_cM_Mb'] not in ('','NA') else float('nan') for i in order]; ax[4].plot([cum[i] for i in order],rec,'.',ms=2,color='#1b9e77'); ax[4].set_ylabel('recombination\ncM/Mb'); ax[0].legend(ncol=3); ax[0].set_ylabel('all-quartet support'); ax[1].set_ylabel('D = q2 - q1'); ax[2].set_ylabel('mean patristic'); ax[4].set_xlabel('cumulative H. erato demophoon position (Mb)'); ax[4].set_xticks([x for x,_ in ticks]); ax[4].set_xticklabels([f'chr{c}' for _,c in ticks]); fig.suptitle('Heliconius genome-wide all-quartet tracks: 10-kb Hera source')
+        for ext in ('pdf','png','svg'): fig.savefig(FIG/f'heliconius_genomewide_all_quartet_tracks.{ext}',dpi=220 if ext=='png' else None)
+        plt.close(fig)
+
 def figures():
+    all_quartet_figures()
     try:
         import os, tempfile
         os.environ.setdefault('MPLCONFIGDIR', str(Path(tempfile.gettempdir())/'msrc-paper-mplconfig'))
@@ -324,7 +490,7 @@ def report(audit_rows=None, obs=None):
     obs=obs if obs is not None else ([] if not (PROC/'local_tree_statistics.tsv').exists() else read_rows(PROC/'local_tree_statistics.tsv'))
     RES.mkdir(parents=True,exist_ok=True)
     ntrees=len(obs); branches=sum(x.get('branch_length_units')!='unavailable' for x in obs)
-    text=f'''# Initial Heliconius MSRC pilot report\n\n## Status\n\nThis is an exploratory pilot. Dryad’s landing page verifies the four candidate tree tables and `eratoGenomeInfo.zip`; local contents are **{'available and parsed' if ntrees else 'not available in this checkout'}**. No result is reported for an inversion interval whose assembly-specific numeric boundaries have not been independently validated.\n\n## Sources and design\n\nThe targeted source is Edelman et al. (2019), Science, DOI 10.1126/science.aaw2090, Dryad DOI 10.5061/dryad.b7bj832. Primary coordinates are H. erato demophoon v1; Hmel2.5 remains separate. The frozen exploratory quartet is `{', '.join(QUARTET)}`. Baseline is `{split_label(BASELINE)}` and alternative is `{split_label(ALTERNATIVE)}`; this is topology-based because arrangement assignments are not established for the four tips.\n\n## Audit and normalization\n\nThe pipeline found {ntrees} usable local-tree rows and {branches} rows with complete terminal branch lengths. A single tree contributes a 0/1 topology indicator. The 50-kb table is summarized into explicit physical bins with `n_trees`; overlapping sliding windows are not treated as independent replicates.\n\n## Inversions and recombination\n\n15b and 2b are recorded as unresolved in `data/heliconius/metadata/regions.tsv`: the public 2019 materials verified here describe their biological histories but did not yield numeric breakpoints in the correct H. erato assembly. No topology-derived boundary is substituted. `eratoGenomeInfo.zip` is the intended source for quantitative 10-kb recombination rates; until it is downloaded and parsed, quantitative suppression is unavailable. Structural evidence of an inversion is not equated with a measured recombination rate.\n\n## Findings\n\n{'No biological pattern is claimed because the public input files are not present locally.' if not ntrees else 'The descriptive tables and figures should be interpreted as topology/distance summaries, not independent-window significance tests. Region-specific inside/outside comparisons remain blocked until validated interval coordinates are added.'}\n\n## Interpretation and limitations\n\nAny topology shift could reflect introgression, ancestral polymorphism/ILS, mutation-rate or alignment variation, or tree-estimation error; the data cannot by themselves establish MSRC as the mechanism. Substitution-scale patristic distances are not coalescence times.\n\n## Missing resources / next analysis\n\nDownload the small Dryad files, inspect the audit, validate inversion boundaries against a primary structural source or explicit assembly mapping, parse recombination metadata, then rerun normalization, statistics, and figures. Only after that should block-aware inside/outside comparisons and boundary sensitivity analyses be added.\n'''
+    text=f'''# Initial Heliconius MSRC pilot report\n\n## Status\n\nThis is an exploratory pilot. Dryad’s landing page verifies the four candidate tree tables and `eratoGenomeInfo.zip`; local contents are **{'available and parsed' if ntrees else 'not available in this checkout'}**. No result is reported for an inversion interval whose assembly-specific numeric boundaries have not been independently validated.\n\n## Sources and design\n\nThe targeted source is Edelman et al. (2019), Science, DOI 10.1126/science.aaw2090, Dryad DOI 10.5061/dryad.b7bj832. Primary coordinates are H. erato demophoon v1; Hmel2.5 remains separate. The primary analysis enumerates all four-taxon subsets of each source-specific seven-taxon universe (35 quartets for complete trees). Per-quartet baselines are frozen from source-specific genome-wide backgrounds excluding chromosomes 2 and 15; alternatives are assigned deterministically. The earlier `{', '.join(QUARTET)}` result is retained only as a legacy focal-quartet comparison.\n\n## Audit and normalization\n\nThe pipeline found {ntrees} usable local-tree rows and {branches} rows with complete terminal branch lengths. A single tree contributes one topology assignment per available quartet; aggregate q1/q2/q3 are fractions across quartets within a tree and are not independent-window probabilities. The 50-kb table is summarized into explicit physical bins with `n_trees`; overlapping sliding windows are not treated as independent replicates.\n\n## Inversions and recombination\n\nThe validated H. erato 2b interval and the separate Hmel2.5 2b/15b intervals are used only in their documented assembly coordinate systems. H. erato 15b remains unresolved in the available assembly mapping, so no Hera 15b inside/outside result is claimed. `eratoGenomeInfo.zip` supplies quantitative LDhelmet-derived recombination estimates; these are population-scaled/source-scaled values, not direct crossover measurements in inversion heterozygotes. Structural evidence of an inversion is not equated with measured suppression.\n\n## Findings\n\n{'No biological pattern is claimed because the public input files are not present locally.' if not ntrees else 'The all-quartet results and figures are descriptive spatial summaries. The strongest transitions are genome-wide exploratory bin boundaries and do not independently validate MSRC or inversion effects; the documented 2b comparison does not show a clean alternative-topology replacement.'}\n\n## Interpretation and limitations\n\nAny topology shift could reflect introgression, ancestral polymorphism/ILS, mutation-rate or alignment variation, or tree-estimation error; the data cannot by themselves establish MSRC as the mechanism. Substitution-scale patristic distances are not coalescence times.\n\n## Missing resources / next analysis\n\nThe public local trees and recombination metadata have been downloaded, parsed, analyzed, and plotted. Next steps are block-aware regional comparisons, boundary-sensitivity analyses, and independent structural validation for the unresolved H. erato 15b interval.\n'''
     prim=[r for r in obs if r.get('assembly')=='H_erato_demophoon_v1']
     def metric(chrom,region,key):
         x=[r for r in prim if r.get('chromosome')==chrom and r.get('region_class')==region and r.get(key) not in ('','NA')]
@@ -342,6 +508,17 @@ def report(audit_rows=None, obs=None):
     text=text.replace('15b and 2b are recorded as unresolved in `data/heliconius/metadata/regions.tsv`: the public 2019 materials verified here describe their biological histories but did not yield numeric breakpoints in the correct H. erato assembly. No topology-derived boundary is substituted. `eratoGenomeInfo.zip` is the intended source for quantitative 10-kb recombination rates; until it is downloaded and parsed, quantitative suppression is unavailable.', 'The validated H. erato 2b interval is 9,114,112–9,292,966 (1-based inclusive), converted from the published Herato0206 scaffold interval using the archived scaffold-to-chromosome transitions. The published Hmel2.5 2b and 15b scaffold intervals are retained separately. H. erato 15b remains unresolved because the independent coordinate table reports n/a for that assembly. The parsed `eratoGenomeInfo.zip` supplies quantitative LDhelmet-derived recombination values; these are population-scaled estimates, not direct crossover measurements in inversion heterozygotes.')
     text=text.replace('Region-specific inside/outside comparisons remain blocked until validated interval coordinates are added.', 'The chr2 2b inside/outside comparison is descriptive and uses the validated interval; chr15 15b inside/outside comparison remains blocked for the Hera tracks because its Hera coordinate is unresolved.')
     text += f'''\n## Actual parsed results\n\nThe normalized dataset contains {len(obs)} local trees: {sum(r.get('source_id')=='erato_10kb' for r in obs)} 10-kb Hera trees, {sum(r.get('source_id')=='erato_50kb_hera' for r in obs)} Hera 50-kb trees, and {sum(r.get('source_id')=='erato_50kb_hmel' for r in obs)} Hmel2.5 50-kb trees. Primary Hera coverage includes chromosomes 1–21; chromosome 2 has {sum(r.get('assembly')=='H_erato_demophoon_v1' and r.get('chromosome')=='2' for r in obs)} trees and chromosome 15 has {sum(r.get('assembly')=='H_erato_demophoon_v1' and r.get('chromosome')=='15' for r in obs)} trees.\n\n{recomb_text} These are population-scaled/source-scaled recombination estimates from the published LDhelmet workflow, not direct crossover measurements in the inversion heterozygotes.\n\n| chromosome | region | n | q1 | q2 | q3 | D | internal branch mean (n) | mean pairwise patristic (n) |\n|---|---|---:|---:|---:|---:|---:|---:|---:|\n{chr(10).join(lines)}\n\nThe chr2 exploratory quartet is overwhelmingly baseline inside (q1=1.000, n=19) and outside (q1=0.9935, n=1541); q2 is 0 inside and 0.0026 outside. This does not support a localized alternative-topology replacement in the tested quartet.\n\nFigures generated: `heliconius_chr2_tracks.*`, `heliconius_chr15_tracks.*`, `heliconius_figure3_chr2b_inside_outside.*`, and `heliconius_figure4_quartet_simplex.*`.\n'''
+    aq=read_rows(PROC/'all_quartet_window_summary.tsv') if (PROC/'all_quartet_window_summary.tsv').exists() else []
+    aqref=read_rows(PROC/'all_quartet_reference_baselines.tsv') if (PROC/'all_quartet_reference_baselines.tsv').exists() else []
+    aqlines=[]
+    for sid in sorted(set(r['source_id'] for r in aq)):
+        x=[r for r in aq if r['source_id']==sid]
+        qn=sorted(set(r['n_available_quartets'] for r in x))
+        q1=sum(float(r['q1']) for r in x)/len(x); q2=sum(float(r['q2']) for r in x)/len(x); q3=sum(float(r['q3']) for r in x)/len(x)
+        aqlines.append(f'| {sid} | {len(x)} | {qn[0] if len(qn)==1 else ", ".join(qn)} | {q1:.4f} | {q2:.4f} | {q3:.4f} | {q2-q1:.4f} |')
+    transitions=read_rows(RES/'all_quartet_transition_summary.tsv') if (RES/'all_quartet_transition_summary.tsv').exists() else []
+    transition_lines='\n'.join(f"| {r['source_id']} | chr{r['chromosome']} | {r['left_bin_end']}–{r['right_bin_start']} | {float(r['D_jump']):.3f} |" for r in transitions[:5])
+    text += f'''\n## All-quartet analysis\n\nThe generalized analysis enumerates all four-taxon subsets of each seven-taxon source: 35 quartets per local tree when all taxa are present. The Hera 10-kb and Hera 50-kb sources use the same taxon universe but remain separate spatial datasets; Hmel2.5 uses its own seven-taxon universe and assembly. The baseline for each quartet is frozen from its source-specific genome-wide background excluding chromosomes 2 and 15. The two alternatives use a deterministic canonical ordering, with no selection based on focal-region enrichment. Mapping details are in `data/heliconius/processed/all_quartet_reference_baselines.tsv`.\n\nThe aggregate q1/q2/q3 values below are the fractions of resolved quartets within each individual local tree, then spatially averaged; they are not fixed-quartet frequencies across independent windows. Individual assignments are retained in compressed `data/heliconius/processed/all_quartet_assignments.tsv.gz`, and quartet-specific region summaries are in `data/heliconius/processed/all_quartet_quartet_summary.tsv`.\n\n| source | local trees | quartets per tree | mean q1 | mean q2 | mean q3 | mean D |\n|---|---:|---:|---:|---:|---:|---:|\n{chr(10).join(aqlines)}\n\nThe strongest genome-wide adjacent 50-kb-bin transitions in the deterministic summary were:\n\n| source | chromosome | boundary between bins (bp) | D jump |\n|---|---|---:|---:|\n{transition_lines}\n\nThese are exploratory spatial transitions, not independently validated inversion boundaries. In particular, the 2b interval is independently documented only for H. erato chromosome 2 and Hmel2.5 scaffold coordinates as listed above; H. erato 15b remains unresolved in the available assembly mapping. The all-quartet chromosome-2 summaries show broad baseline/alternative competition rather than a clean, inversion-specific alternative-topology replacement, and no MSRC mechanism is claimed.\n\nAll-quartet figures generated include `heliconius_genomewide_all_quartet_tracks.*`, source-specific chromosome-2 and chromosome-15 tracks for 10-kb Hera, 50-kb Hera, and 50-kb Hmel2.5, plus the earlier focal-quartet figures.\n'''
     (RES/'initial_analysis_report.md').write_text(text)
     with (RES/'summary_table.tsv').open('w') as f:
         w=csv.writer(f,delimiter='\t'); w.writerow(['scope','identifier','n_rows','n_branch_length_rows','status','notes'])

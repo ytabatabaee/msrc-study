@@ -5,11 +5,11 @@ coordinate_system: 1-based-inclusive
 primary_window_sizes_bp: [10000, 50000]
 primary_windows: 10kb_abutting_and_50kb_sliding
 independence: spatially correlated; do not treat overlapping 50kb windows as independent
-baseline_topology: "The published erato-clade species-history topology, frozen before focal-window summaries"
-quartet_taxa: [HeraRef, Hhim, Htel, Hhsa]
-baseline_split: "HeraRef,Hhim|Hhsa,Htel"
-alternative_split: "HeraRef,Htel|Hhim,Hhsa"
-third_split: "HeraRef,Hhsa|Hhim,Htel"
-quartet_note: "Topology-only exploratory quartet using the four taxa present in the source trees; H. hecalesia is absent, so this is not a direct arrangement-state test of the published 15b hypothesis."
+baseline_topology: "Per-quartet majority topology in the source-specific genome-wide background excluding chromosomes 2 and 15, frozen before focal-region summaries"
+quartet_taxa: "All combinations of four taxa in each source-specific seven-taxon universe (35 quartets when complete)"
+alternative_topology: "The two non-baseline resolutions in deterministic canonical split order"
+quartet_note: "All-quartet topology-only analysis; Hera 10-kb and Hera 50-kb share a taxon universe but remain separate datasets, and Hmel2.5 has its own universe and coordinate system. Missing taxa and unresolved quartets are excluded from per-tree frequency denominators."
+individual_assignments: "data/heliconius/processed/all_quartet_assignments.tsv.gz"
+aggregate_summary: "data/heliconius/processed/all_quartet_window_summary.tsv"
 region_policy: "Use only independently validated assembly-specific inversion coordinates; unresolved regions remain unclassified."
 branch_length_units: "source-tree units; report as patristic distances, never as coalescence times"
