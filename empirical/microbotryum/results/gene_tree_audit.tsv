@@ -1,0 +1,2 @@
+resource	status	n_records	n_taxa	branch_lengths	resolved	malformed	stratum	notes
+gene_trees	not_downloaded	NA	NA	NA	NA	NA	NA	Dryad file endpoint returned 401/403

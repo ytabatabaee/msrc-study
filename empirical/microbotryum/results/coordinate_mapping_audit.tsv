@@ -1,0 +1,2 @@
+resource	identifier	chromosome_or_scaffold	start	end	gene_order	stratum	status	evidence
+gene_trees	orthogroup identifiers	NA	NA	NA	unknown	unknown	not_verified	Dryad gene_trees unavailable; source pipeline maps OG to stratum but not deposited physical coordinates
