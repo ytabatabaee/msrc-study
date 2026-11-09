@@ -1,0 +1,7 @@
+design	relationship	P1	P2	P3	O	outgroup_role	rationale
+Columbea_primary	Columbea	Columba_livia	Phoenicopterus_ruber	Ciconia_maguari	Gallus_gallus	primary	One representative of Columbimorphae, Phoenicopteriformes, Passera, and an external galliform outgroup; fixed from the existing published-clade mapping.
+Columbea_alt_outgroup	Columbea	Columba_livia	Phoenicopterus_ruber	Ciconia_maguari	Meleagris_gallopavo	alternative	Predeclared galliform sensitivity outgroup; same ingroup roles as Columbea_primary.
+N61_primary	N61	Tauraco_erythrolophus	Columba_livia	Ciconia_maguari	Gallus_gallus	primary	One representative of Otidimorphae, Columbimorphae, Elementaves/Telluraves, and an external galliform outgroup; fixed from the existing published-clade mapping.
+N61_alt_outgroup	N61	Tauraco_erythrolophus	Columba_livia	Ciconia_maguari	Meleagris_gallopavo	alternative	Predeclared galliform sensitivity outgroup; same ingroup roles as N61_primary.
+N62_primary	N62	Columba_livia	Pterocles_gutturalis	Tauraco_erythrolophus	Gallus_gallus	primary	One representative of each focal N62 group and an external galliform outgroup; fixed from the existing published-clade mapping.
+N62_alt_outgroup	N62	Columba_livia	Pterocles_gutturalis	Tauraco_erythrolophus	Meleagris_gallopavo	alternative	Predeclared galliform sensitivity outgroup; same ingroup roles as N62_primary.

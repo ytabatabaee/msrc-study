@@ -1,0 +1,4 @@
+input	source_url	local_path	sha256	size_bytes	status
+63430.alns.tar.gz	https://sid.erda.dk/share_redirect/ENhZODU9YE/01_alignments_and_gene_trees/intergenic_regions/63430.alns.tar.gz	empirical/neoaves_chr4/external/stiller2024/63430.alns.tar.gz	87a2a643083bb567022683d99b4f5446cf9d52b1da0b0d694bd52aca55f37e43	3645947507	downloaded_and_verified
+stage4d_locus_manifest.tsv	repository-local	empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv	8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac		used_for_exact_locus_coordinates
+pnas48_interval_rule	repository-local_and_PNAS_script	empirical/neoaves_chr4/results/stage4e/pnas48_data_audit.json			verified_existing_predicate

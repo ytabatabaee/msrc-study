@@ -1,0 +1,19 @@
+{
+  "archive": "/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/external/stiller2024/63430.alns.tar.gz",
+  "source_url": "https://sid.erda.dk/share_redirect/ENhZODU9YE/01_alignments_and_gene_trees/intergenic_regions/63430.alns.tar.gz",
+  "archive_exists": true,
+  "archive_bytes": 3645947507,
+  "archive_sha256": "87a2a643083bb567022683d99b4f5446cf9d52b1da0b0d694bd52aca55f37e43",
+  "manifest_rows": 63430,
+  "chr4_manifest_rows": 6247,
+  "archive_file_members": 126860,
+  "exact_chr4_matches": 6247,
+  "missing_chr4_alignments": 0,
+  "example_members": [
+    "63k_alns/._chr2_121780000_121790000.1k.start646.fasta",
+    "63k_alns/chr2_121780000_121790000.1k.start646.fasta",
+    "63k_alns/._chr9_4470000_4480000.1k.start203.fasta",
+    "63k_alns/chr9_4470000_4480000.1k.start203.fasta",
+    "63k_alns/._chr3_12450000_12460000.1k.start566.fasta"
+  ]
+}
