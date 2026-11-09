@@ -1,0 +1,49 @@
+analysis	design	filter	resolution	min_informative_sites	region	D_site_inside	D_site_outside	D_site_inside_minus_outside	D_topology_inside	D_topology_outside	D_tree_inside	D_tree_outside	n_inside	n_outside
+informative_site_threshold	Columbea_primary	all	locus	0	all_PNAS	0.21639488761568973	0.21680329081708147	-0.00040840320139173825	-0.06617964278523973	0.02216791116680687	0.04634908552536632	0.03971266304950355	1281	4446
+informative_site_threshold	Columbea_primary	all	locus	10	all_PNAS	0.21628560948771244	0.21500855302073507	0.001277056466977372	-0.048980363186558316	0.027320445548372888	0.056176700118456574	0.03851119885489396	1029	3732
+informative_site_threshold	Columbea_primary	all	locus	50	all_PNAS								0	0
+informative_site_threshold	Columbea_primary	all	locus	100	all_PNAS								0	0
+informative_site_threshold	Columbea_primary	transversions_only	locus	0	all_PNAS	0.27666034155597724	0.24776765581311447	0.028892685742862773	-0.06617964278523973	0.02216791116680687	0.04634908552536632	0.03971266304950355	1281	4446
+informative_site_threshold	Columbea_primary	transversions_only	locus	10	all_PNAS	0.6666666666666666	0.006711409395973154	0.6599552572706935	1.0	-0.22259726416770298	1.0	-0.47315641186577195	1	14
+informative_site_threshold	Columbea_primary	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	Columbea_primary	transversions_only	locus	100	all_PNAS								0	0
+informative_site_threshold	Columbea_alt_outgroup	all	locus	0	all_PNAS	0.2296712559707783	0.2213253066995029	0.00834594927127541	-0.07357359579664027	0.021720091084252935	0.043906333987919356	0.039001060056238435	1265	4391
+informative_site_threshold	Columbea_alt_outgroup	all	locus	10	all_PNAS	0.22955505841411883	0.22015634554679625	0.009398712867322578	-0.06120826709062003	0.018803262710837872	0.056776651072095986	0.03247897849115693	1022	3645
+informative_site_threshold	Columbea_alt_outgroup	all	locus	50	all_PNAS								0	0
+informative_site_threshold	Columbea_alt_outgroup	all	locus	100	all_PNAS								0	0
+informative_site_threshold	Columbea_alt_outgroup	transversions_only	locus	0	all_PNAS	0.2887490165224233	0.25539669189795344	0.03335232462446985	-0.07357359579664027	0.021720091084252935	0.043906333987919356	0.039001060056238435	1265	4391
+informative_site_threshold	Columbea_alt_outgroup	transversions_only	locus	10	all_PNAS	0.42857142857142855	0.0	0.42857142857142855	1.0	-0.3200748252436743	1.0	-0.5737773530481722	2	12
+informative_site_threshold	Columbea_alt_outgroup	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	Columbea_alt_outgroup	transversions_only	locus	100	all_PNAS								0	0
+informative_site_threshold	N61_primary	all	locus	0	all_PNAS	-0.25819389863468784	-0.0805788766970934	-0.17761502193759443	-0.9365954297362992	-0.05852484851887348	-0.9785042423165877	-0.08869908272999741	1221	4427
+informative_site_threshold	N61_primary	all	locus	10	all_PNAS	-0.2574469840745936	-0.08077843628903579	-0.1766685477855578	-0.9465747982594003	-0.061762027665549085	-0.9805264924721209	-0.08499807761596372	1160	3924
+informative_site_threshold	N61_primary	all	locus	50	all_PNAS		-0.24528301886792453			-1.0		-1.0	0	1
+informative_site_threshold	N61_primary	all	locus	100	all_PNAS								0	0
+informative_site_threshold	N61_primary	transversions_only	locus	0	all_PNAS	-0.45186136071887034	-0.13377099496973313	-0.3180903657491372	-0.9365954297362992	-0.05852484851887348	-0.9785042423165877	-0.08869908272999741	1221	4427
+informative_site_threshold	N61_primary	transversions_only	locus	10	all_PNAS	-0.3576158940397351	-0.1827956989247312	-0.1748201951150039	-1.0	0.008382575237048235	-1.0	-0.06666649917432452	28	9
+informative_site_threshold	N61_primary	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	N61_primary	transversions_only	locus	100	all_PNAS								0	0
+informative_site_threshold	N61_alt_outgroup	all	locus	0	all_PNAS	-0.25289774367858764	-0.08628691689082775	-0.1666108267877599	-0.9363607212955379	-0.05834766648773576	-0.9783616272422061	-0.08714746592282062	1206	4376
+informative_site_threshold	N61_alt_outgroup	all	locus	10	all_PNAS	-0.25296126122328544	-0.0868302130406714	-0.16613104818261404	-0.9484273268748374	-0.059860593068587147	-0.9810886673387157	-0.08712264005240233	1135	3861
+informative_site_threshold	N61_alt_outgroup	all	locus	50	all_PNAS								0	0
+informative_site_threshold	N61_alt_outgroup	all	locus	100	all_PNAS								0	0
+informative_site_threshold	N61_alt_outgroup	transversions_only	locus	0	all_PNAS	-0.44763995609220636	-0.1407026259758694	-0.30693733011633695	-0.9363607212955379	-0.05834766648773576	-0.9783616272422061	-0.08714746592282062	1206	4376
+informative_site_threshold	N61_alt_outgroup	transversions_only	locus	10	all_PNAS	-0.3680555555555556	0.125	-0.4930555555555556	-1.0	-0.17193763919821825	-1.0	-0.00032561905105227826	26	6
+informative_site_threshold	N61_alt_outgroup	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	N61_alt_outgroup	transversions_only	locus	100	all_PNAS								0	0
+informative_site_threshold	N62_primary	all	locus	0	all_PNAS	0.039372582269090135	0.03850817860896279	0.0008644036601273483	0.16911807966111667	-0.03987729549805554	0.03272426267690397	-0.09307624508026759	1139	4303
+informative_site_threshold	N62_primary	all	locus	10	all_PNAS	0.03919710064120435	0.040009003432558664	-0.0008119027913543117	0.166764975750426	-0.032520021706115225	0.02950518410185648	-0.08819833867535883	1012	3871
+informative_site_threshold	N62_primary	all	locus	50	all_PNAS								0	0
+informative_site_threshold	N62_primary	all	locus	100	all_PNAS								0	0
+informative_site_threshold	N62_primary	transversions_only	locus	0	all_PNAS	0.07145299145299146	0.03296703296703297	0.03848595848595849	0.16911807966111667	-0.03987729549805554	0.03272426267690397	-0.09307624508026759	1139	4303
+informative_site_threshold	N62_primary	transversions_only	locus	10	all_PNAS	0.16279069767441862	0.03414634146341464	0.12864435621100398	1.0	0.0994558447518521	1.0	0.02407562945567839	4	20
+informative_site_threshold	N62_primary	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	N62_primary	transversions_only	locus	100	all_PNAS								0	0
+informative_site_threshold	N62_alt_outgroup	all	locus	0	all_PNAS	0.05422405379026136	0.038044826730626084	0.016179227059635273	0.15818798449612403	-0.04000700175345636	0.011843587483038582	-0.09125718987999838	1126	4256
+informative_site_threshold	N62_alt_outgroup	all	locus	10	all_PNAS	0.05342805983942702	0.038874458874458874	0.014553600964968147	0.1515953386596102	-0.03561465536240019	0.00737305843479024	-0.09379122514617383	973	3804
+informative_site_threshold	N62_alt_outgroup	all	locus	50	all_PNAS								0	0
+informative_site_threshold	N62_alt_outgroup	all	locus	100	all_PNAS								0	0
+informative_site_threshold	N62_alt_outgroup	transversions_only	locus	0	all_PNAS	0.06842653699201111	0.026115978306216103	0.042310558685795	0.15818798449612403	-0.04000700175345636	0.011843587483038582	-0.09125718987999838	1126	4256
+informative_site_threshold	N62_alt_outgroup	transversions_only	locus	10	all_PNAS	0.3076923076923077	-0.02857142857142857	0.3362637362637363	1.0	0.2220175034546292	1.0	-0.20837325398568354	5	13
+informative_site_threshold	N62_alt_outgroup	transversions_only	locus	50	all_PNAS								0	0
+informative_site_threshold	N62_alt_outgroup	transversions_only	locus	100	all_PNAS								0	0

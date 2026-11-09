@@ -1,0 +1,13 @@
+design	filter	D_site	D_topology	D_tree	callable_sites	n_prediction_loci	note
+Columbea_primary	all	0.21639488761568973	-0.06617964278523973	0.04634908552536632	1119077.0	1281	controls are descriptive; induced quartet roles differ
+Columbea_primary	transversions_only	0.27666034155597724	-0.06617964278523973	0.04634908552536632	1119077.0	1281	controls are descriptive; induced quartet roles differ
+Columbea_alt_outgroup	all	0.2296712559707783	-0.07357359579664027	0.043906333987919356	1077405.0	1265	controls are descriptive; induced quartet roles differ
+Columbea_alt_outgroup	transversions_only	0.2887490165224233	-0.07357359579664027	0.043906333987919356	1077405.0	1265	controls are descriptive; induced quartet roles differ
+N61_primary	all	-0.25819389863468784	-0.9365954297362992	-0.9785042423165877	1049445.0	1221	controls are descriptive; induced quartet roles differ
+N61_primary	transversions_only	-0.45186136071887034	-0.9365954297362992	-0.9785042423165877	1049445.0	1221	controls are descriptive; induced quartet roles differ
+N61_alt_outgroup	all	-0.25289774367858764	-0.9363607212955379	-0.9783616272422061	1010686.0	1206	controls are descriptive; induced quartet roles differ
+N61_alt_outgroup	transversions_only	-0.44763995609220636	-0.9363607212955379	-0.9783616272422061	1010686.0	1206	controls are descriptive; induced quartet roles differ
+N62_primary	all	0.039372582269090135	0.16911807966111667	0.03272426267690397	955018.0	1139	controls are descriptive; induced quartet roles differ
+N62_primary	transversions_only	0.07145299145299146	0.16911807966111667	0.03272426267690397	955018.0	1139	controls are descriptive; induced quartet roles differ
+N62_alt_outgroup	all	0.05422405379026136	0.15818798449612403	0.011843587483038582	921683.0	1126	controls are descriptive; induced quartet roles differ
+N62_alt_outgroup	transversions_only	0.06842653699201111	0.15818798449612403	0.011843587483038582	921683.0	1126	controls are descriptive; induced quartet roles differ
