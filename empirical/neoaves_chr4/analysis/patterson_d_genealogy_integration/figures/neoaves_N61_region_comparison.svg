@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="760" viewBox="0 0 1350 760"><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial;font-size:13px}.bar{stroke:#333;stroke-width:.6}</style><text x="120" y="32" font-size="22">N61 inside-minus-outside comparisons by PNAS interval</text>
+<text x="120" y="65">nucleotide D</text>
+<line x1="120" y1="335" x2="370" y2="335" stroke="#555"/>
+<rect class="bar" x="140" y="335.0" width="35" height="127.9" fill="#d95f02"/>
+<text x="142" y="357" transform="rotate(45 142 357)">1</text>
+<line x1="157.5" y1="446.6" x2="157.5" y2="479.2" stroke="#111"/>
+<line x1="152.5" y1="446.6" x2="162.5" y2="446.6" stroke="#111"/><line x1="152.5" y1="479.2" x2="162.5" y2="479.2" stroke="#111"/>
+<rect class="bar" x="195" y="335.0" width="35" height="180.0" fill="#1b9e77"/>
+<text x="197" y="357" transform="rotate(45 197 357)">2</text>
+<line x1="212.5" y1="458.4" x2="212.5" y2="571.6" stroke="#111"/>
+<line x1="207.5" y1="458.4" x2="217.5" y2="458.4" stroke="#111"/><line x1="207.5" y1="571.6" x2="217.5" y2="571.6" stroke="#111"/>
+<rect class="bar" x="250" y="335.0" width="35" height="126.1" fill="#7570b3"/>
+<text x="252" y="357" transform="rotate(45 252 357)">3</text>
+<line x1="267.5" y1="445.7" x2="267.5" y2="476.6" stroke="#111"/>
+<line x1="262.5" y1="445.7" x2="272.5" y2="445.7" stroke="#111"/><line x1="262.5" y1="476.6" x2="272.5" y2="476.6" stroke="#111"/>
+<rect class="bar" x="305" y="335.0" width="35" height="151.9" fill="#555"/>
+<text x="307" y="357" transform="rotate(45 307 357)">all_PNAS</text>
+<line x1="322.5" y1="477.1" x2="322.5" y2="496.8" stroke="#111"/>
+<line x1="317.5" y1="477.1" x2="327.5" y2="477.1" stroke="#111"/><line x1="317.5" y1="496.8" x2="327.5" y2="496.8" stroke="#111"/>
+<text x="120" y="425">error bars: 1-Mb block jackknife SE</text>
+<text x="410" y="65">q2-q3</text>
+<line x1="410" y1="335" x2="660" y2="335" stroke="#555"/>
+<rect class="bar" x="430" y="193.0" width="35" height="142.0" fill="#d95f02"/>
+<text x="432" y="357" transform="rotate(45 432 357)">1</text>
+<line x1="447.5" y1="182.6" x2="447.5" y2="203.5" stroke="#111"/>
+<line x1="442.5" y1="182.6" x2="452.5" y2="182.6" stroke="#111"/><line x1="442.5" y1="203.5" x2="452.5" y2="203.5" stroke="#111"/>
+<rect class="bar" x="485" y="197.4" width="35" height="137.6" fill="#1b9e77"/>
+<text x="487" y="357" transform="rotate(45 487 357)">2</text>
+<line x1="502.5" y1="189.2" x2="502.5" y2="205.7" stroke="#111"/>
+<line x1="497.5" y1="189.2" x2="507.5" y2="189.2" stroke="#111"/><line x1="497.5" y1="205.7" x2="507.5" y2="205.7" stroke="#111"/>
+<rect class="bar" x="540" y="170.2" width="35" height="164.8" fill="#7570b3"/>
+<text x="542" y="357" transform="rotate(45 542 357)">3</text>
+<line x1="557.5" y1="161.6" x2="557.5" y2="178.8" stroke="#111"/>
+<line x1="552.5" y1="161.6" x2="562.5" y2="161.6" stroke="#111"/><line x1="552.5" y1="178.8" x2="562.5" y2="178.8" stroke="#111"/>
+<rect class="bar" x="595" y="155.0" width="35" height="180.0" fill="#555"/>
+<text x="597" y="357" transform="rotate(45 597 357)">all_PNAS</text>
+<line x1="612.5" y1="150.4" x2="612.5" y2="159.6" stroke="#111"/>
+<line x1="607.5" y1="150.4" x2="617.5" y2="150.4" stroke="#111"/><line x1="607.5" y1="159.6" x2="617.5" y2="159.6" stroke="#111"/>
+<text x="410" y="425">error bars: 1-Mb block jackknife SE</text>
+<text x="700" y="65">q2-q1</text>
+<line x1="700" y1="335" x2="950" y2="335" stroke="#555"/>
+<rect class="bar" x="720" y="195.2" width="35" height="139.8" fill="#d95f02"/>
+<text x="722" y="357" transform="rotate(45 722 357)">1</text>
+<line x1="737.5" y1="182.1" x2="737.5" y2="208.2" stroke="#111"/>
+<line x1="732.5" y1="182.1" x2="742.5" y2="182.1" stroke="#111"/><line x1="732.5" y1="208.2" x2="742.5" y2="208.2" stroke="#111"/>
+<rect class="bar" x="775" y="196.0" width="35" height="139.0" fill="#1b9e77"/>
+<text x="777" y="357" transform="rotate(45 777 357)">2</text>
+<line x1="792.5" y1="175.9" x2="792.5" y2="216.0" stroke="#111"/>
+<line x1="787.5" y1="175.9" x2="797.5" y2="175.9" stroke="#111"/><line x1="787.5" y1="216.0" x2="797.5" y2="216.0" stroke="#111"/>
+<rect class="bar" x="830" y="168.9" width="35" height="166.1" fill="#7570b3"/>
+<text x="832" y="357" transform="rotate(45 832 357)">3</text>
+<line x1="847.5" y1="160.4" x2="847.5" y2="177.5" stroke="#111"/>
+<line x1="842.5" y1="160.4" x2="852.5" y2="160.4" stroke="#111"/><line x1="842.5" y1="177.5" x2="852.5" y2="177.5" stroke="#111"/>
+<rect class="bar" x="885" y="155.0" width="35" height="180.0" fill="#555"/>
+<text x="887" y="357" transform="rotate(45 887 357)">all_PNAS</text>
+<line x1="902.5" y1="149.7" x2="902.5" y2="160.3" stroke="#111"/>
+<line x1="897.5" y1="149.7" x2="907.5" y2="149.7" stroke="#111"/><line x1="897.5" y1="160.3" x2="907.5" y2="160.3" stroke="#111"/>
+<text x="700" y="425">error bars: 1-Mb block jackknife SE</text>
+<text x="990" y="65">B observed</text>
+<line x1="990" y1="335" x2="1240" y2="335" stroke="#555"/>
+<rect class="bar" x="1010" y="335.0" width="35" height="57.8" fill="#d95f02"/>
+<text x="1012" y="357" transform="rotate(45 1012 357)">1</text>
+<line x1="1027.5" y1="362.1" x2="1027.5" y2="423.6" stroke="#111"/>
+<line x1="1022.5" y1="362.1" x2="1032.5" y2="362.1" stroke="#111"/><line x1="1022.5" y1="423.6" x2="1032.5" y2="423.6" stroke="#111"/>
+<rect class="bar" x="1065" y="155.0" width="35" height="180.0" fill="#1b9e77"/>
+<text x="1067" y="357" transform="rotate(45 1067 357)">2</text>
+<line x1="1082.5" y1="-32.9" x2="1082.5" y2="342.9" stroke="#111"/>
+<line x1="1077.5" y1="-32.9" x2="1087.5" y2="-32.9" stroke="#111"/><line x1="1077.5" y1="342.9" x2="1087.5" y2="342.9" stroke="#111"/>
+<rect class="bar" x="1120" y="247.1" width="35" height="87.9" fill="#7570b3"/>
+<text x="1122" y="357" transform="rotate(45 1122 357)">3</text>
+<line x1="1137.5" y1="208.7" x2="1137.5" y2="285.5" stroke="#111"/>
+<line x1="1132.5" y1="208.7" x2="1142.5" y2="208.7" stroke="#111"/><line x1="1132.5" y1="285.5" x2="1142.5" y2="285.5" stroke="#111"/>
+<rect class="bar" x="1175" y="290.4" width="35" height="44.6" fill="#555"/>
+<text x="1177" y="357" transform="rotate(45 1177 357)">all_PNAS</text>
+<line x1="1192.5" y1="259.2" x2="1192.5" y2="321.5" stroke="#111"/>
+<line x1="1187.5" y1="259.2" x2="1197.5" y2="259.2" stroke="#111"/><line x1="1187.5" y1="321.5" x2="1197.5" y2="321.5" stroke="#111"/>
+<text x="990" y="425">error bars: 1-Mb block jackknife SE</text>
+<text x="120" y="710">Positive values indicate higher inside-region support/distance; the four panels have statistic-specific scales.</text></svg>
