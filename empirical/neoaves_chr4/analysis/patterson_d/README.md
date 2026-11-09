@@ -25,6 +25,20 @@ bash empirical/neoaves_chr4/analysis/patterson_d/scripts/download_alignments.sh
 <configured-python> -m unittest discover -s empirical/neoaves_chr4/analysis/patterson_d/tests -p 'test_*.py'
 ```
 
+The completed local rerun is preserved under `results/recheck_20261108/` and
+`figures/recheck_20261108/`. To write a fresh rerun without replacing those
+results, pass alternate directories:
+
+```bash
+<configured-python> empirical/neoaves_chr4/analysis/patterson_d/scripts/audit_inputs.py \
+  --output-dir empirical/neoaves_chr4/analysis/patterson_d/results/my_run
+<configured-python> empirical/neoaves_chr4/analysis/patterson_d/scripts/patterson_d.py all \
+  --results-dir empirical/neoaves_chr4/analysis/patterson_d/results/my_run \
+  --figures-dir empirical/neoaves_chr4/analysis/patterson_d/figures/my_run
+<configured-python> empirical/neoaves_chr4/analysis/patterson_d/scripts/make_report.py \
+  --results-dir empirical/neoaves_chr4/analysis/patterson_d/results/my_run
+```
+
 `patterson_d.py` reads the tar archive directly, so extraction is not needed.
 It writes locus-level counts, pooled region summaries, block-jackknife
 uncertainty, and SVG/PNG/PDF figures. All D values pool ABBA and BABA site
@@ -35,4 +49,24 @@ values are calculated. The primary outgroup is *Gallus gallus*; the alternative
 outgroup is *Meleagris gallopavo*, another galliform taxon present in the
 Stiller taxon map. The report records coverage and whether each alternative is
 usable for each design.
+
+## Multiresolution visualization tracks
+
+The expensive nucleotide scan is not needed for higher-resolution tracks.
+Reuse the existing locus-level counts with:
+
+```bash
+<configured-python> empirical/neoaves_chr4/analysis/patterson_d/scripts/multiresolution_tracks.py
+```
+
+This writes 100-kb, 250-kb, 500-kb, and 1-Mb visualization tables, resolution
+correlations, interval summaries, preservation checks, and new figures. Empty
+and low-information windows are retained; plotted lines are broken at those
+bins rather than interpolated. These visualization windows are distinct from
+the existing 500-kb, 1-Mb, and 2-Mb jackknife blocks.
+
+The primary manuscript table is
+`results/recheck_20261108/manuscript_results_table.tsv`; the corresponding
+table for all six frozen primary/alternative-outgroup designs is
+`results/recheck_20261108/manuscript_results_table_all_designs.tsv`.
 

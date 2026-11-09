@@ -31,4 +31,14 @@ class TestPattersonD(unittest.TestCase):
         self.assertEqual((abba,baba),(2,1))
         self.assertAlmostEqual(mod.patterson_d(abba,baba),1/3)
 
+    def test_region_classification_and_block_jackknife(self):
+        self.assertEqual(mod.region_for(25030000), "PNAS_1")
+        self.assertEqual(mod.region_for(25029999), "outside_all_PNAS")
+        # Two physical blocks with equal pooled counts have a finite, known
+        # delete-one-block jackknife estimate.
+        d, se, n = mod.jackknife([(0, 3, 1), (1, 1, 3)], 1)
+        self.assertAlmostEqual(d, 0.0)
+        self.assertAlmostEqual(se, 0.5)
+        self.assertEqual(n, 2)
+
 if __name__ == "__main__": unittest.main()
