@@ -1,0 +1,5 @@
+input	path	exists	sha256	status
+stage4d_locus_manifest.tsv	/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/results/stage4d_locus_manifest.tsv	True	8290505033761276c458399ac2821773a77cb13a39d9679fe53c00f1605a23ac	verified_from_prior_audit
+locus_alignment_mapping.tsv	/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/analysis/patterson_d/results/locus_alignment_mapping.tsv	True	471534ca117c4e82902a2dd741029f47dd25a539f8520283a5bf89115ec327e6	verified_from_prior_audit
+63430.alns.tar.gz	/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/external/stiller2024/63430.alns.tar.gz	True	87a2a643083bb567022683d99b4f5446cf9d52b1da0b0d694bd52aca55f37e43	verified_from_prior_audit
+63430.named.gene.trees.gz	/Users/ytabatabaee/Desktop/msrc-paper/empirical/neoaves_chr4/external/stiller2024/63430.named.gene.trees.gz	True	cbf5a4f631fa92ef6da65c48a5aaf39b424fce94d2812c526eaed904dc61392	verified_from_prior_audit

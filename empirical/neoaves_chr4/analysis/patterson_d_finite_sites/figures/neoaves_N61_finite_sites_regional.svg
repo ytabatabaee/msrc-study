@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="700" viewBox="0 0 1700 700"><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial;font-size:13px}.bar{stroke:#333}</style><text x="100" y="30" font-size="22">N61 regional observed and finite-sites D</text>
+<text x="100" y="65">PNAS_1</text><line x1="100" y1="500" x2="340" y2="500" stroke="#555"/>
+<rect class="bar" x="120" y="500.0" width="32" height="176.0" fill="#d62728"/><text x="116" y="520" transform="rotate(45 116 520)">observed_D</text>
+<rect class="bar" x="168" y="500.0" width="32" height="278.7" fill="#1f77b4"/><text x="164" y="520" transform="rotate(45 164 520)">JC69_D</text>
+<rect class="bar" x="216" y="500.0" width="32" height="246.5" fill="#2ca02c"/><text x="212" y="520" transform="rotate(45 212 520)">HKY85_D</text>
+<rect class="bar" x="264" y="500.0" width="32" height="208.4" fill="#9467bd"/><text x="260" y="520" transform="rotate(45 260 520)">GTR_Gamma_D</text>
+<text x="400" y="65">PNAS_2</text><line x1="400" y1="500" x2="640" y2="500" stroke="#555"/>
+<rect class="bar" x="420" y="500.0" width="32" height="225.0" fill="#d62728"/><text x="416" y="520" transform="rotate(45 416 520)">observed_D</text>
+<rect class="bar" x="468" y="500.0" width="32" height="280.0" fill="#1f77b4"/><text x="464" y="520" transform="rotate(45 464 520)">JC69_D</text>
+<rect class="bar" x="516" y="500.0" width="32" height="251.4" fill="#2ca02c"/><text x="512" y="520" transform="rotate(45 512 520)">HKY85_D</text>
+<rect class="bar" x="564" y="500.0" width="32" height="222.5" fill="#9467bd"/><text x="560" y="520" transform="rotate(45 560 520)">GTR_Gamma_D</text>
+<text x="700" y="65">PNAS_3</text><line x1="700" y1="500" x2="940" y2="500" stroke="#555"/>
+<rect class="bar" x="720" y="500.0" width="32" height="172.5" fill="#d62728"/><text x="716" y="520" transform="rotate(45 716 520)">observed_D</text>
+<rect class="bar" x="768" y="500.0" width="32" height="262.8" fill="#1f77b4"/><text x="764" y="520" transform="rotate(45 764 520)">JC69_D</text>
+<rect class="bar" x="816" y="500.0" width="32" height="229.2" fill="#2ca02c"/><text x="812" y="520" transform="rotate(45 812 520)">HKY85_D</text>
+<rect class="bar" x="864" y="500.0" width="32" height="190.4" fill="#9467bd"/><text x="860" y="520" transform="rotate(45 860 520)">GTR_Gamma_D</text>
+<text x="1000" y="65">all_PNAS</text><line x1="1000" y1="500" x2="1240" y2="500" stroke="#555"/>
+<rect class="bar" x="1020" y="500.0" width="32" height="175.8" fill="#d62728"/><text x="1016" y="520" transform="rotate(45 1016 520)">observed_D</text>
+<rect class="bar" x="1068" y="500.0" width="32" height="269.5" fill="#1f77b4"/><text x="1064" y="520" transform="rotate(45 1064 520)">JC69_D</text>
+<rect class="bar" x="1116" y="500.0" width="32" height="236.6" fill="#2ca02c"/><text x="1112" y="520" transform="rotate(45 1112 520)">HKY85_D</text>
+<rect class="bar" x="1164" y="500.0" width="32" height="198.6" fill="#9467bd"/><text x="1160" y="520" transform="rotate(45 1160 520)">GTR_Gamma_D</text>
+<text x="1300" y="65">outside_all_PNAS</text><line x1="1300" y1="500" x2="1540" y2="500" stroke="#555"/>
+<rect class="bar" x="1320" y="500.0" width="32" height="54.9" fill="#d62728"/><text x="1316" y="520" transform="rotate(45 1316 520)">observed_D</text>
+<rect class="bar" x="1368" y="500.0" width="32" height="63.7" fill="#1f77b4"/><text x="1364" y="520" transform="rotate(45 1364 520)">JC69_D</text>
+<rect class="bar" x="1416" y="500.0" width="32" height="62.4" fill="#2ca02c"/><text x="1412" y="520" transform="rotate(45 1412 520)">HKY85_D</text>
+<rect class="bar" x="1464" y="500.0" width="32" height="63.3" fill="#9467bd"/><text x="1460" y="520" transform="rotate(45 1460 520)">GTR_Gamma_D</text>
+</svg>

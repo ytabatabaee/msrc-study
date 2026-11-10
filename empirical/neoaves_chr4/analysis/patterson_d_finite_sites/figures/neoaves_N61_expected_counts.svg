@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="700" viewBox="0 0 1700 700"><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial;font-size:13px}.bar{stroke:#333}</style><text x="100" y="30" font-size="22">N61 observed and expected ABBA counts</text>
+<text x="100" y="65">PNAS_1</text><line x1="100" y1="500" x2="340" y2="500" stroke="#555"/>
+<rect class="bar" x="120" y="470.4" width="32" height="29.6" fill="#d62728"/><text x="116" y="520" transform="rotate(45 116 520)">observed_ABBA</text>
+<rect class="bar" x="168" y="494.8" width="32" height="5.2" fill="#1f77b4"/><text x="164" y="520" transform="rotate(45 164 520)">JC69_expected_ABBA</text>
+<rect class="bar" x="216" y="493.2" width="32" height="6.8" fill="#2ca02c"/><text x="212" y="520" transform="rotate(45 212 520)">HKY85_expected_ABBA</text>
+<text x="400" y="65">PNAS_2</text><line x1="400" y1="500" x2="640" y2="500" stroke="#555"/>
+<rect class="bar" x="420" y="497.4" width="32" height="2.6" fill="#d62728"/><text x="416" y="520" transform="rotate(45 416 520)">observed_ABBA</text>
+<rect class="bar" x="468" y="499.5" width="32" height="1.0" fill="#1f77b4"/><text x="464" y="520" transform="rotate(45 464 520)">JC69_expected_ABBA</text>
+<rect class="bar" x="516" y="499.3" width="32" height="1.0" fill="#2ca02c"/><text x="512" y="520" transform="rotate(45 512 520)">HKY85_expected_ABBA</text>
+<text x="700" y="65">PNAS_3</text><line x1="700" y1="500" x2="940" y2="500" stroke="#555"/>
+<rect class="bar" x="720" y="456.5" width="32" height="43.5" fill="#d62728"/><text x="716" y="520" transform="rotate(45 716 520)">observed_ABBA</text>
+<rect class="bar" x="768" y="491.8" width="32" height="8.2" fill="#1f77b4"/><text x="764" y="520" transform="rotate(45 764 520)">JC69_expected_ABBA</text>
+<rect class="bar" x="816" y="489.3" width="32" height="10.7" fill="#2ca02c"/><text x="812" y="520" transform="rotate(45 812 520)">HKY85_expected_ABBA</text>
+<text x="1000" y="65">all_PNAS</text><line x1="1000" y1="500" x2="1240" y2="500" stroke="#555"/>
+<rect class="bar" x="1020" y="424.4" width="32" height="75.6" fill="#d62728"/><text x="1016" y="520" transform="rotate(45 1016 520)">observed_ABBA</text>
+<rect class="bar" x="1068" y="486.0" width="32" height="14.0" fill="#1f77b4"/><text x="1064" y="520" transform="rotate(45 1064 520)">JC69_expected_ABBA</text>
+<rect class="bar" x="1116" y="481.9" width="32" height="18.1" fill="#2ca02c"/><text x="1112" y="520" transform="rotate(45 1112 520)">HKY85_expected_ABBA</text>
+<text x="1300" y="65">outside_all_PNAS</text><line x1="1300" y1="500" x2="1540" y2="500" stroke="#555"/>
+<rect class="bar" x="1320" y="220.0" width="32" height="280.0" fill="#d62728"/><text x="1316" y="520" transform="rotate(45 1316 520)">observed_ABBA</text>
+<rect class="bar" x="1368" y="445.9" width="32" height="54.1" fill="#1f77b4"/><text x="1364" y="520" transform="rotate(45 1364 520)">JC69_expected_ABBA</text>
+<rect class="bar" x="1416" y="431.9" width="32" height="68.1" fill="#2ca02c"/><text x="1412" y="520" transform="rotate(45 1412 520)">HKY85_expected_ABBA</text>
+</svg>

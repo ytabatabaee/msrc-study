@@ -1,0 +1,2 @@
+model	n_callable_bases	pi_A	pi_C	pi_G	pi_T	kappa	transition_pair_count	transversion_pair_count	source
+global_empirical	4912200	0.3056395810431171	0.19396650177110053	0.1945776841333822	0.30581623305240013	3.4129277139931737	3070212.0	1893241.0	all callable chr4 N61 quartet bases
