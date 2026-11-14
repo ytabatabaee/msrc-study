@@ -1,0 +1,13 @@
+test_id	signal	aggregation	n_blocks	pearson_r	pearson_p	spearman_rho	spearman_p	interpretation
+A_merus	D_topology	nonoverlapping 500-kb genomic blocks	99	-0.9579604462072463	2.1164221194296185e-54	-0.7331340745571636	6.268013187654876e-18	descriptive spatial association; not an independent-window significance test
+A_merus	quartet_margin	nonoverlapping 500-kb genomic blocks	99	-0.9768193079146907	9.559579695835669e-67	-0.7584291898577613	9.784762279846835e-20	descriptive spatial association; not an independent-window significance test
+A_merus	crossed_distance	nonoverlapping 500-kb genomic blocks	99	-0.9723037215594325	4.820005784745696e-63	-0.7697588126159555	1.2818062384878615e-20	descriptive spatial association; not an independent-window significance test
+B_merus	D_topology	nonoverlapping 500-kb genomic blocks	99	0.972502854851918	3.4126932308475355e-63	0.8181012482213346	4.849573477100932e-25	descriptive spatial association; not an independent-window significance test
+B_merus	quartet_margin	nonoverlapping 500-kb genomic blocks	99	0.97981592471429	1.2454922200520963e-69	0.8545949288806431	2.3402239357597855e-29	descriptive spatial association; not an independent-window significance test
+B_merus	crossed_distance	nonoverlapping 500-kb genomic blocks	99	0.9750136871303833	3.4825912521261684e-65	0.8382065553494126	2.7540678442557374e-27	descriptive spatial association; not an independent-window significance test
+C_merus	D_topology	nonoverlapping 500-kb genomic blocks	99	-0.9072244736121852	2.943005293938619e-38	-0.8568116217492545	1.1742001375403125e-29	descriptive spatial association; not an independent-window significance test
+C_merus	quartet_margin	nonoverlapping 500-kb genomic blocks	99	-0.944758333240193	8.739967862739323e-49	-0.9403710575139146	3.203652730521902e-47	descriptive spatial association; not an independent-window significance test
+C_merus	crossed_distance	nonoverlapping 500-kb genomic blocks	99	-0.9550065957881508	5.313917740651113e-53	-0.9318985776128633	1.643306773120185e-44	descriptive spatial association; not an independent-window significance test
+D_merus	D_topology	nonoverlapping 500-kb genomic blocks	99	0.8870845622893803	2.4700573296530904e-34	0.6651654173945868	5.944184356482784e-14	descriptive spatial association; not an independent-window significance test
+D_merus	quartet_margin	nonoverlapping 500-kb genomic blocks	99	0.8839797914435794	8.52811596265164e-34	0.6848732220160791	5.395586574476652e-15	descriptive spatial association; not an independent-window significance test
+D_merus	crossed_distance	nonoverlapping 500-kb genomic blocks	99	0.8674213584382016	3.65589194665381e-31	0.6899814471243042	2.8084776057710053e-15	descriptive spatial association; not an independent-window significance test
