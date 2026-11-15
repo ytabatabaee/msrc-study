@@ -2969,3 +2969,17 @@ Replaced the LGI point display with a two-panel line figure built from the froze
 The prior `pair1_A_hisp_minus_a_hisp` quantity is `d(CJ03 mat A, N. hispaniola) - d(CJ04 mat a, N. hispaniola)`, in patristic substitutions per site. It is a lineage-specific contrast, not the manuscript arrangement-informed `A(w)`, which averages opposite-arrangement pair distances and subtracts the corresponding same-arrangement mean. Mating-type classes do not define those arrangement pair sets in this dataset, so a manuscript-consistent A(w) cannot be estimated from the documented Neurospora assignments; the figure labels the quantity descriptively and does not call it A(w). `B(w)` is the mean of all six unordered patristic distances among CJ03 (mat A), CJ04 (mat a), `Ncra@999` (*N. crassa*), and `8817@999` (*N. hispaniola*). Both are in substitutions per site, not CU or absolute time.
 
 The figure shows CJ03/CJ04 and CJ15/CJ16 as faint pair-specific lines and their equal-weight binwise mean as the prominent lineage-contrast line. B(w) uses the fixed CJ03/CJ04 quartet. No tree inference or unrelated empirical figure was rerun. Regression tests cover the distance formulas and missing-bin behavior.
+
+## Neurospora LGI chromosome-context figure (2026-11-15)
+
+Added `figure0_chromosome_context` as a standalone three-format figure. The
+machine-readable interval table records the L10 recombination-suppressed and
+introgression-associated interval from Corcoran et al. (2016), exact lineage-
+specific LGI inversion endpoints from Sun et al. (2017) Supplementary Table 4,
+and the two locally inferred q3-dominant topology runs. The plot uses a shared
+2509a-reference axis, explicitly keeps Sun's general ~8 Mb suppression extent
+as length-only evidence, and distinguishes local analysis coverage from exact
+chromosome length. The L10 CJ01 inversion is identified as strain-specific.
+See `empirical/neurospora/results/chromosome_context_figure_notes.md` for
+sources, interval definitions, and limitations. Existing quantitative figures
+were left unchanged.
