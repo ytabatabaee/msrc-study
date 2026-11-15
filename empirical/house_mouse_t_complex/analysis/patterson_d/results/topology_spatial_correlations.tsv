@@ -1,0 +1,2 @@
+design	resolution_bp	blocks	pearson_r_D_vs_mean_q_t_alt	interpretation
+D1_Mmd_t_vs_standard	500000	58	-0.09695350361048279	descriptive; adjacent genomic blocks and different estimands; no spatial permutation test

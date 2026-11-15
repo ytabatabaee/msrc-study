@@ -1,0 +1,8 @@
+analysis	status	details
+primary_PASS_biallelic	completed	AllMouse PASS SNP/indel source; script retains biallelic A/C/G/T; outgroup fixed REF required.
+population_designs	completed	Three population-matched contrasts frozen before D; each remains exploratory.
+transversions_only	not_run	Per-site alleles not retained in output; requires another indexed VCF scan.
+outgroup_sensitivity	not_run	No independent second outgroup cohort was frozen; avoid post-hoc selection.
+callability_thresholds	partial	Sites excluded for an entirely missing group/outgroup are tallied; partial call rates and invariant callable bases unavailable in SNP-only VCF.
+MAC_or_SNP_filter_sensitivity	not_run	No alternate filtering scan run.
+resolution_sensitivity	completed	Pooled ABBA/BABA at 5, 50, 100, 250, 500 kb; D computed after pooling.

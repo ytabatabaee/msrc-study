@@ -1,0 +1,84 @@
+{
+  "status": "completed_full_chr17_scan",
+  "scan_bins": 18998,
+  "interval_chr17": [
+    5000000,
+    42050000
+  ],
+  "coordinate_system": "mm10/GRCm38 1-based POS",
+  "quartets_frozen": "empirical/house_mouse_t_complex/analysis/patterson_d/config/frozen_quartets.tsv",
+  "vcf_url": "https://wwwuser.gwdguser.de/~evolbio/evolgen/wildmouse/vcf/AllMouse.vcf_90_recalibrated_snps_raw_indels_reheader_PopSorted.PASS.vcf.gz",
+  "commands": [
+    ".venv-malaria310/bin/python empirical/house_mouse_t_complex/analysis/patterson_d/scripts/run_patterson_d.py",
+    ".venv-malaria310/bin/python empirical/house_mouse_t_complex/analysis/patterson_d/scripts/finalize_patterson_d.py",
+    ".venv-malaria310/bin/python empirical/house_mouse_t_complex/analysis/patterson_d/tests/test_synthetic_counts.py"
+  ],
+  "tests": "4 synthetic unittest examples passed",
+  "checksums": [
+    {
+      "item": "source_archive",
+      "path_or_url": "IST-2017-78-v1+1_Data.zip",
+      "sha256": "f925084a87ac3837661ad99f931da608c129ea3e590c3470030b3ba649d47877",
+      "availability": "local"
+    },
+    {
+      "item": "local_remote_index",
+      "path_or_url": "AllMouse.vcf_90_recalibrated_snps_raw_indels_reheader_PopSorted.PASS.vcf.gz.tbi",
+      "sha256": "5e4e29298f8f3a7bc3769e0f999e0c88f48a919206f60993bf3b1aba272b7747",
+      "availability": "local"
+    },
+    {
+      "item": "frozen_quartets",
+      "path_or_url": "empirical/house_mouse_t_complex/analysis/patterson_d/config/frozen_quartets.tsv",
+      "sha256": "9b0e45aa1ea777e3ccb1afa21c0fb7fa64166e382f2a9d39e65638bd3df50e37",
+      "availability": "local"
+    },
+    {
+      "item": "analysis_script",
+      "path_or_url": "empirical/house_mouse_t_complex/analysis/patterson_d/scripts/run_patterson_d.py",
+      "sha256": "971007826eb297fab02e51d90b6a3824d382f7d85a4e625714900f59b027ad50",
+      "availability": "local"
+    },
+    {
+      "item": "finalizer_script",
+      "path_or_url": "empirical/house_mouse_t_complex/analysis/patterson_d/scripts/finalize_patterson_d.py",
+      "sha256": "b19ca208768656190b0a5618e00281d40a2d8632e0e8d3425b2b74e65596ff90",
+      "availability": "local"
+    },
+    {
+      "item": "frozen_quartet_members",
+      "path_or_url": "empirical/house_mouse_t_complex/analysis/patterson_d/config/frozen_quartet_members.tsv",
+      "sha256": "c30519be31a0f0db2acd8fd3c7458eca191a896027a43edd4d27593390b29d92",
+      "availability": "local"
+    }
+  ],
+  "sample_ids_used": 55,
+  "site_filter": "biallelic single-nucleotide A/C/G/T SNPs only",
+  "polarization": "all 8 outgroup genotypes called and fixed REF; helper tested against missing and derived calls",
+  "quartet_membership_file": "empirical/house_mouse_t_complex/analysis/patterson_d/config/frozen_quartet_members.tsv",
+  "segmented_regions": [
+    "In(17)1-4",
+    "combined_union",
+    "left_flank",
+    "collinear_gap_1",
+    "collinear_gap_2",
+    "collinear_gap_3",
+    "right_flank"
+  ],
+  "region": [
+    0,
+    94987271
+  ],
+  "scan_region_chr17": [
+    0,
+    94987271
+  ],
+  "inversion_focus_region_chr17": [
+    5000000,
+    42050000
+  ],
+  "exact_tree_overlap_chr17": [
+    5000000,
+    37055000
+  ]
+}
