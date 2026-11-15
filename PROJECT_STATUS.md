@@ -3050,3 +3050,7 @@ CJ01-specific inversion. No cross-lineage calculations or figures were
 produced pending suitable trees. See
 `empirical/neurospora/results/cross_lineage_feasibility_report.md` and the two
 machine-readable inventories.
+
+## Monkeyflower introgression dataset exploration (2026-11-15)
+
+Started an exploratory audit of Short & Streisfeld (2025), Dryad DOI 10.5061/dryad.cfxpnvxjw, for the proposed Channel Island monkeyflower dataset. The published Dryad index lists the named 100-kb window metadata and TWISST weights and documents the named tree output; no raw sequencing data were requested. Download attempts returned HTTP 401 from the Dryad API file-download endpoint (bearer token required) and HTTP 403 from its public file-stream endpoint. No local trees were available to analyze, so no topology, branch-length, spatial, or comparison results are claimed. Scoped status and provenance notes are in `empirical/monkeyflowers/README.md`, `results/stage0_data_audit.md`, and `results/source_manifest.tsv`. **Decision: NO-GO for inclusion from this incomplete run; this is an access blocker, not a negative scientific result.** Next step: retrieve the exact tree/metadata/weight files and Dryad README through a functioning access route; verify archive membership, coordinates, taxa, and units; then resume the actual-data audit.
