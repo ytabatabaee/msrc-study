@@ -1,9 +1,14 @@
 # Channel Island monkeyflowers
 
-Exploratory analysis of introgression-associated spatial genealogies in the *Diplacus/Mimulus aurantiacus* complex.
+Topology-only spatial analysis of Short & Streisfeld (2025), *Molecular Ecology* 34:e17778, using locally supplied Dryad TWISST outputs. The input files are under `data/raw/` and are excluded from Git. See `results/stage0_data_audit.md` for file validation and `results/stage1_topology_analysis_report.md` for results, caveats, and the conditional-go recommendation.
 
-## Current status
+Run the analysis from the repository root:
 
-Stage 0 source discovery is documented in `results/stage0_data_audit.md`. The Dryad source is verified and the named coordinate/weight files are listed there, but Dryad's file download endpoints currently return HTTP 401 (API endpoint requires a bearer token) and HTTP 403 (public file stream) in this environment. The matching local-tree archive could not be obtained, so no biological tree or topology results are reported. Do not interpret this folder as evidence for or against an MSRC-like signal.
+```sh
+python empirical/monkeyflowers/scripts/analyze_topologies.py
+python -m unittest discover -s empirical/monkeyflowers/tests -v
+```
 
-The Dryad dataset is 49.73 GB overall; raw reads and whole-genome files are unnecessary for this analysis. Once the tree, coordinate, weight, README and published interval inputs can be retrieved, continue with the planned tree audit and spatial statistics. Keep raw files out of Git.
+The analysis preserves the 15 rooted TWISST classes. It defines the species-history topology as topo3, recent-introgression support as the sum of topo9/topo12/topo13, ancient-introgression support as topo10, and retains the other 11 classes. The count-only weights file has no coordinates; its rowwise normalized values are checked against the combined coordinate-bearing export, then the export is reconciled to metadata and coordinate grid by genomic keys.
+
+**Scope limitation:** no local Newick trees are present in the available inputs. Results support topology-weight and spatial analyses only. No A(w), B(w), internal branch, CU, or gene-tree species-tree inference is reported. The topology-support runs are not introgressed ancestry-tract lengths.

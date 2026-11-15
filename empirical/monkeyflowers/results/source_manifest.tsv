@@ -1,8 +1,8 @@
-source_type	name	url	dryad_file_id	deposited_size_bytes	sha256	status	provenance_note
-publication	Short & Streisfeld 2025	https://doi.org/10.1111/mec.17778	NA	NA	NA	verified	Molecular Ecology 34:e17778; first published 2025-04-28
-Dryad dataset	Dryad dataset landing page	https://doi.org/10.5061/dryad.cfxpnvxjw	NA	49728125513	NA	verified	Dryad API reports total storage size 49,728,125,513 bytes
-local-tree data	ari.par.isl_lon.lon.cle.output.phyml_w_100000.trees.gz	https://datadryad.org/dataset/doi:10.5061/dryad.cfxpnvxjw	NA	NA	NA	listed_not_retrieved	Named in Dryad README for windowed tree outputs; exact file path and archive membership not verified
-window metadata	ari.par.isl_lon.lon.cle.output.phyml_w_100000.data.tsv	https://datadryad.org/dataset/doi:10.5061/dryad.cfxpnvxjw	4135122	92841	NA	listed_not_retrieved	Top-level Dryad file index; download API returned HTTP 401
-TWISST weights	ari.par.isl_lon.lon.cle.output.weights.w_100000.csv	https://datadryad.org/dataset/doi:10.5061/dryad.cfxpnvxjw	4135121	73771	NA	listed_not_retrieved	Top-level Dryad file index; download API returned HTTP 401
-analysis archive	recent_and_ancient.zip	https://datadryad.org/dataset/doi:10.5061/dryad.cfxpnvxjw	4135127	37807629	NA	listed_not_retrieved	Candidate archive not assumed to contain the empirical tree file; download API returned HTTP 401
-README	Dryad README.md	https://datadryad.org/dataset/doi:10.5061/dryad.cfxpnvxjw	4135143	320550	NA	listed_not_retrieved	HTML dataset page renders README contents; file download API returned HTTP 401
+source_type	name	url	local_path	status	provenance
+publication	Short & Streisfeld 2025	https://doi.org/10.1111/mec.17778	NA	verified	Molecular Ecology 34:e17778; article methods describe M. aurantiacus reference assembly from Stankowski et al. 2019
+Dryad dataset	Short & Streisfeld 2025 monkeyflower data	https://doi.org/10.5061/dryad.cfxpnvxjw	NA	verified	Local analysis files supplied manually by user; no redownload attempted
+window metadata	ari.par.isl_lon.lon.cle.output.phyml_w_100000.data.tsv	https://doi.org/10.5061/dryad.cfxpnvxjw	empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.phyml_w_100000.data.tsv	present	Size and checksum in input_manifest.tsv
+TWISST counts	ari.par.isl_lon.lon.cle.output.weights.w_100000.csv	https://doi.org/10.5061/dryad.cfxpnvxjw	empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.weights.w_100000.csv	present	Tab-delimited count-only file; has no coordinate keys; checksum in input_manifest.tsv
+Joined TWISST table	ari.par.isl_lon.lon.cle.output.weights.w_100000.window_data_100kb_weights.csv	https://doi.org/10.5061/dryad.cfxpnvxjw	empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.weights.w_100000.window_data_100kb_weights.csv	present	Coordinate-bearing normalized weights; checksum in input_manifest.tsv
+Recombination window grid	100kb_win_data_nonoverlap_plos_bio_coords.csv	https://doi.org/10.5061/dryad.cfxpnvxjw	empirical/monkeyflowers/data/raw/100kb_win_data_nonoverlap_plos_bio_coords.csv	present	Tab-delimited despite .csv suffix; checksum in input_manifest.tsv
+Local Newick trees	ari.par.isl_lon.lon.cle.output.phyml_w_100000.trees.gz	https://doi.org/10.5061/dryad.cfxpnvxjw	NA	not_found_locally	Required local Newick trees were not present in the searched monkeyflower data/analysis directories; branch statistics remain unsupported

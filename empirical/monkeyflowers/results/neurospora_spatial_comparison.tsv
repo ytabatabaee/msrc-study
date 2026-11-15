@@ -1,0 +1,4 @@
+system_metric	window_resolution_bp	threshold	n_runs	total_run_bp	median_run_bp	longest_run_bp	max_run_windows	transitions	adjacent_covered_Mb	transitions_per_Mb	lag_100kb_autocorrelation	approx_decay_distance_bp
+monkeyflower_recent	100000	0.5	131	20500000	100000.0	600000	6	259	193.8	1.3364293085655314	0.4118621436381287	1300000
+monkeyflower_ancient	100000	0.5	401	77900000	100000.0	1400000	14	796	193.8	4.107327141382869	0.13889856996592237	700000
+neurospora_q3	100000	0.5	2	6900000	3450000.0	4500000	45	4	9.4	0.425531914893617	0.9501728688124121	1000000

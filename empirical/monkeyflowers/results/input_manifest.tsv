@@ -1,0 +1,5 @@
+file	size_bytes	sha256	role
+empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.phyml_w_100000.data.tsv	92841	1f9c87f055a8b18dcde3819371bed372547010f396299493c8364d9738fa569f	window likelihood/coordinates
+empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.weights.w_100000.csv	73771	5af2455d89269484968cd8fc01abda885c207ccb9fe5b374ddb3c52cf9ee6709	15-topology count weights
+empirical/monkeyflowers/data/raw/ari.par.isl_lon.lon.cle.output.weights.w_100000.window_data_100kb_weights.csv	189096	6912a87e85379d320ec9f6877c8d033bd9ad1dccc9712fce82ead7daeb47e705	joined coordinate and normalized topology weights
+empirical/monkeyflowers/data/raw/100kb_win_data_nonoverlap_plos_bio_coords.csv	40819	ebd92b4dfa8d42c4804137c9d8198f1be5d2333adba926148d6e802c6f616ff1	100kb nonoverlapping/recombination coordinate grid

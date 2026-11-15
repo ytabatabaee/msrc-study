@@ -1,33 +1,43 @@
 # Stage 0 data audit — Channel Island monkeyflowers
 
-**Status: blocked before local-data audit.** This document records source discovery only. No local trees were available to parse, and no downstream statistic or figure has been produced.
+## Data used
 
-## Sources checked
+The locally supplied files were found in `empirical/monkeyflowers/data/raw/`; no files were redownloaded. The available coordinate-bearing files are the 100-kb window metadata TSV, the combined window/weight CSV, and the nonoverlapping coordinate grid. A fourth file contains the 15 TWISST topology counts but no coordinates. Exact byte sizes and SHA-256 checksums are in `input_manifest.tsv`.
 
-- Short & Streisfeld (2025), “Disentangling Complex Histories of Hybridisation: The Genomic Consequences of Ancient and Recent Introgression in Channel Island Monkeyflowers,” *Molecular Ecology* 34:e17778, DOI [10.1111/mec.17778](https://doi.org/10.1111/mec.17778).
-- Dryad dataset DOI [10.5061/dryad.cfxpnvxjw](https://doi.org/10.5061/dryad.cfxpnvxjw), published 2025-06-25. The Dryad API reports 49,728,125,513 bytes total storage.
-- Source manifest: `source_manifest.tsv`.
+The source study is Short & Streisfeld (2025), [Molecular Ecology 34:e17778](https://doi.org/10.1111/mec.17778). Their methods state that reads were aligned to the *M. aurantiacus* reference assembly from Stankowski et al. (2019). Window labels are `LG1`–`LG10`; the supplied start/end values form 1-based inclusive, nonoverlapping 100-kb intervals. The coordinate grid, metadata TSV and combined weight export have identical unique `(scaffold,start,end)` key sets (1,948 each), with no within-scaffold coordinate gaps. The combined file's `row_number` is 1–1,948 and its metadata columns agree with the TSV by coordinate key.
 
-## Data inventory from the published Dryad index
+The combined file contains normalized weights and coordinates. The count-only weight file has 1,948 rows and no coordinate/window ID fields. Each count row, after normalization, matches the corresponding combined export weights across all 15 classes; this check necessarily uses the count file's row order because that file has no keys. Analyses use the combined coordinate-bearing export after this validation, and independently join that export to the metadata and coordinate grid using genomic keys.
 
-The Dryad README/index names the 100-kb window tree, metadata and TWISST files. The metadata TSV (92,841 bytes; file ID 4135122) and weight CSV (73,771 bytes; file ID 4135121) are top-level deposited files. The tree filename is described as a windowed output in the README, but its exact archive membership has not yet been verified. Dryad lists `recent_and_ancient.zip` (37,807,629 bytes), among other archives; it is not assumed to be the empirical tree archive without inspecting its contents.
+All 1,948 windows have positive site counts (1,688–12,840), finite weights, and weights summing to one (maximum absolute sum error <1.6e-15). The raw count table and combined weight table are duplicates of the same topology information in different encodings; the combined export additionally joins coordinates and window metadata. The coordinate-grid file supplies the same scaffold/start/end keys and is retained for independent coordinate validation.
 
-Attempts to retrieve files through `https://datadryad.org/api/v2/files/{id}/download` returned HTTP 401 with “must have current bearer token.” The public `https://datadryad.org/downloads/file_stream/{id}` endpoint returned HTTP 403 in this execution environment. No files were saved locally. This is an external delivery/access limitation, not evidence that the dataset is private or unavailable to the user.
+## Taxa and topology mapping
 
-## Biological context established from the paper
+The tree weights refer to four ingroup taxa and *M. clevelandii* as outgroup: `ari` = *aridus*; `par` = *parviflorus*; `isl_lon` = Island *longiflorus*; `lon` = mainland *longiflorus*; `cle` = *M. clevelandii*. The TWISST file explicitly labels 15 rooted topologies. Following the article's definitions:
 
-The authors report evidence consistent with both recent hybridization between Island longiflorus and parviflorus and older gene flow involving ancestors of parviflorus and clades C/D, while noting alternative explanations including shared ancestral variation and ghost introgression. Simulations show that recent gene flow alone can resemble a recent-plus-ancient history in some statistics. The study reports 11 recent hybrid individuals excluded from subsequent analyses and 63 individuals retained for a species-tree analysis. These facts make a biologically labeled quartet design possible in principle, but do not justify interpreting every alternate local topology as introgression.
+- Species history: `topo3`, `(cle,((ari,par),(isl_lon,lon)))`.
+- Recent-introgression set: `topo9`, `topo12`, and `topo13`, each with a `par` + `isl_lon` sister pair. The set weight is their sum.
+- Ancient-introgression topology: `topo10`, `(cle,(ari,(par,(isl_lon,lon))))`.
+- The other 11 rooted topology classes remain separately available in `topology_weight_tracks.tsv`; their total is reported as `other_weight`, not redistributed into the focal three classes.
 
-The paper identifies an approximately 300-kb chromosome 5 region around 24.7–24.9 Mb as a candidate for adaptive introgression from Island longiflorus into parviflorus. Its boundaries and coordinate convention must be confirmed from the paper's supplement and exact deposited tables before a region comparison.
+The authors describe the recent history as gene flow between Island *longiflorus* and *parviflorus* after mainland/Island *longiflorus* split; the ancient history is gene flow between the ancestor of *parviflorus* and the ancestor of clades C/D. Their interpretation is based on simulation comparisons and other evidence, and does not make every local alternative topology uniquely attributable to introgression.
 
-The paper uses recombination estimates previously calculated in 500-kb windows by Stankowski et al. (2019), and relates these to 100-kb introgression statistics. This supports a recombination covariate in principle; it does not establish a recombination-suppressed interval or a local recombination rate specifically for the chromosome 5 candidate.
+## Local trees and scope
 
-## Audit fields not yet determinable
+The supplied local Newick trees are not present in the repository's monkeyflower data or analysis folders. Consequently, this audit verifies topology-weight coordinates, not a one-tree-per-window set of Newicks. The topology weights cannot provide A(w), B(w), quartet internal branch lengths, substitution-unit branch metrics, CU estimates, or independent gene-tree species-tree inference. The completed work is a topology-only spatial analysis.
 
-Without the actual Newick and aligned metadata files, counts of windows/trees/chromosomes, coordinate system, taxon labels, branch-length units, missing taxa, topology resolution, duplicate/overlapping windows, and exact TWISST matches cannot be verified. Substitutions-per-site units cannot be assumed for the named files until the tree-generation documentation and branch lengths are inspected.
+## Coordinate coverage
 
-No quartet frequencies, spatial runs, autocorrelation, patristic distances, chromosome 5 contrasts, genome-wide sensitivity analysis, or Neurospora comparison were computed. No numerical output table or figure has been fabricated.
+| Scaffold | Windows | Coordinate range (bp) |
+|---|---:|---:|
+| LG1 | 205 | 1–20,500,000 |
+| LG2 | 243 | 1–24,300,000 |
+| LG3 | 207 | 1–20,700,000 |
+| LG4 | 185 | 1–18,500,000 |
+| LG5 | 255 | 1–25,500,000 |
+| LG6 | 157 | 1–15,700,000 |
+| LG7 | 175 | 1–17,500,000 |
+| LG8 | 202 | 1–20,200,000 |
+| LG9 | 145 | 1–14,500,000 |
+| LG10 | 174 | 1–17,400,000 |
 
-## Gate and recommendation
-
-**NO-GO for inclusion based on this run; analysis is incomplete, not a biological rejection.** Resume only after obtaining the tree file and matching metadata/weights with verifiable provenance. Then audit the data first; proceed to topology and branch-length statistics only if IDs and coordinates align and the fixed taxon sets support the planned quartet interpretation.
+No chromosome boundaries are crossed by any spatial runs. The primary chromosome 5 comparison uses the two independent 100-kb windows reported at 24.7–24.9 Mb; because the paper calls the candidate region approximately 300 kb without nucleotide-precise endpoints in its text, 24.7–25.0 Mb is an explicitly labeled sensitivity interval, not a newly asserted published breakpoint.
