@@ -68,17 +68,20 @@ for figidx,name in enumerate(['patterson_d_chr17','patterson_d_D_vs_topology','p
  fig,ax=plt.subplots(figsize=(13,5.8))
  if figidx in (1,2):
   for nm,a,b in inv:ax.axvspan(a/1e6,b/1e6,color='#e6ab02',alpha=.14,label=nm if figidx==1 else None)
-  if figidx==1: use=plot100
-  else:
-   plot_cmp={}
-   for item in cmp:
-    k=int(item['start'])//100000*100000;g=plot_cmp.setdefault(k,[0.,0.,0.,0.]);g[0]+=float(item['ABBA']);g[1]+=float(item['BABA']);g[2]+=float(item['q_t_alt']);g[3]+=1
-   use=[{'design':'D1_Mmd_t_vs_standard','start':k,'patterson_D':d(v[0],v[1]),'q_t_alt':v[2]/v[3]} for k,v in sorted(plot_cmp.items()) if d(v[0],v[1]) is not None]
+  use=plot100
   for des in (designs if figidx==1 else ['D1_Mmd_t_vs_standard']):
-   rr=[r for r in use if r['design']==des and (r['D'] if figidx==1 else r['patterson_D'])!='']
-   ax.plot([int(r['start'])/1e6 for r in rr],[float(r['D'] if figidx==1 else r['patterson_D']) for r in rr],lw=.8,alpha=.8,color=colors[des],label=des,marker='.',linestyle='None',markersize=3)
+   rr=[r for r in use if r['design']==des and r['D']!='']
+   ax.plot([int(r['start'])/1e6 for r in rr],[float(r['D']) for r in rr],lw=.8,alpha=.8,color=colors[des],label=des,marker='.',linestyle='None',markersize=3)
   if figidx==2:
-   ax2=ax.twinx(); rr=use;ax2.plot([int(r['start'])/1e6 for r in rr],[float(r['q_t_alt']) for r in rr],color='black',alpha=.35,lw=.7,label='tree q_t_alt (distinct estimand)');ax2.set_ylabel('Tree q_t_alt');ax2.legend(loc='upper left',fontsize=8)
+   # Local full-tip q_t_alt is available only on the exact 5-kb gene-tree overlap.
+   qbins={}
+   for item in cmp:
+    k=int(item['start'])//100000*100000;g=qbins.setdefault(k,[0.,0.]);g[0]+=float(item['q_t_alt']);g[1]+=1
+   qitems=[(k,v[0]/v[1]) for k,v in sorted(qbins.items()) if v[1]]
+   ax2=ax.twinx();ax2.plot([k/1e6 for k,v in qitems],[v for k,v in qitems],color='black',alpha=.65,lw=0,marker='.',markersize=3,label='tree q_t_alt (available tree windows only)');ax2.set_ylabel('Tree q_t_alt (full-tip track)');ax2.legend(loc='upper left',fontsize=8)
+   ax.axvline(37.055,color='#555',ls=':',lw=1.2)
+   ax.text(38,.96,'No local gene trees beyond 37.055 Mb',transform=ax.get_xaxis_transform(),fontsize=8,color='#444')
+   ax.set_xlim(0,94.987271)
   ax.set_ylabel('Patterson D (100-kb pooled counts)');ax.set_xlabel('chr17 coordinate (Mb)');ax.set_ylim(-1,1);ax.legend(ncol=2,fontsize=8)
  elif figidx==3:
   rr=[r for r in inside if r['region'] in ('In(17)1','In(17)2','In(17)3','In(17)4')]
@@ -101,7 +104,7 @@ for figidx,name in enumerate(['patterson_d_chr17','patterson_d_D_vs_topology','p
    keys=sorted(miss);ax2.plot([k/1e6 for k in keys],[miss[k] for k in keys],color=colors[des],lw=.7,ls='--',alpha=.55,label=f'{des} missing group')
   ax.set_ylabel('Informative ABBA/BABA SNPs / 100 kb');ax2.set_ylabel('SNP records with an empty group/outgroup');ax.set_xlabel('chr17 coordinate (Mb)');ax.legend(loc='upper left',fontsize=7);ax2.legend(loc='upper right',fontsize=7)
  if figidx==1: ax.set_title('Patterson D across house mouse chromosome 17')
- elif figidx==2: ax.set_title('Nucleotide D and existing tree track (distinct estimands)')
+ elif figidx==2: ax.set_title('Full-chromosome nucleotide D; tree support only where available')
  elif figidx==3: ax.set_title('Inside versus outside inversion intervals')
  elif figidx==4: ax.set_title('Arrangement-associated population designs')
  else: ax.set_title('Informative SNP density and group availability')

@@ -2,7 +2,7 @@
 
 ## Data and estimator
 
-The local archive contains only gene trees/coordinate lists; analysis uses the verified public Harr et al. AllMouse PASS indexed VCF. The three exploratory quartets were frozen before inspecting D. Per-site allele-frequency contributions were pooled within bins before calculating D. The complete indexed chr17 scan covers POS 1–94,987,271; inversion-focused contrasts cover 5.0–42.05 Mb. The analysis includes only biallelic single-base A/C/G/T SNPs and requires all eight *M. spretus* calls to be ancestral (fixed REF). VCF SNP data have no invariant callable-base denominator.
+The local archive contains only gene trees/coordinate lists; analysis uses the verified public Harr et al. AllMouse PASS indexed VCF. The three exploratory quartets were frozen before inspecting D. Per-site allele-frequency contributions were pooled within bins before calculating D. The analysis includes only biallelic A/C/G/T SNPs and requires all eight *M. spretus* calls to be ancestral (fixed REF). VCF SNP data have no invariant callable-base denominator.
 
 ## Results (500-kb spatial blocks for uncertainty)
 
@@ -46,7 +46,3 @@ The local archive contains only gene trees/coordinate lists; analysis uses the v
 All three contrasts mix arrangement status with population structure to some degree. The D1 and D2 contrasts use within-subspecies t versus standard groups and third-population standard mice from another subspecies; D3 has only three t-designated Mmc samples. Unphased genotypes estimate carrier-population allele-frequency asymmetry rather than the t-bearing chromosome. SNP ascertainment, ancestral polymorphism, admixture/introgression, and geography may produce asymmetry. Transversion-only and alternate-outgroup scans were not run. The PASS callset is the primary filter; the SNP-only source cannot quantify invariant-base callability. Therefore results do not uniquely support introgression or MSRC.
 
 See `patterson_d_scientific_interpretation.md` for interpretation and all requested questions.
-
-## Validation and reproducibility
-
-Synthetic validation passed (4 unit tests against the scan helpers). Structural validation passed: 56,994 5-kb rows, D bounded in [-1,1], pooled 50-kb ABBA/BABA conservation, 4,046 exact gene-tree window matches, and 15 nonempty PNG/PDF/SVG figure exports. The scan requires complete outgroup calls and excludes non-single-base/multiallelic records. See `run_manifest.json`, `input_checksums.tsv`, and `../README.md` for hashes and commands.

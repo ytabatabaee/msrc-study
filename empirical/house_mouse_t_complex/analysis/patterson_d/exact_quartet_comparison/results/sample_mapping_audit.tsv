@@ -1,0 +1,110 @@
+design	role	sample_id	tree_tip_found	tree_representation
+D1_Mmd_t_vs_standard	P1	Mmd_FRA5_B2C.variant	True	t carrier uses archived tHaplSubset.fa sequence tip
+D1_Mmd_t_vs_standard	P1	Mmd_FRA6_C1.variant	True	t carrier uses archived tHaplSubset.fa sequence tip
+D1_Mmd_t_vs_standard	P1	Mmd_FRA8_F1B.variant	True	t carrier uses archived tHaplSubset.fa sequence tip
+D1_Mmd_t_vs_standard	P1	Mmd_GER6_TP51D.variant2	True	t carrier uses archived tHaplSubset.fa sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_FRA1_14.variant	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_FRA2_15B.variant	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_FRA3_16B.variant	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_FRA4_18B.variant	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_FRA7_E1.variant	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER1_TP1.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER2_TP121B.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER3_TP17-2.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER4_TP3-92.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER5_TP4a.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER7_TP7-10F1A2.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P2	Mmd_GER8_TP81B.variant2	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_AFG2_413.variant7	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_AFG4_424.variant7	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_AFG5_435.variant7	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_CZE3_CR16.variant5	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_CZE5_CR25.variant5	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_CZE7_CR46.variant5	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_CZE8_CR59.variant5	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ1_AL1.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ2_AL16.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ4_AL33.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ5_AL38.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ6_AL40.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	P3	Mmm_KAZ8_AL42.variant6	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE1_SP36.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE2_SP39.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE3_SP41.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE4_SP51.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE5_SP62.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE6_SP68.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE7_SP69.variant9	True	archived individual sequence tip
+D1_Mmd_t_vs_standard	O	Ms_SPRE8_SP70.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_AFG1_396.variant7	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_AFG3_416.variant7	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_AFG6_444.variant7	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_CZE1_CR12.variant5	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_CZE2_CR13.variant5	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_CZE4_CR23.variant5	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_KAZ3_AL19.variant6	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P1	Mmm_KAZ7_AL41.variant6	True	t carrier uses archived tHaplSubset.fa sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_AFG2_413.variant7	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_AFG4_424.variant7	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_AFG5_435.variant7	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_CZE3_CR16.variant5	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_CZE5_CR25.variant5	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_CZE7_CR46.variant5	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_CZE8_CR59.variant5	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ1_AL1.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ2_AL16.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ4_AL33.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ5_AL38.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ6_AL40.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P2	Mmm_KAZ8_AL42.variant6	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_FRA1_14.variant	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_FRA2_15B.variant	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_FRA3_16B.variant	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_FRA4_18B.variant	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_FRA7_E1.variant	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER1_TP1.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER2_TP121B.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER3_TP17-2.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER4_TP3-92.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER5_TP4a.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER7_TP7-10F1A2.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	P3	Mmd_GER8_TP81B.variant2	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE1_SP36.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE2_SP39.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE3_SP41.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE4_SP51.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE5_SP62.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE6_SP68.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE7_SP69.variant9	True	archived individual sequence tip
+D2_Mmm_t_vs_standard	O	Ms_SPRE8_SP70.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P1	Mmc_CAST1_H12.variant8	True	t carrier uses archived tHaplSubset.fa sequence tip
+D3_Mmc_t_vs_standard	P1	Mmc_CAST2_H14.variant8	True	t carrier uses archived tHaplSubset.fa sequence tip
+D3_Mmc_t_vs_standard	P1	Mmc_CAST6_H27.variant8	True	t carrier uses archived tHaplSubset.fa sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST10_H36.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST3_H15.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST4_H24.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST5_H26.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST7_H28.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST8_H30.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P2	Mmc_CAST9_H34.variant8	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_AFG2_413.variant7	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_AFG4_424.variant7	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_AFG5_435.variant7	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_CZE3_CR16.variant5	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_CZE5_CR25.variant5	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_CZE7_CR46.variant5	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_CZE8_CR59.variant5	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ1_AL1.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ2_AL16.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ4_AL33.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ5_AL38.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ6_AL40.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	P3	Mmm_KAZ8_AL42.variant6	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE1_SP36.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE2_SP39.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE3_SP41.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE4_SP51.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE5_SP62.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE6_SP68.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE7_SP69.variant9	True	archived individual sequence tip
+D3_Mmc_t_vs_standard	O	Ms_SPRE8_SP70.variant9	True	archived individual sequence tip
