@@ -2983,3 +2983,70 @@ chromosome length. The L10 CJ01 inversion is identified as strain-specific.
 See `empirical/neurospora/results/chromosome_context_figure_notes.md` for
 sources, interval definitions, and limitations. Existing quantitative figures
 were left unchanged.
+
+## Atlantic cod nucleotide Patterson's D (2026-11-15)
+
+Completed the local Stage 1 feasibility and Stage 2–8 primary analysis for
+LG01, LG02, LG07, and LG12 under
+`empirical/atlantic_cod/analysis/patterson_d/`. The previously blocked Zenodo
+download succeeded after granting network access to the isolated process; the
+host DNS/TLS configuration was not altered. Selected Matschiner et al. (2022)
+VCFs from Zenodo record 4560275 passed the published MD5 and gzip checks. Raw
+data remain out of Git (locally excluded). No whole-genome reads or the 3.36-GB
+outside Dsuite VCF were downloaded.
+
+Four primary quartets and exact individual rosters were frozen before D
+calculation. The primary outgroup is Borsai (*Boreogadus saida*), which the
+upstream Dsuite workflow explicitly labels `Outgroup`; only fixed homozygous
+calls polarize sites. The allele-frequency estimator uses 2 samples per
+ingroup population, pools ABBA/BABA contributions, and matches the existing
+published 250-kb tree windows. Inside/outside D values were LG01 +0.9371 / −0.0362,
+LG02 +0.8282 / −0.0225, LG07 −0.9430 / −0.0107, and LG12 +0.8496 / +0.0347.
+Inside-minus-outside shifts were +0.9733, +0.8507, −0.9323, and +0.8149;
+1-Mb genomic-block jackknife 95% intervals were [+0.887,+1.060],
+[+0.780,+0.922], [−0.989,−0.876], and [+0.711,+0.919]. Circular-shift values
+were 0.0175, 0.0206, 0.0238, and 0.1636. D is strongly interval-associated
+for the frozen designs, with LG07 opposite in sign to the other three.
+
+Transversions-only, one-individual-per-population, Gadoga-outgroup, and Dsuite
+50%-callability sensitivity scans retained each group's inside/outside
+direction. Per-window topology matching is limited because the 426 published
+SNAPP trees contain no external outgroup: exact 4-tip q1/q2/q3 and exact
+D_topology are unavailable. A distinctly named rooted three-population
+contrast correlates with nucleotide D (Pearson r +0.505 to +0.717), but it is
+not an exact quartet D_topology. The earlier arrangement-minus-baseline score
+tracks D strongly on LG01 (+0.887), LG02 (+0.646), and LG12 (+0.692), but not
+LG07 (+0.071). This is spatially descriptive and does not establish species-
+tree estimation bias, introgression, or MSRC uniquely. CONDITIONAL GO for
+reporting the allele-sharing pattern with explicit geography/ecotype
+confounding and outgroup/tree-tip limitations.
+
+The analysis creates reproducible per-window, pooled region, block-jackknife,
+boundary, multiresolution, circular-shift, topology, correlation, robustness,
+and source-manifest outputs. Figures A–F are saved as PNG/PDF/SVG. Nine focused
+estimator tests pass. See `empirical/atlantic_cod/analysis/patterson_d/README.md`
+for reproduction instructions and result paths. No commit or push was made;
+unrelated existing modifications were preserved.
+
+## Neurospora cross-lineage local-tree feasibility audit (2026-11-15)
+
+The audit found no coordinate-indexed L1, L5, L6, or L8 Newick/Relate trees in
+the current repository or in the Martin & Van Belleghem data inventory. The
+only dense genealogy series identified is L10 (32,472 actual trees among
+45,303 window records; 26 tips; 50 variable sites per tree). The ignored raw
+archive named in the source manifest is currently absent from
+`data/neurospora/raw/`; the Zenodo endpoint returned HTTP 403 during attempted
+restoration. Corcoran et al.'s Dryad package contains lineage VCFs, shared
+masked consensus sequences, and outgroup alignments from which windows could
+be reconstructed without raw-read processing, but this would require large
+new downloads and fresh tree inference.
+
+The lineage mechanism table records that L1 has conflicting introgression
+interpretations (Sun et al. 2012 versus Corcoran et al. 2016), L5/L6 combine
+unknown-donor mat-A introgression with a large inversion pattern, L8 has
+suppression and a smaller inversion with no introgression confirmed by
+Corcoran et al., and L10 has documented *N. hispaniola* introgression plus a
+CJ01-specific inversion. No cross-lineage calculations or figures were
+produced pending suitable trees. See
+`empirical/neurospora/results/cross_lineage_feasibility_report.md` and the two
+machine-readable inventories.
