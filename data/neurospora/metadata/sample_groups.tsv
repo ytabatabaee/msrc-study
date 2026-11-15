@@ -1,0 +1,7 @@
+twisst_group	n_samples	tree_tip_labels	group_role	provenance
+N_crassa	1	Ncra@999	outgroup quartet lineage	Martin & Van Belleghem deposited topology definitions
+N_hispaniola	1	8817@999	introgression donor-associated quartet lineage	Corcoran et al. 2016; Martin & Van Belleghem deposited topology definitions
+L10_mat_A	10	CJ labels among the 22 L10 samples; individual group list not complete in the archive	mating-type group used by TWISST	Martin & Van Belleghem text and deposited .topos/weights
+L10_mat_a	12	CJ labels among the 22 L10 samples; individual group list not complete in the archive	mating-type group used by TWISST	Martin & Van Belleghem text and deposited .topos/weights
+N_sitophila	1	1135@999	additional tree tip; excluded from four-lineage TWISST quartet	Corcoran et al. and original reference label
+N_tetrasperma_L6	1	2509@6	additional tree tip; excluded from four-lineage TWISST quartet	Corcoran et al. and original reference label

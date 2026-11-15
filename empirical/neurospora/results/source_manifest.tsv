@@ -1,0 +1,5 @@
+relative_path	bytes	md5	role	source_url	retrieval_date
+data/neurospora/raw/neurospora.tar.gz	15577951	571324702709eb1c2732a3fd993edc93	Zenodo archive	https://zenodo.org/records/4946041	2026-11-15
+data/neurospora/raw/neurospora/trees/cras_sit_hist_tet_L10.min20MAC1.phyml_GTR_bionj_w50sites.data.tsv.gz	467529	785061aaf16a0e268ad5d62d8d39aca0	window coordinates	https://zenodo.org/records/4946041	2026-11-15
+data/neurospora/raw/neurospora/trees/cras_sit_hist_tet_L10.min20MAC1.phyml_GTR_bionj_w50sites.trees.gz	3361971	ecbc6600f97d272e4850076e59471038	local Newick trees	https://zenodo.org/records/4946041	2026-11-15
+data/neurospora/raw/neurospora/cras_his_L10.min20MAC1.phyml_GTR_bionj_w50sites.weights.tsv.gz	47757	9c1795f4a3e041183f91f35efc601865	published TWISST weights	https://zenodo.org/records/4946041	2026-11-15

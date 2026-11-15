@@ -2924,3 +2924,39 @@ control used 5,000 genealogies and gave D=0.0110 (bootstrap SE 0.0258). A
 100-history × 5,000-genealogy Bridges-2 array and prespecified rho manifest
 are prepared but have not been submitted. Between-history uncertainty and
 parameter sensitivity therefore remain open.
+
+## Neurospora L10 introgression Stage 0/1
+
+Completed the local-tree and published-TWISST analysis in
+`empirical/neurospora/`. The clean `main` checkout was verified; no files from
+the damaged earlier checkout were used. The Zenodo archive was downloaded,
+verified against its published MD5, and kept outside Git. Its 45,303 aligned
+window records contain 32,472 Newick trees and 12,831 literal `NA` records;
+all actual trees share the same 26-tip set and have complete non-root branch
+lengths. The data include LGI–LGVII and use non-overlapping 50-variable-site
+windows.
+
+After converting deposited subtree counts to frequencies, q3 (*N. hispaniola* +
+L10 mat A) has mean weight 0.791 inside the published approximately
+1.5–8.0 Mb LGI interval, versus q1 (L10 mat-A/mat-a grouping) at 0.732 outside.
+The interval's q3 signal extends approximately 1.2–8.2 Mb on 100-kb block
+means and is supported by the local trees and both independently documented
+matched L10 pairs. The genome-wide pooled dominant quartet remains q1 (0.621);
+including the interval lowers q1 concordance and raises q3 but does not flip
+the dominant topology. The all-window discordant quartet frequencies are
+asymmetric, so a single-tree MSC coalescent-unit branch length is not
+identifiable. Outside-region and other-chromosome quartet frequencies are
+compatible with approximately 0.91 and 0.96 MSC-equivalent CU respectively.
+Local substitution-distance contrasts show mat A closer to *N. hispaniola*
+inside the region; they are not CU estimates. The evidence supports a
+localized introgressed genealogy maintained by recombination suppression, not
+a demonstrated species-tree topology bias or unique MSRC identification.
+
+Recommendation: CONDITIONAL GO for an empirical example of a spatially
+coherent alternative genealogy and altered pooled quartet concordance. The
+report explicitly states that q1 remains the genome-wide dominant topology,
+that a pooled CU is not estimable under the single-tree MSC model, and that
+introgression and recombination suppression interact. Outputs, figures,
+source manifest, scripts, and focused tests are in `empirical/neurospora/`;
+raw source files are ignored by Git. Validation: four focused tests passed;
+the complete Stage 1 script ran on the deposited data.

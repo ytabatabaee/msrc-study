@@ -1,0 +1,5 @@
+analysis	estimate	ci_low	ci_high	n
+inside_minus_outside_D	1.0141188300605761	0.8833907860339872	1.2017937537034864	2000_block_resamples
+equal_count_matched_D_difference	1.0140374079189687	0.9939553229919251	1.0337796607168153	2000_random_matches_n=2353
+LGI_adjacent_100kb_D_autocorrelation	0.9537773515843463	NA	NA	95_blocks
+LGI_taxon_set_variants	1	NA	NA	45303_trees

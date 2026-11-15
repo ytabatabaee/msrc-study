@@ -1,0 +1,12 @@
+metric	value
+LGI_informative_windows	8120
+LGI_dominant_topology_transitions	2452
+LGI_transitions_per_Mb	259.10144
+q3_dominant_runs_in_original_windows	1564
+longest_q3_run_original_windows_bp	34357
+100kb_blocks_q3_dominant	69
+100kb_block_transitions	2
+q3_dominant_100kb_runs	2
+longest_q3_run_start	1200000
+longest_q3_run_end	5699999
+longest_q3_run_span_bp	4500000
