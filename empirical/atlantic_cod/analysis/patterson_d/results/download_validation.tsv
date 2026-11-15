@@ -1,0 +1,10 @@
+file	zenodo_size_bytes	local_size_bytes	expected_md5	observed_md5	md5_match	gzip_integrity	local_status
+gadus_morhua_outside_supergenes_snapp.vcf.gz	71599119	71599119	89206e64a2ec89e48bcb399b3f1af3fd	89206e64a2ec89e48bcb399b3f1af3fd	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergene_lg01_dsuite.vcf.gz	103117136	103117136	e69f4fa86ab1847beb46269d9b3e7ee0	e69f4fa86ab1847beb46269d9b3e7ee0	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergene_lg02_dsuite.vcf.gz	35266707	35266707	fddcde1dae88b39a2a95576ea87422ba	fddcde1dae88b39a2a95576ea87422ba	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergene_lg07_dsuite.vcf.gz	61219496	61219496	366913707e55dce415aa57c24356d0c9	366913707e55dce415aa57c24356d0c9	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergene_lg12_dsuite.vcf.gz	78180883	78180883	6f3736133f33cb2bcb2188f37105098c	6f3736133f33cb2bcb2188f37105098c	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergenes_lg01_snapp.vcf.gz	2107536	2107536	ea55dae3ce58ba43f9c438480744c98a	ea55dae3ce58ba43f9c438480744c98a	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergenes_lg02_snapp.vcf.gz	618770	618770	4ec8330c3e45a4b146674a6f191fc503	4ec8330c3e45a4b146674a6f191fc503	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergenes_lg07_snapp.vcf.gz	1945557	1945557	bc0b1fde1a9354fb40f426e5bb4627bd	bc0b1fde1a9354fb40f426e5bb4627bd	True	gzip -t passed	downloaded locally; Git excluded
+gadus_morhua_supergenes_lg12_snapp.vcf.gz	1887973	1887973	631c118198f0d3e994ec537910850d38	631c118198f0d3e994ec537910850d38	True	gzip -t passed	downloaded locally; Git excluded

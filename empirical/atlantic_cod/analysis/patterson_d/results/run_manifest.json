@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-11-15T22:04:52.863338+00:00",
+  "analysis": "Patterson D from diploid population allele frequencies; fixed homozygous outgroup polarization",
+  "primary_quartet_config": "empirical/atlantic_cod/analysis/patterson_d/config/frozen_quartets.tsv",
+  "window_table": "data/atlantic_cod/processed/cod_window_trees.tsv",
+  "reference": "gadMor2",
+  "coordinates": "1-based inclusive",
+  "primary_window_size_bp": 250000,
+  "genotype_policy": "biallelic SNPs; PASS/.; at least one called diploid in each ingroup; outgroup genotype must be homozygous; missing/polymorphic outgroup excluded",
+  "inputs": [
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_outside_supergenes_snapp.vcf.gz",
+      "bytes": 71599119,
+      "md5": "89206e64a2ec89e48bcb399b3f1af3fd"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg01_snapp.vcf.gz",
+      "bytes": 2107536,
+      "md5": "ea55dae3ce58ba43f9c438480744c98a"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg02_snapp.vcf.gz",
+      "bytes": 618770,
+      "md5": "4ec8330c3e45a4b146674a6f191fc503"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg07_snapp.vcf.gz",
+      "bytes": 1945557,
+      "md5": "bc0b1fde1a9354fb40f426e5bb4627bd"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg12_snapp.vcf.gz",
+      "bytes": 1887973,
+      "md5": "631c118198f0d3e994ec537910850d38"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg01_dsuite.vcf.gz",
+      "bytes": 103117136,
+      "md5": "e69f4fa86ab1847beb46269d9b3e7ee0",
+      "role": "50% callability robustness input"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg02_dsuite.vcf.gz",
+      "bytes": 35266707,
+      "md5": "fddcde1dae88b39a2a95576ea87422ba",
+      "role": "50% callability robustness input"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg07_dsuite.vcf.gz",
+      "bytes": 61219496,
+      "md5": "366913707e55dce415aa57c24356d0c9",
+      "role": "50% callability robustness input"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg12_dsuite.vcf.gz",
+      "bytes": 78180883,
+      "md5": "6f3736133f33cb2bcb2188f37105098c",
+      "role": "50% callability robustness input"
+    }
+  ],
+  "python": "3.7.9 (v3.7.9:13c94747c7, Aug 15 2020, 01:31:08) \n[Clang 6.0 (clang-600.0.57)]",
+  "outputs": [
+    "window_patterson_d.tsv",
+    "inside_outside_summary.tsv",
+    "block_jackknife.tsv",
+    "spatial_null_validation.tsv",
+    "topology_D_comparison.tsv",
+    "robustness_analysis.tsv"
+  ],
+  "reproduction_commands": [
+    "python3 empirical/atlantic_cod/analysis/patterson_d/scripts/run_analysis.py",
+    "python3 -m unittest discover -s empirical/atlantic_cod/analysis/patterson_d/tests -v",
+    "python3 empirical/atlantic_cod/analysis/patterson_d/scripts/make_figures.py"
+  ],
+  "limitations": [
+    "No VCF tabix/CSI indexes were provided; local gzip sequential scans were used.",
+    "Exact four-taxon local-tree D_topology is unavailable because published population trees omit the nucleotide outgroup.",
+    "Alternative quartet configurations beyond the frozen primary design per linkage group were not estimated."
+  ],
+  "checkpoint_resume": "Each robustness scenario is checkpointed after all four linkage groups complete and is skipped on rerun when all four rows exist. Primary output tables are written before robustness scans; an interrupted primary VCF scan must be rerun."
+}

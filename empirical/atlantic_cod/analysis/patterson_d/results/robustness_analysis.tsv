@@ -1,0 +1,21 @@
+scenario	lg	design_id	outgroup	sample_mode	minimum_population_call_fraction	transversions_only	inside_source	inside_D	outside_D	inside_minus_outside_D	inside_informative_sites	outside_informative_sites	caveat
+primary_fixed_samples_Borsai	LG01	CODD_LG01_PRIMARY	Borsai	frozen	1	False	snapp	0.9370935634	-0.036159601	0.9732531644	802	681	Primary fixed 2-individual ingroup roster and Borsai outgroup.
+primary_fixed_samples_Borsai	LG02	CODD_LG02_PRIMARY	Borsai	frozen	1	False	snapp	0.8282067378	-0.02253785656	0.8507445944	297	1245	Primary fixed 2-individual ingroup roster and Borsai outgroup.
+primary_fixed_samples_Borsai	LG07	CODD_LG07_PRIMARY	Borsai	frozen	1	False	snapp	-0.9430272953	-0.0106890628	-0.9323382325	1002	1549	Primary fixed 2-individual ingroup roster and Borsai outgroup.
+primary_fixed_samples_Borsai	LG12	CODD_LG12_PRIMARY	Borsai	frozen	1	False	snapp	0.8496300512	0.03469791508	0.8149321361	564	928	Primary fixed 2-individual ingroup roster and Borsai outgroup.
+transversions_Borsai	LG01	CODD_LG01_PRIMARY	Borsai	frozen	1	True	snapp	0.9403870968	-0.04547442064	0.9858615174	398	326	Primary quartet; transitions removed, Borsai outgroup.
+transversions_Borsai	LG02	CODD_LG02_PRIMARY	Borsai	frozen	1	True	snapp	0.8246153846	-0.05686090226	0.8814762869	142	617	Primary quartet; transitions removed, Borsai outgroup.
+transversions_Borsai	LG07	CODD_LG07_PRIMARY	Borsai	frozen	1	True	snapp	-0.9524446142	0.01623188406	-0.9686764983	521	759	Primary quartet; transitions removed, Borsai outgroup.
+transversions_Borsai	LG12	CODD_LG12_PRIMARY	Borsai	frozen	1	True	snapp	0.8623445826	0.02882551365	0.8335190689	280	459	Primary quartet; transitions removed, Borsai outgroup.
+one_individual_per_population_Borsai	LG01	CODD_LG01_PRIMARY	Borsai	first_available	1	False	snapp	0.9361022364	-0.06367041199	0.9997726484	627	356	Primary quartet; first lexicographic sample only per ingroup.
+one_individual_per_population_Borsai	LG02	CODD_LG02_PRIMARY	Borsai	first_available	1	False	snapp	0.856152513	0.006930693069	0.8492218199	202	678	Primary quartet; first lexicographic sample only per ingroup.
+one_individual_per_population_Borsai	LG07	CODD_LG07_PRIMARY	Borsai	first_available	1	False	snapp	-0.9484079	-0.07778668805	-0.870621212	768	842	Primary quartet; first lexicographic sample only per ingroup.
+one_individual_per_population_Borsai	LG12	CODD_LG12_PRIMARY	Borsai	first_available	1	False	snapp	0.8091397849	0.003282275711	0.8058575092	430	589	Primary quartet; first lexicographic sample only per ingroup.
+outgroup_Gadoga	LG01	CODD_LG01_PRIMARY	Gadoga	frozen	1	False	snapp	0.9320323908	-0.04054054054	0.9725729314	803	660	Primary quartet; fixed-homozygous Gadoga calls used instead of Borsai.
+outgroup_Gadoga	LG02	CODD_LG02_PRIMARY	Gadoga	frozen	1	False	snapp	0.8461703497	-0.0204445501	0.8666148998	292	1229	Primary quartet; fixed-homozygous Gadoga calls used instead of Borsai.
+outgroup_Gadoga	LG07	CODD_LG07_PRIMARY	Gadoga	frozen	1	False	snapp	-0.9479980227	-0.008332525918	-0.9396654968	997	1532	Primary quartet; fixed-homozygous Gadoga calls used instead of Borsai.
+outgroup_Gadoga	LG12	CODD_LG12_PRIMARY	Gadoga	frozen	1	False	snapp	0.8551788419	0.01620190061	0.8389769413	556	919	Primary quartet; fixed-homozygous Gadoga calls used instead of Borsai.
+Dsuite_roster_50pct_callability	LG01	CODD_LG01_PRIMARY	Borsai	all_available	0.5	False	dsuite	0.9388501205	-0.036159601	0.9750097215	24706	681	Inside uses Dsuite roster (LFO3 replaces LFO2) and >=50% called per population; outside remains complete-call SNAPP.
+Dsuite_roster_50pct_callability	LG02	CODD_LG02_PRIMARY	Borsai	all_available	0.5	False	dsuite	0.8529548553	-0.02253785656	0.8754927118	7119	1245	Inside uses Dsuite roster (LFO3 replaces LFO2) and >=50% called per population; outside remains complete-call SNAPP.
+Dsuite_roster_50pct_callability	LG07	CODD_LG07_PRIMARY	Borsai	all_available	0.5	False	dsuite	-0.9433729874	-0.0106890628	-0.9326839246	16601	1549	Inside uses Dsuite roster (LFO3 replaces LFO2) and >=50% called per population; outside remains complete-call SNAPP.
+Dsuite_roster_50pct_callability	LG12	CODD_LG12_PRIMARY	Borsai	all_available	0.5	False	dsuite	0.8589255121	0.03469791508	0.824227597	16132	928	Inside uses Dsuite roster (LFO3 replaces LFO2) and >=50% called per population; outside remains complete-call SNAPP.
