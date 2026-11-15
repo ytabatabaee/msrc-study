@@ -25,4 +25,8 @@ The primary independently published L10 suppressed-recombination interval is rep
 - `results/gene_tree_inventory.tsv`: per-window coordinates and published topology weights.
 - `results/tree_quality_inventory.tsv` and `tree_taxon_sets.tsv`: per-tree taxon-set ID, branch completeness, polytomies, and the deduplicated tip labels.
 - `results/region_comparison.tsv`, `branch_length_inventory.tsv`, `branch_length_summary.tsv`, `lgi_100kb_blocks.tsv`, `linked_window_thinning.tsv`, and `sensitivity_summary.tsv`: derived analysis tables.
-- `figures/`: four figures, each in PNG, PDF, and SVG formats.
+- `scripts/plot_branch_lengths.py`: focused plotting step using the frozen per-window branch-length inventory (does not rerun tree inference). It writes 50-, 100-, and 200-kb LGI bins and the two-panel Figure 2. The 100-kb figure is the primary display; the other resolutions are sensitivity tables.
+- `results/figure2_caption.md`: statistic definitions and Figure 2 caption.
+- `results/lgi_{50,100,200}kb_branch_bins.tsv`: genomic-bin means and sample counts.
+- `tests/test_branch_length_figure.py`: regression checks for the quartet distance summaries and genomic binning.
+- `figures/`: figures in PNG, PDF, and SVG formats.

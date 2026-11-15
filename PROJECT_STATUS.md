@@ -2960,3 +2960,12 @@ introgression and recombination suppression interact. Outputs, figures,
 source manifest, scripts, and focused tests are in `empirical/neurospora/`;
 raw source files are ignored by Git. Validation: four focused tests passed;
 the complete Stage 1 script ran on the deposited data.
+
+
+## Neurospora Figure 2 branch-length revision (2026-11-15)
+
+Replaced the LGI point display with a two-panel line figure built from the frozen per-window gene-tree branch-length inventory, aggregated into 100-kb bins. Added 50-kb and 200-kb sensitivity bin tables. Empty bins are retained as missing so lines break across gaps. The shaded interval is the independently defined 1.5–8.0 Mb LGI reference region.
+
+The prior `pair1_A_hisp_minus_a_hisp` quantity is `d(CJ03 mat A, N. hispaniola) - d(CJ04 mat a, N. hispaniola)`, in patristic substitutions per site. It is a lineage-specific contrast, not the manuscript arrangement-informed `A(w)`, which averages opposite-arrangement pair distances and subtracts the corresponding same-arrangement mean. Mating-type classes do not define those arrangement pair sets in this dataset, so a manuscript-consistent A(w) cannot be estimated from the documented Neurospora assignments; the figure labels the quantity descriptively and does not call it A(w). `B(w)` is the mean of all six unordered patristic distances among CJ03 (mat A), CJ04 (mat a), `Ncra@999` (*N. crassa*), and `8817@999` (*N. hispaniola*). Both are in substitutions per site, not CU or absolute time.
+
+The figure shows CJ03/CJ04 and CJ15/CJ16 as faint pair-specific lines and their equal-weight binwise mean as the prominent lineage-contrast line. B(w) uses the fixed CJ03/CJ04 quartet. No tree inference or unrelated empirical figure was rerun. Regression tests cover the distance formulas and missing-bin behavior.

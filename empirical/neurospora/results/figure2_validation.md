@@ -1,0 +1,9 @@
+# Figure 2 calculation checks
+
+- Every plotted input is a per-window patristic estimate in `branch_length_inventory.tsv`, derived from the deposited local BIONJ tree branch lengths by the Stage 1 calculation. The source audit reports complete non-root branch lengths for the actual trees.
+- The fixed B quartet is CJ03 (mat A), CJ04 (mat a), `Ncra@999` (*N. crassa*), and `8817@999` (*N. hispaniola*). B is the arithmetic mean of the six unordered pairwise patristic distances. It is in substitutions per site.
+- The two lineage contrasts use CJ03/CJ04 and CJ15/CJ16, independently documented matched mat-A/mat-a pairs. Each is d(mat A, *N. hispaniola*) − d(mat a, *N. hispaniola*); the prominent line is the equal-weight mean of the pair estimates within each bin. These are not manuscript-defined arrangement A(w).
+- In the 1.5–8.0 Mb reference interval, mean lineage contrasts are −0.37930 (CJ03/CJ04) and −0.37839 (CJ15/CJ16); the equal-pair mean is −0.37884 across 5,767 windows. Outside the interval on LGI they are −0.05707, −0.06190, and −0.05949 across 2,353 windows. These retain the previous numeric contrasts under descriptive names; no arrangement-informed A(w) was estimated.
+- A 100-kb output table is reconstructed from per-window values by arithmetic window means. The regression test independently checks each generated 100-kb lineage-contrast and B value against the frozen inventory. Empty bins are represented as NA; the plotted line therefore breaks at missing bins. The same process writes 50-kb and 200-kb sensitivity tables.
+- The source tree inventory identifies 45,303 coordinate records and 32,472 actual trees; the branch-length inventory preserves unavailable rows as unavailable. The 100-kb LGI table has 94 bins with usable estimates out of 95.
+- The shaded 1.5–8.0 Mb boundaries are the published reference interval, not the topology-derived 1.2–8.2 Mb signal edges.
