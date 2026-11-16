@@ -1,0 +1,17 @@
+metric	value	interpretation
+records	3623	Newick records split from the deposited tree file
+usable_trees	3623	Trees parsed by Biopython
+malformed_trees	0	Records not parsed as Newick
+taxon_sets	1	Distinct terminal-label sets
+taxa_per_tree	106	minimum across usable trees
+taxa_per_tree_max	106	maximum across usable trees
+complete_branch_length_trees	3623	All nonroot edges have numeric branch lengths
+branch_length_edges	757207	Nonroot branch-length observations; substitution-distance scale
+branch_length_min	0.0	IQ-TREE fitted branch-length scale
+branch_length_median	0.0094649356	IQ-TREE fitted branch-length scale
+branch_length_mean	0.019078129196214114	IQ-TREE fitted branch-length scale
+branch_length_max	1.631063992	IQ-TREE fitted branch-length scale
+zero_length_edges	40	Zero-valued branch lengths
+negative_length_edges	0	Negative-valued branch lengths
+unrooted_root_degree_3_trees	3623	Newick representation has 3-way root node; treated as unrooted, not a polytomy
+nonroot_polytomy_trees	0	Trees with a nonroot node of degree >2

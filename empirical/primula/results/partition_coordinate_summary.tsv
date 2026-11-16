@@ -1,0 +1,12 @@
+chromosome	partition_rows	minimum_start_bp	maximum_end_bp	all_intervals_50kb	alignment_ranges_contiguous	physical_100kb_gaps	physical_gaps_gt_100kb	partition_line_order_is_physical_order
+chr001	484	50001	48500000	True	True	482	1	False
+chr002	399	50001	40400000	True	True	393	5	False
+chr003	363	50001	36600000	True	True	360	2	False
+chr004	347	50001	35900000	True	True	337	9	False
+chr005	342	50001	34600000	True	True	337	4	False
+chr006	334	50001	34000000	True	True	328	5	False
+chr007	339	50001	34000000	True	True	337	1	False
+chr008	337	50001	33900000	True	True	334	2	False
+chr009	334	50001	33700000	True	True	330	3	False
+chr010	332	50001	33400000	True	True	329	2	False
+chr011	312	50001	31800000	True	True	305	6	False

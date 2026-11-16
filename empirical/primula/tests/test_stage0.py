@@ -21,6 +21,11 @@ class Stage0Tests(unittest.TestCase):
         self.assertTrue(info["branch_lengths_complete"])
         self.assertEqual(info["polytomies"], 0)
 
+    def test_unrooted_trifurcating_root_is_not_counted_as_polytomy(self):
+        info = audit.inspect_newick("((A:1,B:1):1,(C:1,D:1):1,E:2);")
+        self.assertEqual(info["root_degree"], 3)
+        self.assertEqual(info["polytomies"], 0)
+
     def test_quartet_split_and_missing_taxa(self):
         tree = Phylo.read(StringIO("((A:1,B:1):1,(C:1,D:1):1);"), "newick")
         self.assertEqual(audit.quartets(tree, ("A", "B", "C", "D")), (("A", "B"), ("C", "D")))
@@ -29,6 +34,10 @@ class Stage0Tests(unittest.TestCase):
     def test_patristic_distance(self):
         tree = Phylo.read(StringIO("((A:1,B:2):3,C:4);"), "newick")
         self.assertEqual(audit.patristic(tree, "A", "B"), 3.0)
+
+    def test_partition_count_mismatch_does_not_claim_tree_mapping(self):
+        self.assertIn("300 partition windows", audit.reconcile_partition_counts(3623, 3923))
+        self.assertIn("ordering still requires source verification", audit.reconcile_partition_counts(4, 4))
 
     def test_coordinate_mapping_rejects_order_only_or_missing_mapping(self):
         rows = [{"tree_index": "1", "chromosome": "chr1", "start_bp": "1", "end_bp": "50000", "mapping_status": "unverified"}]
