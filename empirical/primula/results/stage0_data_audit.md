@@ -2,41 +2,36 @@
 
 ## Decision
 
-**NO-GO for spatial MSRC inclusion from this deposit as currently cross-referenced; CONDITIONAL GO for a topology-only, genome-wide gene-tree comparison.** All 3,623 deposited gene trees are usable with complete branch lengths, and all 11 chromosome partition files are present. However, the partition metadata enumerates 3,923 genomic windows—300 more than the Newick records—and the Newick records have no GF identifiers. Neither the README nor the deposited metadata explains which 300 partition windows lack trees. Therefore tree index cannot be assigned to physical coordinates without an unsupported ordering assumption. No S-locus-overlapping tree can be identified from the current files.
+**NO-GO for spatial MSRC inclusion using this deposit.** All 3,623 Newick records are usable and have complete branch lengths, but the 3,923 entries in chromosome partition metadata are alignment blocks, not tree identifiers. No validated tree-to-coordinate crosswalk or explanation for the 300-record count difference is deposited. More decisively for this use case, the Dryad README says the nuclear genome FASTAs exclude the hemizygous S-locus; its sequence/tree is analyzed separately.
 
-## Local gene-tree inventory
+## Gene-tree archive
 
-`PrimPrim_phylogeny_allGF.trees` contains 3,623 Newick records, all usable, with one invariant 106-tip taxon set. There are no malformed records, no missing taxa, and no non-root polytomies. Every record is represented as an unrooted tree with a trifurcating Newick root (the root degree is not counted as a biological polytomy). Each tree contains 209 non-root edges, and all 209 have numeric branch lengths.
+`PrimPrim_phylogeny_allGF.trees` contains 3,623 valid Newick records. Each has the same 106 taxa and 209 numeric non-root edge lengths. There are no malformed records or non-root polytomies; each is written with an unrooted trifurcating Newick root. Across 757,207 non-root lengths, min=0, median=0.00946494, mean=0.0190781, max=1.631064; 40 are exactly zero and none negative. The fitted IQ-TREE branch lengths are substitutions per site, not CU.
 
-Across the 757,207 non-root edge lengths, the minimum is 0, median 0.00946494, mean 0.0190781, and maximum 1.631064; 40 edges are exactly zero and none are negative. These are IQ-TREE maximum-likelihood branch lengths in substitutions per nucleotide site, not species-tree coalescent units. The paper reports IQ-TREE v2.1.2 with ModelFinder and ascertainment-bias correction for SNP-only alignments. These branch lengths should not be called divergence times or CU values.
+No record has a source filename, coordinate, chromosome, or GF identifier. The file is bare concatenated Newick. Record ordinal is only an archive locator.
 
-The exact taxon labels are in `tree_taxon_sets.tsv`; the per-tree parse and branch-completeness inventory is `gene_tree_inventory.tsv`; aggregate tree-quality numbers are in `tree_quality_summary.tsv`.
+## What the partition files represent
 
-## Partition and coordinate audit
+Each row has syntax like `DNA, phylo2_noreps_filtP2_pve_haplotypeT_001:10050001-10100000.min4.fasta = 1-2410`. The filename embeds a 50-kb chromosome interval; the right-hand range gives the inclusive columns assigned to that interval in the chromosome-concatenated FASTA. These are alignment partition definitions, not gene-tree IDs. The Dryad README says chromosome FASTAs/partitions were used to generate trees from every other GF.
 
-All 11 chromosome partition files are present. Their 3,923 rows each contain an explicit 50-kb physical interval and its alignment-site range. Every chromosome's alignment-site ranges are contiguous in partition-file order, and every row is 50 kb. The sum is 3,923 partition windows, versus 3,623 Newick records. This is a difference of 300, not an explained one-to-one map. The metadata does not label which windows have corresponding Newick records, and the Newick file itself has no record IDs. We do not infer that trees 1–3,623 correspond to the first 3,623 partition rows.
+Across all eleven files there are 3,923 rows, all with unique chromosome/coordinate keys and inclusive 50-kb physical intervals. The site ranges tile each chromosome FASTA when sorted by site start. Coordinate line order is lexical, not numerical/physical. Physical start spacing is commonly 100 kb, consistent with 50-kb GFs sampled every other interval. The paper reports 3,623 selected alignments/trees, but no source list indicates which 300 partition entries did not yield an archived tree, whether they were filtered/failed, or whether file versions differ. This difference cannot be distributed among chromosomes from the unlabeled trees. It is not a Newick parse error or duplicate partition-key issue.
 
-The partition-file line order is not physical-coordinate order. Coordinates must be sorted by numeric start after a verified join. Among the partition intervals, 100-kb start spacing is common but some consecutive intervals are farther apart; these gaps must not be interpolated. The per-chromosome audit and complete partition-window inventory are in `partition_coordinate_summary.tsv` and `partition_window_inventory.tsv`. Rows in that inventory deliberately have `tree_index=NA` because tree association is unresolved. `mapping_reconciliation.tsv` records the 300-row mismatch, and `tree_coordinate_mapping.tsv` remains header-only.
+The hypotheses, evidence, and limitations are detailed in `mapping_reconciliation_report.md`. `tree_coordinate_mapping.tsv` now includes all 3,623 Newick ordinals with missing coordinates marked `NA`; no positional guess was made.
 
-## S-locus location and candidate windows
+## S-locus and reference
 
-Potente et al. (2022) describe the *P. veris* S-locus as an approximately 260-kb region on chromosome 1, present only in the maternal (S-morph) haplotype and therefore hemizygous; the paper places it within a putative pericentromeric chromosome-1 bracket around 27.43–27.70 Mb. That bracket is regional context, not a verified exact S-locus start/end. The Stubbs et al. partition metadata contains three chr001 50-kb intervals inside that bracket: 27,450,001–27,500,000; 27,550,001–27,600,000; and 27,650,001–27,700,000. These are **candidate partition windows**, not verified local-tree records. Until the 300 missing tree-to-partition associations are resolved, we cannot determine whether any of the 3,623 local gene trees overlap the locus.
+Stubbs et al. mapped reads to the chromosome-scale haploid *P. veris* reference that contains the S-locus. Potente et al. locate an approximately 260-kb hemizygous region in the chr1 approximate 27.43–27.70 Mb bracket. The Dryad README states the nuclear genome FASTAs exclude the hemizygous S-locus and lists the S-locus alignment/tree separately. Thus the reference contains the locus, but the genome-fragment tree alignments do not represent its sequence according to the deposited README.
 
-The five reported S-haplotype genes are CCM^T, GLO^T, CYP^T, PUM^T, and KFB^T. Hemizygosity is the documented recombination-suppression mechanism. We found no source establishing an inversion spanning this locus in the Stubbs sample panel. The S-locus tree is built from S-morph samples plus one outgroup, whereas the nuclear GF trees contain 106 accessions including both floral morphs. Homology/synteny across all sampled species is not established merely by reads mapped to the *P. veris* reference.
-
-## Sampling scheme and tree limitations
-
-Stubbs et al. report 50-kb nonoverlapping genomic fragments from 11 chromosomes, selecting every other GF and estimating 3,623 trees with IQ-TREE v2.1.2; ModelFinder used ascertainment-bias adjustment and the analyses used 1,000 ultrafast bootstrap replicates. The partition files instead enumerate 3,923 coordinate-bearing windows, and the deposit provides no explicit crosswalk for the 300-window mismatch. This prevents a defensible tree-to-coordinate mapping. Even when mapped, the 50-kb intervals and unsampled gaps must remain discontinuous in spatial plots.
-
-The tree file supports downstream topology and branch-distance calculations in aggregate. Individual gene-tree branch lengths are fitted substitution distances and are not CU estimates. ASTRAL-III v5.7.3 was used by the paper for its species-tree estimate after collapsing branches with <10 bootstrap support.
-
-## Exact source verification
-
-`source_manifest.tsv` records Dryad URLs, listing sizes, local byte sizes, and local SHA-256 checksums for every requested file. Dryad does not advertise checksums in the listing, so the hashes are local provenance checks, not provider comparisons. The 19.59-MB tree file, 896-B ASTRAL tree, 2.56-KB S-locus tree, 2.03-KB README, and all 11 small partition files were used; no large FASTA or raw sequencing files were downloaded. `.DS_Store` is an operating-system artifact and was not analyzed.
+Three chromosome-1 partition blocks fall in the broad published bracket. Their alignment block lengths are 53, 55, and 228 columns, but they are not evidence of S-locus bases and cannot be linked to Newick records. Coverage and mapping statuses are tabulated in `s_locus_coverage_audit.tsv`. The S-locus tree's discordance from the nuclear phylogeny is a separate whole-locus result and not evidence of a spatial shift among the genomic-fragment trees.
 
 ## Stage 0 answers
 
-- **3,623 deposited trees usable, with branch lengths?** Yes: all parse; 106 taxa; all non-root edges have numeric branch lengths in the IQ-TREE substitution/site scale.
-- **Can every tree be mapped to coordinates?** No. 3,923 coordinate-bearing partitions versus 3,623 trees, with no crosswalk or tree IDs.
-- **Which trees overlap the S-locus?** Unknown. Three partition windows fall in the published chr1 regional bracket, but their tree associations are unknown.
-- **Can spatial Stage 1 proceed?** No. Resolving the 300-window mismatch requires the authors' original window-to-tree crosswalk, a deposited generation script/log, or an equivalent verified mapping source.
+- All 3,623 deposited gene trees parse and have complete substitution/site branch lengths: **yes**.
+- Are 3,923 partition rows 3,923 trees? **No.** They are coordinate/site-block entries in the chromosome FASTA partition metadata.
+- Why do counts differ by 300? **Not exactly recoverable from this deposit.** Filtering/failed inference or version differences are possible; no retained-window manifest/log resolves it.
+- Can each Newick record be mapped to coordinates? **No.**
+- Does the mapping count difference imply 300 missing biological windows? **No such conclusion is supported.**
+- Is the reference genome's S-locus present? **Yes.**
+- Do deposited GF trees directly include S-locus sequence? **The README says the nuclear FASTAs exclude it.**
+- Which GF trees genuinely overlap/include the S-locus? **No record can be assigned; direct S-locus sequence is excluded by the documented nuclear alignment construction.**
+- Proceed with spatial Stage 1? **No.** The direct locus sequence is absent from the genome-fragment series and coordinates are unlinked.

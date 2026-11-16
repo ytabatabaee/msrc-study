@@ -36,8 +36,14 @@ class Stage0Tests(unittest.TestCase):
         self.assertEqual(audit.patristic(tree, "A", "B"), 3.0)
 
     def test_partition_count_mismatch_does_not_claim_tree_mapping(self):
-        self.assertIn("300 partition windows", audit.reconcile_partition_counts(3623, 3923))
+        self.assertIn("300 count difference", audit.reconcile_partition_counts(3623, 3923))
         self.assertIn("ordering still requires source verification", audit.reconcile_partition_counts(4, 4))
+
+    def test_unresolved_mapping_has_no_invented_coordinates(self):
+        rows = audit.unresolved_mapping_rows(2)
+        self.assertEqual([r["tree_index"] for r in rows], [1, 2])
+        self.assertTrue(all(r["chromosome"] == "NA" and r["start_bp"] == "NA" for r in rows))
+        self.assertTrue(all(r["validation_status"].startswith("unresolved") for r in rows))
 
     def test_coordinate_mapping_rejects_order_only_or_missing_mapping(self):
         rows = [{"tree_index": "1", "chromosome": "chr1", "start_bp": "1", "end_bp": "50000", "mapping_status": "unverified"}]

@@ -1,2 +1,2 @@
 tree_records	partition_windows	difference	mapping_status
-3623	3923	300	unresolved: 300 partition windows lack a one-to-one Newick record association
+3623	3923	300	unresolved: 3923 FASTA partition blocks versus 3623 unlabeled Newick records (300 count difference); no association established

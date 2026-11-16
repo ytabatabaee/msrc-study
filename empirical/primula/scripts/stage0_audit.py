@@ -68,8 +68,17 @@ def inspect_newick(record: str) -> dict[str, object]:
 
 def reconcile_partition_counts(tree_count: int, partition_count: int) -> str:
     if tree_count != partition_count:
-        return f"unresolved: {partition_count - tree_count} partition windows lack a one-to-one Newick record association"
+        return f"unresolved: {partition_count} FASTA partition blocks versus {tree_count} unlabeled Newick records ({partition_count-tree_count} count difference); no association established"
     return "counts agree; tree-record ordering still requires source verification"
+
+
+def unresolved_mapping_rows(tree_count: int) -> list[dict[str, object]]:
+    """Represent every Newick ordinal without inventing a coordinate or source ID."""
+    return [{"tree_index": i, "source_tree_identifier": "NA",
+             "chromosome": "NA", "start_bp": "NA", "end_bp": "NA",
+             "mapping_evidence": "Newick record has no embedded ID; partition files map FASTA site blocks only",
+             "validation_status": "unresolved_no_tree_coordinate_crosswalk"}
+            for i in range(1, tree_count + 1)]
 
 
 def parse_partition_files() -> tuple[list[dict[str, object]], list[dict[str, object]]]:
@@ -238,6 +247,11 @@ def main() -> int:
         writer.writerow(["tree_records", "partition_windows", "difference", "mapping_status"])
         writer.writerow([len(records), len(partition_rows), len(partition_rows) - len(records),
                          reconcile_partition_counts(len(records), len(partition_rows))])
+    mapping = unresolved_mapping_rows(len(records))
+    with (RESULTS / "tree_coordinate_mapping.tsv").open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(mapping[0]) if mapping else ["tree_index"], delimiter="\t")
+        writer.writeheader()
+        writer.writerows(mapping)
     print(f"records={len(records)} usable={usable} malformed={len(failures)}")
     print(f"partition_windows={len(partition_rows)} tree_partition_difference={len(partition_rows)-len(records)}")
     print(f"taxon_sets={len(counts)} complete_branch_trees={complete} inventory={out}")
