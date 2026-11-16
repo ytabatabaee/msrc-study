@@ -1,0 +1,4 @@
+region	genotype_matrix_site_rows	N_discreta_callable_rows	alignment_gap_rows	ambiguous_rows	orthology_failures	status
+LGI_inside_1.5_8.0Mb	331711	301014	30635	62	0	reference-coordinate mapping validated against 2509@6 genotype column; gaps excluded
+LGI_outside_1.5_8.0Mb	174635	149665	24944	26	0	reference-coordinate mapping validated against 2509@6 genotype column; gaps excluded
+LGII-LGVII	1759023	1474160	241802	43061	0	reference-coordinate mapping validated against 2509@6 genotype column; gaps excluded

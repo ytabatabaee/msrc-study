@@ -1,0 +1,3 @@
+source_file	bytes	md5	format	linkage_groups	records_per_group	taxa	reference_record	reference_coordinate_axis	status
+outgroup_alignment.zip	63382228	95a3eb66abc7d0c44cda5cb7953b2a4f	ZIP containing seven FASTA alignments	LGI-LGVII	6 each	2508@6; Ncra@999; Ndis@999; 8817@999; 1135@999; 2509@6	2509@6	N. tetrasperma 2509 mat-a reference coordinate axis per Dryad file metadata	Downloaded locally; checksum matches Dryad metadata
+README_for_outgroup_alignment.zip.txt	556	fdd95eb6badbff4b1ddc9500d81c880f	Plain text README (separate Dryad file; bytes not required after archive metadata and alignment inspection)	NA	NA	NA	NA	coordinates follow 2509 N. tetrasperma mat-a reference genome	not downloaded; API bearer token required

@@ -1,0 +1,23 @@
+sample_id	genotype_matrix_column	tree_tip	L10_membership	mating_type	supporting_source	confidence	analysis_use
+CJ01	CJ01	CJ01	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	not needed for paired subset
+CJ02	CJ02	CJ02	yes	a	Corcoran et al. 2017 Nature Communications: alternative homokaryon from CJ01 heterokaryon; CJ01 is A in 2016 Fig. 1	high, explicit pair-derived assignment	not needed for paired subset
+CJ03	CJ03	CJ03	yes	A	Corcoran et al. 2016 Fig. 1; matched pair with CJ04	direct published label	verified pair subset
+CJ04	CJ04	CJ04	yes	a	Corcoran et al. 2016 Fig. 1; matched pair with CJ03	direct published label	verified pair subset
+CJ05	CJ05	CJ05	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ06	CJ06	CJ06	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ07	CJ07	CJ07	yes	unresolved	No primary-source label found in inspected articles, archive, or deposited TWISST definitions	unresolved	exclude
+CJ08	CJ08	CJ08	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ09	CJ09	CJ09	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ10	CJ10	CJ10	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ11	CJ11	CJ11	yes	unresolved	No primary-source label found in inspected articles, archive, or deposited TWISST definitions	unresolved	exclude
+CJ12	CJ12	CJ12	yes	unresolved	No primary-source label found in inspected articles, archive, or deposited TWISST definitions	unresolved	exclude
+CJ13	CJ13	CJ13	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ14	CJ14	CJ14	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ15	CJ15	CJ15	yes	A	Corcoran et al. 2016 Fig. 1; matched pair with CJ16	direct published label	verified pair subset
+CJ16	CJ16	CJ16	yes	a	Corcoran et al. 2016 Fig. 1; matched pair with CJ15	direct published label	verified pair subset
+CJ18	CJ18	CJ18	yes	unresolved	No primary-source label found in inspected articles, archive, or deposited TWISST definitions	unresolved	exclude
+CJ19	CJ19	CJ19	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ20	CJ20	CJ20	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ22	CJ22	CJ22	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ23	CJ23	CJ23	yes	A	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible
+CJ24	CJ24	CJ24	yes	a	Corcoran et al. 2016 Fig. 1	direct published label	eligible if quartet feasible

@@ -1,0 +1,7 @@
+# Comparison with published Patterson's D evidence
+
+Corcoran et al. (2016) used an L1 *N. tetrasperma* sample (strain 9033) as P1, L10 strains as P2, *N. hispaniola* as P3, and *N. discreta* as outgroup in their autosomal ABBA–BABA analyses. They report excess derived-allele sharing between L10 and *N. hispaniola* in autosomal tests. Their published design and sampling differ from the proposed within-L10 mat-A versus mat-a spatial comparison. Their mating-chromosome evidence is based on distinct locus and divergence analyses; it is not the same genome-wide windowed D series requested here.
+
+The exact source design is not reproducible from the local Martin & Van Belleghem genotype matrix because it has no L1 9033 or *N. discreta* genotypes. The deposited matrix does not contain the original outgroup alignment. No published numerical D magnitude is copied into this analysis because no exact matched result row with the same regions and sample/site filters was available in the materials inspected. See Corcoran et al. 2016, [Genome Research](https://pmc.ncbi.nlm.nih.gov/articles/PMC4817772/), and data record [Dryad 10.5061/dryad.162mh](https://datadryad.org/dataset/doi:10.5061/dryad.162mh).
+
+This feasibility audit neither replicates nor disputes the published introgression result. A nonzero D in a future analysis would describe allele-sharing asymmetry under a rooted quartet; by itself it would not uniquely identify introgression, recombination suppression, or MSRC.

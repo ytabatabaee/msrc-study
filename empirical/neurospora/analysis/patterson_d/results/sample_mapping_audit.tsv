@@ -1,0 +1,27 @@
+sample_id	matrix_present	mating_type_assignment	assignment_source	status_for_primary_group_frequency_test
+CJ01	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ02	yes	a	Nature Communications 2017 identifies CJ02 as the alternative mating-type homokaryon from CJ01; Corcoran 2016 labels CJ01 A	assigned from documented heterokaryon pair
+CJ03	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ04	yes	a	Corcoran et al. 2016 Figure 1; matched pair with CJ03	assigned
+CJ05	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ06	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ07	yes	unknown	No primary-source assignment found in inspected articles, archive, or deposited TWISST definitions	unassigned
+CJ08	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ09	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ10	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ11	yes	unknown	No primary-source assignment found in inspected articles, archive, or deposited TWISST definitions	unassigned
+CJ12	yes	unknown	No primary-source assignment found in inspected articles, archive, or deposited TWISST definitions	unassigned
+CJ13	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ14	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ15	yes	A	Corcoran et al. 2016 Figure 1; matched pair with CJ16	assigned
+CJ16	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ18	yes	unknown	No primary-source assignment found in inspected articles, archive, or deposited TWISST definitions	unassigned
+CJ19	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ20	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ22	yes	a	Corcoran et al. 2016 Figure 1	assigned
+CJ23	yes	A	Corcoran et al. 2016 Figure 1	assigned
+CJ24	yes	a	Corcoran et al. 2016 Figure 1	assigned
+Ncra@999	yes	not applicable	N. crassa reference sample label	not a frozen external outgroup
+8817@999	yes	not applicable	N. hispaniola reference sample label	P3 candidate lineage
+1135@999	yes	not applicable	N. sitophila reference sample label	not accepted as outgroup
+2509@6	yes	not applicable	N. tetrasperma L6 reference sample label	ingroup sample, not external outgroup

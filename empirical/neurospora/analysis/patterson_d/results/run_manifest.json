@@ -1,0 +1,104 @@
+{
+  "status": "complete_primary_nucleotide_D_analysis",
+  "patterson_d_calculated": true,
+  "reason": [],
+  "archive_url": "https://zenodo.org/records/4946041",
+  "archive_path": "data/neurospora/raw/neurospora.tar.gz",
+  "archive_bytes": 15577951,
+  "archive_md5": "571324702709eb1c2732a3fd993edc93",
+  "outgroup_dryad_file_id": 11939,
+  "outgroup_expected_bytes": 63382228,
+  "outgroup_expected_md5": "95a3eb66abc7d0c44cda5cb7953b2a4f",
+  "outgroup_api_download_http_status": 401,
+  "outgroup_public_stream_http_status": 403,
+  "outgroup_download_token_present": false,
+  "sample_assignments_resolved_after_followup": [
+    "CJ02"
+  ],
+  "sample_assignments_still_unresolved": [
+    "CJ07",
+    "CJ11",
+    "CJ12",
+    "CJ18"
+  ],
+  "verified_pair_subset": {
+    "mat_a": [
+      "CJ04",
+      "CJ16"
+    ],
+    "mat_A": [
+      "CJ03",
+      "CJ15"
+    ]
+  },
+  "input_audit_command": "python3 empirical/neurospora/analysis/patterson_d/scripts/audit_inputs.py",
+  "coordinate_windows": 45303,
+  "genotype_rows": 2265369,
+  "tree_windows_with_exactly_50_genotype_sites": 45303,
+  "genotype_rows_outside_tree_windows": 219,
+  "branch_length_units": "published BIONJ GTR substitution distances; not coalescent units",
+  "commit_or_push": false,
+  "quartet_frozen_before_D": true,
+  "primary_P1": [
+    "CJ02",
+    "CJ04",
+    "CJ06",
+    "CJ08",
+    "CJ10",
+    "CJ14",
+    "CJ16",
+    "CJ20",
+    "CJ22",
+    "CJ24"
+  ],
+  "primary_P2": [
+    "CJ01",
+    "CJ03",
+    "CJ05",
+    "CJ09",
+    "CJ13",
+    "CJ15",
+    "CJ19",
+    "CJ23"
+  ],
+  "P3": [
+    "8817@999"
+  ],
+  "outgroup": "Ndis@999",
+  "frequency_estimator": "haploid calls; group allele frequencies; minimum 50% called per multi-sample ingroup; P3 singleton required; outgroup must be unambiguous and match one of exactly two ingroup alleles",
+  "mapping_reference_matches": 2265369,
+  "mapping_reference_checked": 2265369,
+  "inside_outside_D_difference": 0.42527393847299544,
+  "circular_shift_p_100kb": 0.010526315789473684,
+  "exact_Ndis_D_topology_available": false,
+  "figures_pending": false,
+  "figures": [
+    "figures/figure_A_genome_tracks.png",
+    "figures/figure_A_genome_tracks.pdf",
+    "figures/figure_A_genome_tracks.svg",
+    "figures/figure_B_inside_outside.png",
+    "figures/figure_B_inside_outside.pdf",
+    "figures/figure_B_inside_outside.svg",
+    "figures/figure_C_D_and_trees.png",
+    "figures/figure_C_D_and_trees.pdf",
+    "figures/figure_C_D_and_trees.svg",
+    "figures/figure_D_D_branch_signals.png",
+    "figures/figure_D_D_branch_signals.pdf",
+    "figures/figure_D_D_branch_signals.svg",
+    "figures/figure_E_sensitivity.png",
+    "figures/figure_E_sensitivity.pdf",
+    "figures/figure_E_sensitivity.svg",
+    "figures/figure_F_informative_sites.png",
+    "figures/figure_F_informative_sites.pdf",
+    "figures/figure_F_informative_sites.svg"
+  ],
+  "outgroup_alignment_local": true,
+  "outgroup_alignment_coordinate_matches": 2265369,
+  "outgroup_callability_status": "sitewise gaps/ambiguities excluded",
+  "limitations": [
+    "Genotype source is a filtered variable-site panel, not whole-genome callable sequence.",
+    "Ndis outgroup absent from published local trees; exact matched four-taxon D_topology unavailable.",
+    "CJ07,CJ11,CJ12,CJ18 excluded due unresolved mating-type labels.",
+    "L10-only nucleotide analysis; site-pattern D is not causal evidence of introgression or MSRC."
+  ]
+}

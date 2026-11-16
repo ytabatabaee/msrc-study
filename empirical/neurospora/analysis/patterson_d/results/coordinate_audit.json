@@ -1,0 +1,109 @@
+{
+  "archive_md5_expected_and_observed": "571324702709eb1c2732a3fd993edc93",
+  "archive_bytes": 15577951,
+  "genotype_rows": 2265369,
+  "sample_count": 26,
+  "sample_ids": [
+    "Ncra@999",
+    "8817@999",
+    "1135@999",
+    "2509@6",
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ04",
+    "CJ05",
+    "CJ06",
+    "CJ07",
+    "CJ08",
+    "CJ09",
+    "CJ10",
+    "CJ11",
+    "CJ12",
+    "CJ13",
+    "CJ14",
+    "CJ15",
+    "CJ16",
+    "CJ18",
+    "CJ19",
+    "CJ20",
+    "CJ22",
+    "CJ23",
+    "CJ24"
+  ],
+  "windows": 45303,
+  "windows_by_linkage_group": {
+    "LGI": 10126,
+    "LGII": 4721,
+    "LGIII": 5959,
+    "LGIV": 7155,
+    "LGV": 7487,
+    "LGVI": 5077,
+    "LGVII": 4778
+  },
+  "genotype_rows_by_linkage_group": {
+    "LGI": 506346,
+    "LGII": 236053,
+    "LGIII": 297995,
+    "LGIV": 357779,
+    "LGV": 374383,
+    "LGVI": 253877,
+    "LGVII": 238936
+  },
+  "genotype_rows_per_window_histogram": {
+    "50": 45303
+  },
+  "windows_with_genotype_rows": 45303,
+  "rows_outside_window_intervals": 219,
+  "first_outside_rows": [
+    [
+      "LGI",
+      9464276
+    ],
+    [
+      "LGI",
+      9464297
+    ],
+    [
+      "LGI",
+      9464306
+    ],
+    [
+      "LGI",
+      9464309
+    ],
+    [
+      "LGI",
+      9464354
+    ],
+    [
+      "LGI",
+      9464357
+    ],
+    [
+      "LGI",
+      9464387
+    ],
+    [
+      "LGI",
+      9464546
+    ],
+    [
+      "LGI",
+      9464561
+    ],
+    [
+      "LGI",
+      9464588
+    ]
+  ],
+  "called_sample_count_histogram": {
+    "20": 23426,
+    "21": 25346,
+    "22": 33643,
+    "23": 49366,
+    "24": 133627,
+    "25": 333958,
+    "26": 1666003
+  }
+}

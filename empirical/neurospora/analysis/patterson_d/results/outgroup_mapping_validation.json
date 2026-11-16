@@ -1,0 +1,165 @@
+{
+  "zip_bytes": 63382228,
+  "zip_md5": "95a3eb66abc7d0c44cda5cb7953b2a4f",
+  "alignment_members": [
+    "outgroup_alignment/LGI.outgroups.fasta",
+    "outgroup_alignment/LGII.outgroups.fasta",
+    "outgroup_alignment/LGIII.outgroups.fasta",
+    "outgroup_alignment/LGIV.outgroups.fasta",
+    "outgroup_alignment/LGV.outgroups.fasta",
+    "outgroup_alignment/LGVI.outgroups.fasta",
+    "outgroup_alignment/LGVII.outgroups.fasta"
+  ],
+  "records_per_linkage_group": [
+    "1135@999",
+    "2508@6",
+    "2509@6",
+    "8817@999",
+    "Ncra@999",
+    "Ndis@999"
+  ],
+  "per_linkage_group": {
+    "LGI": {
+      "alignment_length": 9465266,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 444959,
+      "Ndis_gap_bases": 1922559,
+      "Ndis_ambiguous_bases": 1804,
+      "mapped_genotype_rows": 506346,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 506346,
+      "reference_sample_matches": 506346,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 134496,
+      "offset_plus_one_compared": 506161,
+      "Ndis_callability_at_genotype_positions": {
+        "ACGT": 450679,
+        "gap": 55579,
+        "ambiguous": 88
+      }
+    },
+    "LGI_inside": {
+      "callable_ACGT": 301014,
+      "gap": 30635,
+      "ambiguous": 62
+    },
+    "LGI_outside": {
+      "callable_ACGT": 149665,
+      "gap": 24944,
+      "ambiguous": 26
+    },
+    "LGII": {
+      "alignment_length": 4201616,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 261381,
+      "Ndis_gap_bases": 0,
+      "Ndis_ambiguous_bases": 1079793,
+      "mapped_genotype_rows": 236053,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 236053,
+      "reference_sample_matches": 236053,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 63512,
+      "offset_plus_one_compared": 235963,
+      "Ndis_callability_at_genotype_positions": {
+        "ambiguous": 38599,
+        "ACGT": 197454
+      }
+    },
+    "LGIII": {
+      "alignment_length": 5013404,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 242791,
+      "Ndis_gap_bases": 1136719,
+      "Ndis_ambiguous_bases": 1390,
+      "mapped_genotype_rows": 297995,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 297995,
+      "reference_sample_matches": 297995,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 79703,
+      "offset_plus_one_compared": 297859,
+      "Ndis_callability_at_genotype_positions": {
+        "ACGT": 243026,
+        "gap": 54888,
+        "ambiguous": 81
+      }
+    },
+    "LGIV": {
+      "alignment_length": 5677391,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 248944,
+      "Ndis_gap_bases": 1341093,
+      "Ndis_ambiguous_bases": 375,
+      "mapped_genotype_rows": 357779,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 357779,
+      "reference_sample_matches": 357779,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 95110,
+      "offset_plus_one_compared": 357654,
+      "Ndis_callability_at_genotype_positions": {
+        "ACGT": 301698,
+        "gap": 56056,
+        "ambiguous": 25
+      }
+    },
+    "LGV": {
+      "alignment_length": 6188622,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 301542,
+      "Ndis_gap_bases": 1303331,
+      "Ndis_ambiguous_bases": 5390,
+      "mapped_genotype_rows": 374383,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 374383,
+      "reference_sample_matches": 374383,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 99882,
+      "offset_plus_one_compared": 374229,
+      "Ndis_callability_at_genotype_positions": {
+        "gap": 53633,
+        "ACGT": 320691,
+        "ambiguous": 59
+      }
+    },
+    "LGVI": {
+      "alignment_length": 3888924,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 181655,
+      "Ndis_gap_bases": 903127,
+      "Ndis_ambiguous_bases": 1207,
+      "mapped_genotype_rows": 253877,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 253877,
+      "reference_sample_matches": 253877,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 68357,
+      "offset_plus_one_compared": 253800,
+      "Ndis_callability_at_genotype_positions": {
+        "gap": 38460,
+        "ACGT": 215351,
+        "ambiguous": 66
+      }
+    },
+    "LGVII": {
+      "alignment_length": 3981972,
+      "reference_gap_bases": 0,
+      "reference_N_bases": 190748,
+      "Ndis_gap_bases": 960511,
+      "Ndis_ambiguous_bases": 173994,
+      "mapped_genotype_rows": 238936,
+      "position_out_of_bounds": 0,
+      "reference_sample_called": 238936,
+      "reference_sample_matches": 238936,
+      "reference_sample_mismatches": 0,
+      "offset_plus_one_matches": 64289,
+      "offset_plus_one_compared": 238853,
+      "Ndis_callability_at_genotype_positions": {
+        "gap": 38765,
+        "ACGT": 195940,
+        "ambiguous": 4231
+      }
+    }
+  }
+}

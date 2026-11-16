@@ -1,0 +1,25 @@
+sample_id	matrix_column	tree_tip	candidate_group	mating_type	group_use	provenance
+CJ03	CJ03	CJ03	P2_L10_mat_A	A	verified paired subset	Corcoran 2016 Figure 1; pair CJ03/CJ04
+CJ15	CJ15	CJ15	P2_L10_mat_A	A	verified paired subset	Corcoran 2016 Figure 1; pair CJ15/CJ16
+CJ04	CJ04	CJ04	P1_L10_mat_a	a	verified paired subset	Corcoran 2016 Figure 1; pair CJ03/CJ04
+CJ16	CJ16	CJ16	P1_L10_mat_a	a	verified paired subset	Corcoran 2016 Figure 1; pair CJ15/CJ16
+8817@999	8817@999	8817@999	P3_N_hispaniola	not applicable	candidate singleton	deposited genotype label; Corcoran 2016 strain 8817
+Ndis@999	Ndis@999	Ndis@999	O_N_discreta	not applicable	coordinate-validated alignment sequence	Present in all seven FASTA alignments; 1-based 2509 mapping matches matrix at every genotype position
+CJ01	CJ01	CJ01	L10_mat_A	A	not in primary subset	Corcoran 2016 Figure 1
+CJ02	CJ02	CJ02	L10_mat_a	a	not in primary subset	Alternative homokaryon from CJ01 heterokaryon per Nature Communications 2017
+CJ05	CJ05	CJ05	L10_mat_A	A	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ06	CJ06	CJ06	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ08	CJ08	CJ08	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ09	CJ09	CJ09	L10_mat_A	A	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ10	CJ10	CJ10	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ13	CJ13	CJ13	L10_mat_A	A	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ14	CJ14	CJ14	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ19	CJ19	CJ19	L10_mat_A	A	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ20	CJ20	CJ20	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ22	CJ22	CJ22	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ23	CJ23	CJ23	L10_mat_A	A	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ24	CJ24	CJ24	L10_mat_a	a	eligible if complete-group design used	Corcoran 2016 Figure 1
+CJ07	CJ07	CJ07	unresolved	unknown	exclude	No independent assignment found; do not infer from ID/topology
+CJ11	CJ11	CJ11	unresolved	unknown	exclude	No independent assignment found; do not infer from ID/topology
+CJ12	CJ12	CJ12	unresolved	unknown	exclude	No independent assignment found; do not infer from ID/topology
+CJ18	CJ18	CJ18	unresolved	unknown	exclude	No independent assignment found; do not infer from ID/topology

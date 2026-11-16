@@ -1,0 +1,19 @@
+region	metric	n_100kb_bins	pearson_r	spearman_rho	interpretation
+LGI_all	q1	93	-0.9397663969677577	-0.7453998142445931	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_all	q2	93	-0.5590454092927114	-0.6234021045450272	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_all	q3	93	0.9488288592254687	0.7956641102921429	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_all	A_pair1	93	-0.919178745074465	-0.8400972814896601	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_all	B_pair1	93	0.6142796118413629	0.4067619587598102	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_all	internal_pair1	93	0.5334654500007939	0.6187968129867805	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	q1	64	-0.32348840242427357	-0.392586911505935	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	q2	64	-0.422904325552578	-0.41387836401937794	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	q3	64	0.4537666116000572	0.5107600732600732	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	A_pair1	64	-0.5901393473609863	-0.609981684981685	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	B_pair1	64	-0.03699514337082861	-0.03740842490842491	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_inside	internal_pair1	64	0.2878790245941459	0.29221611721611723	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	q1	29	-0.7921612044398918	-0.34679802955665023	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	q2	29	-0.22910869953213686	-0.2625615763546798	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	q3	29	0.843349118118682	0.4241379310344828	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	A_pair1	29	-0.8511796380207955	-0.6423645320197044	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	B_pair1	29	0.3057803480861117	0.22807881773399014	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology
+LGI_outside	internal_pair1	29	0.25197438286314655	0.13448275862068965	descriptive; separate estimands, linked bins; no exact Ndis-matched tree topology

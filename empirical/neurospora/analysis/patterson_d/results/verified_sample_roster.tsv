@@ -1,0 +1,5 @@
+group	sample_ids	n	verification
+L10_mat_A_paired_subset	CJ03;CJ15	2	Direct mating-type labels; each paired to documented opposite type
+L10_mat_a_paired_subset	CJ04;CJ16	2	Direct mating-type labels; matched to CJ03 and CJ15 respectively
+N_hispaniola_P3	8817@999	1	Reference label in genotype matrix and published source
+N_discreta_O	NA	NA	No local sequence; Dryad alignment download blocked by bearer-token requirement

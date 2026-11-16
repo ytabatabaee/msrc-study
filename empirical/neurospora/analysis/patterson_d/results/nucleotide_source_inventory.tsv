@@ -1,0 +1,4 @@
+file	bytes	md5	format	records	taxa_or_note
+data/neurospora/raw/neurospora.tar.gz	15577951	571324702709eb1c2732a3fd993edc93	tar.gz	archive	Zenodo record 4946041
+data/neurospora/raw/neurospora/geno/cras_sit_hist_tet_L10.min20MAC1.geno.gz	11938151	f98918e444d48d43bf8933447e85bb35	gzip TSV; haploid nucleotide characters	2265369	Ncra@999,8817@999,1135@999,2509@6,CJ01,CJ02,CJ03,CJ04,CJ05,CJ06,CJ07,CJ08,CJ09,CJ10,CJ11,CJ12,CJ13,CJ14,CJ15,CJ16,CJ18,CJ19,CJ20,CJ22,CJ23,CJ24
+data/neurospora/raw/neurospora/trees/cras_sit_hist_tet_L10.min20MAC1.phyml_GTR_bionj_w50sites.data.tsv.gz	467529	785061aaf16a0e268ad5d62d8d39aca0	gzip TSV; 1-based inclusive source intervals	45303	50 variable sites/window
