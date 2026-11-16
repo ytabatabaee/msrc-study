@@ -1,0 +1,9 @@
+{
+  "vcf_variant_records": 2650251,
+  "vcf_contigs_with_records": 772,
+  "variant_records_overlapping_any_of_852_tree_window_busco_genes": 311890,
+  "variant_records_in_213_tree_window_busco_genes": 311890,
+  "variant_records_overlapping_multiple_busco_genes": 3424,
+  "records_on_contigs_without_window_gene_intervals": 2262189,
+  "assignment_scope": "exact gene-body intervals; no 1-kb flanks or unsupported scaffold-to-chromosome coordinate lift"
+}

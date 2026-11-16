@@ -1,0 +1,20 @@
+{
+  "mode": "transversions-only sensitivity",
+  "scan": {
+    "vcf_records_total": 2650251,
+    "mapped_records": 311890,
+    "sample_count_used": 259,
+    "scanned_sha256": "e782b2e523357ee09ffe81ce0cc2c6b25f733159ba965c638cc03c6785306775"
+  },
+  "filter": {
+    "DP_min": 10,
+    "group_call_rate_min": 0.5,
+    "outgroup_min": "min(4, frozen O sample count), all called O alleles unanimous",
+    "heterozygous_pseudo_diploid": "excluded"
+  },
+  "outputs": [
+    "transversions_window_patterson_d.tsv",
+    "transversions_region_patterson_d.tsv",
+    "transversions_inside_outside.tsv"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "vcf_path": "data/fire_ants_chr16/raw/genotypes/gt.vcf.gz",
+  "vcf_bytes": 1503782377,
+  "vcf_sha256": "e782b2e523357ee09ffe81ce0cc2c6b25f733159ba965c638cc03c6785306775",
+  "vcf_sha256_expected": "e782b2e523357ee09ffe81ce0cc2c6b25f733159ba965c638cc03c6785306775",
+  "vcf_sha256_match": true,
+  "vcf_reference_header": "/scratch/ek/solenopsis/2018/ref/gng20170922wFex.fa",
+  "vcf_format": "VCFv4.2 BGZF/gzip",
+  "vcf_contig_count": 69592,
+  "vcf_sample_count": 368,
+  "supplementary_data_1_rows": 386,
+  "supplementary_rows_not_in_vcf": 18,
+  "vcf_samples_without_supplement_match": 0,
+  "tree_tip_count": 267,
+  "tree_tips_exactly_in_vcf": 267,
+  "random_allele_source_ids": [
+    "USP3-1-bigB-m",
+    "AR223-1-bigB-m",
+    "Copa2-1-bigB-m",
+    "Par1-1-bigB-m",
+    "AR112-1-bigB-p",
+    "AR142-1-bigB-m",
+    "SS1-2-bigB-m"
+  ],
+  "random_allele_matches": {
+    "USP3-1-bigB-m": [
+      "USP3-1-bigB-m-1"
+    ],
+    "AR223-1-bigB-m": [
+      "AR223-1-bigB-m-1"
+    ],
+    "Copa2-1-bigB-m": [
+      "Copa2-1-bigB-m-1"
+    ],
+    "Par1-1-bigB-m": [
+      "Par1-1-bigB-m-1"
+    ],
+    "AR112-1-bigB-p": [
+      "AR112-1-bigB-p-1"
+    ],
+    "AR142-1-bigB-m": [],
+    "SS1-2-bigB-m": [
+      "SS1-2-bigB-m-1"
+    ]
+  },
+  "random_allele_source_ids_unresolved": [
+    "AR142-1-bigB-m"
+  ],
+  "supplementary_data_2_busco_rows": 5851,
+  "frozen_windows": 213,
+  "frozen_window_gene_ids": 852,
+  "window_genes_in_supplementary_data_2": 852,
+  "window_gene_scaffolds_expected": 41,
+  "window_gene_scaffolds_in_vcf_header": 41,
+  "exact_gene_identity_mapping": true,
+  "vcf_index_present": false,
+  "record_scan_complete": true
+}

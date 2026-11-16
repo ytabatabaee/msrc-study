@@ -1,0 +1,9 @@
+quartet_id	filter	D_supergene	ABBA_supergene	BABA_supergene	informative_supergene	D_chr16A_plus_chr16B	ABBA_chr16A_plus_chr16B	BABA_chr16A_plus_chr16B	informative_chr16A_plus_chr16B	D_chr1	Delta_D_supergene_minus_chr16outside
+Q1_primary_Argentina	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	NA	0.0	0.0	0	NA	0.0	0.0	0	NA	NA
+Q2_primary_Argentina	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	1.0	1.2478163819875778	0.0	2	NA	0.0	0.0	0	0.15692084339504103	NA
+Q1_sinvicta_only	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	NA	0.0	0.0	0	-0.46511627906976716	0.011109711021505377	0.030430947580645136	1	NA	NA
+Q2_sinvicta_only	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	0.7092632433880263	1.96911331422201	0.33493589743589747	4	-0.0294890491550592	0.26039438407347193	0.2762185904566327	2	0.150050215018059	0.7387522925430855
+Q1_all_geography	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	1.0	0.008849557522123908	0.0	1	NA	0.0	0.0	0	NA	NA
+Q2_all_geography	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	1.0	0.9565217391304348	0.0	1	NA	0.0	0.0	0	0.03466853394686815	NA
+Q1_outgroup_Brazil	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	NA	0.0	0.0	0	NA	0.0	0.0	0	NA	NA
+Q1_outgroup_French_Guiana	strict DP>=15 and >=80% ingroup call rate; otherwise primary rules	NA	0.0	0.0	0	NA	0.0	0.0	0	NA	NA

@@ -1,0 +1,9 @@
+quartet_id	test	n_shifts	observed_delta_D	two_sided_p_exact	warning
+Q1_all_geography	circular_shift_inversion_labels_fixed	96	0.8259805865344236	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q1_outgroup_Brazil	circular_shift_inversion_labels_fixed	96	0.8282056224241986	0.010416666666666666	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q1_outgroup_French_Guiana	circular_shift_inversion_labels_fixed	96	0.7997759413518388	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q1_primary_Argentina	circular_shift_inversion_labels_fixed	96	0.8283723172860893	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q1_sinvicta_only	circular_shift_inversion_labels_fixed	96	0.8369737578574384	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q2_all_geography	circular_shift_inversion_labels_fixed	96	0.861419110319196	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q2_primary_Argentina	circular_shift_inversion_labels_fixed	96	0.8634933929766834	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
+Q2_sinvicta_only	circular_shift_inversion_labels_fixed	96	0.8716764392172793	0.020833333333333332	only 96-ish author windows, linked and irregular; exploratory spatial null on gene-window track
