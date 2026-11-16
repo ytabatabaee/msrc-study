@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-11-15T23:45:34.198285+00:00",
+  "designs": "12 additional quartets frozen from Stage-3 baseline splits plus four primary designs",
+  "inputs": [
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_outside_supergenes_dsuite.vcf.gz",
+      "bytes": 3363616664,
+      "md5": "d2f29f57aba73cc1352879bf7eddb286"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_outside_supergenes_relate.vcf.gz",
+      "bytes": 64961589,
+      "md5": "f69dd63eaa54689de015904a6eb89541"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_outside_supergenes_snapp.vcf.gz",
+      "bytes": 71599119,
+      "md5": "89206e64a2ec89e48bcb399b3f1af3fd"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg01_dsuite.vcf.gz",
+      "bytes": 103117136,
+      "md5": "e69f4fa86ab1847beb46269d9b3e7ee0"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg01_relate.vcf.gz",
+      "bytes": 2264613,
+      "md5": "2e42e202f0ada4aee94d09bb14202784"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg02_dsuite.vcf.gz",
+      "bytes": 35266707,
+      "md5": "fddcde1dae88b39a2a95576ea87422ba"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg02_relate.vcf.gz",
+      "bytes": 771208,
+      "md5": "6ef63f54845effa3004a906e1d5c61e5"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg07_dsuite.vcf.gz",
+      "bytes": 61219496,
+      "md5": "366913707e55dce415aa57c24356d0c9"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg07_relate.vcf.gz",
+      "bytes": 1335891,
+      "md5": "0658755859445306b2506df6eafaa9de"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg12_dsuite.vcf.gz",
+      "bytes": 78180883,
+      "md5": "6f3736133f33cb2bcb2188f37105098c"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergene_lg12_relate.vcf.gz",
+      "bytes": 1406296,
+      "md5": "7c3a993e090d06a0d092527628aa1897"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg01_snapp.vcf.gz",
+      "bytes": 2107536,
+      "md5": "ea55dae3ce58ba43f9c438480744c98a"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg02_snapp.vcf.gz",
+      "bytes": 618770,
+      "md5": "4ec8330c3e45a4b146674a6f191fc503"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg07_snapp.vcf.gz",
+      "bytes": 1945557,
+      "md5": "bc0b1fde1a9354fb40f426e5bb4627bd"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg12_snapp.vcf.gz",
+      "bytes": 1887973,
+      "md5": "631c118198f0d3e994ec537910850d38"
+    }
+  ],
+  "coordinate_system": "1-based inclusive gadMor2 linkage-group positions; D windows matched to published 250-kb windows",
+  "primary_filters": "PASS/. biallelic SNP; complete genotype calls for chosen individuals; fixed homozygous outgroup; no REF-as-ancestral assumption",
+  "no_remote_index": true,
+  "postprocessing": "Rebuilt from completed per-source scan summaries; see per-source checkpoints"
+}

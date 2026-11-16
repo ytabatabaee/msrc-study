@@ -1,0 +1,17 @@
+lg	design_class	n_designs	fraction_inside_absD_gt_outside_absD	mean_abs_inside_D	expected_side_sign_fraction	note
+LG01	primary_arrangement_concordant	1	1	0.9370935634	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG01	same_arrangement_q3	1	1	0.9351359563	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG01	alternative_arrangement_q2	1	1	0.8802772527	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG01	baseline_pair_control	1	1	0.3367346939	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG02	primary_arrangement_concordant	1	1	0.8282067378	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG02	same_arrangement_q3	1	1	0.7987629777	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG02	alternative_arrangement_q2	1	1	0.9413170076	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG02	baseline_pair_control	1	1	0.06358381503	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG07	primary_arrangement_concordant	1	1	0.9430272953	0	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG07	same_arrangement_q3	1	1	0.9798747449	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG07	alternative_arrangement_q2	1	1	0.08333333333	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG07	baseline_pair_control	1	1	0.1610601427	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG12	primary_arrangement_concordant	1	1	0.8496300512	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG12	same_arrangement_q3	1	1	0.06573859242	0	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG12	alternative_arrangement_q2	1	0	0.004483391074	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.
+LG12	baseline_pair_control	1	1	0.01155327343	1	One design per class/LG; descriptive only, quartets share populations and are not independent replicates.

@@ -1,0 +1,9 @@
+source	lg	design_id	P1	P2	P3	ingroup_sample_substitution_sites	note
+DSUITE_inside_LG01	LG01	CODD_LG01_PRIMARY	Gadmor_avc1,Gadmor_avc2	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avo1,Gadmor_avo2	116130	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_inside_LG02	LG02	CODD_LG02_PRIMARY	Gadmor_avc1,Gadmor_avc2	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avo1,Gadmor_avo2	33043	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_inside_LG07	LG07	CODD_LG07_PRIMARY	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avc1,Gadmor_avc2	Gadmor_avo1,Gadmor_avo2	87035	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_inside_LG12	LG12	CODD_LG12_PRIMARY	Gadmor_bor1,Gadmor_bor2	Gadmor_kie1,Gadmor_kie2	Gadmor_low1,Gadmor_low2	0	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_outside	LG01	CODD_LG01_PRIMARY	Gadmor_avc1,Gadmor_avc2	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avo1,Gadmor_avo2	89865	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_outside	LG02	CODD_LG02_PRIMARY	Gadmor_avc1,Gadmor_avc2	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avo1,Gadmor_avo2	144697	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_outside	LG07	CODD_LG07_PRIMARY	Gadmor_lfo1,Gadmor_lfo3	Gadmor_avc1,Gadmor_avc2	Gadmor_avo1,Gadmor_avo2	166479	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
+DSUITE_outside	LG12	CODD_LG12_PRIMARY	Gadmor_bor1,Gadmor_bor2	Gadmor_kie1,Gadmor_kie2	Gadmor_low1,Gadmor_low2	0	Source roster substitution is explicit in sample IDs; only Gadmor_lfo2 -> Gadmor_lfo3 occurs in these primary designs.
