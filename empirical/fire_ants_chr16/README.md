@@ -313,3 +313,18 @@ The stage writes the source manifest, marker-level recovery table, pairwise-frac
 The previous schematic figure has been archived as `figures/fire_ants_recombination_genealogy_schematic_archived.pdf` / `.png` for provenance only. It should not be cited as a quantitative recombination-rate or LD track. See `results/recombination_report.md`, `results/recombination_source_audit.md`, `results/recombination_coordinate_audit.md`, and `results/recombination_manifest.json`, plus `../../data/fire_ants_chr16/processed/recombination_pairwise_fractions.tsv` and `../../data/fire_ants_chr16/processed/recombination_window_integration.tsv`.
 
 This validation audit did not rerun or alter the frozen topology, TWISST, ASTRAL, CASTLES-II, or branch-length results.
+
+## Published chromosome-16 inversion annotations
+
+Three versioned figures now show the published In(16)1–3 locations with the frozen chr16 supergene analysis span. Coordinates are from Stolle et al.'s mapping of Yan et al.'s breakpoint-adjacent genes onto the `Si_gnGA` analysis axis, as documented in Supplementary Fig. 13 and the pinned upstream `twisst_interpretation.rmd`. Exact coordinates, source mapping, numbering notes, overlap summaries, descriptive inversion summaries, and limits are in `results/chr16_inversion_provenance.md` and the adjacent TSV files.
+
+The source reports 47 window midpoints assigned to In(16)1, four to In(16)2, and none to In(16)3. The public source archive does not include the component-placement CSV, so displayed ranges are hatched outer coordinate envelopes; assembled mapped-sequence lengths are labeled separately. Exact per-gene BUSCO and SNP overlap on the chromosome axis cannot be recovered from current inputs. These figures do not replace or modify frozen results.
+
+Regenerate only the annotation products and run their regression checks with:
+
+```bash
+python3 empirical/fire_ants_chr16/scripts/10_add_inversion_annotations.py
+python3 -m unittest discover -s empirical/fire_ants_chr16/tests -v
+```
+
+Outputs: `figures/fire_ants_main_with_inversions.{png,pdf,svg}`, `figures/fire_ants_chr16_topology_distance_inversions.{png,pdf,svg}`, and `analysis/patterson_d/figures/figure_B_D_and_TWISST_with_inversions.{png,pdf,svg}`. Caption text is in `results/chr16_inversion_figure_caption.md`.

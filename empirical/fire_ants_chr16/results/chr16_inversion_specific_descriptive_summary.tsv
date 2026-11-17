@@ -1,0 +1,7 @@
+inversion_id	quartet_id	tree_windows_by_source_midpoint	mean_q_species	mean_q_haplotype	mean_q_third	mean_D_tree_qH_minus_qS	patterson_D_pooled	ABBA	BABA	informative_snps	window_assignment	status
+In(16)1	Q1_primary_Argentina	47	0.1414733514886543	0.8364588591577938	0.022067789353551616	0.6949855076691396	0.8246598160146197	1321.4693647035408	126.98623573804076	3521	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	descriptive only
+In(16)1	Q2_primary_Argentina	47	0.1414733514886543	0.8364588591577938	0.022067789353551616	0.6949855076691396	0.843010377917717	1354.5063548290002	115.37831978618901	3356	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	descriptive only
+In(16)2	Q1_primary_Argentina	4	0.26877035637490504	0.7203778041541685	0.01085183947092625	0.45160744777926354	0.8528244784359844	72.91032067056607	5.791490018065912	162	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	descriptive only
+In(16)2	Q2_primary_Argentina	4	0.26877035637490504	0.7203778041541685	0.01085183947092625	0.45160744777926354	0.8824900083241232	76.63679884616887	4.783871125295545	170	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	descriptive only
+In(16)3	Q1_primary_Argentina	0	NA	NA	NA	NA	NA	NA	NA	0	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	no assigned windows; NA
+In(16)3	Q2_primary_Argentina	0	NA	NA	NA	NA	NA	NA	NA	0	Stolle source midpoint rule; descriptive, not exact gene/SNP inversion overlap	no assigned windows; NA
