@@ -1,0 +1,3 @@
+haploblock_id	chromosome	reported_interval_mbp	interval_meaning	support_codes	genetic_map_suppression_marked	breakpoint_precision	interior_used_for_primary_track	n_parts	reported_length_bp	boundary_uncertainty_bp_each_end
+ann05.01	5	148-177	published haploblock region; not fine-mapped inversion breakpoints	A,g	True	rounded to nearest Mbp; +/-0.5 Mb at each endpoint used as sensitivity band	each reported segment shrunk 0.5 Mb at both ends	1	29000000	500000
+ann13.01	13	9-110	published haploblock region; not fine-mapped inversion breakpoints	h,g	True	rounded to nearest Mbp; +/-0.5 Mb at each endpoint used as sensitivity band	each reported segment shrunk 0.5 Mb at both ends	1	101000000	500000

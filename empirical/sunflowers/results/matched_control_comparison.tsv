@@ -1,0 +1,3 @@
+haploblock_id	status	n_eligible_same_chromosome_controls	n_controls_required_for_comparison	physical_length_matched	tree_count_match_tolerance	tree_density_matched	exclusion_mask	reason
+ann05.01	not_estimable	0	20	yes	within 20%	not separately optimized	all g-marked rounded haploblocks on the chromosome	too few eligible same-chromosome intervals of equal physical length and similar observed-tree count
+ann13.01	not_estimable	0	20	yes	within 20%	not separately optimized	all g-marked rounded haploblocks on the chromosome	too few eligible same-chromosome intervals of equal physical length and similar observed-tree count

@@ -1,0 +1,11 @@
+haploblock_id	distance_min_bp	distance_max_bp_exclusive	n_tree_pairs	pearson_correlation_D	interpretation
+ann05.01	0	50000	13	-0.337726878534633	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann05.01	50000	200000	24	-0.28438367234124057	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann05.01	200000	1000000	85	-0.144213926583376	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann05.01	1000000	5000000	443	-0.0117943306273288	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann05.01	5000000	50000000	1031	-0.0007834376519749947	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann13.01	0	50000	8	NA	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann13.01	50000	200000	25	0.2746936719975133	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann13.01	200000	1000000	87	0.2620951598226082	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann13.01	1000000	5000000	365	-0.00892459987222618	descriptive pairwise autocorrelation; overlapping pairs are not independent
+ann13.01	5000000	50000000	2818	-0.054895841923215	descriptive pairwise autocorrelation; overlapping pairs are not independent

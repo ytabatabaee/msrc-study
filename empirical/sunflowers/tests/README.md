@@ -1,3 +1,9 @@
-# Tests
+# Sunflower Stage 1 tests
 
-No Stage 1 analysis tests are included yet. The Stage 0 gate remains conditional because exact focal-block boundaries and the tree-tip arrangement crosswalk have not been verified. Coordinate mapping, quartet classification, regional comparisons, and branch-length tests belong with the Stage 1 implementation after that gate is resolved.
+The focused suite covers fixed individual-quartet extraction, the three induced quartet resolutions and internal-branch distance calculation, unresolved quartets, pairwise-distance summaries, genomic interval overlap, conservative adjacency, and run detection that does not bridge missing intervals.
+
+Run with:
+
+```sh
+python3 -m unittest discover -s empirical/sunflowers/tests -p 'test_stage1_spatial_analysis.py' -v
+```

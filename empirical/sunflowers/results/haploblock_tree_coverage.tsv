@@ -1,0 +1,3 @@
+haploblock_id	reported_tree_overlaps	conservative_interior_trees	boundary_uncertain_trees	left_5Mb_flank_trees	right_5Mb_flank_trees	informative_tree_span_bp_union	reported_interval_bp	fraction_interval_spanned_by_tree_intervals	mean_called_bases_per_overlapping_tree	overlapping_tree_called_bases_sum	interior_called_bases_sum	tree_density_per_10Mb_reported_interval	flank_length_each_bp
+ann05.01	57	57	1	8	10	416068	29000000	0.014347172413793104	2651.6491228070176	151144	151144	19.655172413793103	5000000
+ann13.01	97	94	3	2	3	695770	101000000	0.006888811881188119	2572.298969072165	249513	239273	9.603960396039604	5000000

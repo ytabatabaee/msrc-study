@@ -3116,3 +3116,50 @@ The analysis is restricted to variant sites in four BUSCO genes per window; ther
 Audited Todesco et al. (2020) haploblocks against Owens et al. (2023) Helianthus phylogenomics. Verified deposited coordinate-indexed Newicks (3,242 records; 22 tips each; numeric branch lengths), matching archived IQ-TREE `.treefile` files (19,479,575 bytes), and the 11,797-window coordinate/called-base manifest (506,107 bytes). Study B uses the same HA412-HOv2 assembly label as Study A; no liftover is indicated. Transcribed all 37 published haploblock rows. Screening overlap counts for large rounded intervals include 97 trees in ann13.01, 57 in ann05.01, and 25 in ann15.01. The 2020 table reports boundaries to whole-Mbp precision and sometimes disjoint pieces, so counts are provisional. The paper reports 3,267 retained windows, but the public tree file has 3,242; the coordinate manifest has 3,273 windows with ≥2,000 called bases, 31 without a tree. The prose says map suppression was found at 10 blocks, while the 37-row table transcription has 11 `g` flags; both discrepancies are recorded for reconciliation.
 
 Stage 0 decision: **CONDITIONAL GO for a limited pilot, not a demonstrated MSRC result.** Local trees, branch lengths, coordinates, same-reference annotations, and broad taxon overlap exist. Exact block endpoints and a crosswalk from the 22 Study B tree tips to arrangement genotypes are not yet verified. The paper's supplementary ZIP fetch returned CAPTCHA HTML and the separately listed 362-byte fallax interval download returned HTTP 401. Accordingly, no Stage 1 topology/branch-length or species-tree sensitivity results or result figures were created. Obtain exact intervals and sample-to-arrangement genotypes before defining arrangement-associated quartets. Reports and inventories are under `empirical/sunflowers/results/`; raw trees are isolated and ignored under `data/sunflowers/raw/`.
+
+## Sunflower Stage 1 spatial genealogical pilot (2026-11-17)
+
+Reparsed all 3,242 local Newicks, joined the called-base manifest, validated identical 22-tip sets and nonnegative finite numeric branch lengths, and identified 31 qualifying manifest windows without deposited trees. The focal ann05.01 and ann13.01 rounded haploblock regions contain 57 and 97 tree records (57 and 94 in conservative interiors after excluding ±0.5 Mb endpoint bands). Their observed tree intervals span only 1.435% and 0.689% of the respective reported physical intervals. The published `g` flag independently denotes genetic-map recombination suppression; the intervals themselves are rounded haploblock regions, not fine-mapped inversion breakpoints.
+
+Fixed q1 to the published *H. annuus* + *H. argophyllus* sister pair and scored two quartet sets using either *H. debilis* or *H. paradoxus* as the fourth species, including all 48 induced individual combinations per set within each window. Ann13.01 interior q1 averaged 0.806 (window median 1.0), while ann05.01 q1 averaged 0.520 and q2 averaged 0.295. These are potentially notable arrangement-blind regional compositions, but ann13.01 has only 2 and 3 trees in its immediate 5-Mb flanks, ann05.01 has 8 and 10, and no same-chromosome physical-length/tree-count matched controls were eligible. Conservative ≤20-kb adjacency produced no multiwindow topology runs; no inference is made across the large unobserved gaps. The fixed four-species quartet exclusion sensitivity changed genome-wide q1 from 0.650 to 0.645 after ann13.01 exclusion and 0.647 after both exclusions; this is descriptive, not a full ASTRAL species-tree or CU-branch analysis.
+
+Branch-distance and quartet internal-edge summaries are substitutions/site. The arrangement-blind species-pair contrast is not the arrangement-defined MSRC A(w). Exact arrangement genotypes for the 22 tree tips remain unavailable. Assessment: **NO-GO for a strong plant MSRC claim from current resources**; the window-averaged signal merits follow-up only if exact sample-to-arrangement mapping and suitable controls are recovered. Added reproducible tracks, coverage/coordinate audits, missing-window and interval validation tables, boundary, bin-size and quartet-selection sensitivity, run/transition and autocorrelation summaries, fixed-quartet exclusion sensitivity, arrangement audit, and six figures in PNG/PDF/SVG. Seven focused tests pass and figures were visually inspected. No raw data were added to Git. No push was made; unrelated worktree edits were preserved. See `empirical/sunflowers/results/stage1_analysis_report.md`.
+
+## Neoaves chr4 Patterson's D final validation (2026-11-17)
+
+Completed an additive scientific/computational audit under
+`empirical/neoaves_chr4/analysis/patterson_d/final_validation/`. Frozen nucleotide
+quartets, inputs, outputs and figures were preserved; the 3.6-GB alignment scan
+was not repeated. Existing locus-level counts reproduce pooled ABBA/BABA totals
+and interval membership for all six frozen primary/alternate-outgroup designs.
+An independent scalar reference estimator passed 13 synthetic/integration tests.
+Transition-only counts were recovered exactly by paired per-locus subtraction
+of transversions from all-site counts.
+
+The Stiller 363-taxon genome-wide reference induces q2 for the frozen Columbea
+quartet (not its assumed P1/P2 sister pair), q1 for N61 and q1 for N62. Jarvis
+2014 gives independent broad Columbea/Passerea evidence but does not include
+*Ciconia maguari*, preventing exact four-tip validation. Gallus is a defensible
+external outgroup; Meleagris and transversion sensitivities preserve the N61
+regional contrast. The cause of Columbea's nonzero positive background remains
+unresolved. N61's primary inside/outside values are −0.2582/−0.0806 with
+ΔD=−0.1776 (1-Mb block-jackknife SE 0.0106); the shift persists across all
+three intervals, outgroup changes, transitions/transversions, interval drops,
+and ±250-kb/±1-Mb source-coordinate boundary perturbations. N62's pooled
+all-sites ΔD remains near zero (+0.0009, SE 0.0120).
+
+Exact matched four-species tree quartets were available for 5,727 Columbea,
+5,648 N61 and 5,442 N62 chr4 loci. Nucleotide D_site and exact D_topology=q3−q2
+are strongly correlated for N61 across 1-Mb bins (r=0.914 overall, r=0.732
+after inside/outside demeaning with a 2-Mb block-bootstrap interval); Columbea's
+large site D has near-zero topology contrast, and N62's contrasts are small.
+Four new manuscript figure sets are saved as PNG/PDF/SVG. Coordinate use is
+explicitly restricted to the Stiller source window-start axis; no GalGal4-to-
+GalGal6 breakpoint overlay is asserted.
+
+Final assessment: **CONDITIONAL GO** for reporting the qualified N61 regional
+site-pattern contrast and descriptive Columbea/N62 findings. Ingroup taxon
+representative sensitivity, raw alignment re-decoding, a fitted finite-sites
+null, an exact GalGal4/GalGal6 crosswalk, and causal/mechanistic interpretation
+remain unresolved. The pre-existing deletion of four files under
+`results/recheck_20261108/` was preserved; no commit or push was made.

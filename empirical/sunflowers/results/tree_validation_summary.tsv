@@ -1,0 +1,2 @@
+scope	chromosome	n_trees	n_unique_tree_ids	n_tip_count_values	n_branch_count_values	n_trees_with_nonnegative_finite_branches	n_qualifying_manifest_windows	n_qualifying_manifest_windows_without_tree	n_overlapping_tree_interval_pairs	taxon_labels_identical_across_trees
+all_chromosomes	all	3242	3242	1	1	3242	3273	31	2	yes
