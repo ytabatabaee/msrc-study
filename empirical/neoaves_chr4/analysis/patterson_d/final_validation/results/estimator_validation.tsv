@@ -1,0 +1,49 @@
+check	design	filter	scope	raw_locus_ABBA	raw_locus_BABA	stored_ABBA	stored_BABA	status
+pooled_ABBA_BABA_identity	Columbea_primary	all	inside	11040	7112	11040	7112	PASS
+pooled_ABBA_BABA_identity	Columbea_primary	all	outside	41117	26465	41117	26465	PASS
+coordinate_membership_vs_frozen_predicate	Columbea_primary	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	Columbea_primary	transversions_only	inside	1682	953	1682	953	PASS
+pooled_ABBA_BABA_identity	Columbea_primary	transversions_only	outside	6917	4170	6917	4170	PASS
+coordinate_membership_vs_frozen_predicate	Columbea_primary	transversions_only	all_chr4					PASS
+pooled_ABBA_BABA_identity	Columbea_alt_outgroup	all	inside	10941	6854	10941	6854	PASS
+pooled_ABBA_BABA_identity	Columbea_alt_outgroup	all	outside	40170	25611	40170	25611	PASS
+coordinate_membership_vs_frozen_predicate	Columbea_alt_outgroup	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	Columbea_alt_outgroup	transversions_only	inside	1638	904	1638	904	PASS
+pooled_ABBA_BABA_identity	Columbea_alt_outgroup	transversions_only	outside	6717	3984	6717	3984	PASS
+coordinate_membership_vs_frozen_predicate	Columbea_alt_outgroup	transversions_only	all_chr4					PASS
+pooled_ABBA_BABA_identity	N61_primary	all	inside	9155	15528	9155	15528	PASS
+pooled_ABBA_BABA_identity	N61_primary	all	outside	33894	39835	33894	39835	PASS
+coordinate_membership_vs_frozen_predicate	N61_primary	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	N61_primary	transversions_only	inside	1281	3393	1281	3393	PASS
+pooled_ABBA_BABA_identity	N61_primary	transversions_only	outside	5080	6649	5080	6649	PASS
+coordinate_membership_vs_frozen_predicate	N61_primary	transversions_only	all_chr4					PASS
+pooled_ABBA_BABA_identity	N61_alt_outgroup	all	inside	9056	15187	9056	15187	PASS
+pooled_ABBA_BABA_identity	N61_alt_outgroup	all	outside	32779	38970	32779	38970	PASS
+coordinate_membership_vs_frozen_predicate	N61_alt_outgroup	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	N61_alt_outgroup	transversions_only	inside	1258	3297	1258	3297	PASS
+pooled_ABBA_BABA_identity	N61_alt_outgroup	transversions_only	outside	4843	6429	4843	6429	PASS
+coordinate_membership_vs_frozen_predicate	N61_alt_outgroup	transversions_only	all_chr4					PASS
+pooled_ABBA_BABA_identity	N62_primary	all	inside	9807	9064	9807	9064	PASS
+pooled_ABBA_BABA_identity	N62_primary	all	outside	38538	35680	38538	35680	PASS
+coordinate_membership_vs_frozen_predicate	N62_primary	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	N62_primary	transversions_only	inside	1567	1358	1567	1358	PASS
+pooled_ABBA_BABA_identity	N62_primary	transversions_only	outside	6345	5940	6345	5940	PASS
+coordinate_membership_vs_frozen_predicate	N62_primary	transversions_only	all_chr4					PASS
+pooled_ABBA_BABA_identity	N62_alt_outgroup	all	inside	9721	8721	9721	8721	PASS
+pooled_ABBA_BABA_identity	N62_alt_outgroup	all	outside	37653	34893	37653	34893	PASS
+coordinate_membership_vs_frozen_predicate	N62_alt_outgroup	all	all_chr4					PASS
+pooled_ABBA_BABA_identity	N62_alt_outgroup	transversions_only	inside	1538	1341	1538	1341	PASS
+pooled_ABBA_BABA_identity	N62_alt_outgroup	transversions_only	outside	6149	5836	6149	5836	PASS
+coordinate_membership_vs_frozen_predicate	N62_alt_outgroup	transversions_only	all_chr4					PASS
+transition_transversion_partition_pooled	Columbea_primary	transitions_only+transversions_only	inside	11040	7112	11040	7112	PASS
+transition_transversion_partition_pooled	Columbea_primary	transitions_only+transversions_only	outside	41117	26465	41117	26465	PASS
+transition_transversion_partition_pooled	Columbea_alt_outgroup	transitions_only+transversions_only	inside	10941	6854	10941	6854	PASS
+transition_transversion_partition_pooled	Columbea_alt_outgroup	transitions_only+transversions_only	outside	40170	25611	40170	25611	PASS
+transition_transversion_partition_pooled	N61_primary	transitions_only+transversions_only	inside	9155	15528	9155	15528	PASS
+transition_transversion_partition_pooled	N61_primary	transitions_only+transversions_only	outside	33894	39835	33894	39835	PASS
+transition_transversion_partition_pooled	N61_alt_outgroup	transitions_only+transversions_only	inside	9056	15187	9056	15187	PASS
+transition_transversion_partition_pooled	N61_alt_outgroup	transitions_only+transversions_only	outside	32779	38970	32779	38970	PASS
+transition_transversion_partition_pooled	N62_primary	transitions_only+transversions_only	inside	9807	9064	9807	9064	PASS
+transition_transversion_partition_pooled	N62_primary	transitions_only+transversions_only	outside	38538	35680	38538	35680	PASS
+transition_transversion_partition_pooled	N62_alt_outgroup	transitions_only+transversions_only	inside	9721	8721	9721	8721	PASS
+transition_transversion_partition_pooled	N62_alt_outgroup	transitions_only+transversions_only	outside	37653	34893	37653	34893	PASS

@@ -1,0 +1,10 @@
+design	topology	n_gene_trees	median_internal_branch_substitutions_per_site	mean_internal_branch_substitutions_per_site	coordinate_scope
+Columbea_primary	q1	2706	0.006370973099999955	0.007832773673577239	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+Columbea_primary	q2	1467	0.004014385200000026	0.005475011516837073	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+Columbea_primary	q3	1554	0.0038836593000000086	0.005717025428893174	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N61_primary	q1	1604	0.004358366400000008	0.006311947282917706	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N61_primary	q2	2672	0.007184399000000008	0.00894775019992514	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N61_primary	q3	1372	0.0038309126999999665	0.005437183502842556	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N62_primary	q1	2534	0.006329315799999957	0.007968802119100225	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N62_primary	q2	1497	0.004502743299999987	0.006337497228256506	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
+N62_primary	q3	1411	0.004329430199999984	0.005709208295180722	all exact quartet-bearing chr4 trees; branch length is induced unrooted quartet internal edge
