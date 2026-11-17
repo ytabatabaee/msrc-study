@@ -1,0 +1,22 @@
+test	status	design	callrate_threshold	filter	D	informative_sites	chunks_expected	chunks_verified_complete	missing_chunk_starts_bp	details
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	0.3769680166345231	105770	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	0.8	transversions_only	0.39289716500231614	30872	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	0.37991896210881865	104284	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	0.9	transversions_only	0.3950827692813034	30340	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	0.3845063775085634	100542	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D1_Mmd_t_vs_standard	1.0	transversions_only	0.4006540053999506	29010	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	0.23651955454033216	128740	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	0.8	transversions_only	0.23916476905116993	38029	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	0.2376771921928767	123690	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	0.9	transversions_only	0.24072476209414687	36179	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	0.2423449086899983	120296	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D2_Mmm_t_vs_standard	1.0	transversions_only	0.24710011453388184	34995	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	0.253350347660907	168829	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	0.8	transversions_only	0.265090126719022	48887	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	0.2549374911206735	163627	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	0.9	transversions_only	0.2657308698007459	47241	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	0.25581469977983967	160381	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+matched_range_filter_sensitivity	complete	D3_Mmc_t_vs_standard	1.0	transversions_only	0.2667875593801461	46068	65	65		Matched 5.0–37.055 Mb range; D pooled over site contributions
+leave_one_individual_out	attempted_incomplete	all								Bounded exact-tree scan attempted; remote BGZF truncated at file offset 48,567,409,620 before outputs completed. No sample-level D estimates are reported.
+balanced_population_subsampling	attempted_incomplete	all								Bounded exact-tree scan attempted; remote BGZF truncated at file offset 48,567,409,620 before outputs completed. No sample-level D estimates are reported.
+linked_genomic_block_uncertainty	existing_results_reviewed	all								Existing 500-kb block bootstrap/jackknife outputs; sparse collinear support limits inside/outside inference.

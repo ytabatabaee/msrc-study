@@ -1,0 +1,127 @@
+design	callrate_threshold	filter	region	ABBA	BABA	D	informative_sites	interpretation
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	matched_span	15940.113690030805	7212.368426424414	0.3769680166345231	105770	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	In(17)1	846.5615585487745	149.06863896835486	0.7005542030764084	2890	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	In(17)2	4400.581122054249	1258.360826882241	0.5552663949419979	20449	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	In(17)3	2730.1244197327246	1165.9809348400959	0.40146334417184304	13488	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	In(17)4_tree_overlap	6538.803564380696	4268.851465816372	0.2100318794615462	61978	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	inversion_union	14516.070664716468	6842.261866507063	0.3592887594099933	98805	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.8	all_biallelic_SNPs	matched_complement	1424.0430253143315	370.1065599173554	0.5874295399181424	6965	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.8	transversions_only	matched_span	4724.28122378725	2059.1071590577885	0.39289716500231614	30872	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	transversions_only	In(17)1	248.57604061815712	44.39835135666102	0.6969130915682408	835	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	transversions_only	In(17)2	1241.4096257593424	331.9765045560502	0.5780101296691817	5573	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	transversions_only	In(17)3	843.547549384801	340.11445665682186	0.4253182835626779	4122	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	transversions_only	In(17)4_tree_overlap	1899.2731642252952	1227.2014353544178	0.2149615189457234	18059	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.8	transversions_only	inversion_union	4232.806379987582	1943.6907479239458	0.3706171288770047	28589	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.8	transversions_only	matched_complement	491.4748437996663	115.41641113384713	0.6196471437160803	2283	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	matched_span	15788.27398534628	7094.626270214144	0.37991896210881865	104284	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	In(17)1	835.0658629564881	145.6716321872572	0.7029345101853044	2837	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	In(17)2	4376.974943242529	1246.6409785960575	0.5566407820438489	20276	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	In(17)3	2683.8699100378753	1120.9955049290986	0.41075681651208745	13176	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	In(17)4_tree_overlap	6479.810269157926	4218.019950101971	0.211425146286574	61129	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	inversion_union	14375.72098539484	6731.328065814383	0.36217250933723066	97418	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.9	all_biallelic_SNPs	matched_complement	1412.552999951436	363.2982043997669	0.5908461209930076	6866	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.9	transversions_only	matched_span	4664.428946921123	2022.5276260198061	0.3950827692813034	30340	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	transversions_only	In(17)1	245.3792583284771	43.14065838675214	0.7009519559141408	817	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	transversions_only	In(17)2	1231.2928928710182	328.65340909090924	0.5786349713736102	5511	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	transversions_only	In(17)3	826.6306317380535	327.45847750339937	0.43252479400203725	4025	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	transversions_only	In(17)4_tree_overlap	1875.317875267094	1210.7242952360145	0.21535466572147738	17745	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	0.9	transversions_only	inversion_union	4178.6206582046325	1909.9768402170707	0.37260531979255385	28098	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	0.9	transversions_only	matched_complement	485.8082887164919	112.55078580273886	0.62380185879801	2242	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	matched_span	15438.910456730791	6863.49379006409	0.3845063775085634	100542	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	In(17)1	817.178886217949	138.46734775641028	0.7102121206912526	2739	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	In(17)2	4306.253004807697	1212.0622996794882	0.5607129231293083	19808	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	In(17)3	2639.948116987176	1094.0618990384623	0.4140016259501376	12827	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	In(17)4_tree_overlap	6304.776442307696	4065.0857371794805	0.21598075908458947	58570	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	inversion_union	14068.15645032052	6509.677283653839	0.3673117036701245	93944	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	1.0	all_biallelic_SNPs	matched_complement	1370.7540064102552	353.81650641025647	0.5896758018533038	6598	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	1.0	transversions_only	matched_span	4540.549078525633	1942.920873397432	0.4006540053999506	29010	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	transversions_only	In(17)1	239.71233974358978	40.54246794871795	0.7106742376157229	783	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	transversions_only	In(17)2	1206.7489983974374	317.2602163461538	0.5836505274680618	5353	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	transversions_only	In(17)3	811.742387820512	319.18469551282044	0.4355344385739799	3901	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	transversions_only	In(17)4_tree_overlap	1814.254407051281	1157.3553685897439	0.22105831117069646	16842	Matched local-tree overlap only; transversion/callrate scan
+D1_Mmd_t_vs_standard	1.0	transversions_only	inversion_union	4072.4581330128094	1834.3427483974335	0.3789048301355687	26879	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D1_Mmd_t_vs_standard	1.0	transversions_only	matched_complement	468.09094551282067	108.57812499999994	0.6234300379472633	2131	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	matched_span	19112.584896464003	11800.93333506769	0.23651955454033216	128740	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	In(17)1	658.7274402582107	124.45012145958522	0.6821918105349687	2952	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	In(17)2	4421.448847534257	1318.9273263628747	0.5404735555971562	21034	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	In(17)3	2671.355763594046	2089.335019502277	0.1222555235383774	16544	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	In(17)4_tree_overlap	9997.123056465334	7830.709749570185	0.1215186013053545	79834	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	inversion_union	17748.65510785179	11363.422216894902	0.219332781365249	120364	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.8	all_biallelic_SNPs	matched_complement	1363.9297886121929	437.51111817278377	0.514265367767619	8376	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.8	transversions_only	matched_span	5693.3584957163	3495.6672705273804	0.23916476905116993	38029	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	transversions_only	In(17)1	192.39833956289917	33.978934031561884	0.6998026039271702	840	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	transversions_only	In(17)2	1248.351485846461	344.9015753560673	0.5670473401184011	5738	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	transversions_only	In(17)3	820.0071548282851	628.3141792747967	0.13235527989525905	5045	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	transversions_only	In(17)4_tree_overlap	2972.2360360697558	2355.81311011629	0.1156939264336023	23700	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.8	transversions_only	inversion_union	5232.993016307366	3363.007798778717	0.21754130295646348	35323	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.8	transversions_only	matched_complement	460.3654794089276	132.65947174865858	0.5526007076440648	2706	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	matched_span	18460.12510623056	11370.149253957823	0.2376771921928767	123690	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	In(17)1	632.2091824191432	117.94099574470664	0.6855536419830172	2811	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	In(17)2	4298.9539702918655	1286.8053264010305	0.5392550025695177	20389	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	In(17)3	2556.692659770783	1986.1885683760681	0.12558199581797938	15652	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	In(17)4_tree_overlap	9676.10280691533	7560.691342511665	0.12272650273972135	76872	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	inversion_union	17163.958619397083	10951.626233033443	0.22095689700108082	115724	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.9	all_biallelic_SNPs	matched_complement	1296.166486833479	418.52302092438833	0.5118381269252061	7966	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.9	transversions_only	matched_span	5458.2095587788735	3340.2116955310353	0.24072476209414687	36179	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	transversions_only	In(17)1	185.63052095473975	30.394774062742822	0.7185998606294415	785	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	transversions_only	In(17)2	1206.4235891062067	331.9726554912098	0.5684172310520897	5502	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	transversions_only	In(17)3	776.220690984363	595.73560575709	0.13155308638908178	4758	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	transversions_only	In(17)4_tree_overlap	2857.9070702517993	2256.4642344417707	0.11759858641042964	22589	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	0.9	transversions_only	inversion_union	5026.181871297082	3214.5672697528144	0.21983615452143984	33634	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	0.9	transversions_only	matched_complement	432.02768748178914	125.64442577821487	0.5493967770999675	2545	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	matched_span	18135.271534455078	11059.956630608965	0.2423449086899983	120296	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	In(17)1	620.5438701923075	113.39062499999997	0.6910061436196998	2737	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	In(17)2	4245.297275641034	1259.1999198717958	0.54248321866772	20050	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	In(17)3	2523.554387019231	1938.4928886217963	0.13111952031332602	15331	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	In(17)4_tree_overlap	9476.855368589771	7341.740785256426	0.1269496314557189	74419	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	inversion_union	16866.25090144231	10652.82421875001	0.22578617397403566	112537	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	1.0	all_biallelic_SNPs	matched_complement	1269.0206330128203	407.13241185897425	0.5142061602255241	7759	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	1.0	transversions_only	matched_span	5349.250200320479	3229.451923076925	0.24710011453388184	34995	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	transversions_only	In(17)1	180.31470352564108	28.925881410256416	0.7235155749624952	758	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	transversions_only	In(17)2	1187.5812299679494	324.071614583333	0.5712353987207557	5388	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	transversions_only	In(17)3	765.0922475961546	577.8444511217946	0.13943158799154004	4640	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	transversions_only	In(17)4_tree_overlap	2794.1580528846166	2177.2021233974374	0.12410203799568267	21752	Matched local-tree overlap only; transversion/callrate scan
+D2_Mmm_t_vs_standard	1.0	transversions_only	inversion_union	4927.14623397433	3108.0440705128167	0.22639192035634298	32538	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D2_Mmm_t_vs_standard	1.0	transversions_only	matched_complement	422.10396634615387	121.4078525641026	0.5532466881492076	2457	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	matched_span	25257.471906565628	15046.457403707349	0.253350347660907	168829	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	In(17)1	997.4329154641655	262.6952468827472	0.5830658265846657	4757	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	In(17)2	5463.405991577862	2272.7297615578827	0.41243798348893745	30972	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	In(17)3	3999.0228816322524	2398.4191936535713	0.25019432284694343	23730	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	In(17)4_tree_overlap	12754.1286190661	9141.219916657428	0.16500804709794878	96192	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	inversion_union	23213.990407740435	14075.064118751554	0.24508334697776085	155651	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.8	all_biallelic_SNPs	matched_complement	2043.4814988252488	971.3932849557846	0.35559958232326	13178	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.8	transversions_only	matched_span	7521.7229454573135	4369.4819364663235	0.265090126719022	48887	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	transversions_only	In(17)1	295.84959947459953	73.91542600917602	0.600203259286245	1376	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	transversions_only	In(17)2	1560.3560698560736	607.7864589114583	0.43934824316466775	8279	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	transversions_only	In(17)3	1230.3762475949984	713.0751008251018	0.26617653546636444	7139	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	transversions_only	In(17)4_tree_overlap	3748.559583356463	2672.816732457357	0.16752527775858447	27987	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.8	transversions_only	inversion_union	6835.14150028213	4067.593718203106	0.25383976833508126	44781	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.8	transversions_only	matched_complement	686.5814451751949	301.88821826321805	0.38918061033235274	4106	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	matched_span	24536.219207875496	14567.273008241775	0.2549374911206735	163627	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	In(17)1	974.2059294871794	253.66426282051296	0.5868223458641512	4613	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	In(17)2	5365.975579975573	2220.619810744809	0.4145938470737528	30346	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	In(17)3	3923.808836996338	2339.7590048840075	0.2528989662282947	23192	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	In(17)4_tree_overlap	12294.729586385842	8811.000877594635	0.1650607978120737	92663	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	inversion_union	22558.71993284498	13625.043956043959	0.24689736546573898	150814	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.9	all_biallelic_SNPs	matched_complement	1977.4992750305253	942.2290521978018	0.3545775862699858	12813	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.9	transversions_only	matched_span	7295.280525030526	4232.099740537248	0.2657308698007459	47241	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	transversions_only	In(17)1	289.5168650793651	72.01007326007326	0.6016337062414815	1329	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	transversions_only	In(17)2	1529.4450549450596	593.9113247863241	0.44059195106809423	8082	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	transversions_only	In(17)3	1204.0828373015875	696.6882249694752	0.2669414651788056	6973	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	transversions_only	In(17)4_tree_overlap	3610.7716346153843	2578.3189484126974	0.1668181572643178	26884	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	0.9	transversions_only	inversion_union	6633.816391941393	3940.9285714285793	0.25465274385725145	43268	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	0.9	transversions_only	matched_complement	661.4641330891328	291.17116910866895	0.3887038021015702	3973	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	matched_span	24135.905219780183	14302.735805860806	0.25581469977983967	160381	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	In(17)1	961.0467032967035	248.8919413919414	0.5885874998959322	4528	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	In(17)2	5297.298992673988	2181.175366300366	0.41667905468368654	29871	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	In(17)3	3848.4665750915783	2288.4693223443223	0.254198068680992	22672	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	In(17)4_tree_overlap	12091.143772893767	8658.483516483537	0.1654323814369219	90765	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	inversion_union	22197.95604395603	13377.020146520132	0.24795338864618457	147836	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	1.0	all_biallelic_SNPs	matched_complement	1937.9491758241754	925.7156593406592	0.3534748564334874	12545	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	1.0	transversions_only	matched_span	7146.949175824187	4136.630494505497	0.2667875593801461	46068	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	transversions_only	In(17)1	282.6250000000001	70.53983516483515	0.6005274130313026	1294	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	transversions_only	In(17)2	1500.8795787545812	580.5819597069591	0.44214010302003315	7912	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	transversions_only	In(17)3	1178.5595238095245	678.6639194139199	0.2691628765615693	6799	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	transversions_only	In(17)4_tree_overlap	3540.07371794872	2521.6845238095234	0.16800227813833232	26196	Matched local-tree overlap only; transversion/callrate scan
+D3_Mmc_t_vs_standard	1.0	transversions_only	inversion_union	6502.137820512821	3851.4702380952426	0.25601390041163424	42201	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap
+D3_Mmc_t_vs_standard	1.0	transversions_only	matched_complement	644.8113553113548	285.1602564102564	0.38673341677096335	3867	Union or complement within 5.0–37.055 Mb; boundary-overlapping 5-kb windows assigned by any overlap

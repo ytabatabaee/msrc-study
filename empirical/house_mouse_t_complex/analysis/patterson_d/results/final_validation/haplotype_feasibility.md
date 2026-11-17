@@ -1,0 +1,7 @@
+# Haplotype feasibility assessment
+
+The Harr et al. AllMouse input used here supplies unphased diploid GT calls. No verified phase blocks or sample-specific chromosome-17 t-homolog calls are in the local input inventory. Kelemen & Vicoso's tree archive contains 5-kb local trees and carrier-tip mapping, not original, validated per-individual phased genotype matrices. Its carrier tips are reconstructed pseudo-t sequences produced from t-associated SNP selection/subtraction; they cannot be treated as independently phased versions of the AllMouse GTs. No directly sample-matched validated chromosome-specific genotypes were identified in the available source inventory.
+
+A published homozygous laboratory t-haplotype resource is not a substitute for wild-carrier haplotypes or sample-matched phase. Without independent read-backed/long-read phasing or validated t-specific linked markers for these exact animals, a t-specific nucleotide ABBA/BABA statistic is not defensible. Assigning carrier heterozygous ALT alleles to t would be circular/incorrect. Keep the corrected statistic labelled population-level diploid allele-frequency D. If independent phase becomes available, predefine chromosome-copy inclusion and phasing QC before testing, retain standard homologs as controls, and compare only exact sample-matched loci; do not infer phase from D or tree topology.
+
+See [Kelemen & Vicoso 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC5753869/) and the exact-quartet report's phase audit.

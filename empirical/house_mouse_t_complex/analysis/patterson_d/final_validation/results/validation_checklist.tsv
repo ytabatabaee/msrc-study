@@ -1,0 +1,12 @@
+item	status	evidence_or_limit
+GT parsing and diploid frequency	PASS	Synthetic tests and documented code; heterozygote contributes 0.5 ALT frequency; partial GT omitted
+Biallelic SNP filtering	PASS	One-base A/C/G/T biallelic PASS SNPs only
+Fixed REF and fixed ALT polarization	PASS	Fixed ALT uses complemented allele frequency; poly/missing outgroups excluded
+Coordinate/window mapping	PASS	VCF POS 1-based to half-open windows; source tree +5 Mb coordinate offset; exact 5-kb matching
+ABBA/BABA pooling and zero denominator	PASS	Pool contributions then calculate D; zero denominator undefined
+Exact q1/q2/q3 assignment	PASS	Resolved quartet once; equal tree weighting; tied distances unresolved
+Population-history null	LIMITED	All three rooted quartets are plausible at broad subspecies level; not a validated panmictic null due carrier selection, geography, structure, and admixture
+Transversion/callability robustness	COMPLETE	65/65 verified indexed chunks; transversion and 80/90/100% call-rate tables regenerated
+Individual sample influence	INCOMPLETE	Bounded scan attempted but endpoint BGZF truncated at offset 48,567,409,620; no estimates reported
+Spatial uncertainty	LIMITED	Independent 250/500/1,000-kb delete-block jackknife plus existing block bootstraps; circular shifts descriptive under irregular support and sparse collinear bins
+Chromosome-copy correspondence	UNRESOLVED	Unphased diploid VCF versus pseudo-t tree tips
