@@ -1,11 +1,11 @@
 item	status	evidence_or_limitation
 ABBA/BABA orientation and pooled estimator	PASS	Independent synthetic scalar tests; raw-locus pooling identities match saved summary for all six designs and all/transitions/transversions partitions.
-Taxon-name and occupancy accounting	PASS_WITH_LIMITATION	Exact frozen quartet occupancy calculated from saved records; individual alignment callability was not re-decoded from raw archive.
+Taxon-name and occupancy accounting	PASS_WITH_LIMITATION	Exact taxon names and alignment/tree/reference availability reported for candidate taxa; chr4 usable locus coverage quantified. Raw sampled loci independently decoded.
 Quartet species-history null	CONDITIONAL	Stiller 363-taxon reference induces q1 for N61/N62 and q2 for Columbea; Jarvis 48 tree is broad evidence only and lacks Ciconia maguari.
 Gallus outgroup	CONDITIONAL	External to Neoaves; Meleagris alternative preserves regional conclusions but both outgroups are Galliformes.
-Ingroup representative sensitivity	NOT_RUN	Saved nucleotide outputs have no additional ingroup representatives; requires a new alignment scan.
+Ingroup representative sensitivity	PASS_WITH_LIMITATION	10 prespecified ingroup alternatives scanned; all negative all-sites Delta D with 1-Mb 95% block-jackknife intervals below zero. Designs overlap loci and are not independent.
 Finite-sites and transversion sensitivity	PARTIAL	Transition-only counts derived by paired subtraction and transversion-only results computed from saved counts; no fitted finite-sites demographic simulation or distant outgroup.
-Alignment/missing-data sensitivity	PARTIAL	Quartet occupancy quantified; no additional alignment mask, per-taxon call-rate, or raw sampled-locus decode in this finalization.
+Alignment/missing-data sensitivity	PASS_WITH_LIMITATION	46 deterministic stratified raw alignments independently checked for sequence IDs, duplicates, length equality, normalization, gaps, ambiguity, and site-pattern handling; no estimator error. This is a validation sample, not a genome-wide alternate mask.
 Spatial uncertainty	PASS_WITH_LIMITATION	500-kb/1-Mb/2-Mb physical block jackknife retained; 2-Mb block bootstrap used for matched spatial correlations; no spatial-null p-value asserted.
 Boundary sensitivity	PASS_WITH_LIMITATION	±250-kb and ±1-Mb changes computed on original source window-start coordinate, not GalGal6 liftover.
 Assembly coordinate comparison	CONDITIONAL	Published GalGal4 predicate membership reproduced; exact base-level lift onto GalGal6 structural tracks not applied.
@@ -13,4 +13,8 @@ Exact local quartet frequencies	PASS_WITH_LIMITATION	5,727/5,648/5,442 exact ful
 Matched nucleotide-genealogy comparison	PASS_WITH_LIMITATION	Matched 1-Mb D_site and q3−q2 comparison and physical-block uncertainty; descriptive, not mechanism identification.
 Branch-length comparison	PASS_WITH_LIMITATION	Induced quartet internal branches summarized as ML substitutions/site; not calibrated times and not a demographic fit.
 Mechanistic interpretation	CONDITIONAL	Only N61 has a robust regional D shift; D does not prove introgression or uniquely support MSRC/inversion causality.
-Reproducibility	PASS_WITH_LIMITATION	Additive scripts and 12 tests included; raw 3.6-GB scan not repeated, prior deleted recheck files not restored.
+Reproducibility	PASS_WITH_LIMITATION	Additive scripts; 29 tests passed across the new taxon-robustness (5), final-validation (13), and original Patterson D (11) suites. The checksum-verified 3.646-GB archive was streamed for the sensitivity scan and raw-locus validation; prior deleted recheck files were not restored.
+N61 alternative ingroup representatives	PASS_WITH_LIMITATION	10 prespecified ingroup alternatives; all negative all-sites Delta D with 1-Mb 95% block-jackknife intervals below zero; quartet designs overlap loci and are not independent.
+Independent raw alignment validation	PASS_WITH_LIMITATION	544 exact ABBA/BABA all-site/transversion comparisons in 46 deterministic stratified loci; 0 discrepancies, 4 unavailable N62 rows due missing Pterocles; no estimator error.
+Alternative exact gene-tree topology comparison	PASS_WITH_LIMITATION	Exact local-tree labels and locus IDs; all designs resolve q1 in Stiller 63K reference; zero unresolved local quartet trees among exact matches; 250-kb/500-kb/1-Mb correlations with 2-Mb block bootstrap.
+N61 taxon sensitivity manuscript decision	CONDITIONAL	Regional contrast robust in direction and block interval, but outside D background is taxon-sensitive and mechanism/species-history null remain conditional.

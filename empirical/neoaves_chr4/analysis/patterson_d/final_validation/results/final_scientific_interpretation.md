@@ -35,3 +35,16 @@ Columbea’s positive D persists with the alternative Galliform outgroup and amo
 ## Limits on manuscript wording
 
 Describe N61 as a robust inside/outside nucleotide D contrast in this fixed taxon quartet over the published source-coordinate intervals. State the nonzero outside baseline, quartet uncertainty, and linked genomic sampling. Present Columbea and N62 pooled regional results as near-null. Do not translate the results into proof of introgression, timing/direction, an inversion, or the origin of a suppressed-recombination region.
+
+
+## N61 taxon-representative robustness and raw-alignment validation
+
+The primary N61 regional contrast is robust to ten prespecified ingroup alternatives. All ten retain negative all-sites ΔD, and each has a 1-Mb paired genomic block-jackknife 95% interval below zero. The transversion-only contrast also remains negative with its interval below zero in all ten. The outside D baseline is taxon-sensitive: some P1/P2 combinations change its sign even though the inside-minus-outside contrast does not. The Gallus primary contrast (ΔD=-0.178, 95% interval [-0.198, -0.157]) and Meleagris contrast (ΔD=-0.167, 95% interval [-0.186, -0.147]) remain negative.
+
+A separate reference implementation exactly reproduced 544 available all-sites/transversion ABBA/BABA comparisons from 46 stratified raw alignments, with zero discrepancies. No sampled duplicate IDs or unequal alignment lengths were found. Four rows were unavailable because *Pterocles gutturalis* was absent in two N62 sampled alignments. Thus no estimator error was found, and the frozen estimates remain unchanged.
+
+Across exact-locus matched gene trees, whole-chromosome 1-Mb D_site–D_topology correlation ranged 0.837–0.929 across the primary and ingroup alternatives. The original r=0.914 is typical; the regional-mean-centered correlation was lower (0.540–0.761) but positive throughout the panel. These are descriptive correlations among linked loci and overlapping taxon designs. They do not identify introgression, ancestral structure, ILS, deep polymorphism, homoplasy, or MSRC.
+
+The taxonomic audit corrects a group-label ambiguity: *Ciconia maguari* is Aequornithes/Ciconiiformes, not Telluraves. It remains the frozen P3 species. Shoebill and ibis are waterbird-side alternatives; the golden eagle is a separately labeled Telluraves control. All alternatives induce q1 in the published Stiller 363-taxon reference, which shares the broader source study with the alignments. Jarvis's 48-taxon tree lacks *Ciconia maguari*, so there is no independent exact four-taxon species-tree check. N61 is **CONDITIONAL GO** for the qualified regional site-pattern result; D/topology agreement is not unique evidence for MSRC.
+
+Details: `taxon_robustness/README.md`, `taxon_robustness/results/final_assessment.md`, and `taxon_robustness/results/taxon_robustness_summary.tsv`.

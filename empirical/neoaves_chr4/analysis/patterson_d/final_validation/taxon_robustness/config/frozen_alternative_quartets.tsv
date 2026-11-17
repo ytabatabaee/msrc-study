@@ -1,0 +1,13 @@
+design	P1	P2	P3	O	replacement_class	justification	frozen_before_D
+N61_primary	Tauraco_erythrolophus	Columba_livia	Ciconia_maguari	Gallus_gallus	primary	Original frozen quartet; unchanged primary reference.	yes
+N61_P1_Cuculus	Cuculus_canorus	Columba_livia	Ciconia_maguari	Gallus_gallus	P1_only	Replace turaco by cuckoo, another Otidimorphae order (Cuculiformes). Tests order-level P1 representation.	yes
+N61_P1_Ardeotis	Ardeotis_kori	Columba_livia	Ciconia_maguari	Gallus_gallus	P1_only	Replace turaco by bustard (Otidiformes), a third Otidimorphae order.	yes
+N61_P2_Pterocles	Tauraco_erythrolophus	Pterocles_gutturalis	Ciconia_maguari	Gallus_gallus	P2_only	Replace pigeon by sandgrouse (Pterocliformes), a separate Columbimorphae lineage.	yes
+N61_P2_Mesitornis	Tauraco_erythrolophus	Mesitornis_unicolor	Ciconia_maguari	Gallus_gallus	P2_only	Replace pigeon by mesite (Mesitornithiformes), a separate Columbimorphae lineage in the Jarvis/Columbea framework; placement is topology-sensitive.	yes
+N61_P3_Balaeniceps	Tauraco_erythrolophus	Columba_livia	Balaeniceps_rex	Gallus_gallus	P3_only	Replace stork with shoebill, a different waterbird lineage on the non-Otidimorphae/non-Columbimorphae side; broad P3-complement test.	yes
+N61_P3_Nipponia	Tauraco_erythrolophus	Columba_livia	Nipponia_nippon	Gallus_gallus	P3_only	Replace stork with ibis, a different ciconiiform waterbird; broad P3-complement test, not a same-family replicate.	yes
+N61_P3_Aquila	Tauraco_erythrolophus	Columba_livia	Aquila_chrysaetos	Gallus_gallus	P3_only_control	Telluraves representative tests the broad remaining-Neoaves side; treated as an explicit lineage-control, not a close Ciconia substitute.	yes
+N61_combo_Cuculus_Pterocles	Cuculus_canorus	Pterocles_gutturalis	Ciconia_maguari	Gallus_gallus	P1_P2_combo	Combines alternate cuckoo and sandgrouse representatives from distinct orders.	yes
+N61_combo_Ardeotis_Mesitornis	Ardeotis_kori	Mesitornis_unicolor	Ciconia_maguari	Gallus_gallus	P1_P2_combo	Combines alternate bustard and mesite representatives from distinct orders; mesite placement is topology-sensitive.	yes
+N61_combo_Cuculus_Pterocles_Balaeniceps	Cuculus_canorus	Pterocles_gutturalis	Balaeniceps_rex	Gallus_gallus	P1_P2_P3_combo	Joint alternative representatives across all three ingroup positions.	yes
+N61_primary_Meleagris	Tauraco_erythrolophus	Columba_livia	Ciconia_maguari	Meleagris_gallopavo	outgroup_only	Original ingroup taxa with predeclared alternative Galliform outgroup; outgroup sensitivity, not an independent quartet.	yes

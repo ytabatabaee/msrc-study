@@ -1,0 +1,17 @@
+# Manuscript-ready N61 text (qualified)
+
+## Results
+
+The N61 chr4 nucleotide site-pattern contrast was not specific to the original taxon representatives. In the frozen quartet (*Tauraco erythrolophus*, *Columba livia*, *Ciconia maguari*, *Gallus gallus*), pooled all-sites D was -0.258 inside and -0.081 outside the three published GalGal4 source-coordinate intervals (ΔD=-0.178; 95% 1-Mb genomic block-jackknife interval [-0.198, -0.157]). All ten prespecified alternative ingroup quartets retained a negative regional contrast, and each 1-Mb block interval excluded zero. Transversion-only ΔD was also negative in all alternatives. Absolute outside D varied with the selected representatives, including changes in its sign, so the stable observation is the regional contrast rather than a universal background value. These quartets reuse linked loci and are correlated sensitivity analyses.
+
+Among matched chr4 loci with exact four-taxon trees, binned nucleotide D_site and exact D_topology (q3−q2) were positively correlated across the chromosome for the original and all tested alternative quartets (1-Mb r range 0.837–0.929). The original correlation was typical across this panel. Correlations after centering inside/outside regional means were smaller but positive. These descriptive correspondences do not identify the cause of the site-pattern asymmetry.
+
+## Interpretation limitation
+
+The outside D baseline is nonzero and taxon-sensitive. The exact q1 null is supported by the published Stiller 363-taxon reference, which is not independent of the alignment source; an independent exact four-taxon species-history check is unavailable because *Ciconia maguari* is absent from Jarvis et al.'s 48-taxon tree. Patterson's D and its spatial correlation with topology do not distinguish ancient introgression from ancestral population structure, incomplete lineage sorting, deep polymorphism, gene-tree branch-length/substitution differences, finite-sites homoplasy, or taxon-specific sampling, and do not uniquely support MSRC.
+
+## Methods
+
+We analyzed the locally stored, checksum-verified Stiller 63,430 intergenic alignment archive and exact chr4 locus manifest. The original frozen quartet was retained. Ten ingroup alternatives were frozen in a configuration table before calculating D, with two alternatives each for P1 and P2, three P3-side alternatives/controls, and three combined ingroup substitutions; the original ingroup with a Meleagris outgroup was retained as an outgroup-only sensitivity. The published source-coordinate interval predicate was applied to locus window starts. ABBA and BABA integer counts were pooled by region before D was computed. Uncertainty was estimated with paired physical genomic block delete-one jackknife at 500-kb, 1-Mb, and 2-Mb scales.
+
+A separate scalar parser independently re-decoded 46 deterministically stratified raw alignments and compared ABBA/BABA counts for the three primary designs and their predeclared alternate-outgroup designs. Exact local quartet topologies were induced from the Stiller gene-tree archive using exact taxon names and exact locus IDs; unresolved trees were counted separately. D_site and D_topology were compared at 250-kb, 500-kb, and 1-Mb resolution, with 2-Mb physical-block bootstrap intervals for spatial correlations. These analyses are descriptive; linked loci and overlapping taxon panels are not independent replicates.

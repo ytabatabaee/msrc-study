@@ -1,0 +1,13 @@
+taxon	scientific_name	present_in_chr4_alignments	usable_chr4_locus_coverage	percent_of_6247_chr4_loci	candidate_set
+Aquila_chrysaetos	Aquila chrysaetos	6135	6135	98.207	frozen_alternative_quartets.tsv
+Ardeotis_kori	Ardeotis kori	5911	5911	94.621	frozen_alternative_quartets.tsv
+Balaeniceps_rex	Balaeniceps rex	5312	5312	85.033	frozen_alternative_quartets.tsv
+Ciconia_maguari	Ciconia maguari	6125	6125	98.047	frozen_alternative_quartets.tsv
+Columba_livia	Columba livia	5837	5837	93.437	frozen_alternative_quartets.tsv
+Cuculus_canorus	Cuculus canorus	5775	5775	92.444	frozen_alternative_quartets.tsv
+Gallus_gallus	Gallus gallus	6247	6247	100.0	frozen_alternative_quartets.tsv
+Meleagris_gallopavo	Meleagris gallopavo	6148	6148	98.415	frozen_alternative_quartets.tsv
+Mesitornis_unicolor	Mesitornis unicolor	5826	5826	93.261	frozen_alternative_quartets.tsv
+Nipponia_nippon	Nipponia nippon	6115	6115	97.887	frozen_alternative_quartets.tsv
+Pterocles_gutturalis	Pterocles gutturalis	5793	5793	92.733	frozen_alternative_quartets.tsv
+Tauraco_erythrolophus	Tauraco erythrolophus	5971	5971	95.582	frozen_alternative_quartets.tsv
