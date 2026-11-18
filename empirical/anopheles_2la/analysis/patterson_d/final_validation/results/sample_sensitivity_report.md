@@ -1,0 +1,7 @@
+# Sample-level sensitivity: availability and interpretation
+
+Individual deletion and balanced resampling were not computed. The retained scan stores window-level ABBA/BABA sums; the statistic recomputes allele frequencies at each site. Deleting an individual from pooled contributions is therefore not mathematically equivalent to recomputing genotype callability, group allele frequencies, outgroup fixation, and site inclusion. The active standard Python environment lacks `malariagen_data`; no raw genotype refetch was attempted. Counts by group are shown in `quartet_design_validation.md`.
+
+The three-sample C_i group occurs as P3 in B, P1 in C, and P3 in D, depending on design. Its individual influence is unknown from retained aggregate tables. Unequal group size is handled by allele frequencies at eligible sites but does not establish balanced sampling; group-specific missingness/callability remains relevant. Outgroup choice is available (9 merus versus 4 melas) and changes estimates materially but preserves large inside effects.
+
+Geography is confounded with arrangement-defined sampling in the frozen samples. Country/locality metadata are not a substitute for within-location overlap. Report no geography-adjusted estimate. Required next step: exact site-level leave-one-out and seeded balanced resampling from Ag3.10, with group-specific sample/site/block counts on every result. Status: `NOT_RUN_RAW_GENOTYPES_UNAVAILABLE_IN_VALIDATION_RUNTIME`.

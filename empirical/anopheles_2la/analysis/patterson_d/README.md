@@ -95,3 +95,8 @@ scalar reference and gives a 21.7x synthetic CPU speedup. The full wrapper
 requests 8 CPUs and 14 GB, which is 1.75 GB per core and respects the 2,000
 MB/core RM-shared limit. Detailed preflight, checkpoint, design, and readiness
 reports are under `results/patterson_d/`; the full scan remains unsubmitted.
+
+
+## Completion status note — 2026-11-18
+
+The historical paragraph above saying the full scan remains unsubmitted is superseded by the completed full-scan outputs recorded under `results/patterson_d/` (988 windows; 15,808 rows). The source provenance and earlier workflow history are retained. Additive final validation, manuscript drafts, figures, and outstanding sample-level limitations are documented at `final_validation/`.

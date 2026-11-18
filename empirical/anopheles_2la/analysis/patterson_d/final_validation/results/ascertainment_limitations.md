@@ -1,0 +1,7 @@
+# Callability and ascertainment
+
+`callability_diagnostics.tsv` summarizes the retained variant records, passed records, informative contribution counts, mean callable chromosomes per variant record and exclusion counts by design and region. This is variant-site callability, not genome-wide callable-base coverage. Passing SNP records per window are not nucleotide diversity: there is no callable-base denominator here.
+
+The source genotype API results retained here do not provide read-level mapping quality, allele depths, copy-number diagnostics, or a validated local measure of reference-allele mapping bias. The analysis uses biallelic diploid genotype calls; missing and non-fixed outgroup calls are excluded and site-wide missingness is capped at 25%. Structural complexity and reference bias remain plausible concerns inside an inversion and are not directly tested by these tables.
+
+MAC≥2 retains ABBA/BABA sums and informative contributions to numerical precision in these pooled comparisons while passing-site totals differ. This is specific to the implemented site pattern and polarization rules: sites with a contribution require polymorphism among ingroups; the global MAC is computed over the sampled ingroups plus fixed outgroup, and eligible informative patterns already satisfy at least two alternate/ancestral allele copies across those calls. It is not a universal property of MAC filters.

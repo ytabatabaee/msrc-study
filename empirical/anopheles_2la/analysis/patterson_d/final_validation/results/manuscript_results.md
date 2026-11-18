@@ -1,0 +1,7 @@
+# Manuscript results (draft)
+
+The completed scan contained 15,808 rows (988 windows × 8 designs × 2 filters), with no undefined window D values. For the primary A. merus outgroup, A had pooled inside D=-0.7349 and outside D=-0.0134 (inside-minus-outside=-0.7215; 500-kb physical-block 95% CI [-0.7526,-0.6905]); B had inside D=0.8088 and outside D=-0.0022 (contrast=0.8110; CI [0.7861,0.8359]). C and D were similarly large but used smaller arrangement groups. The direction reversed between A and B, reflecting their different P3 definitions and emphasizing that these are conditional population contrasts.
+
+The inside effect persisted across the inversion coordinate quartiles and after removing the highest-contribution windows or lowest-callability decile (see `spatial_robustness.tsv` and `inversion_region_summary.tsv`). Separate outside flanks remained near zero in the existing pooled summary. Substitution of A. melas altered magnitude (A inside-outside -0.6452; B +0.8330). MAC≥2 left informative contributions and pooled D effectively unchanged in the retained results.
+
+Stage 2R topology tracks changed across the same broad interval, but their quartet uses species/arrangement haplotypes rather than the same sampled population quartets. Thus, the co-localization is not an exact genealogy counterpart or evidence that D and topology contrast are equivalent. Sample-level influence, geography, and read-level mapping/copy-number effects remain untested.

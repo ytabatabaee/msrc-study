@@ -1,0 +1,17 @@
+check	status	evidence_or_blocker
+full scan completeness	PASS	988 windows; 15,808 design/filter rows; finite D
+coordinate and key uniqueness	PASS	frozen grid and full output checks recorded in original report
+scalar estimator regression	PASS	24 comparisons; maximum discrepancy 8.53e-14
+MAC filter mechanistic audit	PASS	paired full-scan sums and pass counts; not universal
+additional raw window validations	NOT_RUN	Ag3.10 raw genotypes not accessed in this runtime
+sample leave-one-out	NOT_RUN	requires site-level genotype recomputation
+balanced resampling	NOT_RUN	requires site-level genotype recomputation
+geographic adjustment	NOT_IDENTIFIABLE	frozen arrangement sampling lacks geographic exchangeability/overlap
+callability diagnostic	PASS_LIMITED	variant-site callability only; no callable-base denominator
+read-level mapping/reference bias	UNAVAILABLE	read-level quality/depth/copy-number not in retained source tables
+block spatial robustness	PASS	derived pooled counts and 500-kb uncertainty; original 250kb/500kb/1Mb tables retained
+exact matched genealogy comparison	NOT_EXACT	Stage2R quartet differs from nucleotide population samples
+MSRC unique causation	NOT_SUPPORTED	alternative histories remain observationally compatible
+figure formats	PASS	4 figures each PDF/SVG/PNG
+test assertions	PASS_WITH_RUNNER_LIMITATION	18 direct deterministic assertions; pytest module not installed
+output reproducibility	PASS	spatial_robustness.tsv and genealogy_correspondence.tsv identical SHA-256 on repeat

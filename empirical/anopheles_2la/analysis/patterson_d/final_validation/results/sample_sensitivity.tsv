@@ -1,0 +1,7 @@
+analysis\tstatus\tgroups_or_samples\tresult\tblock_count\tsites\tlimitation
+individual_leave_one_out\tNOT_RUN_RAW_GENOTYPES_UNAVAILABLE\tall frozen ingroup and outgroup individuals\tNA\tNA\tNA\trequires site-level recomputation of allele frequencies, callability, polarization, and site inclusion
+balanced_ingroup_subsampling\tNOT_RUN_RAW_GENOTYPES_UNAVAILABLE\tP1/P2/P3\tNA\tNA\tNA\trequires raw diploid calls; no approximate deletion from pooled contributions
+outgroup_leave_one_out\tNOT_RUN_RAW_GENOTYPES_UNAVAILABLE\t9 merus / 4 melas\tNA\tNA\tNA\trequires per-sample genotype calls to recompute fixed-outgroup eligibility
+geographic_sensitivity\tNOT_IDENTIFIABLE_FROM_FROZEN_DESIGN\tarrangement-defined groups\tNA\tNA\tNA\tgeography/ancestry confounded; metadata locality does not provide within-location balanced arrangement samples
+C_i_sample_influence\tNOT_RUN_RAW_GENOTYPES_UNAVAILABLE\t3 C_i individuals\tNA\tNA\tNA\tC_i used in B/C/D role depending on design; individual influence cannot be inferred from pooled rows
+outgroup_choice\tCOMPLETED_EXISTING_SCAN\tmerus versus melas\tA Delta inside-outside -0.7215 vs -0.6452; B +0.8110 vs +0.8330\tNA\tNA\toutgroup sensitivity changes magnitude but does not resolve ingroup confounding
