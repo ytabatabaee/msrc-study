@@ -1,0 +1,3 @@
+quartet_id	unit	status	reason
+Q1_primary_Argentina	BUSCO gene	NOT_COMPUTED	Original scanner retained per-window but not per-gene allele contributions; exact gene influence requires genotype-level aggregation by gene.
+Q2_primary_Argentina	BUSCO gene	NOT_COMPUTED	Original scanner retained per-window but not per-gene allele contributions; exact gene influence requires genotype-level aggregation by gene.

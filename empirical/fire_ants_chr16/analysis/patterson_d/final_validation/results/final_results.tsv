@@ -1,0 +1,7 @@
+quartet_id	region	D	ABBA	BABA	informative_sites	n_windows
+Q1_primary_Argentina	chr16_supergene	0.82488634196149	1395.4859086583176	133.90896549956696	3696	52
+Q1_primary_Argentina	chr16A+chr16B	-0.003485975324599222	106.7742542485869	107.52128320431946	1584	44
+Q2_primary_Argentina	chr16_supergene	0.8442934217014734	1431.8358358820774	120.88437559177932	3540	52
+Q2_primary_Argentina	chr16A+chr16B	-0.019199971275209952	60.82513838391525	63.20654310573248	1312	44
+Q1_primary_Argentina	Delta_supergene_minus_chr16A+B	0.8283723172860893	NA	NA	NA	paired regional contrast
+Q2_primary_Argentina	Delta_supergene_minus_chr16A+B	0.8634933929766834	NA	NA	NA	paired regional contrast

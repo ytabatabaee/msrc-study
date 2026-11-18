@@ -1,0 +1,35 @@
+quartet_id	analysis	region	D	Delta_D	informative_sites	n_P1	n_P2	n_P3	n_O	status
+Q1_all_geography	frozen_all	chr16_supergene	0.8247633175462434	0.8259805865344236	3861	134	59	32	6	computed_existing
+Q1_all_geography	frozen_all	chr16A+chr16B	-0.0012172689881802502	0.8259805865344236	1727	134	59	32	6	computed_existing
+Q1_all_geography	frozen_all	chr16_supergene	0.8247633175462434	0.8302095121819562	3861	134	59	32	6	computed_existing
+Q1_all_geography	frozen_all	chr1	-0.0054461946357127625	0.8302095121819562	5152	134	59	32	6	computed_existing
+Q1_outgroup_Brazil	frozen_outgroup	chr16_supergene	0.8254936733631645	0.8282056224241986	3159	94	40	32	4	computed_existing
+Q1_outgroup_Brazil	frozen_outgroup	chr16A+chr16B	-0.0027119490610340827	0.8282056224241986	1292	94	40	32	4	computed_existing
+Q1_outgroup_Brazil	frozen_outgroup	chr16_supergene	0.8254936733631645	0.8360056513913258	3159	94	40	32	4	computed_existing
+Q1_outgroup_Brazil	frozen_outgroup	chr1	-0.010511978028161301	0.8360056513913258	4005	94	40	32	4	computed_existing
+Q1_outgroup_French_Guiana	frozen_outgroup	chr16_supergene	0.8043947955419948	0.7997759413518388	4254	94	40	32	2	computed_existing
+Q1_outgroup_French_Guiana	frozen_outgroup	chr16A+chr16B	0.004618854190155993	0.7997759413518388	2056	94	40	32	2	computed_existing
+Q1_outgroup_French_Guiana	frozen_outgroup	chr16_supergene	0.8043947955419948	0.8092125369715503	4254	94	40	32	2	computed_existing
+Q1_outgroup_French_Guiana	frozen_outgroup	chr1	-0.00481774142955553	0.8092125369715503	5875	94	40	32	2	computed_existing
+Q1_primary_Argentina	frozen_primary	chr16_supergene	0.82488634196149	0.8283723172860893	3696	94	40	32	6	computed_existing
+Q1_primary_Argentina	frozen_primary	chr16A+chr16B	-0.003485975324599222	0.8283723172860893	1584	94	40	32	6	computed_existing
+Q1_primary_Argentina	frozen_primary	chr16_supergene	0.82488634196149	0.8323421897957552	3696	94	40	32	6	computed_existing
+Q1_primary_Argentina	frozen_primary	chr1	-0.007455847834265178	0.8323421897957552	4785	94	40	32	6	computed_existing
+Q1_sinvicta_only	frozen_sinvicta	chr16_supergene	0.8302788941563342	0.8369737578574384	3430	78	30	32	6	computed_existing
+Q1_sinvicta_only	frozen_sinvicta	chr16A+chr16B	-0.006694863701104284	0.8369737578574384	1413	78	30	32	6	computed_existing
+Q1_sinvicta_only	frozen_sinvicta	chr16_supergene	0.8302788941563342	0.8457693567153657	3430	78	30	32	6	computed_existing
+Q1_sinvicta_only	frozen_sinvicta	chr1	-0.015490462559031488	0.8457693567153657	3991	78	30	32	6	computed_existing
+Q2_all_geography	frozen_all	chr16_supergene	0.8440374020409792	0.861419110319196	3718	28	32	59	6	computed_existing
+Q2_all_geography	frozen_all	chr16A+chr16B	-0.017381708278216824	0.861419110319196	1355	28	32	59	6	computed_existing
+Q2_all_geography	frozen_all	chr16_supergene	0.8440374020409792	0.8890782949499074	3718	28	32	59	6	computed_existing
+Q2_all_geography	frozen_all	chr1	-0.04504089290892819	0.8890782949499074	4127	28	32	59	6	computed_existing
+Q2_primary_Argentina	frozen_primary	chr16_supergene	0.8442934217014734	0.8634933929766834	3540	28	32	40	6	computed_existing
+Q2_primary_Argentina	frozen_primary	chr16A+chr16B	-0.019199971275209952	0.8634933929766834	1312	28	32	40	6	computed_existing
+Q2_primary_Argentina	frozen_primary	chr16_supergene	0.8442934217014734	0.8894623225267251	3540	28	32	40	6	computed_existing
+Q2_primary_Argentina	frozen_primary	chr1	-0.04516890082525166	0.8894623225267251	3921	28	32	40	6	computed_existing
+Q2_sinvicta_only	frozen_sinvicta	chr16_supergene	0.8502999077434695	0.8716764392172793	3170	28	32	30	6	computed_existing
+Q2_sinvicta_only	frozen_sinvicta	chr16A+chr16B	-0.021376531473809798	0.8716764392172793	1196	28	32	30	6	computed_existing
+Q2_sinvicta_only	frozen_sinvicta	chr16_supergene	0.8502999077434695	0.897280925389858	3170	28	32	30	6	computed_existing
+Q2_sinvicta_only	frozen_sinvicta	chr1	-0.046981017646388505	0.897280925389858	3384	28	32	30	6	computed_existing
+Q1_primary_Argentina	leave_one_individual_out	chr16_supergene	NA	NA	NA	94	40	32	6	not_computed; requires sample-level genotype recount
+Q2_primary_Argentina	leave_one_individual_out	chr16_supergene	NA	NA	NA	28	32	40	6	not_computed; requires sample-level genotype recount

@@ -1,0 +1,18 @@
+item	status	evidence_or_limit
+Primary D estimator	PASS	Existing tests and scalar examples cover key patterns; primary results retained.
+Frozen rooted Q1/Q2	PASS_WITH_CAVEAT	Source-backed membership and chr1-15 reference tree support rooted sample designs; arrangement/geography confounding remains.
+Strict DP15/80% filter	INCONCLUSIVE	Q1 zero and Q2 two informative supergene SNPs; comparison has zero.
+Moderate DP/callability grid	PASS_WITH_INFORMATION_LIMITS	Predeclared 4×4 grid; moderate thresholds retain thousands of sites; 250-kb block bootstrap intervals remain positive. Strict threshold remains uninformative.
+Individual leave-one-out	NOT_COMPUTED	Not retained in original outputs; individual-level scan remains open.
+Gene-level influence	NOT_COMPUTED	Original scanner retained windows, not gene contributions.
+Reference mapping bias	NOT_TESTABLE	No read-level metrics, AD, GQ, or alignments.
+Inversion support	PARTIAL	47 In16(1), four In16(2), zero In16(3) assigned windows.
+Spatial significance	QUALIFIED	Physical block intervals retained; circular shift is descriptive.
+Exact genealogy correspondence	DESCRIPTIVE	Positive within-supergene correlations; linked and related BUSCO data.
+Mechanism	NOT_ESTABLISHED	D/topology cannot uniquely identify introgression or MSRC.
+Window-level influence	PASS	Deleting any single supergene author window leaves Q1 D 0.812–0.831 and Q2 D 0.837–0.851.
+Individual leave-one-out	OPEN	Not computed; requires sample-level genotype recount and is a remaining blocker.
+Gene-level influence / matched-information	OPEN	Per-gene contributions not retained; no assertion that genes do not dominate.
+Branch-length sensitivity	DESCRIPTIVE	Group-mean patristic distances and four-point contrasts calculated; not mean resolved-quartet internal edges.
+Inversion SNP-base overlap	NOT_TESTABLE	No chromosome-scale scaffold-to-SNP lift; only source midpoint and window-envelope classes.
+Reproducibility / figures	PASS	Additive scripts, tests, and four figure sets in PNG/PDF/SVG.
