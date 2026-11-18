@@ -1,0 +1,11 @@
+block_width_bp	region	estimate_D	jackknife_se	ci95_low	ci95_high	n_physical_blocks	assessment
+250000	inside	0.871228642905545	0.012016500929471426	0.847676301083781	0.894780984727309	26	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+250000	outside	0.4459547044325494	0.17361103163027292	0.10567708243721452	0.7862323264278843	12	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+250000	inside_minus_outside	0.4252739384729956	0.17402639626882932	0.08418220178609015	0.7663656751599011	12	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+500000	inside	0.871228642905545	0.01652178416604192	0.8388459459401029	0.9036113398709872	13	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+500000	outside	0.4459547044325496	0.15203711036622575	0.1479619681147471	0.7439474407503521	6	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+500000	inside_minus_outside	0.42527393847299544	0.1529321819648866	0.12552686182181771	0.7250210151241732	6	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+1000000	inside	0.871228642905545	0.018518643250970735	0.8349321021336424	0.9075251836774476	7	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+1000000	outside	0.4459547044325496	0.1213141711360923	0.20817892900580867	0.6837304798592905	4	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+1000000	inside_minus_outside	0.42527393847299544	0.12271946979307649	0.1847437776785655	0.6658040992674253	4	Existing source calculation; independent blocks partition physical coordinate within each region. Normal-approximate interval.
+2000000	inside_minus_outside	NA	NA	NA	NA	4 inside / 2 outside	Coarse diagnostic only: only two outside physical units after splitting at focal boundaries; no defensible outside delete-block interval.

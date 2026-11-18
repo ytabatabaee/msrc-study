@@ -1,0 +1,16 @@
+item	status	evidence_or_limitation
+Original estimator and coordinate mapping	PASS_WITH_LIMITATION	Existing tests cover formula and the 2509 reference matched all 2,265,369 coordinates; mapping was not repeated.
+Independent raw-site estimator validation	PASS	265 deterministic scalar checks across seven LGs and 54 strata; exact status/ABBA/BABA matches, zero discrepancies.
+Quartet rooting	CONDITIONAL	Ndis is an external and coordinate-validated outgroup; L10 mat-A/mat-a are one recombining population outside LGI, so D=0 null needs additional demographic/exchangeability assumptions.
+Mating-type provenance	PASS_WITH_LIMITATION	18 assignments supported by direct literature labels or documented heterokaryon relationship; CJ07/CJ11/CJ12/CJ18 retained as excluded unresolved samples.
+SNP ascertainment	CONDITIONAL	Deposited matrix contains filtered variable sites only; exact upstream SNP discovery/genotype missingness rules not documented in local archive/code; no invariant callable denominator.
+Ascertainment common support	PASS_WITH_LIMITATION	D persists after common-support restrictions on source-window physical span and raw group/outgroup callability; does not correct unknown upstream ascertainment.
+219 rows outside source tree windows	PASS_WITH_LIMITATION	45,303 windows map to 2,265,150 rows; 219 others included by full-matrix D but not tree-window tables; only eight informative patterns across LGIV/LGV and no LGI contribution.
+Spatial extent/localization	CONDITIONAL	Focal D is high but 100-kb to 1-Mb flanks are also elevated; distant segments approach zero; boundaries are approximate published intervals, not D breakpoints.
+Sample robustness on LGI	PASS_WITH_LIMITATION	Leave-one-out and balanced subsets preserve high inside D and regional direction; small subsets have wider outside variation.
+Sample robustness elsewhere	FAIL_FOR_GENOMEWIDE_GENERALIZATION	LGIV full D is +0.0715 while matched-pair D is about -0.740; result varies substantially across isolate subsets and is driven by specific combinations.
+Physical block uncertainty	PASS_WITH_LIMITATION	Original 250/500/1000-kb delete-block results reproduce; outside region has 12/6/4 blocks. A 2-Mb outside interval is unsupported with two units.
+Circular-shift significance	NOT_DEFENSIBLE_AS_PRIMARY_TEST	Reported p=0.010526 includes observed alignment in 95 total rotations; circular stationarity/wrapping a linear chromosome is not a realistic null. Treat as descriptive and withdraw strong significance language.
+Genealogy correspondence	PASS_WITH_LIMITATION	D vs TWISST q3 r=+0.949 whole, +0.454 inside, +0.843 outside; centered r=+0.785 with 500-kb block CI. Trees lack Ndis; not exact rooted D_topology.
+Mechanism identification	NOT_ESTABLISHED	Prior introgression evidence is acknowledged; D and q3 do not distinguish introgression, ancestral structure/ILS, linked genealogy, or ascertainment and do not uniquely show MSRC.
+Manuscript readiness	CONDITIONAL_GO	Manuscript-ready only for qualified, panel-conditional allele-sharing asymmetry and spatial extent; no unbiased genome-wide or unique-mechanism claim.

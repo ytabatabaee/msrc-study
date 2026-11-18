@@ -1,0 +1,15 @@
+filter	region	windows_retained	ABBA	BABA	D	bounds
+span	inside	6633	37021.74563492063	2546.8952380952387	0.871266984061001	"{""physical_span_bp"": [170.0, 103358.0]}"
+span	outside	3397	3690.13150368481	1415.1422179705203	0.4456155359632017	"{""physical_span_bp"": [170.0, 103358.0]}"
+outgroup_callability	inside	6634	37023.74563492063	2547.8952380952387	0.8712262023062751	"{""outgroup_callability"": [0.0, 1.0]}"
+outgroup_callability	outside	3492	3699.6940036848105	1417.3213846371868	0.4460359107491512	"{""outgroup_callability"": [0.0, 1.0]}"
+P1_callability	inside	6634	37023.74563492063	2547.8952380952387	0.8712262023062751	"{""P1_callability"": [0.866, 1.0]}"
+P1_callability	outside	3453	3691.8011678004573	1410.0944217687063	0.4472272522975001	"{""P1_callability"": [0.866, 1.0]}"
+P2_callability	inside	6631	37015.74563492063	2543.8952380952387	0.8713893664373247	"{""P2_callability"": [0.7125, 1.0]}"
+P2_callability	outside	3492	3699.6940036848105	1417.3213846371868	0.4460359107491512	"{""P2_callability"": [0.7125, 1.0]}"
+informative_density	inside	6634	37023.74563492063	2547.8952380952387	0.8712262023062751	"{""informative_per_mb"": [0.0, 51587.30158730159]}"
+informative_density	outside	3491	3695.1985010393078	1413.4592153250176	0.4466416449090534	"{""informative_per_mb"": [0.0, 51587.30158730159]}"
+joint	inside	6630	37013.74563492063	2542.8952380952387	0.8714301729381723	"{""physical_span_bp"": [170.0, 103358.0], ""outgroup_callability"": [0.0, 1.0], ""P1_callability"": [0.866, 1.0], ""P2_callability"": [0.7125, 1.0]}"
+joint	outside	3359	3682.238667800457	1407.9152551020397	0.4468083769462039	"{""physical_span_bp"": [170.0, 103358.0], ""outgroup_callability"": [0.0, 1.0], ""P1_callability"": [0.866, 1.0], ""P2_callability"": [0.7125, 1.0]}"
+nearest_match_no_D	inside_matched	2080	11660.054563492064	923.5458333333333	0.8532143735959183	nearest standardized distance: physical span, Ndis, P1, P2 callability; no D or informative density used
+nearest_match_no_D	outside_matched	2080	3699.6940036848105	1417.3213846371868	0.4460359107491512	nearest standardized distance: physical span, Ndis, P1, P2 callability; no D or informative density used

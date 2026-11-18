@@ -1,0 +1,11 @@
+# What the genealogy correspondence establishes
+
+The available N. tetrasperma Newicks contain L10 isolates, *N. crassa*, and *N. hispaniola*, but not *N. discreta*. The exact rooted quartet needed to calculate nucleotide-matched `D_topology=q3−q2` is absent. No outgroup tip is fabricated. Accordingly, all comparisons here retain the correct label **published TWISST q3**, not exact rooted D_topology.
+
+In the source topologies, q1 is `((cra,hisp),tet_A,tet_a)`, q2 is `((cra,tet_A),hisp,tet_a)`, and q3 is `((cra,tet_a),hisp,tet_A)`. q3 therefore describes an unrooted tree split associating L10 mat-A with *N. hispaniola* in the four-taxon tree that also includes *N. crassa*. The nucleotide analysis instead uses Ndis as the external polarizer and uses multi-isolate frequency groups. These are related but different estimands.
+
+At 100-kb matched LGI bins, D versus q3 Pearson r is +0.949 across 93 bins, +0.454 inside the frozen interval (64 bins), and +0.843 outside (29 bins). After separately centering D and q3 within inside/outside classes, r is +0.785; its 500-kb physical-block bootstrap 95% interval is approximately +0.574 to +0.916. Thus the whole-LGI association is partly a between-region association, but centering does not remove it completely. Inside-only covariation is weaker than the whole-genome coefficient, and outside-only uncertainty is broad because it covers only six 500-kb blocks.
+
+Filtering bins to ≥50 informative sites leaves r≈+0.947 whole, +0.474 inside, and +0.843 outside. A ≥100-informative-site subset has fewer bins and should not be overinterpreted. Restricting to high Ndis callability also leaves positive correlations, but the strict ≥0.95 subset has only six bins. These are sensitivity summaries, not independent validation: both tracks arise from selected variable sites and the same physical genomic segments.
+
+The correspondence supports a spatial association between nucleotide D and a published genealogy weighting. It is not an exact four-taxon rooted topology comparison and does not establish that genealogy changes caused D, or distinguish introgression, incomplete lineage sorting, ancestral structure, branch-length effects, or ascertainment. Branch metrics in the existing results are substitution-distance proxies, not coalescent times.

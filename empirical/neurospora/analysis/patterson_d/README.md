@@ -17,6 +17,12 @@ python3 empirical/neurospora/analysis/patterson_d/scripts/make_figures.py
 
 The coordinate check maps 1-based genotype POS to 0-based alignment column after confirming the 2509@6 reference row has no gaps; every source reference allele was compared at the mapped column. Main results are in `results/window_patterson_d.tsv`, `inside_outside_summary.tsv`, `block_uncertainty.tsv`, `spatial_null_validation.tsv`, and `matched_nucleotide_genealogy.tsv`. Figures A–F are generated in PNG, PDF, and SVG.
 
+An additive final-validation package, including independent estimator checks,
+ascertainment and isolate sensitivity, spatial uncertainty, genealogy
+correspondence, and manuscript-ready interpretation, is documented in
+[`final_validation/README.md`](final_validation/README.md). It preserves the
+frozen primary analysis and its input/output files.
+
 ## Key qualifications
 
 Frozen rooted design: L10 mat-a (10 verified isolates), L10 mat-A (8), *N. hispaniola* 8817@999, rooted by *N. discreta* Ndis@999. CJ07, CJ11, CJ12 and CJ18 are excluded as unresolved. Exact outgroup-bearing quartet topology matching is impossible because the deposited local trees lack *N. discreta*. The genotype matrix contains filtered variable sites, not invariant/callable genome sequence. Consequently the D results are conditional on ascertainment and do not by themselves establish introgression or MSRC.

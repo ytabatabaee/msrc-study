@@ -1,0 +1,48 @@
+result	estimate	ci95_low	ci95_high	n_or_support	detail
+LGI_inside	0.871228642905545	NA	NA	39726	ABBA=37024.49563492064; BABA=2547.8952380952383
+LGI_outside	0.4459547044325496	NA	NA	8822	ABBA=3698.9440036848073; BABA=1417.3213846371882
+LGI_D_inside_minus_outside_250000bp	0.4252739384729956	0.08418220178609015	0.7663656751599011	12	physical-block delete-one; outside blocks are sparse
+LGI_D_inside_minus_outside_500000bp	0.42527393847299544	0.12552686182181771	0.7250210151241732	6	physical-block delete-one; outside blocks are sparse
+LGI_D_inside_minus_outside_1000000bp	0.42527393847299544	0.1847437776785655	0.6658040992674253	4	physical-block delete-one; outside blocks are sparse
+LGI_left_flank_250kb	0.7191434948111225	NA	NA	1423	250-kb flank
+LGI_right_flank_250kb	0.7868648365373839	NA	NA	1709	250-kb flank
+LGII	0.022881204037829804	NA	NA	7489	whole linkage group; variant panel
+LGIII	-0.00413687853927999	NA	NA	6239	whole linkage group; variant panel
+LGIV	0.07154255432406284	NA	NA	26585	whole linkage group; variant panel
+LGV	-0.004889455878027116	NA	NA	8079	whole linkage group; variant panel
+LGVI	-0.0016424624146775737	NA	NA	6877	whole linkage group; variant panel
+LGVII	0.006853400620331028	NA	NA	6958	whole linkage group; variant panel
+ascertainment_span_inside	0.871266984061001	NA	NA	6633	"{""physical_span_bp"": [170.0, 103358.0]}"
+ascertainment_span_outside	0.4456155359632017	NA	NA	3397	"{""physical_span_bp"": [170.0, 103358.0]}"
+ascertainment_outgroup_callability_inside	0.8712262023062751	NA	NA	6634	"{""outgroup_callability"": [0.0, 1.0]}"
+ascertainment_outgroup_callability_outside	0.4460359107491512	NA	NA	3492	"{""outgroup_callability"": [0.0, 1.0]}"
+ascertainment_P1_callability_inside	0.8712262023062751	NA	NA	6634	"{""P1_callability"": [0.866, 1.0]}"
+ascertainment_P1_callability_outside	0.4472272522975001	NA	NA	3453	"{""P1_callability"": [0.866, 1.0]}"
+ascertainment_P2_callability_inside	0.8713893664373247	NA	NA	6631	"{""P2_callability"": [0.7125, 1.0]}"
+ascertainment_P2_callability_outside	0.4460359107491512	NA	NA	3492	"{""P2_callability"": [0.7125, 1.0]}"
+ascertainment_informative_density_inside	0.8712262023062751	NA	NA	6634	"{""informative_per_mb"": [0.0, 51587.30158730159]}"
+ascertainment_informative_density_outside	0.4466416449090534	NA	NA	3491	"{""informative_per_mb"": [0.0, 51587.30158730159]}"
+ascertainment_joint_inside	0.8714301729381723	NA	NA	6630	"{""physical_span_bp"": [170.0, 103358.0], ""outgroup_callability"": [0.0, 1.0], ""P1_callability"": [0.866, 1.0], ""P2_callability"": [0.7125, 1.0]}"
+ascertainment_joint_outside	0.4468083769462039	NA	NA	3359	"{""physical_span_bp"": [170.0, 103358.0], ""outgroup_callability"": [0.0, 1.0], ""P1_callability"": [0.866, 1.0], ""P2_callability"": [0.7125, 1.0]}"
+ascertainment_nearest_match_no_D_inside_matched	0.8532143735959183	NA	NA	2080	nearest standardized distance: physical span, Ndis, P1, P2 callability; no D or informative density used
+ascertainment_nearest_match_no_D_outside_matched	0.4460359107491512	NA	NA	2080	nearest standardized distance: physical span, Ndis, P1, P2 callability; no D or informative density used
+genealogy_whole_LGI	0.9488288592254692	0.8671754843365793	0.9854094946841025	93	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_whole_LGI	0.9464057248178878	0.8593969151915742	0.9865823070337683	91	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_whole_LGI	0.9464057248178878	0.8487302625971886	0.9860253603642574	91	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_whole_LGI	0.9466571468457213	0.8485000760481237	0.9860461781077625	89	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_whole_LGI	0.9747013674898453	0.929353548172498	0.9871102050061875	84	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_inside	0.45376661160005693	0.21317421113315219	0.6939118062569667	64	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_inside	0.45376661160005693	0.23067470918997016	0.6766516771803083	64	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_inside	0.45376661160005693	0.19978720866847202	0.7014853522019532	64	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_inside	0.474485516943781	0.2354502794225015	0.7033753578001744	63	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_inside	0.44641246049283634	0.14118572497512785	0.7003363264116624	62	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outside	0.8433491181186821	-0.028066263356010666	0.9692028080955992	29	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outside	0.8443381046520079	0.032707693921920314	0.9729581633261606	27	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outside	0.8443381046520079	0.032757435715963	0.9722147539123945	27	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outside	0.8433266939011983	0.06396400362672941	0.9720637095553526	26	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outside	0.9740377621103388	-0.032538969890493444	0.9885305906275393	22	TWISST q3 is the unrooted split pairing L10 mat-A with N. hispaniola in trees also containing N. crassa; N. discreta is absent.
+genealogy_outgroup_callability_ge_0.80	0.9475452438381203	NA	NA	84	Descriptive subset filter based on source-window N. discreta callability averaged into physical bins.
+genealogy_outgroup_callability_ge_0.90	0.9665730477784809	NA	NA	48	Descriptive subset filter based on source-window N. discreta callability averaged into physical bins.
+genealogy_outgroup_callability_ge_0.95	0.6348184738647376	NA	NA	6	Descriptive subset filter based on source-window N. discreta callability averaged into physical bins.
+genealogy_region_centered	0.7853531353633806	0.5740599713304767	0.9160184908527086	93	D and q3 each centered within focal/complement classes; 500-kb moving-block bootstrap. TWISST tree lacks N. discreta.
+raw_scalar_site_validation_n	265	NA	NA	54	All ABBA/BABA contributions and status labels exactly match independent scalar counter.
