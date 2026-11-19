@@ -3163,3 +3163,28 @@ representative sensitivity, raw alignment re-decoding, a fitted finite-sites
 null, an exact GalGal4/GalGal6 crosswalk, and causal/mechanistic interpretation
 remain unresolved. The pre-existing deletion of four files under
 `results/recheck_20261108/` was preserved; no commit or push was made.
+## Joint genomic tracks — Atlantic cod f_dM component — 2026-11-18
+
+Added the shared `analysis/joint_genomic_tracks/fdm.py` estimator and tests, and
+an additive Atlantic cod f_dM scan under
+`empirical/atlantic_cod/analysis/joint_genomic_tracks/`. The scan uses frozen
+quartet IDs, exact SNAPP source VCFs, existing 250-kb tree windows, and frozen
+region limits. The 421 matched-window Patterson's D checks pass (maximum
+absolute difference 4.97e-11). Inside f_dM is +0.423 (LG01), +0.322 (LG02),
+−0.357 (LG07), and +0.369 (LG12); all four outside 95% physical-block
+jackknife intervals include zero. Signs depend on quartet ordering and do not
+establish a unique mechanism. Figure tracks show observed windows without
+connecting gaps. Variant-only sources do not support unbiased per-base
+`d_XY`, `pi`, or `F_ST`.
+
+The Anopheles 2La f_dM input audit found no local genotype calls. Prior
+aggregated Patterson's D cannot recover f_dM, and the attempted Ag3.10 cloud
+access was blocked by DNS resolution failure. No Anopheles estimate was
+fabricated; this is recorded under
+`empirical/anopheles_2la/analysis/joint_genomic_tracks/results/access_status.md`.
+**Phase 1 remains open** until the frozen Ag3.10 genotype calls can be accessed
+and scanned. Phases 2–4 have not been started. The cod component's seven
+estimator unit tests pass; the 421-window D regression check passes. The
+repository-wide `git diff --check` reports whitespace in the pre-existing
+Moran-theory `target_fits.tsv`, outside this component. Dsuite binary
+validation remains unavailable because the executable is not installed.
