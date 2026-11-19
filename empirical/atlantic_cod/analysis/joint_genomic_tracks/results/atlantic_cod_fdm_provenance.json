@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "estimator": "Dsuite Dinvestigate f_dM site terms; fixed-outgroup polarization",
+  "window_bp": 250000,
+  "jackknife_block_bp": 500000,
+  "sample_design": "empirical/atlantic_cod/analysis/patterson_d/config/frozen_quartets.tsv",
+  "window_inventory": "data/atlantic_cod/processed/cod_window_trees.tsv",
+  "sources": [
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_outside_supergenes_snapp.vcf.gz",
+      "sha256": "b774fab1b2a55a1a22a4cda7268abb874ae24db351ebc2e173159e2d3f683657"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg01_snapp.vcf.gz",
+      "sha256": "f529a8b10a2187e0f2ccb142594bd77d95651e350368c999eb08e1a2df8596ea"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg02_snapp.vcf.gz",
+      "sha256": "eb184fc207092e4c187744dafb96982f1bd12452b8029974262891903838189d"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg07_snapp.vcf.gz",
+      "sha256": "3b4671e66b3374771efd8407656a0d833ef212536cd8efc0c9206a85e31b4b78"
+    },
+    {
+      "path": "data/atlantic_cod/raw/zenodo/local_downloads/gadus_morhua_supergenes_lg12_snapp.vcf.gz",
+      "sha256": "3d9b8f62cd3b20e160f67e7d5bba36e8ff645909daeaf7c8fe20b17e47cc35e2"
+    }
+  ],
+  "crosscheck_rows": 421,
+  "crosscheck_failures": 0,
+  "max_abs_D_difference": 4.9624054865304856e-11,
+  "dsuite_executable_validation": "not_run; Dsuite CLI is not installed. Piecewise terms tested against official Dsuite/D.cpp source transcription."
+}
