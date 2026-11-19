@@ -1,0 +1,2 @@
+n_matched	n_exact_matches	mean_absolute_difference	median_absolute_difference	max_absolute_difference	interpretation
+15808	0	0.03055847259138764	0.02161598916464752	0.4475879898561531	Non-regression is expected where legacy code treated any allele index >1 as multiallelic; corrected analysis counts observed nucleotide states at each site. Frozen result file is preserved.

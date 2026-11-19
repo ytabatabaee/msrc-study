@@ -1,0 +1,7 @@
+# Anopheles 2La figure notes
+
+The separate figures show corrected, allele-state-aware Patterson's D and sitewise f_dM for the primary A_merus and B_merus quartet designs; corresponding sensitivity figures show the remaining six designs. f_dM and Patterson's D are separate statistics. `D_topology` in the integrated figure is the gene-tree topology contrast and is not Patterson's D.
+
+Within-group pi, pairwise dXY, and Hudson F_ST use Ag3.10 all-site genotypes at non-N reference positions passing the `gamb_colu` accessibility filter. The diversity figures suppress windows with fewer than 25,000 callable sites (half the physical window) to avoid displaying unstable estimates; those raw values remain in the per-window TSV and are flagged in `results/anopheles_2la_low_callability_windows.tsv`. This plot threshold does not remove their callable sites from the pooled inside/outside estimates. Each point is an observed 50-kb window; lines connect only adjacent retained grid windows and are broken across low-callability or missing topology windows. Shading marks the 2La inversion interval, 20,524,058–42,165,532 bp.
+
+The integrated genealogy tracks are q_species, q_arrangement, q_third, `D_topology`, mean internal branch length, and tree diameter from the existing Stage-2R/Stage-12 analyses. Population-genetic tracks include corrected Patterson's D, f_dM, pi for G_s/G_i/C_s/C_i, dXY, and Hudson F_ST for the primary within-species comparisons. Blank genealogy values indicate windows absent from the existing genealogy result; no values are interpolated.
