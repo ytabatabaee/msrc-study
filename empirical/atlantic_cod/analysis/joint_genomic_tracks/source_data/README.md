@@ -1,0 +1,9 @@
+# Published Atlantic cod F_ST and d_XY source data
+
+`41559_2022_1661_MOESM10_ESM_source_data_EDFig3.txt` is the numerical source data for Extended Data Figure 3 of Matschiner et al. (2022), retrieved from the publisher's Springer static-content endpoint. DOI: https://doi.org/10.1038/s41559-022-01661-x. The original file is preserved byte-for-byte under `data/atlantic_cod/raw/nature_source_data/`.
+
+The table has separate gadMor2 and gadMor3 sections. This analysis uses gadMor2 coordinates, which are the assembly used by the local cod window table. Each section reports 250-kb sliding-window centers at 125-kb offsets. The published source data do not declare interval endpoints, so intervals are interpreted as center ±125 kb and matched by midpoint to local nonoverlapping 250-kb windows. Matching the centers does not establish that the underlying SNP filters or effective callable bases match.
+
+The source columns are preserved verbatim in the extracted table. In the authors' released analysis code, `f_st` is Weir-Cockerham F_ST on filtered biallelic SNPs. `d_xy*` is the summed cross-population mismatch divided by the 250-kb physical window; the VCF input was SNP-only and globally polymorphic after `bcftools view --types snps` plus AC/AN filtering, so this is SNP-ascertained and is not equivalent to unbiased all-sites per-base d_XY. `d_xy**` divides by the retained SNP record count. `pi` similarly uses the SNP-only alignment denominator and must not be labeled per-base diversity. The original input explicitly filtered to SNPs and removed variants invariant across the union of both groups.
+
+The population groups are the authors' arrangement-oriented groups and vary by linkage group. They are not the frozen Patterson's D quartets. See the per-LG sample definitions in the authors' `get_window_stats.sh` at https://github.com/mmatschiner/supergenes/tree/main/revision_analyses/src.
