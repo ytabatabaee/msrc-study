@@ -31,23 +31,31 @@ def main():
  write(RES/'atlantic_cod_fdm_D_crosscheck.tsv',cross)
  fails=sum(r['status'] not in ('PASS','BOTH_UNDEFINED') for r in cross)
  summaries=read(RES/'atlantic_cod_fdm_regions.tsv');window_rows=new
- # Track figure: each panel is a separate LG; two statistic tracks use separate axes.
+ # Separate track figures use one statistic and one y-axis per panel.
  FIG.mkdir(parents=True,exist_ok=True);plt.rcParams.update({'font.size':9,'axes.spines.top':False})
- fig,axs=plt.subplots(4,1,figsize=(11,9),sharex=False,constrained_layout=True)
  colors={'D':'#31688e','fdm':'#d1495b'}
  region={r['lg']:(int(r['start']),int(r['end'])) for r in read(ROOT/'data/atlantic_cod/metadata/region_manifest.tsv')}
- for ax,lg in zip(axs,['LG01','LG02','LG07','LG12']):
-  rr=sorted([r for r in window_rows if r['lg']==lg],key=lambda r:int(r['window_start']))
-  x=[(int(r['window_start'])+int(r['window_end']))/2/1e6 for r in rr]
-  d=[float(r['D_Patterson']) if r['D_Patterson']!='NA' else float('nan') for r in rr]
-  f=[float(r['f_dM']) if r['f_dM']!='NA' else float('nan') for r in rr]
-  lo,hi=region[lg];ax.axvspan(lo/1e6,hi/1e6,color='#f1c75b',alpha=.2,label='frozen inversion interval')
-  ax.scatter(x,d,s=9,color=colors['D'],label='$D_{Patterson}$')
-  ax.set_ylabel(lg+'\n$D_{Patterson}$',color=colors['D']);ax.tick_params(axis='y',labelcolor=colors['D']);ax.axhline(0,color='0.5',lw=.5)
-  ay=ax.twinx();ay.scatter(x,f,s=9,color=colors['fdm'],label='$f_{dM}$');ay.set_ylabel('$f_{dM}$',color=colors['fdm']);ay.tick_params(axis='y',labelcolor=colors['fdm'])
-  ax.set_xlabel('Linkage-group coordinate (Mb)')
- fig.suptitle('Atlantic cod: distinct window-level nucleotide statistics; unsmoothed observed windows')
- fig.savefig(FIG/'atlantic_cod_fdm_tracks.png',dpi=300);fig.savefig(FIG/'atlantic_cod_fdm_tracks.pdf');fig.savefig(FIG/'atlantic_cod_fdm_tracks.svg');plt.close(fig)
+ for stat_key,stat_label,color,stem in (
+     ('D_Patterson',"Patterson's D",colors['D'],'atlantic_cod_patterson_D_tracks'),
+     ('f_dM','$f_{dM}$',colors['fdm'],'atlantic_cod_fdm_tracks')):
+  fig,axs=plt.subplots(4,1,figsize=(11,9),sharex=False,constrained_layout=True)
+  values=[float(r[stat_key]) for r in window_rows if r[stat_key]!='NA']
+  ylim=max(abs(v) for v in values)*1.05
+  for ax,lg in zip(axs,['LG01','LG02','LG07','LG12']):
+   rr=sorted([r for r in window_rows if r['lg']==lg],key=lambda r:int(r['window_start']))
+   x=[(int(r['window_start'])+int(r['window_end']))/2/1e6 for r in rr]
+   y=[float(r[stat_key]) if r[stat_key]!='NA' else float('nan') for r in rr]
+   lo,hi=region[lg]
+   ax.axvspan(lo/1e6,hi/1e6,color='#f1c75b',alpha=.22)
+   ax.scatter(x,y,s=10,color=color)
+   ax.set_ylim(-ylim,ylim)
+   ax.axhline(0,color='0.45',lw=.7)
+   ax.set_ylabel(f'{lg}\n{stat_label}')
+   ax.set_xlabel('Linkage-group coordinate (Mb)')
+  fig.suptitle(f'Atlantic cod: {stat_label} across 250-kb windows (shading = frozen inversion interval)')
+  for ext,kwargs in (('png',{'dpi':300}),('pdf',{}),('svg',{})):
+   fig.savefig(FIG/f'{stem}.{ext}',**kwargs)
+  plt.close(fig)
  # Inside/outside region estimates, physical-block jackknife.
  fig,ax=plt.subplots(figsize=(9,4.8),constrained_layout=True)
  lgs=['LG01','LG02','LG07','LG12'];cols=['#31688e','#d1495b','#55a868','#8172b3']

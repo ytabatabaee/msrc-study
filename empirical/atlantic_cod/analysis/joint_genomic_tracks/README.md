@@ -20,7 +20,7 @@ The scan filters PASS (or `.`) biallelic single-base records, requires complete
 ingroup calls, and retains sites with a fixed called outgroup. It polarizes
 using that outgroup state. Region summaries pool site numerators and
 denominators, with 500-kb physical-block delete-one jackknife intervals.
-Window tracks show observed windows as points; gaps are left unconnected.
+The window-level Patterson D and f_dM are shown in separate figures, each with one statistic and one y-axis per panel: `figures/atlantic_cod_patterson_D_tracks` and `figures/atlantic_cod_fdm_tracks` (PNG/PDF/SVG). Observed windows are shown as points; gaps are left unconnected. The regional comparison is in `figures/atlantic_cod_fdm_regions` (PNG/PDF/SVG).
 
 ## Results
 
