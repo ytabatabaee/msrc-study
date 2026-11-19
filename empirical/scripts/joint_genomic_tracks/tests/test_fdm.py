@@ -1,5 +1,5 @@
 import unittest
-from analysis.joint_genomic_tracks.fdm import fdm_site,pool_fdm,window_fdm,jackknife_ratio,derived_frequency_from_alt
+from empirical.scripts.joint_genomic_tracks.fdm import fdm_site,pool_fdm,window_fdm,jackknife_ratio,derived_frequency_from_alt
 
 def dsuite_source_reference(p1,p2,p3,po=0.):
     if (p1==p2==p3==0.) or (p1==p2==p3==1.):return 0.,0.

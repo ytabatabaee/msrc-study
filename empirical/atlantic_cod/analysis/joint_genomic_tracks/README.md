@@ -12,8 +12,8 @@ quartet.
 Run from the repository root:
 
 ```sh
-python3 analysis/joint_genomic_tracks/scan_cod_fdm.py
-python3 analysis/joint_genomic_tracks/validate_cod_fdm.py
+python3 empirical/atlantic_cod/analysis/joint_genomic_tracks/scripts/scan_cod_fdm.py
+python3 empirical/atlantic_cod/analysis/joint_genomic_tracks/scripts/validate_cod_fdm.py
 ```
 
 The scan filters PASS (or `.`) biallelic single-base records, requires complete

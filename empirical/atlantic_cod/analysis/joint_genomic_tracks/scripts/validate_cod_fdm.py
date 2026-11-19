@@ -5,7 +5,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[5]
 BASE=ROOT/'empirical/atlantic_cod/analysis/joint_genomic_tracks';RES=BASE/'results';FIG=BASE/'figures'
 def read(p):
  with p.open() as f:return list(csv.DictReader(f,delimiter='\t'))

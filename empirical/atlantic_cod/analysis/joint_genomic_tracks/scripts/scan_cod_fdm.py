@@ -4,11 +4,11 @@ from __future__ import annotations
 import csv,gzip,json,math,sys
 from collections import defaultdict
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parents[5]
 sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ROOT/'empirical/atlantic_cod/analysis/patterson_d/scripts'))
 from patterson_d_core import parse_gt,read_tree_windows,window_id
-from analysis.joint_genomic_tracks.fdm import fdm_site,jackknife_ratio
+from empirical.scripts.joint_genomic_tracks.fdm import fdm_site,jackknife_ratio
 DATA=ROOT/'data/atlantic_cod';AN=ROOT/'empirical/atlantic_cod/analysis/joint_genomic_tracks';RAW=DATA/'raw/zenodo/local_downloads'
 WINDOW=250_000
 TREE_WINDOWS={}

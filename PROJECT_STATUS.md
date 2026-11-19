@@ -3165,7 +3165,7 @@ remain unresolved. The pre-existing deletion of four files under
 `results/recheck_20261108/` was preserved; no commit or push was made.
 ## Joint genomic tracks — Atlantic cod f_dM component — 2026-11-18
 
-Added the shared `analysis/joint_genomic_tracks/fdm.py` estimator and tests, and
+Added the shared `empirical/scripts/joint_genomic_tracks/fdm.py` estimator and tests, and
 an additive Atlantic cod f_dM scan under
 `empirical/atlantic_cod/analysis/joint_genomic_tracks/`. The scan uses frozen
 quartet IDs, exact SNAPP source VCFs, existing 250-kb tree windows, and frozen
