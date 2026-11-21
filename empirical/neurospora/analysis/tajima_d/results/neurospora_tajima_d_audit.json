@@ -1,0 +1,60 @@
+{
+  "geno_records": 2265369,
+  "duplicate_coordinates": 0,
+  "bad_rows": 0,
+  "global_multiallelic_records": 50123,
+  "global_missing_rate": 0.019544582938890886,
+  "missing_by_n": {
+    "0": 1666003,
+    "1": 333958,
+    "4": 33643,
+    "2": 133627,
+    "3": 49366,
+    "5": 25346,
+    "6": 23426
+  },
+  "samples": {
+    "L10_mat_A": [
+      "CJ01",
+      "CJ03",
+      "CJ05",
+      "CJ09",
+      "CJ13",
+      "CJ15",
+      "CJ19",
+      "CJ23"
+    ],
+    "L10_mat_a": [
+      "CJ02",
+      "CJ04",
+      "CJ06",
+      "CJ08",
+      "CJ10",
+      "CJ14",
+      "CJ16",
+      "CJ20",
+      "CJ22",
+      "CJ24"
+    ]
+  },
+  "n_samples": {
+    "L10_resolved_pooled": 18,
+    "L10_mat_A": 8,
+    "L10_mat_a": 10
+  },
+  "maximum_window_end": {
+    "LGI": 9464227,
+    "LGV": 6178433,
+    "LGIV": 5674872,
+    "LGIII": 5012805,
+    "LGII": 4201411,
+    "LGVII": 3980858,
+    "LGVI": 3888339
+  },
+  "n_windows": {
+    "50kb": 772,
+    "100kb": 387,
+    "gene_tree": 45303
+  },
+  "callability": "No invariant records or callable-site mask; per-base pi/theta omitted."
+}
