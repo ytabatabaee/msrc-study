@@ -72,6 +72,24 @@ data/house_mouse_t_complex/processed/stage2/**/*.tre
 data/house_mouse_t_complex/processed/stage2/**/*.map
 !empirical/house_mouse_t_complex/results/stage1_aster/*.log
 
+# Heliconius Dryad inputs are downloaded reproducibly from manifests; keep raw
+# archives and source tree tables out of git.
+data/heliconius/raw/**/*.tsv
+data/heliconius/raw/**/*.zip
+data/heliconius/raw/**/*.xlsx
+data/heliconius/raw/**/*.tar
+data/heliconius/raw/**/*.tar.gz
+
+# Microbotryum Dryad inputs: keep sequence/assembly archives external.
+data/microbotryum/raw/*
+!data/microbotryum/raw/.gitkeep
+data/microbotryum/raw/**/*.fa
+data/microbotryum/raw/**/*.fasta
+data/microbotryum/raw/**/*.gtf
+data/microbotryum/raw/**/*.zip
+data/microbotryum/raw/**/*.tar
+data/microbotryum/raw/**/*.tar.gz
+
 # Large Neoaves Stage 4E ASTER/ASTRAL4 inputs and cluster outputs are prepared
 # locally but remain external to git; manifests/checksums live under results.
 empirical/neoaves_chr4/data/stage4e/*.tre
@@ -296,3 +314,13 @@ __marimo__/
 
 # Preserve small House mouse Stage 1 ASTRAL provenance logs.
 !empirical/house_mouse_t_complex/results/stage1_aster/*.log
+
+# Mai30 quartet-reversal checkpoints are resumable local/cluster artifacts;
+# retain the compact manifests and summaries, but keep compressed histories out
+# of the repository.
+simulations/large_tree/mai30/analysis/origin_placement/validated_100/*/history_*.json.gz
+
+# Fire-ant published VCF payload and optional tabix index (large raw genotype source)
+data/fire_ants_chr16/raw/genotypes/*.vcf.gz
+data/fire_ants_chr16/raw/genotypes/*.vcf.gz.tbi
+data/fire_ants_chr16/raw/genotypes/*.csi

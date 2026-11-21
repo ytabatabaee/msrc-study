@@ -3111,6 +3111,23 @@ The direction persists for transversions (inside D +0.829/+0.852), all-geography
 
 The analysis is restricted to variant sites in four BUSCO genes per window; there is no invariant-site callability, continuous scaffold-to-chromosome SNP liftover, read-level mapping-quality/CNV audit, or GQ/AD sensitivity. The D pattern supports localized asymmetry in shared derived variation concordant with the genealogy result, but does not establish introgression direction or uniquely identify introgression/MSRC. The PNAS 2022 and Stolle 2022 papers propose different supergene source histories; their datasets and tests are not direct replications. Assessment: **CONDITIONAL GO** for a carefully qualified manuscript result. Ten targeted tests pass. Figures A–F were regenerated in PNG, PDF, and SVG. No commit or push was made; unrelated changes and prior fire-ant analyses were preserved.
 
+## Fire-ant inversion structural figure annotations (2026-11-16)
+
+Added versioned chromosome-16 figures with all three Stolle-mapped inversion envelopes aligned to the frozen topology, patristic-distance, and nucleotide-D tracks. The target-axis envelopes are In(16)1 chr16:17,972,919–28,149,888, In(16)2 chr16:16,509,882–17,962,688, and In(16)3 chr16:11,732,910–16,478,110. These come from the Stolle upstream plotting Rmd and its mapping description for Supplementary Fig. 13; Yan's source-axis coordinates are retained in the provenance report but are not overlaid. Stolle's midpoint rules assign 47, 4, and 0 of the 213 windows to In(16)1, In(16)2, and In(16)3, respectively. Primary nucleotide D has informative data in the assigned windows: Q1 has 3,521 informative sites in In(16)1 and 162 in In(16)2; Q2 has 3,356 and 170. In(16)3 is NA for standalone summaries because no window is assigned.
+
+The mapped extents span multiple scaffold placements. The public source lacks the component-placement CSV, and the Rmd's In(16)3 midpoint cutoff differs from the outer envelope endpoint. Figures use hatched outer envelopes and distinguish them from approximate assembled mapped lengths (9.59, 0.84, and 1.20 Mb); they do not depict every base in those envelopes as inverted. Exact analyzed BUSCO-base and individual SNP overlap remain unavailable, so informative counts are assigned to local-tree windows by Stolle's rule. Existing topology, branch-length, region definitions, and nucleotide D result checksums were verified unchanged. Reproduce with `python3 empirical/fire_ants_chr16/scripts/10_add_inversion_annotations.py`; the seven new targeted annotation tests and ten Patterson's D tests pass. The existing Stage-9 helper test suite could not fully run under the repository Python 3.7 environment because it uses `statistics.fmean`, unavailable in that version. No commit or push was made.
+
+
+## House-mouse chr17 Patterson D final validation (2026-11-17)
+
+Completed the first dataset-specific finalization for the house-mouse t-complex. Preserved the frozen D1/D2/D3 definitions and the existing corrected polarization/exact-quartet outputs. Added independent rooted-quartet and phase-feasibility assessments, an independent scalar reference estimator test, manuscript methods/captions/tables, and versioned final chromosome tracks. The corrected full-chromosome D values remain D1 +0.19955, D2 +0.13186, D3 +0.08359; historical fixed-REF-only estimates are marked superseded. Exact matched tree D_topology=q3−q2 remains +0.0785, −0.1613, +0.0705.
+
+The incomplete transversion/callability scan resumed from the 59 complete checkpoints, successfully fetched the six absent 500-kb chunks, verified 65/65 chunk completions, and regenerated pooled outputs. The transversion and call-rate sign/inside-minus-outside contrasts are stable when restricted to exact shared 5-kb tree windows: D1/D2 inversion-union values remain lower than their matched complements; D3 remains modestly higher inside. A separate physical-span table is labeled to prevent conflation with exact tree overlap. A bounded leave-one-out and balanced-subsampling scan was attempted on exact tree windows, but the remote endpoint truncated BGZF at file offset 48,567,409,620 before the pass completed. It produced no sample-level outputs; the blocker is recorded, and no sample-robustness claim is made.
+
+Quartets are correctly rooted with *M. spretus* and all are plausible broad species-history topologies because P1/P2 share a subspecies. They remain exploratory population comparisons because t-carrier selection, geography, within-subspecies structure, and admixture prevent assuming exchangeable P1/P2 populations; D3's three carriers make it especially sample-sensitive. No validated same-animal phased VCF data exist. Nucleotide calls remain unphased diploid and local-tree carrier tips remain reconstructed pseudo-t sequences. Spatial correlations are positive over the full matched span but inversion coverage is irregular; circular-shift results are treated as descriptive, and the sparse collinear complement does not support a strong separate spatial null.
+
+Validation: independent scalar estimator 8 tests passed; existing polarization 7 tests passed; exact quartet scoring 4 tests passed. No commit or push. Current decision: **CONDITIONAL GO** for a carefully qualified population-level allele-sharing result; sample-level influence remains unresolved after a high-offset source truncation, and the result is not t-haplotype-specific evidence. Detailed reports and PNG/PDF/SVG are under `empirical/house_mouse_t_complex/analysis/patterson_d/final_validation/`.
+
 ## Sunflower Stage 0 availability and compatibility audit (2026-11-17)
 
 Audited Todesco et al. (2020) haploblocks against Owens et al. (2023) Helianthus phylogenomics. Verified deposited coordinate-indexed Newicks (3,242 records; 22 tips each; numeric branch lengths), matching archived IQ-TREE `.treefile` files (19,479,575 bytes), and the 11,797-window coordinate/called-base manifest (506,107 bytes). Study B uses the same HA412-HOv2 assembly label as Study A; no liftover is indicated. Transcribed all 37 published haploblock rows. Screening overlap counts for large rounded intervals include 97 trees in ann13.01, 57 in ann05.01, and 25 in ann15.01. The 2020 table reports boundaries to whole-Mbp precision and sometimes disjoint pieces, so counts are provisional. The paper reports 3,267 retained windows, but the public tree file has 3,242; the coordinate manifest has 3,273 windows with ≥2,000 called bases, 31 without a tree. The prose says map suppression was found at 10 blocks, while the 37-row table transcription has 11 `g` flags; both discrepancies are recorded for reconciliation.
@@ -3163,6 +3180,129 @@ representative sensitivity, raw alignment re-decoding, a fitted finite-sites
 null, an exact GalGal4/GalGal6 crosswalk, and causal/mechanistic interpretation
 remain unresolved. The pre-existing deletion of four files under
 `results/recheck_20261108/` was preserved; no commit or push was made.
+
+
+## Neoaves N61 taxon robustness validation — 2026-11-17
+
+Completed the requested N61 ingroup-representative, independent raw-alignment, and exact genealogy sensitivity validation. Ten prespecified ingroup alternatives all retain negative regional ΔD with 1-Mb 95% physical-block jackknife intervals below zero; P1/P2 changes can alter or reverse the outside D baseline. Independent raw re-decoding of 46 stratified loci gave 544 exact ABBA/BABA comparison matches and zero discrepancies; four N62 rows were unavailable owing to missing Pterocles. Whole-chromosome D_site–D_topology correlations are positive across all N61 alternatives; the original r=0.914 is typical. Exact quartet q1 follows the Stiller 363 reference, not independent exact confirmation. N61 recommendation remains CONDITIONAL GO for qualified descriptive wording; mechanism unresolved. Package: `empirical/neoaves_chr4/analysis/patterson_d/final_validation/taxon_robustness/`. No commit/push performed; unrelated working-tree changes preserved.
+## Neurospora L10 Patterson's D final validation — 2026-11-18
+
+Completed an additive validation package under
+`empirical/neurospora/analysis/patterson_d/final_validation/`; the frozen
+primary quartet, estimator, coordinates, and prior results were preserved.
+Independent scalar site counting matched production output exactly in 265
+deterministic comparisons across 54 strata and seven linkage groups. The source
+tree set covers 45,303 windows of exactly 50 SNP rows each; 219 remaining matrix
+rows were audited separately and do not materially change chromosome-level
+estimates.
+
+The LGI 1.5–8.0 Mb D remains +0.871 inside versus +0.446 outside (ΔD +0.425).
+Nearby flanks also have high D, while distant LGI regions approach zero; this
+supports a broad linked regional pattern rather than a signal confined to the
+named interval. The matrix contains filtered variable sites rather than random
+callable bases, so interpretation is conditional on SNP ascertainment. Balanced
+sample subsets preserve the high inside-LGI estimate; outside-LGI estimates are
+more variable at small sample sizes. LGIV is substantially isolate-sensitive.
+The circular-shift p-value is downgraded to descriptive because of chromosome
+wraparound and stationarity assumptions. Published TWISST q3 correlates with
+site D but is not an exact rooted D topology, since local trees lack *N.
+discreta*. Final recommendation: **CONDITIONAL GO** for qualified descriptive
+reporting; do not claim an unbiased genome-wide or causal introgression result.
+
+The package includes four figure sets in PNG/PDF/SVG, methods and captions,
+provenance and ascertainment audits, spatial and genealogy sensitivity tables,
+and reproduction instructions. Existing and new validation suites passed (23
+tests total). The additive note in the parent Patterson's D README points to
+the package. No commit or push was made; unrelated worktree changes were
+preserved.
+
+## Fire-ant chr16 Patterson's D final validation — 2026-11-18
+
+Completed an additive package under
+`empirical/fire_ants_chr16/analysis/patterson_d/final_validation/`. Original
+results, source inputs, frozen Q1/Q2 memberships, inversion annotations, and
+existing figures were preserved. No VCF download was repeated. The frozen
+quartets remain Q1: invicta/macdonaghi SB vs Sb, with richteri Sb and
+*S. saevissima*; Q2: richteri SB vs Sb, with invicta/macdonaghi Sb and the same
+outgroup. The independent chr1–15 background supports the rooted groupings, but
+geography, ancestry, and arrangement-associated selection complicate a simple
+exchangeable D=0 null.
+
+Primary estimates reproduce: Q1 supergene D=+0.8249 (ABBA 1395.49, BABA 133.91,
+3696 informative SNPs) versus chr16A+B D=−0.0035 (1584 sites), ΔD=+0.8284; Q2
+supergene D=+0.8443 (ABBA 1431.84, BABA 120.88, 3540 sites) versus chr16A+B
+D=−0.0192 (1312 sites), ΔD=+0.8635. Chr1 controls are near zero. Existing
+transversion, geographic, and outgroup-geography sensitivities preserve the
+primary direction.
+
+A single optimized stream of the local VCF evaluated DP 8/10/12/15 crossed with
+ingroup call fractions 50/60/70/80%, with per-window results and 250-kb
+physical-block bootstrap intervals. For DP≤12 and call fractions≤70%, Q1
+supergene D ranges +0.818 to +0.826 and Q2 +0.837 to +0.847, with thousands of
+informative sites; ΔD remains positive and block-bootstrap intervals exclude
+zero. The strict DP15/80% comparison remains inconclusive: Q1 has zero
+informative supergene SNPs, Q2 has two, and neither has comparison-region
+information. At DP15/80%, only 61 Q1 and 222 Q2 of 91,927 biallelic supergene
+records pass ingroup callability; 47 and 194 then pass outgroup fixation.
+Variant-site call rates are lowest in Q1 P2 and Q2 P3 (about 0.795). Do not call
+this strict filter a robustness pass.
+
+Delete-one-window supergene D ranges +0.812 to +0.831 (Q1) and +0.837 to +0.851
+(Q2), so no single author window dominates the pooled effect. Per-gene
+influence, matched-information subsampling, and individual leave-one-out were
+not retained in the original scanner and remain OPEN blockers; no claim that a
+gene or sample cannot dominate is made. GT:DP allows variant-site callability
+and depth-threshold diagnostics, but no GQ, allele depth, BAM/CRAM/FASTQ, or read
+mapping metrics are available. Reference-mapping bias and copy-number effects
+are not testable and are not ruled out.
+
+The coordinate audit finds 37 overlapping gene-interval pairs, 10 crossing
+author-window boundaries. Within-window hits are collapsed; cross-window
+assignments follow the frozen analysis rule, but their effect on regional pooled
+totals was not separately quantified.
+
+On the Stolle source midpoint rule, In(16)1 has 47 assigned nucleotide windows
+and D=+0.8247 (Q1), +0.8430 (Q2); In(16)2 has four windows and D=+0.8528,
++0.8825 (descriptive only); In(16)3 has zero windows and no nucleotide estimate.
+Exact SNP-base inversion overlap remains unavailable because no continuous
+scaffold-to-chromosome lift exists. Existing physical-block uncertainty is
+retained; the circular-shift p=0.0208 is descriptive because rotations do not
+preserve physical spacing or gene density.
+
+Exact induced quartet topology remains matched to the frozen groups. D_site vs
+D_topology correlations are r=+0.838/+0.762 across chr16 and +0.544/+0.466
+within the supergene (Q1/Q2); the within-supergene 1-Mb block intervals are
++0.158 to +0.752 and +0.249 to +0.668. Group-mean tree branch-distance
+contrasts have much weaker within-supergene correspondence (r=+0.178/+0.132),
+so topology-frequency shifts should not be described as proportional branch
+length shifts. These site and tree results arise from related selected BUSCO
+loci and are not independent replication.
+
+Decision: **CONDITIONAL GO** for a narrowly described BUSCO-window-level
+allele-sharing asymmetry concordant with local genealogy. H1–H3 have descriptive
+support; H4 remains incomplete due to individual/gene leverage and read-level
+bias controls; H5, a unique introgression/MSRC mechanism, is not established.
+Use “regions of suppressed recombination”; causal order remains open. The
+package includes reproducible analyses, tests, methods/captions, audit tables,
+and four PNG/PDF/SVG figures. Next steps are individual LOO and gene-level
+influence from genotype calls if a further VCF scan is warranted, plus read-level
+mapping/copy-number checks if underlying alignments become available. No commit
+or push was made; unrelated working-tree changes remain untouched.
+
+
+## Anopheles 2La Patterson's D final validation — 2026-11-18
+
+Created the additive validation package at `empirical/anopheles_2la/analysis/patterson_d/final_validation/`. The original frozen designs, full-scan results, source tables, and unrelated worktree changes were preserved. The stale workflow README statement that the full scan had not been submitted is now explicitly superseded by an additive completion-status note; historical provenance remains.
+
+The completed scan has 988 windows and 15,808 design/filter rows. Existing scalar validation (four windows, 24 design/filter comparisons) agrees to 8.53e-14 maximum absolute difference. New saved-output derivations reproduce region summaries and add flank separation, physical-block estimates, top-contribution removal, low-callability-decile removal, inversion-coordinate quartiles, paired MAC comparison, and variant-site callability summaries. Four figure sets are produced in PNG/PDF/SVG. Nucleotide D remains strongly shifted inside 2La, near zero outside, and orientation dependent (A negative, B positive); this is robust to retained spatial checks and the melas sensitivity but not yet validated against individual sample influence.
+
+The analysis does not establish an exact matched genealogy comparison: Stage 2R uses a different species/arrangement-haplotype quartet. Nor does it uniquely support MSRC over introgression, ancestral structure, ILS, or selection-linked history. Geography is confounded with frozen arrangement sampling. Individual LOO, balanced resampling, and geography sensitivity require raw Ag3.10 genotype-level recomputation; no such approximation was made because the ordinary validation interpreter lacked importable `malariagen_data`. Read-level mapping quality, allele depth, and copy-number diagnostics are unavailable in retained tables. Decision: **CONDITIONAL GO**, restricted to a frozen-design-specific, spatially broad nucleotide asymmetry claim with explicit confounding and mechanism limitations.
+
+Reproduction: `python empirical/anopheles_2la/analysis/patterson_d/final_validation/scripts/derive_validation.py`; tests: `python -m pytest -q empirical/anopheles_2la/tests/test_patterson_d.py empirical/anopheles_2la/analysis/patterson_d/final_validation/tests`. This is not a raw genotype rerun. No commit or push was made.
+
+
+Test and reproduction note: all 18 existing/new deterministic assertions passed under Python 3.10 direct invocation (including fixture-dependent assertions with equivalent tempdir/monkeypatch fixtures). `pytest` itself is absent from both installed Python environments, so conventional pytest collection could not run. The saved-table derivation was run twice and produced identical SHA-256 values for the spatial robustness and genealogy correspondence tables.
+
 ## Joint genomic tracks — Atlantic cod f_dM component — 2026-11-18
 
 Added the shared `empirical/scripts/joint_genomic_tracks/fdm.py` estimator and tests, and
@@ -3188,3 +3328,50 @@ estimator unit tests pass; the 421-window D regression check passes. The
 repository-wide `git diff --check` reports whitespace in the pre-existing
 Moran-theory `target_fits.tsv`, outside this component. Dsuite binary
 validation remains unavailable because the executable is not installed.
+
+## Joint genomic tracks update (2026-11-19)
+
+- **Anopheles access preflight:** Ag3.10 access was restored in `.venv-malaria310` using the certifi trust bundle. Metadata and a 10-kb 2L query succeeded; the requested 44 sample IDs and returned ordering were checked. The returned interval contained one record per queried coordinate, including invariant rows. `gamb_colu` filter access succeeded. The caller encodes allele indices per site; indices above 1 correspond to additional alternate alleles and are intentionally excluded by the existing biallelic Patterson's D estimator. Full `f_dM` remains pending; no genome-wide scan was run in this update.
+- **Anopheles dXY/F_ST/pi:** Pending estimator validation and genome-wide calculation.
+- **Atlantic cod source recovery:** Retrieved Matschiner et al. (2022) Extended Data Fig. 3 source data (gadMor2 and gadMor3) and committed the original source file, extraction script, standardized table, and gadMor2 match audit in commit `8733202`. The table contains 442 gadMor2 rows and 496 gadMor3 rows. Of 442 gadMor2 rows, 425 match local tree windows by midpoint; 17 source rows have no matching tree window and remain explicitly unmatched. The source reports SNP-ascertained statistics; `d_xy*` is divided by physical window length after SNP-only/global-polymorphism filtering, `d_xy**` is divided by retained SNP records, and `pi` uses SNP-only records. These are not unbiased all-sites per-base estimates.
+- **Integration, manuscript outputs, full validation:** Pending. This status entry does not imply completion of those phases.
+
+## Window-based F_ST, d_XY and nucleotide-diversity results (2026-11-20)
+
+On 2026-11-21, the window-diversity bundle was moved from the shared folder into `empirical/neurospora/window_diversity/`, `empirical/fire_ants_chr16/window_diversity/`, and `empirical/house_mouse_t_complex/window_diversity/`; the shared folder was removed. Dataset-specific analyses now live in each species directory under `window_diversity/`. The work audited existing files, sample assignments, ploidy, coordinate joins, and available callable information before calculating statistics. Dryad file-stream retrieval for the requested Neurospora all-sites archives and the independent fire-ant 8+8 VCF returned HTTP 403. The outputs below are explicitly conditional on observed SNP panels; they are not per-callable-base diversity estimates.
+
+**Neurospora L10:** Completed a verified 8 mat-A / 10 mat-a haploid sample comparison from the local 22-CJ genotype panel; unresolved CJ07/CJ11/CJ12/CJ18 were excluded. Computed Hudson FST, dXY and within-group pi over 44,986 matched tree windows, using complete observed variable SNPs; 317 windows have no complete panel site. Inside LGI 1.5–8 Mb versus outside differences per observed SNP: FST +0.8053 (95% 100-kb block interval +0.7184 to +0.9875), dXY +0.2326 (+0.2018 to +0.2742), pi(mat-A) −0.05774 (−0.06722 to −0.03834), pi(mat-a) −0.05894 (−0.06922 to −0.03906). Descriptive joins/correlations to B(w) and q1/q2/q3 are saved; manuscript-defined arrangement A(w) is not available for this mating-type design. The requested all-sites VCF and 2509-reference consensus coordinate lift remain open.
+
+**Fire ants:** Completed an *S. invicta*-only Argentine male comparison (78 SB, 30 Sb) using the existing VCF and mapped BUSCO gene intervals for all 96 local chr16 tree windows. Calls require homozygous GT, DP≥3 and at least 80% called samples per group. The analysis retains 141,185 SNP observations. The upstream pipeline identifies 52 `chr16nr` windows as the nonrecombining supergene and 44 `chr16r` windows as recombining background. Corrected chr16nr-minus-chr16r differences per observed SNP: Hudson FST +0.5420 (95% 1-Mb block interval +0.4114 to +0.5932), dXY +0.02207 (+0.01648 to +0.03191), pi_SB −0.00362 (−0.00472 to +0.00469), pi_Sb −0.01334 (−0.01430 to −0.00510). The differentiation direction is MSRC-consistent, but these remain gene-body SNP-panel results; callable-base lengths, read-level quality checks and the independent 8+8 study design remain open. Joins/correlations to existing A-distance, B-like pair distances and quartet-support tracks are saved.
+
+**House mouse:** Completed indexed analysis of all 4,046 matched 5-kb mm10/GRCm38 chr17 tree windows using separate within-subspecies designs: Mmd 4 t/12 standard, Mmm 8/13, Mmc 3/7. Heterozygous carriers contribute a t allele only where one allele is uniquely absent from same-subspecies standard chromosomes; ambiguous/missing carrier calls are masked. The matched tree scan retains 0.92–0.98 million window/SNP observations per design, with about 4.9%, 6.3%, and 8.8% of carrier call opportunities ambiguous/missing. The full indexed AllMouse PASS VCF was also scanned across chr17 [0, 94,987,271) in 18,998 5-kb windows, with 5,086,154 biallelic PASS SNP records. The full-chromosome figure marks all four inversion intervals and indicates the local-tree span (5.0–37.055 Mb). Inversion-union-minus-outside-chr17 FST differences are +0.482 (Mmd; 95% 500-kb block interval +0.411 to +0.537), +0.571 (Mmm; +0.490 to +0.608), and +0.440 (Mmc; +0.402 to +0.467); dXY differences are +0.055 (+0.041 to +0.071), +0.087 (+0.074 to +0.097), and +0.031 (+0.022 to +0.041). Reconstructed t-haplotype pi is lower within inversions for all three comparisons; standard pi is mixed. Added a four-panel inversion-inside/outside mean bar figure with 95% intervals from 10,000 500-kb-block resamples. These remain exploratory SNP-ascertained, per-observed-SNP summaries; the PASS VCF's missing positions are not callable invariant bases, and the effect magnitudes cannot be treated as per-nucleotide rates. The figure and bar plot retain their SNP-conditioned labels. An audit confirmed that all 47 frozen P1/P2 individuals have indexed public gVCF references and that reference blocks include diploid GT/DP/GQ/MIN_DP on mm10 chr17. But low-concurrency multi-sample range retrieval failed on `CR46.all.vcf.gz` (BGZF offset 8,170,095,228; truncated-file read and network close timeout); no complete common mask or per-callable-base recalculation was produced. This is an external large-file transport/retrieval blocker, not absence of public call data. Audit and next-step requirements are in `empirical/house_mouse_t_complex/window_diversity/results/mouse_callable_site_audit.md`. The earlier SNP-only values and qualitative direction are unchanged; their per-callable-base magnitude and biological precision remain unknown. Local genealogy joins/correlations remain unavailable outside the tree span.
+
+All three datasets have separate methods/results reports, per-window tables, spatial block intervals, joins to available A(w)/B(w)/quartet tracks, and figures. No tests were run for implementation validation, no commit or push was made, and unrelated working-tree changes were preserved. Next steps: stage and checksum the selected chr17 gVCF slices locally with retryable low-concurrency downloads, reconcile gVCF sample headers/reference blocks/variants against the PASS panel, and compute per-design callability denominators; then obtain/reconcile Dryad L10 all-sites files and the independent fire-ant 8+8 source and repeat callable-base estimates and geographic/read-level sensitivity analyses before treating any SNP-panel magnitude as a manuscript estimate.
+
+## Pairwise MSRC coalescence expectations and Anopheles 2La comparison (2026-11-21)
+
+Added `simulations/pairwise_msrc/` as a theory-to-data module. Audited the existing `msrc-sim` structured coalescent, Moran/Wright–Fisher history generators, conditional-topology analyses, direct genealogy-time outputs, and mathematical-model note. The legacy single-locus model already simulates genealogy events but had no conditional AA/AB/BB expected-time operator. The new exact piecewise-constant matrix-exponential calculator preserves frequency-dependent coalescence rates, effective backward background switching, finite-copy frequency floor, finite structured-origin boundary, and ordinary ancestral MSC after label removal. The linked-genealogy SMC extension remains unfinished and is explicitly distinguished from this single-locus analysis. Derivation and assumptions are in `simulations/pairwise_msrc/derivation.md`.
+
+Eight numerical unit tests pass. Exact means agree with direct pair-event simulations from the authoritative `msrc-sim` generator within Monte Carlo uncertainty. A separate 12-cell Moran/Wright–Fisher neutral/selected history validation used 100 independent histories/cell and one genealogy per initial pair class/history; history-paired difference intervals include zero in 35/36 comparisons. A fixed-frequency sensitivity grid spanning p, normalized switching, duration, and structured-to-ancestral Ne ratios showed R decreasing with increasing switching in every tested combination. A descriptive moment-distance comparison found similarly scaled regimes that reproduce the joint within-diversity/dXY pattern, but multiple parameter combinations fit and the unequal within-group signal is not fully captured. This grid result is not a general monotonicity theorem or a fitted biological parameter set.
+
+The Anopheles 2La analysis reuses matched-callable-site AgamP4 50-kb tracks; pairwise dXY and Hudson FST denominators match, and pair-specific pi_X and pi_Y are taken from the same eligible sites. Estimates include callable invariant positions. The region 2L:20,524,058–42,165,532 (1-based inclusive) has 432 windows; 554 outside windows are used and two boundary-overlap windows are excluded. Gambiae inside/outside Δ is 0.008940 (95% 500-kb block interval 0.008318–0.009587) versus 0.000363 (0.000302–0.000423), with R 1.5867 versus 1.0264. Coluzzii Δ is 0.010435 (0.009833–0.011081) versus 0.000719 (0.000662–0.000776), with R 1.7688 versus 1.0566. Within-background pi also rises inside 2La (about +5–13% across populations), while dXY rises about 71–79%. Spatial correlations to existing A-distance, q_arrangement, and tree-diversity tracks are saved; local tree metrics are NJ/substitution or topology quantities, not calibrated pairwise coalescence times. Inside/outside sampling fractions are not used as natural p(t), cM/Mb is not equated to effective rho, and outside 2La is not assumed panmictic.
+
+Identifiability remains limited: mutation and time scale are confounded in absolute diversity; R constrains only a ratio of dependent pair-time means; Ne, rho, tau, and p(t) are not uniquely estimable from these regional summaries. Thus a joint parameter set explaining within diversity, between divergence, and calibrated local genealogies has not yet been established. Fire-ant, house-mouse, and Neurospora absolute per-base comparisons remain blocked by unavailable/failed callable invariant-site masks; their SNP-panel statistics are not used as absolute rates. Atlantic cod SNAPP population-tree divergences are not pairwise gene-lineage coalescence times. Details and next steps are in `simulations/pairwise_msrc/results/theory_to_data_report.md`.
+
+Outputs include reproducible numerical code, eight tests, direct simulation validation, parameter grid, matched Anopheles per-window Δ/R tracks, spatial block regional and contrast estimates, joins to frozen genealogy windows, inside/outside-stratified correlation estimates, and PDF/PNG sensitivity and Anopheles track figures. Frozen empirical source analyses were not edited. No commit or push was made. Next steps are demographic/geographic-null model adequacy analysis for Anopheles, obtaining calibrated genealogical-time information, and only revisiting absolute estimates in other species after callable masks pass their source audits.
+
+
+## Neurospora L10 ASTRAL region-bias analysis (2026-11-21)
+
+- Completed the local data/taxon/software audit and 18 ASTRAL-IV/CASTLES-II analyses under `empirical/neurospora/analysis/astral_bias/`.
+- Input set: 45,303 aligned coordinate/tree records; 32,472 valid trees and 12,831 missing trees; 26 tips per gene tree. Focal LGI interval is midpoint 1.5–8.0 Mb on the study/2509 coordinate axis (5,767 valid trees); region-excluded set has 26,705. Checksums and exact mappings are preserved in the input manifest.
+- Species-level (26 tips grouped into four actual species) and background-lineage (18 mating-type-resolved CJ isolates grouped into L10 mat-A/mat-a plus four other lineages) analyses completed. Four unresolved CJ backgrounds were excluded only from the lineage analysis. Two matched A/a isolate-pair sensitivity designs were also run.
+- All versus region-excluded ASTRAL topology is unchanged in the primary analyses and both paired sensitivities (unrooted RF = 0). The L10 mat-A/mat-a CU branch changes by +0.170489 CU (region-excluded minus all); its CASTLES-II SU/site estimate changes by −0.0246822. Matched-pair CU changes are +0.233453 and +0.159413; SU changes differ in sign. The species split N. crassa + N. hispaniola shifts +0.028311 CU and +0.0146428 SU/site.
+- Independent SU-mode reruns exactly matched the SU annotations from CU-mode runs (maximum absolute difference 0). SU values remain model-based because the input PhyML gene trees use 50-variable-site windows.
+- Report, branch/topology tables, run logs, output trees and figure artifacts are in the analysis directory. Twenty-replicate 250-kb block bootstraps preserved the primary topologies in every replicate; the lineage L10 A/a branch CU contrast was +0.1784 median (95% percentile range +0.1118 to +0.2321), and SU contrast −0.0200 (−0.0442 to −0.00994). Twenty matched outside-region removals per design dropped a mean 5,876–5,884 windows. The L10 A/a CU and SU shifts exceeded every matched-removal replicate in absolute magnitude (plus-one empirical p=1/21=0.0476; coarse resolution). Results support branch-length sensitivity beyond the tested random deletions, while limited replicate count and one block width constrain precision. No causal claim about recombination suppression is made. Next: test block-width and boundary sensitivity.
+
+## Tajima's D empirical audit (2026-11-21)
+
+Added a reusable classical Tajima's D implementation, unit tests, pegas cross-check, a repository-wide dataset feasibility inventory, and Neurospora L10 population SFS calculations. Neurospora uses 18 independently assigned haploid CJ isolates (mat-A 8, mat-a 10; four unresolved excluded) and variable-site-only matrix records; D is explicitly SNP-panel conditional and per-callable-base pi/theta are omitted. On LGI 1.5–8 Mb, 50-kb pooled D is 3.316 inside versus 1.536 outside (difference +1.780; 100-kb block interval +1.417 to +2.114); mat-A difference is -0.808, mat-a -1.058, and descriptive pooled-minus-background-average D contrast difference is +2.714 (block interval +2.223 to +3.162). Results and limits are in `empirical/analysis/tajimas_d/results/analysis_report.md`; per-window TSVs and figure are in `empirical/neurospora/analysis/tajima_d/`.
+
+Inventory classifies Anopheles as partial (validated callability exists, but no same-locality homozygote arrangement pair), cod as partial (2–3 diploid individuals/population, population-level arrangement labels and unverified SNP ascertainment), fire ants as partial (local SNP VCF but no new fixed-sample per-window scan completed), mouse as recoverable but blocked (no usable local individual gVCF calls; do not substitute carrier heterozygotes as pure haplotypes), and phylogenomic-only taxa as not estimable. Full classifications and next steps are in the feasibility TSV. No raw-read downloads were initiated. Seven estimator tests pass; no commit or push was made.
