@@ -1,0 +1,62 @@
+{
+  "analysis": "Atlantic cod ingroup root-MRCA times",
+  "bootstrap": "circular moving-block bootstrap within contiguous inside/outside runs",
+  "bootstrap_reps": 5000,
+  "coordinate_assembly": "gadMor2; window and supergene coordinates use the same reference frame",
+  "ingroup_tips": [
+    "Gadmor_avc_spc",
+    "Gadmor_avo_spc",
+    "Gadmor_bat_spc",
+    "Gadmor_bor_spc",
+    "Gadmor_icc_spc",
+    "Gadmor_ico_spc",
+    "Gadmor_kie_spc",
+    "Gadmor_lfc_spc",
+    "Gadmor_lfo_spc",
+    "Gadmor_low_spc",
+    "Gadmor_twc_spc",
+    "Gadmor_two_spc"
+  ],
+  "inputs": {
+    "data/atlantic_cod/metadata/region_manifest.tsv": "97e9fdc4cd294deede0eaf8e333c883d9d41b636e265b78f5e7b0858acf6a408",
+    "data/atlantic_cod/processed/cod_window_trees.tsv": "26ed195ee26cb860ca0885c76d768d427639a4338b74a787d9421498e10dfb0b",
+    "data/atlantic_cod/processed/population_arrangements.tsv": "9fac5545ffce2a7da4845026e5b6ac22dbfbd70e494d695401cd85b702215294",
+    "data/atlantic_cod/processed/stage4a_window_topology_scores.tsv": "3ef09caa4edddd247ad986ff168a4fc86b79d66559293bec51d291ee8cf9328e",
+    "empirical/atlantic_cod/results/stage7_window_divergence_time_signal.tsv": "5f6849175e53c6720cb8dd018f46fe426d1490ab1bf038bc25d9db3d8b6f8dc5"
+  },
+  "invalid_trees": [
+    "LG07_023000001_023250000"
+  ],
+  "n_ingroup_tips": 12,
+  "outgroups_in_source_trees": [
+    "none"
+  ],
+  "outputs": [
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_tree_validation.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_window_signal.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_inside_outside.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_spatial_test.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_spatial_null.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_block_sensitivity.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_comparison_inside_outside.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_track_correlations.tsv",
+    "empirical/atlantic_cod/results/root_mrca/root_mrca_report.md",
+    "empirical/atlantic_cod/figures/atlantic_cod_root_mrca_tracks_and_distributions.png",
+    "empirical/atlantic_cod/figures/atlantic_cod_root_mrca_tracks_and_distributions.pdf",
+    "empirical/atlantic_cod/figures/atlantic_cod_root_mrca_comparison_tracks.png",
+    "empirical/atlantic_cod/figures/atlantic_cod_root_mrca_comparison_tracks.pdf"
+  ],
+  "primary_block_windows": 8,
+  "root_time_units": "Ma (million years), verified against the published Figure 4 0.5 Myr scale bar and 50,000-year inset branch scale",
+  "rootedness_evidence": "BEAST/SNAPP MCC workflow uses crown/root-age prior; source Newick strings lack explicit [&R] marker",
+  "software": {
+    "biopython": "1.79",
+    "matplotlib": "3.5.2",
+    "numpy": "1.21.2",
+    "python": "3.7.9"
+  },
+  "source_trees": 426,
+  "spatial_test": "exact cyclic shifts on 250-kb full coordinate grid; gaps retained",
+  "ultrametric_tolerance": 1e-07,
+  "valid_trees": 425
+}

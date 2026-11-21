@@ -1,0 +1,21 @@
+# Fire ants — *S. invicta* SNP-panel results complete — data audit
+
+Date: 2026-11-20. Existing MSRC gene-tree coordinates and sample manifests have been audited first. This package now includes clearly labeled SNP-panel analyses where verified genotype calls are available. None of the reported SNP-panel quantities is per callable base: all-sites denominators remain unavailable, so per-callable-nucleotide FST, dXY and pi are not claimed.
+
+## Dataset audit
+
+The local VCF is `data/fire_ants_chr16/raw/genotypes/gt.vcf.gz`, FreeBayes GT/DP calls on the `gng20170922wFex.fa` reference (368 header samples). Existing exact BUSCO gene-to-VCF contig mappings join 96 chr16 local-tree windows, indices 118–213. The independent Dryad study archive (Dryad 10.5061/dryad.js509) describes 16 haploid *S. invicta* males (eight SB, eight Sb), but Dryad file streaming returned HTTP 403 and the archive VCF was not locally retrieved. Instead the analysis uses the local cohort: Q1 primary-Argentina sample assignment intersected with the VCF sample inventory, restricted to *S. invicta* males, gives 78 SB and 30 Sb. Heterozygous GT calls are excluded as inconsistent with haploid male calls. Sites require DP≥3 and ≥80% called samples in each group; mean effective calls are ~76/78 and ~29/30.
+
+The estimates aggregate variants in mapped BUSCO gene bodies per local tree window, rather than all bases in each physical tree-window envelope. The upstream pipeline README identifies `chr16nr` as the nonrecombining supergene and `chr16r` as recombining background. The corrected comparison has 52 `chr16nr` windows and 44 `chr16r` windows; the author-defined BUSCO-window supergene envelope is chr16:11,680,438–27,917,498. There are 141,185 SNP observations across the 96 windows. Corrected inside-minus-outside differences per observed SNP are Hudson FST +0.5420 (95% 1-Mb block interval +0.4114 to +0.5932), dXY +0.02207 (+0.01648 to +0.03191), pi_SB −0.00362 (−0.00472 to +0.00469), and pi_Sb −0.01334 (−0.01430 to −0.00510). This direction is compatible with a simple MSRC prediction, but estimates remain SNP-ascertained gene-body statistics, not per-base values. A first report draft reversed the region codes; the corrected group assignments, contrast table, and track boundary now follow the upstream README. Correlations with existing A-distance, A-relative, B-like pair distance and quartet-support tracks are saved.
+
+See `empirical/fire_ants_chr16/window_diversity/results/sinvicta_chr16_results_report.md`, scripts and results under `fire_ants/`, and the corrected track figure `empirical/fire_ants_chr16/window_diversity/figures/sinvicta_chr16_snp_panel_tracks.{pdf,png}`.
+
+## Estimators and shared limitations
+
+For each SNP panel, `pi = n/(n-1) * (1 - sum(p_k^2))`, `dXY = 1 - sum(p_Xk*p_Yk)`, and Hudson FST is `sum[dXY - (pi_X + pi_Y)/2] / sum[dXY]` over observed SNPs in a window. Per-window pi and dXY are means over retained polymorphic records. Because sources lack invariant callable sequence, these are conditional per-observed-SNP statistics; SNP-only denominators are never presented as callable genome lengths. Window tracks are joined by the existing native tree-window IDs/coordinates. Suppressed-region boundaries are indicated from each system's existing source annotations. Spatial uncertainty uses physical block resampling rather than treating adjacent windows as independent; contrasts remain descriptive and do not replace a spatial-null hypothesis test.
+
+All reproducible scripts, per-window outputs, joined track-correlation tables, dataset-specific reports and figures are in this directory. Next steps are: (1) obtain/reconcile Dryad all-sites L10 data for a verified 10-vs-12 callable-base analysis; (2) recover the published independent fire-ant 8+8 VCF or callable data and validate the local 78-vs-30 cohort result at read level; (3) reconcile mouse gVCF reference blocks across the frozen samples, compute common per-window callable lengths, and repeat geographic sensitivity analyses. Do not describe the present SNP-panel values as absolute nucleotide-diversity estimates.
+
+## Next step
+
+Recover the independent Dryad 8+8 genotype archive and establish a reconciled callable-base mask before presenting per-base estimates.

@@ -1,0 +1,37 @@
+{
+  "source_url": "https://wwwuser.gwdguser.de/~evolbio/evolgen/wildmouse/vcf/AllMouse.vcf_90_recalibrated_snps_raw_indels_reheader_PopSorted.PASS.vcf.gz",
+  "index": "AllMouse.vcf_90_recalibrated_snps_raw_indels_reheader_PopSorted.PASS.vcf.gz.tbi",
+  "samples_total": 67,
+  "chr17_length": 94987271,
+  "windows": 4046,
+  "window_coordinate_axis": "mm10/GRCm38 chr17, 5-kb windows; same axis as existing stage5 tracks",
+  "variant_records_in_tree_span": 1044870,
+  "processed_500kb_chunks": 65,
+  "designs": {
+    "D1_Mmd_t_vs_standard": {
+      "n_t": 4,
+      "n_standard": 12,
+      "ambiguous_or_missing_carrier_calls": 200460,
+      "total_carrier_site_opportunities": 4060068
+    },
+    "D2_Mmm_t_vs_standard": {
+      "n_t": 8,
+      "n_standard": 13,
+      "ambiguous_or_missing_carrier_calls": 497215,
+      "total_carrier_site_opportunities": 7886848
+    },
+    "D3_Mmc_t_vs_standard": {
+      "n_t": 3,
+      "n_standard": 7,
+      "ambiguous_or_missing_carrier_calls": 259606,
+      "total_carrier_site_opportunities": 2966199
+    }
+  },
+  "genotype_call_policy": "PASS biallelic SNPs only; standard diploid calls complete; carrier homozygotes contribute their allele; carrier heterozygotes contribute the unique allele only if absent from all same-subspecies standard chromosomes, otherwise masked",
+  "limitations": [
+    "variant-only VCF; no invariant callable denominator",
+    "sitewise pseudo-t alleles do not resolve phase across loci",
+    "PASS VCF analysis uses GT only; no read-level DP/GQ filters",
+    "standard groups include geographic structure within subspecies"
+  ]
+}

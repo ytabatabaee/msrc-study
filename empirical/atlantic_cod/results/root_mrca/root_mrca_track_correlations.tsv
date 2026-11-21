@@ -1,0 +1,21 @@
+lg	metric	n_windows	pearson_r	spearman_rho	interpretation
+LG01	B(w): mean all-pair MRCA time	109	0.999157639	0.986627745	descriptive_only; linked_windows
+LG01	A(w): opposite minus same arrangement	109	0.999163349	0.911555926	descriptive_only; linked_windows
+LG01	quartet frequency: arrangement	109	0.897700196	0.781240055	descriptive_only; linked_windows
+LG01	quartet frequency: baseline	109	-0.878769618	-0.780355249	descriptive_only; linked_windows
+LG01	quartet frequency: third topology	109	-0.816430403	-0.791308349	descriptive_only; linked_windows
+LG02	B(w): mean all-pair MRCA time	91	0.999088769	0.944449753	descriptive_only; linked_windows
+LG02	A(w): opposite minus same arrangement	91	0.997482802	0.319732441	descriptive_only; linked_windows
+LG02	quartet frequency: arrangement	91	0.751555832	0.602262047	descriptive_only; linked_windows
+LG02	quartet frequency: baseline	91	-0.616115224	-0.562280638	descriptive_only; linked_windows
+LG02	quartet frequency: third topology	91	-0.605230058	-0.566831439	descriptive_only; linked_windows
+LG07	B(w): mean all-pair MRCA time	117	0.999712631	0.95259932	descriptive_only; linked_windows
+LG07	A(w): opposite minus same arrangement	117	0.999051141	0.697537802	descriptive_only; linked_windows
+LG07	quartet frequency: arrangement	117	-0.07991682	-0.0232375979	descriptive_only; linked_windows
+LG07	quartet frequency: baseline	117	-0.0675453927	-0.0597691408	descriptive_only; linked_windows
+LG07	quartet frequency: third topology	117	0.159242581	0.111377233	descriptive_only; linked_windows
+LG12	B(w): mean all-pair MRCA time	104	0.993450926	0.977979302	descriptive_only; linked_windows
+LG12	A(w): opposite minus same arrangement	104	0.993893318	0.822276752	descriptive_only; linked_windows
+LG12	quartet frequency: arrangement	104	0.772742144	0.812675018	descriptive_only; linked_windows
+LG12	quartet frequency: baseline	104	-0.610188948	-0.776929152	descriptive_only; linked_windows
+LG12	quartet frequency: third topology	104	-0.460767958	-0.571175639	descriptive_only; linked_windows

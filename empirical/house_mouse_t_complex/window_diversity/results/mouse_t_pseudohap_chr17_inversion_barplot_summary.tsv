@@ -1,0 +1,25 @@
+design	metric	label	region	n_windows	n_spatial_blocks	mean_window_estimate	block_bootstrap_95_low	block_bootstrap_95_high	block_width_bp	n_bootstrap
+D1_Mmd_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	inversion_union	6026	68	0.55513005	0.50575469	0.61540719	500000	10000
+D1_Mmd_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	outside_inversions	11949	124	0.073439236	0.058219559	0.11820081	500000	10000
+D1_Mmd_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	inversion_union	6071	68	0.1002734	0.08807152	0.1163098	500000	10000
+D1_Mmd_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	outside_inversions	11973	124	0.045087568	0.041579898	0.052044775	500000	10000
+D1_Mmd_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	inversion_union	6071	68	0.02229147	0.017185432	0.026679413	500000	10000
+D1_Mmd_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	outside_inversions	11973	124	0.034977098	0.032169091	0.037255834	500000	10000
+D1_Mmd_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	inversion_union	6071	68	0.034563641	0.029402731	0.037998348	500000	10000
+D1_Mmd_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	outside_inversions	11973	124	0.040389649	0.037968848	0.042187599	500000	10000
+D2_Mmm_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	inversion_union	6115	68	0.62838068	0.57080375	0.67447972	500000	10000
+D2_Mmm_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	outside_inversions	11844	124	0.05763109	0.048870378	0.10293962	500000	10000
+D2_Mmm_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	inversion_union	6143	68	0.13211812	0.12342598	0.14355199	500000	10000
+D2_Mmm_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	outside_inversions	11876	124	0.045209527	0.043070913	0.052673106	500000	10000
+D2_Mmm_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	inversion_union	6143	68	0.026163198	0.023151136	0.032931895	500000	10000
+D2_Mmm_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	outside_inversions	11876	124	0.035473171	0.03360156	0.03721067	500000	10000
+D2_Mmm_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	inversion_union	6143	68	0.04913735	0.043654094	0.056416056	500000	10000
+D2_Mmm_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	outside_inversions	11876	124	0.043841226	0.041559329	0.046078761	500000	10000
+D3_Mmc_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	inversion_union	6143	68	0.53071214	0.50787482	0.55841943	500000	10000
+D3_Mmc_t_vs_standard	Hudson_FST_SNP_panel	Hudson FST	outside_inversions	11957	124	0.090636784	0.079220635	0.12161352	500000	10000
+D3_Mmc_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	inversion_union	6174	68	0.13473068	0.12685494	0.14435967	500000	10000
+D3_Mmc_t_vs_standard	dXY_per_observed_SNP	dXY per observed SNP	outside_inversions	11976	124	0.10395058	0.10055626	0.10827668	500000	10000
+D3_Mmc_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	inversion_union	6174	68	0.027918493	0.026828652	0.029893584	500000	10000
+D3_Mmc_t_vs_standard	pi_t_pseudohap_per_observed_SNP	π t pseudo-haplotype per observed SNP	outside_inversions	11976	124	0.081103605	0.077230726	0.082697554	500000	10000
+D3_Mmc_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	inversion_union	6174	68	0.081427777	0.076586862	0.084051747	500000	10000
+D3_Mmc_t_vs_standard	pi_standard_per_observed_SNP	π standard per observed SNP	outside_inversions	11976	124	0.10280482	0.099165641	0.10440651	500000	10000

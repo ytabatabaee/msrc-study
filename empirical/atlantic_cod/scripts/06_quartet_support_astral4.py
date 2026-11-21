@@ -359,15 +359,17 @@ def plot_local_support(rows: list[dict[str, object]], regions: dict[str, dict[st
     for ax, lg in zip(axes, LGS):
         lgrows = sorted([r for r in rows if r["lg"] == lg], key=lambda r: int(r["midpoint"]))
         x = [int(r["midpoint"]) / 1_000_000 for r in lgrows]
-        ax.axvspan(regions[lg]["start"] / 1_000_000, regions[lg]["end"] / 1_000_000, color="#d9d9d9", alpha=0.65)
+        # Both window positions and the frozen region mask are gadMor2 coordinates.
+        ax.axvspan(regions[lg]["start"] / 1_000_000, regions[lg]["end"] / 1_000_000, color="#d9d9d9", alpha=0.58, label="cod_phylogenomics supergene mask", zorder=0)
         for key in ["q_arrangement", "q_baseline", "q_third"]:
             ax.plot(x, [float(r[key]) for r in lgrows], lw=1.0, marker="o", ms=2, color=colors[key], label=labels[key])
         ax.set_ylim(-0.03, 1.03); ax.set_ylabel(lg)
         ax.axhline(0.5, color="black", lw=0.4, alpha=0.5)
-    axes[0].legend(loc="upper right", fontsize=8, ncol=3)
-    axes[-1].set_xlabel("genomic position (Mb)")
+    axes[0].legend(loc="upper right", fontsize=7.5, ncol=4)
+    axes[-1].set_xlabel("gadMor2 genomic position (Mb)")
     fig.suptitle("Atlantic cod local quartet-support fractions", y=0.995)
-    fig.tight_layout()
+    fig.text(0.5, 0.006, "Gray = frozen cod_phylogenomics supergene masks (gadMor2). LG01 has two adjacent inversions; their gadMor_Celtic breakpoints are not plotted because no reliable lift-over to gadMor2 is available.", ha="center", va="bottom", fontsize=7.1, color="#4d5964")
+    fig.tight_layout(rect=(0, 0.035, 1, 0.98))
     fig.savefig(QUARTET_SUPPORT_FIG_PDF)
     fig.savefig(QUARTET_SUPPORT_FIG_PNG, dpi=300)
     plt.close(fig)
