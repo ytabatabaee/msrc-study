@@ -1,0 +1,61 @@
+design	tree_tip	mapped_taxon	inference_scope
+species_level	1135@999	N_sitophila	species-level
+species_level	2509@6	N_tetrasperma	species-level
+species_level	8817@999	N_hispaniola	species-level
+species_level	CJ01	N_tetrasperma	species-level
+species_level	CJ02	N_tetrasperma	species-level
+species_level	CJ03	N_tetrasperma	species-level
+species_level	CJ04	N_tetrasperma	species-level
+species_level	CJ05	N_tetrasperma	species-level
+species_level	CJ06	N_tetrasperma	species-level
+species_level	CJ07	N_tetrasperma	species-level
+species_level	CJ08	N_tetrasperma	species-level
+species_level	CJ09	N_tetrasperma	species-level
+species_level	CJ10	N_tetrasperma	species-level
+species_level	CJ11	N_tetrasperma	species-level
+species_level	CJ12	N_tetrasperma	species-level
+species_level	CJ13	N_tetrasperma	species-level
+species_level	CJ14	N_tetrasperma	species-level
+species_level	CJ15	N_tetrasperma	species-level
+species_level	CJ16	N_tetrasperma	species-level
+species_level	CJ18	N_tetrasperma	species-level
+species_level	CJ19	N_tetrasperma	species-level
+species_level	CJ20	N_tetrasperma	species-level
+species_level	CJ22	N_tetrasperma	species-level
+species_level	CJ23	N_tetrasperma	species-level
+species_level	CJ24	N_tetrasperma	species-level
+species_level	Ncra@999	N_crassa	species-level
+background_lineage	1135@999	N_sitophila	genetic-lineage/background summary; not a species tree
+background_lineage	2509@6	N_tetrasperma_L6	genetic-lineage/background summary; not a species tree
+background_lineage	8817@999	N_hispaniola	genetic-lineage/background summary; not a species tree
+background_lineage	CJ01	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ02	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ03	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ04	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ05	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ06	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ08	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ09	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ10	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ13	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ14	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ15	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ16	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ19	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ20	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ22	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	CJ23	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_lineage	CJ24	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_lineage	Ncra@999	N_crassa	genetic-lineage/background summary; not a species tree
+background_pair1	1135@999	N_sitophila	genetic-lineage/background summary; not a species tree
+background_pair1	2509@6	N_tetrasperma_L6	genetic-lineage/background summary; not a species tree
+background_pair1	8817@999	N_hispaniola	genetic-lineage/background summary; not a species tree
+background_pair1	CJ03	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_pair1	CJ04	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_pair1	Ncra@999	N_crassa	genetic-lineage/background summary; not a species tree
+background_pair2	1135@999	N_sitophila	genetic-lineage/background summary; not a species tree
+background_pair2	2509@6	N_tetrasperma_L6	genetic-lineage/background summary; not a species tree
+background_pair2	8817@999	N_hispaniola	genetic-lineage/background summary; not a species tree
+background_pair2	CJ15	L10_mat_A	genetic-lineage/background summary; not a species tree
+background_pair2	CJ16	L10_mat_a	genetic-lineage/background summary; not a species tree
+background_pair2	Ncra@999	N_crassa	genetic-lineage/background summary; not a species tree

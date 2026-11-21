@@ -1,0 +1,7 @@
+{
+  "reps": 20,
+  "block_bp": 250000,
+  "seed": 88421,
+  "focal_valid_windows": 5767,
+  "method": "within-scaffold moving-block bootstrap; blocks assigned by midpoint; random outside-block removal until at least focal count; ASTRAL-IV with same mappings and settings"
+}

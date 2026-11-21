@@ -1,0 +1,172 @@
+{
+  "species_level": {
+    "all_splits": [
+      "N_crassa|N_hispaniola"
+    ],
+    "excluded_splits": [
+      "N_crassa|N_hispaniola"
+    ],
+    "all_only": [],
+    "excluded_only": [],
+    "shared_branch_comparisons": [
+      {
+        "split": "N_crassa|N_hispaniola",
+        "delta_CU": 0.028311000000000003,
+        "delta_SU": 0.014642799999999997,
+        "q1_all": 0.446513,
+        "q1_excluded": 0.461967,
+        "q2_all": 0.229387,
+        "q2_excluded": 0.24039,
+        "q3_all": 0.3241,
+        "q3_excluded": 0.297643
+      }
+    ]
+  },
+  "background_lineage": {
+    "all_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "excluded_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "all_only": [],
+    "excluded_only": [],
+    "shared_branch_comparisons": [
+      {
+        "split": "L10_mat_A|L10_mat_a",
+        "delta_CU": 0.170489,
+        "delta_SU": -0.0246822,
+        "q1_all": 0.493741,
+        "q1_excluded": 0.573104,
+        "q2_all": 0.330787,
+        "q2_excluded": 0.221672,
+        "q3_all": 0.175472,
+        "q3_excluded": 0.205223
+      },
+      {
+        "split": "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+        "delta_CU": 0.045684999999999976,
+        "delta_SU": 0.017170999999999992,
+        "q1_all": 0.515243,
+        "q1_excluded": 0.536896,
+        "q2_all": 0.283425,
+        "q2_excluded": 0.24706,
+        "q3_all": 0.201332,
+        "q3_excluded": 0.216044
+      },
+      {
+        "split": "N_crassa|N_hispaniola",
+        "delta_CU": 0.02652099999999999,
+        "delta_SU": 0.013957300000000006,
+        "q1_all": 0.448208,
+        "q1_excluded": 0.462653,
+        "q2_all": 0.321881,
+        "q2_excluded": 0.296873,
+        "q3_all": 0.229911,
+        "q3_excluded": 0.240473
+      }
+    ]
+  },
+  "background_pair1": {
+    "all_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "excluded_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "all_only": [],
+    "excluded_only": [],
+    "shared_branch_comparisons": [
+      {
+        "split": "L10_mat_A|L10_mat_a",
+        "delta_CU": 0.23345300000000002,
+        "delta_SU": -0.007035899999999998,
+        "q1_all": 0.552928,
+        "q1_excluded": 0.646021,
+        "q2_all": 0.27554,
+        "q2_excluded": 0.154316,
+        "q3_all": 0.171532,
+        "q3_excluded": 0.199663
+      },
+      {
+        "split": "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+        "delta_CU": 0.058987999999999985,
+        "delta_SU": 0.01899200000000001,
+        "q1_all": 0.512403,
+        "q1_excluded": 0.540339,
+        "q2_all": 0.286031,
+        "q2_excluded": 0.243035,
+        "q3_all": 0.201566,
+        "q3_excluded": 0.216626
+      },
+      {
+        "split": "N_crassa|N_hispaniola",
+        "delta_CU": 0.01815,
+        "delta_SU": 0.009905999999999998,
+        "q1_all": 0.463733,
+        "q1_excluded": 0.473382,
+        "q2_all": 0.239386,
+        "q2_excluded": 0.247869,
+        "q3_all": 0.296881,
+        "q3_excluded": 0.278749
+      }
+    ]
+  },
+  "background_pair2": {
+    "all_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "excluded_splits": [
+      "L10_mat_A|L10_mat_a",
+      "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+      "N_crassa|N_hispaniola"
+    ],
+    "all_only": [],
+    "excluded_only": [],
+    "shared_branch_comparisons": [
+      {
+        "split": "L10_mat_A|L10_mat_a",
+        "delta_CU": 0.15941300000000003,
+        "delta_SU": 0.019737400000000002,
+        "q1_all": 0.481923,
+        "q1_excluded": 0.558272,
+        "q2_all": 0.292231,
+        "q2_excluded": 0.175036,
+        "q3_all": 0.225846,
+        "q3_excluded": 0.266692
+      },
+      {
+        "split": "L10_mat_A|L10_mat_a|N_tetrasperma_L6",
+        "delta_CU": 0.04833100000000001,
+        "delta_SU": 0.02087,
+        "q1_all": 0.494788,
+        "q1_excluded": 0.518629,
+        "q2_all": 0.302345,
+        "q2_excluded": 0.26379,
+        "q3_all": 0.202867,
+        "q3_excluded": 0.217581
+      },
+      {
+        "split": "N_crassa|N_hispaniola",
+        "delta_CU": 0.012603000000000003,
+        "delta_SU": 0.00891270000000001,
+        "q1_all": 0.4555,
+        "q1_excluded": 0.462323,
+        "q2_all": 0.230527,
+        "q2_excluded": 0.238732,
+        "q3_all": 0.313973,
+        "q3_excluded": 0.298945
+      }
+    ]
+  }
+}

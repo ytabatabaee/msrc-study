@@ -1,0 +1,281 @@
+design	analysis	replicate	condition	block_bp	n_trees	n_removed	target_region_n	split	CU	SU_per_site	delta_CU_vs_all	delta_SU_vs_all	split_in_full_reference
+species_level	bootstrap_branch	0	boot_all	250000	31798			N_crassa|N_hispaniola	0.183441	0.0970377	-0.002586000000000005	0.003675499999999998	True
+species_level	bootstrap_branch	0	boot_excluded	250000	26508			N_crassa|N_hispaniola	0.228407	0.104177	0.04238	0.0108148	True
+species_level	matched_removal	0	outside_blocks_removed	250000	26642	5830	5767				
+species_level	matched_removal_branch	0	outside_blocks_removed	250000	26642	5830	5767	N_crassa|N_hispaniola	0.183672	0.0920719	-0.002354999999999996	-0.001290300000000008	True
+species_level	bootstrap_branch	1	boot_all	250000	33263			N_crassa|N_hispaniola	0.195665	0.0992016	0.009638000000000008	0.005839399999999995	True
+species_level	bootstrap_branch	1	boot_excluded	250000	26642			N_crassa|N_hispaniola	0.238905	0.110974	0.05287800000000001	0.017611799999999997	True
+species_level	matched_removal	1	outside_blocks_removed	250000	26661	5811	5767				
+species_level	matched_removal_branch	1	outside_blocks_removed	250000	26661	5811	5767	N_crassa|N_hispaniola	0.178853	0.0925501	-0.007173999999999986	-0.00081210000000001	True
+species_level	bootstrap_branch	2	boot_all	250000	31841			N_crassa|N_hispaniola	0.202112	0.0913184	0.016085000000000016	-0.0020438000000000123	True
+species_level	bootstrap_branch	2	boot_excluded	250000	27156			N_crassa|N_hispaniola	0.200133	0.106856	0.014106000000000007	0.0134938	True
+species_level	matched_removal	2	outside_blocks_removed	250000	26548	5924	5767				
+species_level	matched_removal_branch	2	outside_blocks_removed	250000	26548	5924	5767	N_crassa|N_hispaniola	0.183806	0.0932382	-0.0022210000000000008	-0.000124000000000013	True
+species_level	bootstrap_branch	3	boot_all	250000	30389			N_crassa|N_hispaniola	0.208566	0.0919893	0.022539000000000003	-0.0013729000000000102	True
+species_level	bootstrap_branch	3	boot_excluded	250000	27047			N_crassa|N_hispaniola	0.234025	0.11626	0.04799800000000001	0.022897799999999996	True
+species_level	matched_removal	3	outside_blocks_removed	250000	26576	5896	5767				
+species_level	matched_removal_branch	3	outside_blocks_removed	250000	26576	5896	5767	N_crassa|N_hispaniola	0.18517	0.087053	-0.0008569999999999967	-0.006309200000000001	True
+species_level	bootstrap_branch	4	boot_all	250000	33022			N_crassa|N_hispaniola	0.170574	0.094525	-0.015452999999999995	0.0011627999999999916	True
+species_level	bootstrap_branch	4	boot_excluded	250000	26807			N_crassa|N_hispaniola	0.195781	0.109322	0.009754000000000013	0.015959799999999996	True
+species_level	matched_removal	4	outside_blocks_removed	250000	26631	5841	5767				
+species_level	matched_removal_branch	4	outside_blocks_removed	250000	26631	5841	5767	N_crassa|N_hispaniola	0.170609	0.0809377	-0.015417999999999987	-0.012424500000000005	True
+species_level	bootstrap_branch	5	boot_all	250000	32122			N_crassa|N_hispaniola	0.165554	0.0999429	-0.02047299999999999	0.006580699999999995	True
+species_level	bootstrap_branch	5	boot_excluded	250000	25219			N_crassa|N_hispaniola	0.195606	0.0952333	0.009579000000000004	0.0018711000000000005	True
+species_level	matched_removal	5	outside_blocks_removed	250000	26440	6032	5767				
+species_level	matched_removal_branch	5	outside_blocks_removed	250000	26440	6032	5767	N_crassa|N_hispaniola	0.192323	0.0912525	0.006295999999999996	-0.002109700000000006	True
+species_level	bootstrap_branch	6	boot_all	250000	32133			N_crassa|N_hispaniola	0.1741	0.0836417	-0.011926999999999993	-0.009720500000000007	True
+species_level	bootstrap_branch	6	boot_excluded	250000	26537			N_crassa|N_hispaniola	0.241893	0.112814	0.055866	0.01945179999999999	True
+species_level	matched_removal	6	outside_blocks_removed	250000	26536	5936	5767				
+species_level	matched_removal_branch	6	outside_blocks_removed	250000	26536	5936	5767	N_crassa|N_hispaniola	0.188053	0.0885417	0.002026	-0.004820500000000005	True
+species_level	bootstrap_branch	7	boot_all	250000	31920			N_crassa|N_hispaniola	0.184473	0.089576	-0.0015539999999999998	-0.0037862000000000035	True
+species_level	bootstrap_branch	7	boot_excluded	250000	26444			N_crassa|N_hispaniola	0.247514	0.122134	0.061487000000000014	0.0287718	True
+species_level	matched_removal	7	outside_blocks_removed	250000	26567	5905	5767				
+species_level	matched_removal_branch	7	outside_blocks_removed	250000	26567	5905	5767	N_crassa|N_hispaniola	0.169848	0.0925373	-0.016179	-0.0008249000000000034	True
+species_level	bootstrap_branch	8	boot_all	250000	34058			N_crassa|N_hispaniola	0.190865	0.0974111	0.004838000000000009	0.004048899999999994	True
+species_level	bootstrap_branch	8	boot_excluded	250000	26412			N_crassa|N_hispaniola	0.230272	0.113413	0.04424500000000001	0.020050799999999994	True
+species_level	matched_removal	8	outside_blocks_removed	250000	26636	5836	5767				
+species_level	matched_removal_branch	8	outside_blocks_removed	250000	26636	5836	5767	N_crassa|N_hispaniola	0.175892	0.0915616	-0.010135000000000005	-0.0018005999999999994	True
+species_level	bootstrap_branch	9	boot_all	250000	33739			N_crassa|N_hispaniola	0.18274	0.0860637	-0.0032869999999999844	-0.007298499999999999	True
+species_level	bootstrap_branch	9	boot_excluded	250000	28389			N_crassa|N_hispaniola	0.213805	0.116577	0.027777999999999997	0.023214799999999994	True
+species_level	matched_removal	9	outside_blocks_removed	250000	26579	5893	5767				
+species_level	matched_removal_branch	9	outside_blocks_removed	250000	26579	5893	5767	N_crassa|N_hispaniola	0.184002	0.0927138	-0.002024999999999999	-0.0006484000000000073	True
+species_level	bootstrap_branch	10	boot_all	250000	33461			N_crassa|N_hispaniola	0.173483	0.0947264	-0.012544	0.001364199999999996	True
+species_level	bootstrap_branch	10	boot_excluded	250000	26392			N_crassa|N_hispaniola	0.210645	0.102103	0.024618	0.008740799999999993	True
+species_level	matched_removal	10	outside_blocks_removed	250000	26689	5783	5767				
+species_level	matched_removal_branch	10	outside_blocks_removed	250000	26689	5783	5767	N_crassa|N_hispaniola	0.168695	0.0873653	-0.017331999999999986	-0.0059968999999999995	True
+species_level	bootstrap_branch	11	boot_all	250000	32362			N_crassa|N_hispaniola	0.169749	0.0897475	-0.016277999999999987	-0.0036147000000000123	True
+species_level	bootstrap_branch	11	boot_excluded	250000	26712			N_crassa|N_hispaniola	0.196935	0.114078	0.010908000000000001	0.020715799999999993	True
+species_level	matched_removal	11	outside_blocks_removed	250000	26574	5898	5767				
+species_level	matched_removal_branch	11	outside_blocks_removed	250000	26574	5898	5767	N_crassa|N_hispaniola	0.176509	0.0898447	-0.009517999999999999	-0.0035175000000000067	True
+species_level	bootstrap_branch	12	boot_all	250000	31960			N_crassa|N_hispaniola	0.188707	0.0974264	0.0026800000000000157	0.00406419999999999	True
+species_level	bootstrap_branch	12	boot_excluded	250000	26171			N_crassa|N_hispaniola	0.216033	0.106232	0.030006000000000005	0.012869799999999987	True
+species_level	matched_removal	12	outside_blocks_removed	250000	26670	5802	5767				
+species_level	matched_removal_branch	12	outside_blocks_removed	250000	26670	5802	5767	N_crassa|N_hispaniola	0.183875	0.0917434	-0.0021519999999999873	-0.0016188000000000036	True
+species_level	bootstrap_branch	13	boot_all	250000	33108			N_crassa|N_hispaniola	0.199113	0.106013	0.013086000000000014	0.01265079999999999	True
+species_level	bootstrap_branch	13	boot_excluded	250000	27274			N_crassa|N_hispaniola	0.207101	0.107643	0.02107400000000001	0.014280799999999996	True
+species_level	matched_removal	13	outside_blocks_removed	250000	26621	5851	5767				
+species_level	matched_removal_branch	13	outside_blocks_removed	250000	26621	5851	5767	N_crassa|N_hispaniola	0.176605	0.0889877	-0.009421999999999986	-0.004374500000000003	True
+species_level	bootstrap_branch	14	boot_all	250000	33448			N_crassa|N_hispaniola	0.192873	0.0938275	0.006845999999999991	0.00046529999999998795	True
+species_level	bootstrap_branch	14	boot_excluded	250000	27649			N_crassa|N_hispaniola	0.212948	0.107352	0.026921	0.013989799999999997	True
+species_level	matched_removal	14	outside_blocks_removed	250000	26583	5889	5767				
+species_level	matched_removal_branch	14	outside_blocks_removed	250000	26583	5889	5767	N_crassa|N_hispaniola	0.197203	0.0936331	0.011175999999999991	0.0002708999999999906	True
+species_level	bootstrap_branch	15	boot_all	250000	32793			N_crassa|N_hispaniola	0.190953	0.0900221	0.004926000000000014	-0.0033401000000000125	True
+species_level	bootstrap_branch	15	boot_excluded	250000	27185			N_crassa|N_hispaniola	0.226085	0.101967	0.04005800000000001	0.008604799999999996	True
+species_level	matched_removal	15	outside_blocks_removed	250000	26692	5780	5767				
+species_level	matched_removal_branch	15	outside_blocks_removed	250000	26692	5780	5767	N_crassa|N_hispaniola	0.186162	0.0943678	0.00013499999999999623	0.0010055999999999954	True
+species_level	bootstrap_branch	16	boot_all	250000	33921			N_crassa|N_hispaniola	0.175401	0.0930578	-0.010625999999999997	-0.0003044000000000102	True
+species_level	bootstrap_branch	16	boot_excluded	250000	26028			N_crassa|N_hispaniola	0.186095	0.110719	6.80000000000125e-05	0.01735679999999999	True
+species_level	matched_removal	16	outside_blocks_removed	250000	26550	5922	5767				
+species_level	matched_removal_branch	16	outside_blocks_removed	250000	26550	5922	5767	N_crassa|N_hispaniola	0.178646	0.0934937	-0.007380999999999999	0.00013149999999999273	True
+species_level	bootstrap_branch	17	boot_all	250000	32665			N_crassa|N_hispaniola	0.199834	0.0968509	0.013807000000000014	0.0034886999999999974	True
+species_level	bootstrap_branch	17	boot_excluded	250000	26211			N_crassa|N_hispaniola	0.217449	0.0973724	0.031422000000000005	0.0040101999999999915	True
+species_level	matched_removal	17	outside_blocks_removed	250000	26517	5955	5767				
+species_level	matched_removal_branch	17	outside_blocks_removed	250000	26517	5955	5767	N_crassa|N_hispaniola	0.175736	0.0854776	-0.010290999999999995	-0.007884600000000005	True
+species_level	bootstrap_branch	18	boot_all	250000	32275			N_crassa|N_hispaniola	0.208132	0.0912022	0.022105000000000014	-0.002160000000000009	True
+species_level	bootstrap_branch	18	boot_excluded	250000	25822			N_crassa|N_hispaniola	0.196722	0.0967102	0.01069500000000001	0.00334799999999999	True
+species_level	matched_removal	18	outside_blocks_removed	250000	26571	5901	5767				
+species_level	matched_removal_branch	18	outside_blocks_removed	250000	26571	5901	5767	N_crassa|N_hispaniola	0.184105	0.0930904	-0.001922000000000007	-0.0002718000000000026	True
+species_level	bootstrap_branch	19	boot_all	250000	31935			N_crassa|N_hispaniola	0.182991	0.0900129	-0.003036000000000011	-0.0033492999999999995	True
+species_level	bootstrap_branch	19	boot_excluded	250000	25918			N_crassa|N_hispaniola	0.193111	0.109591	0.007084000000000007	0.016228799999999988	True
+species_level	matched_removal	19	outside_blocks_removed	250000	26483	5989	5767				
+species_level	matched_removal_branch	19	outside_blocks_removed	250000	26483	5989	5767	N_crassa|N_hispaniola	0.17896	0.0920407	-0.00706699999999999	-0.0013215000000000032	True
+background_lineage	bootstrap_branch	0	boot_all	250000	32707			L10_mat_A|L10_mat_a	0.302369	0.0602727	0.027156999999999987	0.004114199999999998	True
+background_lineage	bootstrap_branch	0	boot_all	250000	32707			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.322233	0.109459	0.0036229999999999873	-0.003020999999999996	True
+background_lineage	bootstrap_branch	0	boot_all	250000	32707			N_crassa|N_hispaniola	0.212514	0.103194	0.023419999999999996	0.008852299999999994	True
+background_lineage	bootstrap_branch	0	boot_excluded	250000	27114			L10_mat_A|L10_mat_a	0.472435	0.0315028	0.19722299999999998	-0.024655700000000003	True
+background_lineage	bootstrap_branch	0	boot_excluded	250000	27114			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.379912	0.133359	0.06130200000000002	0.02087900000000001	True
+background_lineage	bootstrap_branch	0	boot_excluded	250000	27114			N_crassa|N_hispaniola	0.221984	0.106562	0.032889999999999975	0.012220300000000003	True
+background_lineage	matched_removal	0	outside_blocks_removed	250000	26563	5909	5767				
+background_lineage	matched_removal_branch	0	outside_blocks_removed	250000	26563	5909	5767	L10_mat_A|L10_mat_a	0.232588	0.0477515	-0.04262400000000002	-0.008406999999999998	True
+background_lineage	matched_removal_branch	0	outside_blocks_removed	250000	26563	5909	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.309908	0.10468	-0.008701999999999988	-0.007800000000000001	True
+background_lineage	matched_removal_branch	0	outside_blocks_removed	250000	26563	5909	5767	N_crassa|N_hispaniola	0.196049	0.090074	0.006954999999999989	-0.004267699999999999	True
+background_lineage	bootstrap_branch	1	boot_all	250000	30645			L10_mat_A|L10_mat_a	0.282683	0.0561095	0.007471000000000005	-4.900000000000043e-05	True
+background_lineage	bootstrap_branch	1	boot_all	250000	30645			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.311102	0.106979	-0.007508000000000015	-0.005500999999999992	True
+background_lineage	bootstrap_branch	1	boot_all	250000	30645			N_crassa|N_hispaniola	0.194606	0.0911528	0.005511999999999989	-0.0031888999999999945	True
+background_lineage	bootstrap_branch	1	boot_excluded	250000	26732			L10_mat_A|L10_mat_a	0.457474	0.0341459	0.18226199999999998	-0.0220126	True
+background_lineage	bootstrap_branch	1	boot_excluded	250000	26732			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.351944	0.126119	0.033333999999999975	0.013639000000000012	True
+background_lineage	bootstrap_branch	1	boot_excluded	250000	26732			N_crassa|N_hispaniola	0.207578	0.104234	0.018484	0.009892299999999993	True
+background_lineage	matched_removal	1	outside_blocks_removed	250000	26672	5800	5767				
+background_lineage	matched_removal_branch	1	outside_blocks_removed	250000	26672	5800	5767	L10_mat_A|L10_mat_a	0.246692	0.0505698	-0.028520000000000018	-0.005588700000000002	True
+background_lineage	matched_removal_branch	1	outside_blocks_removed	250000	26672	5800	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.309062	0.109887	-0.009548000000000001	-0.002592999999999998	True
+background_lineage	matched_removal_branch	1	outside_blocks_removed	250000	26672	5800	5767	N_crassa|N_hispaniola	0.185603	0.0931492	-0.003491000000000022	-0.0011924999999999991	True
+background_lineage	bootstrap_branch	2	boot_all	250000	32943			L10_mat_A|L10_mat_a	0.256907	0.0526179	-0.018305000000000016	-0.003540599999999998	True
+background_lineage	bootstrap_branch	2	boot_all	250000	32943			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.309054	0.110522	-0.009556000000000009	-0.0019580000000000014	True
+background_lineage	bootstrap_branch	2	boot_all	250000	32943			N_crassa|N_hispaniola	0.199897	0.0956794	0.01080299999999998	0.0013376999999999972	True
+background_lineage	bootstrap_branch	2	boot_excluded	250000	26832			L10_mat_A|L10_mat_a	0.454926	0.0389397	0.17971399999999998	-0.0172188	True
+background_lineage	bootstrap_branch	2	boot_excluded	250000	26832			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.339752	0.128949	0.021141999999999994	0.01646900000000001	True
+background_lineage	bootstrap_branch	2	boot_excluded	250000	26832			N_crassa|N_hispaniola	0.206121	0.105453	0.017026999999999987	0.011111300000000005	True
+background_lineage	matched_removal	2	outside_blocks_removed	250000	26572	5900	5767				
+background_lineage	matched_removal_branch	2	outside_blocks_removed	250000	26572	5900	5767	L10_mat_A|L10_mat_a	0.247387	0.0521317	-0.027825000000000016	-0.004026799999999997	True
+background_lineage	matched_removal_branch	2	outside_blocks_removed	250000	26572	5900	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.295288	0.103861	-0.02332200000000001	-0.008619000000000002	True
+background_lineage	matched_removal_branch	2	outside_blocks_removed	250000	26572	5900	5767	N_crassa|N_hispaniola	0.179146	0.0943397	-0.009948000000000012	-2.000000000002e-06	True
+background_lineage	bootstrap_branch	3	boot_all	250000	32490			L10_mat_A|L10_mat_a	0.263865	0.0512682	-0.011346999999999996	-0.0048903	True
+background_lineage	bootstrap_branch	3	boot_all	250000	32490			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.369342	0.121927	0.050732	0.009446999999999997	True
+background_lineage	bootstrap_branch	3	boot_all	250000	32490			N_crassa|N_hispaniola	0.159498	0.0943328	-0.02959600000000001	-8.900000000006125e-06	True
+background_lineage	bootstrap_branch	3	boot_excluded	250000	26513			L10_mat_A|L10_mat_a	0.467581	0.0376923	0.192369	-0.018466200000000002	True
+background_lineage	bootstrap_branch	3	boot_excluded	250000	26513			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.361586	0.126647	0.042976000000000014	0.014167000000000013	True
+background_lineage	bootstrap_branch	3	boot_excluded	250000	26513			N_crassa|N_hispaniola	0.204731	0.112508	0.015636999999999984	0.018166299999999996	True
+background_lineage	matched_removal	3	outside_blocks_removed	250000	26468	6004	5767				
+background_lineage	matched_removal_branch	3	outside_blocks_removed	250000	26468	6004	5767	L10_mat_A|L10_mat_a	0.246822	0.0517848	-0.02839	-0.004373700000000001	True
+background_lineage	matched_removal_branch	3	outside_blocks_removed	250000	26468	6004	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.293319	0.105867	-0.025291000000000008	-0.006612999999999994	True
+background_lineage	matched_removal_branch	3	outside_blocks_removed	250000	26468	6004	5767	N_crassa|N_hispaniola	0.17831	0.0910714	-0.010784000000000016	-0.0032703000000000038	True
+background_lineage	bootstrap_branch	4	boot_all	250000	33052			L10_mat_A|L10_mat_a	0.235572	0.046645	-0.03964000000000001	-0.009513500000000001	True
+background_lineage	bootstrap_branch	4	boot_all	250000	33052			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.347119	0.11017	0.028509000000000007	-0.0023099999999999926	True
+background_lineage	bootstrap_branch	4	boot_all	250000	33052			N_crassa|N_hispaniola	0.199487	0.0986761	0.010392999999999986	0.004334400000000002	True
+background_lineage	bootstrap_branch	4	boot_excluded	250000	26343			L10_mat_A|L10_mat_a	0.465997	0.0381638	0.19078499999999998	-0.017994700000000002	True
+background_lineage	bootstrap_branch	4	boot_excluded	250000	26343			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.368936	0.137275	0.05032599999999998	0.02479500000000001	True
+background_lineage	bootstrap_branch	4	boot_excluded	250000	26343			N_crassa|N_hispaniola	0.186471	0.0915948	-0.002623000000000014	-0.0027468999999999966	True
+background_lineage	matched_removal	4	outside_blocks_removed	250000	26548	5924	5767				
+background_lineage	matched_removal_branch	4	outside_blocks_removed	250000	26548	5924	5767	L10_mat_A|L10_mat_a	0.243851	0.0493082	-0.031361	-0.006850299999999997	True
+background_lineage	matched_removal_branch	4	outside_blocks_removed	250000	26548	5924	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.315796	0.108519	-0.002813999999999983	-0.003960999999999992	True
+background_lineage	matched_removal_branch	4	outside_blocks_removed	250000	26548	5924	5767	N_crassa|N_hispaniola	0.184824	0.0968392	-0.004270000000000024	0.0024974999999999997	True
+background_lineage	bootstrap_branch	5	boot_all	250000	32472			L10_mat_A|L10_mat_a	0.251292	0.0504399	-0.023919999999999997	-0.005718599999999997	True
+background_lineage	bootstrap_branch	5	boot_all	250000	32472			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.322002	0.109948	0.003392000000000006	-0.0025319999999999926	True
+background_lineage	bootstrap_branch	5	boot_all	250000	32472			N_crassa|N_hispaniola	0.195544	0.104232	0.0064499999999999835	0.009890300000000005	True
+background_lineage	bootstrap_branch	5	boot_excluded	250000	26492			L10_mat_A|L10_mat_a	0.443992	0.0388941	0.16877999999999999	-0.0172644	True
+background_lineage	bootstrap_branch	5	boot_excluded	250000	26492			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.340266	0.128285	0.02165600000000001	0.015805000000000013	True
+background_lineage	bootstrap_branch	5	boot_excluded	250000	26492			N_crassa|N_hispaniola	0.21123	0.101969	0.02213599999999999	0.0076273000000000035	True
+background_lineage	matched_removal	5	outside_blocks_removed	250000	26533	5939	5767				
+background_lineage	matched_removal_branch	5	outside_blocks_removed	250000	26533	5939	5767	L10_mat_A|L10_mat_a	0.245263	0.0513693	-0.029949000000000003	-0.0047892	True
+background_lineage	matched_removal_branch	5	outside_blocks_removed	250000	26533	5939	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.299868	0.106916	-0.01874199999999998	-0.0055639999999999995	True
+background_lineage	matched_removal_branch	5	outside_blocks_removed	250000	26533	5939	5767	N_crassa|N_hispaniola	0.178776	0.0885152	-0.010318000000000022	-0.005826499999999998	True
+background_lineage	bootstrap_branch	6	boot_all	250000	32226			L10_mat_A|L10_mat_a	0.290868	0.0577044	0.015656000000000003	0.0015459000000000028	True
+background_lineage	bootstrap_branch	6	boot_all	250000	32226			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.337242	0.115151	0.018631999999999982	0.0026710000000000067	True
+background_lineage	bootstrap_branch	6	boot_all	250000	32226			N_crassa|N_hispaniola	0.175203	0.096242	-0.013891000000000014	0.0019002999999999937	True
+background_lineage	bootstrap_branch	6	boot_excluded	250000	26691			L10_mat_A|L10_mat_a	0.452423	0.0383292	0.177211	-0.0178293	True
+background_lineage	bootstrap_branch	6	boot_excluded	250000	26691			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.361881	0.126274	0.043271000000000004	0.013794	True
+background_lineage	bootstrap_branch	6	boot_excluded	250000	26691			N_crassa|N_hispaniola	0.227608	0.107825	0.03851399999999999	0.013483300000000004	True
+background_lineage	matched_removal	6	outside_blocks_removed	250000	26588	5884	5767				
+background_lineage	matched_removal_branch	6	outside_blocks_removed	250000	26588	5884	5767	L10_mat_A|L10_mat_a	0.234323	0.0477186	-0.04088900000000001	-0.0084399	True
+background_lineage	matched_removal_branch	6	outside_blocks_removed	250000	26588	5884	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.316308	0.108226	-0.0023020000000000262	-0.004253999999999994	True
+background_lineage	matched_removal_branch	6	outside_blocks_removed	250000	26588	5884	5767	N_crassa|N_hispaniola	0.182755	0.0836497	-0.006339000000000011	-0.010692000000000007	True
+background_lineage	bootstrap_branch	7	boot_all	250000	32318			L10_mat_A|L10_mat_a	0.28863	0.0597392	0.013417999999999985	0.003580699999999999	True
+background_lineage	bootstrap_branch	7	boot_all	250000	32318			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.308271	0.115389	-0.010338999999999987	0.002909000000000009	True
+background_lineage	bootstrap_branch	7	boot_all	250000	32318			N_crassa|N_hispaniola	0.175553	0.0844738	-0.013541000000000025	-0.009867899999999999	True
+background_lineage	bootstrap_branch	7	boot_excluded	250000	27385			L10_mat_A|L10_mat_a	0.458834	0.0390912	0.183622	-0.0170673	True
+background_lineage	bootstrap_branch	7	boot_excluded	250000	27385			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.36843	0.131158	0.049819999999999975	0.018678	True
+background_lineage	bootstrap_branch	7	boot_excluded	250000	27385			N_crassa|N_hispaniola	0.212482	0.102209	0.023387999999999992	0.007867299999999994	True
+background_lineage	matched_removal	7	outside_blocks_removed	250000	26611	5861	5767				
+background_lineage	matched_removal_branch	7	outside_blocks_removed	250000	26611	5861	5767	L10_mat_A|L10_mat_a	0.240488	0.0485441	-0.034724000000000005	-0.0076144	True
+background_lineage	matched_removal_branch	7	outside_blocks_removed	250000	26611	5861	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.312774	0.106886	-0.005836000000000008	-0.005594000000000002	True
+background_lineage	matched_removal_branch	7	outside_blocks_removed	250000	26611	5861	5767	N_crassa|N_hispaniola	0.203172	0.0939448	0.01407799999999998	-0.0003969000000000056	True
+background_lineage	bootstrap_branch	8	boot_all	250000	32739			L10_mat_A|L10_mat_a	0.337243	0.0650657	0.062031	0.008907200000000004	True
+background_lineage	bootstrap_branch	8	boot_all	250000	32739			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.335235	0.122493	0.016625	0.010013000000000008	True
+background_lineage	bootstrap_branch	8	boot_all	250000	32739			N_crassa|N_hispaniola	0.196687	0.103378	0.007592999999999989	0.009036299999999997	True
+background_lineage	bootstrap_branch	8	boot_excluded	250000	27810			L10_mat_A|L10_mat_a	0.4395	0.0315567	0.164288	-0.0246018	True
+background_lineage	bootstrap_branch	8	boot_excluded	250000	27810			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.353424	0.123891	0.03481400000000001	0.011411000000000004	True
+background_lineage	bootstrap_branch	8	boot_excluded	250000	27810			N_crassa|N_hispaniola	0.240009	0.126598	0.05091499999999999	0.03225629999999999	True
+background_lineage	matched_removal	8	outside_blocks_removed	250000	26586	5886	5767				
+background_lineage	matched_removal_branch	8	outside_blocks_removed	250000	26586	5886	5767	L10_mat_A|L10_mat_a	0.271472	0.0551422	-0.003740000000000021	-0.0010162999999999978	True
+background_lineage	matched_removal_branch	8	outside_blocks_removed	250000	26586	5886	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.312413	0.109476	-0.006197000000000008	-0.003003999999999993	True
+background_lineage	matched_removal_branch	8	outside_blocks_removed	250000	26586	5886	5767	N_crassa|N_hispaniola	0.178649	0.0944279	-0.01044500000000001	8.619999999999461e-05	True
+background_lineage	bootstrap_branch	9	boot_all	250000	32892			L10_mat_A|L10_mat_a	0.266352	0.0561292	-0.008860000000000035	-2.9300000000002935e-05	True
+background_lineage	bootstrap_branch	9	boot_all	250000	32892			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.328393	0.11023	0.009782999999999986	-0.002250000000000002	True
+background_lineage	bootstrap_branch	9	boot_all	250000	32892			N_crassa|N_hispaniola	0.186269	0.0938533	-0.002825000000000022	-0.0004883999999999999	True
+background_lineage	bootstrap_branch	9	boot_excluded	250000	25731			L10_mat_A|L10_mat_a	0.47817	0.0433314	0.20295799999999997	-0.012827100000000001	True
+background_lineage	bootstrap_branch	9	boot_excluded	250000	25731			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.350183	0.132424	0.03157300000000002	0.01994399999999999	True
+background_lineage	bootstrap_branch	9	boot_excluded	250000	25731			N_crassa|N_hispaniola	0.219354	0.112887	0.03025999999999998	0.0185453	True
+background_lineage	matched_removal	9	outside_blocks_removed	250000	26634	5838	5767				
+background_lineage	matched_removal_branch	9	outside_blocks_removed	250000	26634	5838	5767	L10_mat_A|L10_mat_a	0.23482	0.0482349	-0.04039200000000001	-0.007923600000000003	True
+background_lineage	matched_removal_branch	9	outside_blocks_removed	250000	26634	5838	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.318157	0.109011	-0.0004529999999999812	-0.003469	True
+background_lineage	matched_removal_branch	9	outside_blocks_removed	250000	26634	5838	5767	N_crassa|N_hispaniola	0.179619	0.0922296	-0.009475000000000011	-0.0021121000000000056	True
+background_lineage	bootstrap_branch	10	boot_all	250000	33155			L10_mat_A|L10_mat_a	0.258401	0.0533179	-0.01681100000000002	-0.0028405999999999987	True
+background_lineage	bootstrap_branch	10	boot_all	250000	33155			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.302488	0.106296	-0.016122000000000025	-0.006183999999999995	True
+background_lineage	bootstrap_branch	10	boot_all	250000	33155			N_crassa|N_hispaniola	0.193279	0.0895534	0.004184999999999994	-0.004788299999999995	True
+background_lineage	bootstrap_branch	10	boot_excluded	250000	27845			L10_mat_A|L10_mat_a	0.429243	0.0293052	0.15403099999999997	-0.0268533	True
+background_lineage	bootstrap_branch	10	boot_excluded	250000	27845			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.409144	0.129829	0.090534	0.017349000000000003	True
+background_lineage	bootstrap_branch	10	boot_excluded	250000	27845			N_crassa|N_hispaniola	0.245907	0.122831	0.056812999999999975	0.028489299999999995	True
+background_lineage	matched_removal	10	outside_blocks_removed	250000	26659	5813	5767				
+background_lineage	matched_removal_branch	10	outside_blocks_removed	250000	26659	5813	5767	L10_mat_A|L10_mat_a	0.250316	0.0509209	-0.02489600000000003	-0.005237600000000002	True
+background_lineage	matched_removal_branch	10	outside_blocks_removed	250000	26659	5813	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.310641	0.108935	-0.007969000000000004	-0.0035449999999999926	True
+background_lineage	matched_removal_branch	10	outside_blocks_removed	250000	26659	5813	5767	N_crassa|N_hispaniola	0.188006	0.0930828	-0.0010880000000000056	-0.0012589000000000072	True
+background_lineage	bootstrap_branch	11	boot_all	250000	34032			L10_mat_A|L10_mat_a	0.281276	0.0555282	0.006064000000000014	-0.0006303000000000003	True
+background_lineage	bootstrap_branch	11	boot_all	250000	34032			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.31993	0.109303	0.0013199999999999878	-0.0031769999999999993	True
+background_lineage	bootstrap_branch	11	boot_all	250000	34032			N_crassa|N_hispaniola	0.189129	0.0957407	3.499999999997949e-05	0.0013989999999999975	True
+background_lineage	bootstrap_branch	11	boot_excluded	250000	26350			L10_mat_A|L10_mat_a	0.418799	0.0253744	0.14358699999999996	-0.030784100000000002	True
+background_lineage	bootstrap_branch	11	boot_excluded	250000	26350			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.344662	0.125851	0.02605200000000002	0.013370999999999994	True
+background_lineage	bootstrap_branch	11	boot_excluded	250000	26350			N_crassa|N_hispaniola	0.199771	0.0931378	0.010676999999999992	-0.0012038999999999939	True
+background_lineage	matched_removal	11	outside_blocks_removed	250000	26613	5859	5767				
+background_lineage	matched_removal_branch	11	outside_blocks_removed	250000	26613	5859	5767	L10_mat_A|L10_mat_a	0.243427	0.0503003	-0.03178500000000001	-0.005858200000000001	True
+background_lineage	matched_removal_branch	11	outside_blocks_removed	250000	26613	5859	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.305663	0.108948	-0.012946999999999986	-0.0035319999999999935	True
+background_lineage	matched_removal_branch	11	outside_blocks_removed	250000	26613	5859	5767	N_crassa|N_hispaniola	0.180876	0.0839993	-0.008218000000000003	-0.010342400000000002	True
+background_lineage	bootstrap_branch	12	boot_all	250000	32759			L10_mat_A|L10_mat_a	0.266163	0.0552193	-0.00904900000000003	-0.0009392000000000011	True
+background_lineage	bootstrap_branch	12	boot_all	250000	32759			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.341399	0.117736	0.022789000000000004	0.005255999999999997	True
+background_lineage	bootstrap_branch	12	boot_all	250000	32759			N_crassa|N_hispaniola	0.191403	0.0931141	0.0023089999999999777	-0.0012275999999999954	True
+background_lineage	bootstrap_branch	12	boot_excluded	250000	26309			L10_mat_A|L10_mat_a	0.410289	0.0244377	0.135077	-0.0317208	True
+background_lineage	bootstrap_branch	12	boot_excluded	250000	26309			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.37711	0.133223	0.058499999999999996	0.02074300000000001	True
+background_lineage	bootstrap_branch	12	boot_excluded	250000	26309			N_crassa|N_hispaniola	0.197782	0.103033	0.008688000000000001	0.008691299999999999	True
+background_lineage	matched_removal	12	outside_blocks_removed	250000	26696	5776	5767				
+background_lineage	matched_removal_branch	12	outside_blocks_removed	250000	26696	5776	5767	L10_mat_A|L10_mat_a	0.252786	0.050867	-0.022426	-0.005291499999999998	True
+background_lineage	matched_removal_branch	12	outside_blocks_removed	250000	26696	5776	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.311099	0.107391	-0.00751099999999999	-0.005088999999999996	True
+background_lineage	matched_removal_branch	12	outside_blocks_removed	250000	26696	5776	5767	N_crassa|N_hispaniola	0.181033	0.0953349	-0.008061000000000013	0.0009931999999999996	True
+background_lineage	bootstrap_branch	13	boot_all	250000	33116			L10_mat_A|L10_mat_a	0.265269	0.0540352	-0.009943000000000035	-0.0021233000000000016	True
+background_lineage	bootstrap_branch	13	boot_all	250000	33116			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.314219	0.107879	-0.004390999999999978	-0.004600999999999994	True
+background_lineage	bootstrap_branch	13	boot_all	250000	33116			N_crassa|N_hispaniola	0.18374	0.108839	-0.005354000000000025	0.014497300000000005	True
+background_lineage	bootstrap_branch	13	boot_excluded	250000	26499			L10_mat_A|L10_mat_a	0.44946	0.0356438	0.17424800000000001	-0.020514699999999997	True
+background_lineage	bootstrap_branch	13	boot_excluded	250000	26499			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.367118	0.128824	0.048507999999999996	0.016343999999999997	True
+background_lineage	bootstrap_branch	13	boot_excluded	250000	26499			N_crassa|N_hispaniola	0.218879	0.11739	0.029784999999999978	0.023048299999999994	True
+background_lineage	matched_removal	13	outside_blocks_removed	250000	26609	5863	5767				
+background_lineage	matched_removal_branch	13	outside_blocks_removed	250000	26609	5863	5767	L10_mat_A|L10_mat_a	0.225001	0.0465081	-0.050211000000000006	-0.009650400000000003	True
+background_lineage	matched_removal_branch	13	outside_blocks_removed	250000	26609	5863	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.310281	0.106379	-0.00832900000000003	-0.006100999999999995	True
+background_lineage	matched_removal_branch	13	outside_blocks_removed	250000	26609	5863	5767	N_crassa|N_hispaniola	0.18575	0.0906817	-0.0033440000000000136	-0.0036599999999999966	True
+background_lineage	bootstrap_branch	14	boot_all	250000	32019			L10_mat_A|L10_mat_a	0.280167	0.0590379	0.004954999999999987	0.0028793999999999972	True
+background_lineage	bootstrap_branch	14	boot_all	250000	32019			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.319563	0.120555	0.0009529999999999816	0.008074999999999999	True
+background_lineage	bootstrap_branch	14	boot_all	250000	32019			N_crassa|N_hispaniola	0.162411	0.0733181	-0.026683000000000012	-0.021023600000000003	True
+background_lineage	bootstrap_branch	14	boot_excluded	250000	27465			L10_mat_A|L10_mat_a	0.429754	0.0178045	0.154542	-0.038354	True
+background_lineage	bootstrap_branch	14	boot_excluded	250000	27465			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.370477	0.128067	0.051866999999999996	0.01558699999999999	True
+background_lineage	bootstrap_branch	14	boot_excluded	250000	27465			N_crassa|N_hispaniola	0.240131	0.104691	0.051037	0.010349300000000006	True
+background_lineage	matched_removal	14	outside_blocks_removed	250000	26611	5861	5767				
+background_lineage	matched_removal_branch	14	outside_blocks_removed	250000	26611	5861	5767	L10_mat_A|L10_mat_a	0.252056	0.051866	-0.02315600000000001	-0.004292499999999998	True
+background_lineage	matched_removal_branch	14	outside_blocks_removed	250000	26611	5861	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.298297	0.107111	-0.020313000000000025	-0.005368999999999999	True
+background_lineage	matched_removal_branch	14	outside_blocks_removed	250000	26611	5861	5767	N_crassa|N_hispaniola	0.187337	0.0936233	-0.0017570000000000086	-0.000718399999999994	True
+background_lineage	bootstrap_branch	15	boot_all	250000	33101			L10_mat_A|L10_mat_a	0.273948	0.056393	-0.0012639999999999874	0.0002344999999999986	True
+background_lineage	bootstrap_branch	15	boot_all	250000	33101			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.320554	0.110472	0.0019440000000000013	-0.002007999999999996	True
+background_lineage	bootstrap_branch	15	boot_all	250000	33101			N_crassa|N_hispaniola	0.180406	0.104596	-0.008688000000000001	0.010254299999999994	True
+background_lineage	bootstrap_branch	15	boot_excluded	250000	26595			L10_mat_A|L10_mat_a	0.495144	0.0381025	0.21993199999999996	-0.018056000000000003	True
+background_lineage	bootstrap_branch	15	boot_excluded	250000	26595			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.367523	0.130388	0.048912999999999984	0.017908000000000007	True
+background_lineage	bootstrap_branch	15	boot_excluded	250000	26595			N_crassa|N_hispaniola	0.200933	0.115253	0.011838999999999988	0.020911299999999994	True
+background_lineage	matched_removal	15	outside_blocks_removed	250000	26538	5934	5767				
+background_lineage	matched_removal_branch	15	outside_blocks_removed	250000	26538	5934	5767	L10_mat_A|L10_mat_a	0.235471	0.0487262	-0.039741	-0.007432300000000003	True
+background_lineage	matched_removal_branch	15	outside_blocks_removed	250000	26538	5934	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.314417	0.106982	-0.004193000000000002	-0.005498000000000003	True
+background_lineage	matched_removal_branch	15	outside_blocks_removed	250000	26538	5934	5767	N_crassa|N_hispaniola	0.17746	0.0903565	-0.011634000000000005	-0.003985199999999994	True
+background_lineage	bootstrap_branch	16	boot_all	250000	32753			L10_mat_A|L10_mat_a	0.248722	0.0520783	-0.026490000000000014	-0.004080199999999999	True
+background_lineage	bootstrap_branch	16	boot_all	250000	32753			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.314845	0.110977	-0.0037650000000000183	-0.0015029999999999905	True
+background_lineage	bootstrap_branch	16	boot_all	250000	32753			N_crassa|N_hispaniola	0.168227	0.0993539	-0.020867000000000024	0.0050121999999999944	True
+background_lineage	bootstrap_branch	16	boot_excluded	250000	26766			L10_mat_A|L10_mat_a	0.482285	0.0369447	0.207073	-0.019213800000000003	True
+background_lineage	bootstrap_branch	16	boot_excluded	250000	26766			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.373131	0.131375	0.054520999999999986	0.018894999999999995	True
+background_lineage	bootstrap_branch	16	boot_excluded	250000	26766			N_crassa|N_hispaniola	0.208805	0.110244	0.01971099999999998	0.015902299999999994	True
+background_lineage	matched_removal	16	outside_blocks_removed	250000	26568	5904	5767				
+background_lineage	matched_removal_branch	16	outside_blocks_removed	250000	26568	5904	5767	L10_mat_A|L10_mat_a	0.235168	0.0482375	-0.040044000000000024	-0.007920999999999997	True
+background_lineage	matched_removal_branch	16	outside_blocks_removed	250000	26568	5904	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.314494	0.107699	-0.0041160000000000085	-0.004780999999999994	True
+background_lineage	matched_removal_branch	16	outside_blocks_removed	250000	26568	5904	5767	N_crassa|N_hispaniola	0.182609	0.0842822	-0.0064850000000000185	-0.010059499999999999	True
+background_lineage	bootstrap_branch	17	boot_all	250000	32513			L10_mat_A|L10_mat_a	0.265764	0.0572871	-0.009448000000000012	0.0011286000000000004	True
+background_lineage	bootstrap_branch	17	boot_all	250000	32513			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.297273	0.105351	-0.021336999999999995	-0.0071289999999999965	True
+background_lineage	bootstrap_branch	17	boot_all	250000	32513			N_crassa|N_hispaniola	0.18841	0.0893201	-0.0006840000000000179	-0.005021600000000001	True
+background_lineage	bootstrap_branch	17	boot_excluded	250000	26886			L10_mat_A|L10_mat_a	0.447769	0.040257	0.17255699999999996	-0.0159015	True
+background_lineage	bootstrap_branch	17	boot_excluded	250000	26886			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.376499	0.134257	0.05788899999999997	0.02177699999999999	True
+background_lineage	bootstrap_branch	17	boot_excluded	250000	26886			N_crassa|N_hispaniola	0.22127	0.099743	0.03217599999999998	0.005401299999999998	True
+background_lineage	matched_removal	17	outside_blocks_removed	250000	26590	5882	5767				
+background_lineage	matched_removal_branch	17	outside_blocks_removed	250000	26590	5882	5767	L10_mat_A|L10_mat_a	0.229113	0.048728	-0.046099	-0.0074305	True
+background_lineage	matched_removal_branch	17	outside_blocks_removed	250000	26590	5882	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.299641	0.106223	-0.018969000000000014	-0.006256999999999999	True
+background_lineage	matched_removal_branch	17	outside_blocks_removed	250000	26590	5882	5767	N_crassa|N_hispaniola	0.181608	0.0912188	-0.00748600000000002	-0.003122899999999998	True
+background_lineage	bootstrap_branch	18	boot_all	250000	32498			L10_mat_A|L10_mat_a	0.260465	0.0558319	-0.01474700000000001	-0.0003266000000000033	True
+background_lineage	bootstrap_branch	18	boot_all	250000	32498			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.318103	0.115795	-0.0005069999999999797	0.0033149999999999985	True
+background_lineage	bootstrap_branch	18	boot_all	250000	32498			N_crassa|N_hispaniola	0.177198	0.0884587	-0.011896000000000018	-0.005882999999999999	True
+background_lineage	bootstrap_branch	18	boot_excluded	250000	26648			L10_mat_A|L10_mat_a	0.455744	0.0349789	0.18053199999999997	-0.0211796	True
+background_lineage	bootstrap_branch	18	boot_excluded	250000	26648			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.338093	0.128172	0.019482999999999973	0.01569200000000001	True
+background_lineage	bootstrap_branch	18	boot_excluded	250000	26648			N_crassa|N_hispaniola	0.220688	0.102179	0.03159399999999998	0.007837300000000005	True
+background_lineage	matched_removal	18	outside_blocks_removed	250000	26693	5779	5767				
+background_lineage	matched_removal_branch	18	outside_blocks_removed	250000	26693	5779	5767	L10_mat_A|L10_mat_a	0.252457	0.0515065	-0.022755000000000025	-0.004652000000000003	True
+background_lineage	matched_removal_branch	18	outside_blocks_removed	250000	26693	5779	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.313373	0.111161	-0.005236999999999992	-0.0013190000000000007	True
+background_lineage	matched_removal_branch	18	outside_blocks_removed	250000	26693	5779	5767	N_crassa|N_hispaniola	0.188741	0.0847555	-0.00035300000000001996	-0.009586200000000003	True
+background_lineage	bootstrap_branch	19	boot_all	250000	34245			L10_mat_A|L10_mat_a	0.263312	0.0544075	-0.011900000000000022	-0.0017510000000000026	True
+background_lineage	bootstrap_branch	19	boot_all	250000	34245			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.327003	0.111895	0.008392999999999984	-0.0005850000000000022	True
+background_lineage	bootstrap_branch	19	boot_all	250000	34245			N_crassa|N_hispaniola	0.191567	0.108755	0.0024729999999999752	0.014413300000000004	True
+background_lineage	bootstrap_branch	19	boot_excluded	250000	26770			L10_mat_A|L10_mat_a	0.385756	0.00749264	0.11054399999999998	-0.04866586	True
+background_lineage	bootstrap_branch	19	boot_excluded	250000	26770			L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.359005	0.120437	0.040395000000000014	0.007957000000000006	True
+background_lineage	bootstrap_branch	19	boot_excluded	250000	26770			N_crassa|N_hispaniola	0.225707	0.104706	0.03661299999999998	0.010364299999999993	True
+background_lineage	matched_removal	19	outside_blocks_removed	250000	26579	5893	5767				
+background_lineage	matched_removal_branch	19	outside_blocks_removed	250000	26579	5893	5767	L10_mat_A|L10_mat_a	0.250904	0.0510229	-0.024307999999999996	-0.005135599999999997	True
+background_lineage	matched_removal_branch	19	outside_blocks_removed	250000	26579	5893	5767	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.316105	0.110126	-0.0025049999999999795	-0.002353999999999995	True
+background_lineage	matched_removal_branch	19	outside_blocks_removed	250000	26579	5893	5767	N_crassa|N_hispaniola	0.184322	0.0825655	-0.0047719999999999985	-0.0117762	True

@@ -1,0 +1,143 @@
+{
+  "tree_archive": "/Users/ytabatabaee/Desktop/msrc-paper/data/neurospora/raw/neurospora.tar.gz",
+  "tree_data": "/Users/ytabatabaee/Desktop/msrc-paper/data/neurospora/raw/neurospora/trees/cras_sit_hist_tet_L10.min20MAC1.phyml_GTR_bionj_w50sites.trees.gz",
+  "coordinate_data": "/Users/ytabatabaee/Desktop/msrc-paper/data/neurospora/raw/neurospora/trees/cras_sit_hist_tet_L10.min20MAC1.phyml_GTR_bionj_w50sites.data.tsv.gz",
+  "archive_md5": "571324702709eb1c2732a3fd993edc93",
+  "archive_sha256": "ab7ad2f6302eb83a685dad5965ed9855a5b5f2a02ba47a963d8a74bc81c17441",
+  "tree_file_sha256": "eaefa9021620251b0ccd1b8062c07e0a9223cd4972b0224c048d1006f3a4f4b0",
+  "coordinate_file_sha256": "000d02e1ab1e72e43d76bc7c286e386e9725e39c5f7cd7c997424b586ec82582",
+  "taxon_assignment_source": "/Users/ytabatabaee/Desktop/msrc-paper/empirical/neurospora/analysis/patterson_d/results/cj_mating_type_resolution.tsv",
+  "taxon_assignment_sha256": "dd4e0692188654464243568de08abd926d1ccf487b5cc43c867805f5ab7afaa4",
+  "total_window_records": 45303,
+  "valid_newick_trees": 32472,
+  "NA_tree_records": 12831,
+  "tree_tip_count": 26,
+  "unique_tree_tip_sets": 1,
+  "tree_branch_lengths": "BIONJ branch lengths from PhyML GTR windows; nominal substitutions/site; each locus has 50 variable sites",
+  "region_coordinate_rule": "LGI midpoint, inclusive 1,500,000\u20138,000,000 bp, same rule as existing Stage 1; archive study axis is 2509 reference coordinates",
+  "region_counts": {
+    "all_valid": 32472,
+    "region_inside": 5767,
+    "region_excluded": 26705,
+    "LGII_VII": 24352,
+    "LGI_outside": 2353
+  },
+  "mapping_designs": {
+    "species_level": {
+      "n_tips": 26,
+      "n_lineages": 4,
+      "mapping": {
+        "CJ13": "N_tetrasperma",
+        "CJ11": "N_tetrasperma",
+        "CJ24": "N_tetrasperma",
+        "CJ08": "N_tetrasperma",
+        "CJ01": "N_tetrasperma",
+        "8817@999": "N_hispaniola",
+        "CJ05": "N_tetrasperma",
+        "CJ19": "N_tetrasperma",
+        "2509@6": "N_tetrasperma",
+        "CJ15": "N_tetrasperma",
+        "CJ09": "N_tetrasperma",
+        "CJ06": "N_tetrasperma",
+        "CJ16": "N_tetrasperma",
+        "CJ20": "N_tetrasperma",
+        "CJ12": "N_tetrasperma",
+        "CJ04": "N_tetrasperma",
+        "CJ02": "N_tetrasperma",
+        "CJ23": "N_tetrasperma",
+        "CJ10": "N_tetrasperma",
+        "CJ22": "N_tetrasperma",
+        "CJ03": "N_tetrasperma",
+        "CJ18": "N_tetrasperma",
+        "1135@999": "N_sitophila",
+        "CJ07": "N_tetrasperma",
+        "Ncra@999": "N_crassa",
+        "CJ14": "N_tetrasperma"
+      }
+    },
+    "background_lineage": {
+      "n_tips": 22,
+      "n_lineages": 6,
+      "mapping": {
+        "2509@6": "N_tetrasperma_L6",
+        "Ncra@999": "N_crassa",
+        "8817@999": "N_hispaniola",
+        "1135@999": "N_sitophila",
+        "CJ01": "L10_mat_A",
+        "CJ02": "L10_mat_a",
+        "CJ03": "L10_mat_A",
+        "CJ04": "L10_mat_a",
+        "CJ05": "L10_mat_A",
+        "CJ06": "L10_mat_a",
+        "CJ08": "L10_mat_a",
+        "CJ09": "L10_mat_A",
+        "CJ10": "L10_mat_a",
+        "CJ13": "L10_mat_A",
+        "CJ14": "L10_mat_a",
+        "CJ15": "L10_mat_A",
+        "CJ16": "L10_mat_a",
+        "CJ19": "L10_mat_A",
+        "CJ20": "L10_mat_a",
+        "CJ22": "L10_mat_a",
+        "CJ23": "L10_mat_A",
+        "CJ24": "L10_mat_a"
+      }
+    },
+    "background_pair1": {
+      "n_tips": 6,
+      "n_lineages": 6,
+      "mapping": {
+        "2509@6": "N_tetrasperma_L6",
+        "Ncra@999": "N_crassa",
+        "8817@999": "N_hispaniola",
+        "1135@999": "N_sitophila",
+        "CJ03": "L10_mat_A",
+        "CJ04": "L10_mat_a"
+      }
+    },
+    "background_pair2": {
+      "n_tips": 6,
+      "n_lineages": 6,
+      "mapping": {
+        "2509@6": "N_tetrasperma_L6",
+        "Ncra@999": "N_crassa",
+        "8817@999": "N_hispaniola",
+        "1135@999": "N_sitophila",
+        "CJ15": "L10_mat_A",
+        "CJ16": "L10_mat_a"
+      }
+    }
+  },
+  "input_tree_counts": {
+    "species_level": {
+      "all": 32472,
+      "region_excluded": 26705,
+      "region_inside": 5767,
+      "LGII_VII": 24352,
+      "LGI_outside": 2353
+    },
+    "background_lineage": {
+      "all": 32472,
+      "region_excluded": 26705,
+      "region_inside": 5767,
+      "LGII_VII": 24352,
+      "LGI_outside": 2353
+    },
+    "background_pair1": {
+      "all": 32472,
+      "region_excluded": 26705,
+      "region_inside": 5767,
+      "LGII_VII": 24352,
+      "LGI_outside": 2353
+    },
+    "background_pair2": {
+      "all": 32472,
+      "region_excluded": 26705,
+      "region_inside": 5767,
+      "LGII_VII": 24352,
+      "LGI_outside": 2353
+    }
+  },
+  "mating_type_policy": "18 directly resolved CJ isolates included in background design; four unresolved CJ07/CJ11/CJ12/CJ18 excluded. Species-level maps all 22 CJ samples and L6 reference to N_tetrasperma.",
+  "all_qc_filters": "identical archive-valid-Newick filter for each partition and sampling design; no branch-length threshold or topology filter"
+}

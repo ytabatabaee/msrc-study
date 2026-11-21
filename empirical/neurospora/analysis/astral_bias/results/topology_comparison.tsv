@@ -1,0 +1,15 @@
+design	subset	taxa	unrooted_informative_splits	n_splits
+species_level	all	N_crassa;N_hispaniola;N_sitophila;N_tetrasperma	N_crassa|N_hispaniola	1
+species_level	region_excluded	N_crassa;N_hispaniola;N_sitophila;N_tetrasperma	N_crassa|N_hispaniola	1
+species_level	region_inside	N_crassa;N_hispaniola;N_sitophila;N_tetrasperma	N_crassa|N_sitophila	1
+species_level	LGII_VII	N_crassa;N_hispaniola;N_sitophila;N_tetrasperma	N_crassa|N_hispaniola	1
+species_level	LGI_outside	N_crassa;N_hispaniola;N_sitophila;N_tetrasperma	N_crassa|N_sitophila	1
+background_lineage	all	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_lineage	region_excluded	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_lineage	region_inside	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|N_crassa|N_hispaniola;L10_mat_A|N_hispaniola;L10_mat_a|N_tetrasperma_L6	3
+background_lineage	LGII_VII	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_lineage	LGI_outside	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_sitophila	3
+background_pair1	all	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_pair1	region_excluded	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_pair2	all	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3
+background_pair2	region_excluded	L10_mat_A;L10_mat_a;N_crassa;N_hispaniola;N_sitophila;N_tetrasperma_L6	L10_mat_A|L10_mat_a;L10_mat_A|L10_mat_a|N_tetrasperma_L6;N_crassa|N_hispaniola	3

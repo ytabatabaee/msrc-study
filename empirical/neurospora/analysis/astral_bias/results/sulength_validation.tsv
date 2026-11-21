@@ -1,0 +1,9 @@
+design	subset	split	SU_from_CU_mode_annotation	SU_from_SUmode_tree	absolute_difference
+species_level	all	N_crassa|N_hispaniola	0.0933622	0.0933622	0.0
+species_level	region_excluded	N_crassa|N_hispaniola	0.108005	0.108005	0.0
+background_lineage	all	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.11248	0.11248	0.0
+background_lineage	all	L10_mat_A|L10_mat_a	0.0561585	0.0561585	0.0
+background_lineage	all	N_crassa|N_hispaniola	0.0943417	0.0943417	0.0
+background_lineage	region_excluded	L10_mat_A|L10_mat_a|N_tetrasperma_L6	0.129651	0.129651	0.0
+background_lineage	region_excluded	L10_mat_A|L10_mat_a	0.0314763	0.0314763	0.0
+background_lineage	region_excluded	N_crassa|N_hispaniola	0.108299	0.108299	0.0
