@@ -1,0 +1,3 @@
+comparison	uncertainty	Delta_inside_minus_outside	Delta_contrast_block_bootstrap_low	Delta_contrast_block_bootstrap_high	R_inside_minus_outside	R_contrast_block_bootstrap_low	R_contrast_block_bootstrap_high
+primary_within_coluzzii	independent 500-kb physical block bootstrap within region	0.009719708764246236	0.009112684392255672	0.010366472761483371	0.7127521778718294	0.6508022206381829	0.7789029820128187
+primary_within_gambiae	independent 500-kb physical block bootstrap within region	0.008580079856213316	0.007953243256611115	0.009215477071660871	0.5607820834140762	0.5079074467794024	0.6139381039707725

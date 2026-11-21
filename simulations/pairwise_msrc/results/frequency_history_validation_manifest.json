@@ -1,0 +1,27 @@
+{
+  "purpose": "history-conditional pair coalescence expectations vs direct legacy genealogy events",
+  "msrc_sim_path": "/Users/ytabatabaee/Desktop/msrc-sim",
+  "msrc_sim_commit": "1658db065a3b42a2fc1d0bebda874eecc4da6d3b",
+  "models": [
+    "continuous-time Moran",
+    "discrete-generation Wright-Fisher"
+  ],
+  "histories_per_cell": 100,
+  "independent_uncertainty_unit": "forward frequency history, not genealogy draws sharing a history",
+  "genealogies_per_history": 3,
+  "cells": 12,
+  "seed": 20261121,
+  "initial_frequency_B": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "selection_coefficients": [
+    0.0,
+    0.1
+  ],
+  "rho_mapping": "gamma=2Ne*rho=1; this is a simulation grid value, not inferred from cM/Mb",
+  "structured_origin_age": 20.0,
+  "ordinary_ancestor_Ne": 10,
+  "fixed_loss_conditioning": "AA/AB/BB genealogies are explicitly conditioned even if that terminal state is absent; simulator finite-copy floor retained"
+}
