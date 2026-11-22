@@ -3384,7 +3384,7 @@ Inventory classifies Anopheles as partial (validated callability exists, but no 
 - Simulator commit `5138370aa455eedc54b694c13f5aba91c9de5fa6` contains 13 × 4,000 primary
   chromosome comparisons, 320,000 prior terminal-conditioning draws, source
   hashes, configurations, PNG/SVG figures and the consolidated report. Its
-  GitHub push failed for missing HTTPS credentials; it is available locally.
+  Simulator validation commit pushed successfully via GitHub SSH.
 - ARG: 249/252 practical criteria pass, three unresolved. SMC′: 251/252
   frozen-target criteria pass; 36 demonstrated position-specific mismatches.
   Reference-only 51/52 passes, one unresolved. Rare-pattern Moran comparisons

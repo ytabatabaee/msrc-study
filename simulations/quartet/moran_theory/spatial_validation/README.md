@@ -8,9 +8,9 @@ the quartet theorem. The full report is
 
 Theory source: this repository commit `ba260f8d4303b5d3bc884fb76a9c5a5032b7e477`.
 Simulator validation commit: `5138370aa455eedc54b694c13f5aba91c9de5fa6`.
-The simulator commit exists locally; its GitHub push failed because HTTPS
-credentials were unavailable. The committed workflow/results can be inspected
-in that local checkout.
+The simulator validation commit was pushed successfully to GitHub via SSH.
+The [full report](https://github.com/ytabatabaee/msrc-sim/blob/5138370aa455eedc54b694c13f5aba91c9de5fa6/docs/MSRC_MORAN_THEORY_ARG_SMC_VALIDATION.md)
+and its workflow, figures and compact scientific results are available there.
 
 ## Completed comparison
 
