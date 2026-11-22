@@ -3375,3 +3375,27 @@ Outputs include reproducible numerical code, eight tests, direct simulation vali
 Added a reusable classical Tajima's D implementation, unit tests, pegas cross-check, a repository-wide dataset feasibility inventory, and Neurospora L10 population SFS calculations. Neurospora uses 18 independently assigned haploid CJ isolates (mat-A 8, mat-a 10; four unresolved excluded) and variable-site-only matrix records; D is explicitly SNP-panel conditional and per-callable-base pi/theta are omitted. On LGI 1.5–8 Mb, 50-kb pooled D is 3.316 inside versus 1.536 outside (difference +1.780; 100-kb block interval +1.417 to +2.114); mat-A difference is -0.808, mat-a -1.058, and descriptive pooled-minus-background-average D contrast difference is +2.714 (block interval +2.223 to +3.162). Results and limits are in `empirical/analysis/tajimas_d/results/analysis_report.md`; per-window TSVs and figure are in `empirical/neurospora/analysis/tajima_d/`.
 
 Inventory classifies Anopheles as partial (validated callability exists, but no same-locality homozygote arrangement pair), cod as partial (2–3 diploid individuals/population, population-level arrangement labels and unverified SNP ascertainment), fire ants as partial (local SNP VCF but no new fixed-sample per-window scan completed), mouse as recoverable but blocked (no usable local individual gVCF calls; do not substitute carrier heterozygotes as pure haplotypes), and phylogenomic-only taxa as not estimable. Full classifications and next steps are in the feasibility TSV. No raw-read downloads were initiated. Seven estimator tests pass; no commit or push was made.
+
+
+## Exact Moran theory / ARG / SMC′ validation — 2026-11-22
+
+- Reused the original balanced/pectinate Moran and prescribed-path operators in
+  the external `msrc-sim/validation/moran_spatial` workflow; no theorem changes.
+- Simulator commit `5138370aa455eedc54b694c13f5aba91c9de5fa6` contains 13 × 4,000 primary
+  chromosome comparisons, 320,000 prior terminal-conditioning draws, source
+  hashes, configurations, PNG/SVG figures and the consolidated report. Its
+  GitHub push failed for missing HTTPS credentials; it is available locally.
+- ARG: 249/252 practical criteria pass, three unresolved. SMC′: 251/252
+  frozen-target criteria pass; 36 demonstrated position-specific mismatches.
+  Reference-only 51/52 passes, one unresolved. Rare-pattern Moran comparisons
+  pass all 16 ARG and 16 SMC′ reference criteria. All nine pre-root topology
+  checks pass. Full simulator tests 335 passed; original selected theory tests
+  34 passed; adapter tests 19 passed. Unresolved intervals remain reported.
+- The finite-copy and strict policies match on supported states of the audited
+  absorbing no-mutation Moran/binomial model, including actual fixation/loss
+  paths. This does not resolve arbitrary supplied histories, changed founders,
+  mutation/resurrection or spatial joint accuracy; no survival filtering used.
+- Next: refine small discrepancies/precision, extend history and origin
+  adapters, and treat position-varying SMC′ transport as separate research.
+
+Details: [spatial validation handoff](simulations/quartet/moran_theory/spatial_validation/README.md).
