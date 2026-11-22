@@ -324,3 +324,4 @@ simulations/large_tree/mai30/analysis/origin_placement/validated_100/*/history_*
 data/fire_ants_chr16/raw/genotypes/*.vcf.gz
 data/fire_ants_chr16/raw/genotypes/*.vcf.gz.tbi
 data/fire_ants_chr16/raw/genotypes/*.csi
+empirical/anopheles_2la/analysis/tajima_d/results/anopheles_tajima_d_joined_tracks.tsv

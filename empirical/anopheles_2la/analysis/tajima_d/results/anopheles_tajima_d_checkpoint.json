@@ -1,0 +1,219 @@
+{
+  "completed_chunks": 25,
+  "total_chunks": 25,
+  "completed_at": "2026-11-22T00:52:39Z",
+  "audit": {
+    "source": "MalariaGEN Ag3.10 fontaine-2015-rebuild; AgamP4; Ag3.10 all-site genotype API",
+    "sample_count_species": {},
+    "group_sample_counts": {
+      "species_pooled_gambiae": 26,
+      "species_standard_gambiae": 8,
+      "species_inverted_gambiae": 12,
+      "population_pooled_gambiae_Boussibelika": 4,
+      "population_standard_gambiae_Boussibelika": 4,
+      "population_pooled_gambiae_Kela": 10,
+      "population_inverted_gambiae_Kela": 10,
+      "population_pooled_gambiae_Njage": 4,
+      "population_pooled_gambiae_Pala": 2,
+      "population_pooled_gambiae_Souroukoudinga": 2,
+      "population_inverted_gambiae_Souroukoudinga": 2,
+      "population_pooled_gambiae_Yaounde-B": 4,
+      "population_standard_gambiae_Yaounde-B": 3,
+      "species_pooled_coluzzii": 11,
+      "species_standard_coluzzii": 8,
+      "species_inverted_coluzzii": 3,
+      "population_pooled_coluzzii_Bana": 2,
+      "population_inverted_coluzzii_Bana": 2,
+      "population_pooled_coluzzii_Boussibelika": 4,
+      "population_standard_coluzzii_Boussibelika": 4,
+      "population_pooled_coluzzii_Yaounde-B": 4,
+      "population_standard_coluzzii_Yaounde-B": 4
+    },
+    "filters": "gamb_colu site mask; complete genotype calls for the fixed group at a site; exclude observed multiallelic sites; genotypes diploid",
+    "window_resolutions_bp": [
+      50000,
+      100000
+    ],
+    "interval_1based_inclusive": [
+      20524058,
+      42165532
+    ],
+    "chunks": [
+      {
+        "region": "2L:1-2000000",
+        "positions": 1759551,
+        "non_N_reference_positions": 1759551,
+        "site_mask_pass": 654212,
+        "seconds": 60.17
+      },
+      {
+        "region": "2L:2000001-4000000",
+        "positions": 1934021,
+        "non_N_reference_positions": 1934021,
+        "site_mask_pass": 1129925,
+        "seconds": 65.03
+      },
+      {
+        "region": "2L:4000001-6000000",
+        "positions": 1894481,
+        "non_N_reference_positions": 1894481,
+        "site_mask_pass": 1009142,
+        "seconds": 62.17
+      },
+      {
+        "region": "2L:6000001-8000000",
+        "positions": 1967233,
+        "non_N_reference_positions": 1967233,
+        "site_mask_pass": 1362347,
+        "seconds": 63.65
+      },
+      {
+        "region": "2L:8000001-10000000",
+        "positions": 1877705,
+        "non_N_reference_positions": 1877705,
+        "site_mask_pass": 1254626,
+        "seconds": 62.83
+      },
+      {
+        "region": "2L:10000001-12000000",
+        "positions": 1997240,
+        "non_N_reference_positions": 1997240,
+        "site_mask_pass": 1582049,
+        "seconds": 72.35
+      },
+      {
+        "region": "2L:12000001-14000000",
+        "positions": 1955164,
+        "non_N_reference_positions": 1955164,
+        "site_mask_pass": 1455096,
+        "seconds": 60.66
+      },
+      {
+        "region": "2L:14000001-16000000",
+        "positions": 1998520,
+        "non_N_reference_positions": 1998520,
+        "site_mask_pass": 1582123,
+        "seconds": 69.33
+      },
+      {
+        "region": "2L:16000001-18000000",
+        "positions": 1969525,
+        "non_N_reference_positions": 1969525,
+        "site_mask_pass": 1513701,
+        "seconds": 62.42
+      },
+      {
+        "region": "2L:18000001-20000000",
+        "positions": 1988020,
+        "non_N_reference_positions": 1988020,
+        "site_mask_pass": 1412200,
+        "seconds": 68.86
+      },
+      {
+        "region": "2L:20000001-22000000",
+        "positions": 1980358,
+        "non_N_reference_positions": 1980358,
+        "site_mask_pass": 1462729,
+        "seconds": 65.47
+      },
+      {
+        "region": "2L:22000001-24000000",
+        "positions": 1986845,
+        "non_N_reference_positions": 1986845,
+        "site_mask_pass": 1553998,
+        "seconds": 72.26
+      },
+      {
+        "region": "2L:24000001-26000000",
+        "positions": 1999319,
+        "non_N_reference_positions": 1999319,
+        "site_mask_pass": 1542390,
+        "seconds": 72.58
+      },
+      {
+        "region": "2L:26000001-28000000",
+        "positions": 1998209,
+        "non_N_reference_positions": 1998209,
+        "site_mask_pass": 1559128,
+        "seconds": 65.35
+      },
+      {
+        "region": "2L:28000001-30000000",
+        "positions": 1983629,
+        "non_N_reference_positions": 1983629,
+        "site_mask_pass": 1493797,
+        "seconds": 67.45
+      },
+      {
+        "region": "2L:30000001-32000000",
+        "positions": 1941215,
+        "non_N_reference_positions": 1941215,
+        "site_mask_pass": 1385492,
+        "seconds": 86.08
+      },
+      {
+        "region": "2L:32000001-34000000",
+        "positions": 1991903,
+        "non_N_reference_positions": 1991903,
+        "site_mask_pass": 1508695,
+        "seconds": 79.1
+      },
+      {
+        "region": "2L:34000001-36000000",
+        "positions": 1996850,
+        "non_N_reference_positions": 1996850,
+        "site_mask_pass": 1631828,
+        "seconds": 83.16
+      },
+      {
+        "region": "2L:36000001-38000000",
+        "positions": 1981149,
+        "non_N_reference_positions": 1981149,
+        "site_mask_pass": 1498610,
+        "seconds": 70.35
+      },
+      {
+        "region": "2L:38000001-40000000",
+        "positions": 1991303,
+        "non_N_reference_positions": 1991303,
+        "site_mask_pass": 1593525,
+        "seconds": 64.17
+      },
+      {
+        "region": "2L:40000001-42000000",
+        "positions": 1996247,
+        "non_N_reference_positions": 1996247,
+        "site_mask_pass": 1497790,
+        "seconds": 65.93
+      },
+      {
+        "region": "2L:42000001-44000000",
+        "positions": 1998580,
+        "non_N_reference_positions": 1998580,
+        "site_mask_pass": 1717308,
+        "seconds": 66.76
+      },
+      {
+        "region": "2L:44000001-46000000",
+        "positions": 1988464,
+        "non_N_reference_positions": 1988464,
+        "site_mask_pass": 1638511,
+        "seconds": 63.08
+      },
+      {
+        "region": "2L:46000001-48000000",
+        "positions": 1986138,
+        "non_N_reference_positions": 1986138,
+        "site_mask_pass": 1736711,
+        "seconds": 63.73
+      },
+      {
+        "region": "2L:48000001-49364325",
+        "positions": 1364078,
+        "non_N_reference_positions": 1364078,
+        "site_mask_pass": 1229198,
+        "seconds": 49.71
+      }
+    ]
+  }
+}

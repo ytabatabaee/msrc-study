@@ -1,0 +1,25 @@
+population_code	population	sample_id	n_individuals	ploidy	phase_present_in_source	LG01_arrangement_state	LG01_confidence	LG02_arrangement_state	LG02_confidence	LG07_arrangement_state	LG07_confidence	LG12_arrangement_state	LG12_confidence
+avc	More_stationary	Gadmor_avc1	2	diploid	True	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+avc	More_stationary	Gadmor_avc2	2	diploid	True	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+avo	More_migratory	Gadmor_avo1	2	diploid	True	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+avo	More_migratory	Gadmor_avo2	2	diploid	True	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+bat	Labrador	Gadmor_bat1	2	diploid	True	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	demographic_inference
+bat	Labrador	Gadmor_bat2	2	diploid	True	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	demographic_inference
+bor	Bornholm_Basin	Gadmor_bor1	2	diploid	True	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+bor	Bornholm_Basin	Gadmor_bor2	2	diploid	True	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	ancestral	demographic_inference
+icc	Iceland_coastal	Gadmor_icc1	1	diploid	True								
+ico	Iceland_oceanic	Gadmor_ico1	2	diploid	True								
+ico	Iceland_oceanic	Gadmor_ico2	2	diploid	True								
+kie	Kiel_Bight	Gadmor_kie1	2	diploid	True	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	derived	demographic_inference
+kie	Kiel_Bight	Gadmor_kie2	2	diploid	True	ancestral	direct_outgroup_alignment	derived	direct_outgroup_alignment	ancestral	direct_outgroup_alignment	derived	demographic_inference
+lfc	Lofoten_coastal	Gadmor_lfc1	3	diploid	True								
+lfc	Lofoten_coastal	Gadmor_lfc2	3	diploid	True								
+lfc	Lofoten_coastal	Gadmor_lfc3	3	diploid	True								
+lfo	Lofoten_oceanic	Gadmor_lfo1	2	diploid	True								
+lfo	Lofoten_oceanic	Gadmor_lfo3	2	diploid	True								
+low	Lowestoft	Gadmor_low1	2	diploid	True								
+low	Lowestoft	Gadmor_low2	2	diploid	True								
+twc	Trondheim_coastal	Gadmor_twc1	2	diploid	True								
+twc	Trondheim_coastal	Gadmor_twc2	2	diploid	True								
+two	Trondheim_oceanic	Gadmor_two1	2	diploid	True								
+two	Trondheim_oceanic	Gadmor_two2	2	diploid	True								

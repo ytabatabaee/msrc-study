@@ -1,0 +1,18 @@
+{
+  "vcf_records_in_target_intervals": 146149,
+  "groups": {
+    "SB": 78,
+    "Sb": 30,
+    "pooled": 108
+  },
+  "windows": 96,
+  "windows_with_D": {
+    "pooled": 96,
+    "SB": 96,
+    "Sb": 96
+  },
+  "mapping": "exact BUSCO gene-body intervals to existing local chr16 tree windows; overlapping intervals deduplicated by window per site",
+  "site_filter": "biallelic A/C/G/T; DP>=3; male diploid GT must be homozygous and is recoded haploid; require complete calls in the entire calculation group at the site",
+  "ascertainment": "variant-only FreeBayes callset; records include target gene bodies only and upstream source filter completeness is not demonstrated; outputs are observed-panel exploratory D, not asserted unbiased classical SFS",
+  "callability": "no invariant/callable positions"
+}

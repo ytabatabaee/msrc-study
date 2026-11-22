@@ -1,0 +1,6 @@
+source_file	subset	LG	n_sample_columns	n_population_groups_n_ge_2	n_records_used	n_missing_or_malformed_records	n_multiallelic_or_non_ACGT	n_nonpass	FORMAT_seen
+gadus_morhua_supergene_lg01_relate.vcf.gz	inside	LG01	24	11	205738	0	14	0	GT
+gadus_morhua_supergene_lg02_relate.vcf.gz	inside	LG02	24	11	69554	0	3	0	GT
+gadus_morhua_supergene_lg07_relate.vcf.gz	inside	LG07	24	11	125559	0	8	0	GT
+gadus_morhua_supergene_lg12_relate.vcf.gz	inside	LG12	24	11	129166	0	4	0	GT
+gadus_morhua_outside_supergenes_relate.vcf.gz	outside	outside	24	11	0	0	0	0	

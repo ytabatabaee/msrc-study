@@ -1,5 +1,7 @@
-# Tajima’s D feasibility
+# House-mouse t-complex Tajima's D feasibility
 
-No locally usable phased individual genotype calls or validated callable mask were recovered. Heterozygous carriers are not pure t chromosomes; a defensible per-haplotype D requires phased/reconstructed haplotypes and fixed within-subspecies sample panels.
+**Status: BLOCKED.** The local PASS VCF is variant-only and supports only SNP-conditioned exploratory tracks; it cannot establish the invariant/callable denominator, and it does not contain reference blocks. Prior source recovery identified public indexed per-individual gVCFs with mm10/GRCm38 chr17 reference blocks (47 frozen P1/P2 wild-mouse individuals), but transport failures truncated remote BGZF reads and no complete common-callability panel is staged locally. A BAM index exists without its BAM. Do not treat diploid t/+ carriers as pure t haplotypes.
 
-See the repository-wide audit at `empirical/analysis/tajimas_d/results/analysis_report.md`.
+Smallest required input for within-subspecies Tajima's D: validated per-individual diploid GTs spanning chr17 for the fixed P1/P2 samples, with the source's pre-ascertainment variant records or gVCF reference blocks and exact sample IDs. The minimal route is retryable, checksummed retrieval of each selected individual's chr17 gVCF slice plus index, then a fixed complete-case site panel and assembly validation against mm10/GRCm38. To estimate t versus standard chromosomes separately, also require phased or independently validated reconstructed t haplotypes across the analyzed windows; unphased heterozygous carriers are insufficient.
+
+See `empirical/house_mouse_t_complex/window_diversity/results/mouse_callable_site_audit.md` for source archive, sample design, failed retrieval details, and previous SNP-conditioned results. No Tajima's D windows or figures were generated because the required genotype-site panel was not recovered.

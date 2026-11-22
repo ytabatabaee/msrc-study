@@ -1,0 +1,11 @@
+statistic	n_inside_windows	n_outside_windows	inside_mean	outside_mean	difference_inside_minus_outside	block_bp	n_inside_blocks	n_outside_blocks	block_bootstrap_95_low	block_bootstrap_95_high	interpretation
+pooled_tajimas_D	52	44	-2.124764193695895	-2.1192322690790104	-0.005531924616884787	1000000	13	9	-0.18534444362793076	0.07318963564304286	exploratory observed-panel contrast; no neutrality-test p-value
+SB_tajimas_D	52	44	-2.027945667711964	-2.138517726237968	0.11057205852600438	1000000	13	9	0.0009192325293948333	0.22802535608426813	exploratory observed-panel contrast; no neutrality-test p-value
+Sb_tajimas_D	52	44	-1.2234417167598706	-1.6765804552985828	0.4531387385387122	1000000	13	9	0.1942660042732499	0.5645745035841812	exploratory observed-panel contrast; no neutrality-test p-value
+matched_pooled_tajimas_D	52	44	-2.124764193695895	-2.1192322690790104	-0.005531924616884787	1000000	13	9	-0.1819595511284595	0.07371580782437914	exploratory observed-panel contrast; no neutrality-test p-value
+matched_SB_tajimas_D	52	44	-1.9988611940585144	-2.0813571488394937	0.08249595478097937	1000000	13	9	-0.09432463865454055	0.14102587319431928	exploratory observed-panel contrast; no neutrality-test p-value
+matched_Sb_tajimas_D	52	44	-1.0633158791153359	-1.8563604323737004	0.7930445532583645	1000000	13	9	0.3410873040776093	0.9540703022777998	exploratory observed-panel contrast; no neutrality-test p-value
+Delta_D_pooled_minus_background_mean	52	44	-0.4990705014599781	-0.211683178310735	-0.2873873231492431	1000000	13	9	-0.401651863334784	-0.19212069280744656	exploratory observed-panel contrast; no neutrality-test p-value
+Delta_D_sample_weighted	52	44	-0.32029184569284624	-0.10903045143531612	-0.21126139425753013	1000000	13	9	-0.3259500972543744	-0.15427754232462668	exploratory observed-panel contrast; no neutrality-test p-value
+matched_Delta_D_unweighted	52	44	-0.5936756571089703	-0.15037347847241336	-0.44330217863655696	1000000	13	9	-0.4951041975438073	-0.2709100337396981	exploratory observed-panel contrast; no neutrality-test p-value
+matched_Delta_D_weighted	52	44	-0.3857766982327084	-0.10037420814668141	-0.28540249008602697	1000000	13	9	-0.3052604467909366	-0.1857644663900121	exploratory observed-panel contrast; no neutrality-test p-value

@@ -1,0 +1,9 @@
+resolution_bp	species	statistic	inside_mean	outside_mean	difference_inside_minus_outside	n_inside_windows	n_outside_windows	n_inside_500kb_blocks	n_outside_500kb_blocks	block_bootstrap_95_low	block_bootstrap_95_high	interpretation
+50000	gambiae	Delta_D_unweighted	-0.3796250090207323	-0.5112142407004205	0.13158923167968822	432	555	44	56	0.1106360337781197	0.15740820039376682	descriptive spatial uncertainty; groups span geography
+50000	gambiae	Delta_D_sample_weighted	-0.3413984382422807	-0.49787381596688635	0.15647537772460562	432	555	44	56	0.13327798563547183	0.18101953718013472	descriptive spatial uncertainty; groups span geography
+50000	coluzzii	Delta_D_unweighted	-0.36615850431845975	-0.6536043643950146	0.2874458600765548	431	554	44	56	0.2362702260935471	0.34298374054809	descriptive spatial uncertainty; groups span geography
+50000	coluzzii	Delta_D_sample_weighted	-0.26247816650914124	-0.5063954488154965	0.24391728230635523	431	554	44	56	0.201532304732822	0.2943942427085156	descriptive spatial uncertainty; groups span geography
+100000	gambiae	Delta_D_unweighted	-0.37996337355093285	-0.5114004365665307	0.13143706301559782	217	277	44	56	0.10929248372251985	0.15528863487891498	descriptive spatial uncertainty; groups span geography
+100000	gambiae	Delta_D_sample_weighted	-0.34180124580987803	-0.49813122483096706	0.15632997902108903	217	277	44	56	0.13388109673693255	0.17987275646605047	descriptive spatial uncertainty; groups span geography
+100000	coluzzii	Delta_D_unweighted	-0.3677418166303194	-0.6544209595308232	0.28667914290050384	216	277	44	56	0.2358640123536967	0.3429471927919577	descriptive spatial uncertainty; groups span geography
+100000	coluzzii	Delta_D_sample_weighted	-0.26433087214459006	-0.5060801722080396	0.24174930006344952	216	277	44	56	0.19898059692852937	0.2936293234144397	descriptive spatial uncertainty; groups span geography
