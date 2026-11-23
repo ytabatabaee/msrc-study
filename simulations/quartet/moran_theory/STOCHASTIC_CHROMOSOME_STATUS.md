@@ -39,3 +39,12 @@ The intended 100 independent chromosomes per main condition and exact large-M
 marginal validation remain outstanding. Next priorities are exact-preserving
 ARG scheduling, faster finite-M propagation, and adequate independent replicate
 counts. Small-M theory agreement does not certify the 10-Mb large-M joint law.
+
+Final primary pilot outcomes: one unconditioned chromosome completed in 446.21s
+(515 intervals) and one correctly conditioned 1010 chromosome in 521.92s
+(438 intervals, 407 distinct dated genealogies). The other subject in each
+condition hit 600s. Completed examples show that the localized conditional
+pattern is possible under genuine stochastic histories (q2=.8655 inside versus
+.1907 outside in that example), but the incomplete cohorts cannot estimate its
+population frequency or ensemble magnitude. No complete-case confidence
+intervals certify that goal. The 100-replicate target remains unmet.
