@@ -3399,3 +3399,27 @@ Inventory classifies Anopheles as partial (validated callability exists, but no 
   adapters, and treat position-varying SMC′ transport as separate research.
 
 Details: [spatial validation handoff](simulations/quartet/moran_theory/spatial_validation/README.md).
+
+
+## 2026-11-22 — Four-taxon chromosome positive control and large-M numerics
+
+The binomial daughter inheritance kernel now uses a stable binomial PMF for
+the same mathematical law. Small-M direct-formula, independent log-domain,
+M=2000 normalization/endpoint tests pass; all 86 Moran theory tests pass.
+Full M=2000 operator attempts still exceed bounded execution budgets after
+inheritance succeeds; this is an operator-cost limitation, separate from the
+fixed numerical overflow. No approximation is substituted for the target.
+
+The msrc-sim fixed-frequency conditional 1010 positive control completes
+20 four-taxon 10-Mb chromosomes per neutral/low-map/structured suppressed/
+structured unsuppressed condition. The full multispecies prescribed operator
+predicts the localized alternative signal. Structured root duration 1000,
+centered marker and kappa .01 yield q2=.910 at the marker; observed q2=.85.
+Precise marginal agreement remains unresolved (four of 108 uncorrected
+pointwise intervals exclude the target). These are conditional prescribed
+histories, not posterior Moran samples or empirical parameter fits.
+
+See simulations/quartet/moran_theory/LARGE_M_BINOMIAL_STATUS.md and the
+msrc-sim chromosome biological validation report. Next: improve exact large-M
+operator cost, increase replication and implement correctly conditioned
+stochastic-history comparisons.

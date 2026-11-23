@@ -9,10 +9,10 @@ daughter initialization.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import comb
 
 import numpy as np
 from scipy.sparse.linalg import expm_multiply
+from scipy.stats import binom
 
 try:
     from .moran_quartet_operator import (
@@ -69,11 +69,10 @@ def inheritance_kernel(M_parent: int, M_daughter: int) -> np.ndarray:
     """
     if M_parent <= 0 or M_daughter <= 0:
         raise ValueError("population chromosome counts must be positive")
-    H = np.zeros((M_parent + 1, M_daughter + 1), dtype=float)
-    for k in range(M_parent + 1):
-        p = k / M_parent
-        for a in range(M_daughter + 1):
-            H[k, a] = comb(M_daughter, a) * p**a * (1.0 - p) ** (M_daughter - a)
+    # Evaluate the same binomial PMF with stable special functions. Converting
+    # comb(2000,1000) to float overflows before the small powers can cancel it.
+    H = binom.pmf(np.arange(M_daughter + 1)[None, :], M_daughter,
+                  (np.arange(M_parent + 1) / M_parent)[:, None])
     return H
 
 
