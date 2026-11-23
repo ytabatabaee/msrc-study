@@ -3423,3 +3423,26 @@ See simulations/quartet/moran_theory/LARGE_M_BINOMIAL_STATUS.md and the
 msrc-sim chromosome biological validation report. Next: improve exact large-M
 operator cost, increase replication and implement correctly conditioned
 stochastic-history comparisons.
+
+
+## 2026-11-23 — Stochastic Moran chromosome pilots
+
+- Companion msrc-sim now uses genuine continuous-time Moran/shared histories,
+  default binomial daughter initialization, and pre-genealogy terminal-pattern
+  rejection for 1010; no forced tip labels, survival filtering or failed-ARG
+  replacement. The fixed 64-history audit found 1/64 accepted; an explicitly
+  separate sequential extension found seed64 for the second conditional pilot.
+- M20 full balanced multispecies comparisons use 4000 independent prior ARG
+  chromosomes, 100 accepted 1010 and zero simulation failures. All 15 unconditional
+  q criteria meet +/-0.05 equivalence; conditional 3/15 meet it and 12 are
+  unresolved by precision. Maximum errors .01022/.05979 are retained.
+- M2000 exact theory is separately profiled and remains time-limited in sparse
+  count propagation. No new theory formula or numerical approximation is used.
+- Large-M 10-Mb pilot completion/censoring, resource diagnostics and 40/200/400/
+  1000-window tracks are archived in msrc-sim's chromosome_moran_validation.
+  The 100-chromosome target remains outstanding. Completed subsets of censored
+  cohorts cannot establish unbiased population/posterior expectations.
+- Next: exact-preserving ARG scheduling, faster finite-M propagation and adequate
+  independent replication; no SMC or population-genetic-statistics changes.
+
+See simulations/quartet/moran_theory/STOCHASTIC_CHROMOSOME_STATUS.md.
