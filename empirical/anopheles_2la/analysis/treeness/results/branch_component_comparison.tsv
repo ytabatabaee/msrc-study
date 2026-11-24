@@ -1,0 +1,3 @@
+tree_set	chromosome	region_id	n_inside	n_outside	median_internal_inside	median_internal_outside	delta_internal_inside	median_terminal_inside	median_terminal_outside	delta_terminal_inside	median_treeness_inside	median_treeness_outside	delta_median_treeness
+stage2r_12sample_local_NJ	2L	2La	429	547	0.312987984	0.342230061	-0.029242077	1.7652945	1.77844603	-0.01315153	0.150259755	0.1636933719	-0.01343361687
+stage4r_all72_haplotype_NJ	2L	2La	430	546	0.6254658191	0.8432999755	-0.2178341564	2.995439608	2.645949786	0.349489823	0.1731770378	0.2433461044	-0.07016906667

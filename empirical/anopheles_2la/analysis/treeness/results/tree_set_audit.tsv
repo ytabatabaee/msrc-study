@@ -1,0 +1,3 @@
+tree_set	chromosome	n_trees	n_valid	n_taxon_sets	modal_taxon_set_n	modal_taxon_set_fraction	min_taxa	max_taxa	has_named_outgroups	median_max_terminal_branch_fraction	median_treeness_outgroup_pruned	median_delta_all_minus_no_outgroups
+stage2r_12sample_local_NJ	2L	978	978	1	978	1	53	53	False	0.02352401304	NA	NA
+stage4r_all72_haplotype_NJ	2L	978	978	1	978	1	144	144	False	0.01172755883	NA	NA

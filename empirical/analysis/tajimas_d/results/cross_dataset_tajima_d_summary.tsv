@@ -1,0 +1,29 @@
+dataset	group	status	n_individuals_or_haplotypes	inside_mean_D	outside_mean_D	inside_minus_outside_D	block_95_low	block_95_high	notes
+Neurospora L10	pooled	EXPLORATORY	18 / 8 / 10	3.316361955272438	1.536386259562803	1.779975695709635	1.4170167427279396	2.11401812173717	variable-site matrix; 100-kb spatial blocks
+Neurospora L10	mat-A	EXPLORATORY	18 / 8 / 10	-0.7962021421024444	0.0121234696257426	-0.8083256117281871	-1.11746668816467	-0.5021862134406888	variable-site matrix; 100-kb spatial blocks
+Neurospora L10	mat-a	EXPLORATORY	18 / 8 / 10	-0.4317520216901961	0.626580131704013	-1.0583321533942092	-1.3202483963431868	-0.8065123822545528	variable-site matrix; 100-kb spatial blocks
+Neurospora L10	pooled − background mean	EXPLORATORY	18 / 8 / 10	3.931147880359636	1.2170344588979247	2.714113421461711	2.2233048705339336	3.162293076361341	variable-site matrix; 100-kb spatial blocks
+Fire ants chr16	pooled (108)	EXPLORATORY	78 SB / 30 Sb	-2.124764193695895	-2.1192322690790104	-0.0055319246168847	-0.1853444436279307	0.0731896356430428	variant-only gene-ascertained panel; 1-Mb blocks; matched Δ row uses common complete sites
+Fire ants chr16	SB (78)	EXPLORATORY	78 SB / 30 Sb	-2.027945667711964	-2.138517726237968	0.1105720585260043	0.0009192325293948	0.2280253560842681	variant-only gene-ascertained panel; 1-Mb blocks; matched Δ row uses common complete sites
+Fire ants chr16	Sb (30)	EXPLORATORY	78 SB / 30 Sb	-1.2234417167598706	-1.6765804552985828	0.4531387385387122	0.1942660042732499	0.5645745035841812	variant-only gene-ascertained panel; 1-Mb blocks; matched Δ row uses common complete sites
+Fire ants chr16	matched pooled − background mean	EXPLORATORY	78 SB / 30 Sb	-0.5936756571089703	-0.1503734784724133	-0.4433021786365569	-0.4951041975438073	-0.2709100337396981	variant-only gene-ascertained panel; 1-Mb blocks; matched Δ row uses common complete sites
+Anopheles 2La	inverted_coluzzii	VALIDATED	species_inverted_coluzzii	-0.6550671006891999	-0.6487092927892306	-0.0063578078999693	-0.0766606761099635	0.059165316442231	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	inverted_gambiae	VALIDATED	species_inverted_gambiae	-1.674392353687055	-1.676944737148515	0.00255238346146	-0.0593339308047073	0.0683371714550176	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	pooled_coluzzii	VALIDATED	species_pooled_coluzzii	-1.249936901310789	-1.6259726156496432	0.3760357143388542	0.3259599850880163	0.4305504904917785	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	pooled_gambiae	VALIDATED	species_pooled_gambiae	-1.86288450881553	-2.1214568541812646	0.2585723453657347	0.2043834007031412	0.3189994553879526	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	standard_coluzzii	VALIDATED	species_standard_coluzzii	-1.1121557139369256	-1.2967916328360034	0.1846359188990778	0.1189611078936574	0.2519587156570701	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	standard_gambiae	VALIDATED	species_standard_gambiae	-1.2921266459025398	-1.5435404898131733	0.2514138439106335	0.1958955061431202	0.3076582037398041	Ag3.10 all-site; 500-kb spatial blocks; arrangement groups span geography
+Anopheles 2La	pooled − background mean gambiae	VALIDATED	gambiae	-0.3796250090207323	-0.5112142407004205	0.1315892316796882	0.1106360337781197	0.1574082003937668	descriptive contrast; pooled species includes structure/heterokaryotypes; separate group masks
+Anopheles 2La	pooled − background mean coluzzii	VALIDATED	coluzzii	-0.3661585043184597	-0.6536043643950146	0.2874458600765548	0.2362702260935471	0.34298374054809	descriptive contrast; pooled species includes structure/heterokaryotypes; separate group masks
+Atlantic cod	LG01 More_stationary	EXPLORATORY	2 diploid fish	-0.1428668831108509	NA	NA	NA	NA	250-kb inside windows only; outside Relate VCF has zero records on target LGs
+Atlantic cod	LG02 More_stationary	EXPLORATORY	2 diploid fish	-0.086550016014005	NA	NA	NA	NA	250-kb inside windows only; outside Relate VCF has zero records on target LGs
+Atlantic cod	LG07 More_stationary	EXPLORATORY	2 diploid fish	-0.0674629813437079	NA	NA	NA	NA	250-kb inside windows only; outside Relate VCF has zero records on target LGs
+Atlantic cod	LG12 More_stationary	EXPLORATORY	2 diploid fish	-0.1961063910428632	NA	NA	NA	NA	250-kb inside windows only; outside Relate VCF has zero records on target LGs
+House mouse t-complex	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Neoaves chr4	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Heliconius	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Microbotryum	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Sunflowers	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Primula	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Monkeyflowers	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory
+Songbirds PIPs	not estimated	BLOCKED		NA	NA	NA	NA	NA	See repository-wide feasibility inventory

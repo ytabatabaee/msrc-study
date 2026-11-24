@@ -1,0 +1,2 @@
+tree_set	chromosome	region_id	n_inside	n_outside	median_internal_inside	median_internal_outside	delta_internal_inside	median_terminal_inside	median_terminal_outside	delta_terminal_inside	median_treeness_inside	median_treeness_outside	delta_median_treeness
+RAxML_213_local_gene_trees	chr16	In16_1;In16_2	50	45	0.032028	0.04153	-0.009502	0.059545	0.080723	-0.021178	0.3356732224	0.3397053651	-0.004032142751

@@ -1,0 +1,2 @@
+tree_set	chromosome	n_trees	n_valid	n_taxon_sets	modal_taxon_set_n	modal_taxon_set_fraction	min_taxa	max_taxa	has_named_outgroups	median_max_terminal_branch_fraction	median_treeness_outgroup_pruned	median_delta_all_minus_no_outgroups
+L10_50SNP_local_BIONJ	LGI	45303	32472	2	32472	0.7167737236	1	26	False	0.4568473344	NA	NA

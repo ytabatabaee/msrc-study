@@ -1,0 +1,9 @@
+metric	chosen_k	cluster	n_inside	n_outside	inside_minus_outside_cluster_proportion	circular_shift_p	null_q025	null_q975	n_LGs_equal_weighted	spatial_null	BH_q
+euclidean	5	1	176	249	0.2443181818	0.01909904505	-0.1628787879	0.2348484848	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.0254653934
+euclidean	5	2	176	249	-0.9485012418	4.999750012e-05	-0.5054698716	0.4639566274	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.000133326667
+euclidean	5	3	176	249	0.2358490566	0.06819659017	-0.2403846154	0.2358490566	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.07793896019
+euclidean	5	4	176	249	0.4731416957	0.0002999850007	-0.1797062865	0.3477903328	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.0005999700015
+euclidean	5	5	176	249	-0.004807692308	0.4946252687	-0.004807692308	0.004716981132	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.4946252687
+cityblock	3	1	176	249	-0.9485012418	4.999750012e-05	-0.4950417324	0.4639566274	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.000133326667
+cityblock	3	2	176	249	0.2443181818	0.01809909505	-0.1628787879	0.2348484848	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.0254653934
+cityblock	3	3	176	249	0.70418306	4.999750012e-05	-0.377275227	0.424038834	4	independent cyclic interval-mask shift within each LG; equal-LG mean effect	0.000133326667

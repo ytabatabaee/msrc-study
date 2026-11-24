@@ -1,0 +1,7 @@
+rank	triplet	selection_criteria
+1	Gadmor_ico_spc,Gadmor_lfc_spc,Gadmor_lfo_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement
+2	Gadmor_avc_spc,Gadmor_avo_spc,Gadmor_low_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement
+3	Gadmor_bor_spc,Gadmor_twc_spc,Gadmor_two_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement
+4	Gadmor_icc_spc,Gadmor_twc_spc,Gadmor_two_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement
+5	Gadmor_avo_spc,Gadmor_lfc_spc,Gadmor_twc_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement
+6	Gadmor_bat_spc,Gadmor_bor_spc,Gadmor_two_spc	top two per prespecified ranking: normalized separation shift, topology-frequency shift, baseline disagreement

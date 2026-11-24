@@ -1,0 +1,25 @@
+analysis	lg	PC	n_inside	n_outside	inside_minus_outside_mean	circular_shift_p	null_q025	null_q975	spatial_null	BH_q
+absolute_time	LG01	PC1	66	44	3.617804072	0.009090909091	-2.300087934	3.394076415	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG01	PC2	66	44	2.421818258	0.009090909091	-1.530601289	2.269001064	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG01	root_age	66	44	0.7492402705	0.009090909091	-0.4744556523	0.7023528449	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG02	PC1	21	71	3.048016026	0.01086956522	-0.9342490298	2.75263162	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG02	PC2	21	71	-1.197486552	0.01086956522	-1.082326625	0.3575262963	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG02	root_age	21	71	0.6336485544	0.01086956522	-0.1964356816	0.5718338269	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG07	PC1	36	82	6.265862242	0.008474576271	-2.809967532	5.810300618	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG07	PC2	36	82	-1.87380775	0.008474576271	-1.739700257	0.8401447473	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG07	root_age	36	82	1.091116748	0.008474576271	-0.4866903356	1.010952703	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+absolute_time	LG12	PC1	53	52	1.082704394	0.07619047619	-1.099137071	1.084223358	all cyclic shifts of frozen inversion mask over ordered available windows	0.07619047619
+absolute_time	LG12	PC2	53	52	-0.504861504	0.05714285714	-0.5030569373	0.5110242943	all cyclic shifts of frozen inversion mask over ordered available windows	0.05714285714
+absolute_time	LG12	root_age	53	52	0.2915104425	0.08571428571	-0.2962168715	0.2918702441	all cyclic shifts of frozen inversion mask over ordered available windows	0.08571428571
+relative_time	LG01	PC1	66	44	2.818352265	0.009090909091	-1.8674667	2.689681813	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG01	PC2	66	44	3.069413622	0.009090909091	-2.031770251	2.930670093	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG01	root_age	66	44	0.7492402705	0.009090909091	-0.4744556523	0.7023528449	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG02	PC1	21	71	3.174077624	0.01086956522	-1.154952063	2.912462562	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG02	PC2	21	71	-1.432985495	0.01086956522	-1.309264775	0.4712579712	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG02	root_age	21	71	0.6336485544	0.01086956522	-0.1964356816	0.5718338269	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG07	PC1	36	82	3.191118853	0.008474576271	-1.485515207	3.037215532	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG07	PC2	36	82	-0.7038442635	0.008474576271	-0.6710125986	0.400630725	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG07	root_age	36	82	1.091116748	0.008474576271	-0.4866903356	1.010952703	all cyclic shifts of frozen inversion mask over ordered available windows	0.01449275362
+relative_time	LG12	PC1	53	52	3.424168688	0.06666666667	-3.433235271	3.433314326	all cyclic shifts of frozen inversion mask over ordered available windows	0.06666666667
+relative_time	LG12	PC2	53	52	-1.796202737	0.0380952381	-1.77681102	1.792041396	all cyclic shifts of frozen inversion mask over ordered available windows	0.0380952381
+relative_time	LG12	root_age	53	52	0.2915104425	0.08571428571	-0.2962168715	0.2918702441	all cyclic shifts of frozen inversion mask over ordered available windows	0.08571428571

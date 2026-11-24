@@ -1,6 +1,6 @@
 import math
 import unittest
-from tajimas import allele_counts, constants, fixed_complete_columns, tajima_from_counts, weighted_delta
+from tajimas import allele_counts, constants, fixed_complete_columns, tajima_from_counts, tajima_from_sufficient_stats, weighted_delta
 
 class TajimaTests(unittest.TestCase):
     def test_hand_calculated_biallelic_site(self):
@@ -10,6 +10,12 @@ class TajimaTests(unittest.TestCase):
         self.assertAlmostEqual(x['pi_total'],0.5)
         self.assertAlmostEqual(x['theta_W'],1/a1)
         self.assertAlmostEqual(x['tajimas_D'],(0.5-1/a1)/math.sqrt(e1))
+
+    def test_sufficient_statistics_match_site_vectors(self):
+        x=tajima_from_counts([[1,3],[2,2],[4,0]],4)
+        y=tajima_from_sufficient_stats(4,x['S'],x['pi_total'],x['n_sites_examined'])
+        for key in ('S','pi_total','theta_W','tajimas_D','classical_variance'):
+            self.assertAlmostEqual(x[key],y[key])
 
     def test_unbiased_pi_multiallelic(self):
         x=tajima_from_counts([[1,1,2],[4]],4)

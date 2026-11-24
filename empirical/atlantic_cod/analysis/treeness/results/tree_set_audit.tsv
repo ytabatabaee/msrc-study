@@ -1,0 +1,5 @@
+tree_set	chromosome	n_trees	n_valid	n_taxon_sets	modal_taxon_set_n	modal_taxon_set_fraction	min_taxa	max_taxa	has_named_outgroups	median_max_terminal_branch_fraction	median_treeness_outgroup_pruned	median_delta_all_minus_no_outgroups
+snapp_mcc_250kb	LG01	110	110	1	110	1	12	12	False	0.04529124722	0.84093211	0
+snapp_mcc_250kb	LG02	92	92	1	92	1	12	12	False	0.103758409	0.476267415	0
+snapp_mcc_250kb	LG07	119	118	1	119	1	12	12	False	0.1007634156	0.457825247	0
+snapp_mcc_250kb	LG12	105	105	1	105	1	12	12	False	0.0854096252	0.610283918	0

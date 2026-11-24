@@ -1,0 +1,4 @@
+analysis	n_windows	n_features	PC1_variance	PC2_variance	PC1_root_age_pearson_r	PC1_root_age_p	scaling
+absolute_time	425	66	0.7107562135	0.2272022861	0.9909396574	0	no feature scaling
+relative_time	425	66	0.3532217111	0.2798104327	0.8048439391	6.839698953e-98	no feature scaling
+relative_feature_zscore_sensitivity	425	66	0.3238360545	0.2625142601	0.8458156452	1.698976031e-117	z-scored features (sensitivity only)

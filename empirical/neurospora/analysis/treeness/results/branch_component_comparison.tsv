@@ -1,0 +1,2 @@
+tree_set	chromosome	region_id	n_inside	n_outside	median_internal_inside	median_internal_outside	delta_internal_inside	median_terminal_inside	median_terminal_outside	delta_terminal_inside	median_treeness_inside	median_treeness_outside	delta_median_treeness
+L10_50SNP_local_BIONJ	LGI	LGI_1p5_8Mb	23400	9066	0.43903565	0.4028597	0.03617595	1.41257361	1.450498305	-0.037924695	0.2357507581	0.2181676285	0.01758312964

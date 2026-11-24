@@ -1,0 +1,5 @@
+tree_set	chromosome	region_id	n_inside	n_outside	median_internal_inside	median_internal_outside	delta_internal_inside	median_terminal_inside	median_terminal_outside	delta_terminal_inside	median_treeness_inside	median_treeness_outside	delta_median_treeness
+snapp_mcc_250kb	LG01	cod_suppressed_recombination	66	43	1.700123785	0.130409889	1.569713896	0.220009089	0.181260603	0.038748486	0.880845369	0.43653594	0.444309429
+snapp_mcc_250kb	LG02	cod_suppressed_recombination	21	70	1.47192856	0.1383929245	1.333535636	0.19656479	0.1848460005	0.0117187895	0.885705345	0.439228396	0.446476949
+snapp_mcc_250kb	LG07	cod_suppressed_recombination	36	81	2.36439528	0.145593121	2.218802159	0.168776765	0.214973159	-0.046196394	0.9282165895	0.410188836	0.5180277535
+snapp_mcc_250kb	LG12	cod_suppressed_recombination	53	51	0.771231811	0.161502337	0.609729474	0.181563475	0.174459381	0.007104094	0.799177379	0.471676471	0.327500908

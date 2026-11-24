@@ -1,0 +1,2 @@
+tree_set	chromosome	region_id	n_inside	n_outside	median_internal_inside	median_internal_outside	delta_internal_inside	median_terminal_inside	median_terminal_outside	delta_terminal_inside	median_treeness_inside	median_treeness_outside	delta_median_treeness
+published_IQTREE_ML_5kb	chr17	In(17)1;In(17)2;In(17)3;In(17)4	3821	222	0.041854	0.04306	-0.001206	4.605883	0.0536555	4.5522275	0.009323390274	0.4576535802	-0.4483301899

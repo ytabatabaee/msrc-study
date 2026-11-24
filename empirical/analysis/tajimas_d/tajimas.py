@@ -73,6 +73,22 @@ def tajima_from_counts(site_counts: Iterable[Sequence[int]], n: int,
         if len(nonzero) > 1:
             S += 1
         pi_total += (n * n - sum(x * x for x in row)) / (n * (n - 1.0)) if n > 1 else 0.0
+    return tajima_from_sufficient_stats(n, S, pi_total, len(counts_rows), callable_bases)
+
+
+def tajima_from_sufficient_stats(n: int, S: int, pi_total: float,
+                                 n_sites_examined: int = 0,
+                                 callable_bases: Optional[int] = None):
+    """Calculate classical D from fixed-n sufficient statistics.
+
+    This is equivalent to :func:`tajima_from_counts` and permits streaming
+    chromosome-scale data without retaining every site's allele-count vector.
+    Callers remain responsible for enforcing complete calls and constant n.
+    """
+    if n < 1 or S < 0 or n_sites_examined < 0 or pi_total < 0:
+        raise ValueError("n, S, site count, and pi_total must be nonnegative (n positive)")
+    if callable_bases is not None and callable_bases <= 0:
+        raise ValueError("callable_bases must be positive")
     theta_w = None
     var = None
     D = None
@@ -91,7 +107,7 @@ def tajima_from_counts(site_counts: Iterable[Sequence[int]], n: int,
             D = (pi_total - theta_w) / math.sqrt(var)
     return {
         "n_haplotypes": n,
-        "n_sites_examined": len(counts_rows),
+        "n_sites_examined": n_sites_examined,
         "S": S,
         "pi_total": pi_total,
         "theta_W": theta_w,

@@ -1,0 +1,13 @@
+metric	k	silhouette
+euclidean	2	0.3939815352
+euclidean	3	0.5342288584
+euclidean	4	0.5202021124
+euclidean	5	0.580556266
+euclidean	6	0.4966289812
+euclidean	7	0.492965663
+cityblock	2	0.4723743098
+cityblock	3	0.6013281456
+cityblock	4	0.5723642461
+cityblock	5	0.5515086325
+cityblock	6	0.4839171138
+cityblock	7	0.4668818511

@@ -1,0 +1,3 @@
+metric	chosen_k	resamples	block_size_windows	subsample_fraction_target	median_ARI_vs_full	q025_ARI	q975_ARI
+euclidean	5	80	8	0.8	1	0.8844095743	1
+cityblock	3	80	8	0.8	1	0.9698443044	1
